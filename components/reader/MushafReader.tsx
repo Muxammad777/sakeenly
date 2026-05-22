@@ -118,17 +118,20 @@ function MushafReaderInner(props: MushafReaderProps) {
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   }, [initialAyah]);
 
-  // Pin the active surah to the top of the sidebar list whenever the surah
+  // Pin the active surah to the top of the sidebar whenever the surah
   // changes — otherwise the list keeps its previous scroll offset and the
   // user has to hunt for where they landed.
   useEffect(() => {
-    const list = document.querySelector<HTMLDivElement>(".surah-list");
-    if (!list) return;
-    const active = list.querySelector<HTMLAnchorElement>(".surah-item.active");
+    // The scrollable container is .reader-side (has overflow-y:auto).
+    // .surah-list is just a flex column inside it without its own scroll.
+    const sidebar = document.querySelector<HTMLElement>(".reader-side");
+    if (!sidebar) return;
+    const active = sidebar.querySelector<HTMLAnchorElement>(".surah-item.active");
     if (!active) return;
-    // offsetTop is relative to the nearest positioned ancestor — surah-list
-    // is the scroll container, so this lands the active item at the top.
-    list.scrollTo({ top: active.offsetTop - 8, behavior: "smooth" });
+    const sidebarRect = sidebar.getBoundingClientRect();
+    const activeRect = active.getBoundingClientRect();
+    const delta = activeRect.top - sidebarRect.top + sidebar.scrollTop;
+    sidebar.scrollTo({ top: Math.max(0, delta - 8), behavior: "smooth" });
   }, [surah.number]);
 
   // Close popover on outside click.
@@ -306,8 +309,9 @@ function MushafReaderInner(props: MushafReaderProps) {
             <div className="ar arabic">{surah.nameArabic}</div>
             <h1>{surah.nameSimple}</h1>
             <div className="meta">
-              Сура №{surah.number} · {surah.revelationPlace === "makkah" ? "Меккская" : "Мединская"} ·{" "}
-              {surah.versesCount} аятов
+              {t("surah_prefix")} №{surah.number} ·{" "}
+              {surah.revelationPlace === "makkah" ? t("place_makkah") : t("place_madinah")} ·{" "}
+              {surah.versesCount} {t("ayat_count")}
             </div>
           </div>
 
@@ -438,7 +442,7 @@ function MushafReaderInner(props: MushafReaderProps) {
               <span>{surah.revelationOrder}</span>
             </div>
             <div className="info-row">
-              <span>Аятов</span>
+              <span>{t("ayat_count")}</span>
               <span>{surah.versesCount}</span>
             </div>
           </div>
@@ -486,7 +490,7 @@ function MushafReaderInner(props: MushafReaderProps) {
                     href={`#ayah-${a.verseNumber}`}
                     style={{ display: "flex", justifyContent: "space-between", fontSize: 13 }}
                   >
-                    <span>Аят {a.verseNumber}</span>
+                    <span>{t("ayah")} {a.verseNumber}</span>
                     <span style={{ color: "var(--text-3)", fontSize: 11, fontFamily: "JetBrains Mono, monospace" }}>
                       {a.ayahKey}
                     </span>
@@ -529,7 +533,7 @@ function MushafReaderInner(props: MushafReaderProps) {
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
               <path d="M8 5v14l11-7z" />
             </svg>
-            Слушать
+            {t("pop_listen")}
           </button>
           <button
             className={"pop-btn" + (activeAyahData.isBookmarked ? " bookmarked" : "")}
@@ -546,7 +550,7 @@ function MushafReaderInner(props: MushafReaderProps) {
             >
               <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
             </svg>
-            {activeAyahData.isBookmarked ? "Сохранено" : "Закладка"}
+            {activeAyahData.isBookmarked ? t("pop_saved") : t("pop_bookmark")}
           </button>
           <button className="pop-btn" onClick={() => shareAyah(activeAyahData.ayahKey)} type="button">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -555,7 +559,7 @@ function MushafReaderInner(props: MushafReaderProps) {
               <circle cx="18" cy="19" r="3" />
               <path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98" />
             </svg>
-            Поделиться
+            {t("pop_share")}
           </button>
           <span style={{ width: 1, background: "var(--border)", margin: "4px 4px" }} />
           <button
