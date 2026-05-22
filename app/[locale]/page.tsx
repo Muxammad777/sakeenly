@@ -20,6 +20,7 @@ function HomeContent() {
   const tCont = useTranslations("cont");
   const tFeat = useTranslations("feat");
   const tEmo = useTranslations("emo");
+  const tEmo30 = useTranslations("emo30");
   const tTrust = useTranslations("trust");
   const tClose = useTranslations("close");
 
@@ -179,8 +180,8 @@ function HomeContent() {
             <div className="pic">
               <div className="pic-content" style={{ alignItems: "flex-start", justifyContent: "flex-end", padding: 14, display: "flex", flexDirection: "column", width: "100%", height: "100%", boxSizing: "border-box" }}>
                 <div className="pic-chat" style={{ width: "100%" }}>
-                  <div className="b">«О чём аят Аль-Курси?»</div>
-                  <div className="b right">Аят 2:255 — об абсолютном Существовании Аллаха… [Quran 2:255]</div>
+                  <div className="b">{tEmo("chat_q")}</div>
+                  <div className="b right">{tEmo("chat_a")}</div>
                 </div>
               </div>
             </div>
@@ -196,21 +197,27 @@ function HomeContent() {
         </div>
         <div className="emotion-grid">
           {[
-            { ru: "Для тревоги", ar: "القلق", ct: "5 АЯТОВ · АУДИО", href: "/ayat/dlya-trevogi" },
-            { ru: "Для сабра", ar: "الصبر", ct: "6 АЯТОВ · АУДИО", href: "/ayat/dlya-sabra" },
-            { ru: "Благодарность", ar: "الشكر", ct: "4 АЯТА · АУДИО", href: "/ayat/dlya-blagodarnosti" },
-            { ru: "Перед экзаменом", ar: "قبل الامتحان", ct: "3 АЯТА · ДУА", href: "/ayat/pered-ekzamenom" },
-            { ru: "Одиночество", ar: "الوحدة", ct: "4 АЯТА · АУДИО", href: "/ayat/dlya-odinochestva" },
-            { ru: "При утрате", ar: "الفقد", ct: "5 АЯТОВ · АУДИО", href: "/ayat/pri-poteryah" },
-            { ru: "Прощение", ar: "المغفرة", ct: "6 АЯТОВ · АУДИО", href: "/ayat/dlya-pokayaniya" },
-            { ru: "Перед сном", ar: "قبل النوم", ct: "3 АЯТА · АУДИО", href: "/ayat/pered-snom" },
-          ].map((e) => (
-            <Link key={e.href} className="emotion" href={e.href}>
-              <span className="ru">{e.ru}</span>
-              <span className="ar">{e.ar}</span>
-              <span className="ct">{e.ct}</span>
-            </Link>
-          ))}
+            { slug: "dlya-trevogi",        ar: "القلق",         n: 5, kind: "audio" as const, href: "/ayat/dlya-trevogi" },
+            { slug: "dlya-sabra",          ar: "الصبر",         n: 6, kind: "audio" as const, href: "/ayat/dlya-sabra" },
+            { slug: "dlya-blagodarnosti",  ar: "الشكر",         n: 4, kind: "audio" as const, href: "/ayat/dlya-blagodarnosti" },
+            { slug: "pered-ekzamenom",     ar: "قبل الامتحان",  n: 3, kind: "dua"   as const, href: "/ayat/pered-ekzamenom" },
+            { slug: "dlya-odinochestva",   ar: "الوحدة",        n: 4, kind: "audio" as const, href: "/ayat/dlya-odinochestva" },
+            { slug: "pri-poteryah",        ar: "الفقد",         n: 5, kind: "audio" as const, href: "/ayat/pri-poteryah" },
+            { slug: "dlya-pokayaniya",     ar: "المغفرة",       n: 6, kind: "audio" as const, href: "/ayat/dlya-pokayaniya" },
+            { slug: "pered-snom",          ar: "قبل النوم",     n: 3, kind: "audio" as const, href: "/ayat/pered-snom" },
+          ].map((e) => {
+            let title = e.slug;
+            try { title = tEmo30(e.slug); } catch { /* fallback to slug */ }
+            return (
+              <Link key={e.href} className="emotion" href={e.href}>
+                <span className="ru">{title}</span>
+                <span className="ar">{e.ar}</span>
+                <span className="ct">
+                  {tEmo("ct_count", { n: e.n })} · {e.kind === "dua" ? tEmo("ct_dua") : tEmo("ct_audio")}
+                </span>
+              </Link>
+            );
+          })}
         </div>
       </Reveal>
 

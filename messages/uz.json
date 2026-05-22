@@ -221,7 +221,12 @@
   },
   "emo": {
     "all": "Barcha mavzular →",
-    "heading": "Hayot qiyin boʻlganda Kitobni oching."
+    "heading": "Hayot qiyin boʻlganda Kitobni oching.",
+    "ct_audio": "AUDIO",
+    "ct_dua": "DUO",
+    "ct_count": "{n} OYAT",
+    "chat_q": "«Oyatul-Kursi haqida nima?»",
+    "chat_a": "2:255 oyat — Allohning mutlaq mavjudligi haqida… [Qurʼon 2:255]"
   },
   "feat": {
     "eyebrow": "Ichida nima bor",
