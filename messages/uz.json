@@ -326,7 +326,7 @@
       "t": "Oʻqish"
     },
     "k3": {
-      "d": "Qorilar · filtr · Now playing · sleep-taymer",
+      "d": "Qorilar · filtr · Hozir oʻynaydi · uxlash taymeri",
       "t": "Tinglash"
     },
     "k4": {
@@ -626,7 +626,7 @@
         "lds": "Light · Dark · Sepia",
         "mushaf": "Mushaf-paper mavzu",
         "off": "Oflayn rejim",
-        "sleep": "Sleep-taymer · tezlik 0.5×–2×",
+        "sleep": "Uxlash taymeri · tezlik 0.5×–2×",
         "tafsir": "Kengaytirilgan tafsirlar"
       },
       "s1": "Oʻqish va audio",
@@ -674,7 +674,7 @@
       "f2": "Barcha mavzu, jumladan Mushaf-paper",
       "f3": "Kengaytirilgan tafsirlar (Ibn Kasir, Qurtubiy)",
       "f4": "Oflayn rejim: 10 sura",
-      "f5": "Sleep-taymer, tezlik 0.5×–2×",
+      "f5": "Uxlash taymeri, tezlik 0.5×–2×",
       "f6": "Ustuvor qoʻllab-quvvatlash",
       "hint": "Oylik toʻlovda yiliga $59.88",
       "lbl": "Bepuldan hammasi, qoʻshimcha",
