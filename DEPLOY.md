@@ -130,7 +130,7 @@ UPDATE "User" SET role = 'admin' WHERE email = 'you@example.com';
 ## 7. Post-deploy checklist
 
 - [ ] `/` главная грузится и переключаются темы
-- [ ] `/reader/1/1` рендерит Аль-Фатиху и Mishari играет
+- [ ] `/reader/1/1` рендерит Аль-Фатиху и Abdul-Basit играет
 - [ ] `/signin` принимает Google и шлёт magic-link
 - [ ] `/ayat` показывает 30 подборок; каждая `/ayat/<slug>` отдаёт SEO-meta
 - [ ] `/ask` принимает вопрос, фатва-shape → refusal; обычный → ответ с цитатами
