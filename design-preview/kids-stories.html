@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sakeenly · Истории пророков</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Scheherazade+New:wght@400;500;700&display=swap" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+  .kid-hero { padding: 56px 0 20px; position: relative; overflow: hidden; text-align: center; }
+  .kid-hero .geo-stars-fade { z-index: -1; }
+  .kid-hero h1 { font-weight: 300; max-width: 22ch; margin: 14px auto 0; }
+  .kid-hero p { color: var(--text-2); max-width: 56ch; margin: 14px auto 0; }
+
+  .kid-adab {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-top: 22px;
+    padding: 6px 14px;
+    background: var(--accent-soft); color: var(--accent);
+    border-radius: 999px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em;
+  }
+
+  .stories { margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  @media (max-width: 980px) { .stories { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .stories { grid-template-columns: 1fr; } }
+
+  .story {
+    padding: 22px; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 18px;
+    display: flex; flex-direction: column; gap: 12px;
+    transition: border-color 200ms, transform 200ms;
+    position: relative; overflow: hidden;
+  }
+  .story:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .story-illust {
+    width: 100%; height: 96px;
+    border-radius: 12px;
+    background:
+      radial-gradient(80% 80% at 50% 30%, var(--accent-soft) 0, transparent 70%),
+      var(--surface-2);
+    border: 1px solid var(--border);
+    display: grid; place-items: center;
+    color: var(--accent);
+    position: relative; overflow: hidden;
+  }
+  .story-illust .geo-stars-soft { opacity: 0.18; }
+  .story-name { font-family: 'Spectral', serif; font-size: 1.25rem; }
+  .story-ar { font-family: 'Scheherazade New', serif; font-size: 1.1rem; color: var(--text-3); direction: rtl; }
+  .story-meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-3); letter-spacing: 0.08em; margin-top: auto; }
+  .story-cta { color: var(--accent); font-size: 13px; margin-top: 8px; }
+</style>
+</head>
+<body data-screen-label="Kids · Stories">
+
+<div id="nav-root" data-active="kids.html"></div>
+
+<section class="wrap kid-hero">
+  <div class="geo-stars-fade"></div>
+  <span class="tag"><span class="tag-dot"></span><span data-i18n="kst.badge">25 пророков · текст + аудио</span></span>
+  <h1 data-i18n="kst.h1">Истории пророков, мир им.</h1>
+  <p data-i18n="kst.lede">Каждая история — короткий текст для родителя, чтобы прочесть ребёнку, и спокойное аудио на 5-8 минут.</p>
+  <div class="kid-adab">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    <span data-i18n="kst.adab">Без изображений людей и Каабы · следуем адабу</span>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="stories">
+    <a class="story" href="#">
+      <div class="story-illust"><div class="geo-stars-soft"></div>
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2 L14.2 9.8 L22 12 L14.2 14.2 L12 22 L9.8 14.2 L2 12 L9.8 9.8 Z"/></svg>
+      </div>
+      <div class="story-name">Пророк Адам ﷺ</div>
+      <div class="story-ar" dir="rtl">آدم عليه السلام</div>
+      <div class="story-meta">7 МИН · ПЕРВЫЙ ЧЕЛОВЕК</div>
+      <span class="story-cta">Слушать →</span>
+    </a>
+    <a class="story" href="#">
+      <div class="story-illust"><div class="geo-stars-soft"></div>
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 12c4-4 14-4 18 0v6H3z"/><path d="M7 18v3M17 18v3"/></svg>
+      </div>
+      <div class="story-name">Пророк Нух ﷺ</div>
+      <div class="story-ar" dir="rtl">نوح عليه السلام</div>
+      <div class="story-meta">8 МИН · КОВЧЕГ</div>
+      <span class="story-cta">Слушать →</span>
+    </a>
+    <a class="story" href="#">
+      <div class="story-illust"><div class="geo-stars-soft"></div>
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2 L20 8 L20 16 L12 22 L4 16 L4 8 Z"/></svg>
+      </div>
+      <div class="story-name">Пророк Ибрахим ﷺ</div>
+      <div class="story-ar" dir="rtl">إبراهيم عليه السلام</div>
+      <div class="story-meta">9 МИН · ХАЛИЛЬ-АЛЛАХ</div>
+      <span class="story-cta">Слушать →</span>
+    </a>
+    <a class="story" href="#">
+      <div class="story-illust"><div class="geo-stars-soft"></div>
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg>
+      </div>
+      <div class="story-name">Пророк Юсуф ﷺ</div>
+      <div class="story-ar" dir="rtl">يوسف عليه السلام</div>
+      <div class="story-meta">12 МИН · СОН О ЗВЁЗДАХ</div>
+      <span class="story-cta">Слушать →</span>
+    </a>
+    <a class="story" href="#">
+      <div class="story-illust"><div class="geo-stars-soft"></div>
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 12 L9 8 L9 16 Z"/><path d="M15 8 L21 12 L15 16 Z"/></svg>
+      </div>
+      <div class="story-name">Пророк Муса ﷺ</div>
+      <div class="story-ar" dir="rtl">موسى عليه السلام</div>
+      <div class="story-meta">14 МИН · РАЗДЕЛЕНИЕ МОРЯ</div>
+      <span class="story-cta">Слушать →</span>
+    </a>
+    <a class="story" href="#">
+      <div class="story-illust"><div class="geo-stars-soft"></div>
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+      </div>
+      <div class="story-name">Пророк Аййюб ﷺ</div>
+      <div class="story-ar" dir="rtl">أيوب عليه السلام</div>
+      <div class="story-meta">7 МИН · ТЕРПЕНИЕ</div>
+      <span class="story-cta">Слушать →</span>
+    </a>
+    <a class="story" href="#">
+      <div class="story-illust"><div class="geo-stars-soft"></div>
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M5 10 L19 10 L17 18 L7 18 Z"/><path d="M9 10 L11 4 M13 4 L15 10"/></svg>
+      </div>
+      <div class="story-name">Пророк Юнус ﷺ</div>
+      <div class="story-ar" dir="rtl">يونس عليه السلام</div>
+      <div class="story-meta">8 МИН · КИТ</div>
+      <span class="story-cta">Слушать →</span>
+    </a>
+    <a class="story" href="#">
+      <div class="story-illust"><div class="geo-stars-soft"></div>
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 10 L12 4 L18 10 L18 20 L6 20 Z"/></svg>
+      </div>
+      <div class="story-name">Пророк Сулейман ﷺ</div>
+      <div class="story-ar" dir="rtl">سليمان عليه السلام</div>
+      <div class="story-meta">11 МИН · ЦАРСТВО ВЕТРА</div>
+      <span class="story-cta">Слушать →</span>
+    </a>
+    <a class="story" href="#">
+      <div class="story-illust"><div class="geo-stars-soft"></div>
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="9" r="5"/><path d="M5 22c0-5 3-8 7-8s7 3 7 8"/></svg>
+      </div>
+      <div class="story-name">Пророк Иса ﷺ</div>
+      <div class="story-ar" dir="rtl">عيسى عليه السلام</div>
+      <div class="story-meta">10 МИН · ОДНО СЛОВО АЛЛАХА</div>
+      <span class="story-cta">Слушать →</span>
+    </a>
+  </div>
+  <p style="margin-top: 30px; color: var(--text-3); text-align: center; font-size: 13px;">+ ещё 16 пророков · Худ · Салих · Лут · Шуайб · Идрис · Закария · Яхья и другие.</p>
+</section>
+
+<div id="footer-root"></div>
+<script src="i18n-data.js"></script>
+<script>
+  // Auto-tag prophet stories: .story-name, .story-meta, .story-cta
+  document.querySelectorAll('.stories .story').forEach((card, i) => {
+    const n = i + 1;
+    const name = card.querySelector('.story-name');
+    const meta = card.querySelector('.story-meta');
+    const cta = card.querySelector('.story-cta');
+    if (name) name.setAttribute('data-i18n', `kst.p${n}.name`);
+    if (meta) meta.setAttribute('data-i18n', `kst.p${n}.meta`);
+    if (cta) cta.setAttribute('data-i18n', 'kst.cta');
+  });
+  // Footer note "+ ещё 16 пророков"
+  document.querySelectorAll('.stories + p').forEach((p) => p.setAttribute('data-i18n', 'kst.more'));
+</script>
+<script src="shared.js"></script>
+</body>
+</html>

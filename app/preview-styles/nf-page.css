@@ -1,0 +1,24 @@
+/* Page-specific styles extracted from 404.html */
+
+.nf-wrap {
+    min-height: calc(100vh - 80px);
+    display: grid; place-items: center;
+    padding: 80px 28px;
+    position: relative; overflow: hidden;
+  }
+  .nf-wrap .geo-stars-fade { z-index: -1; }
+  .nf-inner { text-align: center; max-width: 540px; }
+  .nf-arabic {
+    font-family: 'Scheherazade New', serif;
+    font-size: clamp(5rem, 14vw, 9rem);
+    color: oklch(var(--accent));
+    line-height: 1; direction: rtl;
+  }
+  .nf-code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.18em;
+    color: oklch(var(--text-3)); margin-top: 12px;
+  }
+  .nf-inner h1 { font-weight: 300; margin-top: 28px; }
+  .nf-inner p { color: oklch(var(--text-2)); font-family: 'Spectral', serif; font-size: 1.2rem; font-style: italic; line-height: 1.6; margin-top: 18px; max-width: 40ch; margin-left: auto; margin-right: auto; }
+  .nf-row { margin-top: 32px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }

@@ -1,0 +1,47 @@
+/* Page-specific styles extracted from kids-alphabet.html */
+
+.kid-hero { padding: 56px 0 20px; position: relative; overflow: hidden; text-align: center; }
+  .kid-hero .geo-stars-fade { z-index: -1; }
+  .kid-hero h1 { font-weight: 300; max-width: 18ch; margin: 14px auto 0; }
+  .kid-hero p { color: oklch(var(--text-2)); max-width: 50ch; margin: 14px auto 0; }
+
+  .iqra-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); gap: 12px;
+    margin-top: 40px;
+  }
+  @media (max-width: 900px) { .iqra-grid { grid-template-columns: repeat(4, 1fr); } }
+  @media (max-width: 540px) { .iqra-grid { grid-template-columns: repeat(3, 1fr); } }
+  .letter {
+    aspect-ratio: 1;
+    background: oklch(var(--surface));
+    border: 1px solid oklch(var(--border));
+    border-radius: 16px;
+    padding: 14px 8px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: border-color 200ms, transform 200ms, background 200ms;
+  }
+  .letter:hover {
+    border-color: oklch(var(--accent));
+    transform: translateY(-3px);
+    background: linear-gradient(180deg, var(--accent-soft) 0, transparent 80%), oklch(var(--surface));
+  }
+  .letter-glyph {
+    font-family: 'Scheherazade New', serif;
+    font-size: 2.6rem; line-height: 1;
+    color: oklch(var(--text));
+  }
+  .letter:hover .letter-glyph { color: oklch(var(--accent)); }
+  .letter-name { font-family: 'Spectral', serif; font-size: 0.95rem; color: oklch(var(--text-2)); }
+  .letter-tr { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: oklch(var(--text-3)); letter-spacing: 0.1em; }
+
+  .legend {
+    margin-top: 36px; padding: 22px 26px;
+    background: oklch(var(--surface)); border: 1px solid oklch(var(--border)); border-radius: 16px;
+    display: flex; align-items: center; gap: 18px;
+    flex-wrap: wrap; color: oklch(var(--text-2)); font-size: 14px;
+  }
+  .legend strong { color: oklch(var(--text)); font-weight: 500; }
+  .legend svg { color: oklch(var(--accent)); flex-shrink: 0; }

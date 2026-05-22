@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sakeenly · Первые суры</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Scheherazade+New:wght@400;500;700&display=swap" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+  .kid-hero { padding: 56px 0 20px; position: relative; overflow: hidden; text-align: center; }
+  .kid-hero .geo-stars-fade { z-index: -1; }
+  .kid-hero h1 { font-weight: 300; max-width: 22ch; margin: 14px auto 0; }
+  .kid-hero p { color: var(--text-2); max-width: 56ch; margin: 14px auto 0; }
+
+  .ks-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 36px; }
+  @media (max-width: 800px) { .ks-grid { grid-template-columns: 1fr; } }
+
+  .ks {
+    padding: 26px 28px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 20px;
+    display: flex; flex-direction: column; gap: 14px;
+    transition: border-color 200ms, transform 200ms;
+    position: relative; overflow: hidden;
+  }
+  .ks:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .ks-head {
+    display: flex; align-items: center; gap: 14px;
+  }
+  .ks-num {
+    width: 48px; height: 48px;
+    border-radius: 14px;
+    background: var(--accent-soft); color: var(--accent);
+    display: grid; place-items: center;
+    font-family: 'Spectral', serif; font-size: 1.4rem;
+    flex-shrink: 0;
+    border: 1px solid color-mix(in oklab, var(--accent) 30%, transparent);
+  }
+  .ks-title { flex: 1; }
+  .ks-title .name { font-family: 'Spectral', serif; font-size: 1.4rem; }
+  .ks-title .meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-3); letter-spacing: 0.08em; margin-top: 4px; }
+  .ks-ar { font-family: 'Scheherazade New', serif; font-size: 2rem; color: var(--accent); direction: rtl; }
+  .ks-note { color: var(--text-2); font-size: 14px; line-height: 1.55; }
+
+  .ks-progress {
+    display: flex; gap: 3px; height: 4px;
+    margin-top: 8px;
+  }
+  .ks-progress .b {
+    flex: 1; background: var(--surface-2); border-radius: 999px;
+  }
+  .ks-progress .b.done { background: var(--accent); }
+  .ks-foot {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 6px;
+  }
+  .ks-foot .label { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-3); letter-spacing: 0.1em; }
+  .ks-play {
+    width: 38px; height: 38px;
+    border-radius: 999px;
+    background: var(--bg); border: 1px solid var(--border-strong);
+    color: var(--text);
+    display: grid; place-items: center;
+  }
+  .ks:hover .ks-play { background: var(--accent); color: oklch(0.15 0.02 60); border-color: transparent; }
+</style>
+</head>
+<body data-screen-label="Kids · Surahs">
+
+<div id="nav-root" data-active="kids.html"></div>
+
+<section class="wrap kid-hero">
+  <div class="geo-stars-fade"></div>
+  <span class="tag"><span class="tag-dot"></span><span data-i18n="ks.badge">Заучивание · парент-дашборд</span></span>
+  <h1 data-i18n="ks.h1">Первые суры, с которых начинается hifz.</h1>
+  <p data-i18n="ks.lede">Аль-Фатиха, и четыре короткие суры в конце Книги — то, что традиционно учат первым. Слушаем, повторяем, отмечаем прогресс по аяту.</p>
+</section>
+
+<section class="wrap">
+  <div class="ks-grid">
+    <a class="ks" href="reader.html">
+      <div class="ks-head">
+        <div class="ks-num">1</div>
+        <div class="ks-title">
+          <div class="name">Аль-Фатиха</div>
+          <div class="meta">ОТКРЫВАЮЩАЯ · 7 аятов</div>
+        </div>
+        <div class="ks-ar" dir="rtl">الفاتحة</div>
+      </div>
+      <div class="ks-note">Читается в каждом ракяте намаза. Семь повторяемых аятов.</div>
+      <div class="ks-progress">
+        <div class="b done"></div><div class="b done"></div><div class="b done"></div><div class="b done"></div><div class="b done"></div><div class="b"></div><div class="b"></div>
+      </div>
+      <div class="ks-foot">
+        <span class="label">5 / 7 аятов · 71%</span>
+        <button class="ks-play"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+    </a>
+    <a class="ks" href="reader.html">
+      <div class="ks-head">
+        <div class="ks-num">114</div>
+        <div class="ks-title">
+          <div class="name">Ан-Нас</div>
+          <div class="meta">ЛЮДИ · 6 аятов</div>
+        </div>
+        <div class="ks-ar" dir="rtl">الناس</div>
+      </div>
+      <div class="ks-note">Прибегаем к Господу людей — от наущений шайтанов.</div>
+      <div class="ks-progress">
+        <div class="b done"></div><div class="b done"></div><div class="b done"></div><div class="b"></div><div class="b"></div><div class="b"></div>
+      </div>
+      <div class="ks-foot">
+        <span class="label">3 / 6 аятов · 50%</span>
+        <button class="ks-play"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+    </a>
+    <a class="ks" href="reader.html">
+      <div class="ks-head">
+        <div class="ks-num">113</div>
+        <div class="ks-title">
+          <div class="name">Аль-Фаляк</div>
+          <div class="meta">РАССВЕТ · 5 аятов</div>
+        </div>
+        <div class="ks-ar" dir="rtl">الفلق</div>
+      </div>
+      <div class="ks-note">Прибегаем к Господу рассвета — от зла того, что Он сотворил.</div>
+      <div class="ks-progress">
+        <div class="b done"></div><div class="b done"></div><div class="b"></div><div class="b"></div><div class="b"></div>
+      </div>
+      <div class="ks-foot">
+        <span class="label">2 / 5 аятов · 40%</span>
+        <button class="ks-play"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+    </a>
+    <a class="ks" href="reader.html">
+      <div class="ks-head">
+        <div class="ks-num">112</div>
+        <div class="ks-title">
+          <div class="name">Аль-Ихляс</div>
+          <div class="meta">ИСКРЕННОСТЬ · 4 аята</div>
+        </div>
+        <div class="ks-ar" dir="rtl">الإخلاص</div>
+      </div>
+      <div class="ks-note">Треть Корана по смыслу — единобожие в четырёх аятах.</div>
+      <div class="ks-progress">
+        <div class="b done"></div><div class="b done"></div><div class="b done"></div><div class="b done"></div>
+      </div>
+      <div class="ks-foot">
+        <span class="label">4 / 4 аята · 100% ✓</span>
+        <button class="ks-play"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+    </a>
+    <a class="ks" href="reader.html">
+      <div class="ks-head">
+        <div class="ks-num">108</div>
+        <div class="ks-title">
+          <div class="name">Аль-Каусар</div>
+          <div class="meta">ИЗОБИЛИЕ · 3 аята</div>
+        </div>
+        <div class="ks-ar" dir="rtl">الكوثر</div>
+      </div>
+      <div class="ks-note">Самая короткая сура Корана — три коротких аята.</div>
+      <div class="ks-progress">
+        <div class="b done"></div><div class="b done"></div><div class="b done"></div>
+      </div>
+      <div class="ks-foot">
+        <span class="label">3 / 3 аята · 100% ✓</span>
+        <button class="ks-play"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+    </a>
+    <a class="ks" href="reader.html">
+      <div class="ks-head">
+        <div class="ks-num">109</div>
+        <div class="ks-title">
+          <div class="name">Аль-Кафирун</div>
+          <div class="meta">НЕВЕРУЮЩИЕ · 6 аятов</div>
+        </div>
+        <div class="ks-ar" dir="rtl">الكافرون</div>
+      </div>
+      <div class="ks-note">«У вас — ваша вера, у меня — моя».</div>
+      <div class="ks-progress">
+        <div class="b"></div><div class="b"></div><div class="b"></div><div class="b"></div><div class="b"></div><div class="b"></div>
+      </div>
+      <div class="ks-foot">
+        <span class="label">0 / 6 аятов · ещё не начинали</span>
+        <button class="ks-play"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+    </a>
+  </div>
+</section>
+
+<div id="footer-root"></div>
+<script src="i18n-data.js"></script>
+<script>
+  // Auto-tag each surah card: .meta, .ks-note, .ks-foot .label
+  document.querySelectorAll('.ks-grid .ks').forEach((card, i) => {
+    const n = i + 1;
+    const meta = card.querySelector('.meta');
+    const note = card.querySelector('.ks-note');
+    const label = card.querySelector('.ks-foot .label');
+    if (meta) meta.setAttribute('data-i18n', `ks.s${n}.meta`);
+    if (note) note.setAttribute('data-i18n', `ks.s${n}.note`);
+    if (label) label.setAttribute('data-i18n', `ks.s${n}.label`);
+  });
+</script>
+<script src="shared.js"></script>
+</body>
+</html>

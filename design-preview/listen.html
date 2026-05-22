@@ -1,0 +1,1171 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sakeenly · Слушать чтецов</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Scheherazade+New:wght@400;500;700&display=swap" />
+<style>
+/* Sakeenly — shared styles */
+
+/* ============ THEME TOKENS ============ */
+:root,
+[data-theme="dark"] {
+  /* night-sky (default) */
+  --bg: oklch(0.17 0.025 255);
+  --bg-deep: oklch(0.13 0.022 255);
+  --surface: oklch(0.21 0.024 255);
+  --surface-2: oklch(0.25 0.022 255);
+  --border: oklch(0.32 0.020 255);
+  --border-strong: oklch(0.42 0.022 255);
+  --text: oklch(0.95 0.006 90);
+  --text-2: oklch(0.78 0.012 90);
+  --text-3: oklch(0.60 0.018 250);
+  --accent: oklch(0.80 0.130 85);     /* warm gold */
+  --accent-2: oklch(0.65 0.115 78);
+  --accent-soft: oklch(0.80 0.130 85 / 0.14);
+  --pattern: oklch(0.95 0.010 90 / 0.04);
+  --pattern-strong: oklch(0.80 0.130 85 / 0.12);
+  --glow: radial-gradient(60% 80% at 50% 0%, oklch(0.80 0.130 85 / 0.08), transparent 70%);
+  --shadow-1: 0 1px 0 oklch(1 0 0 / 0.04) inset, 0 8px 24px -12px oklch(0 0 0 / 0.4);
+  --shadow-2: 0 12px 40px -16px oklch(0 0 0 / 0.6);
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --bg: oklch(0.985 0.004 90);
+  --bg-deep: oklch(0.965 0.006 90);
+  --surface: oklch(1 0 0);
+  --surface-2: oklch(0.975 0.005 90);
+  --border: oklch(0.90 0.008 90);
+  --border-strong: oklch(0.82 0.012 90);
+  --text: oklch(0.18 0.015 255);
+  --text-2: oklch(0.40 0.015 255);
+  --text-3: oklch(0.55 0.015 255);
+  --accent: oklch(0.52 0.130 78);
+  --accent-2: oklch(0.42 0.115 75);
+  --accent-soft: oklch(0.52 0.130 78 / 0.12);
+  --pattern: oklch(0.18 0.015 255 / 0.05);
+  --pattern-strong: oklch(0.52 0.130 78 / 0.16);
+  --glow: radial-gradient(60% 80% at 50% 0%, oklch(0.52 0.130 78 / 0.06), transparent 70%);
+  --shadow-1: 0 1px 0 oklch(1 0 0 / 0.6) inset, 0 8px 24px -16px oklch(0 0 0 / 0.18);
+  --shadow-2: 0 12px 40px -20px oklch(0 0 0 / 0.18);
+  color-scheme: light;
+}
+
+[data-theme="sepia"] {
+  --bg: oklch(0.94 0.025 85);
+  --bg-deep: oklch(0.92 0.028 85);
+  --surface: oklch(0.96 0.020 85);
+  --surface-2: oklch(0.93 0.025 85);
+  --border: oklch(0.85 0.030 78);
+  --border-strong: oklch(0.74 0.040 75);
+  --text: oklch(0.28 0.035 60);
+  --text-2: oklch(0.42 0.035 60);
+  --text-3: oklch(0.55 0.030 65);
+  --accent: oklch(0.45 0.110 60);
+  --accent-2: oklch(0.38 0.100 55);
+  --accent-soft: oklch(0.45 0.110 60 / 0.12);
+  --pattern: oklch(0.28 0.035 60 / 0.06);
+  --pattern-strong: oklch(0.45 0.110 60 / 0.18);
+  --glow: radial-gradient(60% 80% at 50% 0%, oklch(0.55 0.110 70 / 0.10), transparent 70%);
+  --shadow-1: 0 1px 0 oklch(1 0 0 / 0.4) inset, 0 8px 24px -16px oklch(0.3 0.05 60 / 0.18);
+  --shadow-2: 0 12px 40px -20px oklch(0.3 0.05 60 / 0.22);
+  color-scheme: light;
+}
+
+[data-theme="mushaf"] {
+  --bg: oklch(0.91 0.035 88);
+  --bg-deep: oklch(0.88 0.040 88);
+  --surface: oklch(0.94 0.030 88);
+  --surface-2: oklch(0.90 0.035 88);
+  --border: oklch(0.78 0.045 78);
+  --border-strong: oklch(0.65 0.055 72);
+  --text: oklch(0.24 0.040 55);
+  --text-2: oklch(0.38 0.040 55);
+  --text-3: oklch(0.52 0.040 60);
+  --accent: oklch(0.42 0.120 55);
+  --accent-2: oklch(0.34 0.105 50);
+  --accent-soft: oklch(0.42 0.120 55 / 0.14);
+  --pattern: oklch(0.24 0.040 55 / 0.08);
+  --pattern-strong: oklch(0.42 0.120 55 / 0.20);
+  --glow: radial-gradient(60% 80% at 50% 0%, oklch(0.50 0.130 65 / 0.12), transparent 70%);
+  --shadow-1: 0 1px 0 oklch(1 0 0 / 0.4) inset, 0 8px 24px -16px oklch(0.3 0.05 60 / 0.22);
+  --shadow-2: 0 12px 40px -20px oklch(0.3 0.05 60 / 0.26);
+  color-scheme: light;
+}
+
+/* ============ RESET ============ */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Golos Text', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 220ms ease, color 220ms ease;
+  text-rendering: optimizeLegibility;
+}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+img, svg { display: block; max-width: 100%; }
+
+/* ============ TYPOGRAPHY ============ */
+.serif { font-family: 'Spectral', 'Source Serif 4', Georgia, serif; font-weight: 400; letter-spacing: -0.01em; }
+.mono  { font-family: 'JetBrains Mono', ui-monospace, monospace; letter-spacing: 0; }
+.arabic {
+  font-family: 'Scheherazade New', 'Amiri Quran', 'Amiri', 'Noto Naskh Arabic', serif;
+  direction: rtl;
+  font-feature-settings: "calt", "liga", "ss01";
+  line-height: 2.1;
+}
+
+h1, h2, h3 { font-family: 'Spectral', Georgia, serif; font-weight: 400; letter-spacing: -0.015em; margin: 0; }
+h1 { font-size: clamp(2.4rem, 4.6vw, 4.2rem); line-height: 1.05; }
+h2 { font-size: clamp(1.8rem, 2.6vw, 2.4rem); line-height: 1.15; }
+h3 { font-size: 1.25rem; line-height: 1.3; }
+p  { margin: 0; }
+
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+/* ============ LAYOUT ============ */
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+.wrap-tight { max-width: 880px; margin: 0 auto; padding: 0 28px; }
+
+/* ============ NAV ============ */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  background: color-mix(in oklab, var(--bg) 78%, transparent);
+  border-bottom: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+}
+.nav-inner {
+  max-width: 1240px; margin: 0 auto;
+  padding: 14px 28px;
+  display: flex; align-items: center; gap: 28px;
+}
+.brand {
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'Spectral', serif; font-size: 19px; letter-spacing: -0.01em;
+}
+.brand-mark {
+  width: 26px; height: 26px;
+  display: grid; place-items: center;
+  color: var(--accent);
+}
+.nav-links {
+  display: flex; gap: 4px;
+  margin-left: 8px;
+}
+.nav-links a {
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  color: var(--text-2);
+  transition: background 160ms, color 160ms;
+}
+.nav-links a:hover { color: var(--text); background: var(--surface); }
+.nav-links a.active { color: var(--text); background: var(--surface); }
+.nav-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+
+/* theme switcher */
+.theme-switch {
+  display: inline-flex; align-items: center; gap: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 3px;
+}
+.theme-switch button {
+  width: 28px; height: 28px;
+  border-radius: 999px;
+  display: grid; place-items: center;
+  color: var(--text-3);
+  transition: background 160ms, color 160ms;
+}
+.theme-switch button:hover { color: var(--text); }
+.theme-switch button[aria-pressed="true"] {
+  background: var(--bg);
+  color: var(--accent);
+  box-shadow: var(--shadow-1);
+}
+
+/* ============ BUTTONS ============ */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 18px;
+  border-radius: 999px;
+  font-size: 14px; font-weight: 500;
+  transition: transform 100ms ease, background 160ms, border-color 160ms, color 160ms;
+  white-space: nowrap;
+}
+.btn:active { transform: translateY(1px); }
+.btn-primary {
+  background: var(--accent);
+  color: oklch(0.16 0.02 60);
+  border: 1px solid color-mix(in oklab, var(--accent) 70%, black 12%);
+}
+.btn-primary:hover { background: color-mix(in oklab, var(--accent) 92%, white 8%); }
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+}
+.btn-ghost:hover { background: var(--surface); }
+.btn-soft {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn-soft:hover { background: var(--surface-2); }
+.btn-sm { padding: 7px 12px; font-size: 13px; }
+
+/* ============ CARD ============ */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: var(--shadow-1);
+}
+.card-flat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+/* ============ GEOMETRIC PATTERN BG ============ */
+/* Original 8-point-star tessellation, drawn with CSS conic gradients */
+.geo-bg {
+  position: absolute; inset: 0;
+  background-image:
+    /* lattice */
+    repeating-linear-gradient(45deg,
+      var(--pattern) 0 1px, transparent 1px 22px),
+    repeating-linear-gradient(-45deg,
+      var(--pattern) 0 1px, transparent 1px 22px);
+  mask-image: radial-gradient(circle at 50% 30%, black 0, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle at 50% 30%, black 0, transparent 70%);
+  pointer-events: none;
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  margin-top: 120px;
+  border-top: 1px solid var(--border);
+  padding: 56px 0 40px;
+  color: var(--text-3);
+  font-size: 14px;
+}
+.footer-inner {
+  max-width: 1240px; margin: 0 auto; padding: 0 28px;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+}
+.footer h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 14px; font-weight: 500;
+}
+.footer-col a { display: block; padding: 4px 0; color: var(--text-2); }
+.footer-col a:hover { color: var(--text); }
+.footer-bottom {
+  max-width: 1240px; margin: 32px auto 0; padding: 24px 28px 0;
+  border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between; font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-3);
+}
+@media (max-width: 760px) {
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .footer-bottom { flex-direction: column; gap: 8px; }
+}
+
+/* ============ UTIL ============ */
+.divider { height: 1px; background: var(--border); margin: 40px 0; }
+.kbd {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  padding: 2px 6px;
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text-2);
+}
+.tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
+}
+.tag-dot { width: 6px; height: 6px; border-radius: 999px; background: currentColor; }
+
+/* scroll bar subtle */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 999px; border: 2px solid var(--bg); }
+::-webkit-scrollbar-track { background: transparent; }
+
+</style>
+<script>
+// Sakeenly — theme switcher (persists in localStorage)
+(function () {
+  const THEMES = ['dark', 'light', 'sepia', 'mushaf'];
+  const KEY = 'sakeenly:theme';
+
+  function apply(t) {
+    if (!THEMES.includes(t)) t = 'dark';
+    document.documentElement.setAttribute('data-theme', t);
+    document.querySelectorAll('.theme-switch button').forEach((b) => {
+      b.setAttribute('aria-pressed', String(b.dataset.theme === t));
+    });
+    try { localStorage.setItem(KEY, t); } catch (e) {}
+  }
+
+  function init() {
+    let t = 'dark';
+    try { t = localStorage.getItem(KEY) || 'dark'; } catch (e) {}
+    apply(t);
+    document.querySelectorAll('.theme-switch button').forEach((b) => {
+      b.addEventListener('click', () => apply(b.dataset.theme));
+    });
+  }
+
+  // Apply ASAP, before paint, to avoid theme flash.
+  try {
+    const stored = localStorage.getItem(KEY);
+    if (stored && THEMES.includes(stored)) {
+      document.documentElement.setAttribute('data-theme', stored);
+    }
+  } catch (e) {}
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  // Expose for programmatic switches
+  window.SakeenlyTheme = { apply, init };
+})();
+
+</script>
+<style>
+  .listen-hero {
+    padding: 56px 0 28px;
+    text-align: center;
+    position: relative;
+  }
+  .listen-hero h1 { font-weight: 300; max-width: 22ch; margin: 14px auto 0; }
+  .listen-hero p { color: var(--text-2); max-width: 56ch; margin: 16px auto 0; }
+
+  .filter-bar {
+    display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+    margin: 32px 0 24px;
+  }
+  .filter-pill {
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-2);
+    font-size: 13px;
+    transition: background 140ms, color 140ms, border-color 140ms;
+  }
+  .filter-pill:hover { color: var(--text); }
+  .filter-pill.active {
+    background: var(--accent);
+    color: oklch(0.15 0.02 60);
+    border-color: var(--accent);
+  }
+  .filter-bar input {
+    flex: 1; min-width: 200px;
+    padding: 10px 14px 10px 38px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--text);
+    font-size: 14px; outline: none;
+    font-family: inherit;
+  }
+  .filter-search {
+    position: relative; flex: 1; min-width: 220px;
+  }
+  .filter-search svg { position: absolute; left: 14px; top: 12px; color: var(--text-3); }
+
+  .reciter-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  @media (max-width: 1000px) { .reciter-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 700px)  { .reciter-grid { grid-template-columns: 1fr; } }
+
+  .reciter {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 22px;
+    display: flex; gap: 18px; align-items: center;
+    transition: border-color 160ms, transform 160ms;
+    cursor: pointer;
+  }
+  .reciter:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .reciter.playing {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+  .reciter-avatar {
+    width: 64px; height: 64px;
+    border-radius: 999px;
+    flex-shrink: 0;
+    background:
+      radial-gradient(circle at 50% 40%, var(--accent-soft) 0, var(--surface-2) 70%);
+    border: 1px solid var(--border);
+    display: grid; place-items: center;
+    color: var(--accent);
+    position: relative;
+    overflow: hidden;
+  }
+  .reciter-avatar::after {
+    content: ""; position: absolute; inset: 6px; border-radius: 999px;
+    background-image:
+      repeating-linear-gradient(45deg, var(--pattern) 0 1px, transparent 1px 8px),
+      repeating-linear-gradient(-45deg, var(--pattern) 0 1px, transparent 1px 8px);
+    opacity: 0.6;
+  }
+  .reciter-avatar svg { position: relative; z-index: 1; }
+  .reciter-info { flex: 1; min-width: 0; }
+  .reciter-name { font-family: 'Spectral', serif; font-size: 1.1rem; margin-bottom: 4px; }
+  .reciter-ar { font-family: 'Scheherazade New', serif; color: var(--text-3); font-size: 14px; direction: rtl; }
+  .reciter-meta {
+    margin-top: 8px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--text-3); letter-spacing: 0.06em;
+    display: flex; gap: 12px;
+  }
+  .reciter-meta span::before { content: "· "; }
+  .reciter-meta span:first-child::before { content: ""; }
+  .reciter-pp {
+    width: 40px; height: 40px;
+    border-radius: 999px;
+    background: var(--bg);
+    border: 1px solid var(--border-strong);
+    color: var(--text);
+    display: grid; place-items: center;
+    flex-shrink: 0;
+    transition: background 140ms, color 140ms, transform 140ms;
+  }
+  .reciter:hover .reciter-pp { background: var(--accent); color: oklch(0.15 0.02 60); border-color: transparent; }
+  .reciter.playing .reciter-pp { background: var(--accent); color: oklch(0.15 0.02 60); border-color: transparent; }
+
+  /* Sticky player at bottom */
+  .now-playing {
+    position: sticky; bottom: 18px;
+    margin-top: 60px;
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: 22px;
+    box-shadow: var(--shadow-2);
+    padding: 18px 22px;
+    z-index: 30;
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    background: color-mix(in oklab, var(--surface) 84%, transparent);
+  }
+  .np-row1 {
+    display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center;
+  }
+  @media (max-width: 720px) { .np-row1 { grid-template-columns: 1fr; gap: 14px; } }
+  .np-left { display: flex; align-items: center; gap: 14px; min-width: 0; }
+  .np-info { min-width: 0; }
+  .np-title { font-family: 'Spectral', serif; font-size: 1.05rem; }
+  .np-sub { font-family: 'JetBrains Mono', monospace; color: var(--text-3); font-size: 11px; margin-top: 2px; letter-spacing: 0.04em; }
+  .np-controls { display: flex; gap: 6px; align-items: center; justify-self: center; }
+  .np-pp {
+    width: 48px; height: 48px;
+    background: var(--accent);
+    color: oklch(0.15 0.02 60);
+    border-radius: 999px; display: grid; place-items: center;
+    transition: transform 120ms;
+  }
+  .np-pp:hover { transform: scale(1.05); }
+  .np-side-btn {
+    width: 36px; height: 36px;
+    border-radius: 999px;
+    color: var(--text-2);
+    display: grid; place-items: center;
+    transition: background 140ms, color 140ms;
+  }
+  .np-side-btn:hover { background: var(--surface-2); color: var(--text); }
+  .np-right { display: flex; gap: 8px; align-items: center; justify-self: end; }
+  @media (max-width: 720px) { .np-right { justify-self: stretch; justify-content: space-between; } }
+  .np-bar { margin-top: 14px; display: flex; align-items: center; gap: 10px; }
+  .np-bar .t { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-3); width: 40px; }
+  .np-bar .progress {
+    flex: 1; height: 3px; background: var(--border); border-radius: 999px; position: relative; cursor: pointer; overflow: hidden;
+  }
+  .np-bar .progress > div { height: 100%; background: var(--accent); border-radius: 999px; transition: width 240ms linear; }
+  .np-bar .progress::after {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-image: repeating-linear-gradient(90deg, transparent 0 calc(100% / 7 - 1px), color-mix(in oklab, var(--bg) 50%, transparent) calc(100% / 7 - 1px) calc(100% / 7));
+    pointer-events: none;
+  }
+
+  .sleep-options { display: flex; gap: 4px; }
+  .sleep-options button {
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--text-3);
+    border: 1px solid var(--border);
+    background: var(--bg);
+  }
+  .sleep-options button:hover { color: var(--text); }
+  .sleep-options button.active { color: var(--accent); border-color: color-mix(in oklab, var(--accent) 50%, var(--border)); }
+
+  .speed-pill { padding: 6px 10px; border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-3); border: 1px solid var(--border); }
+  .speed-pill:hover { color: var(--text); }
+
+  /* Surah strip */
+  .surah-strip {
+    margin-top: 56px;
+  }
+  .strip-head {
+    display: flex; align-items: end; justify-content: space-between; margin-bottom: 18px;
+  }
+  .strip-row {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+  }
+  @media (max-width: 900px) { .strip-row { grid-template-columns: repeat(2, 1fr); } }
+  .strip-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px 20px;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    transition: border-color 140ms, transform 140ms;
+  }
+  .strip-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .strip-card .n { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-3); }
+  .strip-card .t { font-family: 'Spectral', serif; font-size: 1.1rem; }
+  .strip-card .meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-3); letter-spacing: 0.08em; margin-top: 2px; }
+  .strip-card .play {
+    width: 36px; height: 36px;
+    border-radius: 999px;
+    background: var(--bg); border: 1px solid var(--border-strong);
+    color: var(--text); display: grid; place-items: center;
+    flex-shrink: 0;
+  }
+  .strip-card:hover .play { background: var(--accent); color: oklch(0.15 0.02 60); border-color: transparent; }
+</style>
+
+<style id="geo-enhance">
+/* ====== ISLAMIC GEOMETRY ====== */
+:root {
+  --geo-mask-stars: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'><g fill='none' stroke='black' stroke-width='0.9'><path d='M42 4 L48 36 L80 42 L48 48 L42 80 L36 48 L4 42 L36 36 Z'/><path d='M42 18 L46 38 L66 42 L46 46 L42 66 L38 46 L18 42 L38 38 Z' opacity='0.6'/><circle cx='42' cy='42' r='3' fill='black' stroke='none'/><path d='M0 42 L4 42 M80 42 L84 42 M42 0 L42 4 M42 80 L42 84'/><path d='M0 0 L18 18 M84 0 L66 18 M0 84 L18 66 M84 84 L66 66' stroke-width='0.6' opacity='0.5'/></g></svg>");
+  --geo-mask-girih: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='104' viewBox='0 0 120 104'><g fill='none' stroke='black' stroke-width='0.9'><path d='M30 0 L60 17 L60 51 L30 68 L0 51 L0 17 Z'/><path d='M90 0 L120 17 L120 51 L90 68 L60 51 L60 17 Z'/><path d='M30 68 L60 85 L60 104 M90 68 L60 85 M0 51 L0 104 M120 51 L120 104' opacity='0.6'/><circle cx='30' cy='34' r='3' fill='black' stroke='none'/><circle cx='90' cy='34' r='3' fill='black' stroke='none'/></g></svg>");
+  --geo-mask-arabesque: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'><g fill='none' stroke='black' stroke-width='0.8'><path d='M30 5 L34 26 L55 30 L34 34 L30 55 L26 34 L5 30 L26 26 Z'/><circle cx='30' cy='30' r='10'/></g></svg>");
+}
+
+/* Star-lattice overlay — themed via background-color + SVG mask */
+.geo-stars,
+.geo-stars-soft,
+.geo-stars-strong {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background-color: var(--accent);
+  -webkit-mask: var(--geo-mask-stars) repeat;
+  mask: var(--geo-mask-stars) repeat;
+  -webkit-mask-size: 84px 84px;
+  mask-size: 84px 84px;
+}
+.geo-stars { opacity: 0.10; }
+.geo-stars-soft { opacity: 0.055; }
+.geo-stars-strong { opacity: 0.16; }
+
+.geo-stars-fade {
+  -webkit-mask-image:
+    var(--geo-mask-stars),
+    radial-gradient(ellipse 70% 80% at 50% 30%, black, transparent 75%);
+  mask-image:
+    var(--geo-mask-stars),
+    radial-gradient(ellipse 70% 80% at 50% 30%, black, transparent 75%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+  -webkit-mask-size: 84px 84px, cover;
+  mask-size: 84px 84px, cover;
+}
+
+/* Girih hex-star lattice */
+.geo-girih {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background-color: var(--accent);
+  opacity: 0.07;
+  -webkit-mask: var(--geo-mask-girih) repeat;
+  mask: var(--geo-mask-girih) repeat;
+  -webkit-mask-size: 120px 104px;
+  mask-size: 120px 104px;
+}
+
+/* === ORNAMENTAL DIVIDER === */
+.geo-divider {
+  display: flex; align-items: center; gap: 20px;
+  margin: 56px auto;
+  max-width: 520px;
+  color: var(--accent);
+  padding: 0 28px;
+}
+.geo-divider::before, .geo-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, currentColor 30%, currentColor 70%, transparent);
+  opacity: 0.45;
+}
+.geo-divider svg {
+  width: 32px; height: 32px;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+/* === ORNAMENTAL FRAME (corner flourishes on cards) === */
+.geo-frame {
+  position: relative;
+}
+.geo-frame > .corner {
+  position: absolute;
+  width: 36px; height: 36px;
+  color: var(--accent);
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 2;
+}
+.geo-frame > .corner.tl { top: 14px; left: 14px; }
+.geo-frame > .corner.tr { top: 14px; right: 14px; transform: scaleX(-1); }
+.geo-frame > .corner.bl { bottom: 14px; left: 14px; transform: scaleY(-1); }
+.geo-frame > .corner.br { bottom: 14px; right: 14px; transform: scale(-1, -1); }
+
+/* === SECTION-LEVEL DECOR === */
+.geo-medallion {
+  display: inline-grid; place-items: center;
+  width: 64px; height: 64px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  border: 1px solid color-mix(in oklab, var(--accent) 40%, var(--border));
+  color: var(--accent);
+}
+.geo-medallion svg { width: 36px; height: 36px; }
+
+/* === MUSHAF ORNAMENTAL BORDER === */
+.mushaf-ornament {
+  position: relative;
+}
+.mushaf-ornament::before,
+.mushaf-ornament::after {
+  content: "";
+  position: absolute;
+  left: 28px; right: 28px;
+  height: 14px;
+  background-color: var(--accent);
+  opacity: 0.45;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><g fill='none' stroke='black' stroke-width='0.8'><line x1='0' y1='7' x2='90' y2='7' stroke-dasharray='2 4'/><line x1='110' y1='7' x2='200' y2='7' stroke-dasharray='2 4'/><path d='M100 2 L103 6 L107 7 L103 8 L100 12 L97 8 L93 7 L97 6 Z' fill='black'/></g></svg>") no-repeat center/contain;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><g fill='none' stroke='black' stroke-width='0.8'><line x1='0' y1='7' x2='90' y2='7' stroke-dasharray='2 4'/><line x1='110' y1='7' x2='200' y2='7' stroke-dasharray='2 4'/><path d='M100 2 L103 6 L107 7 L103 8 L100 12 L97 8 L93 7 L97 6 Z' fill='black'/></g></svg>") no-repeat center/contain;
+  pointer-events: none;
+}
+.mushaf-ornament::before { top: 16px; }
+.mushaf-ornament::after { bottom: 16px; }
+
+/* === MIHRAB ARCH (for surah header top) === */
+.mihrab-top {
+  width: 80px; height: 36px;
+  margin: 0 auto 14px;
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+/* === BISMILLAH ORNAMENTAL FRAME === */
+.basmala-frame {
+  position: relative;
+  display: inline-block;
+  padding: 8px 70px;
+}
+.basmala-frame::before,
+.basmala-frame::after {
+  content: "";
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  width: 56px; height: 18px;
+  background-color: var(--accent);
+  opacity: 0.55;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 18' fill='none' stroke='black' stroke-width='0.8'><line x1='0' y1='9' x2='40' y2='9' stroke-dasharray='1.5 3'/><path d='M48 9 L52 5 L56 9 L52 13 Z' fill='black'/><circle cx='44' cy='9' r='1.5' fill='black'/></svg>") no-repeat center/contain;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 18' fill='none' stroke='black' stroke-width='0.8'><line x1='0' y1='9' x2='40' y2='9' stroke-dasharray='1.5 3'/><path d='M48 9 L52 5 L56 9 L52 13 Z' fill='black'/><circle cx='44' cy='9' r='1.5' fill='black'/></svg>") no-repeat center/contain;
+}
+.basmala-frame::before { left: 0; }
+.basmala-frame::after { right: 0; transform: translateY(-50%) scaleX(-1); }
+</style>
+
+<style id="cursor-islamic">
+  :root {
+    /* Default cursor: 8-point star, hotspot at tip (center top) */
+    --cur-default: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'><g><path d='M14 1 L16 12 L27 14 L16 16 L14 27 L12 16 L1 14 L12 12 Z' fill='%23E0B66A' stroke='%23000' stroke-opacity='0.45' stroke-width='0.7' stroke-linejoin='round'/><path d='M14 6 L15 13 L22 14 L15 15 L14 22 L13 15 L6 14 L13 13 Z' fill='%23FFF1C9' fill-opacity='0.9'/><circle cx='14' cy='14' r='1.4' fill='%23000' fill-opacity='0.6'/></g></svg>") 14 14, auto;
+
+    /* Pointer: bigger star with ring */
+    --cur-pointer: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><g><circle cx='16' cy='16' r='13.5' fill='none' stroke='%23E0B66A' stroke-width='1' stroke-opacity='0.55' stroke-dasharray='2 2.5'/><path d='M16 2 L18.5 13.5 L30 16 L18.5 18.5 L16 30 L13.5 18.5 L2 16 L13.5 13.5 Z' fill='%23F1C770' stroke='%23000' stroke-opacity='0.5' stroke-width='0.7' stroke-linejoin='round'/><path d='M16 7 L17.5 14.5 L25 16 L17.5 17.5 L16 25 L14.5 17.5 L7 16 L14.5 14.5 Z' fill='%23FFF3CC' fill-opacity='0.85'/><circle cx='16' cy='16' r='1.8' fill='%2300000080'/></g></svg>") 16 16, pointer;
+
+    /* Text: vertical reed-pen mark */
+    --cur-text: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='28' viewBox='0 0 16 28'><g fill='%23E0B66A' stroke='%23000' stroke-opacity='0.45' stroke-width='0.6'><path d='M8 2 Q9.5 4 8 14 Q6.5 4 8 2 Z'/><path d='M8 14 L9 22 L8 26 L7 22 Z'/><circle cx='8' cy='14' r='1.4' stroke='none'/></g></svg>") 8 14, text;
+  }
+
+  html, body { cursor: var(--cur-default); }
+  a, button, [role='button'], summary, label, select,
+  .ic-btn, .pic-btn, .np-side-btn, .np-pp, .player-pp, .reciter-pp,
+  .filter-pill, .trans-pill, .surah-item, .em-mini, .emotion, .feature,
+  .ayah-span, .trans-row, .strip-card, .pop-btn, .speed-pill,
+  .theme-switch button, .billing-toggle button, .sleep-options button {
+    cursor: var(--cur-pointer);
+  }
+  input[type='text'], input[type='email'], input[type='search'], input:not([type]),
+  textarea, [contenteditable] {
+    cursor: var(--cur-text);
+  }
+  /* Don't override loading/disabled or native scrollbars */
+  [disabled], [aria-disabled='true'] { cursor: not-allowed; }
+</style>
+
+<style id="lang-switch-css">
+.lang-switch { position: relative; }
+.lang-trigger {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.08em;
+  transition: background 140ms, color 140ms, border-color 140ms;
+}
+.lang-trigger:hover { color: var(--text); border-color: var(--border-strong); }
+.lang-trigger svg { color: var(--accent); }
+.lang-menu {
+  position: absolute; top: calc(100% + 6px); right: 0;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  padding: 6px;
+  box-shadow: var(--shadow-2);
+  display: none;
+  flex-direction: column;
+  min-width: 180px;
+  z-index: 80;
+}
+.lang-menu.open { display: flex; }
+.lang-menu button {
+  padding: 9px 12px;
+  border-radius: 8px;
+  text-align: left;
+  color: var(--text);
+  font-size: 14px;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  transition: background 120ms, color 120ms;
+}
+.lang-menu button:hover { background: var(--surface-2); }
+.lang-menu button[aria-pressed="true"] { color: var(--accent); background: var(--accent-soft); }
+.lang-menu button .code {
+  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  letter-spacing: 0.08em; color: var(--text-3);
+}
+.lang-menu button[aria-pressed="true"] .code { color: var(--accent); }
+</style>
+
+<script>
+// Sakeenly — i18n bundle
+window.SakeenlyI18n = (function () {
+  const LANGS = {
+    ru: { native: 'Русский', short: 'РУС', htmlLang: 'ru' },
+    tg: { native: 'Тоҷикӣ',  short: 'ТҶК', htmlLang: 'tg' },
+    uz: { native: 'Oʻzbek',  short: 'UZB', htmlLang: 'uz' },
+    kk: { native: 'Қазақ',   short: 'ҚАЗ', htmlLang: 'kk' },
+    ky: { native: 'Кыргыз',  short: 'КЫР', htmlLang: 'ky' },
+  };
+  const DICT = JSON.parse("{\"nav.read\":{\"ru\":\"Чтение\",\"tg\":\"Хондан\",\"uz\":\"Oʻqish\",\"kk\":\"Оқу\",\"ky\":\"Окуу\"},\"nav.listen\":{\"ru\":\"Слушать\",\"tg\":\"Шунидан\",\"uz\":\"Tinglash\",\"kk\":\"Тыңдау\",\"ky\":\"Угуу\"},\"nav.ask\":{\"ru\":\"Спросить\",\"tg\":\"Пурсидан\",\"uz\":\"Soʻrash\",\"kk\":\"Сұрау\",\"ky\":\"Суроо\"},\"nav.ayat\":{\"ru\":\"Аяты\",\"tg\":\"Оятҳо\",\"uz\":\"Oyatlar\",\"kk\":\"Аяттар\",\"ky\":\"Аяттар\"},\"nav.kids\":{\"ru\":\"Детям\",\"tg\":\"Кӯдакон\",\"uz\":\"Bolalar\",\"kk\":\"Балаларға\",\"ky\":\"Балдарга\"},\"nav.pricing\":{\"ru\":\"Тарифы\",\"tg\":\"Нархнома\",\"uz\":\"Tariflar\",\"kk\":\"Тарифтер\",\"ky\":\"Тарифтер\"},\"nav.signin\":{\"ru\":\"Войти\",\"tg\":\"Ворид\",\"uz\":\"Kirish\",\"kk\":\"Кіру\",\"ky\":\"Кирүү\"},\"nav.start\":{\"ru\":\"Начать\",\"tg\":\"Шурӯъ\",\"uz\":\"Boshlash\",\"kk\":\"Бастау\",\"ky\":\"Баштоо\"},\"hero.badge\":{\"ru\":\"Sakeenly · MVP\",\"tg\":\"Sakeenly · MVP\",\"uz\":\"Sakeenly · MVP\",\"kk\":\"Sakeenly · MVP\",\"ky\":\"Sakeenly · MVP\"},\"hero.title_h\":{\"ru\":\"Find your\",\"tg\":\"Find your\",\"uz\":\"Find your\",\"kk\":\"Find your\",\"ky\":\"Find your\"},\"hero.title_e\":{\"ru\":\"sakeena.\",\"tg\":\"sakeena.\",\"uz\":\"sakeena.\",\"kk\":\"sakeena.\",\"ky\":\"sakeena.\"},\"hero.title_t\":{\"ru\":\"Каждый день.\",\"tg\":\"Ҳар рӯз.\",\"uz\":\"Har kuni.\",\"kk\":\"Күн сайын.\",\"ky\":\"Күн сайын.\"},\"hero.sub\":{\"ru\":\"Современный Quran-companion для тебя. Читай в Мусхафе, слушай чтецов, находи аяты для каждого состояния.\",\"tg\":\"Ҳамроҳи муосири Қуръон. Дар Мусҳаф хонед, овози қориён шунавед, барои ҳар ҳолат оят ёбед.\",\"uz\":\"Zamonaviy Qurʼon-hamrohingiz. Mushafda oʻqing, qorilarni tinglang, har holatga oyat toping.\",\"kk\":\"Заманауи Құран серігі. Мүсхафтан оқыңыз, қарилерді тыңдаңыз, әр жағдайға аят табыңыз.\",\"ky\":\"Заманбап Куран шериги. Мусхафтан окуңуз, кариелерди угуңуз, ар кырдаалга аят табыңыз.\"},\"hero.cta_read\":{\"ru\":\"Начать читать\",\"tg\":\"Хонданро оғоз кунед\",\"uz\":\"Oʻqishni boshlash\",\"kk\":\"Оқуды бастау\",\"ky\":\"Окууну баштоо\"},\"hero.cta_signin\":{\"ru\":\"Войти\",\"tg\":\"Ворид шавед\",\"uz\":\"Kirish\",\"kk\":\"Кіру\",\"ky\":\"Кирүү\"},\"hero.meta1\":{\"ru\":\"سكينة · сакина · спокойствие сердца\",\"tg\":\"سكينة · сакина · оромии қалб\",\"uz\":\"سكينة · sakina · qalb tinchligi\",\"kk\":\"سكينة · сакина · жүрек тыныштығы\",\"ky\":\"سكينة · сакина · жүрөктүн тынчтыгы\"},\"hero.meta2\":{\"ru\":\"Коран 2:248\",\"tg\":\"Қуръон 2:248\",\"uz\":\"Qurʼon 2:248\",\"kk\":\"Құран 2:248\",\"ky\":\"Куран 2:248\"},\"hero.meta3\":{\"ru\":\"0 рекламы · 0 трекеров\",\"tg\":\"0 реклама · 0 пайгирӣ\",\"uz\":\"0 reklama · 0 kuzatuv\",\"kk\":\"0 жарнама · 0 бақылау\",\"ky\":\"0 жарнама · 0 көзөмөл\"},\"votd.label\":{\"ru\":\"Аят дня · 18 мая\",\"tg\":\"Ояти рӯз · 18 май\",\"uz\":\"Kun oyati · 18 may\",\"kk\":\"Күн аяты · 18 мамыр\",\"ky\":\"Күндүн аяты · 18 май\"},\"votd.surah_tag\":{\"ru\":\"Сура «Корова» · 2:286\",\"tg\":\"Сураи «Бақара» · 2:286\",\"uz\":\"«Baqara» surasi · 2:286\",\"kk\":\"«Бақара» сүресі · 2:286\",\"ky\":\"«Бакара» сүрөсү · 2:286\"},\"votd.translation\":{\"ru\":\"«Аллах не возлагает на душу ничего сверх её возможностей.»\",\"tg\":\"«Аллоҳ ҳеҷ касро ҷуз ба қадри тавонии ӯ намукаллаф намекунад.»\",\"uz\":\"«Alloh hech bir jonga toqatidan ortigʻini yuklamaydi.»\",\"kk\":\"«Алла ешбір жанға қабілетінен артық жүк салмайды.»\",\"ky\":\"«Аллах эч бир жанга чамасынан ашык жүк жүктөбөйт.»\"},\"votd.cite\":{\"ru\":\"Перевод Э. Кулиева · 2:286\",\"tg\":\"Тарҷумаи Ҳоҷӣ Мирзо · 2:286\",\"uz\":\"Alouddin Mansur tarjimasi · 2:286\",\"kk\":\"Халифа Алтай аудармасы · 2:286\",\"ky\":\"Шамсиддин Жонок котормосу · 2:286\"},\"streak.label\":{\"ru\":\"Streak · непрерывность\",\"tg\":\"Пай дар пай\",\"uz\":\"Ketma-ketlik\",\"kk\":\"Үздіксіздік\",\"ky\":\"Үзгүлтүксүздүк\"},\"streak.title\":{\"ru\":\"17 дней с Кораном\",\"tg\":\"17 рӯз бо Қуръон\",\"uz\":\"17 kun Qurʼon bilan\",\"kk\":\"17 күн Құранмен\",\"ky\":\"17 күн Куран менен\"},\"cont.label\":{\"ru\":\"Продолжить\",\"tg\":\"Идома\",\"uz\":\"Davom etish\",\"kk\":\"Жалғастыру\",\"ky\":\"Уланткыла\"},\"cont.surah\":{\"ru\":\"Аль-Бакара\",\"tg\":\"Бақара\",\"uz\":\"Baqara\",\"kk\":\"Бақара\",\"ky\":\"Бакара\"},\"cont.ayah_of\":{\"ru\":\"аят 31 из 286\",\"tg\":\"ояти 31 аз 286\",\"uz\":\"31-oyat / 286\",\"kk\":\"31-аят / 286\",\"ky\":\"31-аят / 286\"},\"cont.btn\":{\"ru\":\"Продолжить чтение\",\"tg\":\"Хонданро идома диҳед\",\"uz\":\"Oʻqishni davom ettirish\",\"kk\":\"Оқуды жалғастыру\",\"ky\":\"Окууну улантуу\"},\"feat.eyebrow\":{\"ru\":\"Что внутри\",\"tg\":\"Дар дохил\",\"uz\":\"Ichida nima bor\",\"kk\":\"Ішінде не бар\",\"ky\":\"Ичинде эмне бар\"},\"feat.heading\":{\"ru\":\"Три ритуала, одно приложение.\",\"tg\":\"Се одат, як барнома.\",\"uz\":\"Uchta rasm-rusum, bitta ilova.\",\"kk\":\"Үш ғибадат, бір қосымша.\",\"ky\":\"Үч ырым, бир тиркеме.\"},\"feat.lede\":{\"ru\":\"Без декораций. Без баннеров. Без слежки. Только текст, голос и тишина.\",\"tg\":\"Бе ороишҳои зиёдатӣ. Бе баннер. Бе пайгирӣ. Танҳо матн, овоз ва оромӣ.\",\"uz\":\"Ortiqcha bezaklarsiz. Bannerlarsiz. Kuzatuvsiz. Faqat matn, ovoz va sukunat.\",\"kk\":\"Артық безендірусіз. Жарнамасыз. Бақылаусыз. Тек мәтін, дауыс және тыныштық.\",\"ky\":\"Ашыкча кооздоосуз. Жарнамасыз. Көзөмөлсүз. Бир гана текст, үн жана тынчтык.\"},\"feat.f1_l\":{\"ru\":\"01 — Чтение\",\"tg\":\"01 — Хондан\",\"uz\":\"01 — Oʻqish\",\"kk\":\"01 — Оқу\",\"ky\":\"01 — Окуу\"},\"feat.f1_t\":{\"ru\":\"Мусхаф, как на бумаге.\",\"tg\":\"Мусҳаф, мисли коғаз.\",\"uz\":\"Mushaf, qogʻozdagiday.\",\"kk\":\"Мүсхаф, қағаздағыдай.\",\"ky\":\"Мусхаф, кагазга жазылгандай.\"},\"feat.f1_b\":{\"ru\":\"KFGQPC Hafs шрифт. Пять переводов. Тап по аяту — объяснить, послушать, сохранить.\",\"tg\":\"Хатти KFGQPC Ҳафс. Тарҷумаҳо. Зер ба оят — фаҳмонед, шунавед, нигоҳ доред.\",\"uz\":\"KFGQPC Hafs shrifti. Tarjimalar. Oyatga tegib — tushuntiring, tinglang, saqlang.\",\"kk\":\"KFGQPC Хафс қарпі. Аудармалар. Аятты түрту — түсіндіру, тыңдау, сақтау.\",\"ky\":\"KFGQPC Хафс ариби. Котормолор. Аятка басуу — түшүндүрүү, угуу, сактоо.\"},\"feat.f1_l2\":{\"ru\":\"Открыть ридер →\",\"tg\":\"Хонандаро кушоед →\",\"uz\":\"Oʻqish ekrani →\",\"kk\":\"Оқу экранын ашу →\",\"ky\":\"Окуу экранын ачуу →\"},\"feat.f2_l\":{\"ru\":\"02 — Слушать\",\"tg\":\"02 — Шунидан\",\"uz\":\"02 — Tinglash\",\"kk\":\"02 — Тыңдау\",\"ky\":\"02 — Угуу\"},\"feat.f2_t\":{\"ru\":\"Тридцать чтецов. Один тап.\",\"tg\":\"Сӣ қорӣ. Як зер.\",\"uz\":\"Oʻttiz qori. Bir teginish.\",\"kk\":\"Отыз қари. Бір түрту.\",\"ky\":\"Отуз кары. Бир басуу.\"},\"feat.f2_b\":{\"ru\":\"Абдуль-Басит, Хусары, Судайс и ещё 27 голосов. Sleep-таймер, скорость, подсветка текущего аята.\",\"tg\":\"Абдулбосит, Ҳусарӣ, Судайс ва 27 овози дигар. Таймери хоб, суръат, рӯшнои ояти ҷорӣ.\",\"uz\":\"Abdulbosit, Husariy, Sudays va yana 27 ovoz. Uxlash taymeri, tezlik, joriy oyat yoritilishi.\",\"kk\":\"Әбдулбасит, Хусари, Судайс және тағы 27 дауыс. Ұйқы таймері, жылдамдық, ағымдағы аят жарықтандыру.\",\"ky\":\"Абдулбасит, Хусари, Судайс жана дагы 27 үн. Уйку таймери, ылдамдык, учурдагы аят жарык.\"},\"feat.f2_l2\":{\"ru\":\"Слушать сейчас →\",\"tg\":\"Ҳозир шунавед →\",\"uz\":\"Hozir tinglang →\",\"kk\":\"Қазір тыңдау →\",\"ky\":\"Азыр угуу →\"},\"feat.f3_l\":{\"ru\":\"03 — Спросить\",\"tg\":\"03 — Пурсидан\",\"uz\":\"03 — Soʻrash\",\"kk\":\"03 — Сұрау\",\"ky\":\"03 — Суроо\"},\"feat.f3_t\":{\"ru\":\"Вопрос. Источник. Ответ.\",\"tg\":\"Савол. Манбаъ. Ҷавоб.\",\"uz\":\"Savol. Manba. Javob.\",\"kk\":\"Сұрақ. Дереккөз. Жауап.\",\"ky\":\"Суроо. Булак. Жооп.\"},\"feat.f3_b\":{\"ru\":\"Sakeenly ищет ответ в Коране, хадисах и тафсирах. Каждое утверждение со сноской. Фатва — к учёным.\",\"tg\":\"Sakeenly ҷавобро дар Қуръон ва тафсир меҷӯяд. Ҳар изҳорот бо манбаъ. Фатво — ба уламо.\",\"uz\":\"Sakeenly javobni Qurʼon va tafsirdan qidiradi. Har bir gap manba bilan. Fatvo — ulamolarga.\",\"kk\":\"Sakeenly жауапты Құран мен тәпсірден іздейді. Әр сөз дереккөзбен. Пәтуа — ғалымдарға.\",\"ky\":\"Sakeenly жоопту Куран жана тафсирден издейт. Ар бир сөз булагы менен. Фатва — аалымдарга.\"},\"feat.f3_l2\":{\"ru\":\"Скоро →\",\"tg\":\"Ба зудӣ →\",\"uz\":\"Tez kunda →\",\"kk\":\"Жақында →\",\"ky\":\"Жакында →\"},\"emo.heading\":{\"ru\":\"Открой Книгу там, где жизнь делает трудно.\",\"tg\":\"Китобро дар ҷое кушоед, ки зиндагӣ душвор аст.\",\"uz\":\"Hayot qiyin boʻlganda Kitobni oching.\",\"kk\":\"Өмір қиындағанда Кітапты ашыңыз.\",\"ky\":\"Жашоо кыйындаганда Китепти ачыңыз.\"},\"emo.all\":{\"ru\":\"Все темы →\",\"tg\":\"Ҳамаи мавзӯъ →\",\"uz\":\"Barcha mavzular →\",\"kk\":\"Барлық тақырыптар →\",\"ky\":\"Бардык темалар →\"},\"trust.suras\":{\"ru\":\"Сур\",\"tg\":\"Сура\",\"uz\":\"Sura\",\"kk\":\"Сүре\",\"ky\":\"Сүрө\"},\"trust.ayat\":{\"ru\":\"Аятов\",\"tg\":\"Оят\",\"uz\":\"Oyat\",\"kk\":\"Аят\",\"ky\":\"Аят\"},\"trust.translations\":{\"ru\":\"Переводов\",\"tg\":\"Тарҷума\",\"uz\":\"Tarjima\",\"kk\":\"Аударма\",\"ky\":\"Котормо\"},\"trust.reciters\":{\"ru\":\"Чтецов\",\"tg\":\"Қорӣ\",\"uz\":\"Qori\",\"kk\":\"Қари\",\"ky\":\"Кары\"},\"trust.trackers\":{\"ru\":\"Трекеров\",\"tg\":\"Пайгирӣ\",\"uz\":\"Kuzatuv\",\"kk\":\"Бақылау\",\"ky\":\"Көзөмөл\"},\"close.eyebrow\":{\"ru\":\"Каждый день · с тобой\",\"tg\":\"Ҳар рӯз · бо ту\",\"uz\":\"Har kuni · siz bilan\",\"kk\":\"Күн сайын · сенімен\",\"ky\":\"Күн сайын · сени менен\"},\"close.line1\":{\"ru\":\"«…и ниспослал Он сакину\",\"tg\":\"«…ва сакинаро фуруд овард\",\"uz\":\"«…va sakinani nozil qildi\",\"kk\":\"«…және сақинаны түсірді\",\"ky\":\"«…жана сакинаны түшүрдү\"},\"close.line2\":{\"ru\":\"в сердца верующих.»\",\"tg\":\"дар дилҳои мӯъминон.»\",\"uz\":\"moʻminlar qalbiga.»\",\"kk\":\"мүміндердің жүректеріне.»\",\"ky\":\"момундардын жүрөктөрүнө.»\"},\"close.cite\":{\"ru\":\"Сура «Победа» · 48:4\",\"tg\":\"Сураи «Фатҳ» · 48:4\",\"uz\":\"«Fath» surasi · 48:4\",\"kk\":\"«Фатх» сүресі · 48:4\",\"ky\":\"«Фатх» сүрөсү · 48:4\"},\"close.cta1\":{\"ru\":\"Начать с Аль-Фатихи\",\"tg\":\"Аз Фотиҳа сар кунед\",\"uz\":\"Fotihadan boshlash\",\"kk\":\"Фатихадан бастау\",\"ky\":\"Фатиха менен баштоо\"},\"close.cta2\":{\"ru\":\"Посмотреть тарифы\",\"tg\":\"Нархҳоро бинед\",\"uz\":\"Tariflarni koʻrish\",\"kk\":\"Тарифтерді көру\",\"ky\":\"Тарифтерди көрүү\"},\"foot.tagline\":{\"ru\":\"Quran-companion для тебя. Без рекламы. Без трекеров.\",\"tg\":\"Ҳамроҳи Қуръон барои шумо. Бе реклама. Бе пайгирӣ.\",\"uz\":\"Qurʼon-hamroh siz uchun. Reklamasiz. Kuzatuvsiz.\",\"kk\":\"Сізге арналған Құран серігі. Жарнамасыз. Бақылаусыз.\",\"ky\":\"Сиз үчүн Куран шериги. Жарнамасыз. Көзөмөлсүз.\"},\"foot.product\":{\"ru\":\"Продукт\",\"tg\":\"Маҳсулот\",\"uz\":\"Mahsulot\",\"kk\":\"Өнім\",\"ky\":\"Продукт\"},\"foot.company\":{\"ru\":\"Компания\",\"tg\":\"Ширкат\",\"uz\":\"Kompaniya\",\"kk\":\"Компания\",\"ky\":\"Компания\"},\"foot.help\":{\"ru\":\"Помощь\",\"tg\":\"Кӯмак\",\"uz\":\"Yordam\",\"kk\":\"Көмек\",\"ky\":\"Жардам\"},\"foot.reader\":{\"ru\":\"Ридер\",\"tg\":\"Хонанда\",\"uz\":\"Oʻqish\",\"kk\":\"Оқу\",\"ky\":\"Окуу\"},\"foot.reciters\":{\"ru\":\"Чтецы\",\"tg\":\"Қориён\",\"uz\":\"Qorilar\",\"kk\":\"Қарилер\",\"ky\":\"Карылар\"},\"foot.ask\":{\"ru\":\"Спросить\",\"tg\":\"Пурсидан\",\"uz\":\"Soʻrash\",\"kk\":\"Сұрау\",\"ky\":\"Суроо\"},\"foot.kids\":{\"ru\":\"Для детей\",\"tg\":\"Барои кӯдакон\",\"uz\":\"Bolalar uchun\",\"kk\":\"Балаларға\",\"ky\":\"Балдарга\"},\"foot.ayat\":{\"ru\":\"Аяты по темам\",\"tg\":\"Оят аз рӯи мавзӯъ\",\"uz\":\"Mavzu boʻyicha\",\"kk\":\"Тақырып бойынша\",\"ky\":\"Тема боюнча\"},\"foot.pricing\":{\"ru\":\"Тарифы\",\"tg\":\"Нархнома\",\"uz\":\"Tariflar\",\"kk\":\"Тарифтер\",\"ky\":\"Тарифтер\"},\"foot.about\":{\"ru\":\"О нас\",\"tg\":\"Дар бораи мо\",\"uz\":\"Biz haqimizda\",\"kk\":\"Біз туралы\",\"ky\":\"Биз жөнүндө\"},\"foot.scholars\":{\"ru\":\"Scholar board\",\"tg\":\"Шӯрои уламо\",\"uz\":\"Ulamolar kengashi\",\"kk\":\"Ғалымдар кеңесі\",\"ky\":\"Аалымдар кеңеши\"},\"foot.privacy\":{\"ru\":\"Приватность\",\"tg\":\"Махфият\",\"uz\":\"Maxfiylik\",\"kk\":\"Құпиялық\",\"ky\":\"Купуялык\"},\"foot.terms\":{\"ru\":\"Условия\",\"tg\":\"Шартҳо\",\"uz\":\"Shartlar\",\"kk\":\"Шарттар\",\"ky\":\"Шарттар\"},\"foot.contact\":{\"ru\":\"Контакты\",\"tg\":\"Тамос\",\"uz\":\"Aloqa\",\"kk\":\"Байланыс\",\"ky\":\"Байланыш\"},\"foot.faq\":{\"ru\":\"FAQ\",\"tg\":\"FAQ\",\"uz\":\"FAQ\",\"kk\":\"FAQ\",\"ky\":\"FAQ\"},\"foot.report\":{\"ru\":\"Сообщить об ошибке\",\"tg\":\"Хабари хато\",\"uz\":\"Xato haqida\",\"kk\":\"Қате туралы\",\"ky\":\"Ката жөнүндө\"},\"foot.request\":{\"ru\":\"Запросить аят\",\"tg\":\"Дархости оят\",\"uz\":\"Oyat soʻrash\",\"kk\":\"Аят сұрау\",\"ky\":\"Аят сурануу\"},\"foot.bottom_made\":{\"ru\":\"Made with نية · sakeenly.com\",\"tg\":\"Бо нийят · sakeenly.com\",\"uz\":\"Niyat bilan · sakeenly.com\",\"kk\":\"Ниетпен · sakeenly.com\",\"ky\":\"Ниет менен · sakeenly.com\"},\"ls.badge\":{\"ru\":\"30 чтецов · Quran.com CDN\",\"tg\":\"30 қорӣ · Quran.com CDN\",\"uz\":\"30 qori · Quran.com CDN\",\"kk\":\"30 қари · Quran.com CDN\",\"ky\":\"30 кары · Quran.com CDN\"},\"ls.heading_1\":{\"ru\":\"Голоса, которые\",\"tg\":\"Овозҳое, ки\",\"uz\":\"Ovozlar, ular\",\"kk\":\"Дауыстар, олар\",\"ky\":\"Үндөр, алар\"},\"ls.heading_2\":{\"ru\":\"несли Книгу.\",\"tg\":\"Китобро интиқол доданд.\",\"uz\":\"Kitobni yetkazdi.\",\"kk\":\"Кітапты жеткізді.\",\"ky\":\"Китепти жеткирди.\"},\"ls.lede\":{\"ru\":\"Выбери чтеца, выбери диапазон аятов, выбери скорость. Стрим из Quran.com CDN с подсветкой текущего аята и sleep-таймером.\",\"tg\":\"Қориро интихоб кунед, оятҳоро интихоб кунед, суръатро интихоб кунед. Пахш аз Quran.com CDN бо рӯшнои ояти ҷорӣ.\",\"uz\":\"Qorini, oyatlar oraligʻini va tezlikni tanlang. Quran.com CDN dan joriy oyat yoritilishi bilan oqim.\",\"kk\":\"Қариді, аяттар ауқымын және жылдамдықты таңдаңыз. Quran.com CDN арқылы ағыс.\",\"ky\":\"Карыны, аяттар диапазонун жана ылдамдыкты тандаңыз. Quran.com CDN аркылуу агыш.\"},\"ls.search\":{\"ru\":\"Поиск чтеца...\",\"tg\":\"Ҷустуҷӯи қорӣ...\",\"uz\":\"Qori qidirish...\",\"kk\":\"Қари іздеу...\",\"ky\":\"Кары издөө...\"},\"ls.all\":{\"ru\":\"Все\",\"tg\":\"Ҳама\",\"uz\":\"Hammasi\",\"kk\":\"Барлығы\",\"ky\":\"Бардыгы\"},\"pr.badge\":{\"ru\":\"Бесплатно — навсегда. Premium — по желанию.\",\"tg\":\"Ройгон — то абад. Premium — ихтиёрӣ.\",\"uz\":\"Bepul — abadiy. Premium — ixtiyoriy.\",\"kk\":\"Тегін — мәңгі. Premium — ерікті.\",\"ky\":\"Бекер — түбөлүк. Premium — ыктыярдуу.\"},\"pr.h1\":{\"ru\":\"Чтение должно быть бесплатным.\",\"tg\":\"Хондан бояд ройгон бошад.\",\"uz\":\"Oʻqish bepul boʻlishi kerak.\",\"kk\":\"Оқу тегін болуы керек.\",\"ky\":\"Окуу бекер болушу керек.\"},\"pr.h2\":{\"ru\":\"Глубина — добровольной.\",\"tg\":\"Чуқурӣ — ихтиёрӣ.\",\"uz\":\"Chuqurlik — ixtiyoriy.\",\"kk\":\"Тереңдік — ерікті.\",\"ky\":\"Тереңдик — ыктыярдуу.\"},\"pr.month\":{\"ru\":\"Помесячно\",\"tg\":\"Моҳона\",\"uz\":\"Oylik\",\"kk\":\"Айлық\",\"ky\":\"Айлык\"},\"pr.year\":{\"ru\":\"Ежегодно\",\"tg\":\"Солона\",\"uz\":\"Yillik\",\"kk\":\"Жылдық\",\"ky\":\"Жылдык\"},\"kid.badge\":{\"ru\":\"Для детей · 4–10 лет\",\"tg\":\"Барои кӯдакон · 4–10 сола\",\"uz\":\"Bolalar uchun · 4–10 yosh\",\"kk\":\"Балаларға · 4–10 жас\",\"ky\":\"Балдарга · 4–10 жаш\"},\"kid.h1\":{\"ru\":\"Икра. Книга. Истории.\",\"tg\":\"Иқра. Китоб. Достонҳо.\",\"uz\":\"Iqra. Kitob. Hikoyalar.\",\"kk\":\"Иқра. Кітап. Әңгімелер.\",\"ky\":\"Иқро. Китеп. Окуялар.\"},\"kid.lede\":{\"ru\":\"Sakeenly для детей: алфавит, который можно обвести; первые суры, которые легко запомнить; и истории пророков ﷺ.\",\"tg\":\"Sakeenly барои кӯдакон: алифбо, сураҳои кӯтоҳ, достонҳои паёмбарон ﷺ.\",\"uz\":\"Bolalar uchun Sakeenly: alifbo, qisqa suralar va paygʻambarlar ﷺ hikoyalari.\",\"kk\":\"Балаларға Sakeenly: әліпби, қысқа сүрелер және пайғамбарлар ﷺ әңгімелері.\",\"ky\":\"Балдар үчүн Sakeenly: алфавит, кыска сүрөлөр жана пайгамбарлар ﷺ окуялары.\"}}");
+  function get(key, lang) { const e = DICT[key]; return e ? (e[lang] || e.ru || null) : null; }
+  function apply(lang) {
+    if (!LANGS[lang]) lang = 'ru';
+    document.documentElement.setAttribute('lang', LANGS[lang].htmlLang);
+    document.documentElement.setAttribute('data-lang', lang);
+    document.querySelectorAll('[data-i18n]').forEach(el => { const v = get(el.getAttribute('data-i18n'), lang); if (v !== null) el.textContent = v; });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => { const v = get(el.getAttribute('data-i18n-html'), lang); if (v !== null) el.innerHTML = v; });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { const v = get(el.getAttribute('data-i18n-placeholder'), lang); if (v !== null) el.setAttribute('placeholder', v); });
+    document.querySelectorAll('.lang-switch .lang-current').forEach(el => { el.textContent = LANGS[lang].short; });
+    document.querySelectorAll('.lang-menu button').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === lang ? 'true' : 'false'));
+    try { localStorage.setItem('sakeenly:lang', lang); } catch (e) {}
+    window.dispatchEvent(new CustomEvent('sakeenly:langchange', { detail: { lang } }));
+  }
+  function init() {
+    let lang = 'ru';
+    try { lang = localStorage.getItem('sakeenly:lang') || 'ru'; } catch (e) {}
+    apply(lang);
+    document.querySelectorAll('.lang-switch').forEach(sw => {
+      const btn = sw.querySelector('.lang-trigger');
+      const menu = sw.querySelector('.lang-menu');
+      if (!btn || !menu) return;
+      btn.addEventListener('click', (e) => { e.stopPropagation(); const op = menu.classList.toggle('open'); btn.setAttribute('aria-expanded', String(op)); });
+      menu.addEventListener('click', (e) => { const b = e.target.closest('button[data-lang]'); if (!b) return; apply(b.dataset.lang); menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); });
+    });
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.lang-menu.open').forEach(m => m.classList.remove('open'));
+      document.querySelectorAll('.lang-trigger').forEach(b => b.setAttribute('aria-expanded', 'false'));
+    });
+  }
+  try { const s = localStorage.getItem('sakeenly:lang'); if (s && LANGS[s]) { document.documentElement.setAttribute('lang', LANGS[s].htmlLang); document.documentElement.setAttribute('data-lang', s); } } catch (e) {}
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+  return { apply, get, LANGS, DICT };
+})();
+
+</script>
+</head>
+<body data-screen-label="03 Listen">
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M12 2 L14.2 9.8 L22 12 L14.2 14.2 L12 22 L9.8 14.2 L2 12 L9.8 9.8 Z" />
+        </svg>
+      </span>
+      <span>Sakeenly</span>
+    </a>
+    <div class="nav-links">
+      <a href="reader.html" data-i18n="nav.read">Чтение</a>
+      <a href="listen.html" class="active" data-i18n="nav.listen">Слушать</a>
+      <a href="#" data-i18n="nav.ask">Спросить</a>
+      <a href="ayat-dlya-trevogi.html" data-i18n="nav.ayat">Аяты</a>
+      <a href="kids.html" data-i18n="nav.kids">Для детей</a>
+      <a href="pricing.html" data-i18n="nav.pricing">Тарифы</a>
+    </div>
+    <div class="nav-right">
+      
+      <div class="lang-switch">
+        <button class="lang-trigger" type="button" aria-expanded="false" aria-label="Язык / Language">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+          <span class="lang-current">РУС</span>
+          <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="lang-menu" role="menu">
+          <button data-lang="ru" role="menuitem"><span>Русский</span><span class="code">РУС</span></button>
+          <button data-lang="tg" role="menuitem"><span>Тоҷикӣ</span><span class="code">ТҶК</span></button>
+          <button data-lang="uz" role="menuitem"><span>O'zbek</span><span class="code">UZB</span></button>
+          <button data-lang="kk" role="menuitem"><span>Қазақ</span><span class="code">ҚАЗ</span></button>
+          <button data-lang="ky" role="menuitem"><span>Кыргыз</span><span class="code">КЫР</span></button>
+        </div>
+      </div>
+
+      <div class="theme-switch" role="group" aria-label="Тема">
+        <button data-theme="light" title="Светлая"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></button>
+        <button data-theme="sepia" title="Сепия"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2Z"/><path d="M8 7h7M8 11h7M8 15h5"/></svg></button>
+        <button data-theme="mushaf" title="Мусхаф"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 L13.5 10 L20 12 L13.5 14 L12 21 L10.5 14 L4 12 L10.5 10 Z"/></svg></button>
+        <button data-theme="dark" title="Ночь"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></button>
+      </div>
+      <button class="btn btn-soft btn-sm" data-i18n="nav.signin">Войти</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="wrap listen-hero">
+  <span class="tag"><span class="tag-dot"></span><span data-i18n="ls.badge">30 чтецов · Quran.com CDN</span></span>
+  <h1><span data-i18n="ls.heading_1">Голоса, которые</span><br/><span data-i18n="ls.heading_2">несли Книгу.</span></h1>
+  <p data-i18n="ls.lede">От Абдуль-Басита до Хусары — выбери чтеца, выбери диапазон аятов, выбери скорость. Sakeenly стримит из Quran.com CDN с подсветкой текущего аята и sleep-таймером.</p>
+</section>
+
+<section class="wrap">
+  <div class="filter-bar">
+    <div class="filter-search">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input placeholder="Поиск чтеца..." data-i18n-placeholder="ls.search" />
+    </div>
+    <button class="filter-pill active" data-i18n="ls.all">Все</button>
+    <button class="filter-pill">Хафс</button>
+    <button class="filter-pill">Варш</button>
+    <button class="filter-pill">Муратталь</button>
+    <button class="filter-pill">Муджаввад</button>
+  </div>
+
+  <div class="reciter-grid" id="reciter-grid"></div>
+</section>
+
+<!-- Surah strip -->
+<section class="wrap surah-strip">
+  <div class="strip-head">
+    <div>
+      <span class="eyebrow">Часто слушают</span>
+      <h2 style="margin-top: 10px; font-weight: 300;">Суры, к которым возвращаются</h2>
+    </div>
+    <a href="#" style="color: var(--accent); font-size: 14px;">Все 114 →</a>
+  </div>
+  <div class="strip-row">
+    <a class="strip-card" href="reader.html">
+      <div>
+        <div class="n">1 · 7 аятов</div>
+        <div class="t">Аль-Фатиха</div>
+        <div class="meta">ОТКРЫВАЮЩАЯ · 0:18</div>
+      </div>
+      <button class="play"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+    </a>
+    <a class="strip-card" href="reader.html">
+      <div>
+        <div class="n">36 · 83 аята</div>
+        <div class="t">Йа Син</div>
+        <div class="meta">СЕРДЦЕ КОРАНА · 13:42</div>
+      </div>
+      <button class="play"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+    </a>
+    <a class="strip-card" href="reader.html">
+      <div>
+        <div class="n">55 · 78 аятов</div>
+        <div class="t">Ар-Рахман</div>
+        <div class="meta">МИЛОСТИВЫЙ · 12:58</div>
+      </div>
+      <button class="play"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+    </a>
+    <a class="strip-card" href="reader.html">
+      <div>
+        <div class="n">67 · 30 аятов</div>
+        <div class="t">Аль-Мульк</div>
+        <div class="meta">ВЛАСТЬ · 7:51</div>
+      </div>
+      <button class="play"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+    </a>
+  </div>
+</section>
+
+<!-- Now playing -->
+<section class="wrap">
+  <div class="now-playing" id="now-playing">
+    <div class="np-row1">
+      <div class="np-left">
+        <div class="reciter-avatar" style="width:54px; height:54px">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+            <path d="M12 2 L14.2 9.8 L22 12 L14.2 14.2 L12 22 L9.8 14.2 L2 12 L9.8 9.8 Z" />
+          </svg>
+        </div>
+        <div class="np-info">
+          <div class="np-title" id="np-title">Абдуль-Басит Абдус-Самад</div>
+          <div class="np-sub" id="np-sub">Аль-Фатиха · аят 2 из 7 · муджаввад</div>
+        </div>
+      </div>
+      <div class="np-controls">
+        <button class="np-side-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 20 9 12l10-8zM5 4h2v16H5z"/></svg></button>
+        <button class="np-pp" id="np-pp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" id="np-pp-icon"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <button class="np-side-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M5 4 15 12 5 20zM17 4h2v16h-2z"/></svg></button>
+      </div>
+      <div class="np-right">
+        <button class="speed-pill" id="speed-pill">1.0×</button>
+        <div class="sleep-options">
+          <button>10м</button>
+          <button class="active">20м</button>
+          <button>30м</button>
+          <button>∞</button>
+        </div>
+      </div>
+    </div>
+    <div class="np-bar">
+      <span class="t" id="np-time">0:06</span>
+      <div class="progress" id="np-progress"><div style="width:34%"></div></div>
+      <span class="t">0:18</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="brand" style="margin-bottom:14px">
+        <span class="brand-mark">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+            <path d="M12 2 L14.2 9.8 L22 12 L14.2 14.2 L12 22 L9.8 14.2 L2 12 L9.8 9.8 Z" />
+          </svg>
+        </span>
+        <span>Sakeenly</span>
+      </div>
+      <p style="max-width:36ch;line-height:1.55" data-i18n="foot.tagline">Quran-companion для тебя. Веб, бесплатно для чтения. Без рекламы. Без трекеров. Никогда.</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="foot.product">Продукт</h4>
+      <a href="reader.html" data-i18n="foot.reader">Ридер</a>
+      <a href="listen.html" data-i18n="foot.reciters">Чтецы</a>
+      <a href="#" data-i18n="nav.ask">Спросить</a>
+      <a href="ayat-dlya-trevogi.html" data-i18n="foot.ayat">Аяты по темам</a>
+      <a href="pricing.html" data-i18n="nav.pricing">Тарифы</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="foot.company">Компания</h4>
+      <a href="#" data-i18n="foot.about">О нас</a>
+      <a href="#" data-i18n="foot.scholars">Scholar board</a>
+      <a href="privacy.html" data-i18n="foot.privacy">Приватность</a>
+      <a href="#" data-i18n="foot.terms">Условия</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="foot.help">Помощь</h4>
+      <a href="#">FAQ</a>
+      <a href="#" data-i18n="foot.report">Сообщить об ошибке</a>
+      <a href="#">English</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>SAKEENLY · سكينة · 2026</span>
+    <span data-i18n="foot.bottom_made">Made with نية · sakeenly.com</span>
+  </div>
+</footer>
+
+<script>
+  const RECITERS = [
+    { id: 'basit',   name: 'Абдуль-Басит Абдус-Самад', ar: 'عبد الباسط عبد الصمد', origin: 'Египет',     style: 'Муджаввад', surahs: 114 },
+    { id: 'husary',  name: 'Махмуд Халиль аль-Хусары', ar: 'محمود خليل الحصري',   origin: 'Египет',      style: 'Муратталь', surahs: 114 },
+    { id: 'sudais',  name: 'Абдуррахман ас-Судайс',    ar: 'عبد الرحمن السديس',    origin: 'Саудовская Аравия', style: 'Муратталь', surahs: 114 },
+    { id: 'ghamdi',  name: 'Сʼад аль-Гʼамиди',         ar: 'سعد الغامدي',          origin: 'Саудовская Аравия', style: 'Муратталь', surahs: 114 },
+    { id: 'minshawi', name: 'Мухаммад Сиддик аль-Миншави', ar: 'محمد صديق المنشاوي', origin: 'Египет',  style: 'Муджаввад', surahs: 114 },
+    { id: 'shuraim', name: 'Сʼауд аш-Шурайм',         ar: 'سعود الشريم',         origin: 'Саудовская Аравия', style: 'Муратталь', surahs: 114 },
+    { id: 'matrood', name: 'Абдуллах аль-Матруд',     ar: 'عبدالله المطرود',     origin: 'Саудовская Аравия', style: 'Муратталь', surahs: 114 },
+    { id: 'ajmi',    name: 'Ахмад аль-Аджми',         ar: 'أحمد العجمي',         origin: 'Саудовская Аравия', style: 'Муратталь', surahs: 114 },
+    { id: 'rifai',   name: 'Хани ар-Рифаʼи',          ar: 'هاني الرفاعي',         origin: 'Саудовская Аравия', style: 'Муратталь', surahs: 114 },
+    { id: 'tablawi', name: 'Мухаммад ат-Таблави',     ar: 'محمد الطبلاوي',       origin: 'Египет',     style: 'Муджаввад', surahs: 114 },
+    { id: 'juhany',  name: 'Абдуллах аль-Джухани',    ar: 'عبدالله الجهني',      origin: 'Саудовская Аравия', style: 'Муратталь', surahs: 114 },
+  ];
+
+  const grid = document.getElementById('reciter-grid');
+  grid.innerHTML = RECITERS.map((r, i) => `
+    <div class="reciter ${i === 0 ? 'playing' : ''}" data-id="${r.id}">
+      <div class="reciter-avatar">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M12 2 L14.2 9.8 L22 12 L14.2 14.2 L12 22 L9.8 14.2 L2 12 L9.8 9.8 Z" />
+        </svg>
+      </div>
+      <div class="reciter-info">
+        <div class="reciter-name">${r.name}</div>
+        <div class="reciter-ar arabic" dir="rtl">${r.ar}</div>
+        <div class="reciter-meta">
+          <span>${r.origin}</span><span>${r.style}</span><span>${r.surahs} сур</span>
+        </div>
+      </div>
+      <button class="reciter-pp" aria-label="Play">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+    </div>
+  `).join('') + `
+    <div class="reciter" style="opacity: 0.7; cursor: default;">
+      <div class="reciter-avatar" style="opacity: 0.6"></div>
+      <div class="reciter-info">
+        <div class="reciter-name" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.08em; color: var(--text-3);">+ ЕЩЁ 18 ЧТЕЦОВ</div>
+        <div class="reciter-meta"><span>Загрузить все</span></div>
+      </div>
+    </div>
+  `;
+
+  // Reciter selection
+  grid.addEventListener('click', (e) => {
+    const card = e.target.closest('.reciter[data-id]');
+    if (!card) return;
+    grid.querySelectorAll('.reciter').forEach(r => r.classList.remove('playing'));
+    card.classList.add('playing');
+    const id = card.dataset.id;
+    const r = RECITERS.find(x => x.id === id);
+    if (r) {
+      document.getElementById('np-title').textContent = r.name;
+      document.getElementById('np-sub').textContent = `Аль-Фатиха · аят 2 из 7 · ${r.style}`;
+    }
+  });
+
+  // Play/pause toggle
+  let playing = false;
+  let progress = 0.34;
+  const ppBtn = document.getElementById('np-pp');
+  const ppIcon = document.getElementById('np-pp-icon');
+  const npTime = document.getElementById('np-time');
+  const npProgressBar = document.querySelector('#np-progress > div');
+
+  function renderProgress() {
+    npProgressBar.style.width = (progress * 100) + '%';
+    const sec = Math.round(progress * 18);
+    npTime.textContent = `0:${String(sec).padStart(2,'0')}`;
+  }
+
+  ppBtn.addEventListener('click', () => {
+    playing = !playing;
+    if (playing) {
+      ppIcon.innerHTML = '<rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/>';
+    } else {
+      ppIcon.innerHTML = '<path d="M8 5v14l11-7z"/>';
+    }
+  });
+
+  setInterval(() => {
+    if (!playing) return;
+    progress += 0.018;
+    if (progress >= 1) progress = 0;
+    renderProgress();
+  }, 320);
+
+  // Speed cycle
+  const speeds = ['0.75×', '1.0×', '1.25×', '1.5×'];
+  let speedIdx = 1;
+  document.getElementById('speed-pill').addEventListener('click', (e) => {
+    speedIdx = (speedIdx + 1) % speeds.length;
+    e.currentTarget.textContent = speeds[speedIdx];
+  });
+
+  // Sleep timer toggle
+  document.querySelectorAll('.sleep-options button').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('.sleep-options button').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+    });
+  });
+
+  // Filter pills
+  document.querySelectorAll('.filter-pill').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('.filter-pill').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+    });
+  });
+
+  // Progress bar click
+  document.getElementById('np-progress').addEventListener('click', (e) => {
+    const r = e.currentTarget.getBoundingClientRect();
+    progress = (e.clientX - r.left) / r.width;
+    renderProgress();
+  });
+
+  renderProgress();
+</script>
+
+<script src="i18n-extra.js"></script>
+</body>
+</html>

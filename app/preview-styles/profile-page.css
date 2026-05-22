@@ -1,0 +1,101 @@
+/* Page-specific styles extracted from profile.html */
+
+.profile-head {
+    padding: 56px 0 28px;
+    display: flex; align-items: center; gap: 28px;
+  }
+  .avatar-big {
+    width: 84px; height: 84px;
+    border-radius: 999px;
+    background:
+      radial-gradient(circle at 50% 40%, var(--accent-soft) 0, oklch(var(--surface-2)) 70%);
+    border: 1px solid oklch(var(--border));
+    display: grid; place-items: center;
+    color: oklch(var(--accent));
+    font-family: 'Spectral', serif; font-size: 2rem;
+    flex-shrink: 0;
+  }
+  .profile-meta h1 { font-weight: 300; font-size: clamp(1.8rem, 3vw, 2.6rem); }
+  .profile-meta .email { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: oklch(var(--text-3)); margin-top: 6px; letter-spacing: 0.06em; }
+  .profile-actions { margin-left: auto; display: flex; gap: 10px; }
+  @media (max-width: 700px) { .profile-actions { display: none; } }
+
+  .profile-stats-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
+    margin-top: 32px;
+  }
+  @media (max-width: 900px) { .profile-stats-grid { grid-template-columns: 1fr; } }
+
+  .stat-card {
+    padding: 26px;
+    background: oklch(var(--surface)); border: 1px solid oklch(var(--border));
+    border-radius: 18px;
+    display: flex; flex-direction: column; gap: 6px;
+    position: relative; overflow: hidden;
+  }
+  .stat-card .eyebrow { color: oklch(var(--text-3)); }
+  .stat-card .v {
+    font-family: 'Spectral', serif; font-size: 3.4rem; line-height: 1;
+    color: oklch(var(--accent)); margin-top: 14px;
+  }
+  .stat-card .d { color: oklch(var(--text-2)); font-size: 13px; margin-top: 4px; }
+  .stat-card .corner { position: absolute; top: 14px; right: 14px; color: oklch(var(--accent)); opacity: 0.6; }
+
+  .sec-head { display: flex; justify-content: space-between; align-items: end; margin: 64px 0 18px; }
+  .sec-head h2 { font-weight: 300; }
+  .sec-head a { color: oklch(var(--accent)); font-size: 14px; }
+
+  .bm-list { display: flex; flex-direction: column; gap: 10px; }
+  .bm {
+    display: grid; grid-template-columns: auto 1fr auto; gap: 18px; align-items: center;
+    padding: 18px 22px;
+    background: oklch(var(--surface)); border: 1px solid oklch(var(--border));
+    border-radius: 14px;
+    transition: border-color 140ms;
+  }
+  .bm:hover { border-color: oklch(var(--accent)); }
+  .bm .key {
+    font-family: 'JetBrains Mono', monospace; font-size: 13px;
+    color: oklch(var(--accent));
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    border: 1px solid color-mix(in oklab, oklch(var(--accent)) 30%, transparent);
+  }
+  .bm .preview {
+    font-family: 'Spectral', serif; color: oklch(var(--text-2));
+    font-size: 14px; line-height: 1.5;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .bm .ago { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: oklch(var(--text-3)); letter-spacing: 0.06em; }
+
+  .settings-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 800px) { .settings-grid { grid-template-columns: 1fr; } }
+  .setting {
+    padding: 20px;
+    background: oklch(var(--surface)); border: 1px solid oklch(var(--border));
+    border-radius: 16px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .setting .lab { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: oklch(var(--text-3)); }
+  .setting select {
+    padding: 10px 12px;
+    background: oklch(var(--bg)); color: oklch(var(--text));
+    border: 1px solid oklch(var(--border)); border-radius: 10px;
+    font-family: inherit; font-size: 14px;
+  }
+
+  .subscription-card {
+    margin-top: 32px;
+    background: linear-gradient(180deg, var(--accent-soft) 0, transparent 60%), oklch(var(--surface));
+    border: 1px solid color-mix(in oklab, oklch(var(--accent)) 50%, oklch(var(--border)));
+    border-radius: 22px;
+    padding: 28px 32px;
+    display: flex; align-items: center; justify-content: space-between; gap: 22px;
+    flex-wrap: wrap;
+    position: relative; overflow: hidden;
+  }
+  .subscription-card .geo-stars-soft { z-index: 0; }
+  .subscription-card > * { position: relative; z-index: 1; }
+  .sub-plan { font-family: 'Spectral', serif; font-size: 2rem; }
+  .sub-meta { color: oklch(var(--text-2)); font-size: 13px; margin-top: 4px; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.06em; }

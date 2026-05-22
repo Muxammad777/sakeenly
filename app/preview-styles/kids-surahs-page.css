@@ -1,0 +1,58 @@
+/* Page-specific styles extracted from kids-surahs.html */
+
+.kid-hero { padding: 56px 0 20px; position: relative; overflow: hidden; text-align: center; }
+  .kid-hero .geo-stars-fade { z-index: -1; }
+  .kid-hero h1 { font-weight: 300; max-width: 22ch; margin: 14px auto 0; }
+  .kid-hero p { color: oklch(var(--text-2)); max-width: 56ch; margin: 14px auto 0; }
+
+  .ks-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 36px; }
+  @media (max-width: 800px) { .ks-grid { grid-template-columns: 1fr; } }
+
+  .ks {
+    padding: 26px 28px;
+    background: oklch(var(--surface)); border: 1px solid oklch(var(--border));
+    border-radius: 20px;
+    display: flex; flex-direction: column; gap: 14px;
+    transition: border-color 200ms, transform 200ms;
+    position: relative; overflow: hidden;
+  }
+  .ks:hover { border-color: oklch(var(--accent)); transform: translateY(-2px); }
+  .ks-head {
+    display: flex; align-items: center; gap: 14px;
+  }
+  .ks-num {
+    width: 48px; height: 48px;
+    border-radius: 14px;
+    background: var(--accent-soft); color: oklch(var(--accent));
+    display: grid; place-items: center;
+    font-family: 'Spectral', serif; font-size: 1.4rem;
+    flex-shrink: 0;
+    border: 1px solid color-mix(in oklab, oklch(var(--accent)) 30%, transparent);
+  }
+  .ks-title { flex: 1; }
+  .ks-title .name { font-family: 'Spectral', serif; font-size: 1.4rem; }
+  .ks-title .meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: oklch(var(--text-3)); letter-spacing: 0.08em; margin-top: 4px; }
+  .ks-ar { font-family: 'Scheherazade New', serif; font-size: 2rem; color: oklch(var(--accent)); direction: rtl; }
+  .ks-note { color: oklch(var(--text-2)); font-size: 14px; line-height: 1.55; }
+
+  .ks-progress {
+    display: flex; gap: 3px; height: 4px;
+    margin-top: 8px;
+  }
+  .ks-progress .b {
+    flex: 1; background: oklch(var(--surface-2)); border-radius: 999px;
+  }
+  .ks-progress .b.done { background: oklch(var(--accent)); }
+  .ks-foot {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 6px;
+  }
+  .ks-foot .label { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: oklch(var(--text-3)); letter-spacing: 0.1em; }
+  .ks-play {
+    width: 38px; height: 38px;
+    border-radius: 999px;
+    background: oklch(var(--bg)); border: 1px solid oklch(var(--border-strong));
+    color: oklch(var(--text));
+    display: grid; place-items: center;
+  }
+  .ks:hover .ks-play { background: oklch(var(--accent)); color: oklch(0.15 0.02 60); border-color: transparent; }

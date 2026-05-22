@@ -1,0 +1,1554 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sakeenly · Для детей — Икра, Коран, истории пророков</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Scheherazade+New:wght@400;500;700&display=swap" />
+
+<style>
+/* Sakeenly — shared styles */
+
+/* ============ THEME TOKENS ============ */
+:root,
+[data-theme="dark"] {
+  /* night-sky (default) */
+  --bg: oklch(0.17 0.025 255);
+  --bg-deep: oklch(0.13 0.022 255);
+  --surface: oklch(0.21 0.024 255);
+  --surface-2: oklch(0.25 0.022 255);
+  --border: oklch(0.32 0.020 255);
+  --border-strong: oklch(0.42 0.022 255);
+  --text: oklch(0.95 0.006 90);
+  --text-2: oklch(0.78 0.012 90);
+  --text-3: oklch(0.60 0.018 250);
+  --accent: oklch(0.80 0.130 85);     /* warm gold */
+  --accent-2: oklch(0.65 0.115 78);
+  --accent-soft: oklch(0.80 0.130 85 / 0.14);
+  --pattern: oklch(0.95 0.010 90 / 0.04);
+  --pattern-strong: oklch(0.80 0.130 85 / 0.12);
+  --glow: radial-gradient(60% 80% at 50% 0%, oklch(0.80 0.130 85 / 0.08), transparent 70%);
+  --shadow-1: 0 1px 0 oklch(1 0 0 / 0.04) inset, 0 8px 24px -12px oklch(0 0 0 / 0.4);
+  --shadow-2: 0 12px 40px -16px oklch(0 0 0 / 0.6);
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --bg: oklch(0.985 0.004 90);
+  --bg-deep: oklch(0.965 0.006 90);
+  --surface: oklch(1 0 0);
+  --surface-2: oklch(0.975 0.005 90);
+  --border: oklch(0.90 0.008 90);
+  --border-strong: oklch(0.82 0.012 90);
+  --text: oklch(0.18 0.015 255);
+  --text-2: oklch(0.40 0.015 255);
+  --text-3: oklch(0.55 0.015 255);
+  --accent: oklch(0.52 0.130 78);
+  --accent-2: oklch(0.42 0.115 75);
+  --accent-soft: oklch(0.52 0.130 78 / 0.12);
+  --pattern: oklch(0.18 0.015 255 / 0.05);
+  --pattern-strong: oklch(0.52 0.130 78 / 0.16);
+  --glow: radial-gradient(60% 80% at 50% 0%, oklch(0.52 0.130 78 / 0.06), transparent 70%);
+  --shadow-1: 0 1px 0 oklch(1 0 0 / 0.6) inset, 0 8px 24px -16px oklch(0 0 0 / 0.18);
+  --shadow-2: 0 12px 40px -20px oklch(0 0 0 / 0.18);
+  color-scheme: light;
+}
+
+[data-theme="sepia"] {
+  --bg: oklch(0.94 0.025 85);
+  --bg-deep: oklch(0.92 0.028 85);
+  --surface: oklch(0.96 0.020 85);
+  --surface-2: oklch(0.93 0.025 85);
+  --border: oklch(0.85 0.030 78);
+  --border-strong: oklch(0.74 0.040 75);
+  --text: oklch(0.28 0.035 60);
+  --text-2: oklch(0.42 0.035 60);
+  --text-3: oklch(0.55 0.030 65);
+  --accent: oklch(0.45 0.110 60);
+  --accent-2: oklch(0.38 0.100 55);
+  --accent-soft: oklch(0.45 0.110 60 / 0.12);
+  --pattern: oklch(0.28 0.035 60 / 0.06);
+  --pattern-strong: oklch(0.45 0.110 60 / 0.18);
+  --glow: radial-gradient(60% 80% at 50% 0%, oklch(0.55 0.110 70 / 0.10), transparent 70%);
+  --shadow-1: 0 1px 0 oklch(1 0 0 / 0.4) inset, 0 8px 24px -16px oklch(0.3 0.05 60 / 0.18);
+  --shadow-2: 0 12px 40px -20px oklch(0.3 0.05 60 / 0.22);
+  color-scheme: light;
+}
+
+[data-theme="mushaf"] {
+  --bg: oklch(0.91 0.035 88);
+  --bg-deep: oklch(0.88 0.040 88);
+  --surface: oklch(0.94 0.030 88);
+  --surface-2: oklch(0.90 0.035 88);
+  --border: oklch(0.78 0.045 78);
+  --border-strong: oklch(0.65 0.055 72);
+  --text: oklch(0.24 0.040 55);
+  --text-2: oklch(0.38 0.040 55);
+  --text-3: oklch(0.52 0.040 60);
+  --accent: oklch(0.42 0.120 55);
+  --accent-2: oklch(0.34 0.105 50);
+  --accent-soft: oklch(0.42 0.120 55 / 0.14);
+  --pattern: oklch(0.24 0.040 55 / 0.08);
+  --pattern-strong: oklch(0.42 0.120 55 / 0.20);
+  --glow: radial-gradient(60% 80% at 50% 0%, oklch(0.50 0.130 65 / 0.12), transparent 70%);
+  --shadow-1: 0 1px 0 oklch(1 0 0 / 0.4) inset, 0 8px 24px -16px oklch(0.3 0.05 60 / 0.22);
+  --shadow-2: 0 12px 40px -20px oklch(0.3 0.05 60 / 0.26);
+  color-scheme: light;
+}
+
+/* ============ RESET ============ */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Golos Text', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 220ms ease, color 220ms ease;
+  text-rendering: optimizeLegibility;
+}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+img, svg { display: block; max-width: 100%; }
+
+/* ============ TYPOGRAPHY ============ */
+.serif { font-family: 'Spectral', 'Source Serif 4', Georgia, serif; font-weight: 400; letter-spacing: -0.01em; }
+.mono  { font-family: 'JetBrains Mono', ui-monospace, monospace; letter-spacing: 0; }
+.arabic {
+  font-family: 'Scheherazade New', 'Amiri Quran', 'Amiri', 'Noto Naskh Arabic', serif;
+  direction: rtl;
+  font-feature-settings: "calt", "liga", "ss01";
+  line-height: 2.1;
+}
+
+h1, h2, h3 { font-family: 'Spectral', Georgia, serif; font-weight: 400; letter-spacing: -0.015em; margin: 0; }
+h1 { font-size: clamp(2.4rem, 4.6vw, 4.2rem); line-height: 1.05; }
+h2 { font-size: clamp(1.8rem, 2.6vw, 2.4rem); line-height: 1.15; }
+h3 { font-size: 1.25rem; line-height: 1.3; }
+p  { margin: 0; }
+
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+/* ============ LAYOUT ============ */
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+.wrap-tight { max-width: 880px; margin: 0 auto; padding: 0 28px; }
+
+/* ============ NAV ============ */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  background: color-mix(in oklab, var(--bg) 78%, transparent);
+  border-bottom: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+}
+.nav-inner {
+  max-width: 1240px; margin: 0 auto;
+  padding: 14px 28px;
+  display: flex; align-items: center; gap: 28px;
+}
+.brand {
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'Spectral', serif; font-size: 19px; letter-spacing: -0.01em;
+}
+.brand-mark {
+  width: 26px; height: 26px;
+  display: grid; place-items: center;
+  color: var(--accent);
+}
+.nav-links {
+  display: flex; gap: 4px;
+  margin-left: 8px;
+}
+.nav-links a {
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  color: var(--text-2);
+  transition: background 160ms, color 160ms;
+}
+.nav-links a:hover { color: var(--text); background: var(--surface); }
+.nav-links a.active { color: var(--text); background: var(--surface); }
+.nav-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+
+/* theme switcher */
+.theme-switch {
+  display: inline-flex; align-items: center; gap: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 3px;
+}
+.theme-switch button {
+  width: 28px; height: 28px;
+  border-radius: 999px;
+  display: grid; place-items: center;
+  color: var(--text-3);
+  transition: background 160ms, color 160ms;
+}
+.theme-switch button:hover { color: var(--text); }
+.theme-switch button[aria-pressed="true"] {
+  background: var(--bg);
+  color: var(--accent);
+  box-shadow: var(--shadow-1);
+}
+
+/* ============ BUTTONS ============ */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 18px;
+  border-radius: 999px;
+  font-size: 14px; font-weight: 500;
+  transition: transform 100ms ease, background 160ms, border-color 160ms, color 160ms;
+  white-space: nowrap;
+}
+.btn:active { transform: translateY(1px); }
+.btn-primary {
+  background: var(--accent);
+  color: oklch(0.16 0.02 60);
+  border: 1px solid color-mix(in oklab, var(--accent) 70%, black 12%);
+}
+.btn-primary:hover { background: color-mix(in oklab, var(--accent) 92%, white 8%); }
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+}
+.btn-ghost:hover { background: var(--surface); }
+.btn-soft {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn-soft:hover { background: var(--surface-2); }
+.btn-sm { padding: 7px 12px; font-size: 13px; }
+
+/* ============ CARD ============ */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: var(--shadow-1);
+}
+.card-flat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+/* ============ GEOMETRIC PATTERN BG ============ */
+/* Original 8-point-star tessellation, drawn with CSS conic gradients */
+.geo-bg {
+  position: absolute; inset: 0;
+  background-image:
+    /* lattice */
+    repeating-linear-gradient(45deg,
+      var(--pattern) 0 1px, transparent 1px 22px),
+    repeating-linear-gradient(-45deg,
+      var(--pattern) 0 1px, transparent 1px 22px);
+  mask-image: radial-gradient(circle at 50% 30%, black 0, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle at 50% 30%, black 0, transparent 70%);
+  pointer-events: none;
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  margin-top: 120px;
+  border-top: 1px solid var(--border);
+  padding: 56px 0 40px;
+  color: var(--text-3);
+  font-size: 14px;
+}
+.footer-inner {
+  max-width: 1240px; margin: 0 auto; padding: 0 28px;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+}
+.footer h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 14px; font-weight: 500;
+}
+.footer-col a { display: block; padding: 4px 0; color: var(--text-2); }
+.footer-col a:hover { color: var(--text); }
+.footer-bottom {
+  max-width: 1240px; margin: 32px auto 0; padding: 24px 28px 0;
+  border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between; font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-3);
+}
+@media (max-width: 760px) {
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .footer-bottom { flex-direction: column; gap: 8px; }
+}
+
+/* ============ UTIL ============ */
+.divider { height: 1px; background: var(--border); margin: 40px 0; }
+.kbd {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  padding: 2px 6px;
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text-2);
+}
+.tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
+}
+.tag-dot { width: 6px; height: 6px; border-radius: 999px; background: currentColor; }
+
+/* scroll bar subtle */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 999px; border: 2px solid var(--bg); }
+::-webkit-scrollbar-track { background: transparent; }
+
+</style>
+<style id="geo-enhance">
+/* ====== ISLAMIC GEOMETRY ====== */
+:root {
+  --geo-mask-stars: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'><g fill='none' stroke='black' stroke-width='0.9'><path d='M42 4 L48 36 L80 42 L48 48 L42 80 L36 48 L4 42 L36 36 Z'/><path d='M42 18 L46 38 L66 42 L46 46 L42 66 L38 46 L18 42 L38 38 Z' opacity='0.6'/><circle cx='42' cy='42' r='3' fill='black' stroke='none'/><path d='M0 42 L4 42 M80 42 L84 42 M42 0 L42 4 M42 80 L42 84'/><path d='M0 0 L18 18 M84 0 L66 18 M0 84 L18 66 M84 84 L66 66' stroke-width='0.6' opacity='0.5'/></g></svg>");
+  --geo-mask-girih: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='104' viewBox='0 0 120 104'><g fill='none' stroke='black' stroke-width='0.9'><path d='M30 0 L60 17 L60 51 L30 68 L0 51 L0 17 Z'/><path d='M90 0 L120 17 L120 51 L90 68 L60 51 L60 17 Z'/><path d='M30 68 L60 85 L60 104 M90 68 L60 85 M0 51 L0 104 M120 51 L120 104' opacity='0.6'/><circle cx='30' cy='34' r='3' fill='black' stroke='none'/><circle cx='90' cy='34' r='3' fill='black' stroke='none'/></g></svg>");
+  --geo-mask-arabesque: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'><g fill='none' stroke='black' stroke-width='0.8'><path d='M30 5 L34 26 L55 30 L34 34 L30 55 L26 34 L5 30 L26 26 Z'/><circle cx='30' cy='30' r='10'/></g></svg>");
+}
+
+/* Star-lattice overlay — themed via background-color + SVG mask */
+.geo-stars,
+.geo-stars-soft,
+.geo-stars-strong {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background-color: var(--accent);
+  -webkit-mask: var(--geo-mask-stars) repeat;
+  mask: var(--geo-mask-stars) repeat;
+  -webkit-mask-size: 84px 84px;
+  mask-size: 84px 84px;
+}
+.geo-stars { opacity: 0.10; }
+.geo-stars-soft { opacity: 0.055; }
+.geo-stars-strong { opacity: 0.16; }
+
+.geo-stars-fade {
+  -webkit-mask-image:
+    var(--geo-mask-stars),
+    radial-gradient(ellipse 70% 80% at 50% 30%, black, transparent 75%);
+  mask-image:
+    var(--geo-mask-stars),
+    radial-gradient(ellipse 70% 80% at 50% 30%, black, transparent 75%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+  -webkit-mask-size: 84px 84px, cover;
+  mask-size: 84px 84px, cover;
+}
+
+/* Girih hex-star lattice */
+.geo-girih {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background-color: var(--accent);
+  opacity: 0.07;
+  -webkit-mask: var(--geo-mask-girih) repeat;
+  mask: var(--geo-mask-girih) repeat;
+  -webkit-mask-size: 120px 104px;
+  mask-size: 120px 104px;
+}
+
+/* === ORNAMENTAL DIVIDER === */
+.geo-divider {
+  display: flex; align-items: center; gap: 20px;
+  margin: 56px auto;
+  max-width: 520px;
+  color: var(--accent);
+  padding: 0 28px;
+}
+.geo-divider::before, .geo-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, currentColor 30%, currentColor 70%, transparent);
+  opacity: 0.45;
+}
+.geo-divider svg {
+  width: 32px; height: 32px;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+/* === ORNAMENTAL FRAME (corner flourishes on cards) === */
+.geo-frame {
+  position: relative;
+}
+.geo-frame > .corner {
+  position: absolute;
+  width: 36px; height: 36px;
+  color: var(--accent);
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 2;
+}
+.geo-frame > .corner.tl { top: 14px; left: 14px; }
+.geo-frame > .corner.tr { top: 14px; right: 14px; transform: scaleX(-1); }
+.geo-frame > .corner.bl { bottom: 14px; left: 14px; transform: scaleY(-1); }
+.geo-frame > .corner.br { bottom: 14px; right: 14px; transform: scale(-1, -1); }
+
+/* === SECTION-LEVEL DECOR === */
+.geo-medallion {
+  display: inline-grid; place-items: center;
+  width: 64px; height: 64px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  border: 1px solid color-mix(in oklab, var(--accent) 40%, var(--border));
+  color: var(--accent);
+}
+.geo-medallion svg { width: 36px; height: 36px; }
+
+/* === MUSHAF ORNAMENTAL BORDER === */
+.mushaf-ornament {
+  position: relative;
+}
+.mushaf-ornament::before,
+.mushaf-ornament::after {
+  content: "";
+  position: absolute;
+  left: 28px; right: 28px;
+  height: 14px;
+  background-color: var(--accent);
+  opacity: 0.45;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><g fill='none' stroke='black' stroke-width='0.8'><line x1='0' y1='7' x2='90' y2='7' stroke-dasharray='2 4'/><line x1='110' y1='7' x2='200' y2='7' stroke-dasharray='2 4'/><path d='M100 2 L103 6 L107 7 L103 8 L100 12 L97 8 L93 7 L97 6 Z' fill='black'/></g></svg>") no-repeat center/contain;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><g fill='none' stroke='black' stroke-width='0.8'><line x1='0' y1='7' x2='90' y2='7' stroke-dasharray='2 4'/><line x1='110' y1='7' x2='200' y2='7' stroke-dasharray='2 4'/><path d='M100 2 L103 6 L107 7 L103 8 L100 12 L97 8 L93 7 L97 6 Z' fill='black'/></g></svg>") no-repeat center/contain;
+  pointer-events: none;
+}
+.mushaf-ornament::before { top: 16px; }
+.mushaf-ornament::after { bottom: 16px; }
+
+/* === MIHRAB ARCH (for surah header top) === */
+.mihrab-top {
+  width: 80px; height: 36px;
+  margin: 0 auto 14px;
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+/* === BISMILLAH ORNAMENTAL FRAME === */
+.basmala-frame {
+  position: relative;
+  display: inline-block;
+  padding: 8px 70px;
+}
+.basmala-frame::before,
+.basmala-frame::after {
+  content: "";
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  width: 56px; height: 18px;
+  background-color: var(--accent);
+  opacity: 0.55;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 18' fill='none' stroke='black' stroke-width='0.8'><line x1='0' y1='9' x2='40' y2='9' stroke-dasharray='1.5 3'/><path d='M48 9 L52 5 L56 9 L52 13 Z' fill='black'/><circle cx='44' cy='9' r='1.5' fill='black'/></svg>") no-repeat center/contain;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 18' fill='none' stroke='black' stroke-width='0.8'><line x1='0' y1='9' x2='40' y2='9' stroke-dasharray='1.5 3'/><path d='M48 9 L52 5 L56 9 L52 13 Z' fill='black'/><circle cx='44' cy='9' r='1.5' fill='black'/></svg>") no-repeat center/contain;
+}
+.basmala-frame::before { left: 0; }
+.basmala-frame::after { right: 0; transform: translateY(-50%) scaleX(-1); }
+</style>
+<style id="cursor-islamic">
+  :root {
+    /* Default cursor: 8-point star, hotspot at tip (center top) */
+    --cur-default: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'><g><path d='M14 1 L16 12 L27 14 L16 16 L14 27 L12 16 L1 14 L12 12 Z' fill='%23E0B66A' stroke='%23000' stroke-opacity='0.45' stroke-width='0.7' stroke-linejoin='round'/><path d='M14 6 L15 13 L22 14 L15 15 L14 22 L13 15 L6 14 L13 13 Z' fill='%23FFF1C9' fill-opacity='0.9'/><circle cx='14' cy='14' r='1.4' fill='%23000' fill-opacity='0.6'/></g></svg>") 14 14, auto;
+
+    /* Pointer: bigger star with ring */
+    --cur-pointer: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><g><circle cx='16' cy='16' r='13.5' fill='none' stroke='%23E0B66A' stroke-width='1' stroke-opacity='0.55' stroke-dasharray='2 2.5'/><path d='M16 2 L18.5 13.5 L30 16 L18.5 18.5 L16 30 L13.5 18.5 L2 16 L13.5 13.5 Z' fill='%23F1C770' stroke='%23000' stroke-opacity='0.5' stroke-width='0.7' stroke-linejoin='round'/><path d='M16 7 L17.5 14.5 L25 16 L17.5 17.5 L16 25 L14.5 17.5 L7 16 L14.5 14.5 Z' fill='%23FFF3CC' fill-opacity='0.85'/><circle cx='16' cy='16' r='1.8' fill='%2300000080'/></g></svg>") 16 16, pointer;
+
+    /* Text: vertical reed-pen mark */
+    --cur-text: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='28' viewBox='0 0 16 28'><g fill='%23E0B66A' stroke='%23000' stroke-opacity='0.45' stroke-width='0.6'><path d='M8 2 Q9.5 4 8 14 Q6.5 4 8 2 Z'/><path d='M8 14 L9 22 L8 26 L7 22 Z'/><circle cx='8' cy='14' r='1.4' stroke='none'/></g></svg>") 8 14, text;
+  }
+
+  html, body { cursor: var(--cur-default); }
+  a, button, [role='button'], summary, label, select,
+  .ic-btn, .pic-btn, .np-side-btn, .np-pp, .player-pp, .reciter-pp,
+  .filter-pill, .trans-pill, .surah-item, .em-mini, .emotion, .feature,
+  .ayah-span, .trans-row, .strip-card, .pop-btn, .speed-pill,
+  .theme-switch button, .billing-toggle button, .sleep-options button {
+    cursor: var(--cur-pointer);
+  }
+  input[type='text'], input[type='email'], input[type='search'], input:not([type]),
+  textarea, [contenteditable] {
+    cursor: var(--cur-text);
+  }
+  /* Don't override loading/disabled or native scrollbars */
+  [disabled], [aria-disabled='true'] { cursor: not-allowed; }
+</style>
+<style id="lang-switch-css">
+.lang-switch { position: relative; }
+.lang-trigger {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.08em;
+  transition: background 140ms, color 140ms, border-color 140ms;
+}
+.lang-trigger:hover { color: var(--text); border-color: var(--border-strong); }
+.lang-trigger svg { color: var(--accent); }
+.lang-menu {
+  position: absolute; top: calc(100% + 6px); right: 0;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  padding: 6px;
+  box-shadow: var(--shadow-2);
+  display: none;
+  flex-direction: column;
+  min-width: 180px;
+  z-index: 80;
+}
+.lang-menu.open { display: flex; }
+.lang-menu button {
+  padding: 9px 12px;
+  border-radius: 8px;
+  text-align: left;
+  color: var(--text);
+  font-size: 14px;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  transition: background 120ms, color 120ms;
+}
+.lang-menu button:hover { background: var(--surface-2); }
+.lang-menu button[aria-pressed="true"] { color: var(--accent); background: var(--accent-soft); }
+.lang-menu button .code {
+  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  letter-spacing: 0.08em; color: var(--text-3);
+}
+.lang-menu button[aria-pressed="true"] .code { color: var(--accent); }
+</style>
+
+<style>
+  /* Kids-specific */
+  body { font-feature-settings: "ss01", "cv02"; }
+  .kid-hero {
+    padding: 64px 0 36px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+  }
+  .kid-hero::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(60% 70% at 50% 20%, var(--accent-soft) 0, transparent 70%);
+    pointer-events: none;
+  }
+  .kid-hero > * { position: relative; }
+  .kid-hero h1 {
+    font-weight: 400;
+    font-size: clamp(2.6rem, 5.4vw, 4.4rem);
+    line-height: 1.05;
+    margin: 20px auto 0;
+    max-width: 18ch;
+    letter-spacing: -0.02em;
+  }
+  .kid-hero p.lede {
+    margin: 22px auto 0;
+    max-width: 56ch;
+    color: var(--text-2);
+    font-size: 1.1rem;
+    line-height: 1.65;
+  }
+
+  /* Big friendly star */
+  .kid-star {
+    width: 60px; height: 60px;
+    margin: 0 auto;
+    color: var(--accent);
+    animation: kidstar 7s linear infinite;
+    transform-origin: 50% 50%;
+  }
+  @keyframes kidstar { to { transform: rotate(360deg); } }
+
+  .kid-bubbles {
+    position: absolute; inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .kid-bubble {
+    position: absolute;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    border: 1px solid color-mix(in oklab, var(--accent) 40%, var(--border));
+    color: var(--accent);
+    display: grid; place-items: center;
+    font-family: 'Scheherazade New', serif;
+    font-size: 1.6rem;
+    opacity: 0.6;
+  }
+
+  .kid-cta {
+    margin-top: 36px;
+    display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;
+  }
+
+  /* Sections */
+  .kid-section { padding: 24px 0; margin-top: 36px; }
+  .kid-section-head {
+    display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center;
+    margin-bottom: 24px;
+  }
+  .kid-num {
+    font-family: 'Spectral', serif;
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--accent);
+    opacity: 0.5;
+    font-weight: 300;
+  }
+  .kid-section h2 {
+    font-weight: 400;
+    font-size: 1.9rem;
+    line-height: 1.1;
+  }
+  .kid-section h2 + p { color: var(--text-2); margin-top: 4px; font-size: 14px; }
+  .kid-pill {
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.08em;
+    border: 1px solid color-mix(in oklab, var(--accent) 40%, var(--border));
+  }
+
+  /* === IQRA ALPHABET === */
+  .iqra-grid {
+    display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px;
+  }
+  @media (max-width: 800px) { .iqra-grid { grid-template-columns: repeat(4, 1fr); } }
+  @media (max-width: 480px) { .iqra-grid { grid-template-columns: repeat(3, 1fr); } }
+  .letter {
+    aspect-ratio: 1;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 4px;
+    transition: border-color 160ms, transform 160ms, background 160ms;
+    position: relative;
+    overflow: hidden;
+  }
+  .letter::before {
+    content: ""; position: absolute; inset: 0;
+    background-color: var(--accent);
+    opacity: 0.05;
+    -webkit-mask: var(--geo-mask-stars) repeat;
+    mask: var(--geo-mask-stars) repeat;
+    -webkit-mask-size: 60px 60px; mask-size: 60px 60px;
+    pointer-events: none;
+  }
+  .letter:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    background: var(--surface-2);
+  }
+  .letter.done {
+    background: var(--accent-soft);
+    border-color: color-mix(in oklab, var(--accent) 50%, var(--border));
+  }
+  .letter.done::after {
+    content: "✓";
+    position: absolute; top: 8px; right: 10px;
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .letter .ar {
+    font-family: 'Scheherazade New', serif;
+    font-size: clamp(2.4rem, 4vw, 3.4rem);
+    line-height: 1;
+    color: var(--text);
+  }
+  .letter .name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.06em;
+    color: var(--text-3);
+    text-transform: uppercase;
+  }
+  .letter.done .name { color: var(--accent); }
+  .iqra-progress {
+    margin-top: 18px;
+    display: flex; align-items: center; gap: 12px;
+    font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-3);
+  }
+  .iqra-progress .bar {
+    flex: 1; height: 6px; background: var(--surface-2); border-radius: 999px;
+    overflow: hidden;
+  }
+  .iqra-progress .bar > div { height: 100%; background: var(--accent); transition: width 240ms; border-radius: 999px; }
+
+  /* === ALPHABET POPUP === */
+  .letter-pop {
+    position: fixed; inset: 0;
+    background: color-mix(in oklab, var(--bg) 80%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: none;
+    z-index: 100;
+    align-items: center; justify-content: center;
+    padding: 28px;
+  }
+  .letter-pop.open { display: flex; }
+  .letter-pop-card {
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: 28px;
+    padding: 40px 44px;
+    box-shadow: var(--shadow-2);
+    max-width: 520px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+  }
+  .letter-pop-close {
+    position: absolute; top: 16px; right: 16px;
+    width: 36px; height: 36px; border-radius: 999px;
+    background: var(--surface-2);
+    color: var(--text-2);
+    display: grid; place-items: center;
+  }
+  .letter-pop-ar {
+    font-family: 'Scheherazade New', serif;
+    font-size: 9rem; line-height: 1;
+    color: var(--text);
+  }
+  .letter-pop-name {
+    margin-top: 14px;
+    font-family: 'Spectral', serif;
+    font-size: 1.5rem;
+  }
+  .letter-pop-translit {
+    margin-top: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text-3); font-size: 12px; letter-spacing: 0.08em;
+  }
+  .letter-pop-controls {
+    margin-top: 28px;
+    display: flex; gap: 8px; justify-content: center;
+  }
+
+  /* === FIRST SURAHS === */
+  .surah-cards {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+  }
+  @media (max-width: 900px) { .surah-cards { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 500px) { .surah-cards { grid-template-columns: 1fr; } }
+  .surah-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 24px;
+    display: flex; flex-direction: column;
+    gap: 12px;
+    transition: border-color 160ms, transform 160ms;
+    position: relative;
+    overflow: hidden;
+    min-height: 220px;
+  }
+  .surah-card::before {
+    content: ""; position: absolute; top: -28px; right: -28px;
+    width: 110px; height: 110px;
+    background-color: var(--accent);
+    opacity: 0.13;
+    -webkit-mask: var(--geo-mask-stars) repeat;
+    mask: var(--geo-mask-stars) repeat;
+    -webkit-mask-size: 60px 60px; mask-size: 60px 60px;
+    pointer-events: none;
+  }
+  .surah-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+  }
+  .surah-card .ar {
+    font-family: 'Scheherazade New', serif;
+    font-size: 2.6rem; line-height: 1;
+    color: var(--text);
+    direction: rtl;
+    margin-top: 6px;
+  }
+  .surah-card .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.12em; color: var(--text-3);
+  }
+  .surah-card .ru {
+    font-family: 'Spectral', serif;
+    font-size: 1.3rem;
+  }
+  .surah-card .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.06em; color: var(--text-3);
+  }
+  .surah-card-cta {
+    margin-top: auto;
+    display: flex; gap: 6px;
+    padding-top: 14px;
+  }
+  .surah-card-cta button {
+    flex: 1;
+    padding: 9px;
+    border-radius: 12px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text-2);
+    font-size: 12px;
+    transition: background 140ms, color 140ms;
+    display: inline-flex; gap: 6px; align-items: center; justify-content: center;
+  }
+  .surah-card-cta button:hover { background: var(--accent-soft); color: var(--accent); }
+  .memo-progress {
+    height: 4px; background: var(--surface-2); border-radius: 999px;
+    overflow: hidden;
+  }
+  .memo-progress > div { height: 100%; background: var(--accent); border-radius: 999px; }
+
+  /* === PROPHET STORIES === */
+  .prophet-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  }
+  @media (max-width: 900px) { .prophet-grid { grid-template-columns: 1fr; } }
+  .prophet-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    overflow: hidden;
+    transition: border-color 160ms, transform 160ms;
+    display: flex; flex-direction: column;
+  }
+  .prophet-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .prophet-illustration {
+    aspect-ratio: 16 / 10;
+    background:
+      radial-gradient(60% 80% at 50% 100%, var(--accent-soft) 0, transparent 70%),
+      var(--surface-2);
+    position: relative;
+    overflow: hidden;
+    display: grid; place-items: center;
+  }
+  .prophet-illustration::after {
+    content: ""; position: absolute; inset: 0;
+    background-color: var(--accent);
+    opacity: 0.10;
+    -webkit-mask: var(--geo-mask-stars) repeat;
+    mask: var(--geo-mask-stars) repeat;
+    -webkit-mask-size: 72px 72px; mask-size: 72px 72px;
+  }
+  .prophet-illustration svg { position: relative; z-index: 2; color: var(--accent); width: 60%; height: auto; }
+  .prophet-body { padding: 22px 24px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .prophet-body .num {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    color: var(--text-3); letter-spacing: 0.12em;
+  }
+  .prophet-body .name { font-family: 'Spectral', serif; font-size: 1.3rem; }
+  .prophet-body .ar {
+    font-family: 'Scheherazade New', serif; color: var(--text-3); font-size: 14px; direction: rtl;
+  }
+  .prophet-body .summary { color: var(--text-2); font-size: 14px; line-height: 1.5; margin-top: 4px; }
+  .prophet-meta {
+    margin-top: auto;
+    padding-top: 12px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-3);
+  }
+  .prophet-meta a { color: var(--accent); }
+
+  /* === STREAK FOR KIDS === */
+  .kid-streak {
+    margin-top: 36px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+  }
+  @media (max-width: 760px) { .kid-streak { grid-template-columns: 1fr; } }
+  .kid-streak-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 24px 26px;
+    display: flex; align-items: center; gap: 22px;
+  }
+  .kid-streak-num {
+    font-family: 'Spectral', serif;
+    font-size: 3.6rem; line-height: 1;
+    color: var(--accent); font-weight: 300;
+  }
+  .kid-streak-info { display: flex; flex-direction: column; gap: 4px; }
+  .kid-streak-info .lbl {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3);
+  }
+  .kid-streak-info .title { font-family: 'Spectral', serif; font-size: 1.2rem; }
+
+  /* === PARENT DASHBOARD CTA === */
+  .parent-cta {
+    margin-top: 64px;
+    padding: 40px 44px;
+    border-radius: 24px;
+    background: var(--bg-deep);
+    border: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .parent-cta::after {
+    content: ""; position: absolute; inset: 0;
+    background-color: var(--accent);
+    opacity: 0.08;
+    -webkit-mask: var(--geo-mask-stars) repeat;
+    mask: var(--geo-mask-stars) repeat;
+    -webkit-mask-size: 84px 84px; mask-size: 84px 84px;
+    pointer-events: none;
+  }
+  .parent-cta > * { position: relative; z-index: 2; }
+  .parent-cta h3 { font-family: 'Spectral', serif; font-weight: 400; font-size: 1.5rem; max-width: 26ch; }
+  .parent-cta p { color: var(--text-2); margin-top: 8px; max-width: 50ch; line-height: 1.55; }
+  @media (max-width: 760px) { .parent-cta { grid-template-columns: 1fr; } }
+
+  /* Audio play indicator */
+  @keyframes wave {
+    0%, 100% { transform: scaleY(0.4); }
+    50% { transform: scaleY(1); }
+  }
+  .mini-wave {
+    display: inline-flex; gap: 2px; align-items: center;
+  }
+  .mini-wave span {
+    width: 2px; height: 10px; background: currentColor; border-radius: 2px;
+    transform-origin: center;
+  }
+  .mini-wave span:nth-child(1) { animation: wave 0.9s ease-in-out infinite; }
+  .mini-wave span:nth-child(2) { animation: wave 0.9s ease-in-out infinite 0.1s; }
+  .mini-wave span:nth-child(3) { animation: wave 0.9s ease-in-out infinite 0.2s; }
+  .mini-wave span:nth-child(4) { animation: wave 0.9s ease-in-out infinite 0.3s; }
+
+  /* Friendly oversized brand mark for kids hero */
+  .brand-icon-big {
+    width: 96px; height: 96px;
+    margin: 0 auto;
+    color: var(--accent);
+  }
+</style>
+
+<script>
+// Sakeenly — i18n bundle
+window.SakeenlyI18n = (function () {
+  const LANGS = {
+    ru: { native: 'Русский', short: 'РУС', htmlLang: 'ru' },
+    tg: { native: 'Тоҷикӣ',  short: 'ТҶК', htmlLang: 'tg' },
+    uz: { native: 'Oʻzbek',  short: 'UZB', htmlLang: 'uz' },
+    kk: { native: 'Қазақ',   short: 'ҚАЗ', htmlLang: 'kk' },
+    ky: { native: 'Кыргыз',  short: 'КЫР', htmlLang: 'ky' },
+  };
+  const DICT = JSON.parse("{\"nav.read\":{\"ru\":\"Чтение\",\"tg\":\"Хондан\",\"uz\":\"Oʻqish\",\"kk\":\"Оқу\",\"ky\":\"Окуу\"},\"nav.listen\":{\"ru\":\"Слушать\",\"tg\":\"Шунидан\",\"uz\":\"Tinglash\",\"kk\":\"Тыңдау\",\"ky\":\"Угуу\"},\"nav.ask\":{\"ru\":\"Спросить\",\"tg\":\"Пурсидан\",\"uz\":\"Soʻrash\",\"kk\":\"Сұрау\",\"ky\":\"Суроо\"},\"nav.ayat\":{\"ru\":\"Аяты\",\"tg\":\"Оятҳо\",\"uz\":\"Oyatlar\",\"kk\":\"Аяттар\",\"ky\":\"Аяттар\"},\"nav.kids\":{\"ru\":\"Детям\",\"tg\":\"Кӯдакон\",\"uz\":\"Bolalar\",\"kk\":\"Балаларға\",\"ky\":\"Балдарга\"},\"nav.pricing\":{\"ru\":\"Тарифы\",\"tg\":\"Нархнома\",\"uz\":\"Tariflar\",\"kk\":\"Тарифтер\",\"ky\":\"Тарифтер\"},\"nav.signin\":{\"ru\":\"Войти\",\"tg\":\"Ворид\",\"uz\":\"Kirish\",\"kk\":\"Кіру\",\"ky\":\"Кирүү\"},\"nav.start\":{\"ru\":\"Начать\",\"tg\":\"Шурӯъ\",\"uz\":\"Boshlash\",\"kk\":\"Бастау\",\"ky\":\"Баштоо\"},\"hero.badge\":{\"ru\":\"Sakeenly · MVP\",\"tg\":\"Sakeenly · MVP\",\"uz\":\"Sakeenly · MVP\",\"kk\":\"Sakeenly · MVP\",\"ky\":\"Sakeenly · MVP\"},\"hero.title_h\":{\"ru\":\"Find your\",\"tg\":\"Find your\",\"uz\":\"Find your\",\"kk\":\"Find your\",\"ky\":\"Find your\"},\"hero.title_e\":{\"ru\":\"sakeena.\",\"tg\":\"sakeena.\",\"uz\":\"sakeena.\",\"kk\":\"sakeena.\",\"ky\":\"sakeena.\"},\"hero.title_t\":{\"ru\":\"Каждый день.\",\"tg\":\"Ҳар рӯз.\",\"uz\":\"Har kuni.\",\"kk\":\"Күн сайын.\",\"ky\":\"Күн сайын.\"},\"hero.sub\":{\"ru\":\"Современный Quran-companion для тебя. Читай в Мусхафе, слушай чтецов, находи аяты для каждого состояния.\",\"tg\":\"Ҳамроҳи муосири Қуръон. Дар Мусҳаф хонед, овози қориён шунавед, барои ҳар ҳолат оят ёбед.\",\"uz\":\"Zamonaviy Qurʼon-hamrohingiz. Mushafda oʻqing, qorilarni tinglang, har holatga oyat toping.\",\"kk\":\"Заманауи Құран серігі. Мүсхафтан оқыңыз, қарилерді тыңдаңыз, әр жағдайға аят табыңыз.\",\"ky\":\"Заманбап Куран шериги. Мусхафтан окуңуз, кариелерди угуңуз, ар кырдаалга аят табыңыз.\"},\"hero.cta_read\":{\"ru\":\"Начать читать\",\"tg\":\"Хонданро оғоз кунед\",\"uz\":\"Oʻqishni boshlash\",\"kk\":\"Оқуды бастау\",\"ky\":\"Окууну баштоо\"},\"hero.cta_signin\":{\"ru\":\"Войти\",\"tg\":\"Ворид шавед\",\"uz\":\"Kirish\",\"kk\":\"Кіру\",\"ky\":\"Кирүү\"},\"hero.meta1\":{\"ru\":\"سكينة · сакина · спокойствие сердца\",\"tg\":\"سكينة · сакина · оромии қалб\",\"uz\":\"سكينة · sakina · qalb tinchligi\",\"kk\":\"سكينة · сакина · жүрек тыныштығы\",\"ky\":\"سكينة · сакина · жүрөктүн тынчтыгы\"},\"hero.meta2\":{\"ru\":\"Коран 2:248\",\"tg\":\"Қуръон 2:248\",\"uz\":\"Qurʼon 2:248\",\"kk\":\"Құран 2:248\",\"ky\":\"Куран 2:248\"},\"hero.meta3\":{\"ru\":\"0 рекламы · 0 трекеров\",\"tg\":\"0 реклама · 0 пайгирӣ\",\"uz\":\"0 reklama · 0 kuzatuv\",\"kk\":\"0 жарнама · 0 бақылау\",\"ky\":\"0 жарнама · 0 көзөмөл\"},\"votd.label\":{\"ru\":\"Аят дня · 18 мая\",\"tg\":\"Ояти рӯз · 18 май\",\"uz\":\"Kun oyati · 18 may\",\"kk\":\"Күн аяты · 18 мамыр\",\"ky\":\"Күндүн аяты · 18 май\"},\"votd.surah_tag\":{\"ru\":\"Сура «Корова» · 2:286\",\"tg\":\"Сураи «Бақара» · 2:286\",\"uz\":\"«Baqara» surasi · 2:286\",\"kk\":\"«Бақара» сүресі · 2:286\",\"ky\":\"«Бакара» сүрөсү · 2:286\"},\"votd.translation\":{\"ru\":\"«Аллах не возлагает на душу ничего сверх её возможностей.»\",\"tg\":\"«Аллоҳ ҳеҷ касро ҷуз ба қадри тавонии ӯ намукаллаф намекунад.»\",\"uz\":\"«Alloh hech bir jonga toqatidan ortigʻini yuklamaydi.»\",\"kk\":\"«Алла ешбір жанға қабілетінен артық жүк салмайды.»\",\"ky\":\"«Аллах эч бир жанга чамасынан ашык жүк жүктөбөйт.»\"},\"votd.cite\":{\"ru\":\"Перевод Э. Кулиева · 2:286\",\"tg\":\"Тарҷумаи Ҳоҷӣ Мирзо · 2:286\",\"uz\":\"Alouddin Mansur tarjimasi · 2:286\",\"kk\":\"Халифа Алтай аудармасы · 2:286\",\"ky\":\"Шамсиддин Жонок котормосу · 2:286\"},\"streak.label\":{\"ru\":\"Streak · непрерывность\",\"tg\":\"Пай дар пай\",\"uz\":\"Ketma-ketlik\",\"kk\":\"Үздіксіздік\",\"ky\":\"Үзгүлтүксүздүк\"},\"streak.title\":{\"ru\":\"17 дней с Кораном\",\"tg\":\"17 рӯз бо Қуръон\",\"uz\":\"17 kun Qurʼon bilan\",\"kk\":\"17 күн Құранмен\",\"ky\":\"17 күн Куран менен\"},\"cont.label\":{\"ru\":\"Продолжить\",\"tg\":\"Идома\",\"uz\":\"Davom etish\",\"kk\":\"Жалғастыру\",\"ky\":\"Уланткыла\"},\"cont.surah\":{\"ru\":\"Аль-Бакара\",\"tg\":\"Бақара\",\"uz\":\"Baqara\",\"kk\":\"Бақара\",\"ky\":\"Бакара\"},\"cont.ayah_of\":{\"ru\":\"аят 31 из 286\",\"tg\":\"ояти 31 аз 286\",\"uz\":\"31-oyat / 286\",\"kk\":\"31-аят / 286\",\"ky\":\"31-аят / 286\"},\"cont.btn\":{\"ru\":\"Продолжить чтение\",\"tg\":\"Хонданро идома диҳед\",\"uz\":\"Oʻqishni davom ettirish\",\"kk\":\"Оқуды жалғастыру\",\"ky\":\"Окууну улантуу\"},\"feat.eyebrow\":{\"ru\":\"Что внутри\",\"tg\":\"Дар дохил\",\"uz\":\"Ichida nima bor\",\"kk\":\"Ішінде не бар\",\"ky\":\"Ичинде эмне бар\"},\"feat.heading\":{\"ru\":\"Три ритуала, одно приложение.\",\"tg\":\"Се одат, як барнома.\",\"uz\":\"Uchta rasm-rusum, bitta ilova.\",\"kk\":\"Үш ғибадат, бір қосымша.\",\"ky\":\"Үч ырым, бир тиркеме.\"},\"feat.lede\":{\"ru\":\"Без декораций. Без баннеров. Без слежки. Только текст, голос и тишина.\",\"tg\":\"Бе ороишҳои зиёдатӣ. Бе баннер. Бе пайгирӣ. Танҳо матн, овоз ва оромӣ.\",\"uz\":\"Ortiqcha bezaklarsiz. Bannerlarsiz. Kuzatuvsiz. Faqat matn, ovoz va sukunat.\",\"kk\":\"Артық безендірусіз. Жарнамасыз. Бақылаусыз. Тек мәтін, дауыс және тыныштық.\",\"ky\":\"Ашыкча кооздоосуз. Жарнамасыз. Көзөмөлсүз. Бир гана текст, үн жана тынчтык.\"},\"feat.f1_l\":{\"ru\":\"01 — Чтение\",\"tg\":\"01 — Хондан\",\"uz\":\"01 — Oʻqish\",\"kk\":\"01 — Оқу\",\"ky\":\"01 — Окуу\"},\"feat.f1_t\":{\"ru\":\"Мусхаф, как на бумаге.\",\"tg\":\"Мусҳаф, мисли коғаз.\",\"uz\":\"Mushaf, qogʻozdagiday.\",\"kk\":\"Мүсхаф, қағаздағыдай.\",\"ky\":\"Мусхаф, кагазга жазылгандай.\"},\"feat.f1_b\":{\"ru\":\"KFGQPC Hafs шрифт. Пять переводов. Тап по аяту — объяснить, послушать, сохранить.\",\"tg\":\"Хатти KFGQPC Ҳафс. Тарҷумаҳо. Зер ба оят — фаҳмонед, шунавед, нигоҳ доред.\",\"uz\":\"KFGQPC Hafs shrifti. Tarjimalar. Oyatga tegib — tushuntiring, tinglang, saqlang.\",\"kk\":\"KFGQPC Хафс қарпі. Аудармалар. Аятты түрту — түсіндіру, тыңдау, сақтау.\",\"ky\":\"KFGQPC Хафс ариби. Котормолор. Аятка басуу — түшүндүрүү, угуу, сактоо.\"},\"feat.f1_l2\":{\"ru\":\"Открыть ридер →\",\"tg\":\"Хонандаро кушоед →\",\"uz\":\"Oʻqish ekrani →\",\"kk\":\"Оқу экранын ашу →\",\"ky\":\"Окуу экранын ачуу →\"},\"feat.f2_l\":{\"ru\":\"02 — Слушать\",\"tg\":\"02 — Шунидан\",\"uz\":\"02 — Tinglash\",\"kk\":\"02 — Тыңдау\",\"ky\":\"02 — Угуу\"},\"feat.f2_t\":{\"ru\":\"Тридцать чтецов. Один тап.\",\"tg\":\"Сӣ қорӣ. Як зер.\",\"uz\":\"Oʻttiz qori. Bir teginish.\",\"kk\":\"Отыз қари. Бір түрту.\",\"ky\":\"Отуз кары. Бир басуу.\"},\"feat.f2_b\":{\"ru\":\"Абдуль-Басит, Хусары, Судайс и ещё 27 голосов. Sleep-таймер, скорость, подсветка текущего аята.\",\"tg\":\"Абдулбосит, Ҳусарӣ, Судайс ва 27 овози дигар. Таймери хоб, суръат, рӯшнои ояти ҷорӣ.\",\"uz\":\"Abdulbosit, Husariy, Sudays va yana 27 ovoz. Uxlash taymeri, tezlik, joriy oyat yoritilishi.\",\"kk\":\"Әбдулбасит, Хусари, Судайс және тағы 27 дауыс. Ұйқы таймері, жылдамдық, ағымдағы аят жарықтандыру.\",\"ky\":\"Абдулбасит, Хусари, Судайс жана дагы 27 үн. Уйку таймери, ылдамдык, учурдагы аят жарык.\"},\"feat.f2_l2\":{\"ru\":\"Слушать сейчас →\",\"tg\":\"Ҳозир шунавед →\",\"uz\":\"Hozir tinglang →\",\"kk\":\"Қазір тыңдау →\",\"ky\":\"Азыр угуу →\"},\"feat.f3_l\":{\"ru\":\"03 — Спросить\",\"tg\":\"03 — Пурсидан\",\"uz\":\"03 — Soʻrash\",\"kk\":\"03 — Сұрау\",\"ky\":\"03 — Суроо\"},\"feat.f3_t\":{\"ru\":\"Вопрос. Источник. Ответ.\",\"tg\":\"Савол. Манбаъ. Ҷавоб.\",\"uz\":\"Savol. Manba. Javob.\",\"kk\":\"Сұрақ. Дереккөз. Жауап.\",\"ky\":\"Суроо. Булак. Жооп.\"},\"feat.f3_b\":{\"ru\":\"Sakeenly ищет ответ в Коране, хадисах и тафсирах. Каждое утверждение со сноской. Фатва — к учёным.\",\"tg\":\"Sakeenly ҷавобро дар Қуръон ва тафсир меҷӯяд. Ҳар изҳорот бо манбаъ. Фатво — ба уламо.\",\"uz\":\"Sakeenly javobni Qurʼon va tafsirdan qidiradi. Har bir gap manba bilan. Fatvo — ulamolarga.\",\"kk\":\"Sakeenly жауапты Құран мен тәпсірден іздейді. Әр сөз дереккөзбен. Пәтуа — ғалымдарға.\",\"ky\":\"Sakeenly жоопту Куран жана тафсирден издейт. Ар бир сөз булагы менен. Фатва — аалымдарга.\"},\"feat.f3_l2\":{\"ru\":\"Скоро →\",\"tg\":\"Ба зудӣ →\",\"uz\":\"Tez kunda →\",\"kk\":\"Жақында →\",\"ky\":\"Жакында →\"},\"emo.heading\":{\"ru\":\"Открой Книгу там, где жизнь делает трудно.\",\"tg\":\"Китобро дар ҷое кушоед, ки зиндагӣ душвор аст.\",\"uz\":\"Hayot qiyin boʻlganda Kitobni oching.\",\"kk\":\"Өмір қиындағанда Кітапты ашыңыз.\",\"ky\":\"Жашоо кыйындаганда Китепти ачыңыз.\"},\"emo.all\":{\"ru\":\"Все темы →\",\"tg\":\"Ҳамаи мавзӯъ →\",\"uz\":\"Barcha mavzular →\",\"kk\":\"Барлық тақырыптар →\",\"ky\":\"Бардык темалар →\"},\"trust.suras\":{\"ru\":\"Сур\",\"tg\":\"Сура\",\"uz\":\"Sura\",\"kk\":\"Сүре\",\"ky\":\"Сүрө\"},\"trust.ayat\":{\"ru\":\"Аятов\",\"tg\":\"Оят\",\"uz\":\"Oyat\",\"kk\":\"Аят\",\"ky\":\"Аят\"},\"trust.translations\":{\"ru\":\"Переводов\",\"tg\":\"Тарҷума\",\"uz\":\"Tarjima\",\"kk\":\"Аударма\",\"ky\":\"Котормо\"},\"trust.reciters\":{\"ru\":\"Чтецов\",\"tg\":\"Қорӣ\",\"uz\":\"Qori\",\"kk\":\"Қари\",\"ky\":\"Кары\"},\"trust.trackers\":{\"ru\":\"Трекеров\",\"tg\":\"Пайгирӣ\",\"uz\":\"Kuzatuv\",\"kk\":\"Бақылау\",\"ky\":\"Көзөмөл\"},\"close.eyebrow\":{\"ru\":\"Каждый день · с тобой\",\"tg\":\"Ҳар рӯз · бо ту\",\"uz\":\"Har kuni · siz bilan\",\"kk\":\"Күн сайын · сенімен\",\"ky\":\"Күн сайын · сени менен\"},\"close.line1\":{\"ru\":\"«…и ниспослал Он сакину\",\"tg\":\"«…ва сакинаро фуруд овард\",\"uz\":\"«…va sakinani nozil qildi\",\"kk\":\"«…және сақинаны түсірді\",\"ky\":\"«…жана сакинаны түшүрдү\"},\"close.line2\":{\"ru\":\"в сердца верующих.»\",\"tg\":\"дар дилҳои мӯъминон.»\",\"uz\":\"moʻminlar qalbiga.»\",\"kk\":\"мүміндердің жүректеріне.»\",\"ky\":\"момундардын жүрөктөрүнө.»\"},\"close.cite\":{\"ru\":\"Сура «Победа» · 48:4\",\"tg\":\"Сураи «Фатҳ» · 48:4\",\"uz\":\"«Fath» surasi · 48:4\",\"kk\":\"«Фатх» сүресі · 48:4\",\"ky\":\"«Фатх» сүрөсү · 48:4\"},\"close.cta1\":{\"ru\":\"Начать с Аль-Фатихи\",\"tg\":\"Аз Фотиҳа сар кунед\",\"uz\":\"Fotihadan boshlash\",\"kk\":\"Фатихадан бастау\",\"ky\":\"Фатиха менен баштоо\"},\"close.cta2\":{\"ru\":\"Посмотреть тарифы\",\"tg\":\"Нархҳоро бинед\",\"uz\":\"Tariflarni koʻrish\",\"kk\":\"Тарифтерді көру\",\"ky\":\"Тарифтерди көрүү\"},\"foot.tagline\":{\"ru\":\"Quran-companion для тебя. Без рекламы. Без трекеров.\",\"tg\":\"Ҳамроҳи Қуръон барои шумо. Бе реклама. Бе пайгирӣ.\",\"uz\":\"Qurʼon-hamroh siz uchun. Reklamasiz. Kuzatuvsiz.\",\"kk\":\"Сізге арналған Құран серігі. Жарнамасыз. Бақылаусыз.\",\"ky\":\"Сиз үчүн Куран шериги. Жарнамасыз. Көзөмөлсүз.\"},\"foot.product\":{\"ru\":\"Продукт\",\"tg\":\"Маҳсулот\",\"uz\":\"Mahsulot\",\"kk\":\"Өнім\",\"ky\":\"Продукт\"},\"foot.company\":{\"ru\":\"Компания\",\"tg\":\"Ширкат\",\"uz\":\"Kompaniya\",\"kk\":\"Компания\",\"ky\":\"Компания\"},\"foot.help\":{\"ru\":\"Помощь\",\"tg\":\"Кӯмак\",\"uz\":\"Yordam\",\"kk\":\"Көмек\",\"ky\":\"Жардам\"},\"foot.reader\":{\"ru\":\"Ридер\",\"tg\":\"Хонанда\",\"uz\":\"Oʻqish\",\"kk\":\"Оқу\",\"ky\":\"Окуу\"},\"foot.reciters\":{\"ru\":\"Чтецы\",\"tg\":\"Қориён\",\"uz\":\"Qorilar\",\"kk\":\"Қарилер\",\"ky\":\"Карылар\"},\"foot.ask\":{\"ru\":\"Спросить\",\"tg\":\"Пурсидан\",\"uz\":\"Soʻrash\",\"kk\":\"Сұрау\",\"ky\":\"Суроо\"},\"foot.kids\":{\"ru\":\"Для детей\",\"tg\":\"Барои кӯдакон\",\"uz\":\"Bolalar uchun\",\"kk\":\"Балаларға\",\"ky\":\"Балдарга\"},\"foot.ayat\":{\"ru\":\"Аяты по темам\",\"tg\":\"Оят аз рӯи мавзӯъ\",\"uz\":\"Mavzu boʻyicha\",\"kk\":\"Тақырып бойынша\",\"ky\":\"Тема боюнча\"},\"foot.pricing\":{\"ru\":\"Тарифы\",\"tg\":\"Нархнома\",\"uz\":\"Tariflar\",\"kk\":\"Тарифтер\",\"ky\":\"Тарифтер\"},\"foot.about\":{\"ru\":\"О нас\",\"tg\":\"Дар бораи мо\",\"uz\":\"Biz haqimizda\",\"kk\":\"Біз туралы\",\"ky\":\"Биз жөнүндө\"},\"foot.scholars\":{\"ru\":\"Scholar board\",\"tg\":\"Шӯрои уламо\",\"uz\":\"Ulamolar kengashi\",\"kk\":\"Ғалымдар кеңесі\",\"ky\":\"Аалымдар кеңеши\"},\"foot.privacy\":{\"ru\":\"Приватность\",\"tg\":\"Махфият\",\"uz\":\"Maxfiylik\",\"kk\":\"Құпиялық\",\"ky\":\"Купуялык\"},\"foot.terms\":{\"ru\":\"Условия\",\"tg\":\"Шартҳо\",\"uz\":\"Shartlar\",\"kk\":\"Шарттар\",\"ky\":\"Шарттар\"},\"foot.contact\":{\"ru\":\"Контакты\",\"tg\":\"Тамос\",\"uz\":\"Aloqa\",\"kk\":\"Байланыс\",\"ky\":\"Байланыш\"},\"foot.faq\":{\"ru\":\"FAQ\",\"tg\":\"FAQ\",\"uz\":\"FAQ\",\"kk\":\"FAQ\",\"ky\":\"FAQ\"},\"foot.report\":{\"ru\":\"Сообщить об ошибке\",\"tg\":\"Хабари хато\",\"uz\":\"Xato haqida\",\"kk\":\"Қате туралы\",\"ky\":\"Ката жөнүндө\"},\"foot.request\":{\"ru\":\"Запросить аят\",\"tg\":\"Дархости оят\",\"uz\":\"Oyat soʻrash\",\"kk\":\"Аят сұрау\",\"ky\":\"Аят сурануу\"},\"foot.bottom_made\":{\"ru\":\"Made with نية · sakeenly.com\",\"tg\":\"Бо нийят · sakeenly.com\",\"uz\":\"Niyat bilan · sakeenly.com\",\"kk\":\"Ниетпен · sakeenly.com\",\"ky\":\"Ниет менен · sakeenly.com\"},\"ls.badge\":{\"ru\":\"30 чтецов · Quran.com CDN\",\"tg\":\"30 қорӣ · Quran.com CDN\",\"uz\":\"30 qori · Quran.com CDN\",\"kk\":\"30 қари · Quran.com CDN\",\"ky\":\"30 кары · Quran.com CDN\"},\"ls.heading_1\":{\"ru\":\"Голоса, которые\",\"tg\":\"Овозҳое, ки\",\"uz\":\"Ovozlar, ular\",\"kk\":\"Дауыстар, олар\",\"ky\":\"Үндөр, алар\"},\"ls.heading_2\":{\"ru\":\"несли Книгу.\",\"tg\":\"Китобро интиқол доданд.\",\"uz\":\"Kitobni yetkazdi.\",\"kk\":\"Кітапты жеткізді.\",\"ky\":\"Китепти жеткирди.\"},\"ls.lede\":{\"ru\":\"Выбери чтеца, выбери диапазон аятов, выбери скорость. Стрим из Quran.com CDN с подсветкой текущего аята и sleep-таймером.\",\"tg\":\"Қориро интихоб кунед, оятҳоро интихоб кунед, суръатро интихоб кунед. Пахш аз Quran.com CDN бо рӯшнои ояти ҷорӣ.\",\"uz\":\"Qorini, oyatlar oraligʻini va tezlikni tanlang. Quran.com CDN dan joriy oyat yoritilishi bilan oqim.\",\"kk\":\"Қариді, аяттар ауқымын және жылдамдықты таңдаңыз. Quran.com CDN арқылы ағыс.\",\"ky\":\"Карыны, аяттар диапазонун жана ылдамдыкты тандаңыз. Quran.com CDN аркылуу агыш.\"},\"ls.search\":{\"ru\":\"Поиск чтеца...\",\"tg\":\"Ҷустуҷӯи қорӣ...\",\"uz\":\"Qori qidirish...\",\"kk\":\"Қари іздеу...\",\"ky\":\"Кары издөө...\"},\"ls.all\":{\"ru\":\"Все\",\"tg\":\"Ҳама\",\"uz\":\"Hammasi\",\"kk\":\"Барлығы\",\"ky\":\"Бардыгы\"},\"pr.badge\":{\"ru\":\"Бесплатно — навсегда. Premium — по желанию.\",\"tg\":\"Ройгон — то абад. Premium — ихтиёрӣ.\",\"uz\":\"Bepul — abadiy. Premium — ixtiyoriy.\",\"kk\":\"Тегін — мәңгі. Premium — ерікті.\",\"ky\":\"Бекер — түбөлүк. Premium — ыктыярдуу.\"},\"pr.h1\":{\"ru\":\"Чтение должно быть бесплатным.\",\"tg\":\"Хондан бояд ройгон бошад.\",\"uz\":\"Oʻqish bepul boʻlishi kerak.\",\"kk\":\"Оқу тегін болуы керек.\",\"ky\":\"Окуу бекер болушу керек.\"},\"pr.h2\":{\"ru\":\"Глубина — добровольной.\",\"tg\":\"Чуқурӣ — ихтиёрӣ.\",\"uz\":\"Chuqurlik — ixtiyoriy.\",\"kk\":\"Тереңдік — ерікті.\",\"ky\":\"Тереңдик — ыктыярдуу.\"},\"pr.month\":{\"ru\":\"Помесячно\",\"tg\":\"Моҳона\",\"uz\":\"Oylik\",\"kk\":\"Айлық\",\"ky\":\"Айлык\"},\"pr.year\":{\"ru\":\"Ежегодно\",\"tg\":\"Солона\",\"uz\":\"Yillik\",\"kk\":\"Жылдық\",\"ky\":\"Жылдык\"},\"kid.badge\":{\"ru\":\"Для детей · 4–10 лет\",\"tg\":\"Барои кӯдакон · 4–10 сола\",\"uz\":\"Bolalar uchun · 4–10 yosh\",\"kk\":\"Балаларға · 4–10 жас\",\"ky\":\"Балдарга · 4–10 жаш\"},\"kid.h1\":{\"ru\":\"Икра. Книга. Истории.\",\"tg\":\"Иқра. Китоб. Достонҳо.\",\"uz\":\"Iqra. Kitob. Hikoyalar.\",\"kk\":\"Иқра. Кітап. Әңгімелер.\",\"ky\":\"Иқро. Китеп. Окуялар.\"},\"kid.lede\":{\"ru\":\"Sakeenly для детей: алфавит, который можно обвести; первые суры, которые легко запомнить; и истории пророков ﷺ.\",\"tg\":\"Sakeenly барои кӯдакон: алифбо, сураҳои кӯтоҳ, достонҳои паёмбарон ﷺ.\",\"uz\":\"Bolalar uchun Sakeenly: alifbo, qisqa suralar va paygʻambarlar ﷺ hikoyalari.\",\"kk\":\"Балаларға Sakeenly: әліпби, қысқа сүрелер және пайғамбарлар ﷺ әңгімелері.\",\"ky\":\"Балдар үчүн Sakeenly: алфавит, кыска сүрөлөр жана пайгамбарлар ﷺ окуялары.\"}}");
+  function get(key, lang) { const e = DICT[key]; return e ? (e[lang] || e.ru || null) : null; }
+  function apply(lang) {
+    if (!LANGS[lang]) lang = 'ru';
+    document.documentElement.setAttribute('lang', LANGS[lang].htmlLang);
+    document.documentElement.setAttribute('data-lang', lang);
+    document.querySelectorAll('[data-i18n]').forEach(el => { const v = get(el.getAttribute('data-i18n'), lang); if (v !== null) el.textContent = v; });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => { const v = get(el.getAttribute('data-i18n-html'), lang); if (v !== null) el.innerHTML = v; });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { const v = get(el.getAttribute('data-i18n-placeholder'), lang); if (v !== null) el.setAttribute('placeholder', v); });
+    document.querySelectorAll('.lang-switch .lang-current').forEach(el => { el.textContent = LANGS[lang].short; });
+    document.querySelectorAll('.lang-menu button').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === lang ? 'true' : 'false'));
+    try { localStorage.setItem('sakeenly:lang', lang); } catch (e) {}
+    window.dispatchEvent(new CustomEvent('sakeenly:langchange', { detail: { lang } }));
+  }
+  function init() {
+    let lang = 'ru';
+    try { lang = localStorage.getItem('sakeenly:lang') || 'ru'; } catch (e) {}
+    apply(lang);
+    document.querySelectorAll('.lang-switch').forEach(sw => {
+      const btn = sw.querySelector('.lang-trigger');
+      const menu = sw.querySelector('.lang-menu');
+      if (!btn || !menu) return;
+      btn.addEventListener('click', (e) => { e.stopPropagation(); const op = menu.classList.toggle('open'); btn.setAttribute('aria-expanded', String(op)); });
+      menu.addEventListener('click', (e) => { const b = e.target.closest('button[data-lang]'); if (!b) return; apply(b.dataset.lang); menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); });
+    });
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.lang-menu.open').forEach(m => m.classList.remove('open'));
+      document.querySelectorAll('.lang-trigger').forEach(b => b.setAttribute('aria-expanded', 'false'));
+    });
+  }
+  try { const s = localStorage.getItem('sakeenly:lang'); if (s && LANGS[s]) { document.documentElement.setAttribute('lang', LANGS[s].htmlLang); document.documentElement.setAttribute('data-lang', s); } } catch (e) {}
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+  return { apply, get, LANGS, DICT };
+})();
+
+</script>
+</head>
+<body data-screen-label="07 Kids">
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M12 2 L14.2 9.8 L22 12 L14.2 14.2 L12 22 L9.8 14.2 L2 12 L9.8 9.8 Z" />
+        </svg>
+      </span>
+      <span>Sakeenly</span>
+    </a>
+    <div class="nav-links">
+      <a href="reader.html" data-i18n="nav.read">Чтение</a>
+      <a href="listen.html" data-i18n="nav.listen">Слушать</a>
+      <a href="#" data-i18n="nav.ask">Спросить</a>
+      <a href="ayat-dlya-trevogi.html" data-i18n="nav.ayat">Аяты</a>
+      <a href="kids.html" class="active" data-i18n="nav.kids">Детям</a>
+      <a href="pricing.html" data-i18n="nav.pricing">Тарифы</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-switch">
+        <button class="lang-trigger" type="button" aria-expanded="false">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+          <span class="lang-current">РУС</span>
+          <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="lang-menu" role="menu">
+          <button data-lang="ru"><span>Русский</span><span class="code">РУС</span></button>
+          <button data-lang="tg"><span>Тоҷикӣ</span><span class="code">ТҶК</span></button>
+          <button data-lang="uz"><span>O'zbek</span><span class="code">UZB</span></button>
+          <button data-lang="kk"><span>Қазақ</span><span class="code">ҚАЗ</span></button>
+          <button data-lang="ky"><span>Кыргыз</span><span class="code">КЫР</span></button>
+        </div>
+      </div>
+      <div class="theme-switch" role="group">
+        <button data-theme="light"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></button>
+        <button data-theme="sepia"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2Z"/><path d="M8 7h7M8 11h7M8 15h5"/></svg></button>
+        <button data-theme="mushaf"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 L13.5 10 L20 12 L13.5 14 L12 21 L10.5 14 L4 12 L10.5 10 Z"/></svg></button>
+        <button data-theme="dark"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></button>
+      </div>
+      <button class="btn btn-soft btn-sm" data-i18n="nav.signin">Войти</button>
+    </div>
+  </div>
+</nav>
+
+<!-- KIDS HERO -->
+<section class="wrap kid-hero">
+  <div class="kid-bubbles" aria-hidden="true">
+    <div class="kid-bubble" style="width:56px;height:56px;top:14%;left:10%">ا</div>
+    <div class="kid-bubble" style="width:64px;height:64px;top:30%;right:12%">ب</div>
+    <div class="kid-bubble" style="width:48px;height:48px;bottom:18%;left:18%">ت</div>
+    <div class="kid-bubble" style="width:56px;height:56px;bottom:8%;right:22%">ج</div>
+  </div>
+  <svg class="kid-star" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.8">
+    <path d="M50 4 L58 38 L92 46 L58 54 L50 96 L42 54 L8 46 L42 38 Z"/>
+    <path d="M50 18 L55 42 L78 50 L55 58 L50 84 L45 58 L22 50 L45 42 Z" opacity="0.6"/>
+    <circle cx="50" cy="50" r="3" fill="currentColor" stroke="none"/>
+  </svg>
+  <span class="tag" style="margin-top: 26px;"><span class="tag-dot"></span><span data-i18n="kid.badge">Для детей · 4–10 лет</span></span>
+  <h1 data-i18n="kid.h1">Икра. Книга. Истории.</h1>
+  <p class="lede" data-i18n="kid.lede">Sakeenly для детей — это арабский алфавит, который можно обвести пальцем; первые короткие суры, которые легко запомнить; и истории пророков ﷺ, рассказанные просто и красиво.</p>
+  <div class="kid-cta">
+    <a class="btn btn-primary" href="#alphabet">
+      Учить букву أ
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <a class="btn btn-ghost" href="#surahs">Запомнить суру</a>
+  </div>
+</section>
+
+<!-- STREAK -->
+<section class="wrap">
+  <div class="kid-streak">
+    <div class="kid-streak-card">
+      <div class="kid-streak-num">12</div>
+      <div class="kid-streak-info">
+        <span class="lbl">Алфавит</span>
+        <span class="title">12 из 28 букв выучено</span>
+        <div class="memo-progress" style="margin-top: 8px; width: 200px;"><div style="width: 43%"></div></div>
+      </div>
+    </div>
+    <div class="kid-streak-card">
+      <div class="kid-streak-num">4</div>
+      <div class="kid-streak-info">
+        <span class="lbl">Streak · подряд</span>
+        <span class="title">4 дня с Книгой</span>
+        <div style="display: flex; gap: 6px; margin-top: 8px;">
+          <div class="streak-dot done">П</div>
+          <div class="streak-dot done">В</div>
+          <div class="streak-dot done">С</div>
+          <div class="streak-dot today">Ч</div>
+          <div class="streak-dot">П</div>
+          <div class="streak-dot">С</div>
+          <div class="streak-dot">В</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IQRA ALPHABET -->
+<section class="wrap kid-section" id="alphabet">
+  <div class="kid-section-head">
+    <div class="kid-num">01</div>
+    <div>
+      <h2>Икра — все 28 букв.</h2>
+      <p>Тапни на букву — услышь, увидь, обведи пальцем. Большие буквы. Без спешки.</p>
+    </div>
+    <span class="kid-pill">12 / 28</span>
+  </div>
+
+  <div class="iqra-grid" id="iqra-grid"></div>
+
+  <div class="iqra-progress">
+    <span>Прогресс</span>
+    <div class="bar"><div style="width: 43%"></div></div>
+    <span>43%</span>
+  </div>
+</section>
+
+<!-- POPUP -->
+<div class="letter-pop" id="letter-pop">
+  <div class="letter-pop-card">
+    <button class="letter-pop-close" id="letter-pop-close" aria-label="Закрыть">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="letter-pop-ar arabic" id="pop-ar" dir="rtl">ا</div>
+    <div class="letter-pop-name" id="pop-name">Алиф</div>
+    <div class="letter-pop-translit" id="pop-translit">ʔ · A</div>
+    <div class="letter-pop-controls">
+      <button class="btn btn-primary" id="pop-play">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        Послушать
+      </button>
+      <button class="btn btn-ghost" id="pop-trace">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
+        Обвести
+      </button>
+      <button class="btn btn-soft" id="pop-done">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+        Выучил
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- FIRST SURAHS -->
+<section class="wrap kid-section" id="surahs">
+  <div class="kid-section-head">
+    <div class="kid-num">02</div>
+    <div>
+      <h2>Первые суры — для сердца.</h2>
+      <p>Короткие, любимые, важные. С ними легче засыпать и просыпаться.</p>
+    </div>
+    <span class="kid-pill">4 СУРЫ</span>
+  </div>
+
+  <div class="surah-cards">
+    <a class="surah-card" href="reader.html">
+      <span class="num">№1 · 7 АЯТОВ</span>
+      <span class="ru">Аль-Фатиха</span>
+      <div class="ar arabic" dir="rtl">الفاتحة</div>
+      <div class="meta">ОТКРЫВАЮЩАЯ · 0:18</div>
+      <div class="memo-progress" style="margin-top: 6px;"><div style="width: 85%"></div></div>
+      <div class="surah-card-cta">
+        <button>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Слушать
+        </button>
+        <button>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
+          Учить
+        </button>
+      </div>
+    </a>
+
+    <a class="surah-card" href="reader.html">
+      <span class="num">№112 · 4 АЯТА</span>
+      <span class="ru">Аль-Ихляс</span>
+      <div class="ar arabic" dir="rtl">الإخلاص</div>
+      <div class="meta">ЕДИНСТВО · 0:11</div>
+      <div class="memo-progress" style="margin-top: 6px;"><div style="width: 55%"></div></div>
+      <div class="surah-card-cta">
+        <button>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Слушать
+        </button>
+        <button>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
+          Учить
+        </button>
+      </div>
+    </a>
+
+    <a class="surah-card" href="reader.html">
+      <span class="num">№113 · 5 АЯТОВ</span>
+      <span class="ru">Аль-Фаляк</span>
+      <div class="ar arabic" dir="rtl">الفلق</div>
+      <div class="meta">РАССВЕТ · 0:14</div>
+      <div class="memo-progress" style="margin-top: 6px;"><div style="width: 30%"></div></div>
+      <div class="surah-card-cta">
+        <button>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Слушать
+        </button>
+        <button>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
+          Учить
+        </button>
+      </div>
+    </a>
+
+    <a class="surah-card" href="reader.html">
+      <span class="num">№114 · 6 АЯТОВ</span>
+      <span class="ru">Ан-Нас</span>
+      <div class="ar arabic" dir="rtl">الناس</div>
+      <div class="meta">ЛЮДИ · 0:15</div>
+      <div class="memo-progress" style="margin-top: 6px;"><div style="width: 12%"></div></div>
+      <div class="surah-card-cta">
+        <button>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Слушать
+        </button>
+        <button>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
+          Учить
+        </button>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- PROPHET STORIES -->
+<section class="wrap kid-section" id="stories">
+  <div class="kid-section-head">
+    <div class="kid-num">03</div>
+    <div>
+      <h2>Истории пророков.</h2>
+      <p>Просто рассказанные. С Книгой как источником. Без выдумок.</p>
+    </div>
+    <span class="kid-pill">25 ИСТОРИЙ</span>
+  </div>
+
+  <div class="prophet-grid">
+    <div class="prophet-card">
+      <div class="prophet-illustration">
+        <svg viewBox="0 0 200 100" fill="none" stroke="currentColor" stroke-width="1.5">
+          <!-- Ark on waves -->
+          <path d="M30 70 Q50 60 70 70 T110 70 T150 70 T170 70" stroke-opacity="0.6"/>
+          <path d="M20 80 Q40 70 60 80 T100 80 T140 80 T180 80" stroke-opacity="0.4"/>
+          <path d="M60 40 L140 40 L150 60 L50 60 Z"/>
+          <path d="M80 25 L80 40 L120 25 L120 40" />
+          <circle cx="100" cy="50" r="2" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="prophet-body">
+        <span class="num">ИСТОРИЯ №01</span>
+        <span class="name">Нух ﷺ и ковчег</span>
+        <span class="ar arabic" dir="rtl">نوح عليه السلام</span>
+        <p class="summary">Когда люди забыли Аллаха, Нух 950 лет звал их к Книге. Аллах велел построить большой корабль и взять с собой каждого зверя по паре.</p>
+        <div class="prophet-meta">
+          <span>4 МИН ЧТЕНИЯ</span>
+          <a href="#">Слушать →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="prophet-card">
+      <div class="prophet-illustration">
+        <svg viewBox="0 0 200 100" fill="none" stroke="currentColor" stroke-width="1.5">
+          <!-- Whale -->
+          <path d="M30 60 Q50 30 110 40 Q160 50 175 60 Q160 70 110 80 Q50 90 30 60 Z"/>
+          <path d="M175 60 L195 45 M175 60 L195 75" stroke-opacity="0.6"/>
+          <circle cx="60" cy="55" r="2" fill="currentColor"/>
+          <path d="M55 65 Q65 70 75 65" stroke-opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="prophet-body">
+        <span class="num">ИСТОРИЯ №02</span>
+        <span class="name">Юнус ﷺ и кит</span>
+        <span class="ar arabic" dir="rtl">يونس عليه السلام</span>
+        <p class="summary">В темноте моря, в темноте ночи, в темноте кита Юнус сказал: «Нет божества, кроме Тебя. Я обидел себя». И Аллах ответил.</p>
+        <div class="prophet-meta">
+          <span>3 МИН ЧТЕНИЯ</span>
+          <a href="#">Слушать →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="prophet-card">
+      <div class="prophet-illustration">
+        <svg viewBox="0 0 200 100" fill="none" stroke="currentColor" stroke-width="1.5">
+          <!-- Star and prophet -->
+          <path d="M100 18 L106 38 L126 42 L106 46 L100 70 L94 46 L74 42 L94 38 Z" opacity="0.7"/>
+          <circle cx="100" cy="42" r="2" fill="currentColor"/>
+          <path d="M40 86 Q100 78 160 86" stroke-opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="prophet-body">
+        <span class="num">ИСТОРИЯ №03</span>
+        <span class="name">Ибрахим ﷺ и звёзды</span>
+        <span class="ar arabic" dir="rtl">إبراهيم عليه السلام</span>
+        <p class="summary">Маленький Ибрахим смотрел на звёзды и думал: «Это мой Господь?» — но звёзды погасли. Он искал того, кто не уходит.</p>
+        <div class="prophet-meta">
+          <span>5 МИН ЧТЕНИЯ</span>
+          <a href="#">Слушать →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="prophet-card">
+      <div class="prophet-illustration">
+        <svg viewBox="0 0 200 100" fill="none" stroke="currentColor" stroke-width="1.5">
+          <!-- Cave / spider web -->
+          <path d="M30 80 Q30 30 100 30 Q170 30 170 80 Z" stroke-opacity="0.4"/>
+          <circle cx="100" cy="55" r="20" stroke-opacity="0.3"/>
+          <path d="M100 35 L100 75 M80 55 L120 55 M85 40 L115 70 M115 40 L85 70" stroke-opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="prophet-body">
+        <span class="num">ИСТОРИЯ №04</span>
+        <span class="name">Мухаммад ﷺ в пещере</span>
+        <span class="ar arabic" dir="rtl">محمد ﷺ</span>
+        <p class="summary">Враги стояли у входа в пещеру. Абу Бакр заплакал. Пророк ﷺ сказал: «Не печалься, Аллах с нами». И всё было хорошо.</p>
+        <div class="prophet-meta">
+          <span>4 МИН ЧТЕНИЯ</span>
+          <a href="#">Слушать →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="prophet-card">
+      <div class="prophet-illustration">
+        <svg viewBox="0 0 200 100" fill="none" stroke="currentColor" stroke-width="1.5">
+          <!-- Staff/sea split -->
+          <path d="M30 80 L100 30 L170 80" stroke-opacity="0.6"/>
+          <path d="M40 70 L90 70 M110 70 L160 70" stroke-opacity="0.4"/>
+          <line x1="100" y1="30" x2="100" y2="80" stroke-width="2"/>
+        </svg>
+      </div>
+      <div class="prophet-body">
+        <span class="num">ИСТОРИЯ №05</span>
+        <span class="name">Муса ﷺ и море</span>
+        <span class="ar arabic" dir="rtl">موسى عليه السلام</span>
+        <p class="summary">Враг догонял. Море впереди. Народ кричал: «Нас поймают!» Муса сказал: «Нет. С нами Аллах, Он укажет путь». И море раскрылось.</p>
+        <div class="prophet-meta">
+          <span>5 МИН ЧТЕНИЯ</span>
+          <a href="#">Слушать →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="prophet-card">
+      <div class="prophet-illustration">
+        <svg viewBox="0 0 200 100" fill="none" stroke="currentColor" stroke-width="1.5">
+          <!-- Date palm / baby -->
+          <line x1="100" y1="20" x2="100" y2="80" stroke-width="2"/>
+          <path d="M100 30 Q70 25 60 35" stroke-opacity="0.7"/>
+          <path d="M100 30 Q130 25 140 35" stroke-opacity="0.7"/>
+          <path d="M100 36 Q75 36 65 48" stroke-opacity="0.5"/>
+          <path d="M100 36 Q125 36 135 48" stroke-opacity="0.5"/>
+          <circle cx="100" cy="40" r="3" fill="currentColor" opacity="0.8"/>
+          <circle cx="95" cy="42" r="2" fill="currentColor" opacity="0.6"/>
+          <circle cx="105" cy="42" r="2" fill="currentColor" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="prophet-body">
+        <span class="num">ИСТОРИЯ №06</span>
+        <span class="name">Марьям и пальма</span>
+        <span class="ar arabic" dir="rtl">مريم عليها السلام</span>
+        <p class="summary">Когда было больно и страшно, Аллах сказал Марьям: «Потряси пальму — упадут свежие финики». И всё стало нежно.</p>
+        <div class="prophet-meta">
+          <span>3 МИН ЧТЕНИЯ</span>
+          <a href="#">Слушать →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARENT CTA -->
+<section class="wrap">
+  <div class="parent-cta">
+    <div>
+      <span class="eyebrow">Родителям</span>
+      <h3>Семейный план — до 6 аккаунтов, дашборд для родителей и общая полка закладок.</h3>
+      <p>Ты видишь streak ребёнка, какие буквы он выучил, какие суры пытается запомнить. Без слежки — только то, что важно знать.</p>
+    </div>
+    <a class="btn btn-primary" href="pricing.html">
+      Семейный план
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER (compact, reused) -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="brand" style="margin-bottom:14px">
+        <span class="brand-mark">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+            <path d="M12 2 L14.2 9.8 L22 12 L14.2 14.2 L12 22 L9.8 14.2 L2 12 L9.8 9.8 Z" />
+          </svg>
+        </span>
+        <span>Sakeenly</span>
+      </div>
+      <p style="max-width:36ch;line-height:1.55" data-i18n="foot.tagline">Quran-companion для тебя. Веб, бесплатно для чтения. Без рекламы. Без трекеров. Никогда.</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="foot.product">Продукт</h4>
+      <a href="reader.html" data-i18n="foot.reader">Ридер</a>
+      <a href="listen.html" data-i18n="foot.reciters">Чтецы</a>
+      <a href="#" data-i18n="foot.ask">Спросить</a>
+      <a href="kids.html" data-i18n="foot.kids">Для детей</a>
+      <a href="ayat-dlya-trevogi.html" data-i18n="foot.ayat">Аяты по темам</a>
+      <a href="pricing.html" data-i18n="foot.pricing">Тарифы</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="foot.company">Компания</h4>
+      <a href="#" data-i18n="foot.about">О нас</a>
+      <a href="#" data-i18n="foot.scholars">Scholar board</a>
+      <a href="privacy.html" data-i18n="foot.privacy">Приватность</a>
+      <a href="#" data-i18n="foot.terms">Условия</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="foot.help">Помощь</h4>
+      <a href="#" data-i18n="foot.faq">FAQ</a>
+      <a href="#" data-i18n="foot.report">Сообщить об ошибке</a>
+      <a href="#">English</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>SAKEENLY · سكينة · 2026</span>
+    <span data-i18n="foot.bottom_made">Made with نية · sakeenly.com</span>
+  </div>
+</footer>
+
+<!-- Theme switch JS (inline so it works without /shared assets) -->
+<script>
+(function () {
+  const THEMES = ['dark', 'light', 'sepia', 'mushaf'];
+  const KEY = 'sakeenly:theme';
+  function apply(t) {
+    if (!THEMES.includes(t)) t = 'dark';
+    document.documentElement.setAttribute('data-theme', t);
+    document.querySelectorAll('.theme-switch button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.theme === t)));
+    try { localStorage.setItem(KEY, t); } catch (e) {}
+  }
+  try {
+    const stored = localStorage.getItem(KEY);
+    if (stored && THEMES.includes(stored)) document.documentElement.setAttribute('data-theme', stored);
+  } catch (e) {}
+  document.addEventListener('DOMContentLoaded', () => {
+    apply(localStorage.getItem(KEY) || 'dark');
+    document.querySelectorAll('.theme-switch button').forEach(b => b.addEventListener('click', () => apply(b.dataset.theme)));
+  });
+})();
+</script>
+
+<!-- Iqra alphabet builder -->
+<script>
+const LETTERS = [
+  { ar: 'ا', name: 'Алиф',  t: 'A',   done: true  },
+  { ar: 'ب', name: 'Ба',    t: 'B',   done: true  },
+  { ar: 'ت', name: 'Та',    t: 'T',   done: true  },
+  { ar: 'ث', name: 'Са',    t: 'Th',  done: true  },
+  { ar: 'ج', name: 'Джим',  t: 'J',   done: true  },
+  { ar: 'ح', name: 'Ха',    t: 'Ḥ',   done: true  },
+  { ar: 'خ', name: 'Ха',    t: 'Kh',  done: true  },
+  { ar: 'د', name: 'Даль',  t: 'D',   done: true  },
+  { ar: 'ذ', name: 'Заль',  t: 'Dh',  done: true  },
+  { ar: 'ر', name: 'Ра',    t: 'R',   done: true  },
+  { ar: 'ز', name: 'Зайн',  t: 'Z',   done: true  },
+  { ar: 'س', name: 'Син',   t: 'S',   done: true  },
+  { ar: 'ش', name: 'Шин',   t: 'Sh',  done: false },
+  { ar: 'ص', name: 'Сад',   t: 'Ṣ',   done: false },
+  { ar: 'ض', name: 'Дад',   t: 'Ḍ',   done: false },
+  { ar: 'ط', name: 'Та',    t: 'Ṭ',   done: false },
+  { ar: 'ظ', name: 'Зо',    t: 'Ẓ',   done: false },
+  { ar: 'ع', name: 'Айн',   t: 'ʿ',   done: false },
+  { ar: 'غ', name: 'Гайн',  t: 'Gh',  done: false },
+  { ar: 'ف', name: 'Фа',    t: 'F',   done: false },
+  { ar: 'ق', name: 'Каф',   t: 'Q',   done: false },
+  { ar: 'ك', name: 'Кяф',   t: 'K',   done: false },
+  { ar: 'ل', name: 'Лям',   t: 'L',   done: false },
+  { ar: 'م', name: 'Мим',   t: 'M',   done: false },
+  { ar: 'ن', name: 'Нун',   t: 'N',   done: false },
+  { ar: 'ه', name: 'Ха',    t: 'H',   done: false },
+  { ar: 'و', name: 'Вав',   t: 'W',   done: false },
+  { ar: 'ي', name: 'Йа',    t: 'Y',   done: false },
+];
+
+const grid = document.getElementById('iqra-grid');
+grid.innerHTML = LETTERS.map((L, i) => `
+  <button class="letter${L.done ? ' done' : ''}" data-i="${i}">
+    <span class="ar arabic" lang="ar" dir="rtl">${L.ar}</span>
+    <span class="name">${L.name}</span>
+  </button>
+`).join('');
+
+const pop = document.getElementById('letter-pop');
+const popAr = document.getElementById('pop-ar');
+const popName = document.getElementById('pop-name');
+const popTranslit = document.getElementById('pop-translit');
+const popClose = document.getElementById('letter-pop-close');
+const popDone = document.getElementById('pop-done');
+
+let currentIdx = null;
+
+grid.addEventListener('click', (e) => {
+  const b = e.target.closest('.letter');
+  if (!b) return;
+  const i = +b.dataset.i;
+  const L = LETTERS[i];
+  currentIdx = i;
+  popAr.textContent = L.ar;
+  popName.textContent = L.name;
+  popTranslit.textContent = L.t;
+  pop.classList.add('open');
+});
+popClose.addEventListener('click', () => pop.classList.remove('open'));
+pop.addEventListener('click', (e) => { if (e.target === pop) pop.classList.remove('open'); });
+popDone.addEventListener('click', () => {
+  if (currentIdx == null) return;
+  LETTERS[currentIdx].done = true;
+  const b = grid.querySelector(`[data-i="${currentIdx}"]`);
+  if (b) b.classList.add('done');
+  pop.classList.remove('open');
+  // update counters
+  const doneCount = LETTERS.filter(x => x.done).length;
+  const pct = Math.round(doneCount / LETTERS.length * 100);
+  document.querySelectorAll('.iqra-progress .bar > div').forEach(d => d.style.width = pct + '%');
+  document.querySelectorAll('.iqra-progress span:last-child').forEach(s => s.textContent = pct + '%');
+  document.querySelectorAll('.kid-pill').forEach((p) => {
+    if (p.textContent.includes('/ 28') || p.textContent.includes('/28')) {
+      p.textContent = doneCount + ' / 28';
+    }
+  });
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') pop.classList.remove('open');
+});
+</script>
+
+<script src="i18n-extra.js"></script>
+</body>
+</html>

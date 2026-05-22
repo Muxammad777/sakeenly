@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sakeenly · Алфавит Икра</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Scheherazade+New:wght@400;500;700&display=swap" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+  .kid-hero { padding: 56px 0 20px; position: relative; overflow: hidden; text-align: center; }
+  .kid-hero .geo-stars-fade { z-index: -1; }
+  .kid-hero h1 { font-weight: 300; max-width: 18ch; margin: 14px auto 0; }
+  .kid-hero p { color: var(--text-2); max-width: 50ch; margin: 14px auto 0; }
+
+  .iqra-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); gap: 12px;
+    margin-top: 40px;
+  }
+  @media (max-width: 900px) { .iqra-grid { grid-template-columns: repeat(4, 1fr); } }
+  @media (max-width: 540px) { .iqra-grid { grid-template-columns: repeat(3, 1fr); } }
+  .letter {
+    aspect-ratio: 1;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 14px 8px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: border-color 200ms, transform 200ms, background 200ms;
+  }
+  .letter:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    background: linear-gradient(180deg, var(--accent-soft) 0, transparent 80%), var(--surface);
+  }
+  .letter-glyph {
+    font-family: 'Scheherazade New', serif;
+    font-size: 2.6rem; line-height: 1;
+    color: var(--text);
+  }
+  .letter:hover .letter-glyph { color: var(--accent); }
+  .letter-name { font-family: 'Spectral', serif; font-size: 0.95rem; color: var(--text-2); }
+  .letter-tr { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-3); letter-spacing: 0.1em; }
+
+  .legend {
+    margin-top: 36px; padding: 22px 26px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+    display: flex; align-items: center; gap: 18px;
+    flex-wrap: wrap; color: var(--text-2); font-size: 14px;
+  }
+  .legend strong { color: var(--text); font-weight: 500; }
+  .legend svg { color: var(--accent); flex-shrink: 0; }
+</style>
+</head>
+<body data-screen-label="Kids · Alphabet">
+
+<div id="nav-root" data-active="kids.html"></div>
+
+<section class="wrap kid-hero">
+  <div class="geo-stars-fade"></div>
+  <span class="tag"><span class="tag-dot"></span><span data-i18n="ka.badge">Иқра · 4-10 лет</span></span>
+  <h1 data-i18n="ka.h1">Двадцать восемь букв.</h1>
+  <p data-i18n="ka.lede">Большой шрифт KFGQPC, чтобы видеть форму, точки и хвостики. Нажми на букву — услышишь её и сможешь обвести.</p>
+</section>
+
+<section class="wrap">
+  <div class="legend">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
+    <div><strong data-i18n="ka.tip_lab">Совет родителю:</strong> <span data-i18n="ka.tip">начните с алифа. Следите, чтобы ребёнок повторял за аудио вслух — это половина запоминания.</span></div>
+  </div>
+
+  <div class="iqra-grid">
+    <div class="letter"><div class="letter-glyph">ا</div><div class="letter-name">Алиф</div><div class="letter-tr">a</div></div>
+    <div class="letter"><div class="letter-glyph">ب</div><div class="letter-name">Ба</div><div class="letter-tr">b</div></div>
+    <div class="letter"><div class="letter-glyph">ت</div><div class="letter-name">Та</div><div class="letter-tr">t</div></div>
+    <div class="letter"><div class="letter-glyph">ث</div><div class="letter-name">Са</div><div class="letter-tr">ṯ</div></div>
+    <div class="letter"><div class="letter-glyph">ج</div><div class="letter-name">Джим</div><div class="letter-tr">j</div></div>
+    <div class="letter"><div class="letter-glyph">ح</div><div class="letter-name">Ха</div><div class="letter-tr">ḥ</div></div>
+    <div class="letter"><div class="letter-glyph">خ</div><div class="letter-name">Ха'</div><div class="letter-tr">ḫ</div></div>
+    <div class="letter"><div class="letter-glyph">د</div><div class="letter-name">Даль</div><div class="letter-tr">d</div></div>
+    <div class="letter"><div class="letter-glyph">ذ</div><div class="letter-name">Заль</div><div class="letter-tr">ḏ</div></div>
+    <div class="letter"><div class="letter-glyph">ر</div><div class="letter-name">Ра</div><div class="letter-tr">r</div></div>
+    <div class="letter"><div class="letter-glyph">ز</div><div class="letter-name">Зай</div><div class="letter-tr">z</div></div>
+    <div class="letter"><div class="letter-glyph">س</div><div class="letter-name">Син</div><div class="letter-tr">s</div></div>
+    <div class="letter"><div class="letter-glyph">ش</div><div class="letter-name">Шин</div><div class="letter-tr">š</div></div>
+    <div class="letter"><div class="letter-glyph">ص</div><div class="letter-name">Сад</div><div class="letter-tr">ṣ</div></div>
+    <div class="letter"><div class="letter-glyph">ض</div><div class="letter-name">Дад</div><div class="letter-tr">ḍ</div></div>
+    <div class="letter"><div class="letter-glyph">ط</div><div class="letter-name">Та (эмф)</div><div class="letter-tr">ṭ</div></div>
+    <div class="letter"><div class="letter-glyph">ظ</div><div class="letter-name">За (эмф)</div><div class="letter-tr">ẓ</div></div>
+    <div class="letter"><div class="letter-glyph">ع</div><div class="letter-name">Айн</div><div class="letter-tr">ʿ</div></div>
+    <div class="letter"><div class="letter-glyph">غ</div><div class="letter-name">Гайн</div><div class="letter-tr">ġ</div></div>
+    <div class="letter"><div class="letter-glyph">ف</div><div class="letter-name">Фа</div><div class="letter-tr">f</div></div>
+    <div class="letter"><div class="letter-glyph">ق</div><div class="letter-name">Каф</div><div class="letter-tr">q</div></div>
+    <div class="letter"><div class="letter-glyph">ك</div><div class="letter-name">Кяф</div><div class="letter-tr">k</div></div>
+    <div class="letter"><div class="letter-glyph">ل</div><div class="letter-name">Лям</div><div class="letter-tr">l</div></div>
+    <div class="letter"><div class="letter-glyph">م</div><div class="letter-name">Мим</div><div class="letter-tr">m</div></div>
+    <div class="letter"><div class="letter-glyph">ن</div><div class="letter-name">Нун</div><div class="letter-tr">n</div></div>
+    <div class="letter"><div class="letter-glyph">ه</div><div class="letter-name">Ха (мягкая)</div><div class="letter-tr">h</div></div>
+    <div class="letter"><div class="letter-glyph">و</div><div class="letter-name">Уау</div><div class="letter-tr">w</div></div>
+    <div class="letter"><div class="letter-glyph">ي</div><div class="letter-name">Я</div><div class="letter-tr">y</div></div>
+  </div>
+</section>
+
+<div id="footer-root"></div>
+<script src="i18n-data.js"></script>
+<script>
+  // Auto-tag all 28 letter names: .letter > .letter-name → data-i18n="ka.lN"
+  document.querySelectorAll('.iqra-grid .letter').forEach((el, i) => {
+    const n = el.querySelector('.letter-name');
+    if (n) n.setAttribute('data-i18n', `ka.l${i + 1}`);
+  });
+</script>
+<script src="shared.js"></script>
+</body>
+</html>

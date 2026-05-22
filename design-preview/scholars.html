@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sakeenly · Scholar Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Scheherazade+New:wght@400;500;700&display=swap" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+  .sb-hero { padding: 80px 0 40px; text-align: center; position: relative; overflow: hidden; }
+  .sb-hero .geo-stars-fade { z-index: -1; }
+  .sb-hero h1 { font-weight: 300; margin-top: 18px; max-width: 18ch; margin-left: auto; margin-right: auto; }
+  .sb-hero p { color: var(--text-2); max-width: 56ch; margin: 22px auto 0; font-family: 'Spectral', serif; font-size: 1.2rem; line-height: 1.65; }
+
+  .pipeline { margin-top: 80px; }
+  .pipe-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 24px; }
+  @media (max-width: 900px) { .pipe-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .pipe-grid { grid-template-columns: 1fr; } }
+  .pipe {
+    padding: 22px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px;
+    position: relative;
+  }
+  .pipe .n { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent); letter-spacing: 0.14em; }
+  .pipe h3 { font-size: 1.15rem; font-weight: 400; margin-top: 8px; }
+  .pipe p { color: var(--text-2); font-size: 13px; line-height: 1.55; margin-top: 10px; }
+
+  .board { margin-top: 96px; }
+  .scholar-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 28px; }
+  @media (max-width: 760px) { .scholar-grid { grid-template-columns: 1fr; } }
+  .scholar {
+    display: flex; gap: 18px;
+    padding: 24px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 18px;
+    transition: border-color 160ms;
+  }
+  .scholar:hover { border-color: color-mix(in oklab, var(--accent) 40%, var(--border)); }
+  .scholar .avatar {
+    width: 56px; height: 56px;
+    border-radius: 999px;
+    background: radial-gradient(circle, var(--accent-soft), var(--surface-2));
+    border: 1px solid var(--border);
+    display: grid; place-items: center;
+    color: var(--accent);
+    flex-shrink: 0;
+    font-family: 'Spectral', serif; font-size: 1.4rem;
+  }
+  .scholar .info { flex: 1; min-width: 0; }
+  .scholar .name { font-family: 'Spectral', serif; font-size: 1.2rem; }
+  .scholar .role {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3);
+    margin-top: 4px;
+  }
+  .scholar .bio { color: var(--text-2); font-size: 13px; line-height: 1.55; margin-top: 12px; }
+  .scholar .pending {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 12px;
+    padding: 4px 9px; border-radius: 999px;
+    background: var(--accent-soft); color: var(--accent);
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+  }
+
+  .apply-band {
+    margin-top: 80px;
+    padding: 56px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 22px;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .apply-band .geo-stars-soft { z-index: 0; }
+  .apply-band > * { position: relative; z-index: 1; }
+  .apply-band h2 { font-weight: 300; }
+  .apply-band p { color: var(--text-2); max-width: 50ch; margin: 14px auto 22px; }
+</style>
+</head>
+<body data-screen-label="Scholar Board">
+
+<div id="nav-root" data-active=""></div>
+
+<section class="wrap sb-hero">
+  <div class="geo-stars-fade"></div>
+  <span class="tag"><span class="tag-dot"></span><span data-i18n="sb.badge">Контроль качества</span></span>
+  <h1 data-i18n="sb.h1">Scholar Board — кто читает прежде, чем читаешь ты.</h1>
+  <p data-i18n="sb.lede">Любой текст, который видит пользователь — refusal-сообщения, тематические подборки аятов, контекстные комментарии, AI prompts — проходит через scholar board перед публикацией.</p>
+</section>
+
+<section class="wrap pipeline">
+  <span class="eyebrow" data-i18n="sb.pipe_eyebrow">Как работает review</span>
+  <h2 style="margin-top: 12px; font-weight: 300;" data-i18n="sb.pipe_h">Четыре шага до публикации.</h2>
+  <div class="pipe-grid">
+    <div class="pipe">
+      <span class="n" data-i18n="sb.s1.n">01 · Draft</span>
+      <h3 data-i18n="sb.s1.t">Команда продукта</h3>
+      <p data-i18n="sb.s1.d">Подборка аятов или текст AI prompt'а оформляется в pull request с источниками.</p>
+    </div>
+    <div class="pipe">
+      <span class="n" data-i18n="sb.s2.n">02 · Review</span>
+      <h3 data-i18n="sb.s2.t">Scholar board</h3>
+      <p data-i18n="sb.s2.d">Минимум двое учёных читают независимо. Каждый комментарий публикуется.</p>
+    </div>
+    <div class="pipe">
+      <span class="n" data-i18n="sb.s3.n">03 · Revise</span>
+      <h3 data-i18n="sb.s3.t">Итерация</h3>
+      <p data-i18n="sb.s3.d">Команда исправляет, ссылается на хадис-корпус, возвращает на повторное чтение.</p>
+    </div>
+    <div class="pipe">
+      <span class="n" data-i18n="sb.s4.n">04 · Approve</span>
+      <h3 data-i18n="sb.s4.t">Публикация</h3>
+      <p data-i18n="sb.s4.d">Тэг scholar-vetted: true. Без этого badge ничего не индексируется в SEO.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap board">
+  <span class="eyebrow" data-i18n="sb.board_eyebrow">Совет</span>
+  <h2 style="margin-top: 12px; font-weight: 300;" data-i18n="sb.board_h">Учёные, которым мы доверили чтение.</h2>
+  <p style="color: var(--text-2); margin-top: 14px; max-width: 56ch;" data-i18n="sb.board_p">Имена и организации будут добавлены к моменту public-лонча. До того момента каждая тематическая подборка помечена «Ожидает утверждения».</p>
+  <div class="scholar-grid">
+    <div class="scholar">
+      <div class="avatar">ـ</div>
+      <div class="info">
+        <div class="name">Имя учёного</div>
+        <div class="role">SeekersGuidance · Hanafi fiqh</div>
+        <p class="bio">Кафедра исламского права. Профиль: семейные взаимоотношения, личные правовые вопросы.</p>
+        <span class="pending"><span class="tag-dot"></span><span data-i18n="sb.pending">в процессе подтверждения</span></span>
+      </div>
+    </div>
+    <div class="scholar">
+      <div class="avatar">ـ</div>
+      <div class="info">
+        <div class="name">Имя учёного</div>
+        <div class="role">Yaqeen Institute · Quranic studies</div>
+        <p class="bio">PhD по тафсиру. Профиль: исторический контекст аятов, asbab al-nuzul, классические тафсиры.</p>
+        <span class="pending"><span class="tag-dot"></span><span data-i18n="sb.pending">в процессе подтверждения</span></span>
+      </div>
+    </div>
+    <div class="scholar">
+      <div class="avatar">ـ</div>
+      <div class="info">
+        <div class="name">Имя учёного</div>
+        <div class="role">Russian-speaking ulama</div>
+        <p class="bio">Имам и муаллим, работа с русскоязычной уммой. Профиль: переводы, локальный контекст.</p>
+        <span class="pending"><span class="tag-dot"></span><span data-i18n="sb.pending">в процессе подтверждения</span></span>
+      </div>
+    </div>
+    <div class="scholar">
+      <div class="avatar">ـ</div>
+      <div class="info">
+        <div class="name">Имя учёного</div>
+        <div class="role">Hadith specialist</div>
+        <p class="bio">Специализация по сахих-корпусу (Бухари, Муслим). Курирует hadith retrieval для AI.</p>
+        <span class="pending"><span class="tag-dot"></span><span data-i18n="sb.pending">в процессе подтверждения</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="apply-band">
+    <div class="geo-stars-soft"></div>
+    <span class="eyebrow" data-i18n="sb.apply_eyebrow">Хочешь присоединиться?</span>
+    <h2 style="margin-top: 14px;" data-i18n="sb.apply_h">Мы открыты для имамов, муаллимов, исламоведов.</h2>
+    <p data-i18n="sb.apply_p">Если у тебя иджаза в исламских науках или ты публикующийся исследователь — напиши на scholars@sakeenly.com.</p>
+    <a class="btn btn-primary" href="mailto:scholars@sakeenly.com" data-i18n="sb.apply_btn">Написать</a>
+  </div>
+</section>
+
+<div id="footer-root"></div>
+<script src="i18n-data.js"></script>
+<script src="shared.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+/* Page-specific styles extracted from signin.html */
+
+.auth-wrap {
+    min-height: calc(100vh - 80px);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  }
+  @media (max-width: 920px) { .auth-wrap { grid-template-columns: 1fr; } }
+
+  .auth-aside {
+    background: oklch(var(--surface));
+    border-right: 1px solid oklch(var(--border));
+    padding: 80px 56px;
+    position: relative; overflow: hidden;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  @media (max-width: 920px) { .auth-aside { display: none; } }
+  .auth-aside .geo-stars-soft { z-index: 0; }
+  .auth-aside > * { position: relative; z-index: 1; }
+  .auth-aside .eyebrow { color: oklch(var(--accent)); }
+  .auth-aside h2 { font-weight: 300; margin-top: 18px; }
+  .auth-aside .arabic { font-size: 2.6rem; color: oklch(var(--accent)); margin-top: 26px; direction: rtl; }
+  .auth-aside .quote { font-family: 'Spectral', serif; font-style: italic; color: oklch(var(--text-2)); margin-top: 20px; max-width: 36ch; line-height: 1.65; font-size: 1.05rem; }
+  .auth-aside .cite { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: oklch(var(--text-3)); letter-spacing: 0.1em; margin-top: 10px; }
+  .auth-bullets { margin-top: auto; display: flex; flex-direction: column; gap: 12px; }
+  .auth-bullets li {
+    display: flex; gap: 10px; align-items: center;
+    color: oklch(var(--text-2)); font-size: 14px;
+    list-style: none;
+  }
+  .auth-bullets svg { color: oklch(var(--accent)); flex-shrink: 0; }
+
+  .auth-main {
+    padding: 80px 48px;
+    display: grid; place-items: center;
+  }
+  .auth-card { width: 100%; max-width: 420px; }
+  .auth-card h1 { font-weight: 300; font-size: clamp(2rem, 3vw, 2.8rem); }
+  .auth-card p.lede { color: oklch(var(--text-2)); margin-top: 10px; }
+  .oauth-btns { margin-top: 28px; display: flex; flex-direction: column; gap: 10px; }
+  .oauth-btn {
+    width: 100%; justify-content: center;
+    padding: 12px 18px;
+    background: oklch(var(--surface));
+    border: 1px solid oklch(var(--border-strong));
+    color: oklch(var(--text));
+    border-radius: 14px;
+    display: inline-flex; align-items: center; gap: 12px;
+    font-size: 14px; font-weight: 500;
+    transition: background 140ms, border-color 140ms;
+  }
+  .oauth-btn:hover { background: oklch(var(--surface-2)); border-color: oklch(var(--accent)); }
+  .oauth-btn svg { flex-shrink: 0; }
+  .divider-or {
+    display: flex; align-items: center; gap: 14px;
+    margin: 22px 0; color: oklch(var(--text-3));
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em;
+  }
+  .divider-or::before, .divider-or::after { content: ""; flex: 1; height: 1px; background: oklch(var(--border)); }
+
+  .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+  .field label {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase; color: oklch(var(--text-3));
+  }
+  .field input {
+    padding: 12px 14px;
+    background: oklch(var(--bg));
+    border: 1px solid oklch(var(--border));
+    border-radius: 12px;
+    color: oklch(var(--text)); font-family: inherit; font-size: 15px;
+    outline: none;
+    transition: border-color 140ms;
+  }
+  .field input:focus { border-color: color-mix(in oklab, oklch(var(--accent)) 60%, oklch(var(--border))); }
+  .magic-btn {
+    width: 100%; justify-content: center;
+    padding: 12px;
+    background: oklch(var(--accent)); color: oklch(0.15 0.02 60);
+    border-radius: 14px;
+    font-weight: 500; font-size: 14px;
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid color-mix(in oklab, oklch(var(--accent)) 70%, black 12%);
+    transition: background 160ms;
+  }
+  .magic-btn:hover { background: color-mix(in oklab, oklch(var(--accent)) 92%, white 8%); }
+  .terms { margin-top: 22px; font-size: 12px; color: oklch(var(--text-3)); text-align: center; line-height: 1.6; }
+  .terms a { color: oklch(var(--text-2)); text-decoration: underline; text-underline-offset: 2px; }
+  .terms a:hover { color: oklch(var(--accent)); }

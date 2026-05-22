@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sakeenly · Профиль</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Scheherazade+New:wght@400;500;700&display=swap" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+  .profile-head {
+    padding: 56px 0 28px;
+    display: flex; align-items: center; gap: 28px;
+  }
+  .avatar-big {
+    width: 84px; height: 84px;
+    border-radius: 999px;
+    background:
+      radial-gradient(circle at 50% 40%, var(--accent-soft) 0, var(--surface-2) 70%);
+    border: 1px solid var(--border);
+    display: grid; place-items: center;
+    color: var(--accent);
+    font-family: 'Spectral', serif; font-size: 2rem;
+    flex-shrink: 0;
+  }
+  .profile-meta h1 { font-weight: 300; font-size: clamp(1.8rem, 3vw, 2.6rem); }
+  .profile-meta .email { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-3); margin-top: 6px; letter-spacing: 0.06em; }
+  .profile-actions { margin-left: auto; display: flex; gap: 10px; }
+  @media (max-width: 700px) { .profile-actions { display: none; } }
+
+  .grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
+    margin-top: 32px;
+  }
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+
+  .stat-card {
+    padding: 26px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 18px;
+    display: flex; flex-direction: column; gap: 6px;
+    position: relative; overflow: hidden;
+  }
+  .stat-card .eyebrow { color: var(--text-3); }
+  .stat-card .v {
+    font-family: 'Spectral', serif; font-size: 3.4rem; line-height: 1;
+    color: var(--accent); margin-top: 14px;
+  }
+  .stat-card .d { color: var(--text-2); font-size: 13px; margin-top: 4px; }
+  .stat-card .corner { position: absolute; top: 14px; right: 14px; color: var(--accent); opacity: 0.6; }
+
+  .sec-head { display: flex; justify-content: space-between; align-items: end; margin: 64px 0 18px; }
+  .sec-head h2 { font-weight: 300; }
+  .sec-head a { color: var(--accent); font-size: 14px; }
+
+  .bm-list { display: flex; flex-direction: column; gap: 10px; }
+  .bm {
+    display: grid; grid-template-columns: auto 1fr auto; gap: 18px; align-items: center;
+    padding: 18px 22px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px;
+    transition: border-color 140ms;
+  }
+  .bm:hover { border-color: var(--accent); }
+  .bm .key {
+    font-family: 'JetBrains Mono', monospace; font-size: 13px;
+    color: var(--accent);
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    border: 1px solid color-mix(in oklab, var(--accent) 30%, transparent);
+  }
+  .bm .preview {
+    font-family: 'Spectral', serif; color: var(--text-2);
+    font-size: 14px; line-height: 1.5;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .bm .ago { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-3); letter-spacing: 0.06em; }
+
+  .settings-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (max-width: 800px) { .settings-grid { grid-template-columns: 1fr; } }
+  .setting {
+    padding: 20px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .setting .lab { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); }
+  .setting select {
+    padding: 10px 12px;
+    background: var(--bg); color: var(--text);
+    border: 1px solid var(--border); border-radius: 10px;
+    font-family: inherit; font-size: 14px;
+  }
+
+  .subscription-card {
+    margin-top: 32px;
+    background: linear-gradient(180deg, var(--accent-soft) 0, transparent 60%), var(--surface);
+    border: 1px solid color-mix(in oklab, var(--accent) 50%, var(--border));
+    border-radius: 22px;
+    padding: 28px 32px;
+    display: flex; align-items: center; justify-content: space-between; gap: 22px;
+    flex-wrap: wrap;
+    position: relative; overflow: hidden;
+  }
+  .subscription-card .geo-stars-soft { z-index: 0; }
+  .subscription-card > * { position: relative; z-index: 1; }
+  .sub-plan { font-family: 'Spectral', serif; font-size: 2rem; }
+  .sub-meta { color: var(--text-2); font-size: 13px; margin-top: 4px; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.06em; }
+</style>
+</head>
+<body data-screen-label="Profile">
+
+<div id="nav-root" data-active=""></div>
+
+<section class="wrap">
+  <div class="profile-head">
+    <div class="avatar-big">А</div>
+    <div class="profile-meta">
+      <span class="eyebrow" data-i18n="pf.eyebrow">Профиль</span>
+      <h1 style="margin-top: 8px;">Ahmad</h1>
+      <div class="email">ahmad@example.com · ru-Tatar · Europe/Moscow</div>
+    </div>
+    <div class="profile-actions">
+      <a class="btn btn-soft btn-sm" href="#" data-i18n="pf.actions.export">Экспорт данных</a>
+      <a class="btn btn-ghost btn-sm" href="#" data-i18n="pf.actions.signout" style="color: oklch(0.6 0.18 25); border-color: oklch(0.6 0.18 25);">Выйти</a>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="stat-card">
+      <span class="eyebrow" data-i18n="pf.stat_streak">Streak</span>
+      <span class="v">17</span>
+      <span class="d" data-i18n="pf.stat_streak_d">дней непрерывного чтения · 21 — лучший</span>
+      <svg class="corner" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2 L14.2 9.8 L22 12 L14.2 14.2 L12 22 L9.8 14.2 L2 12 L9.8 9.8 Z" /></svg>
+    </div>
+    <div class="stat-card">
+      <span class="eyebrow" data-i18n="pf.stat_bookmarks">Закладки</span>
+      <span class="v">38</span>
+      <span class="d" data-i18n="pf.stat_bookmarks_d">аятов сохранено · 12 с заметкой</span>
+      <svg class="corner" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16l7-3 7 3z"/></svg>
+    </div>
+  </div>
+
+  <!-- Subscription -->
+  <div class="subscription-card">
+    <div class="geo-stars-soft"></div>
+    <div>
+      <span class="eyebrow" data-i18n="pf.sub_eyebrow" style="color: var(--accent);">Подписка</span>
+      <div class="sub-plan">Free</div>
+      <div class="sub-meta" data-i18n="pf.sub_meta">2 / 5 AI-вопросов сегодня · сбрасывается в 00:00 UTC</div>
+    </div>
+    <a class="btn btn-primary" href="pricing.html">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 L14.2 9.8 L22 12 L14.2 14.2 L12 22 L9.8 14.2 L2 12 L9.8 9.8 Z" /></svg>
+      <span data-i18n="pf.sub_cta">Снять лимит · Premium</span>
+    </a>
+  </div>
+
+  <!-- Settings -->
+  <div class="sec-head">
+    <div>
+      <span class="eyebrow" data-i18n="pf.settings_eyebrow">Настройки</span>
+      <h2 style="margin-top: 8px;" data-i18n="pf.settings_h">Как читать.</h2>
+    </div>
+  </div>
+  <div class="settings-grid">
+    <div class="setting">
+      <span class="lab" data-i18n="pf.label_translation">Перевод</span>
+      <select>
+        <option>Кулиев</option>
+        <option>Абу Адель</option>
+        <option>Министерство вакуфов Египта</option>
+        <option>Sahih International</option>
+        <option>M. M. Pickthall</option>
+      </select>
+    </div>
+    <div class="setting">
+      <span class="lab" data-i18n="pf.label_reciter">Чтец</span>
+      <select>
+        <option>Мишари ар-Рашид аль-Афаси</option>
+        <option>Абдуль-Басит (муджаввад)</option>
+        <option>Абдуррахман ас-Судайс</option>
+        <option>Махмуд аль-Хусары</option>
+      </select>
+    </div>
+    <div class="setting">
+      <span class="lab" data-i18n="pf.label_theme">Тема</span>
+      <select>
+        <option>Ночь (default)</option>
+        <option>Светлая</option>
+        <option>Сепия</option>
+        <option>Мусхаф</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Bookmarks -->
+  <div class="sec-head">
+    <div>
+      <span class="eyebrow" data-i18n="pf.bm_eyebrow">Последние закладки</span>
+      <h2 style="margin-top: 8px;" data-i18n="pf.bm_h">К чему ты возвращаешься.</h2>
+    </div>
+    <a href="#" data-i18n="pf.bm_all">Все 38 →</a>
+  </div>
+  <div class="bm-list">
+    <a class="bm" href="reader.html">
+      <span class="key">2:255</span>
+      <span class="preview">Аят аль-Курси — величайший аят, поминание перед сном по сунне</span>
+      <span class="ago">2 дня назад</span>
+    </a>
+    <a class="bm" href="reader.html">
+      <span class="key">13:28</span>
+      <span class="preview">«В поминании Аллаха сердца находят покой» — для тревоги</span>
+      <span class="ago">3 дня назад</span>
+    </a>
+    <a class="bm" href="reader.html">
+      <span class="key">94:5</span>
+      <span class="preview">«Воистину, за каждой тягостью облегчение»</span>
+      <span class="ago">неделю назад</span>
+    </a>
+    <a class="bm" href="reader.html">
+      <span class="key">39:53</span>
+      <span class="preview">«Не отчаивайтесь в милости Аллаха»</span>
+      <span class="ago">неделю назад</span>
+    </a>
+    <a class="bm" href="reader.html">
+      <span class="key">97:1-5</span>
+      <span class="preview">Сура Аль-Кадр полностью — для ночи Кадра</span>
+      <span class="ago">2 недели назад</span>
+    </a>
+  </div>
+</section>
+
+<div id="footer-root"></div>
+<script src="i18n-data.js"></script>
+<script>
+  // Tag plan badge "Free"
+  const plan = document.querySelector('.sub-plan');
+  if (plan) plan.setAttribute('data-i18n', 'pf.sub_plan');
+
+  // Tag select options.
+  const optKeys = [
+    ['pf.t.kuliev','pf.t.abu','pf.t.awqaf','pf.t.sahih','pf.t.pickthall'],
+    ['pf.r.mishary','pf.r.basit','pf.r.sudais','pf.r.husary'],
+    ['pf.th.dark','pf.th.light','pf.th.sepia','pf.th.mushaf'],
+  ];
+  document.querySelectorAll('.settings-grid .setting select').forEach((sel, idx) => {
+    const keys = optKeys[idx] || [];
+    sel.querySelectorAll('option').forEach((opt, i) => {
+      if (keys[i]) opt.setAttribute('data-i18n', keys[i]);
+    });
+  });
+
+  // Tag bookmark previews + ago.
+  const bmKeys = ['pf.bm1','pf.bm2','pf.bm3','pf.bm4','pf.bm5'];
+  const agoKeys = ['pf.ago_2d','pf.ago_3d','pf.ago_1w','pf.ago_1w','pf.ago_2w'];
+  document.querySelectorAll('.bm-list .bm').forEach((row, i) => {
+    const preview = row.querySelector('.preview');
+    const ago = row.querySelector('.ago');
+    if (preview && bmKeys[i]) preview.setAttribute('data-i18n', bmKeys[i]);
+    if (ago && agoKeys[i]) ago.setAttribute('data-i18n', agoKeys[i]);
+  });
+</script>
+<script src="shared.js"></script>
+</body>
+</html>

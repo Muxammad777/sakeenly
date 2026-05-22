@@ -1,0 +1,73 @@
+/* Page-specific styles extracted from about.html */
+
+.about-hero {
+    padding: 80px 0 40px; position: relative; overflow: hidden;
+    text-align: center;
+  }
+  .about-hero .geo-stars-fade { z-index: -1; }
+  .about-hero h1 { font-weight: 300; max-width: 18ch; margin: 18px auto 0; }
+  .about-hero .arabic-mark {
+    font-family: 'Scheherazade New', serif;
+    font-size: clamp(3rem, 5vw, 4.4rem);
+    color: oklch(var(--accent));
+    line-height: 1; margin-top: 36px;
+    direction: rtl;
+  }
+  .about-hero p { color: oklch(var(--text-2)); max-width: 56ch; margin: 26px auto 0; font-family: 'Spectral', serif; font-size: 1.25rem; line-height: 1.6; }
+
+  .principles { margin-top: 80px; }
+  .principles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 28px; }
+  @media (max-width: 800px) { .principles-grid { grid-template-columns: 1fr; } }
+  .principle {
+    padding: 26px;
+    background: oklch(var(--surface)); border: 1px solid oklch(var(--border));
+    border-radius: 18px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .principle .n {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: oklch(var(--text-3));
+  }
+  .principle h3 { font-size: 1.4rem; font-weight: 400; }
+  .principle p { color: oklch(var(--text-2)); line-height: 1.6; }
+
+  .quotebox {
+    margin: 96px auto 0; max-width: 760px;
+    padding: 48px 56px;
+    background: oklch(var(--surface)); border: 1px solid oklch(var(--border));
+    border-radius: 24px; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .quotebox .geo-stars-soft { z-index: 0; }
+  .quotebox .arabic {
+    position: relative; z-index: 1;
+    font-size: clamp(1.6rem, 2.8vw, 2.2rem); color: oklch(var(--text));
+  }
+  .quotebox .tr { position: relative; z-index: 1; font-family: 'Spectral', serif; font-style: italic; font-size: 1.2rem; line-height: 1.7; color: oklch(var(--text-2)); margin-top: 22px; }
+  .quotebox .cite { position: relative; z-index: 1; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: oklch(var(--text-3)); margin-top: 16px; }
+
+  .sources-section { margin-top: 96px; }
+  .sources-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 22px; }
+  @media (max-width: 760px) { .sources-list { grid-template-columns: 1fr; } }
+  .src-item {
+    display: flex; gap: 14px; align-items: center;
+    padding: 16px 18px;
+    background: oklch(var(--surface)); border: 1px solid oklch(var(--border));
+    border-radius: 14px;
+  }
+  .src-item .icon { color: oklch(var(--accent)); flex-shrink: 0; width: 32px; height: 32px; display: grid; place-items: center; border-radius: 999px; background: var(--accent-soft); }
+  .src-item .t { font-family: 'Spectral', serif; font-size: 1.05rem; }
+  .src-item .d { font-size: 12px; color: oklch(var(--text-3)); margin-top: 2px; }
+  .src-item .body { min-width: 0; }
+
+  .cta-band {
+    margin-top: 96px; padding: 56px 0;
+    border-top: 1px solid oklch(var(--border)); border-bottom: 1px solid oklch(var(--border));
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .cta-band .geo-stars-soft { z-index: 0; }
+  .cta-band .inner { position: relative; z-index: 1; }
+  .cta-band h2 { font-weight: 300; }
+  .cta-band p { color: oklch(var(--text-2)); max-width: 50ch; margin: 14px auto 22px; }
+  .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }

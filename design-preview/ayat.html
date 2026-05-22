@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sakeenly · Аяты по состояниям</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Scheherazade+New:wght@400;500;700&display=swap" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+  .ay-hero { padding: 64px 0 24px; position: relative; overflow: hidden; }
+  .ay-hero .geo-stars-fade { z-index: -1; }
+  .ay-hero h1 { font-weight: 300; max-width: 22ch; margin-top: 14px; }
+  .ay-hero p { color: var(--text-2); max-width: 58ch; margin-top: 18px; font-size: 1.1rem; }
+
+  .ay-filter {
+    display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+    margin: 32px 0 32px;
+  }
+  .ay-pill {
+    padding: 8px 14px; border-radius: 999px;
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--text-2); font-size: 13px;
+    transition: background 140ms, color 140ms, border-color 140ms;
+  }
+  .ay-pill:hover { color: var(--text); }
+  .ay-pill.active { background: var(--accent); color: oklch(0.15 0.02 60); border-color: var(--accent); }
+
+  .ay-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  @media (max-width: 1000px) { .ay-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .ay-grid { grid-template-columns: 1fr; } }
+  .ay-card {
+    padding: 24px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 18px;
+    display: flex; flex-direction: column; gap: 10px;
+    min-height: 220px;
+    transition: border-color 200ms, transform 200ms;
+  }
+  .ay-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .ay-card .cat { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-3); letter-spacing: 0.14em; text-transform: uppercase; }
+  .ay-card h3 { font-size: 1.25rem; font-weight: 400; }
+  .ay-card p { color: var(--text-2); font-size: 14px; line-height: 1.55; }
+  .ay-card .foot {
+    margin-top: auto;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-3);
+    letter-spacing: 0.06em;
+    padding-top: 12px;
+  }
+  .ay-card .foot .more { color: var(--accent); }
+</style>
+</head>
+<body data-screen-label="Ayat Index">
+
+<div id="nav-root" data-active="ayat.html"></div>
+
+<section class="wrap ay-hero">
+  <div class="geo-stars-fade"></div>
+  <span class="tag"><span class="tag-dot"></span><span data-i18n="ay.badge">30 подборок · scholar-vetted в процессе</span></span>
+  <h1 data-i18n="ay.h1">Открой Книгу там, где жизнь сделала трудно.</h1>
+  <p data-i18n="ay.lede">Тёплый указатель: какие аяты Корана читать при тревоге, в скорби, перед сном, перед экзаменом, в благодарности, в одиночестве. Каждая подборка — 3-5 аятов с переводом и аудио.</p>
+
+  <div class="ay-filter">
+    <button class="ay-pill active" data-i18n="ay.all">Все</button>
+    <button class="ay-pill" data-i18n="ay.cat_heart">Состояние сердца</button>
+    <button class="ay-pill" data-i18n="ay.cat_life">Жизненные моменты</button>
+    <button class="ay-pill" data-i18n="ay.cat_family">Семья</button>
+    <button class="ay-pill" data-i18n="ay.cat_time">Время</button>
+    <button class="ay-pill" data-i18n="ay.cat_worship">Поклонение</button>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="ay-grid">
+    <a class="ay-card" href="ayat-dlya-trevogi.standalone-src.html">
+      <span class="cat">Состояние сердца · 4 аята</span>
+      <h3>Аяты от тревоги</h3>
+      <p>«В поминании Аллаха сердца находят покой». Подборка для моментов, когда сердце сжимается.</p>
+      <div class="foot"><span>13:28 · 2:286 · 94:5 · 65:3</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Состояние сердца · 4 аята</span>
+      <h3>Аяты о сабре (терпении)</h3>
+      <p>Сабр — удерживание сердца от ропота. Аллах с терпеливыми.</p>
+      <div class="foot"><span>2:153 · 39:10 · 16:127 · 70:5</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Состояние сердца · 3 аята</span>
+      <h3>Аяты о благодарности</h3>
+      <p>Шукр — видеть милость и возвращать её сердцем, языком и делами.</p>
+      <div class="foot"><span>14:7 · 2:152 · 39:66</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Состояние сердца · 4 аята</span>
+      <h3>Когда чувствуешь одиночество</h3>
+      <p>Никто не один, пока знает, что Он ближе ярёмной вены.</p>
+      <div class="foot"><span>2:186 · 50:16 · 9:40 · 57:4</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Жизненный момент · 5 аятов</span>
+      <h3>Перед экзаменом</h3>
+      <p>Дуа Мусы перед лицом фараона — раскрой грудь, облегчи дело, развяжи узел.</p>
+      <div class="foot"><span>20:25-28 · 94:5</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Время · 5 аятов</span>
+      <h3>Перед сном</h3>
+      <p>Аят аль-Курси и муаввизат — то, что читал Пророк (ﷺ) перед сном.</p>
+      <div class="foot"><span>2:255 · 2:285-286 · 112 · 113</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Время · 3 аята</span>
+      <h3>Утренние аяты</h3>
+      <p>Чтобы войти в день с поминанием.</p>
+      <div class="foot"><span>30:17-18 · 76:25</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Состояние сердца · 4 аята</span>
+      <h3>О покаянии (тауба)</h3>
+      <p>«Не отчаивайтесь в милости Аллаха».</p>
+      <div class="foot"><span>39:53 · 2:222 · 11:90 · 4:110</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Состояние сердца · 4 аята</span>
+      <h3>При печали</h3>
+      <p>Когда горе кажется бесконечным, Коран напоминает: оно временно.</p>
+      <div class="foot"><span>12:86 · 9:40 · 65:7 · 94:5</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Состояние сердца · 3 аята</span>
+      <h3>При страхе</h3>
+      <p>«Аллаха нам достаточно — Он лучший Покровитель».</p>
+      <div class="foot"><span>3:173 · 2:286 · 41:30</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Состояние сердца · 3 аята</span>
+      <h3>При гневе</h3>
+      <p>Сдерживающие гнев — их любит Аллах.</p>
+      <div class="foot"><span>3:134 · 41:34 · 7:199</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Состояние сердца · 3 аята</span>
+      <h3>Для укрепления имана</h3>
+      <p>Сердца верующих трепещут при поминании Аллаха.</p>
+      <div class="foot"><span>8:2 · 3:173 · 49:7</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Жизненный момент · 4 аята</span>
+      <h3>При болезни</h3>
+      <p>Дуа Аййюба: «Меня постигла беда, а Ты — Милостивейший».</p>
+      <div class="foot"><span>21:83-84 · 26:80 · 17:82</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Жизненный момент · 4 аята</span>
+      <h3>При потере близких</h3>
+      <p>«Мы принадлежим Аллаху и к Нему возвращаемся».</p>
+      <div class="foot"><span>2:155-157 · 39:42</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Семья · 4 аята</span>
+      <h3>Аяты о родителях</h3>
+      <p>«Господи, помилуй их, как они растили меня малышом».</p>
+      <div class="foot"><span>17:23-24 · 31:14 · 46:15</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Семья · 3 аята</span>
+      <h3>Аяты о детях</h3>
+      <p>Дуа Закарии: «Даруй мне благое потомство».</p>
+      <div class="foot"><span>25:74 · 14:40 · 3:38</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Жизненный момент · 4 аята</span>
+      <h3>При финансовых трудностях</h3>
+      <p>«Тому, кто боится Аллаха, Он даёт выход».</p>
+      <div class="foot"><span>65:2-3 · 11:6 · 29:60</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Состояние сердца · 3 аята</span>
+      <h3>При сомнениях</h3>
+      <p>Сомнение становится опасным, когда о нём молчишь.</p>
+      <div class="foot"><span>2:147 · 41:53 · 16:43</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Жизненный момент · 3 аята</span>
+      <h3>Перед путешествием</h3>
+      <p>«Пречист Тот, Кто покорил нам это».</p>
+      <div class="foot"><span>43:13-14 · 28:21</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Состояние сердца · 3 аята</span>
+      <h3>Для отказа от греха</h3>
+      <p>Аллах заменит злые деяния добрыми.</p>
+      <div class="foot"><span>8:38 · 25:70 · 39:53</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Состояние сердца · 3 аята</span>
+      <h3>О тавакkуле (уповании)</h3>
+      <p>«Тому, кто уповает на Аллаха, Он достаточен».</p>
+      <div class="foot"><span>3:159 · 65:3 · 11:88</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Поклонение · 4 аята</span>
+      <h3>Прошение помощи у Аллаха</h3>
+      <p>«Зовите Меня — Я отвечу вам».</p>
+      <div class="foot"><span>1:5 · 2:186 · 40:60 · 7:55</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Состояние сердца · 3 аята</span>
+      <h3>При искушении</h3>
+      <p>Если шайтан подталкивает — прибегай к Аллаху.</p>
+      <div class="foot"><span>12:53 · 7:200 · 23:97</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Состояние сердца · 3 аята</span>
+      <h3>Для радости</h3>
+      <p>«Пусть радуются милости Аллаха».</p>
+      <div class="foot"><span>10:58 · 16:97 · 89:27</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Время · 3 аята</span>
+      <h3>Аяты пятницы</h3>
+      <p>Сура Аль-Кахф — свет между двумя пятницами.</p>
+      <div class="foot"><span>62:9-10 · 18:1</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Поклонение · 4 аята</span>
+      <h3>Аяты Рамадана</h3>
+      <p>Месяц, в который ниспослан Коран.</p>
+      <div class="foot"><span>2:183-185 · 97:1</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Поклонение · 5 аятов</span>
+      <h3>Аяты ночи Кадр</h3>
+      <p>«Ночь Кадра лучше тысячи месяцев».</p>
+      <div class="foot"><span>Сура 97 полностью</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Семья · 3 аята</span>
+      <h3>Для мира в семье</h3>
+      <p>Он вложил между супругами любовь и милость.</p>
+      <div class="foot"><span>30:21 · 25:74 · 4:19</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Состояние сердца · 3 аята</span>
+      <h3>О милости (рахма)</h3>
+      <p>«Моя милость объемлет всякую вещь».</p>
+      <div class="foot"><span>7:156 · 6:54 · 21:107</span><span class="more">Открыть →</span></div>
+    </a>
+    <a class="ay-card" href="#">
+      <span class="cat">Состояние сердца · 4 аята</span>
+      <h3>Для довольства Аллахом</h3>
+      <p>«О душа умиротворённая — вернись к Господу довольной».</p>
+      <div class="foot"><span>89:27-30</span><span class="more">Открыть →</span></div>
+    </a>
+  </div>
+</section>
+
+<div id="footer-root"></div>
+<script src="i18n-data.js"></script>
+<script>
+  // Auto-tag 30 cards + "Открыть →" link with data-i18n keys before shared.js apply.
+  // Categories cycle through 5 types matching how cards are grouped in the page.
+  const catKeys = {
+    1:'ay.cat_heart', 2:'ay.cat_heart', 3:'ay.cat_heart', 4:'ay.cat_heart',
+    5:'ay.cat_life',  6:'ay.cat_time',  7:'ay.cat_time',  8:'ay.cat_heart',
+    9:'ay.cat_heart',10:'ay.cat_heart',11:'ay.cat_heart',12:'ay.cat_heart',
+    13:'ay.cat_life',14:'ay.cat_life',15:'ay.cat_family',16:'ay.cat_family',
+    17:'ay.cat_life',18:'ay.cat_heart',19:'ay.cat_life',20:'ay.cat_heart',
+    21:'ay.cat_heart',22:'ay.cat_worship',23:'ay.cat_heart',24:'ay.cat_heart',
+    25:'ay.cat_time',26:'ay.cat_worship',27:'ay.cat_worship',28:'ay.cat_family',
+    29:'ay.cat_heart',30:'ay.cat_heart'
+  };
+  document.querySelectorAll('.ay-grid .ay-card').forEach((card, i) => {
+    const n = i + 1;
+    const cat = card.querySelector('.cat');
+    const h3 = card.querySelector('h3');
+    const ps = card.querySelectorAll('p');
+    const more = card.querySelector('.more');
+    if (cat && catKeys[n]) {
+      // Replace category prefix while keeping "· N аятов" intact (numeric -> universal).
+      const txt = cat.textContent;
+      const dotIdx = txt.indexOf('·');
+      cat.innerHTML = `<span data-i18n="${catKeys[n]}"></span>${dotIdx >= 0 ? ' ' + txt.substring(dotIdx) : ''}`;
+    }
+    if (h3)  h3.setAttribute('data-i18n', `ay.c${n}.t`);
+    if (ps[0]) ps[0].setAttribute('data-i18n', `ay.c${n}.d`);
+    if (more) more.setAttribute('data-i18n', 'ay.open');
+  });
+</script>
+<script src="shared.js"></script>
+</body>
+</html>

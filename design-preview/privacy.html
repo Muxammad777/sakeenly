@@ -1,0 +1,1326 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sakeenly · Прозрачность данных</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Scheherazade+New:wght@400;500;700&display=swap" />
+<style>
+/* Sakeenly — shared styles */
+
+/* ============ THEME TOKENS ============ */
+:root,
+[data-theme="dark"] {
+  /* night-sky (default) */
+  --bg: oklch(0.17 0.025 255);
+  --bg-deep: oklch(0.13 0.022 255);
+  --surface: oklch(0.21 0.024 255);
+  --surface-2: oklch(0.25 0.022 255);
+  --border: oklch(0.32 0.020 255);
+  --border-strong: oklch(0.42 0.022 255);
+  --text: oklch(0.95 0.006 90);
+  --text-2: oklch(0.78 0.012 90);
+  --text-3: oklch(0.60 0.018 250);
+  --accent: oklch(0.80 0.130 85);     /* warm gold */
+  --accent-2: oklch(0.65 0.115 78);
+  --accent-soft: oklch(0.80 0.130 85 / 0.14);
+  --pattern: oklch(0.95 0.010 90 / 0.04);
+  --pattern-strong: oklch(0.80 0.130 85 / 0.12);
+  --glow: radial-gradient(60% 80% at 50% 0%, oklch(0.80 0.130 85 / 0.08), transparent 70%);
+  --shadow-1: 0 1px 0 oklch(1 0 0 / 0.04) inset, 0 8px 24px -12px oklch(0 0 0 / 0.4);
+  --shadow-2: 0 12px 40px -16px oklch(0 0 0 / 0.6);
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --bg: oklch(0.985 0.004 90);
+  --bg-deep: oklch(0.965 0.006 90);
+  --surface: oklch(1 0 0);
+  --surface-2: oklch(0.975 0.005 90);
+  --border: oklch(0.90 0.008 90);
+  --border-strong: oklch(0.82 0.012 90);
+  --text: oklch(0.18 0.015 255);
+  --text-2: oklch(0.40 0.015 255);
+  --text-3: oklch(0.55 0.015 255);
+  --accent: oklch(0.52 0.130 78);
+  --accent-2: oklch(0.42 0.115 75);
+  --accent-soft: oklch(0.52 0.130 78 / 0.12);
+  --pattern: oklch(0.18 0.015 255 / 0.05);
+  --pattern-strong: oklch(0.52 0.130 78 / 0.16);
+  --glow: radial-gradient(60% 80% at 50% 0%, oklch(0.52 0.130 78 / 0.06), transparent 70%);
+  --shadow-1: 0 1px 0 oklch(1 0 0 / 0.6) inset, 0 8px 24px -16px oklch(0 0 0 / 0.18);
+  --shadow-2: 0 12px 40px -20px oklch(0 0 0 / 0.18);
+  color-scheme: light;
+}
+
+[data-theme="sepia"] {
+  --bg: oklch(0.94 0.025 85);
+  --bg-deep: oklch(0.92 0.028 85);
+  --surface: oklch(0.96 0.020 85);
+  --surface-2: oklch(0.93 0.025 85);
+  --border: oklch(0.85 0.030 78);
+  --border-strong: oklch(0.74 0.040 75);
+  --text: oklch(0.28 0.035 60);
+  --text-2: oklch(0.42 0.035 60);
+  --text-3: oklch(0.55 0.030 65);
+  --accent: oklch(0.45 0.110 60);
+  --accent-2: oklch(0.38 0.100 55);
+  --accent-soft: oklch(0.45 0.110 60 / 0.12);
+  --pattern: oklch(0.28 0.035 60 / 0.06);
+  --pattern-strong: oklch(0.45 0.110 60 / 0.18);
+  --glow: radial-gradient(60% 80% at 50% 0%, oklch(0.55 0.110 70 / 0.10), transparent 70%);
+  --shadow-1: 0 1px 0 oklch(1 0 0 / 0.4) inset, 0 8px 24px -16px oklch(0.3 0.05 60 / 0.18);
+  --shadow-2: 0 12px 40px -20px oklch(0.3 0.05 60 / 0.22);
+  color-scheme: light;
+}
+
+[data-theme="mushaf"] {
+  --bg: oklch(0.91 0.035 88);
+  --bg-deep: oklch(0.88 0.040 88);
+  --surface: oklch(0.94 0.030 88);
+  --surface-2: oklch(0.90 0.035 88);
+  --border: oklch(0.78 0.045 78);
+  --border-strong: oklch(0.65 0.055 72);
+  --text: oklch(0.24 0.040 55);
+  --text-2: oklch(0.38 0.040 55);
+  --text-3: oklch(0.52 0.040 60);
+  --accent: oklch(0.42 0.120 55);
+  --accent-2: oklch(0.34 0.105 50);
+  --accent-soft: oklch(0.42 0.120 55 / 0.14);
+  --pattern: oklch(0.24 0.040 55 / 0.08);
+  --pattern-strong: oklch(0.42 0.120 55 / 0.20);
+  --glow: radial-gradient(60% 80% at 50% 0%, oklch(0.50 0.130 65 / 0.12), transparent 70%);
+  --shadow-1: 0 1px 0 oklch(1 0 0 / 0.4) inset, 0 8px 24px -16px oklch(0.3 0.05 60 / 0.22);
+  --shadow-2: 0 12px 40px -20px oklch(0.3 0.05 60 / 0.26);
+  color-scheme: light;
+}
+
+/* ============ RESET ============ */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Golos Text', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 220ms ease, color 220ms ease;
+  text-rendering: optimizeLegibility;
+}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+img, svg { display: block; max-width: 100%; }
+
+/* ============ TYPOGRAPHY ============ */
+.serif { font-family: 'Spectral', 'Source Serif 4', Georgia, serif; font-weight: 400; letter-spacing: -0.01em; }
+.mono  { font-family: 'JetBrains Mono', ui-monospace, monospace; letter-spacing: 0; }
+.arabic {
+  font-family: 'Scheherazade New', 'Amiri Quran', 'Amiri', 'Noto Naskh Arabic', serif;
+  direction: rtl;
+  font-feature-settings: "calt", "liga", "ss01";
+  line-height: 2.1;
+}
+
+h1, h2, h3 { font-family: 'Spectral', Georgia, serif; font-weight: 400; letter-spacing: -0.015em; margin: 0; }
+h1 { font-size: clamp(2.4rem, 4.6vw, 4.2rem); line-height: 1.05; }
+h2 { font-size: clamp(1.8rem, 2.6vw, 2.4rem); line-height: 1.15; }
+h3 { font-size: 1.25rem; line-height: 1.3; }
+p  { margin: 0; }
+
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+/* ============ LAYOUT ============ */
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+.wrap-tight { max-width: 880px; margin: 0 auto; padding: 0 28px; }
+
+/* ============ NAV ============ */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  background: color-mix(in oklab, var(--bg) 78%, transparent);
+  border-bottom: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+}
+.nav-inner {
+  max-width: 1240px; margin: 0 auto;
+  padding: 14px 28px;
+  display: flex; align-items: center; gap: 28px;
+}
+.brand {
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'Spectral', serif; font-size: 19px; letter-spacing: -0.01em;
+}
+.brand-mark {
+  width: 26px; height: 26px;
+  display: grid; place-items: center;
+  color: var(--accent);
+}
+.nav-links {
+  display: flex; gap: 4px;
+  margin-left: 8px;
+}
+.nav-links a {
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  color: var(--text-2);
+  transition: background 160ms, color 160ms;
+}
+.nav-links a:hover { color: var(--text); background: var(--surface); }
+.nav-links a.active { color: var(--text); background: var(--surface); }
+.nav-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+
+/* theme switcher */
+.theme-switch {
+  display: inline-flex; align-items: center; gap: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 3px;
+}
+.theme-switch button {
+  width: 28px; height: 28px;
+  border-radius: 999px;
+  display: grid; place-items: center;
+  color: var(--text-3);
+  transition: background 160ms, color 160ms;
+}
+.theme-switch button:hover { color: var(--text); }
+.theme-switch button[aria-pressed="true"] {
+  background: var(--bg);
+  color: var(--accent);
+  box-shadow: var(--shadow-1);
+}
+
+/* ============ BUTTONS ============ */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 18px;
+  border-radius: 999px;
+  font-size: 14px; font-weight: 500;
+  transition: transform 100ms ease, background 160ms, border-color 160ms, color 160ms;
+  white-space: nowrap;
+}
+.btn:active { transform: translateY(1px); }
+.btn-primary {
+  background: var(--accent);
+  color: oklch(0.16 0.02 60);
+  border: 1px solid color-mix(in oklab, var(--accent) 70%, black 12%);
+}
+.btn-primary:hover { background: color-mix(in oklab, var(--accent) 92%, white 8%); }
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+}
+.btn-ghost:hover { background: var(--surface); }
+.btn-soft {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn-soft:hover { background: var(--surface-2); }
+.btn-sm { padding: 7px 12px; font-size: 13px; }
+
+/* ============ CARD ============ */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: var(--shadow-1);
+}
+.card-flat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+/* ============ GEOMETRIC PATTERN BG ============ */
+/* Original 8-point-star tessellation, drawn with CSS conic gradients */
+.geo-bg {
+  position: absolute; inset: 0;
+  background-image:
+    /* lattice */
+    repeating-linear-gradient(45deg,
+      var(--pattern) 0 1px, transparent 1px 22px),
+    repeating-linear-gradient(-45deg,
+      var(--pattern) 0 1px, transparent 1px 22px);
+  mask-image: radial-gradient(circle at 50% 30%, black 0, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle at 50% 30%, black 0, transparent 70%);
+  pointer-events: none;
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  margin-top: 120px;
+  border-top: 1px solid var(--border);
+  padding: 56px 0 40px;
+  color: var(--text-3);
+  font-size: 14px;
+}
+.footer-inner {
+  max-width: 1240px; margin: 0 auto; padding: 0 28px;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+}
+.footer h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 14px; font-weight: 500;
+}
+.footer-col a { display: block; padding: 4px 0; color: var(--text-2); }
+.footer-col a:hover { color: var(--text); }
+.footer-bottom {
+  max-width: 1240px; margin: 32px auto 0; padding: 24px 28px 0;
+  border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between; font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-3);
+}
+@media (max-width: 760px) {
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .footer-bottom { flex-direction: column; gap: 8px; }
+}
+
+/* ============ UTIL ============ */
+.divider { height: 1px; background: var(--border); margin: 40px 0; }
+.kbd {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  padding: 2px 6px;
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text-2);
+}
+.tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
+}
+.tag-dot { width: 6px; height: 6px; border-radius: 999px; background: currentColor; }
+
+/* scroll bar subtle */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 999px; border: 2px solid var(--bg); }
+::-webkit-scrollbar-track { background: transparent; }
+
+</style>
+<script>
+// Sakeenly — theme switcher (persists in localStorage)
+(function () {
+  const THEMES = ['dark', 'light', 'sepia', 'mushaf'];
+  const KEY = 'sakeenly:theme';
+
+  function apply(t) {
+    if (!THEMES.includes(t)) t = 'dark';
+    document.documentElement.setAttribute('data-theme', t);
+    document.querySelectorAll('.theme-switch button').forEach((b) => {
+      b.setAttribute('aria-pressed', String(b.dataset.theme === t));
+    });
+    try { localStorage.setItem(KEY, t); } catch (e) {}
+  }
+
+  function init() {
+    let t = 'dark';
+    try { t = localStorage.getItem(KEY) || 'dark'; } catch (e) {}
+    apply(t);
+    document.querySelectorAll('.theme-switch button').forEach((b) => {
+      b.addEventListener('click', () => apply(b.dataset.theme));
+    });
+  }
+
+  // Apply ASAP, before paint, to avoid theme flash.
+  try {
+    const stored = localStorage.getItem(KEY);
+    if (stored && THEMES.includes(stored)) {
+      document.documentElement.setAttribute('data-theme', stored);
+    }
+  } catch (e) {}
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  // Expose for programmatic switches
+  window.SakeenlyTheme = { apply, init };
+})();
+
+</script>
+<style>
+  .priv-hero {
+    padding: 80px 0 40px;
+    position: relative;
+  }
+  .priv-hero h1 { font-weight: 300; max-width: 22ch; }
+  .priv-hero p.lede { color: var(--text-2); max-width: 64ch; margin-top: 20px; font-size: 1.1rem; line-height: 1.65; }
+
+  /* Headline pledges */
+  .pledges {
+    margin-top: 48px;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+  }
+  @media (max-width: 880px) { .pledges { grid-template-columns: repeat(2, 1fr); } }
+  .pledge {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 22px;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .pledge .v {
+    font-family: 'Spectral', serif; font-size: 2.4rem; line-height: 1;
+    color: var(--accent); font-weight: 300;
+    margin-bottom: 6px;
+  }
+  .pledge .l {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3);
+  }
+  .pledge .desc { color: var(--text-2); font-size: 14px; line-height: 1.5; margin-top: 4px; }
+
+  /* SDK list */
+  .section { margin-top: 80px; }
+  .section-head {
+    display: flex; justify-content: space-between; align-items: end; margin-bottom: 24px;
+  }
+  .section h2 { font-weight: 300; font-size: 2rem; }
+  .section h2 + p { color: var(--text-2); max-width: 56ch; margin-top: 8px; }
+
+  .sdk-table {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+  }
+  .sdk-row {
+    display: grid;
+    grid-template-columns: 220px 1fr 1fr 160px;
+    padding: 18px 24px;
+    border-top: 1px solid var(--border);
+    align-items: center;
+    gap: 16px;
+    font-size: 14px;
+  }
+  .sdk-row:first-child { border-top: 0; background: var(--surface-2); }
+  .sdk-row.head {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3);
+  }
+  .sdk-name { font-family: 'Spectral', serif; font-size: 1.1rem; display: flex; flex-direction: column; gap: 2px; }
+  .sdk-name .vendor { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-3); letter-spacing: 0.04em; }
+  .sdk-purpose { color: var(--text-2); line-height: 1.5; }
+  .sdk-data { color: var(--text-2); line-height: 1.5; font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+  .sdk-data b { color: var(--text); font-weight: 500; }
+  .sdk-status {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 999px;
+    display: inline-block;
+    text-align: center;
+  }
+  .sdk-status.required {
+    background: var(--accent-soft); color: var(--accent);
+    border: 1px solid color-mix(in oklab, var(--accent) 40%, var(--border));
+  }
+  .sdk-status.optional {
+    background: var(--surface-2); color: var(--text-2);
+    border: 1px solid var(--border);
+  }
+  .sdk-status.zero {
+    background: var(--bg-deep); color: var(--text-3);
+    border: 1px solid var(--border);
+  }
+  @media (max-width: 980px) {
+    .sdk-row { grid-template-columns: 1fr; }
+    .sdk-row.head { display: none; }
+    .sdk-row > div::before {
+      display: block; font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-3); margin-bottom: 4px;
+    }
+    .sdk-purpose::before { content: "Назначение"; }
+    .sdk-data::before { content: "Данные"; }
+    .sdk-status::before { content: ""; display: none; }
+  }
+
+  /* What we collect */
+  .collect-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  }
+  @media (max-width: 900px) { .collect-grid { grid-template-columns: 1fr; } }
+  .collect-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 24px;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .collect-card.no { border-color: color-mix(in oklab, var(--accent) 30%, var(--border)); }
+  .collect-head {
+    display: flex; align-items: center; gap: 10px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3);
+  }
+  .collect-head .dot {
+    width: 8px; height: 8px; border-radius: 999px; background: var(--text-3);
+  }
+  .collect-card.yes .collect-head .dot { background: var(--accent); }
+  .collect-card.no .collect-head .dot { background: var(--text-3); opacity: 0.4; }
+  .collect-card h3 { font-family: 'Spectral', serif; font-weight: 400; font-size: 1.4rem; }
+  .collect-card .list {
+    display: flex; flex-direction: column; gap: 8px;
+    font-size: 14px; color: var(--text-2); line-height: 1.5;
+  }
+  .collect-card .list span {
+    display: flex; gap: 8px; align-items: flex-start;
+  }
+  .collect-card .list span::before {
+    content: "—"; color: var(--text-3); flex-shrink: 0;
+  }
+
+  /* Encryption diagram */
+  .encryption {
+    margin-top: 32px;
+    padding: 32px 36px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+  }
+  .enc-flow {
+    margin-top: 24px;
+    display: grid; grid-template-columns: 1fr 24px 1fr 24px 1fr; gap: 14px;
+    align-items: stretch;
+  }
+  @media (max-width: 800px) { .enc-flow { grid-template-columns: 1fr; }
+    .enc-arrow { transform: rotate(90deg); margin: -10px auto; }
+  }
+  .enc-step {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 20px;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .enc-step .lbl {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3);
+  }
+  .enc-step .title { font-family: 'Spectral', serif; font-size: 1.05rem; }
+  .enc-step .meta { color: var(--text-2); font-size: 13px; line-height: 1.5; margin-top: 4px; }
+  .enc-arrow {
+    display: grid; place-items: center;
+    color: var(--text-3);
+  }
+
+  /* Stats numbers */
+  .data-stats {
+    margin-top: 32px;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
+  }
+  @media (max-width: 800px) { .data-stats { grid-template-columns: repeat(2, 1fr); } }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 22px;
+  }
+  .stat .v { font-family: 'Spectral', serif; font-size: 2.4rem; line-height: 1; color: var(--text); font-weight: 300; }
+  .stat .l { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); margin-top: 8px; }
+  .stat .sub { color: var(--text-2); font-size: 13px; margin-top: 8px; line-height: 1.5; }
+
+  /* Government requests log */
+  .gov-log {
+    margin-top: 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .gov-row {
+    display: grid;
+    grid-template-columns: 140px 1fr 100px 100px;
+    padding: 14px 22px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    align-items: center;
+  }
+  .gov-row:first-child { border-top: 0; background: var(--surface-2); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); }
+  .gov-row .status { color: var(--accent); }
+  @media (max-width: 700px) {
+    .gov-row { grid-template-columns: 1fr; gap: 4px; }
+    .gov-row:first-child { display: none; }
+  }
+
+  /* Closing */
+  .priv-cta {
+    margin-top: 96px;
+    padding: 56px 40px;
+    border-radius: 24px;
+    background: var(--bg-deep);
+    border: 1px solid var(--border);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .priv-cta::before {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(50% 60% at 50% 0%, var(--accent-soft) 0, transparent 60%);
+  }
+  .priv-cta::after {
+    content: ""; position: absolute; inset: 0;
+    background-color: var(--accent);
+    opacity: 0.11;
+    -webkit-mask:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'><g fill='none' stroke='black' stroke-width='0.9'><path d='M42 4 L48 36 L80 42 L48 48 L42 80 L36 48 L4 42 L36 36 Z'/><circle cx='42' cy='42' r='3' fill='black' stroke='none'/></g></svg>") repeat,
+      radial-gradient(ellipse 80% 100% at 50% 50%, black 0, transparent 80%);
+    mask:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'><g fill='none' stroke='black' stroke-width='0.9'><path d='M42 4 L48 36 L80 42 L48 48 L42 80 L36 48 L4 42 L36 36 Z'/><circle cx='42' cy='42' r='3' fill='black' stroke='none'/></g></svg>") repeat,
+      radial-gradient(ellipse 80% 100% at 50% 50%, black 0, transparent 80%);
+    -webkit-mask-size: 84px 84px, cover;
+    mask-size: 84px 84px, cover;
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+    pointer-events: none;
+  }
+  .priv-cta > * { position: relative; }
+  .priv-cta h2 { font-weight: 300; }
+  .priv-cta p { color: var(--text-2); max-width: 56ch; margin: 18px auto 0; }
+
+  .quote-block {
+    margin-top: 64px;
+    padding: 36px 40px;
+    border-radius: 22px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    text-align: center;
+  }
+  .quote-block .ar {
+    font-family: 'Scheherazade New', serif;
+    font-size: 2rem; direction: rtl; line-height: 1.8;
+    color: var(--accent);
+  }
+  .quote-block .ru {
+    font-family: 'Spectral', serif; font-style: italic; font-size: 1.2rem;
+    margin-top: 12px; color: var(--text);
+  }
+  .quote-block .cite {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3);
+    margin-top: 14px;
+  }
+
+  .commit-id {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--text-3);
+    background: var(--surface);
+    padding: 4px 10px; border-radius: 6px; border: 1px solid var(--border);
+  }
+  .updated {
+    margin-top: 24px;
+    display: flex; gap: 16px; flex-wrap: wrap;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-3);
+    letter-spacing: 0.06em;
+  }
+</style>
+
+<style id="geo-enhance">
+/* ====== ISLAMIC GEOMETRY ====== */
+:root {
+  --geo-mask-stars: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'><g fill='none' stroke='black' stroke-width='0.9'><path d='M42 4 L48 36 L80 42 L48 48 L42 80 L36 48 L4 42 L36 36 Z'/><path d='M42 18 L46 38 L66 42 L46 46 L42 66 L38 46 L18 42 L38 38 Z' opacity='0.6'/><circle cx='42' cy='42' r='3' fill='black' stroke='none'/><path d='M0 42 L4 42 M80 42 L84 42 M42 0 L42 4 M42 80 L42 84'/><path d='M0 0 L18 18 M84 0 L66 18 M0 84 L18 66 M84 84 L66 66' stroke-width='0.6' opacity='0.5'/></g></svg>");
+  --geo-mask-girih: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='104' viewBox='0 0 120 104'><g fill='none' stroke='black' stroke-width='0.9'><path d='M30 0 L60 17 L60 51 L30 68 L0 51 L0 17 Z'/><path d='M90 0 L120 17 L120 51 L90 68 L60 51 L60 17 Z'/><path d='M30 68 L60 85 L60 104 M90 68 L60 85 M0 51 L0 104 M120 51 L120 104' opacity='0.6'/><circle cx='30' cy='34' r='3' fill='black' stroke='none'/><circle cx='90' cy='34' r='3' fill='black' stroke='none'/></g></svg>");
+  --geo-mask-arabesque: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'><g fill='none' stroke='black' stroke-width='0.8'><path d='M30 5 L34 26 L55 30 L34 34 L30 55 L26 34 L5 30 L26 26 Z'/><circle cx='30' cy='30' r='10'/></g></svg>");
+}
+
+/* Star-lattice overlay — themed via background-color + SVG mask */
+.geo-stars,
+.geo-stars-soft,
+.geo-stars-strong {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background-color: var(--accent);
+  -webkit-mask: var(--geo-mask-stars) repeat;
+  mask: var(--geo-mask-stars) repeat;
+  -webkit-mask-size: 84px 84px;
+  mask-size: 84px 84px;
+}
+.geo-stars { opacity: 0.10; }
+.geo-stars-soft { opacity: 0.055; }
+.geo-stars-strong { opacity: 0.16; }
+
+.geo-stars-fade {
+  -webkit-mask-image:
+    var(--geo-mask-stars),
+    radial-gradient(ellipse 70% 80% at 50% 30%, black, transparent 75%);
+  mask-image:
+    var(--geo-mask-stars),
+    radial-gradient(ellipse 70% 80% at 50% 30%, black, transparent 75%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+  -webkit-mask-size: 84px 84px, cover;
+  mask-size: 84px 84px, cover;
+}
+
+/* Girih hex-star lattice */
+.geo-girih {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background-color: var(--accent);
+  opacity: 0.07;
+  -webkit-mask: var(--geo-mask-girih) repeat;
+  mask: var(--geo-mask-girih) repeat;
+  -webkit-mask-size: 120px 104px;
+  mask-size: 120px 104px;
+}
+
+/* === ORNAMENTAL DIVIDER === */
+.geo-divider {
+  display: flex; align-items: center; gap: 20px;
+  margin: 56px auto;
+  max-width: 520px;
+  color: var(--accent);
+  padding: 0 28px;
+}
+.geo-divider::before, .geo-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, currentColor 30%, currentColor 70%, transparent);
+  opacity: 0.45;
+}
+.geo-divider svg {
+  width: 32px; height: 32px;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+/* === ORNAMENTAL FRAME (corner flourishes on cards) === */
+.geo-frame {
+  position: relative;
+}
+.geo-frame > .corner {
+  position: absolute;
+  width: 36px; height: 36px;
+  color: var(--accent);
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 2;
+}
+.geo-frame > .corner.tl { top: 14px; left: 14px; }
+.geo-frame > .corner.tr { top: 14px; right: 14px; transform: scaleX(-1); }
+.geo-frame > .corner.bl { bottom: 14px; left: 14px; transform: scaleY(-1); }
+.geo-frame > .corner.br { bottom: 14px; right: 14px; transform: scale(-1, -1); }
+
+/* === SECTION-LEVEL DECOR === */
+.geo-medallion {
+  display: inline-grid; place-items: center;
+  width: 64px; height: 64px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  border: 1px solid color-mix(in oklab, var(--accent) 40%, var(--border));
+  color: var(--accent);
+}
+.geo-medallion svg { width: 36px; height: 36px; }
+
+/* === MUSHAF ORNAMENTAL BORDER === */
+.mushaf-ornament {
+  position: relative;
+}
+.mushaf-ornament::before,
+.mushaf-ornament::after {
+  content: "";
+  position: absolute;
+  left: 28px; right: 28px;
+  height: 14px;
+  background-color: var(--accent);
+  opacity: 0.45;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><g fill='none' stroke='black' stroke-width='0.8'><line x1='0' y1='7' x2='90' y2='7' stroke-dasharray='2 4'/><line x1='110' y1='7' x2='200' y2='7' stroke-dasharray='2 4'/><path d='M100 2 L103 6 L107 7 L103 8 L100 12 L97 8 L93 7 L97 6 Z' fill='black'/></g></svg>") no-repeat center/contain;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><g fill='none' stroke='black' stroke-width='0.8'><line x1='0' y1='7' x2='90' y2='7' stroke-dasharray='2 4'/><line x1='110' y1='7' x2='200' y2='7' stroke-dasharray='2 4'/><path d='M100 2 L103 6 L107 7 L103 8 L100 12 L97 8 L93 7 L97 6 Z' fill='black'/></g></svg>") no-repeat center/contain;
+  pointer-events: none;
+}
+.mushaf-ornament::before { top: 16px; }
+.mushaf-ornament::after { bottom: 16px; }
+
+/* === MIHRAB ARCH (for surah header top) === */
+.mihrab-top {
+  width: 80px; height: 36px;
+  margin: 0 auto 14px;
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+/* === BISMILLAH ORNAMENTAL FRAME === */
+.basmala-frame {
+  position: relative;
+  display: inline-block;
+  padding: 8px 70px;
+}
+.basmala-frame::before,
+.basmala-frame::after {
+  content: "";
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  width: 56px; height: 18px;
+  background-color: var(--accent);
+  opacity: 0.55;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 18' fill='none' stroke='black' stroke-width='0.8'><line x1='0' y1='9' x2='40' y2='9' stroke-dasharray='1.5 3'/><path d='M48 9 L52 5 L56 9 L52 13 Z' fill='black'/><circle cx='44' cy='9' r='1.5' fill='black'/></svg>") no-repeat center/contain;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 18' fill='none' stroke='black' stroke-width='0.8'><line x1='0' y1='9' x2='40' y2='9' stroke-dasharray='1.5 3'/><path d='M48 9 L52 5 L56 9 L52 13 Z' fill='black'/><circle cx='44' cy='9' r='1.5' fill='black'/></svg>") no-repeat center/contain;
+}
+.basmala-frame::before { left: 0; }
+.basmala-frame::after { right: 0; transform: translateY(-50%) scaleX(-1); }
+</style>
+
+<style id="cursor-islamic">
+  :root {
+    /* Default cursor: 8-point star, hotspot at tip (center top) */
+    --cur-default: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'><g><path d='M14 1 L16 12 L27 14 L16 16 L14 27 L12 16 L1 14 L12 12 Z' fill='%23E0B66A' stroke='%23000' stroke-opacity='0.45' stroke-width='0.7' stroke-linejoin='round'/><path d='M14 6 L15 13 L22 14 L15 15 L14 22 L13 15 L6 14 L13 13 Z' fill='%23FFF1C9' fill-opacity='0.9'/><circle cx='14' cy='14' r='1.4' fill='%23000' fill-opacity='0.6'/></g></svg>") 14 14, auto;
+
+    /* Pointer: bigger star with ring */
+    --cur-pointer: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><g><circle cx='16' cy='16' r='13.5' fill='none' stroke='%23E0B66A' stroke-width='1' stroke-opacity='0.55' stroke-dasharray='2 2.5'/><path d='M16 2 L18.5 13.5 L30 16 L18.5 18.5 L16 30 L13.5 18.5 L2 16 L13.5 13.5 Z' fill='%23F1C770' stroke='%23000' stroke-opacity='0.5' stroke-width='0.7' stroke-linejoin='round'/><path d='M16 7 L17.5 14.5 L25 16 L17.5 17.5 L16 25 L14.5 17.5 L7 16 L14.5 14.5 Z' fill='%23FFF3CC' fill-opacity='0.85'/><circle cx='16' cy='16' r='1.8' fill='%2300000080'/></g></svg>") 16 16, pointer;
+
+    /* Text: vertical reed-pen mark */
+    --cur-text: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='28' viewBox='0 0 16 28'><g fill='%23E0B66A' stroke='%23000' stroke-opacity='0.45' stroke-width='0.6'><path d='M8 2 Q9.5 4 8 14 Q6.5 4 8 2 Z'/><path d='M8 14 L9 22 L8 26 L7 22 Z'/><circle cx='8' cy='14' r='1.4' stroke='none'/></g></svg>") 8 14, text;
+  }
+
+  html, body { cursor: var(--cur-default); }
+  a, button, [role='button'], summary, label, select,
+  .ic-btn, .pic-btn, .np-side-btn, .np-pp, .player-pp, .reciter-pp,
+  .filter-pill, .trans-pill, .surah-item, .em-mini, .emotion, .feature,
+  .ayah-span, .trans-row, .strip-card, .pop-btn, .speed-pill,
+  .theme-switch button, .billing-toggle button, .sleep-options button {
+    cursor: var(--cur-pointer);
+  }
+  input[type='text'], input[type='email'], input[type='search'], input:not([type]),
+  textarea, [contenteditable] {
+    cursor: var(--cur-text);
+  }
+  /* Don't override loading/disabled or native scrollbars */
+  [disabled], [aria-disabled='true'] { cursor: not-allowed; }
+</style>
+
+<style id="lang-switch-css">
+.lang-switch { position: relative; }
+.lang-trigger {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.08em;
+  transition: background 140ms, color 140ms, border-color 140ms;
+}
+.lang-trigger:hover { color: var(--text); border-color: var(--border-strong); }
+.lang-trigger svg { color: var(--accent); }
+.lang-menu {
+  position: absolute; top: calc(100% + 6px); right: 0;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  padding: 6px;
+  box-shadow: var(--shadow-2);
+  display: none;
+  flex-direction: column;
+  min-width: 180px;
+  z-index: 80;
+}
+.lang-menu.open { display: flex; }
+.lang-menu button {
+  padding: 9px 12px;
+  border-radius: 8px;
+  text-align: left;
+  color: var(--text);
+  font-size: 14px;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  transition: background 120ms, color 120ms;
+}
+.lang-menu button:hover { background: var(--surface-2); }
+.lang-menu button[aria-pressed="true"] { color: var(--accent); background: var(--accent-soft); }
+.lang-menu button .code {
+  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  letter-spacing: 0.08em; color: var(--text-3);
+}
+.lang-menu button[aria-pressed="true"] .code { color: var(--accent); }
+</style>
+
+<script>
+// Sakeenly — i18n bundle
+window.SakeenlyI18n = (function () {
+  const LANGS = {
+    ru: { native: 'Русский', short: 'РУС', htmlLang: 'ru' },
+    tg: { native: 'Тоҷикӣ',  short: 'ТҶК', htmlLang: 'tg' },
+    uz: { native: 'Oʻzbek',  short: 'UZB', htmlLang: 'uz' },
+    kk: { native: 'Қазақ',   short: 'ҚАЗ', htmlLang: 'kk' },
+    ky: { native: 'Кыргыз',  short: 'КЫР', htmlLang: 'ky' },
+  };
+  const DICT = JSON.parse("{\"nav.read\":{\"ru\":\"Чтение\",\"tg\":\"Хондан\",\"uz\":\"Oʻqish\",\"kk\":\"Оқу\",\"ky\":\"Окуу\"},\"nav.listen\":{\"ru\":\"Слушать\",\"tg\":\"Шунидан\",\"uz\":\"Tinglash\",\"kk\":\"Тыңдау\",\"ky\":\"Угуу\"},\"nav.ask\":{\"ru\":\"Спросить\",\"tg\":\"Пурсидан\",\"uz\":\"Soʻrash\",\"kk\":\"Сұрау\",\"ky\":\"Суроо\"},\"nav.ayat\":{\"ru\":\"Аяты\",\"tg\":\"Оятҳо\",\"uz\":\"Oyatlar\",\"kk\":\"Аяттар\",\"ky\":\"Аяттар\"},\"nav.kids\":{\"ru\":\"Детям\",\"tg\":\"Кӯдакон\",\"uz\":\"Bolalar\",\"kk\":\"Балаларға\",\"ky\":\"Балдарга\"},\"nav.pricing\":{\"ru\":\"Тарифы\",\"tg\":\"Нархнома\",\"uz\":\"Tariflar\",\"kk\":\"Тарифтер\",\"ky\":\"Тарифтер\"},\"nav.signin\":{\"ru\":\"Войти\",\"tg\":\"Ворид\",\"uz\":\"Kirish\",\"kk\":\"Кіру\",\"ky\":\"Кирүү\"},\"nav.start\":{\"ru\":\"Начать\",\"tg\":\"Шурӯъ\",\"uz\":\"Boshlash\",\"kk\":\"Бастау\",\"ky\":\"Баштоо\"},\"hero.badge\":{\"ru\":\"Sakeenly · MVP\",\"tg\":\"Sakeenly · MVP\",\"uz\":\"Sakeenly · MVP\",\"kk\":\"Sakeenly · MVP\",\"ky\":\"Sakeenly · MVP\"},\"hero.title_h\":{\"ru\":\"Find your\",\"tg\":\"Find your\",\"uz\":\"Find your\",\"kk\":\"Find your\",\"ky\":\"Find your\"},\"hero.title_e\":{\"ru\":\"sakeena.\",\"tg\":\"sakeena.\",\"uz\":\"sakeena.\",\"kk\":\"sakeena.\",\"ky\":\"sakeena.\"},\"hero.title_t\":{\"ru\":\"Каждый день.\",\"tg\":\"Ҳар рӯз.\",\"uz\":\"Har kuni.\",\"kk\":\"Күн сайын.\",\"ky\":\"Күн сайын.\"},\"hero.sub\":{\"ru\":\"Современный Quran-companion для тебя. Читай в Мусхафе, слушай чтецов, находи аяты для каждого состояния.\",\"tg\":\"Ҳамроҳи муосири Қуръон. Дар Мусҳаф хонед, овози қориён шунавед, барои ҳар ҳолат оят ёбед.\",\"uz\":\"Zamonaviy Qurʼon-hamrohingiz. Mushafda oʻqing, qorilarni tinglang, har holatga oyat toping.\",\"kk\":\"Заманауи Құран серігі. Мүсхафтан оқыңыз, қарилерді тыңдаңыз, әр жағдайға аят табыңыз.\",\"ky\":\"Заманбап Куран шериги. Мусхафтан окуңуз, кариелерди угуңуз, ар кырдаалга аят табыңыз.\"},\"hero.cta_read\":{\"ru\":\"Начать читать\",\"tg\":\"Хонданро оғоз кунед\",\"uz\":\"Oʻqishni boshlash\",\"kk\":\"Оқуды бастау\",\"ky\":\"Окууну баштоо\"},\"hero.cta_signin\":{\"ru\":\"Войти\",\"tg\":\"Ворид шавед\",\"uz\":\"Kirish\",\"kk\":\"Кіру\",\"ky\":\"Кирүү\"},\"hero.meta1\":{\"ru\":\"سكينة · сакина · спокойствие сердца\",\"tg\":\"سكينة · сакина · оромии қалб\",\"uz\":\"سكينة · sakina · qalb tinchligi\",\"kk\":\"سكينة · сакина · жүрек тыныштығы\",\"ky\":\"سكينة · сакина · жүрөктүн тынчтыгы\"},\"hero.meta2\":{\"ru\":\"Коран 2:248\",\"tg\":\"Қуръон 2:248\",\"uz\":\"Qurʼon 2:248\",\"kk\":\"Құран 2:248\",\"ky\":\"Куран 2:248\"},\"hero.meta3\":{\"ru\":\"0 рекламы · 0 трекеров\",\"tg\":\"0 реклама · 0 пайгирӣ\",\"uz\":\"0 reklama · 0 kuzatuv\",\"kk\":\"0 жарнама · 0 бақылау\",\"ky\":\"0 жарнама · 0 көзөмөл\"},\"votd.label\":{\"ru\":\"Аят дня · 18 мая\",\"tg\":\"Ояти рӯз · 18 май\",\"uz\":\"Kun oyati · 18 may\",\"kk\":\"Күн аяты · 18 мамыр\",\"ky\":\"Күндүн аяты · 18 май\"},\"votd.surah_tag\":{\"ru\":\"Сура «Корова» · 2:286\",\"tg\":\"Сураи «Бақара» · 2:286\",\"uz\":\"«Baqara» surasi · 2:286\",\"kk\":\"«Бақара» сүресі · 2:286\",\"ky\":\"«Бакара» сүрөсү · 2:286\"},\"votd.translation\":{\"ru\":\"«Аллах не возлагает на душу ничего сверх её возможностей.»\",\"tg\":\"«Аллоҳ ҳеҷ касро ҷуз ба қадри тавонии ӯ намукаллаф намекунад.»\",\"uz\":\"«Alloh hech bir jonga toqatidan ortigʻini yuklamaydi.»\",\"kk\":\"«Алла ешбір жанға қабілетінен артық жүк салмайды.»\",\"ky\":\"«Аллах эч бир жанга чамасынан ашык жүк жүктөбөйт.»\"},\"votd.cite\":{\"ru\":\"Перевод Э. Кулиева · 2:286\",\"tg\":\"Тарҷумаи Ҳоҷӣ Мирзо · 2:286\",\"uz\":\"Alouddin Mansur tarjimasi · 2:286\",\"kk\":\"Халифа Алтай аудармасы · 2:286\",\"ky\":\"Шамсиддин Жонок котормосу · 2:286\"},\"streak.label\":{\"ru\":\"Streak · непрерывность\",\"tg\":\"Пай дар пай\",\"uz\":\"Ketma-ketlik\",\"kk\":\"Үздіксіздік\",\"ky\":\"Үзгүлтүксүздүк\"},\"streak.title\":{\"ru\":\"17 дней с Кораном\",\"tg\":\"17 рӯз бо Қуръон\",\"uz\":\"17 kun Qurʼon bilan\",\"kk\":\"17 күн Құранмен\",\"ky\":\"17 күн Куран менен\"},\"cont.label\":{\"ru\":\"Продолжить\",\"tg\":\"Идома\",\"uz\":\"Davom etish\",\"kk\":\"Жалғастыру\",\"ky\":\"Уланткыла\"},\"cont.surah\":{\"ru\":\"Аль-Бакара\",\"tg\":\"Бақара\",\"uz\":\"Baqara\",\"kk\":\"Бақара\",\"ky\":\"Бакара\"},\"cont.ayah_of\":{\"ru\":\"аят 31 из 286\",\"tg\":\"ояти 31 аз 286\",\"uz\":\"31-oyat / 286\",\"kk\":\"31-аят / 286\",\"ky\":\"31-аят / 286\"},\"cont.btn\":{\"ru\":\"Продолжить чтение\",\"tg\":\"Хонданро идома диҳед\",\"uz\":\"Oʻqishni davom ettirish\",\"kk\":\"Оқуды жалғастыру\",\"ky\":\"Окууну улантуу\"},\"feat.eyebrow\":{\"ru\":\"Что внутри\",\"tg\":\"Дар дохил\",\"uz\":\"Ichida nima bor\",\"kk\":\"Ішінде не бар\",\"ky\":\"Ичинде эмне бар\"},\"feat.heading\":{\"ru\":\"Три ритуала, одно приложение.\",\"tg\":\"Се одат, як барнома.\",\"uz\":\"Uchta rasm-rusum, bitta ilova.\",\"kk\":\"Үш ғибадат, бір қосымша.\",\"ky\":\"Үч ырым, бир тиркеме.\"},\"feat.lede\":{\"ru\":\"Без декораций. Без баннеров. Без слежки. Только текст, голос и тишина.\",\"tg\":\"Бе ороишҳои зиёдатӣ. Бе баннер. Бе пайгирӣ. Танҳо матн, овоз ва оромӣ.\",\"uz\":\"Ortiqcha bezaklarsiz. Bannerlarsiz. Kuzatuvsiz. Faqat matn, ovoz va sukunat.\",\"kk\":\"Артық безендірусіз. Жарнамасыз. Бақылаусыз. Тек мәтін, дауыс және тыныштық.\",\"ky\":\"Ашыкча кооздоосуз. Жарнамасыз. Көзөмөлсүз. Бир гана текст, үн жана тынчтык.\"},\"feat.f1_l\":{\"ru\":\"01 — Чтение\",\"tg\":\"01 — Хондан\",\"uz\":\"01 — Oʻqish\",\"kk\":\"01 — Оқу\",\"ky\":\"01 — Окуу\"},\"feat.f1_t\":{\"ru\":\"Мусхаф, как на бумаге.\",\"tg\":\"Мусҳаф, мисли коғаз.\",\"uz\":\"Mushaf, qogʻozdagiday.\",\"kk\":\"Мүсхаф, қағаздағыдай.\",\"ky\":\"Мусхаф, кагазга жазылгандай.\"},\"feat.f1_b\":{\"ru\":\"KFGQPC Hafs шрифт. Пять переводов. Тап по аяту — объяснить, послушать, сохранить.\",\"tg\":\"Хатти KFGQPC Ҳафс. Тарҷумаҳо. Зер ба оят — фаҳмонед, шунавед, нигоҳ доред.\",\"uz\":\"KFGQPC Hafs shrifti. Tarjimalar. Oyatga tegib — tushuntiring, tinglang, saqlang.\",\"kk\":\"KFGQPC Хафс қарпі. Аудармалар. Аятты түрту — түсіндіру, тыңдау, сақтау.\",\"ky\":\"KFGQPC Хафс ариби. Котормолор. Аятка басуу — түшүндүрүү, угуу, сактоо.\"},\"feat.f1_l2\":{\"ru\":\"Открыть ридер →\",\"tg\":\"Хонандаро кушоед →\",\"uz\":\"Oʻqish ekrani →\",\"kk\":\"Оқу экранын ашу →\",\"ky\":\"Окуу экранын ачуу →\"},\"feat.f2_l\":{\"ru\":\"02 — Слушать\",\"tg\":\"02 — Шунидан\",\"uz\":\"02 — Tinglash\",\"kk\":\"02 — Тыңдау\",\"ky\":\"02 — Угуу\"},\"feat.f2_t\":{\"ru\":\"Тридцать чтецов. Один тап.\",\"tg\":\"Сӣ қорӣ. Як зер.\",\"uz\":\"Oʻttiz qori. Bir teginish.\",\"kk\":\"Отыз қари. Бір түрту.\",\"ky\":\"Отуз кары. Бир басуу.\"},\"feat.f2_b\":{\"ru\":\"Абдуль-Басит, Хусары, Судайс и ещё 27 голосов. Sleep-таймер, скорость, подсветка текущего аята.\",\"tg\":\"Абдулбосит, Ҳусарӣ, Судайс ва 27 овози дигар. Таймери хоб, суръат, рӯшнои ояти ҷорӣ.\",\"uz\":\"Abdulbosit, Husariy, Sudays va yana 27 ovoz. Uxlash taymeri, tezlik, joriy oyat yoritilishi.\",\"kk\":\"Әбдулбасит, Хусари, Судайс және тағы 27 дауыс. Ұйқы таймері, жылдамдық, ағымдағы аят жарықтандыру.\",\"ky\":\"Абдулбасит, Хусари, Судайс жана дагы 27 үн. Уйку таймери, ылдамдык, учурдагы аят жарык.\"},\"feat.f2_l2\":{\"ru\":\"Слушать сейчас →\",\"tg\":\"Ҳозир шунавед →\",\"uz\":\"Hozir tinglang →\",\"kk\":\"Қазір тыңдау →\",\"ky\":\"Азыр угуу →\"},\"feat.f3_l\":{\"ru\":\"03 — Спросить\",\"tg\":\"03 — Пурсидан\",\"uz\":\"03 — Soʻrash\",\"kk\":\"03 — Сұрау\",\"ky\":\"03 — Суроо\"},\"feat.f3_t\":{\"ru\":\"Вопрос. Источник. Ответ.\",\"tg\":\"Савол. Манбаъ. Ҷавоб.\",\"uz\":\"Savol. Manba. Javob.\",\"kk\":\"Сұрақ. Дереккөз. Жауап.\",\"ky\":\"Суроо. Булак. Жооп.\"},\"feat.f3_b\":{\"ru\":\"Sakeenly ищет ответ в Коране, хадисах и тафсирах. Каждое утверждение со сноской. Фатва — к учёным.\",\"tg\":\"Sakeenly ҷавобро дар Қуръон ва тафсир меҷӯяд. Ҳар изҳорот бо манбаъ. Фатво — ба уламо.\",\"uz\":\"Sakeenly javobni Qurʼon va tafsirdan qidiradi. Har bir gap manba bilan. Fatvo — ulamolarga.\",\"kk\":\"Sakeenly жауапты Құран мен тәпсірден іздейді. Әр сөз дереккөзбен. Пәтуа — ғалымдарға.\",\"ky\":\"Sakeenly жоопту Куран жана тафсирден издейт. Ар бир сөз булагы менен. Фатва — аалымдарга.\"},\"feat.f3_l2\":{\"ru\":\"Скоро →\",\"tg\":\"Ба зудӣ →\",\"uz\":\"Tez kunda →\",\"kk\":\"Жақында →\",\"ky\":\"Жакында →\"},\"emo.heading\":{\"ru\":\"Открой Книгу там, где жизнь делает трудно.\",\"tg\":\"Китобро дар ҷое кушоед, ки зиндагӣ душвор аст.\",\"uz\":\"Hayot qiyin boʻlganda Kitobni oching.\",\"kk\":\"Өмір қиындағанда Кітапты ашыңыз.\",\"ky\":\"Жашоо кыйындаганда Китепти ачыңыз.\"},\"emo.all\":{\"ru\":\"Все темы →\",\"tg\":\"Ҳамаи мавзӯъ →\",\"uz\":\"Barcha mavzular →\",\"kk\":\"Барлық тақырыптар →\",\"ky\":\"Бардык темалар →\"},\"trust.suras\":{\"ru\":\"Сур\",\"tg\":\"Сура\",\"uz\":\"Sura\",\"kk\":\"Сүре\",\"ky\":\"Сүрө\"},\"trust.ayat\":{\"ru\":\"Аятов\",\"tg\":\"Оят\",\"uz\":\"Oyat\",\"kk\":\"Аят\",\"ky\":\"Аят\"},\"trust.translations\":{\"ru\":\"Переводов\",\"tg\":\"Тарҷума\",\"uz\":\"Tarjima\",\"kk\":\"Аударма\",\"ky\":\"Котормо\"},\"trust.reciters\":{\"ru\":\"Чтецов\",\"tg\":\"Қорӣ\",\"uz\":\"Qori\",\"kk\":\"Қари\",\"ky\":\"Кары\"},\"trust.trackers\":{\"ru\":\"Трекеров\",\"tg\":\"Пайгирӣ\",\"uz\":\"Kuzatuv\",\"kk\":\"Бақылау\",\"ky\":\"Көзөмөл\"},\"close.eyebrow\":{\"ru\":\"Каждый день · с тобой\",\"tg\":\"Ҳар рӯз · бо ту\",\"uz\":\"Har kuni · siz bilan\",\"kk\":\"Күн сайын · сенімен\",\"ky\":\"Күн сайын · сени менен\"},\"close.line1\":{\"ru\":\"«…и ниспослал Он сакину\",\"tg\":\"«…ва сакинаро фуруд овард\",\"uz\":\"«…va sakinani nozil qildi\",\"kk\":\"«…және сақинаны түсірді\",\"ky\":\"«…жана сакинаны түшүрдү\"},\"close.line2\":{\"ru\":\"в сердца верующих.»\",\"tg\":\"дар дилҳои мӯъминон.»\",\"uz\":\"moʻminlar qalbiga.»\",\"kk\":\"мүміндердің жүректеріне.»\",\"ky\":\"момундардын жүрөктөрүнө.»\"},\"close.cite\":{\"ru\":\"Сура «Победа» · 48:4\",\"tg\":\"Сураи «Фатҳ» · 48:4\",\"uz\":\"«Fath» surasi · 48:4\",\"kk\":\"«Фатх» сүресі · 48:4\",\"ky\":\"«Фатх» сүрөсү · 48:4\"},\"close.cta1\":{\"ru\":\"Начать с Аль-Фатихи\",\"tg\":\"Аз Фотиҳа сар кунед\",\"uz\":\"Fotihadan boshlash\",\"kk\":\"Фатихадан бастау\",\"ky\":\"Фатиха менен баштоо\"},\"close.cta2\":{\"ru\":\"Посмотреть тарифы\",\"tg\":\"Нархҳоро бинед\",\"uz\":\"Tariflarni koʻrish\",\"kk\":\"Тарифтерді көру\",\"ky\":\"Тарифтерди көрүү\"},\"foot.tagline\":{\"ru\":\"Quran-companion для тебя. Без рекламы. Без трекеров.\",\"tg\":\"Ҳамроҳи Қуръон барои шумо. Бе реклама. Бе пайгирӣ.\",\"uz\":\"Qurʼon-hamroh siz uchun. Reklamasiz. Kuzatuvsiz.\",\"kk\":\"Сізге арналған Құран серігі. Жарнамасыз. Бақылаусыз.\",\"ky\":\"Сиз үчүн Куран шериги. Жарнамасыз. Көзөмөлсүз.\"},\"foot.product\":{\"ru\":\"Продукт\",\"tg\":\"Маҳсулот\",\"uz\":\"Mahsulot\",\"kk\":\"Өнім\",\"ky\":\"Продукт\"},\"foot.company\":{\"ru\":\"Компания\",\"tg\":\"Ширкат\",\"uz\":\"Kompaniya\",\"kk\":\"Компания\",\"ky\":\"Компания\"},\"foot.help\":{\"ru\":\"Помощь\",\"tg\":\"Кӯмак\",\"uz\":\"Yordam\",\"kk\":\"Көмек\",\"ky\":\"Жардам\"},\"foot.reader\":{\"ru\":\"Ридер\",\"tg\":\"Хонанда\",\"uz\":\"Oʻqish\",\"kk\":\"Оқу\",\"ky\":\"Окуу\"},\"foot.reciters\":{\"ru\":\"Чтецы\",\"tg\":\"Қориён\",\"uz\":\"Qorilar\",\"kk\":\"Қарилер\",\"ky\":\"Карылар\"},\"foot.ask\":{\"ru\":\"Спросить\",\"tg\":\"Пурсидан\",\"uz\":\"Soʻrash\",\"kk\":\"Сұрау\",\"ky\":\"Суроо\"},\"foot.kids\":{\"ru\":\"Для детей\",\"tg\":\"Барои кӯдакон\",\"uz\":\"Bolalar uchun\",\"kk\":\"Балаларға\",\"ky\":\"Балдарга\"},\"foot.ayat\":{\"ru\":\"Аяты по темам\",\"tg\":\"Оят аз рӯи мавзӯъ\",\"uz\":\"Mavzu boʻyicha\",\"kk\":\"Тақырып бойынша\",\"ky\":\"Тема боюнча\"},\"foot.pricing\":{\"ru\":\"Тарифы\",\"tg\":\"Нархнома\",\"uz\":\"Tariflar\",\"kk\":\"Тарифтер\",\"ky\":\"Тарифтер\"},\"foot.about\":{\"ru\":\"О нас\",\"tg\":\"Дар бораи мо\",\"uz\":\"Biz haqimizda\",\"kk\":\"Біз туралы\",\"ky\":\"Биз жөнүндө\"},\"foot.scholars\":{\"ru\":\"Scholar board\",\"tg\":\"Шӯрои уламо\",\"uz\":\"Ulamolar kengashi\",\"kk\":\"Ғалымдар кеңесі\",\"ky\":\"Аалымдар кеңеши\"},\"foot.privacy\":{\"ru\":\"Приватность\",\"tg\":\"Махфият\",\"uz\":\"Maxfiylik\",\"kk\":\"Құпиялық\",\"ky\":\"Купуялык\"},\"foot.terms\":{\"ru\":\"Условия\",\"tg\":\"Шартҳо\",\"uz\":\"Shartlar\",\"kk\":\"Шарттар\",\"ky\":\"Шарттар\"},\"foot.contact\":{\"ru\":\"Контакты\",\"tg\":\"Тамос\",\"uz\":\"Aloqa\",\"kk\":\"Байланыс\",\"ky\":\"Байланыш\"},\"foot.faq\":{\"ru\":\"FAQ\",\"tg\":\"FAQ\",\"uz\":\"FAQ\",\"kk\":\"FAQ\",\"ky\":\"FAQ\"},\"foot.report\":{\"ru\":\"Сообщить об ошибке\",\"tg\":\"Хабари хато\",\"uz\":\"Xato haqida\",\"kk\":\"Қате туралы\",\"ky\":\"Ката жөнүндө\"},\"foot.request\":{\"ru\":\"Запросить аят\",\"tg\":\"Дархости оят\",\"uz\":\"Oyat soʻrash\",\"kk\":\"Аят сұрау\",\"ky\":\"Аят сурануу\"},\"foot.bottom_made\":{\"ru\":\"Made with نية · sakeenly.com\",\"tg\":\"Бо нийят · sakeenly.com\",\"uz\":\"Niyat bilan · sakeenly.com\",\"kk\":\"Ниетпен · sakeenly.com\",\"ky\":\"Ниет менен · sakeenly.com\"},\"ls.badge\":{\"ru\":\"30 чтецов · Quran.com CDN\",\"tg\":\"30 қорӣ · Quran.com CDN\",\"uz\":\"30 qori · Quran.com CDN\",\"kk\":\"30 қари · Quran.com CDN\",\"ky\":\"30 кары · Quran.com CDN\"},\"ls.heading_1\":{\"ru\":\"Голоса, которые\",\"tg\":\"Овозҳое, ки\",\"uz\":\"Ovozlar, ular\",\"kk\":\"Дауыстар, олар\",\"ky\":\"Үндөр, алар\"},\"ls.heading_2\":{\"ru\":\"несли Книгу.\",\"tg\":\"Китобро интиқол доданд.\",\"uz\":\"Kitobni yetkazdi.\",\"kk\":\"Кітапты жеткізді.\",\"ky\":\"Китепти жеткирди.\"},\"ls.lede\":{\"ru\":\"Выбери чтеца, выбери диапазон аятов, выбери скорость. Стрим из Quran.com CDN с подсветкой текущего аята и sleep-таймером.\",\"tg\":\"Қориро интихоб кунед, оятҳоро интихоб кунед, суръатро интихоб кунед. Пахш аз Quran.com CDN бо рӯшнои ояти ҷорӣ.\",\"uz\":\"Qorini, oyatlar oraligʻini va tezlikni tanlang. Quran.com CDN dan joriy oyat yoritilishi bilan oqim.\",\"kk\":\"Қариді, аяттар ауқымын және жылдамдықты таңдаңыз. Quran.com CDN арқылы ағыс.\",\"ky\":\"Карыны, аяттар диапазонун жана ылдамдыкты тандаңыз. Quran.com CDN аркылуу агыш.\"},\"ls.search\":{\"ru\":\"Поиск чтеца...\",\"tg\":\"Ҷустуҷӯи қорӣ...\",\"uz\":\"Qori qidirish...\",\"kk\":\"Қари іздеу...\",\"ky\":\"Кары издөө...\"},\"ls.all\":{\"ru\":\"Все\",\"tg\":\"Ҳама\",\"uz\":\"Hammasi\",\"kk\":\"Барлығы\",\"ky\":\"Бардыгы\"},\"pr.badge\":{\"ru\":\"Бесплатно — навсегда. Premium — по желанию.\",\"tg\":\"Ройгон — то абад. Premium — ихтиёрӣ.\",\"uz\":\"Bepul — abadiy. Premium — ixtiyoriy.\",\"kk\":\"Тегін — мәңгі. Premium — ерікті.\",\"ky\":\"Бекер — түбөлүк. Premium — ыктыярдуу.\"},\"pr.h1\":{\"ru\":\"Чтение должно быть бесплатным.\",\"tg\":\"Хондан бояд ройгон бошад.\",\"uz\":\"Oʻqish bepul boʻlishi kerak.\",\"kk\":\"Оқу тегін болуы керек.\",\"ky\":\"Окуу бекер болушу керек.\"},\"pr.h2\":{\"ru\":\"Глубина — добровольной.\",\"tg\":\"Чуқурӣ — ихтиёрӣ.\",\"uz\":\"Chuqurlik — ixtiyoriy.\",\"kk\":\"Тереңдік — ерікті.\",\"ky\":\"Тереңдик — ыктыярдуу.\"},\"pr.month\":{\"ru\":\"Помесячно\",\"tg\":\"Моҳона\",\"uz\":\"Oylik\",\"kk\":\"Айлық\",\"ky\":\"Айлык\"},\"pr.year\":{\"ru\":\"Ежегодно\",\"tg\":\"Солона\",\"uz\":\"Yillik\",\"kk\":\"Жылдық\",\"ky\":\"Жылдык\"},\"kid.badge\":{\"ru\":\"Для детей · 4–10 лет\",\"tg\":\"Барои кӯдакон · 4–10 сола\",\"uz\":\"Bolalar uchun · 4–10 yosh\",\"kk\":\"Балаларға · 4–10 жас\",\"ky\":\"Балдарга · 4–10 жаш\"},\"kid.h1\":{\"ru\":\"Икра. Книга. Истории.\",\"tg\":\"Иқра. Китоб. Достонҳо.\",\"uz\":\"Iqra. Kitob. Hikoyalar.\",\"kk\":\"Иқра. Кітап. Әңгімелер.\",\"ky\":\"Иқро. Китеп. Окуялар.\"},\"kid.lede\":{\"ru\":\"Sakeenly для детей: алфавит, который можно обвести; первые суры, которые легко запомнить; и истории пророков ﷺ.\",\"tg\":\"Sakeenly барои кӯдакон: алифбо, сураҳои кӯтоҳ, достонҳои паёмбарон ﷺ.\",\"uz\":\"Bolalar uchun Sakeenly: alifbo, qisqa suralar va paygʻambarlar ﷺ hikoyalari.\",\"kk\":\"Балаларға Sakeenly: әліпби, қысқа сүрелер және пайғамбарлар ﷺ әңгімелері.\",\"ky\":\"Балдар үчүн Sakeenly: алфавит, кыска сүрөлөр жана пайгамбарлар ﷺ окуялары.\"}}");
+  function get(key, lang) { const e = DICT[key]; return e ? (e[lang] || e.ru || null) : null; }
+  function apply(lang) {
+    if (!LANGS[lang]) lang = 'ru';
+    document.documentElement.setAttribute('lang', LANGS[lang].htmlLang);
+    document.documentElement.setAttribute('data-lang', lang);
+    document.querySelectorAll('[data-i18n]').forEach(el => { const v = get(el.getAttribute('data-i18n'), lang); if (v !== null) el.textContent = v; });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => { const v = get(el.getAttribute('data-i18n-html'), lang); if (v !== null) el.innerHTML = v; });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { const v = get(el.getAttribute('data-i18n-placeholder'), lang); if (v !== null) el.setAttribute('placeholder', v); });
+    document.querySelectorAll('.lang-switch .lang-current').forEach(el => { el.textContent = LANGS[lang].short; });
+    document.querySelectorAll('.lang-menu button').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === lang ? 'true' : 'false'));
+    try { localStorage.setItem('sakeenly:lang', lang); } catch (e) {}
+    window.dispatchEvent(new CustomEvent('sakeenly:langchange', { detail: { lang } }));
+  }
+  function init() {
+    let lang = 'ru';
+    try { lang = localStorage.getItem('sakeenly:lang') || 'ru'; } catch (e) {}
+    apply(lang);
+    document.querySelectorAll('.lang-switch').forEach(sw => {
+      const btn = sw.querySelector('.lang-trigger');
+      const menu = sw.querySelector('.lang-menu');
+      if (!btn || !menu) return;
+      btn.addEventListener('click', (e) => { e.stopPropagation(); const op = menu.classList.toggle('open'); btn.setAttribute('aria-expanded', String(op)); });
+      menu.addEventListener('click', (e) => { const b = e.target.closest('button[data-lang]'); if (!b) return; apply(b.dataset.lang); menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); });
+    });
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.lang-menu.open').forEach(m => m.classList.remove('open'));
+      document.querySelectorAll('.lang-trigger').forEach(b => b.setAttribute('aria-expanded', 'false'));
+    });
+  }
+  try { const s = localStorage.getItem('sakeenly:lang'); if (s && LANGS[s]) { document.documentElement.setAttribute('lang', LANGS[s].htmlLang); document.documentElement.setAttribute('data-lang', s); } } catch (e) {}
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+  return { apply, get, LANGS, DICT };
+})();
+
+</script>
+</head>
+<body data-screen-label="06 Privacy">
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M12 2 L14.2 9.8 L22 12 L14.2 14.2 L12 22 L9.8 14.2 L2 12 L9.8 9.8 Z" />
+        </svg>
+      </span>
+      <span>Sakeenly</span>
+    </a>
+    <div class="nav-links">
+      <a href="reader.html" data-i18n="nav.read">Чтение</a>
+      <a href="listen.html" data-i18n="nav.listen">Слушать</a>
+      <a href="#" data-i18n="nav.ask">Спросить</a>
+      <a href="ayat-dlya-trevogi.html" data-i18n="nav.ayat">Аяты</a>
+      <a href="kids.html" data-i18n="nav.kids">Для детей</a>
+      <a href="pricing.html" data-i18n="nav.pricing">Тарифы</a>
+    </div>
+    <div class="nav-right">
+      
+      <div class="lang-switch">
+        <button class="lang-trigger" type="button" aria-expanded="false" aria-label="Язык / Language">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+          <span class="lang-current">РУС</span>
+          <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="lang-menu" role="menu">
+          <button data-lang="ru" role="menuitem"><span>Русский</span><span class="code">РУС</span></button>
+          <button data-lang="tg" role="menuitem"><span>Тоҷикӣ</span><span class="code">ТҶК</span></button>
+          <button data-lang="uz" role="menuitem"><span>O'zbek</span><span class="code">UZB</span></button>
+          <button data-lang="kk" role="menuitem"><span>Қазақ</span><span class="code">ҚАЗ</span></button>
+          <button data-lang="ky" role="menuitem"><span>Кыргыз</span><span class="code">КЫР</span></button>
+        </div>
+      </div>
+
+      <div class="theme-switch" role="group" aria-label="Тема">
+        <button data-theme="light" title="Светлая"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></button>
+        <button data-theme="sepia" title="Сепия"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2Z"/><path d="M8 7h7M8 11h7M8 15h5"/></svg></button>
+        <button data-theme="mushaf" title="Мусхаф"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 L13.5 10 L20 12 L13.5 14 L12 21 L10.5 14 L4 12 L10.5 10 Z"/></svg></button>
+        <button data-theme="dark" title="Ночь"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></button>
+      </div>
+      <button class="btn btn-soft btn-sm" data-i18n="nav.signin">Войти</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="wrap priv-hero">
+  <span class="tag"><span class="tag-dot"></span>Отчёт о прозрачности · Q2 2026</span>
+  <h1 style="margin-top: 18px">Что Sakeenly знает о тебе. И чего — нет.</h1>
+  <p class="lede">
+    Большинство «политик конфиденциальности» написаны юристами для юристов. Эта — написана разработчиками для тебя. Здесь — каждый SDK, каждый сторонний сервис, каждый байт данных, который покидает твоё устройство. Если найдёшь ошибку — напиши <span class="mono" style="color: var(--accent)"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="19696b706f787a60596a78727c7c777560377a7674">[email&#160;protected]</a></span>.
+  </p>
+
+  <div class="updated">
+    <span>ОБНОВЛЕНО: 18 МАЯ 2026</span>
+    <span>ВЕРСИЯ ДОКУМЕНТА: 2.4.0</span>
+    <span>Коммит: <span class="commit-id">a3f1c8d</span></span>
+  </div>
+</section>
+
+<!-- Pledges -->
+<section class="wrap">
+  <div class="pledges">
+    <div class="pledge">
+      <div class="v">0</div>
+      <div class="l">Рекламных сетей</div>
+      <div class="desc">Google Ads, Facebook Pixel, AppsFlyer, AdSense — не подключены и не будут.</div>
+    </div>
+    <div class="pledge">
+      <div class="v">0</div>
+      <div class="l">Аналитических трекеров</div>
+      <div class="desc">Никакого Google Analytics, Yandex.Metrica, Mixpanel или Amplitude. Только self-hosted Plausible.</div>
+    </div>
+    <div class="pledge">
+      <div class="v">3</div>
+      <div class="l">SDK всего</div>
+      <div class="desc">Только три: Stripe (платежи), Plausible (агрегированная аналитика без cookies), Sentry (отчёты об ошибках, без PII).</div>
+    </div>
+    <div class="pledge">
+      <div class="v">AES-256</div>
+      <div class="l">Шифрование данных</div>
+      <div class="desc">Заметки и закладки шифрованы в покое. Ключи изолированы от приложения.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SDK list -->
+<section class="wrap section">
+  <div class="section-head">
+    <div>
+      <span class="eyebrow">Глава 1 · sdk</span>
+      <h2 style="margin-top: 10px">Все сторонние сервисы.</h2>
+      <p>Полный список всего, что грузится в твой браузер или работает на нашем сервере с твоими данными.</p>
+    </div>
+  </div>
+
+  <div class="sdk-table">
+    <div class="sdk-row head">
+      <div>Сервис</div>
+      <div>Зачем используется</div>
+      <div>Какие данные</div>
+      <div>Статус</div>
+    </div>
+    <div class="sdk-row">
+      <div class="sdk-name">
+        Stripe
+        <span class="vendor">stripe.com · США/ЕС</span>
+      </div>
+      <div class="sdk-purpose">Обработка платежей за Premium и Семейный планы. Применяется только при оформлении подписки — не на бесплатном плане.</div>
+      <div class="sdk-data"><b>Передаётся:</b> email, имя на карте, номер карты (через Stripe Elements — Sakeenly не видит сам номер), сумма платежа.</div>
+      <div><span class="sdk-status required">Обязателен · Premium</span></div>
+    </div>
+    <div class="sdk-row">
+      <div class="sdk-name">
+        Plausible
+        <span class="vendor">self-hosted · Германия</span>
+      </div>
+      <div class="sdk-purpose">Агрегированная аналитика: какие страницы открывают, какие переводы выбирают. Без cookies, без отпечатка устройства, без личной идентификации.</div>
+      <div class="sdk-data"><b>Передаётся:</b> URL страницы, referrer, ОС-категория («Android / iOS / Windows»), агрегированная страна. <b>Не передаётся:</b> IP (анонимизируется на сервере).</div>
+      <div><span class="sdk-status required">Обязателен · все</span></div>
+    </div>
+    <div class="sdk-row">
+      <div class="sdk-name">
+        Sentry
+        <span class="vendor">self-hosted · Германия</span>
+      </div>
+      <div class="sdk-purpose">Сбор ошибок JavaScript и серверных исключений, чтобы быстрее их чинить. PII и тексты заметок отсекаются на клиенте.</div>
+      <div class="sdk-data"><b>Передаётся:</b> stack trace, URL, версия браузера, ID сессии (анонимный). <b>Не передаётся:</b> email, заметки, тексты вопросов в /ask.</div>
+      <div><span class="sdk-status optional">Можно отключить</span></div>
+    </div>
+    <div class="sdk-row">
+      <div class="sdk-name">
+        Anthropic API
+        <span class="vendor">anthropic.com · США</span>
+      </div>
+      <div class="sdk-purpose">LLM для ответов на вопросы в /ask. Вопросы отправляются Anthropic для генерации ответа, не сохраняются у них для обучения (опция zero-retention).</div>
+      <div class="sdk-data"><b>Передаётся:</b> текст вопроса + извлечённые из Quran/Hadith цитаты. <b>Не передаётся:</b> email, имя, ID пользователя.</div>
+      <div><span class="sdk-status optional">Только при /ask</span></div>
+    </div>
+    <div class="sdk-row">
+      <div class="sdk-name">
+        Quran.com API
+        <span class="vendor">quran.com · публичный</span>
+      </div>
+      <div class="sdk-purpose">Получение текста аятов, переводов, аудио и тафсиров. Публичный read-only API. Не требует аутентификации.</div>
+      <div class="sdk-data"><b>Передаётся:</b> только номер суры и аята. <b>Не передаётся:</b> идентификаторы пользователя.</div>
+      <div><span class="sdk-status zero">Анонимный</span></div>
+    </div>
+    <div class="sdk-row">
+      <div class="sdk-name">
+        Supabase
+        <span class="vendor">supabase.com · ЕС-Frankfurt</span>
+      </div>
+      <div class="sdk-purpose">Хост базы данных и аутентификации. На европейском регионе. Sakeenly — единственный, кто имеет доступ к данным.</div>
+      <div class="sdk-data"><b>Хранится:</b> email, хеш пароля, закладки (шифрованы), заметки (шифрованы), streak, подписка.</div>
+      <div><span class="sdk-status required">Обязателен · авториз.</span></div>
+    </div>
+    <div class="sdk-row">
+      <div class="sdk-name">
+        Vercel
+        <span class="vendor">vercel.com · США/ЕС</span>
+      </div>
+      <div class="sdk-purpose">Хостинг сайта (CDN + serverless функции). Передаёт логи запросов без данных аккаунта.</div>
+      <div class="sdk-data"><b>Логи:</b> IP, URL, время ответа — хранятся 30 дней. <b>Не хранится:</b> тело запросов с PII.</div>
+      <div><span class="sdk-status required">Хостинг</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE COLLECT -->
+<section class="wrap section">
+  <span class="eyebrow">Глава 2 · данные</span>
+  <h2 style="margin-top: 10px">Что мы храним. И чего — нет.</h2>
+  <p style="color: var(--text-2); max-width: 56ch; margin-top: 8px;">Каждая строка — реальный столбец в базе данных. Schema опубликован на GitHub.</p>
+
+  <div class="collect-grid" style="margin-top: 28px;">
+    <div class="collect-card yes">
+      <div class="collect-head"><span class="dot"></span> ХРАНИМ</div>
+      <h3>Аккаунт</h3>
+      <div class="list">
+        <span>Email (для входа и восстановления)</span>
+        <span>Имя (опционально, для приветствия)</span>
+        <span>Хеш пароля (bcrypt, не пароль сам)</span>
+        <span>Дата регистрации</span>
+        <span>Часовой пояс (для streak)</span>
+        <span>Язык интерфейса</span>
+      </div>
+    </div>
+    <div class="collect-card yes">
+      <div class="collect-head"><span class="dot"></span> ХРАНИМ ШИФРОВАННО</div>
+      <h3>Активность</h3>
+      <div class="list">
+        <span>Закладки на аяты (ID аята, заметка) — AES-256</span>
+        <span>Личные заметки (текст) — AES-256</span>
+        <span>Streak счётчик · дата последнего захода</span>
+        <span>Предпочитаемый перевод и чтец</span>
+        <span>Тема (light / dark / sepia / mushaf)</span>
+      </div>
+    </div>
+    <div class="collect-card no">
+      <div class="collect-head"><span class="dot"></span> НЕ ХРАНИМ</div>
+      <h3>Не собирается</h3>
+      <div class="list">
+        <span>Точные IP (анонимизируются на входе)</span>
+        <span>Геолокация (страны и города)</span>
+        <span>История браузера, fingerprint устройства</span>
+        <span>Контакты, фото, микрофон, камера</span>
+        <span>Тексты вопросов в /ask дольше 30 дней</span>
+        <span>Реклама-релевантные сигналы — никогда</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENCRYPTION FLOW -->
+<section class="wrap section">
+  <span class="eyebrow">Глава 3 · шифрование</span>
+  <h2 style="margin-top: 10px">Как заметка попадает в базу.</h2>
+  <p style="color: var(--text-2); max-width: 56ch; margin-top: 8px;">Цепочка из четырёх шагов, на каждом из которых данные не читаемы посторонним сервисом.</p>
+
+  <div class="encryption">
+    <div class="enc-flow">
+      <div class="enc-step">
+        <span class="lbl">01 · Браузер</span>
+        <span class="title">Ты пишешь заметку</span>
+        <span class="meta">Текст существует только в твоём браузере. Никуда не отправлен.</span>
+      </div>
+      <div class="enc-arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </div>
+      <div class="enc-step">
+        <span class="lbl">02 · TLS</span>
+        <span class="title">Передача по HTTPS</span>
+        <span class="meta">TLS 1.3 (Vercel Edge). Между тобой и сервером — никто не читает.</span>
+      </div>
+      <div class="enc-arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </div>
+      <div class="enc-step">
+        <span class="lbl">03 · Сервер</span>
+        <span class="title">AES-256 шифрование</span>
+        <span class="meta">Текст заметки шифруется ключом из envelope-encryption. Ключ хранится в Vercel KV, не в Supabase.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="data-stats">
+    <div class="stat">
+      <div class="v">AES-256-GCM</div>
+      <div class="l">Алгоритм</div>
+      <div class="sub">Стандарт NIST. Без поломанных режимов.</div>
+    </div>
+    <div class="stat">
+      <div class="v">90 дн</div>
+      <div class="l">Ротация ключей</div>
+      <div class="sub">Каждые 90 дней основной ключ перевыпускается. Старые сохраняются для дешифровки.</div>
+    </div>
+    <div class="stat">
+      <div class="v">2-сервиса</div>
+      <div class="l">Разделение</div>
+      <div class="sub">Данные — в Supabase. Ключи — в Vercel KV. Один сервис не видит другого.</div>
+    </div>
+    <div class="stat">
+      <div class="v">30 дн</div>
+      <div class="l">Удаление</div>
+      <div class="sub">При удалении аккаунта данные стираются за 30 дней. Бэкапы — за 90.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Government requests -->
+<section class="wrap section">
+  <span class="eyebrow">Глава 4 · запросы от властей</span>
+  <h2 style="margin-top: 10px">Сколько раз нас просили выдать данные.</h2>
+  <p style="color: var(--text-2); max-width: 56ch; margin-top: 8px;">Этот лог обновляется ежеквартально. Мы публикуем абсолютно каждый запрос, в рамках разрешённого законом.</p>
+
+  <div class="gov-log">
+    <div class="gov-row">
+      <span>Период</span><span>Источник запроса</span><span>Запросов</span><span>Выдано</span>
+    </div>
+    <div class="gov-row">
+      <span>Q1 2026</span><span>—</span><span>0</span><span class="status">0</span>
+    </div>
+    <div class="gov-row">
+      <span>Q4 2025</span><span>—</span><span>0</span><span class="status">0</span>
+    </div>
+    <div class="gov-row">
+      <span>Q3 2025</span><span>—</span><span>0</span><span class="status">0</span>
+    </div>
+    <div class="gov-row">
+      <span>Q2 2025</span><span>—</span><span>0</span><span class="status">0</span>
+    </div>
+  </div>
+
+  <p style="margin-top: 16px; color: var(--text-3); font-size: 13px; line-height: 1.55; max-width: 64ch;">
+    Sakeenly зарегистрирована в ЕС. Российский 152-ФЗ не применим напрямую, но мы соблюдаем GDPR. Подробнее — в полном тексте политики.
+  </p>
+</section>
+
+<!-- USER RIGHTS -->
+<section class="wrap section">
+  <span class="eyebrow">Глава 5 · твои права</span>
+  <h2 style="margin-top: 10px">Что ты можешь сделать со своими данными.</h2>
+
+  <div class="collect-grid" style="margin-top: 28px;">
+    <div class="collect-card">
+      <h3>Экспорт всего</h3>
+      <p style="color: var(--text-2); font-size: 14px; line-height: 1.6">JSON-файл со всеми твоими закладками, заметками, streak и историей вопросов. Один клик в профиле.</p>
+      <a class="btn btn-soft btn-sm" style="align-self: flex-start; margin-top: auto;">
+        Скачать архив
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+      </a>
+    </div>
+    <div class="collect-card">
+      <h3>Удаление аккаунта</h3>
+      <p style="color: var(--text-2); font-size: 14px; line-height: 1.6">Полное стирание данных за 30 дней. Без вопросов, без удержания, без писем-возвратов.</p>
+      <a class="btn btn-soft btn-sm" style="align-self: flex-start; margin-top: auto;">
+        Удалить аккаунт
+      </a>
+    </div>
+    <div class="collect-card">
+      <h3>Запрос на конкретное</h3>
+      <p style="color: var(--text-2); font-size: 14px; line-height: 1.6">Хочешь узнать всё, что мы знаем о конкретном email? Напиши на <span class="mono" style="color: var(--accent)"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1f6f6d76697e7c665f6c7e747a7a717366317c7072">[email&#160;protected]</a></span> — ответим в течение 7 дней.</p>
+      <a class="btn btn-soft btn-sm" style="align-self: flex-start; margin-top: auto;" href="/cdn-cgi/l/email-protection#5f2f2d36293e3c261f2c3e343a3a313326713c3032">
+        Написать
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Quote -->
+<section class="wrap section">
+  <div class="quote-block geo-frame">
+      <span class="corner tl"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="0.9"><path d="M2 18 Q2 2 18 2"/><path d="M8 2 Q8 8 2 8" opacity="0.7"/><circle cx="18" cy="18" r="3"/><path d="M18 14 L19 17 L22 18 L19 19 L18 22 L17 19 L14 18 L17 17 Z" fill="currentColor" opacity="0.8" stroke="none"/></svg></span>
+      <span class="corner tr"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="0.9"><path d="M2 18 Q2 2 18 2"/><path d="M8 2 Q8 8 2 8" opacity="0.7"/><circle cx="18" cy="18" r="3"/><path d="M18 14 L19 17 L22 18 L19 19 L18 22 L17 19 L14 18 L17 17 Z" fill="currentColor" opacity="0.8" stroke="none"/></svg></span>
+      <span class="corner bl"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="0.9"><path d="M2 18 Q2 2 18 2"/><path d="M8 2 Q8 8 2 8" opacity="0.7"/><circle cx="18" cy="18" r="3"/><path d="M18 14 L19 17 L22 18 L19 19 L18 22 L17 19 L14 18 L17 17 Z" fill="currentColor" opacity="0.8" stroke="none"/></svg></span>
+      <span class="corner br"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="0.9"><path d="M2 18 Q2 2 18 2"/><path d="M8 2 Q8 8 2 8" opacity="0.7"/><circle cx="18" cy="18" r="3"/><path d="M18 14 L19 17 L22 18 L19 19 L18 22 L17 19 L14 18 L17 17 Z" fill="currentColor" opacity="0.8" stroke="none"/></svg></span>
+    <span class="eyebrow">Принцип, на котором основан Sakeenly</span>
+    <div class="ar arabic" lang="ar" dir="rtl" style="margin-top: 16px;">
+      وَلَا تَجَسَّسُوا
+    </div>
+    <p class="ru">«И не следите [за чужими делами]…»</p>
+    <p class="cite">Сура «Комнаты» · 49:12</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="wrap">
+  <div class="priv-cta">
+    <span class="eyebrow">Открытость · полностью</span>
+    <h2 style="margin-top: 14px;">Каждая строка кода — открыта.</h2>
+    <p>Sakeenly работает на open-source стеке. Schema базы, политика отказов ИИ и refusal-tests — всё на GitHub. Заходи, читай, открывай issue.</p>
+    <div style="margin-top: 32px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+      <a class="btn btn-primary" href="#">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.7-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.3v3.4c0 .3.2.7.8.6A12 12 0 0 0 12 0Z"/></svg>
+        Посмотреть на GitHub
+      </a>
+      <a class="btn btn-ghost" href="/cdn-cgi/l/email-protection#a8d8dac1dec9cbd1e8dbc9c3cdcdc6c4d186cbc7c5"><span class="__cf_email__" data-cfemail="d6a6a4bfa0b7b5af96a5b7bdb3b3b8baaff8b5b9bb">[email&#160;protected]</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="brand" style="margin-bottom:14px">
+        <span class="brand-mark">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+            <path d="M12 2 L14.2 9.8 L22 12 L14.2 14.2 L12 22 L9.8 14.2 L2 12 L9.8 9.8 Z" />
+          </svg>
+        </span>
+        <span>Sakeenly</span>
+      </div>
+      <p style="max-width:36ch;line-height:1.55" data-i18n="foot.tagline">Quran-companion для тебя. Веб, бесплатно для чтения. Без рекламы. Без трекеров. Никогда.</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="foot.product">Продукт</h4>
+      <a href="reader.html" data-i18n="foot.reader">Ридер</a>
+      <a href="listen.html" data-i18n="foot.reciters">Чтецы</a>
+      <a href="#" data-i18n="nav.ask">Спросить</a>
+      <a href="ayat-dlya-trevogi.html" data-i18n="foot.ayat">Аяты по темам</a>
+      <a href="pricing.html" data-i18n="nav.pricing">Тарифы</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="foot.company">Компания</h4>
+      <a href="#" data-i18n="foot.about">О нас</a>
+      <a href="#" data-i18n="foot.scholars">Scholar board</a>
+      <a href="privacy.html" data-i18n="foot.privacy">Приватность</a>
+      <a href="#" data-i18n="foot.terms">Условия</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="foot.help">Помощь</h4>
+      <a href="#">FAQ</a>
+      <a href="#" data-i18n="foot.report">Сообщить об ошибке</a>
+      <a href="#">English</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>SAKEENLY · سكينة · 2026</span>
+    <span data-i18n="foot.bottom_made">Made with نية · sakeenly.com</span>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="i18n-extra.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+/* Page-specific styles extracted from ayat.html */
+
+.ay-hero { padding: 64px 0 24px; position: relative; overflow: hidden; }
+  .ay-hero .geo-stars-fade { z-index: -1; }
+  .ay-hero h1 { font-weight: 300; max-width: 22ch; margin-top: 14px; }
+  .ay-hero p { color: oklch(var(--text-2)); max-width: 58ch; margin-top: 18px; font-size: 1.1rem; }
+
+  .ay-filter {
+    display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+    margin: 32px 0 32px;
+  }
+  .ay-pill {
+    padding: 8px 14px; border-radius: 999px;
+    background: oklch(var(--surface)); border: 1px solid oklch(var(--border));
+    color: oklch(var(--text-2)); font-size: 13px;
+    transition: background 140ms, color 140ms, border-color 140ms;
+  }
+  .ay-pill:hover { color: oklch(var(--text)); }
+  .ay-pill.active { background: oklch(var(--accent)); color: oklch(0.15 0.02 60); border-color: oklch(var(--accent)); }
+
+  .ay-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  @media (max-width: 1000px) { .ay-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .ay-grid { grid-template-columns: 1fr; } }
+  .ay-card {
+    padding: 24px;
+    background: oklch(var(--surface)); border: 1px solid oklch(var(--border));
+    border-radius: 18px;
+    display: flex; flex-direction: column; gap: 10px;
+    min-height: 220px;
+    transition: border-color 200ms, transform 200ms;
+  }
+  .ay-card:hover { border-color: oklch(var(--accent)); transform: translateY(-2px); }
+  .ay-card .cat { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: oklch(var(--text-3)); letter-spacing: 0.14em; text-transform: uppercase; }
+  .ay-card h3 { font-size: 1.25rem; font-weight: 400; }
+  .ay-card p { color: oklch(var(--text-2)); font-size: 14px; line-height: 1.55; }
+  .ay-card .foot {
+    margin-top: auto;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: oklch(var(--text-3));
+    letter-spacing: 0.06em;
+    padding-top: 12px;
+  }
+  .ay-card .foot .more { color: oklch(var(--accent)); }

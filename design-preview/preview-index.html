@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sakeenly · Design Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Scheherazade+New:wght@400;500;700&display=swap" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+  .ix-hero { padding: 80px 0 30px; text-align: center; position: relative; overflow: hidden; }
+  .ix-hero .geo-stars-fade { z-index: -1; }
+  .ix-hero h1 { font-weight: 300; max-width: 18ch; margin: 14px auto 0; }
+  .ix-hero p { color: var(--text-2); max-width: 56ch; margin: 22px auto 0; font-size: 1.1rem; }
+
+  .ix-group { margin-top: 48px; }
+  .ix-group h2 { font-weight: 300; }
+  .ix-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 22px; }
+  @media (max-width: 1100px) { .ix-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 800px) { .ix-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 540px) { .ix-grid { grid-template-columns: 1fr; } }
+
+  .ix-card {
+    padding: 22px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px;
+    display: flex; flex-direction: column; gap: 8px;
+    transition: border-color 200ms, transform 200ms;
+  }
+  .ix-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .ix-card .badge {
+    align-self: flex-start;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3);
+    padding: 3px 9px; border-radius: 999px; background: var(--surface-2);
+    border: 1px solid var(--border);
+  }
+  .ix-card.original .badge { color: var(--accent); background: var(--accent-soft); border-color: color-mix(in oklab, var(--accent) 30%, var(--border)); }
+  .ix-card .t { font-family: 'Spectral', serif; font-size: 1.2rem; }
+  .ix-card .d { color: var(--text-2); font-size: 13px; line-height: 1.5; }
+  .ix-card .more { color: var(--accent); font-size: 13px; margin-top: auto; padding-top: 8px; }
+</style>
+</head>
+<body data-screen-label="Preview Index">
+
+<div id="nav-root" data-active=""></div>
+
+<section class="wrap ix-hero">
+  <div class="geo-stars-fade"></div>
+  <span class="tag"><span class="tag-dot"></span><span data-i18n="ix.badge">Design Preview · 17 страниц</span></span>
+  <h1 data-i18n="ix.h1">Sakeenly · все экраны на одной странице.</h1>
+  <p data-i18n="ix.lede">Слева — 7 исходных дизайн-страниц из папки «Коран», открыты как есть. Справа — 10 страниц, которые добавлены в том же стиле через shared.css и shared.js, без изменений в оригиналах.</p>
+</section>
+
+<section class="wrap ix-group">
+  <span class="eyebrow" data-i18n="ix.grp1_eyebrow">Исходный дизайн (7) · без правок</span>
+  <h2 style="margin-top: 12px;" data-i18n="ix.grp1_h">Из папки «Коран»</h2>
+  <div class="ix-grid">
+    <a class="ix-card original" href="index.html"><span class="badge">design</span><div class="t">Главная</div><div class="d">VOTD · Streak · 3 ритуала · эмоции · ажурный hero</div><span class="more" data-i18n="ix.more">Открыть →</span></a>
+    <a class="ix-card original" href="reader.html"><span class="badge">design</span><div class="t">Reader</div><div class="d">Мусхаф 3-колонки · KFGQPC · sticky-плеер</div><span class="more" data-i18n="ix.more">Открыть →</span></a>
+    <a class="ix-card original" href="listen.html"><span class="badge">design</span><div class="t">Listen</div><div class="d">Чтецы · фильтр · Now playing · sleep-таймер</div><span class="more" data-i18n="ix.more">Открыть →</span></a>
+    <a class="ix-card original" href="kids.html"><span class="badge">design</span><div class="t">Kids</div><div class="d">Иqra · суры с прогрессом · истории</div><span class="more" data-i18n="ix.more">Открыть →</span></a>
+    <a class="ix-card original" href="pricing.html"><span class="badge">design</span><div class="t">Pricing</div><div class="d">Free / Premium / Family · сравнение · FAQ</div><span class="more" data-i18n="ix.more">Открыть →</span></a>
+    <a class="ix-card original" href="privacy.html"><span class="badge">design</span><div class="t">Privacy</div><div class="d">Что собираем · transparency</div><span class="more" data-i18n="ix.more">Открыть →</span></a>
+    <a class="ix-card original" href="ayat-dlya-trevogi.standalone-src.html"><span class="badge">design</span><div class="t">Аяты от тревоги</div><div class="d">Пример SEO landing-страницы</div><span class="more" data-i18n="ix.more">Открыть →</span></a>
+  </div>
+</section>
+
+<section class="wrap ix-group">
+  <span class="eyebrow" data-i18n="ix.grp2_eyebrow">Добавлено в том же стиле (10)</span>
+  <h2 style="margin-top: 12px;" data-i18n="ix.grp2_h">Недостающие страницы</h2>
+  <div class="ix-grid">
+    <a class="ix-card" href="ask.html"><span class="badge">added</span><div class="t">Ask · AI Q&amp;A</div><div class="d">Чат · refusal policy · inline-цитаты · sources</div><span class="more" data-i18n="ix.more">Открыть →</span></a>
+    <a class="ix-card" href="ayat.html"><span class="badge">added</span><div class="t">Ayat · индекс 30 подборок</div><div class="d">Фильтр по категории + grid-карточки</div><span class="more" data-i18n="ix.more">Открыть →</span></a>
+    <a class="ix-card" href="about.html"><span class="badge">added</span><div class="t">About</div><div class="d">Миссия · 6 принципов · источники</div><span class="more" data-i18n="ix.more">Открыть →</span></a>
+    <a class="ix-card" href="scholars.html"><span class="badge">added</span><div class="t">Scholar board</div><div class="d">Pipeline review · совет учёных</div><span class="more" data-i18n="ix.more">Открыть →</span></a>
+    <a class="ix-card" href="signin.html"><span class="badge">added</span><div class="t">Sign-in</div><div class="d">Google / Apple / magic-link · aside-квот</div><span class="more" data-i18n="ix.more">Открыть →</span></a>
+    <a class="ix-card" href="profile.html"><span class="badge">added</span><div class="t">Profile</div><div class="d">Streak · закладки · подписка · настройки</div><span class="more" data-i18n="ix.more">Открыть →</span></a>
+    <a class="ix-card" href="kids-alphabet.html"><span class="badge">added</span><div class="t">Kids · Алфавит</div><div class="d">28 букв KFGQPC · 7-колонный grid</div><span class="more" data-i18n="ix.more">Открыть →</span></a>
+    <a class="ix-card" href="kids-surahs.html"><span class="badge">added</span><div class="t">Kids · Первые суры</div><div class="d">Фатиха + 5 коротких · прогресс по аяту</div><span class="more" data-i18n="ix.more">Открыть →</span></a>
+    <a class="ix-card" href="kids-stories.html"><span class="badge">added</span><div class="t">Kids · Истории пророков</div><div class="d">25 пророков · без изображений людей</div><span class="more" data-i18n="ix.more">Открыть →</span></a>
+    <a class="ix-card" href="404.html"><span class="badge">added</span><div class="t">404 · Not Found</div><div class="d">١٠٤ · цитата 2:216 · возврат</div><span class="more" data-i18n="ix.more">Открыть →</span></a>
+  </div>
+</section>
+
+<div id="footer-root"></div>
+<script src="i18n-data.js"></script>
+<script>
+  // Auto-tag all 17 preview cards (.t and .d in each .ix-card).
+  document.querySelectorAll('.ix-card').forEach((card, i) => {
+    const n = i + 1;
+    const t = card.querySelector('.t');
+    const d = card.querySelector('.d');
+    if (t) t.setAttribute('data-i18n', `ix.k${n}.t`);
+    if (d) d.setAttribute('data-i18n', `ix.k${n}.d`);
+  });
+</script>
+<script src="shared.js"></script>
+</body>
+</html>
