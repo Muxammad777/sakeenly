@@ -46,6 +46,7 @@ export function ListenScreen({ chapters }: ListenScreenProps) {
 
 function ListenScreenInner({ chapters }: ListenScreenProps) {
   const t = useTranslations("ls");
+  const tRd = useTranslations("rd");
   const [reciter, setReciter] = useState<ReciterMeta>(RECITERS[0]);
   const [query, setQuery] = useState("");
   const [loadingId, setLoadingId] = useState<number | null>(null);
@@ -185,9 +186,9 @@ function ListenScreenInner({ chapters }: ListenScreenProps) {
               type="button"
             >
               <div>
-                <div className="n">{c.id} · {c.versesCount} аятов</div>
+                <div className="n">{c.id} · {c.versesCount} {tRd("ayat_count")}</div>
                 <div className="t">{c.nameSimple}</div>
-                <div className="meta">{c.revelationPlace === "makkah" ? "МЕККА" : "МЕДИНА"}</div>
+                <div className="meta">{c.revelationPlace === "makkah" ? tRd("place_makkah").toUpperCase() : tRd("place_madinah").toUpperCase()}</div>
               </div>
               <span className="play">
                 {currentChapterId === c.id && isPlaying ? (
@@ -222,7 +223,7 @@ function ListenScreenInner({ chapters }: ListenScreenProps) {
                 type="button"
               >
                 <div>
-                  <div className="n">{c.id} · {c.versesCount} аятов</div>
+                  <div className="n">{c.id} · {c.versesCount} {tRd("ayat_count")}</div>
                   <div className="t">{c.nameSimple}</div>
                   <div className="meta arabic" dir="rtl">{c.nameArabic}</div>
                 </div>
