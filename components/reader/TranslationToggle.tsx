@@ -10,7 +10,10 @@ import {
 } from "@/lib/quran/constants";
 import { cn } from "@/lib/utils";
 
-const STORAGE_KEY = "sakeenly.translation";
+// Per-locale storage so a user reading on /ru can keep Kuliev while reading
+// on /kk keeps Altay, etc. Without this, the last picked translation would
+// leak across locales and Ayati (tg) could appear on the Kazakh page.
+const storageKeyFor = (locale: string) => `sakeenly.translation.${locale}`;
 
 export function useActiveTranslation(): [TranslationKey, (next: TranslationKey) => void] {
   const locale = useLocale();
@@ -19,18 +22,18 @@ export function useActiveTranslation(): [TranslationKey, (next: TranslationKey) 
 
   useEffect(() => {
     try {
-      const stored = window.localStorage.getItem(STORAGE_KEY) as TranslationKey | null;
+      const stored = window.localStorage.getItem(storageKeyFor(locale)) as TranslationKey | null;
       if (stored && TRANSLATIONS.some((t) => t.key === stored)) setActive(stored);
       else setActive(localeDefault);
     } catch {
       /* ignore */
     }
-  }, [localeDefault]);
+  }, [locale, localeDefault]);
 
   const update = (next: TranslationKey) => {
     setActive(next);
     try {
-      window.localStorage.setItem(STORAGE_KEY, next);
+      window.localStorage.setItem(storageKeyFor(locale), next);
     } catch {
       /* ignore */
     }
