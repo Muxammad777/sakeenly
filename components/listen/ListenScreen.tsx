@@ -22,18 +22,17 @@ interface ListenScreenProps {
 }
 
 const RECITER_AR: Record<string, string> = {
-  mishary: "مشاري راشد العفاسي",
-  basit: "عبد الباسط عبد الصمد",
-  husary: "محمود خليل الحصري",
-  sudais: "عبد الرحمن السديس",
-  ghamdi: "سعد الغامدي",
-  minshawi: "محمد صديق المنشاوي",
-  shuraim: "سعود الشريم",
-  matrood: "عبدالله المطرود",
-  ajmi: "أحمد العجمي",
-  rifai: "هاني الرفاعي",
-  tablawi: "محمد الطبلاوي",
-  juhany: "عبدالله الجهني",
+  "abdulbaset-mujawwad": "عبد الباسط عبد الصمد",
+  "abdulbaset-murattal": "عبد الباسط عبد الصمد",
+  sudais:                "عبد الرحمن السديس",
+  shatri:                "أبو بكر الشاطري",
+  rifai:                 "هاني الرفاعي",
+  husary:                "محمود خليل الحصري",
+  "minshawi-mujawwad":   "محمد صديق المنشاوي",
+  "minshawi-murattal":   "محمد صديق المنشاوي",
+  shuraym:               "سعود الشريم",
+  tablawi:               "محمد الطبلاوي",
+  "husary-muallim":      "محمود خليل الحصري",
 };
 
 export function ListenScreen({ chapters }: ListenScreenProps) {

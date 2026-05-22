@@ -68,7 +68,7 @@ export default async function EmotionPage({ params }: PageProps) {
       try {
         const verse = await quranApi.verseByKey(pick.key.split("-")[0], {
           translations: [translation],
-          reciter: { id: 7, slug: "mishary", name: "Mishari" },
+          reciter: { id: 1, slug: "abdulbaset-mujawwad", name: "Abdul-Basit Abdul-Samad", style: "Mujawwad" },
           language: "en",
         });
         const [surahStr, ayahStr] = verse.verse_key.split(":");

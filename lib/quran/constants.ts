@@ -69,7 +69,6 @@ export interface ReciterMeta {
 }
 
 export const RECITERS: readonly ReciterMeta[] = [
-  { id: 7, slug: "mishary", name: "Mishari Rashid al-`Afasy" },
   { id: 1, slug: "abdulbaset-mujawwad", name: "Abdul-Basit Abdul-Samad", style: "Mujawwad" },
   { id: 2, slug: "abdulbaset-murattal", name: "Abdul-Basit Abdul-Samad", style: "Murattal" },
   { id: 3, slug: "sudais", name: "Abdur-Rahman as-Sudais" },
@@ -83,7 +82,7 @@ export const RECITERS: readonly ReciterMeta[] = [
   { id: 12, slug: "husary-muallim", name: "Mahmoud Khalil Al-Husary", style: "Muallim" },
 ] as const;
 
-export const DEFAULT_RECITER_SLUG = "mishary";
+export const DEFAULT_RECITER_SLUG = "abdulbaset-mujawwad";
 
 export function findReciter(slug: string | undefined): ReciterMeta {
   return RECITERS.find((r) => r.slug === slug) ?? RECITERS[0];

@@ -179,9 +179,8 @@ function Content({
         </div>
         <div className="setting">
           <span className="lab">{t("label_reciter")}</span>
-          <select defaultValue="mishary">
-            <option value="mishary">{t("r.mishary")}</option>
-            <option value="basit">{t("r.basit")}</option>
+          <select defaultValue="abdulbaset-mujawwad">
+            <option value="abdulbaset-mujawwad">{t("r.basit")}</option>
             <option value="sudais">{t("r.sudais")}</option>
             <option value="husary">{t("r.husary")}</option>
           </select>
