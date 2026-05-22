@@ -157,12 +157,15 @@ function MushafReaderInner(props: MushafReaderProps) {
 
   function openPopover(e: React.MouseEvent<HTMLElement>, ayahNumber: number) {
     e.stopPropagation();
-    const rect = e.currentTarget.getBoundingClientRect();
     const root = rootRef.current?.getBoundingClientRect();
     if (!root) return;
+    // Anchor the popover at the click point itself (transform in CSS moves it
+    // above the cursor via translate(-50%, -100%)). Using the bounding rect
+    // of the whole ayah card pinned the popover to the top of the card —
+    // far from where the user actually clicked when the card is tall.
     setPopover({
-      top: rect.top - root.top,
-      left: rect.left - root.left + rect.width / 2,
+      top: e.clientY - root.top,
+      left: e.clientX - root.left,
     });
     setActiveAyah(ayahNumber);
   }
