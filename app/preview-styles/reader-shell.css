@@ -570,3 +570,101 @@
   letter-spacing: 0.08em; color: oklch(var(--text-3));
 }
 .lang-menu button[aria-pressed="true"] .code { color: oklch(var(--accent)); }
+
+  /* ============ AYAH-BLOCK (interleaved arabic + translation) ============ */
+  .ayah-stack {
+    display: flex; flex-direction: column;
+    gap: 18px;
+    margin-top: 24px;
+  }
+  .ayah-block {
+    background: oklch(var(--surface));
+    border: 1px solid oklch(var(--border));
+    border-radius: 18px;
+    padding: 22px 26px 20px;
+    cursor: pointer;
+    transition: border-color 160ms, background 160ms;
+    position: relative;
+    overflow: hidden;
+  }
+  .ayah-block:hover { border-color: color-mix(in oklab, oklch(var(--accent)) 35%, oklch(var(--border))); }
+  .ayah-block.active {
+    border-color: oklch(var(--accent));
+    background: color-mix(in oklab, var(--accent-soft) 60%, oklch(var(--surface)));
+  }
+  .ayah-block.playing {
+    border-color: oklch(var(--accent));
+    box-shadow: 0 0 0 1px oklch(var(--accent) / 0.4) inset;
+  }
+  .ayah-block-head {
+    display: flex; align-items: center; gap: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: oklch(var(--text-3));
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid color-mix(in oklab, oklch(var(--border)) 70%, transparent);
+  }
+  .ayah-block-num { color: oklch(var(--accent)); font-weight: 500; }
+  .ayah-block-cite { color: oklch(var(--text-3)); }
+  .ayah-block-arabic {
+    font-family: 'KFGQPC-Hafs', 'Amiri', 'Scheherazade New', serif;
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    line-height: 2.3;
+    color: oklch(var(--text));
+    text-align: right;
+    margin-bottom: 14px;
+  }
+  .ayah-block-arabic .ayah-mark {
+    color: oklch(var(--accent));
+    font-size: 0.7em;
+    margin: 0 4px;
+  }
+  .ayah-block-trans {
+    color: oklch(var(--text-2));
+    font-family: 'Spectral', Georgia, serif;
+    font-size: 1.02rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* ============ TRANSLATION TOGGLE ============ */
+  .trans-toggle {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 6px 14px 6px 8px;
+    border-radius: 999px;
+    background: oklch(var(--surface));
+    border: 1px solid oklch(var(--border));
+    color: oklch(var(--text-2));
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
+    transition: border-color 140ms, color 140ms;
+    margin-right: 8px;
+  }
+  .trans-toggle:hover { border-color: oklch(var(--border-strong)); color: oklch(var(--text)); }
+  .trans-toggle-track {
+    width: 30px; height: 16px;
+    border-radius: 999px;
+    background: oklch(var(--surface-2));
+    border: 1px solid oklch(var(--border));
+    position: relative;
+    transition: background 160ms, border-color 160ms;
+  }
+  .trans-toggle-thumb {
+    position: absolute;
+    width: 10px; height: 10px;
+    border-radius: 999px;
+    background: oklch(var(--text-3));
+    top: 2px; left: 2px;
+    transition: left 160ms, background 160ms;
+  }
+  .trans-toggle.on .trans-toggle-track {
+    background: var(--accent-soft);
+    border-color: color-mix(in oklab, oklch(var(--accent)) 40%, oklch(var(--border)));
+  }
+  .trans-toggle.on .trans-toggle-thumb {
+    left: 16px;
+    background: oklch(var(--accent));
+  }
+  .trans-toggle.on .trans-toggle-label { color: oklch(var(--accent)); }

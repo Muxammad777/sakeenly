@@ -76,6 +76,7 @@ function MushafReaderInner(props: MushafReaderProps) {
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
+  const [showTranslations, setShowTranslations] = useState(true);
   const rootRef = useRef<HTMLDivElement>(null);
 
   const playableQueue = useMemo(
@@ -293,82 +294,114 @@ function MushafReaderInner(props: MushafReaderProps) {
             </div>
           </div>
 
-          {/* MUSHAF — flowing arabic block */}
-          <div className="mushaf mushaf-ornament">
-            {surah.number !== 1 && surah.number !== 9 && (
-              <div className="basmala arabic" dir="rtl">
-                <span className="basmala-frame">﷽</span>
-              </div>
+          {/* TRANSLATION TOGGLE + STRIP */}
+          <div className="trans-bar">
+            <button
+              type="button"
+              className={"trans-toggle" + (showTranslations ? " on" : "")}
+              onClick={() => setShowTranslations((v) => !v)}
+              aria-pressed={showTranslations}
+              title={showTranslations ? "Скрыть перевод" : "Показать перевод"}
+            >
+              <span className="trans-toggle-track">
+                <span className="trans-toggle-thumb" />
+              </span>
+              <span className="trans-toggle-label">
+                {showTranslations ? "Перевод включён" : "Только арабский"}
+              </span>
+            </button>
+            {showTranslations && (
+              <>
+                <span className="lbl">{t("lbl_translation")}</span>
+                {TRANSLATIONS.map((tr) => (
+                  <button
+                    key={tr.key}
+                    className={"trans-pill" + (activeKey === tr.key ? " active" : "")}
+                    onClick={() => setActiveKey(tr.key)}
+                    type="button"
+                  >
+                    {tr.short}
+                  </button>
+                ))}
+              </>
             )}
-            <div className="mushaf-inner arabic" dir="rtl">
-              {ayat.map((a, i) => (
-                <Fragment key={a.ayahKey}>
-                  <span
+          </div>
+
+          {showTranslations ? (
+            /* INTERLEAVED MODE — each ayah as a card: arabic on top, translation below */
+            <div className="ayah-stack">
+              {surah.number !== 1 && surah.number !== 9 && (
+                <div className="basmala arabic" dir="rtl">
+                  <span className="basmala-frame">﷽</span>
+                </div>
+              )}
+              {ayat.map((a) => {
+                const text = a.translationsByKey[activeKey];
+                const meta: TranslationMeta | undefined = TRANSLATIONS.find((t) => t.key === activeKey);
+                return (
+                  <article
+                    key={a.ayahKey}
                     id={`ayah-${a.verseNumber}`}
                     className={
-                      "ayah-span" +
+                      "ayah-block" +
                       (activeAyah === a.verseNumber ? " active" : "") +
                       (playingVerseNumber === a.verseNumber ? " playing" : "")
                     }
-                    data-ayah={a.verseNumber}
                     onClick={(e) => openPopover(e, a.verseNumber)}
                   >
-                    {a.textUthmani}
-                  </span>
-                  <span className="ayah-mark" aria-hidden="true">
-                    ﴿{toArabicNum(a.verseNumber)}﴾
-                  </span>
-                  {i < ayat.length - 1 && " "}
-                </Fragment>
-              ))}
-            </div>
-          </div>
-
-          {/* TRANSLATION STRIP */}
-          <div className="trans-bar">
-            <span className="lbl">{t("lbl_translation")}</span>
-            {TRANSLATIONS.map((tr) => (
-              <button
-                key={tr.key}
-                className={"trans-pill" + (activeKey === tr.key ? " active" : "")}
-                onClick={() => setActiveKey(tr.key)}
-                type="button"
-              >
-                {tr.short}
-              </button>
-            ))}
-          </div>
-
-          {/* TRANSLATION ROWS */}
-          <div className="translations">
-            {ayat.map((a) => {
-              const text = a.translationsByKey[activeKey];
-              const meta: TranslationMeta | undefined = TRANSLATIONS.find((t) => t.key === activeKey);
-              return (
-                <div
-                  key={a.ayahKey}
-                  className={"trans-row" + (activeAyah === a.verseNumber ? " active" : "")}
-                  onClick={(e) => openPopover(e, a.verseNumber)}
-                >
-                  <div className="trans-head">
-                    <span className="trans-num">{a.verseNumber}</span>
-                    <span style={{ display: "flex", gap: 10, alignItems: "center" }}>
-                      <span className="trans-cite">{meta?.author}</span>
+                    <header className="ayah-block-head">
+                      <span className="ayah-block-num">{toArabicNum(a.verseNumber)} · {a.verseNumber}</span>
+                      <span className="ayah-block-cite">{meta?.author}</span>
                       {a.isBookmarked && (
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--accent)">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--accent)" style={{ marginLeft: "auto" }}>
                           <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
                         </svg>
                       )}
-                    </span>
-                  </div>
-                  <p
-                    className="trans-text"
-                    dangerouslySetInnerHTML={{ __html: text ?? "—" }}
-                  />
+                    </header>
+                    <div className="ayah-block-arabic arabic" dir="rtl">
+                      {a.textUthmani}
+                      <span className="ayah-mark" aria-hidden="true"> ﴿{toArabicNum(a.verseNumber)}﴾</span>
+                    </div>
+                    <p
+                      className="ayah-block-trans"
+                      dangerouslySetInnerHTML={{ __html: text ?? "—" }}
+                    />
+                  </article>
+                );
+              })}
+            </div>
+          ) : (
+            /* MUSHAF MODE — flowing arabic block, no translations */
+            <div className="mushaf mushaf-ornament">
+              {surah.number !== 1 && surah.number !== 9 && (
+                <div className="basmala arabic" dir="rtl">
+                  <span className="basmala-frame">﷽</span>
                 </div>
-              );
-            })}
-          </div>
+              )}
+              <div className="mushaf-inner arabic" dir="rtl">
+                {ayat.map((a, i) => (
+                  <Fragment key={a.ayahKey}>
+                    <span
+                      id={`ayah-${a.verseNumber}`}
+                      className={
+                        "ayah-span" +
+                        (activeAyah === a.verseNumber ? " active" : "") +
+                        (playingVerseNumber === a.verseNumber ? " playing" : "")
+                      }
+                      data-ayah={a.verseNumber}
+                      onClick={(e) => openPopover(e, a.verseNumber)}
+                    >
+                      {a.textUthmani}
+                    </span>
+                    <span className="ayah-mark" aria-hidden="true">
+                      ﴿{toArabicNum(a.verseNumber)}﴾
+                    </span>
+                    {i < ayat.length - 1 && " "}
+                  </Fragment>
+                ))}
+              </div>
+            </div>
+          )}
         </main>
 
         {/* ============ RIGHT PANE ============ */}
