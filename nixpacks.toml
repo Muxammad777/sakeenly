@@ -1,17 +1,8 @@
 # Railway / Nixpacks build configuration.
-# Use `npm install` instead of the default `npm ci` because the lockfile in
-# this repo was generated with npm 11 and Railway's default builder ships
-# npm 10, which can't read the newer lockfile metadata. `npm install` is
-# tolerant of the version drift.
-
-[phases.setup]
-nixPkgs = ["nodejs_22", "npm-11_x"]
+# Override the default `npm ci` with `npm install` so the build is robust to
+# minor lockfile drift between local (npm 11) and CI (npm 10) — `npm ci` is
+# strict, `npm install` is tolerant. Node version comes from package.json's
+# engines field (22.x).
 
 [phases.install]
 cmds = ["npm install --no-audit --no-fund"]
-
-[phases.build]
-cmds = ["npm run build"]
-
-[start]
-cmd = "npm start"
