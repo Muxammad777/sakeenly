@@ -192,7 +192,9 @@
     border: 1px solid oklch(var(--border));
     border-radius: 14px;
     position: sticky;
-    top: 12px;
+    /* Site header is sticky at top:0 with height 58px — anchor below it
+       so the trans-bar doesn't get hidden under the nav while scrolling. */
+    top: 70px;
     z-index: 20;
   }
   .trans-bar .lbl {

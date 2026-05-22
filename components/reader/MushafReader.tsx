@@ -137,6 +137,7 @@ function MushafReaderInner(props: MushafReaderProps) {
       const tgt = e.target as HTMLElement;
       if (tgt.closest(".ayah-popover")) return;
       if (tgt.closest(".ayah-span")) return;
+      if (tgt.closest(".ayah-block")) return;
       if (tgt.closest(".trans-row")) return;
       setPopover(null);
       setActiveAyah(null);
