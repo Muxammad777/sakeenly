@@ -276,12 +276,12 @@ function Content() {
               </svg>
             </span>
           ))}
-          <span className="eyebrow">Принцип, на котором основан Sakeenly</span>
+          <span className="eyebrow">{t("quote_eyebrow")}</span>
           <div className="ar arabic" lang="ar" dir="rtl" style={{ marginTop: 16 }}>
             وَلَا تَجَسَّسُوا
           </div>
-          <p className="ru">«И не следите [за чужими делами]…»</p>
-          <p className="cite">Сура «Комнаты» · 49:12</p>
+          <p className="ru">{t("quote_ru")}</p>
+          <p className="cite">{t("quote_cite")}</p>
         </div>
       </section>
 

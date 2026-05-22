@@ -754,7 +754,10 @@
     "ch5_delete_btn": "Hisobni oʻchirish",
     "ch5_request_h": "Aniq narsa haqida soʻrov",
     "ch5_request_p": "Maʼlum bir email haqida nima bilishimizni bilmoqchimisiz? Yozing:",
-    "ch5_request_btn": "Yozish"
+    "ch5_request_btn": "Yozish",
+    "quote_eyebrow": "Sakeenly asoslangan tamoyil",
+    "quote_ru": "«Bir-biringizning ahvolingizni kuzatib yurmang…»",
+    "quote_cite": "«Hujurot» surasi · 49:12"
   },
   "rd": {
     "about_h": "Sura haqida",
