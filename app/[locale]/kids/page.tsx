@@ -178,8 +178,8 @@ function Content() {
           <div className="kid-streak-card">
             <div className="kid-streak-num">12</div>
             <div className="kid-streak-info">
-              <span className="lbl">Алфавит</span>
-              <span className="title">12 из 28 букв выучено</span>
+              <span className="lbl">{t("streak_alphabet")}</span>
+              <span className="title">{t("streak_progress", { done: 12, total: 28 })}</span>
               <div className="memo-progress" style={{ marginTop: 8, width: 200 }}>
                 <div style={{ width: "43%" }} />
               </div>
@@ -188,8 +188,8 @@ function Content() {
           <div className="kid-streak-card">
             <div className="kid-streak-num">4</div>
             <div className="kid-streak-info">
-              <span className="lbl">Streak · подряд</span>
-              <span className="title">4 дня с Книгой</span>
+              <span className="lbl">{t("streak_days_lbl")}</span>
+              <span className="title">{t("streak_days_title", { n: 4 })}</span>
               <div style={{ display: "flex", gap: 6, marginTop: 8 }}>
                 {["П", "В", "С"].map((d) => <div key={d} className="streak-dot done">{d}</div>)}
                 <div className="streak-dot today">Ч</div>
@@ -205,10 +205,10 @@ function Content() {
         <div className="kid-section-head">
           <div className="kid-num">01</div>
           <div>
-            <h2>Икра — все 28 букв.</h2>
-            <p>Тапни на букву — услышь, увидь, обведи пальцем. Большие буквы. Без спешки.</p>
+            <h2>{t("sec1_h")}</h2>
+            <p>{t("sec1_p")}</p>
           </div>
-          <span className="kid-pill">12 / 28</span>
+          <span className="kid-pill">{t("sec1_pill")}</span>
         </div>
 
         <div className="iqra-grid">
@@ -221,7 +221,7 @@ function Content() {
         </div>
 
         <div className="iqra-progress">
-          <span>Прогресс</span>
+          <span>{t("progress")}</span>
           <div className="bar"><div style={{ width: "43%" }} /></div>
           <span>43%</span>
         </div>
@@ -232,16 +232,16 @@ function Content() {
         <div className="kid-section-head">
           <div className="kid-num">02</div>
           <div>
-            <h2>Первые суры — для сердца.</h2>
-            <p>Короткие, любимые, важные. С ними легче засыпать и просыпаться.</p>
+            <h2>{t("sec2_h")}</h2>
+            <p>{t("sec2_p")}</p>
           </div>
-          <span className="kid-pill">4 СУРЫ</span>
+          <span className="kid-pill">{t("sec2_pill")}</span>
         </div>
 
         <div className="surah-cards">
           {KID_SURAHS.map((s) => (
             <Link key={s.num} className="surah-card" href={`/reader/${s.num}/1`}>
-              <span className="num">№{s.num} · {s.ayat} {s.ayat === 1 ? "АЯТ" : s.ayat < 5 ? "АЯТА" : "АЯТОВ"}</span>
+              <span className="num">№{s.num} · {s.ayat}</span>
               <span className="ru">{s.ru}</span>
               <div className="ar arabic" dir="rtl">{s.ar}</div>
               <div className="meta">{s.meta}</div>
@@ -251,11 +251,11 @@ function Content() {
               <div className="surah-card-cta">
                 <button type="button">
                   <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                  Слушать
+                  {t("sec2_listen")}
                 </button>
                 <button type="button">
                   <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
-                  Учить
+                  {t("sec2_learn")}
                 </button>
               </div>
             </Link>
@@ -268,10 +268,10 @@ function Content() {
         <div className="kid-section-head">
           <div className="kid-num">03</div>
           <div>
-            <h2>Истории пророков.</h2>
-            <p>Просто рассказанные. С Книгой как источником. Без выдумок.</p>
+            <h2>{t("sec3_h")}</h2>
+            <p>{t("sec3_p")}</p>
           </div>
-          <span className="kid-pill">25 ИСТОРИЙ</span>
+          <span className="kid-pill">{t("sec3_pill")}</span>
         </div>
 
         <div className="prophet-grid">
@@ -283,13 +283,13 @@ function Content() {
                 </svg>
               </div>
               <div className="prophet-body">
-                <span className="num">ИСТОРИЯ №{p.n}</span>
+                <span className="num">{t("sec3_story_n", { n: p.n })}</span>
                 <span className="name">{p.name}</span>
                 <span className="ar arabic" dir="rtl">{p.ar}</span>
                 <p className="summary">{p.summary}</p>
                 <div className="prophet-meta">
-                  <span>{p.mins} МИН ЧТЕНИЯ</span>
-                  <span>Слушать →</span>
+                  <span>{t("sec3_minutes", { n: p.mins })}</span>
+                  <span>{t("sec3_listen")}</span>
                 </div>
               </div>
             </Link>
@@ -301,12 +301,12 @@ function Content() {
       <section className="wrap">
         <div className="parent-cta">
           <div>
-            <span className="eyebrow">Родителям</span>
-            <h3>Семейный план — до 6 аккаунтов, дашборд для родителей и общая полка закладок.</h3>
-            <p>Ты видишь streak ребёнка, какие буквы он выучил, какие суры пытается запомнить. Без слежки — только то, что важно знать.</p>
+            <span className="eyebrow">{t("parent_eyebrow")}</span>
+            <h3>{t("parent_h")}</h3>
+            <p>{t("parent_p")}</p>
           </div>
           <Link className="btn btn-primary" href="/pricing">
-            Семейный план
+            {t("parent_btn")}
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </Link>
         </div>

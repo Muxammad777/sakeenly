@@ -4,8 +4,10 @@ import { Link } from "@/i18n/navigation";
 import { signIn, signOut, useSession } from "next-auth/react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { LogOut, User as UserIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function UserMenu() {
+  const t = useTranslations("nav");
   const { data: session, status } = useSession();
 
   if (status === "loading") {
@@ -19,7 +21,7 @@ export function UserMenu() {
         onClick={() => signIn()}
         className="inline-flex h-9 items-center rounded-full bg-accent px-4 text-sm font-medium text-accent-fg transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
       >
-        Войти
+        {t("signin")}
       </button>
     );
   }
@@ -53,7 +55,7 @@ export function UserMenu() {
               className="flex cursor-pointer select-none items-center gap-2 rounded-lg px-3 py-2 text-sm text-fg outline-none transition-colors data-[highlighted]:bg-bg"
             >
               <UserIcon className="h-4 w-4" />
-              Профиль
+              {t("profile")}
             </Link>
           </DropdownMenu.Item>
           <DropdownMenu.Item
@@ -61,7 +63,7 @@ export function UserMenu() {
             className="flex cursor-pointer select-none items-center gap-2 rounded-lg px-3 py-2 text-sm text-fg outline-none transition-colors data-[highlighted]:bg-bg"
           >
             <LogOut className="h-4 w-4" />
-            Выйти
+            {t("signout")}
           </DropdownMenu.Item>
         </DropdownMenu.Content>
       </DropdownMenu.Portal>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Link } from "@/i18n/navigation";
 import { findEmotion, emotionSlugs, EMOTIONS } from "@/lib/data/emotions";
@@ -59,6 +59,11 @@ export default async function EmotionPage({ params }: PageProps) {
   setRequestLocale(locale);
   const bundle = findEmotion(emotion);
   if (!bundle) notFound();
+  const t = await getTranslations({ locale, namespace: "aem" });
+  const tEmo = await getTranslations({ locale, namespace: "emo30" });
+  // Localized title (fallback to ruTitle for any slug we forgot to translate)
+  let title = bundle.ruTitle;
+  try { title = tEmo(bundle.slug); } catch { /* fallback to ruTitle */ }
 
   const translation = findTranslation("kuliev");
 
@@ -95,24 +100,24 @@ export default async function EmotionPage({ params }: PageProps) {
       {/* HERO */}
       <section className="wrap seo-hero">
         <div className="crumbs">
-          <Link href="/">Sakeenly</Link> &nbsp;/&nbsp;
-          <Link href="/ayat">Аяты по темам</Link> &nbsp;/&nbsp;
-          <span style={{ color: "var(--text-2)" }}>{bundle.ruTitle}</span>
+          <Link href="/">{t("crumbs_root")}</Link> &nbsp;/&nbsp;
+          <Link href="/ayat">{t("crumbs_ayat")}</Link> &nbsp;/&nbsp;
+          <span style={{ color: "var(--text-2)" }}>{title}</span>
         </div>
-        <h1>{bundle.ruTitle}</h1>
+        <h1>{title}</h1>
         <p className="lede">{bundle.ruIntro}</p>
         <div className="meta-strip">
           <span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            6 мин чтения
+            {t("meta_min_reading", { n: 6 })}
           </span>
           <span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            {bundle.needsReview ? "Ожидает утверждения" : "Проверено учёными"}
+            {bundle.needsReview ? t("meta_needs_review") : t("meta_reviewed")}
           </span>
           <span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-7h3zM3 19a2 2 0 0 0 2 2h1v-7H3z"/></svg>
-            Аудио каждого аята
+            {t("meta_audio")}
           </span>
         </div>
       </section>
@@ -122,24 +127,22 @@ export default async function EmotionPage({ params }: PageProps) {
         <div className="seo-layout">
           {/* TOC */}
           <aside className="toc">
-            <h4>В этой подборке</h4>
+            <h4>{t("toc_h")}</h4>
             <ol>
-              <li><a href="#intro" className="active">О чём эта подборка</a></li>
+              <li><a href="#intro" className="active">{t("toc_intro")}</a></li>
               {verses.map((v, i) => (
                 <li key={v.verseKey}>
-                  <a href={`#a${i + 1}`}>{v.emphasis ?? `Аят ${v.verseKey}`}</a>
+                  <a href={`#a${i + 1}`}>{v.emphasis ?? `${t("ayah_n", { n: i + 1 })}`}</a>
                 </li>
               ))}
-              <li><a href="#scholar">От учёного</a></li>
-              <li><a href="#related">Похожие темы</a></li>
+              <li><a href="#scholar">{t("toc_scholar")}</a></li>
+              <li><a href="#related">{t("toc_related")}</a></li>
             </ol>
           </aside>
 
           <article className="seo-article">
             <p className="intro" id="intro">{bundle.ruIntro}</p>
-            <p>
-              Подборка собрана из аятов, на которые столетиями опираются учёные, имамы и обычные люди в моменты страха, тревоги, паники, бессонницы и отчаяния. Они не лечат тревогу как медицина — но дают ту точку опоры, без которой лечение бесполезно. Если тревога сильная и длительная — обязательно обратись к врачу. Коран не отменяет ас-сабаб (средство): Пророк ﷺ говорил «лечитесь».
-            </p>
+            <p>{t("body_intro")}</p>
 
             {verses.map((v, i) => {
               const n = i + 1;
@@ -147,7 +150,7 @@ export default async function EmotionPage({ params }: PageProps) {
                 <div key={v.verseKey} className="ayah-card" id={`a${n}`}>
                   <div className="ayah-card-head">
                     <div>
-                      <div className="ayah-tag">Аят #{n} · {v.verseKey}</div>
+                      <div className="ayah-tag">{t("ayah_n", { n })} · {v.verseKey}</div>
                       {v.emphasis && (
                         <div style={{ fontFamily: "'Spectral', serif", fontSize: "1.4rem", marginTop: 6 }}>
                           {v.emphasis}
@@ -163,7 +166,7 @@ export default async function EmotionPage({ params }: PageProps) {
                   <p
                     className="ayah-translation"
                     dangerouslySetInnerHTML={{
-                      __html: v.translationHtml + ` <span class="by">Перевод Э. Кулиева</span>`,
+                      __html: v.translationHtml + ` <span class="by">${t("translation_by")}</span>`,
                     }}
                   />
                   <div className="ayah-actions">
@@ -171,14 +174,14 @@ export default async function EmotionPage({ params }: PageProps) {
                       <VerseAudio url={v.audioUrl} />
                     ) : (
                       <button className="btn btn-soft btn-sm" disabled>
-                        <PlayIcon /> Слушать
+                        <PlayIcon /> {t("action_listen")}
                       </button>
                     )}
                     <button className="btn btn-soft btn-sm">
-                      <BookmarkIcon /> Закладка
+                      <BookmarkIcon /> {t("action_bookmark")}
                     </button>
                     <Link className="btn btn-soft btn-sm" href={`/reader/${v.surah}/${v.ayah}`}>
-                      Открыть в ридере →
+                      {t("action_open")}
                     </Link>
                   </div>
                 </div>
@@ -199,24 +202,26 @@ export default async function EmotionPage({ params }: PageProps) {
               ))}
               <div className="scholar-avatar">ع</div>
               <div>
-                <h4>Шейх Абдулла Ал-Гариб</h4>
-                <div className="role">SCHOLAR BOARD · SAKEENLY</div>
-                <p>«Тревога — не доказательство слабости имана. Сам Пророк ﷺ просил у Аллаха защиты от тревоги и печали ежедневно: <em>аллахумма инни ауузу бика мин аль-хамми ва-ль-хазан</em>. Эта подборка — не замена ду’а и не замена врача. Это точки, на которые можно встать, когда падать страшнее, чем стоять.»</p>
+                <h4>{t("scholar_name")}</h4>
+                <div className="role">{t("scholar_role")}</div>
+                <p>{t("scholar_quote")}</p>
               </div>
             </div>
 
             {/* Disclaimer */}
             <div className="disclaimer">
-              <strong>Дисклеймер.</strong> Если ты испытываешь длительную тревогу, панические атаки или мысли причинить себе вред — обратись к врачу. Sakeenly не заменяет медицину. Если есть страх за жизнь — позвони в кризисную линию: 8-800-2000-122 (Россия, бесплатно, 24/7).
+              <strong>{t("disclaimer_lbl")}</strong> {t("disclaimer_body")}
             </div>
 
             {/* Related */}
             <div className="related" id="related">
-              <h3>Похожие подборки</h3>
+              <h3>{t("related_h")}</h3>
               <div className="related-list">
-                {EMOTIONS.filter((e) => e.slug !== bundle.slug).slice(0, 8).map((e) => (
-                  <Link key={e.slug} href={`/ayat/${e.slug}`}>{e.ruTitle}</Link>
-                ))}
+                {EMOTIONS.filter((e) => e.slug !== bundle.slug).slice(0, 8).map((e) => {
+                  let label = e.ruTitle;
+                  try { label = tEmo(e.slug); } catch { /* fallback */ }
+                  return <Link key={e.slug} href={`/ayat/${e.slug}`}>{label}</Link>;
+                })}
               </div>
             </div>
           </article>
@@ -226,29 +231,33 @@ export default async function EmotionPage({ params }: PageProps) {
       {/* SEO CTA */}
       <section className="wrap">
         <div className="seo-cta">
-          <span className="eyebrow">Sakeenly · Quran-companion</span>
-          <h2>Сохрани эти аяты в свою библиотеку.</h2>
-          <p>Один тап — и закладки синхронизируются между всеми твоими устройствами. Аудио каждого аята. Тафсиры. Бесплатно.</p>
+          <span className="eyebrow">{t("cta_eyebrow")}</span>
+          <h2>{t("cta_h")}</h2>
+          <p>{t("cta_body")}</p>
           <div style={{ marginTop: 28, display: "flex", justifyContent: "center", gap: 12, flexWrap: "wrap" }}>
             <Link className="btn btn-primary" href="/reader/1/1">
-              Открыть в Sakeenly
+              {t("cta_btn_primary")}
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </Link>
-            <Link className="btn btn-ghost" href="/pricing">Что внутри</Link>
+            <Link className="btn btn-ghost" href="/pricing">{t("cta_btn_ghost")}</Link>
           </div>
         </div>
       </section>
 
       {/* ALL EMOTIONS */}
       <section className="wrap all-emotions">
-        <h2>Другие подборки</h2>
+        <h2>{t("all_emotions_h")}</h2>
         <div className="emotion-grid-big">
-          {EMOTIONS.filter((e) => e.slug !== bundle.slug).slice(0, 12).map((e) => (
-            <Link key={e.slug} className="em-mini" href={`/ayat/${e.slug}`}>
-              <span className="ru">{e.ruTitle}</span>
-              <span className="ct">{e.verses.length} АЯТОВ</span>
-            </Link>
-          ))}
+          {EMOTIONS.filter((e) => e.slug !== bundle.slug).slice(0, 12).map((e) => {
+            let label = e.ruTitle;
+            try { label = tEmo(e.slug); } catch { /* fallback */ }
+            return (
+              <Link key={e.slug} className="em-mini" href={`/ayat/${e.slug}`}>
+                <span className="ru">{label}</span>
+                <span className="ct">{e.verses.length}</span>
+              </Link>
+            );
+          })}
         </div>
       </section>
     </>

@@ -1,882 +1,969 @@
 {
-    "ab":  {
-               "badge":  "Sakeenly · 2026 dan",
-               "cta_btn1":  "Scholar board",
-               "cta_btn2":  "Maxfiylik siyosati",
-               "cta_eyebrow":  "Yordam berishni xohlaysizmi?",
-               "cta_h":  "Scholar board · hamkorlar · fikr",
-               "cta_p":  "Agar siz olim, dasturchi yoki xato bildirmoqchi boʻlsangiz — hello@sakeenly.com.",
-               "h1":  "Yurakdagi tinchlik — funksiya emas, marosim.",
-               "lede":  "Sakina — Allohning moʻminlar qalbiga yuboradigan tinchligi. Zamonaviy ilovalar koʻpincha unga qarshi. Biz aksincha — qalbni yengillashtiruvchi mahsulot quramiz.",
-               "p1":  {
-                          "d":  "Reklama tarmoqlari yoʻq. Javob ichida hamkor havolalari yoʻq.",
-                          "n":  "01 — Reklama",
-                          "t":  "Bannerlar yoʻq. Hech qachon."
-                      },
-               "p2":  {
-                          "d":  "GA, Meta Pixel, AppsFlyer yoʻq. Faqat funksiya va anonim statistika.",
-                          "n":  "02 — Kuzatuv",
-                          "t":  "Nol telemetriya."
-                      },
-               "p3":  {
-                          "d":  "AI faqat tasdiqlangan manbalardan javob beradi va huquqiy qaror chiqarmaydi.",
-                          "n":  "03 — Fatvo",
-                          "t":  "Bu olim ishi."
-                      },
-               "p4":  {
-                          "d":  "Tasvirlar faqat geometriya. Paygʻambarlar ﷺ hikoyalari — matn va audio.",
-                          "n":  "04 — Adab",
-                          "t":  "Odamlar va Kaʼba tasvirlari yoʻq."
-                      },
-               "p5":  {
-                          "d":  "At-rest shifrlash. Toʻliq eksport. Akkauntni oʻchirish hamma maʼlumotlarni oʻchiradi.",
-                          "n":  "05 — Shifrlash",
-                          "t":  "Xatchoʻplar va eslatmalar — sizniki."
-                      },
-               "p6":  {
-                          "d":  "Premium va Family bor — chunki sizni reklama beruvchilarga sotmoqchi emasmiz.",
-                          "n":  "06 — Narx",
-                          "t":  "Oʻqish doimo bepul."
-                      },
-               "principles_eyebrow":  "Olti tamoyil",
-               "principles_h":  "Oʻzimizga nima vaʼda qilganmiz.",
-               "quote_cite":  "«Fath» surasi · 48:4",
-               "quote_tr":  "«U — moʻminlar qalbiga sakinani nozil qilgan Zot».",
-               "sources_eyebrow":  "Bu nimaga asoslangan",
-               "sources_h":  "Manbalar va shriftlar."
-           },
-    "ask":  {
-                "a1_html":  "Qurʼon sabrni moʻminning asosiy sifatlaridan biri sifatida belgilaydi va sabr qiluvchilarga hisobsiz mukofot vaʼda qiladi \u003cspan class=\"citation\"\u003eQuran 39:10\u003c/span\u003e. Alloh sabr qiluvchilar bilan \u003cspan class=\"citation\"\u003eQuran 2:153\u003c/span\u003e, va har bir qiyinchilikdan keyin yengillik bor \u003cspan class=\"citation\"\u003eQuran 94:5\u003c/span\u003e. Paygʻambarga (ﷺ) «goʻzal sabr» amr qilingan \u003cspan class=\"citation\"\u003eQuran 70:5\u003c/span\u003e.",
-                "aria_send":  "Yuborish",
-                "avatar_you":  "SIZ",
-                "badge":  "RAG · iqtibos · fatvosiz",
-                "h1":  "Savol. Manba. Javob.",
-                "label_a":  "Sakeenly",
-                "label_q":  "Savol",
-                "lede":  "Sakeenly javobni Qurʼon, tafsirlar va hadis korpusidan qidiradi. Har bir gap manba bilan. Shaxsiy huquqiy savollar ulamolarga yoʻnaltiriladi.",
-                "placeholder":  "Qurʼon haqida soʻrang — masalan, «sabr nima?»",
-                "policy":  "100% inline-iqtibos · SeekersGuidance / Yaqeen / AMJA — fatvolar uchun",
-                "q1":  "Qurʼon qiyinchilikda sabr haqida nima deydi?",
-                "q2":  "Musulmon ayolga bankda ishlash mumkinmi?",
-                "quota":  "Free · 2 / 5 savol bugun",
-                "refusal_h":  "Bu savol — olim uchun",
-                "refusal_p":  "Sakeenly huquqiy qarorlar chiqarmaydi. Shaxsiy fatvo mazhab, vaziyat va niyatni hisobga oladi — bu malakali olim ishi.",
-                "sources":  "Manbalar",
-                "src1":  "Quran 2:153 — Alloh sabr qiluvchilar bilan",
-                "src2":  "Quran 39:10 — Sabr qiluvchilar mukofoti",
-                "src3":  "Quran 70:5 — Goʻzal sabr",
-                "src4":  "Quran 94:5 — Har qiyinchilikdan keyin yengillik",
-                "sugg1":  "Qurʼon shukr haqida nima deydi?",
-                "sugg2":  "Yusuf paygʻambar haqida hikoya qil.",
-                "sugg3":  "Niyatning ahamiyati qanday?",
-                "sugg4":  "«Sabr» nima maʼno beradi va Qurʼonda qayerda?",
-                "upgrade":  "Limitni olib tashlash → Premium"
-            },
-    "ay":  {
-               "all":  "Hammasi",
-               "badge":  "30 toʻplam · scholar-vetted jarayonda",
-               "c1":  {
-                          "d":  "«Allohni zikr qilishda qalblar orom topadi». Yurak siqilgan paytlar uchun.",
-                          "t":  "Tashvish uchun oyatlar"
-                      },
-               "c10":  {
-                           "d":  "«Allohning oʻzi bizga yetarli — U eng yaxshi Homiy».",
-                           "t":  "Qoʻrquvda"
-                       },
-               "c11":  {
-                           "d":  "Gʻazabini tutib turuvchilarni Alloh sevadi.",
-                           "t":  "Gʻazabda"
-                       },
-               "c12":  {
-                           "d":  "Moʻminlar qalbi Allohni zikr qilganda titraydi.",
-                           "t":  "Imonni mustahkamlash uchun"
-                       },
-               "c13":  {
-                           "d":  "Ayyubning duosi: «Menga balo yetdi, Sen — Eng mehribon».",
-                           "t":  "Kasallikda"
-                       },
-               "c14":  {
-                           "d":  "«Biz Allohnikimiz va Unga qaytamiz».",
-                           "t":  "Yaqinlarni yoʻqotganda"
-                       },
-               "c15":  {
-                           "d":  "«Yo Rabb, ularga rahm qil, ular meni boʻla parvarish qilganidek».",
-                           "t":  "Ota-onalar haqida"
-                       },
-               "c16":  {
-                           "d":  "Zakariyoning duosi: «Menga yaxshi avlod ber».",
-                           "t":  "Bolalar haqida"
-                       },
-               "c17":  {
-                           "d":  "«Allohdan qoʻrqqanga U yoʻl beradi».",
-                           "t":  "Moliyaviy qiyinchilikda"
-                       },
-               "c18":  {
-                           "d":  "Shubha jim turilganda xavfli boʻladi.",
-                           "t":  "Shubhalarda"
-                       },
-               "c19":  {
-                           "d":  "«Bizga buni boʻysundirgan Zot pokdir».",
-                           "t":  "Sayohatdan oldin"
-                       },
-               "c2":  {
-                          "d":  "Sabr — qalbni shikoyatdan tutib turish. Alloh sabr qiluvchilar bilan.",
-                          "t":  "Sabr haqida oyatlar"
-                      },
-               "c20":  {
-                           "d":  "Alloh yomon amallarni yaxshilarga almashtiradi.",
-                           "t":  "Gunohni tark etish uchun"
-                       },
-               "c21":  {
-                           "d":  "«Allohga tavakkul qilganga U yetarli».",
-                           "t":  "Tavakkul haqida"
-                       },
-               "c22":  {
-                           "d":  "«Meni chaqiringlar — Men sizga javob beraman».",
-                           "t":  "Allohdan yordam soʻrash"
-                       },
-               "c23":  {
-                           "d":  "Shayton vasvasa qilsa — Allohga panoh izla.",
-                           "t":  "Vasvasada"
-                       },
-               "c24":  {
-                           "d":  "«Allohning rahmatidan quvonsinlar».",
-                           "t":  "Quvonch uchun"
-                       },
-               "c25":  {
-                           "d":  "Kahf surasi — ikki juma orasidagi nur.",
-                           "t":  "Juma oyatlari"
-                       },
-               "c26":  {
-                           "d":  "Qurʼon nozil boʻlgan oy.",
-                           "t":  "Ramazon oyatlari"
-                       },
-               "c27":  {
-                           "d":  "«Qadr kechasi ming oydan yaxshiroq».",
-                           "t":  "Qadr kechasi oyatlari"
-                       },
-               "c28":  {
-                           "d":  "U er-xotin oʻrtasiga muhabbat va rahmat qoʻydi.",
-                           "t":  "Oilada tinchlik uchun"
-                       },
-               "c29":  {
-                           "d":  "«Mening rahmatim hamma narsani qamrab oladi».",
-                           "t":  "Rahmat haqida"
-                       },
-               "c3":  {
-                          "d":  "Shukr — rahmatni koʻrish va qalb, til, amal bilan qaytarish.",
-                          "t":  "Shukr haqida oyatlar"
-                      },
-               "c30":  {
-                           "d":  "«Ey nafsi mutmainna — Robbingga rozilik bilan qayt».",
-                           "t":  "Allohning roziligi uchun"
-                       },
-               "c4":  {
-                          "d":  "Hech kim yolgʻiz emas, U boʻyin tomiridan yaqinroqligini bilsa.",
-                          "t":  "Yolgʻizlikni his qilganingda"
-                      },
-               "c5":  {
-                          "d":  "Musoning Firʼavn oldidagi duosi — koʻkragimni och, ishimni yengillashtir.",
-                          "t":  "Imtihondan oldin"
-                      },
-               "c6":  {
-                          "d":  "Oyatul-Kursi va muavvizat — Paygʻambar (ﷺ) uyqudan oldin oʻqigan.",
-                          "t":  "Uyqudan oldin"
-                      },
-               "c7":  {
-                          "d":  "Kunni zikr bilan boshlash uchun.",
-                          "t":  "Tongdagi oyatlar"
-                      },
-               "c8":  {
-                          "d":  "«Allohning rahmatidan umidsiz boʻlmang».",
-                          "t":  "Tavba haqida"
-                      },
-               "c9":  {
-                          "d":  "Qaygʻu cheksiz tuyulganda, Qurʼon eslatadi: u vaqtinchalik.",
-                          "t":  "Qaygʻuda"
-                      },
-               "cat_family":  "Oila",
-               "cat_heart":  "Yurak holati",
-               "cat_life":  "Hayot lahzalari",
-               "cat_time":  "Vaqt",
-               "cat_worship":  "Ibodat",
-               "h1":  "Hayot qiyinlashgan joyda Kitobni och.",
-               "lede":  "Iliq koʻrsatkich: tashvish, qaygʻu, uyqudan oldin, imtihondan oldin, shukrda, yolgʻizlikda qaysi oyatlarni oʻqish kerak. Har bir toʻplam — 3-5 oyat tarjima va audio bilan.",
-               "open":  "Ochish →",
-               "aya_count":  "{count} oyat"
-           },
-    "close":  {
-                  "cite":  "«Fath» surasi · 48:4",
-                  "cta1":  "Fotihadan boshlash",
-                  "cta2":  "Tariflarni koʻrish",
-                  "eyebrow":  "Har kuni · siz bilan",
-                  "line1":  "«…va sakinani nozil qildi",
-                  "line2":  "moʻminlar qalbiga.»"
-              },
-    "cont":  {
-                 "ayah_of":  "31-oyat / 286",
-                 "btn":  "Oʻqishni davom ettirish",
-                 "label":  "Davom etish",
-                 "surah":  "Baqara"
-             },
-    "emo":  {
-                "all":  "Barcha mavzular →",
-                "heading":  "Hayot qiyin boʻlganda Kitobni oching."
-            },
-    "feat":  {
-                 "eyebrow":  "Ichida nima bor",
-                 "f1_b":  "KFGQPC Hafs shrifti. Tarjimalar. Oyatga tegib — tushuntiring, tinglang, saqlang.",
-                 "f1_l":  "01 — Oʻqish",
-                 "f1_l2":  "Oʻqish ekrani →",
-                 "f1_t":  "Mushaf, qogʻozdagiday.",
-                 "f2_b":  "Abdulbosit, Husariy, Sudays va yana 27 ovoz. Uxlash taymeri, tezlik, joriy oyat yoritilishi.",
-                 "f2_l":  "02 — Tinglash",
-                 "f2_l2":  "Hozir tinglang →",
-                 "f2_t":  "Oʻttiz qori. Bir teginish.",
-                 "f3_b":  "Sakeenly javobni Qurʼon va tafsirdan qidiradi. Har bir gap manba bilan. Fatvo — ulamolarga.",
-                 "f3_l":  "03 — Soʻrash",
-                 "f3_l2":  "Tez kunda →",
-                 "f3_t":  "Savol. Manba. Javob.",
-                 "heading":  "Uchta rasm-rusum, bitta ilova.",
-                 "lede":  "Ortiqcha bezaklarsiz. Bannerlarsiz. Kuzatuvsiz. Faqat matn, ovoz va sukunat."
-             },
-    "foot":  {
-                 "about":  "Biz haqimizda",
-                 "ask":  "Soʻrash",
-                 "ayat":  "Mavzu boʻyicha",
-                 "bottom_made":  "Niyat bilan · sakeenly.com",
-                 "company":  "Kompaniya",
-                 "contact":  "Aloqa",
-                 "faq":  "FAQ",
-                 "help":  "Yordam",
-                 "kids":  "Bolalar uchun",
-                 "pricing":  "Tariflar",
-                 "privacy":  "Maxfiylik",
-                 "product":  "Mahsulot",
-                 "reader":  "Oʻqish",
-                 "reciters":  "Qorilar",
-                 "report":  "Xato haqida",
-                 "request":  "Oyat soʻrash",
-                 "scholars":  "Ulamolar kengashi",
-                 "tagline":  "Qurʼon-hamroh siz uchun. Reklamasiz. Kuzatuvsiz.",
-                 "terms":  "Shartlar"
-             },
-    "hero":  {
-                 "badge":  "Sakeenly · MVP",
-                 "cta_read":  "Oʻqishni boshlash",
-                 "cta_signin":  "Kirish",
-                 "meta1":  "سكينة · sakina · qalb tinchligi",
-                 "meta2":  "Qurʼon 2:248",
-                 "meta3":  "0 reklama · 0 kuzatuv",
-                 "sub":  "Zamonaviy Qurʼon-hamrohingiz. Mushafda oʻqing, qorilarni tinglang, har holatga oyat toping.",
-                 "title_e":  "sakeena.",
-                 "title_h":  "Find your",
-                 "title_t":  "Har kuni."
-             },
-    "ix":  {
-               "badge":  "Design Preview · 17 sahifa",
-               "grp1_eyebrow":  "Asl dizayn (7) · oʻzgarishsiz",
-               "grp1_h":  "«Qurʼon» papkasidan",
-               "grp2_eyebrow":  "Xuddi shu uslubda qoʻshildi (10)",
-               "grp2_h":  "Yetishmaydigan sahifalar",
-               "h1":  "Sakeenly · barcha ekranlar bitta sahifada.",
-               "k1":  {
-                          "d":  "VOTD · Streak · 3 marosim · hissiyotlar",
-                          "t":  "Bosh sahifa"
-                      },
-               "k10":  {
-                           "d":  "Missiya · 6 tamoyil · manbalar",
-                           "t":  "Biz haqimizda"
-                       },
-               "k11":  {
-                           "d":  "Pipeline review · olimlar kengashi",
-                           "t":  "Ulamolar kengashi"
-                       },
-               "k12":  {
-                           "d":  "Google / Apple / magic-link · iqtibos",
-                           "t":  "Kirish"
-                       },
-               "k13":  {
-                           "d":  "Streak · xatchoʻp · obuna · sozlamalar",
-                           "t":  "Profil"
-                       },
-               "k14":  {
-                           "d":  "28 harf KFGQPC · 7-ustun",
-                           "t":  "Kids · Alifbo"
-                       },
-               "k15":  {
-                           "d":  "Fotiha + 5 qisqa · progress",
-                           "t":  "Kids · Birinchi suralar"
-                       },
-               "k16":  {
-                           "d":  "25 paygʻambar · odam tasvirisiz",
-                           "t":  "Kids · Paygʻambarlar hikoyasi"
-                       },
-               "k17":  {
-                           "d":  "١٠٤ · 2:216 · qaytish",
-                           "t":  "404 · Topilmadi"
-                       },
-               "k2":  {
-                          "d":  "Mushaf 3-ustun · KFGQPC · sticky-pleyer",
-                          "t":  "Oʻqish"
-                      },
-               "k3":  {
-                          "d":  "Qorilar · filtr · Now playing · sleep-taymer",
-                          "t":  "Tinglash"
-                      },
-               "k4":  {
-                          "d":  "Iqra · sura progressi · hikoyalar",
-                          "t":  "Bolalar"
-                      },
-               "k5":  {
-                          "d":  "Free / Premium / Family · taqqoslash · FAQ",
-                          "t":  "Tariflar"
-                      },
-               "k6":  {
-                          "d":  "Nimani yigʻamiz",
-                          "t":  "Maxfiylik"
-                      },
-               "k7":  {
-                          "d":  "SEO landing namunasi",
-                          "t":  "Tashvish uchun oyatlar"
-                      },
-               "k8":  {
-                          "d":  "Chat · refusal · iqtiboslar · sources",
-                          "t":  "Ask · AI Q\u0026A"
-                      },
-               "k9":  {
-                          "d":  "Filtr + grid-kartochkalar",
-                          "t":  "Ayat · 30 toʻplam indeksi"
-                      },
-               "lede":  "Chapda — «Qurʼon» papkasidan 7 dizayn-sahifa. Oʻngda — 10 ta xuddi shu uslubdagi sahifa.",
-               "more":  "Ochish →"
-           },
-    "ka":  {
-               "badge":  "Iqra · 4-10 yosh",
-               "h1":  "Yigirma sakkiz harf.",
-               "l1":  "Alif",
-               "l10":  "Ro",
-               "l11":  "Zoy",
-               "l12":  "Sin",
-               "l13":  "Shin",
-               "l14":  "Sod",
-               "l15":  "Dod",
-               "l16":  "To (emf)",
-               "l17":  "Zo (emf)",
-               "l18":  "Ayn",
-               "l19":  "Gʻayn",
-               "l2":  "Bo",
-               "l20":  "Fo",
-               "l21":  "Qof",
-               "l22":  "Kof",
-               "l23":  "Lom",
-               "l24":  "Mim",
-               "l25":  "Nun",
-               "l26":  "Ho (yumshoq)",
-               "l27":  "Vov",
-               "l28":  "Yo",
-               "l3":  "To",
-               "l4":  "So",
-               "l5":  "Jim",
-               "l6":  "Ho",
-               "l7":  "Xo",
-               "l8":  "Dol",
-               "l9":  "Zol",
-               "lede":  "Katta KFGQPC shrifti shakl va nuqtalarni koʻrish uchun. Harfga teging — eshitasiz va chizishingiz mumkin.",
-               "tip":  "aliftan boshlang. Bolaning audio orqasidan ovoz chiqarib takrorlashini taʼminlang.",
-               "tip_lab":  "Ota-onaga maslahat:"
-           },
-    "kid":  {
-                "badge":  "Bolalar uchun · 4–10 yosh",
-                "cta1":  "Harflarni oʻrganish",
-                "cta2":  "Suralarni yodlash",
-                "cta3":  "Hikoyalarni tinglash",
-                "h1":  "Iqra. Kitob. Hikoyalar.",
-                "lede":  "Bolalar uchun Sakeenly: alifbo, qisqa suralar va paygʻambarlar ﷺ hikoyalari."
-            },
-    "ks":  {
-               "badge":  "Yodlash · ota-ona dashboard",
-               "h1":  "Hifz boshlanadigan birinchi suralar.",
-               "lede":  "Al-Fotiha va Kitob oxiridagi toʻrt qisqa sura — odatda birinchi yodlanadi.",
-               "s1":  {
-                          "label":  "5 / 7 oyat · 71%",
-                          "meta":  "OCHUVCHI · 7 oyat",
-                          "note":  "Har bir namoz rakʼatida oʻqiladi. Yetti takrorlanuvchi oyat."
-                      },
-               "s2":  {
-                          "label":  "3 / 6 oyat · 50%",
-                          "meta":  "ODAMLAR · 6 oyat",
-                          "note":  "Odamlar Robbiga panoh izlaymiz — shaytonlar vasvasasidan."
-                      },
-               "s3":  {
-                          "label":  "2 / 5 oyat · 40%",
-                          "meta":  "TONG · 5 oyat",
-                          "note":  "Tong Robbiga panoh izlaymiz — U yaratgan narsaning yomonligidan."
-                      },
-               "s4":  {
-                          "label":  "4 / 4 oyat · 100% ✓",
-                          "meta":  "IXLOS · 4 oyat",
-                          "note":  "Maʼno boʻyicha Qurʼonning uchdan biri — toʻrt oyatda tavhid."
-                      },
-               "s5":  {
-                          "label":  "3 / 3 oyat · 100% ✓",
-                          "meta":  "MOʻLLIK · 3 oyat",
-                          "note":  "Qurʼonning eng qisqa surasi — uchta qisqa oyat."
-                      },
-               "s6":  {
-                          "label":  "0 / 6 oyat · hali boshlanmagan",
-                          "meta":  "KOFIRLAR · 6 oyat",
-                          "note":  "«Sizniki — sizning diningiz, meniki — mening dinim»."
-                      }
-           },
-    "kst":  {
-                "adab":  "Odamlar va Kaʼba tasvirlari yoʻq · adabga rioya",
-                "badge":  "25 paygʻambar · matn + audio",
-                "cta":  "Tinglash →",
-                "h1":  "Paygʻambarlar hikoyalari, alayhimussalom.",
-                "lede":  "Har bir hikoya — ota-onaga qisqa matn va 5-8 daqiqa tinch audio.",
-                "more":  "+ yana 16 paygʻambar · Hud · Solih · Lut · Shuayb · Idris · Zakariyo · Yahyo va boshqalar.",
-                "p1":  {
-                           "meta":  "7 DAQ · BIRINCHI INSON",
-                           "name":  "Paygʻambar Odam ﷺ"
-                       },
-                "p2":  {
-                           "meta":  "8 DAQ · KEMA",
-                           "name":  "Paygʻambar Nuh ﷺ"
-                       },
-                "p3":  {
-                           "meta":  "9 DAQ · XALILULLOH",
-                           "name":  "Paygʻambar Ibrohim ﷺ"
-                       },
-                "p4":  {
-                           "meta":  "12 DAQ · YULDUZLAR TUSHI",
-                           "name":  "Paygʻambar Yusuf ﷺ"
-                       },
-                "p5":  {
-                           "meta":  "14 DAQ · DENGIZNI BOʻLISH",
-                           "name":  "Paygʻambar Muso ﷺ"
-                       },
-                "p6":  {
-                           "meta":  "7 DAQ · SABR",
-                           "name":  "Paygʻambar Ayyub ﷺ"
-                       },
-                "p7":  {
-                           "meta":  "8 DAQ · KIT",
-                           "name":  "Paygʻambar Yunus ﷺ"
-                       },
-                "p8":  {
-                           "meta":  "11 DAQ · SHAMOL SALTANATI",
-                           "name":  "Paygʻambar Sulaymon ﷺ"
-                       },
-                "p9":  {
-                           "meta":  "10 DAQ · ALLOHNING BIR SOʻZI",
-                           "name":  "Paygʻambar Iso ﷺ"
-                       }
-            },
-    "ls":  {
-               "all":  "Hammasi",
-               "all_114":  "Hammasi 114 →",
-               "badge":  "30 qori · Quran.com CDN",
-               "heading_1":  "Ovozlar, ular",
-               "heading_2":  "Kitobni yetkazdi.",
-               "lede":  "Qorini, oyatlar oraligʻini va tezlikni tanlang. Quran.com CDN dan joriy oyat yoritilishi bilan oqim.",
-               "popular_eyebrow":  "Tez-tez tinglashadi",
-               "popular_h":  "Qaytib oʻqiladigan suralar",
-               "search":  "Qori qidirish..."
-           },
-    "nav":  {
-                "ask":  "Soʻrash",
-                "ayat":  "Oyatlar",
-                "kids":  "Bolalar",
-                "listen":  "Tinglash",
-                "pricing":  "Tariflar",
-                "read":  "Oʻqish",
-                "signin":  "Kirish",
-                "start":  "Boshlash"
-            },
-    "nf":  {
-               "btn_home":  "Bosh sahifaga",
-               "btn_open":  "Al-Fotihani ochish",
-               "code":  "404 · SAHIFA TOPILMADI",
-               "h1":  "Bu eshik ochilmaydi.",
-               "lede":  "«Balki yomon koʻrgan narsangiz siz uchun yaxshidir» — Qurʼon 2:216. Havola eskirgan boʻlishi mumkin."
-           },
-    "pf":  {
-               "actions":  {
-                               "export":  "Eksport",
-                               "signout":  "Chiqish"
-                           },
-               "ago_1w":  "bir hafta oldin",
-               "ago_2d":  "2 kun oldin",
-               "ago_2w":  "2 hafta oldin",
-               "ago_3d":  "3 kun oldin",
-               "bm1":  "Oyatul-Kursi — eng buyuk oyat",
-               "bm2":  "«Allohni zikr qilishda qalblar orom topadi» — tashvish uchun",
-               "bm3":  "«Albatta, har bir qiyinchilik bilan birga yengillik bor»",
-               "bm4":  "«Allohning rahmatidan umidsiz boʻlmang»",
-               "bm5":  "Qadr surasi toʻliq — Qadr kechasi uchun",
-               "bm_all":  "Hammasi 38 →",
-               "bm_eyebrow":  "Soʻnggi xatchoʻplar",
-               "bm_h":  "Nimaga qaytasiz.",
-               "eyebrow":  "Profil",
-               "label_reciter":  "Qori",
-               "label_theme":  "Mavzu",
-               "label_translation":  "Tarjima",
-               "r":  {
-                         "basit":  "Abdulbosit (mujavvad)",
-                         "husary":  "Mahmud al-Husariy",
-                         "sudais":  "Abdurahmon as-Sudays"
-                     },
-               "settings_eyebrow":  "Sozlamalar",
-               "settings_h":  "Qanday oʻqish.",
-               "stat_bookmarks":  "Xatchoʻplar",
-               "stat_bookmarks_d":  "oyat saqlangan · 12 ta eslatma bilan",
-               "stat_streak":  "Streak",
-               "stat_streak_d":  "uzluksiz oʻqish kunlari · 21 — eng yaxshi",
-               "sub_cta":  "Limitni olib tashlash · Premium",
-               "sub_eyebrow":  "Obuna",
-               "sub_meta":  "2 / 5 savol bugun · 00:00 UTC da reset",
-               "sub_plan":  "Free",
-               "t":  {
-                         "abu":  "Abu Adel",
-                         "awqaf":  "Misr Avqof vazirligi",
-                         "kuliev":  "Kuliev",
-                         "pickthall":  "M. M. Pickthall",
-                         "sahih":  "Sahih International"
-                     },
-               "th":  {
-                          "dark":  "Tun (default)",
-                          "light":  "Yorugʻ",
-                          "mushaf":  "Mushaf",
-                          "sepia":  "Sepiya"
-                      }
-           },
-    "pr":  {
-               "badge":  "Bepul — abadiy. Premium — ixtiyoriy.",
-               "cmp":  {
-                           "col1":  "Imkoniyat",
-                           "col2":  "Bepul",
-                           "col3":  "Premium",
-                           "col4":  "Oila",
-                           "h_sub":  "Agar batafsil xohlasangiz.",
-                           "h_title":  "Nima qayerda",
-                           "row":  {
-                                       "114":  "114 sura · 5 tarjima",
-                                       "30q":  "30 qori · oyatga audio",
-                                       "6acc":  "6 ta akkauntgacha",
-                                       "aiq":  "Qurʼon/hadis iqtiboslari bilan savollar",
-                                       "dash":  "Ota-ona dashboard",
-                                       "kids":  "Bolalar rejimi · Iqra · birinchi suralar",
-                                       "lds":  "Light · Dark · Sepia",
-                                       "mushaf":  "Mushaf-paper mavzu",
-                                       "off":  "Oflayn rejim",
-                                       "sleep":  "Sleep-taymer · tezlik 0.5×–2×",
-                                       "tafsir":  "Kengaytirilgan tafsirlar"
-                                   },
-                           "s1":  "Oʻqish va audio",
-                           "s2":  "AI yordamchi",
-                           "s3":  "Mavzular va interfeys",
-                           "s4":  "Oila va bolalar"
-                       },
-               "faq":  {
-                           "a1":  "Ha. Barcha 114 sura, 5 tarjima, 30 qori, xatchoʻp va eslatma — bepul rejada abadiy. Kitob pullik boʻlmasligi kerak. Faqat asboblar pullik: cheksiz AI, kengaytirilgan tafsirlar, oflayn, bolalar rejimi.",
-                           "a2":  "Kripto toʻlovlar bu bozorda koʻp savollar tugʻdiradi. Sakeenly faqat shaffof usullar bilan ishlaydi: Stripe, Apple Pay, Google Pay.",
-                           "a3":  "Har 24 soatda /ask da 5 ta savol mavjud. Limit yarim tunda yangilanadi.",
-                           "a4":  "AI yordamchi fatvo savollariga javob bermaydi. Ulamolarga yoʻnaltiramiz: SeekersGuidance, Yaqeen Institute, AMJA.",
-                           "a5":  "Sovgʻa obunalari uch oy ichida paydo boʻladi. Hozir kerak boʻlsa — yozing.",
-                           "a6":  "hello@sakeenly.com ga yozing — Premium talabalar, imomlar, ehtiyojmandlar uchun bepul.",
-                           "h":  "Tez-tez beriladigan savollar",
-                           "q1":  "Haqiqatan ham butun Qurʼon bepulmi?",
-                           "q2":  "Nima uchun toʻlovlarda kripto yoʻq?",
-                           "q3":  "Bepul rejadagi «kuniga 5 ta AI savol» nimani anglatadi?",
-                           "q4":  "Fatvo savollari haqida nima?",
-                           "q5":  "Obunani sovgʻa qilish mumkinmi?",
-                           "q6":  "Premiumni sotib ololmasam-chi?"
-                       },
-               "h1":  "Oʻqish bepul boʻlishi kerak.",
-               "h2":  "Chuqurlik — ixtiyoriy.",
-               "lede":  "Bepul reja kunlik oʻqish uchun barchasini beradi. Premium cheksiz AI savollar va mavzularni ochadi. Family — bitta oilada olti kishigacha. Reklamasiz. Hech qachon.",
-               "month":  "Oylik",
-               "p1":  {
-                          "cta":  "Allaqachon ulanган",
-                          "f1":  "Barcha 114 sura · 5 tarjima · KFGQPC Hafs",
-                          "f2":  "30 qori · har oyatga audio",
-                          "f3":  "Xatchoʻp va eslatma · cheklovsiz",
-                          "f4":  "AI savollar · kuniga 5 ta",
-                          "f5":  "Light, Dark, Sepia mavzulari",
-                          "f6":  "Mushaf-paper mavzu",
-                          "f7":  "Cheksiz AI savollar",
-                          "hint":  "Kartasiz. Muddatsiz.",
-                          "lbl":  "Kiritilgan",
-                          "name":  "Bepul",
-                          "per":  "/ abadiy",
-                          "sub":  "Kunlik oʻqish uchun kerakli hamma narsa. Qurʼonning oʻziga hech qanday cheklov yoʻq."
-                      },
-               "p2":  {
-                          "cta":  "Premiumga ulanish",
-                          "f1":  "Cheksiz AI savollar · RAG va iqtiboslar bilan",
-                          "f2":  "Barcha mavzu, jumladan Mushaf-paper",
-                          "f3":  "Kengaytirilgan tafsirlar (Ibn Kasir, Qurtubiy)",
-                          "f4":  "Oflayn rejim: 10 sura",
-                          "f5":  "Sleep-taymer, tezlik 0.5×–2×",
-                          "f6":  "Ustuvor qoʻllab-quvvatlash",
-                          "hint":  "Oylik toʻlovda yiliga $59.88",
-                          "lbl":  "Bepuldan hammasi, qoʻshimcha",
-                          "per":  "/ oyiga",
-                          "sub":  "Har kuni oʻqib, Kitobga savol beradiganlar uchun."
-                      },
-               "p3":  {
-                          "cta":  "Oilaga ulanish",
-                          "f1":  "Oilada 6 ta akkauntgacha",
-                          "f2":  "Bolalar rejimi: Iqra, birinchi suralar, paygʻambarlar hikoyalari",
-                          "f3":  "Ota-ona dashboard · bolaning streak",
-                          "f4":  "Umumiy xatchoʻp javoni",
-                          "f5":  "Oflayn rejim: butun Kitob",
-                          "hint":  "Bitta akkaunt — olti kishi",
-                          "lbl":  "Premiumdan hammasi, qoʻshimcha",
-                          "name":  "Oila",
-                          "per":  "/ oyiga",
-                          "sub":  "Olti kishigacha, umumiy xatchoʻp kutubxonasi va bolalar rejimi."
-                      },
-               "popular":  "OMMABOP",
-               "trust1":  {
-                              "p":  "Sakeenly diqqatingizni sotmaydi. Reklama tarmoqlari bilan ishlamaymiz.",
-                              "t":  "0 reklama, hech qachon"
-                          },
-               "trust2":  {
-                              "p":  "At-rest shifrlash. Toʻliq eksport.",
-                              "t":  "Xatchoʻplar shifrlangan"
-                          },
-               "trust3":  {
-                              "p":  "Profilda. Obuna toʻlangan davrning oxirigacha faol qoladi.",
-                              "t":  "Bir tegishda bekor qilish"
-                          },
-               "year":  "Yillik"
-           },
-    "priv":  {
-                 "h1":  "Maxfiylik marosim sifatida.",
-                 "lede":  "Maʼlumotlaringizga amanat sifatida munosabatdamiz."
-             },
-    "rd":  {
-               "about_h":  "Sura haqida",
-               "about_letters":  "Harflar",
-               "about_name":  "Nomi",
-               "about_order":  "Nozil tartibi",
-               "about_rev":  "Vahiy",
-               "about_words":  "Soʻzlar",
-               "bm_empty":  "Oyatga teging → 💾 Xatchoʻp.",
-               "bm_h":  "Bu surada xatchoʻplar",
-               "bm_saved":  "Saqlandi",
-               "hk_bm":  "Xatchoʻp",
-               "hk_h":  "Tezkor tugmalar",
-               "hk_next":  "Keyingi oyat",
-               "hk_play":  "Play / Pause",
-               "hk_prev":  "Oldingi oyat",
-               "lbl_translation":  "Tarjima",
-               "reciter_all":  "Barcha 30 qori →",
-               "reciter_h":  "Qori",
-               "search_ph":  "Sura qidirish...",
-               "side_all":  "Barcha suralar",
-               "side_more":  "+ yana 101 sura",
-               "tt":  {
-                          "label":  "Tarjima"
-                      },
-               "ayat_count":  "oyat",
-               "surah_prefix":  "Sura",
-               "pop_saved":  "Saqlandi",
-               "place_madinah":  "Madaniy",
-               "ayah":  "Oyat",
-               "place_makkah":  "Makkiy",
-               "pop_listen":  "Tinglash",
-               "pop_share":  "Ulashish",
-               "pop_bookmark":  "Xatcho‘p"
-           },
-    "sb":  {
-               "apply_btn":  "Yozish",
-               "apply_eyebrow":  "Qoʻshilishni xohlaysizmi?",
-               "apply_h":  "Imomlar, muallimlar, islomshunoslarga ochiqmiz.",
-               "apply_p":  "Agar islom ilmlarida ijozangiz boʻlsa yoki tadqiqotchi boʻlsangiz — scholars@sakeenly.com.",
-               "badge":  "Sifat nazorati",
-               "board_eyebrow":  "Kengash",
-               "board_h":  "Oʻqishni ishongan olimlar.",
-               "board_p":  "Ismlar va tashkilotlar publik-launchgacha qoʻshiladi. Hozircha har bir toʻplam «Tasdiqlanishi kutilmoqda».",
-               "h1":  "Scholar Board — siz oʻqishingizdan oldin oʻqiganlar.",
-               "lede":  "Foydalanuvchi koʻrgan har bir matn — rad etish xabarlari, oyat toʻplamlari, izohlar, AI promptlar — nashrdan oldin scholar boarddan oʻtadi.",
-               "pending":  "tasdiqlanish jarayonida",
-               "pipe_eyebrow":  "Review qanday ishlaydi",
-               "pipe_h":  "Nashrgacha toʻrt qadam.",
-               "s1":  {
-                          "d":  "Oyatlar toʻplami yoki AI prompt manbalar bilan pull request sifatida tayyorlanadi.",
-                          "n":  "01 · Draft",
-                          "t":  "Mahsulot jamoasi"
-                      },
-               "s2":  {
-                          "d":  "Kamida ikki olim mustaqil oʻqiydi. Har bir izoh chop etiladi.",
-                          "n":  "02 · Tekshirish",
-                          "t":  "Scholar board"
-                      },
-               "s3":  {
-                          "d":  "Jamoa tuzatadi, hadis-korpusga havola qiladi, qayta oʻqishga qaytaradi.",
-                          "n":  "03 · Tahrir",
-                          "t":  "Iteratsiya"
-                      },
-               "s4":  {
-                          "d":  "Tag scholar-vetted: true. Bu badgesiz hech narsa SEOda indekslanmaydi.",
-                          "n":  "04 · Tasdiq",
-                          "t":  "Nashr"
-                      }
-           },
-    "si":  {
-               "aside_cite":  "«Fath» surasi · 48:4",
-               "aside_eyebrow":  "Sakeenly · personal",
-               "aside_h":  "Xatchoʻplar. Streak. Eslatmalar. Hamma joyda.",
-               "aside_q":  "«…va U moʻminlar qalbiga sakinani nozil qildi, imonlari ortishi uchun…»",
-               "btn_apple":  "Apple bilan kirish",
-               "btn_google":  "Google bilan kirish",
-               "btn_magic":  "Havola yuborish",
-               "bull1":  "Barcha qurilmalarda xatchoʻp va eslatmalar",
-               "bull2":  "Vudu orqali kechirimli Streak",
-               "bull3":  "Kuniga 5 ta AI-savol bepul",
-               "bull4":  "Nol kuzatuv. At-rest shifrlash.",
-               "email_placeholder":  "you@example.com",
-               "label_email":  "Email",
-               "main_eyebrow":  "Kirish / yaratish",
-               "main_h":  "Salom va xush kelibsiz.",
-               "main_lede":  "Google yoki magic-link bilan kirish. Parol yoʻq.",
-               "or":  "yoki · magic-link",
-               "terms_html":  "Davom etib, \u003ca href=\"#\"\u003eshartlar\u003c/a\u003e va \u003ca href=\"privacy.html\"\u003emaxfiylik\u003c/a\u003e bilan rozisiz."
-           },
-    "sn":  {
-               "1":  "Ochuvchi",
-               "2":  "Sigir",
-               "3":  "Imron oilasi",
-               "4":  "Ayollar",
-               "5":  "Dasturxon",
-               "6":  "Chorva",
-               "7":  "Aʼrof",
-               "8":  "Oʻljalar",
-               "9":  "Tavba",
-               "10":  "Yunus",
-               "11":  "Hud",
-               "12":  "Yusuf",
-               "13":  "Momoqaldiroq",
-               "14":  "Ibrohim",
-               "15":  "Hijr",
-               "16":  "Asalarilar",
-               "17":  "Tungi safar",
-               "18":  "Gʻor",
-               "19":  "Maryam",
-               "20":  "Toha",
-               "21":  "Paygʻambarlar",
-               "22":  "Haj",
-               "23":  "Moʻminlar",
-               "24":  "Nur",
-               "25":  "Furqon",
-               "26":  "Shoirlar",
-               "27":  "Chumolilar",
-               "28":  "Qissa",
-               "29":  "Oʻrgimchak",
-               "30":  "Rumlar",
-               "31":  "Luqmon",
-               "32":  "Sajda",
-               "33":  "Ittifoqdoshlar",
-               "34":  "Saba",
-               "35":  "Yaratuvchi",
-               "36":  "Yasin",
-               "37":  "Saf tortganlar",
-               "38":  "Sod",
-               "39":  "Toʻdalar",
-               "40":  "Kechiruvchi",
-               "41":  "Tafsillab berilgan",
-               "42":  "Maslahat",
-               "43":  "Bezaklar",
-               "44":  "Tutun",
-               "45":  "Choʻkka tushish",
-               "46":  "Qum tepalari",
-               "47":  "Muhammad",
-               "48":  "Fath",
-               "49":  "Hujralar",
-               "50":  "Qof",
-               "51":  "Sochuvchilar",
-               "52":  "Togʻ",
-               "53":  "Yulduz",
-               "54":  "Oy",
-               "55":  "Rahmon",
-               "56":  "Tushuvchi",
-               "57":  "Temir",
-               "58":  "Bahslashuvchi",
-               "59":  "Hashr",
-               "60":  "Sinaluvchi",
-               "61":  "Saflar",
-               "62":  "Juma",
-               "63":  "Munofiqlar",
-               "64":  "Bir-birini aldash",
-               "65":  "Taloq",
-               "66":  "Taqiqlash",
-               "67":  "Mulk",
-               "68":  "Qalam",
-               "69":  "Muqarrar",
-               "70":  "Marjalar",
-               "71":  "Nuh",
-               "72":  "Jinlar",
-               "73":  "Oʻralgan",
-               "74":  "Burkangan",
-               "75":  "Qiyomat",
-               "76":  "Inson",
-               "77":  "Yuborilganlar",
-               "78":  "Xabar",
-               "79":  "Tortib oluvchilar",
-               "80":  "Qovogʻini soldi",
-               "81":  "Oʻralish",
-               "82":  "Yorilish",
-               "83":  "Tarozudan urguvchilar",
-               "84":  "Ochilish",
-               "85":  "Burjlar",
-               "86":  "Tunda yuruvchi",
-               "87":  "Aʼlo",
-               "88":  "Qoplovchi",
-               "89":  "Tong",
-               "90":  "Shahar",
-               "91":  "Quyosh",
-               "92":  "Tun",
-               "93":  "Tong",
-               "94":  "Ochish",
-               "95":  "Anjir",
-               "96":  "Loy",
-               "97":  "Qadr",
-               "98":  "Aniq dalil",
-               "99":  "Zilzila",
-               "100":  "Choʻrtikkanlar",
-               "101":  "Buyuk falokat",
-               "102":  "Koʻproqlikni xohlash",
-               "103":  "Asr",
-               "104":  "Tuhmatchi",
-               "105":  "Fil",
-               "106":  "Quraysh",
-               "107":  "Yordam",
-               "108":  "Moʻllik",
-               "109":  "Kofirlar",
-               "110":  "Yordam",
-               "111":  "Lif",
-               "112":  "Ixlos",
-               "113":  "Tong",
-               "114":  "Odamlar"
-           },
-    "streak":  {
-                   "label":  "Ketma-ketlik",
-                   "title":  "17 kun Qurʼon bilan"
-               },
-    "trust":  {
-                  "ayat":  "Oyat",
-                  "reciters":  "Qori",
-                  "suras":  "Sura",
-                  "trackers":  "Kuzatuv",
-                  "translations":  "Tarjima"
-              },
-    "votd":  {
-                 "cite":  "Alouddin Mansur tarjimasi · 2:286",
-                 "label":  "Kun oyati · 18 may",
-                 "surah_tag":  "«Baqara» surasi · 2:286",
-                 "translation":  "«Alloh hech bir jonga toqatidan ortigʻini yuklamaydi.»"
-             }
+  "ab": {
+    "badge": "Sakeenly · 2026 dan",
+    "cta_btn1": "Scholar board",
+    "cta_btn2": "Maxfiylik siyosati",
+    "cta_eyebrow": "Yordam berishni xohlaysizmi?",
+    "cta_h": "Scholar board · hamkorlar · fikr",
+    "cta_p": "Agar siz olim, dasturchi yoki xato bildirmoqchi boʻlsangiz — hello@sakeenly.com.",
+    "h1": "Yurakdagi tinchlik — funksiya emas, marosim.",
+    "lede": "Sakina — Allohning moʻminlar qalbiga yuboradigan tinchligi. Zamonaviy ilovalar koʻpincha unga qarshi. Biz aksincha — qalbni yengillashtiruvchi mahsulot quramiz.",
+    "p1": {
+      "d": "Reklama tarmoqlari yoʻq. Javob ichida hamkor havolalari yoʻq.",
+      "n": "01 — Reklama",
+      "t": "Bannerlar yoʻq. Hech qachon."
+    },
+    "p2": {
+      "d": "GA, Meta Pixel, AppsFlyer yoʻq. Faqat funksiya va anonim statistika.",
+      "n": "02 — Kuzatuv",
+      "t": "Nol telemetriya."
+    },
+    "p3": {
+      "d": "AI faqat tasdiqlangan manbalardan javob beradi va huquqiy qaror chiqarmaydi.",
+      "n": "03 — Fatvo",
+      "t": "Bu olim ishi."
+    },
+    "p4": {
+      "d": "Tasvirlar faqat geometriya. Paygʻambarlar ﷺ hikoyalari — matn va audio.",
+      "n": "04 — Adab",
+      "t": "Odamlar va Kaʼba tasvirlari yoʻq."
+    },
+    "p5": {
+      "d": "At-rest shifrlash. Toʻliq eksport. Akkauntni oʻchirish hamma maʼlumotlarni oʻchiradi.",
+      "n": "05 — Shifrlash",
+      "t": "Xatchoʻplar va eslatmalar — sizniki."
+    },
+    "p6": {
+      "d": "Premium va Family bor — chunki sizni reklama beruvchilarga sotmoqchi emasmiz.",
+      "n": "06 — Narx",
+      "t": "Oʻqish doimo bepul."
+    },
+    "principles_eyebrow": "Olti tamoyil",
+    "principles_h": "Oʻzimizga nima vaʼda qilganmiz.",
+    "quote_cite": "«Fath» surasi · 48:4",
+    "quote_tr": "«U — moʻminlar qalbiga sakinani nozil qilgan Zot».",
+    "sources_eyebrow": "Bu nimaga asoslangan",
+    "sources_h": "Manbalar va shriftlar."
+  },
+  "ask": {
+    "a1_html": "Qurʼon sabrni moʻminning asosiy sifatlaridan biri sifatida belgilaydi va sabr qiluvchilarga hisobsiz mukofot vaʼda qiladi <span class=\"citation\">Quran 39:10</span>. Alloh sabr qiluvchilar bilan <span class=\"citation\">Quran 2:153</span>, va har bir qiyinchilikdan keyin yengillik bor <span class=\"citation\">Quran 94:5</span>. Paygʻambarga (ﷺ) «goʻzal sabr» amr qilingan <span class=\"citation\">Quran 70:5</span>.",
+    "aria_send": "Yuborish",
+    "avatar_you": "SIZ",
+    "badge": "RAG · iqtibos · fatvosiz",
+    "h1": "Savol. Manba. Javob.",
+    "label_a": "Sakeenly",
+    "label_q": "Savol",
+    "lede": "Sakeenly javobni Qurʼon, tafsirlar va hadis korpusidan qidiradi. Har bir gap manba bilan. Shaxsiy huquqiy savollar ulamolarga yoʻnaltiriladi.",
+    "placeholder": "Qurʼon haqida soʻrang — masalan, «sabr nima?»",
+    "policy": "100% inline-iqtibos · SeekersGuidance / Yaqeen / AMJA — fatvolar uchun",
+    "q1": "Qurʼon qiyinchilikda sabr haqida nima deydi?",
+    "q2": "Musulmon ayolga bankda ishlash mumkinmi?",
+    "quota": "Free · 2 / 5 savol bugun",
+    "refusal_h": "Bu savol — olim uchun",
+    "refusal_p": "Sakeenly huquqiy qarorlar chiqarmaydi. Shaxsiy fatvo mazhab, vaziyat va niyatni hisobga oladi — bu malakali olim ishi.",
+    "sources": "Manbalar",
+    "src1": "Quran 2:153 — Alloh sabr qiluvchilar bilan",
+    "src2": "Quran 39:10 — Sabr qiluvchilar mukofoti",
+    "src3": "Quran 70:5 — Goʻzal sabr",
+    "src4": "Quran 94:5 — Har qiyinchilikdan keyin yengillik",
+    "sugg1": "Qurʼon shukr haqida nima deydi?",
+    "sugg2": "Yusuf paygʻambar haqida hikoya qil.",
+    "sugg3": "Niyatning ahamiyati qanday?",
+    "sugg4": "«Sabr» nima maʼno beradi va Qurʼonda qayerda?",
+    "upgrade": "Limitni olib tashlash → Premium"
+  },
+  "ay": {
+    "all": "Hammasi",
+    "badge": "30 toʻplam · scholar-vetted jarayonda",
+    "c1": {
+      "d": "«Allohni zikr qilishda qalblar orom topadi». Yurak siqilgan paytlar uchun.",
+      "t": "Tashvish uchun oyatlar"
+    },
+    "c10": {
+      "d": "«Allohning oʻzi bizga yetarli — U eng yaxshi Homiy».",
+      "t": "Qoʻrquvda"
+    },
+    "c11": {
+      "d": "Gʻazabini tutib turuvchilarni Alloh sevadi.",
+      "t": "Gʻazabda"
+    },
+    "c12": {
+      "d": "Moʻminlar qalbi Allohni zikr qilganda titraydi.",
+      "t": "Imonni mustahkamlash uchun"
+    },
+    "c13": {
+      "d": "Ayyubning duosi: «Menga balo yetdi, Sen — Eng mehribon».",
+      "t": "Kasallikda"
+    },
+    "c14": {
+      "d": "«Biz Allohnikimiz va Unga qaytamiz».",
+      "t": "Yaqinlarni yoʻqotganda"
+    },
+    "c15": {
+      "d": "«Yo Rabb, ularga rahm qil, ular meni boʻla parvarish qilganidek».",
+      "t": "Ota-onalar haqida"
+    },
+    "c16": {
+      "d": "Zakariyoning duosi: «Menga yaxshi avlod ber».",
+      "t": "Bolalar haqida"
+    },
+    "c17": {
+      "d": "«Allohdan qoʻrqqanga U yoʻl beradi».",
+      "t": "Moliyaviy qiyinchilikda"
+    },
+    "c18": {
+      "d": "Shubha jim turilganda xavfli boʻladi.",
+      "t": "Shubhalarda"
+    },
+    "c19": {
+      "d": "«Bizga buni boʻysundirgan Zot pokdir».",
+      "t": "Sayohatdan oldin"
+    },
+    "c2": {
+      "d": "Sabr — qalbni shikoyatdan tutib turish. Alloh sabr qiluvchilar bilan.",
+      "t": "Sabr haqida oyatlar"
+    },
+    "c20": {
+      "d": "Alloh yomon amallarni yaxshilarga almashtiradi.",
+      "t": "Gunohni tark etish uchun"
+    },
+    "c21": {
+      "d": "«Allohga tavakkul qilganga U yetarli».",
+      "t": "Tavakkul haqida"
+    },
+    "c22": {
+      "d": "«Meni chaqiringlar — Men sizga javob beraman».",
+      "t": "Allohdan yordam soʻrash"
+    },
+    "c23": {
+      "d": "Shayton vasvasa qilsa — Allohga panoh izla.",
+      "t": "Vasvasada"
+    },
+    "c24": {
+      "d": "«Allohning rahmatidan quvonsinlar».",
+      "t": "Quvonch uchun"
+    },
+    "c25": {
+      "d": "Kahf surasi — ikki juma orasidagi nur.",
+      "t": "Juma oyatlari"
+    },
+    "c26": {
+      "d": "Qurʼon nozil boʻlgan oy.",
+      "t": "Ramazon oyatlari"
+    },
+    "c27": {
+      "d": "«Qadr kechasi ming oydan yaxshiroq».",
+      "t": "Qadr kechasi oyatlari"
+    },
+    "c28": {
+      "d": "U er-xotin oʻrtasiga muhabbat va rahmat qoʻydi.",
+      "t": "Oilada tinchlik uchun"
+    },
+    "c29": {
+      "d": "«Mening rahmatim hamma narsani qamrab oladi».",
+      "t": "Rahmat haqida"
+    },
+    "c3": {
+      "d": "Shukr — rahmatni koʻrish va qalb, til, amal bilan qaytarish.",
+      "t": "Shukr haqida oyatlar"
+    },
+    "c30": {
+      "d": "«Ey nafsi mutmainna — Robbingga rozilik bilan qayt».",
+      "t": "Allohning roziligi uchun"
+    },
+    "c4": {
+      "d": "Hech kim yolgʻiz emas, U boʻyin tomiridan yaqinroqligini bilsa.",
+      "t": "Yolgʻizlikni his qilganingda"
+    },
+    "c5": {
+      "d": "Musoning Firʼavn oldidagi duosi — koʻkragimni och, ishimni yengillashtir.",
+      "t": "Imtihondan oldin"
+    },
+    "c6": {
+      "d": "Oyatul-Kursi va muavvizat — Paygʻambar (ﷺ) uyqudan oldin oʻqigan.",
+      "t": "Uyqudan oldin"
+    },
+    "c7": {
+      "d": "Kunni zikr bilan boshlash uchun.",
+      "t": "Tongdagi oyatlar"
+    },
+    "c8": {
+      "d": "«Allohning rahmatidan umidsiz boʻlmang».",
+      "t": "Tavba haqida"
+    },
+    "c9": {
+      "d": "Qaygʻu cheksiz tuyulganda, Qurʼon eslatadi: u vaqtinchalik.",
+      "t": "Qaygʻuda"
+    },
+    "cat_family": "Oila",
+    "cat_heart": "Yurak holati",
+    "cat_life": "Hayot lahzalari",
+    "cat_time": "Vaqt",
+    "cat_worship": "Ibodat",
+    "h1": "Hayot qiyinlashgan joyda Kitobni och.",
+    "lede": "Iliq koʻrsatkich: tashvish, qaygʻu, uyqudan oldin, imtihondan oldin, shukrda, yolgʻizlikda qaysi oyatlarni oʻqish kerak. Har bir toʻplam — 3-5 oyat tarjima va audio bilan.",
+    "open": "Ochish →",
+    "aya_count": "{count} oyat"
+  },
+  "close": {
+    "cite": "«Fath» surasi · 48:4",
+    "cta1": "Fotihadan boshlash",
+    "cta2": "Tariflarni koʻrish",
+    "eyebrow": "Har kuni · siz bilan",
+    "line1": "«…va sakinani nozil qildi",
+    "line2": "moʻminlar qalbiga.»"
+  },
+  "cont": {
+    "ayah_of": "31-oyat / 286",
+    "btn": "Oʻqishni davom ettirish",
+    "label": "Davom etish",
+    "surah": "Baqara"
+  },
+  "emo": {
+    "all": "Barcha mavzular →",
+    "heading": "Hayot qiyin boʻlganda Kitobni oching."
+  },
+  "feat": {
+    "eyebrow": "Ichida nima bor",
+    "f1_b": "KFGQPC Hafs shrifti. Tarjimalar. Oyatga tegib — tushuntiring, tinglang, saqlang.",
+    "f1_l": "01 — Oʻqish",
+    "f1_l2": "Oʻqish ekrani →",
+    "f1_t": "Mushaf, qogʻozdagiday.",
+    "f2_b": "Abdulbosit, Husariy, Sudays va yana 27 ovoz. Uxlash taymeri, tezlik, joriy oyat yoritilishi.",
+    "f2_l": "02 — Tinglash",
+    "f2_l2": "Hozir tinglang →",
+    "f2_t": "Oʻttiz qori. Bir teginish.",
+    "f3_b": "Sakeenly javobni Qurʼon va tafsirdan qidiradi. Har bir gap manba bilan. Fatvo — ulamolarga.",
+    "f3_l": "03 — Soʻrash",
+    "f3_l2": "Tez kunda →",
+    "f3_t": "Savol. Manba. Javob.",
+    "heading": "Uchta rasm-rusum, bitta ilova.",
+    "lede": "Ortiqcha bezaklarsiz. Bannerlarsiz. Kuzatuvsiz. Faqat matn, ovoz va sukunat."
+  },
+  "foot": {
+    "about": "Biz haqimizda",
+    "ask": "Soʻrash",
+    "ayat": "Mavzu boʻyicha",
+    "bottom_made": "Niyat bilan · sakeenly.com",
+    "company": "Kompaniya",
+    "contact": "Aloqa",
+    "faq": "FAQ",
+    "help": "Yordam",
+    "kids": "Bolalar uchun",
+    "pricing": "Tariflar",
+    "privacy": "Maxfiylik",
+    "product": "Mahsulot",
+    "reader": "Oʻqish",
+    "reciters": "Qorilar",
+    "report": "Xato haqida",
+    "request": "Oyat soʻrash",
+    "scholars": "Ulamolar kengashi",
+    "tagline": "Qurʼon-hamroh siz uchun. Reklamasiz. Kuzatuvsiz.",
+    "terms": "Shartlar"
+  },
+  "hero": {
+    "badge": "Sakeenly · MVP",
+    "cta_read": "Oʻqishni boshlash",
+    "cta_signin": "Kirish",
+    "meta1": "سكينة · sakina · qalb tinchligi",
+    "meta2": "Qurʼon 2:248",
+    "meta3": "0 reklama · 0 kuzatuv",
+    "sub": "Zamonaviy Qurʼon-hamrohingiz. Mushafda oʻqing, qorilarni tinglang, har holatga oyat toping.",
+    "title_e": "sakeena.",
+    "title_h": "Find your",
+    "title_t": "Har kuni."
+  },
+  "ix": {
+    "badge": "Design Preview · 17 sahifa",
+    "grp1_eyebrow": "Asl dizayn (7) · oʻzgarishsiz",
+    "grp1_h": "«Qurʼon» papkasidan",
+    "grp2_eyebrow": "Xuddi shu uslubda qoʻshildi (10)",
+    "grp2_h": "Yetishmaydigan sahifalar",
+    "h1": "Sakeenly · barcha ekranlar bitta sahifada.",
+    "k1": {
+      "d": "VOTD · Streak · 3 marosim · hissiyotlar",
+      "t": "Bosh sahifa"
+    },
+    "k10": {
+      "d": "Missiya · 6 tamoyil · manbalar",
+      "t": "Biz haqimizda"
+    },
+    "k11": {
+      "d": "Pipeline review · olimlar kengashi",
+      "t": "Ulamolar kengashi"
+    },
+    "k12": {
+      "d": "Google / Apple / magic-link · iqtibos",
+      "t": "Kirish"
+    },
+    "k13": {
+      "d": "Streak · xatchoʻp · obuna · sozlamalar",
+      "t": "Profil"
+    },
+    "k14": {
+      "d": "28 harf KFGQPC · 7-ustun",
+      "t": "Kids · Alifbo"
+    },
+    "k15": {
+      "d": "Fotiha + 5 qisqa · progress",
+      "t": "Kids · Birinchi suralar"
+    },
+    "k16": {
+      "d": "25 paygʻambar · odam tasvirisiz",
+      "t": "Kids · Paygʻambarlar hikoyasi"
+    },
+    "k17": {
+      "d": "١٠٤ · 2:216 · qaytish",
+      "t": "404 · Topilmadi"
+    },
+    "k2": {
+      "d": "Mushaf 3-ustun · KFGQPC · sticky-pleyer",
+      "t": "Oʻqish"
+    },
+    "k3": {
+      "d": "Qorilar · filtr · Now playing · sleep-taymer",
+      "t": "Tinglash"
+    },
+    "k4": {
+      "d": "Iqra · sura progressi · hikoyalar",
+      "t": "Bolalar"
+    },
+    "k5": {
+      "d": "Free / Premium / Family · taqqoslash · FAQ",
+      "t": "Tariflar"
+    },
+    "k6": {
+      "d": "Nimani yigʻamiz",
+      "t": "Maxfiylik"
+    },
+    "k7": {
+      "d": "SEO landing namunasi",
+      "t": "Tashvish uchun oyatlar"
+    },
+    "k8": {
+      "d": "Chat · refusal · iqtiboslar · sources",
+      "t": "Ask · AI Q&A"
+    },
+    "k9": {
+      "d": "Filtr + grid-kartochkalar",
+      "t": "Ayat · 30 toʻplam indeksi"
+    },
+    "lede": "Chapda — «Qurʼon» papkasidan 7 dizayn-sahifa. Oʻngda — 10 ta xuddi shu uslubdagi sahifa.",
+    "more": "Ochish →"
+  },
+  "ka": {
+    "badge": "Iqra · 4-10 yosh",
+    "h1": "Yigirma sakkiz harf.",
+    "l1": "Alif",
+    "l10": "Ro",
+    "l11": "Zoy",
+    "l12": "Sin",
+    "l13": "Shin",
+    "l14": "Sod",
+    "l15": "Dod",
+    "l16": "To (emf)",
+    "l17": "Zo (emf)",
+    "l18": "Ayn",
+    "l19": "Gʻayn",
+    "l2": "Bo",
+    "l20": "Fo",
+    "l21": "Qof",
+    "l22": "Kof",
+    "l23": "Lom",
+    "l24": "Mim",
+    "l25": "Nun",
+    "l26": "Ho (yumshoq)",
+    "l27": "Vov",
+    "l28": "Yo",
+    "l3": "To",
+    "l4": "So",
+    "l5": "Jim",
+    "l6": "Ho",
+    "l7": "Xo",
+    "l8": "Dol",
+    "l9": "Zol",
+    "lede": "Katta KFGQPC shrifti shakl va nuqtalarni koʻrish uchun. Harfga teging — eshitasiz va chizishingiz mumkin.",
+    "tip": "aliftan boshlang. Bolaning audio orqasidan ovoz chiqarib takrorlashini taʼminlang.",
+    "tip_lab": "Ota-onaga maslahat:"
+  },
+  "kid": {
+    "badge": "Bolalar uchun · 4–10 yosh",
+    "cta1": "Harflarni oʻrganish",
+    "cta2": "Suralarni yodlash",
+    "cta3": "Hikoyalarni tinglash",
+    "h1": "Iqra. Kitob. Hikoyalar.",
+    "lede": "Bolalar uchun Sakeenly: alifbo, qisqa suralar va paygʻambarlar ﷺ hikoyalari.",
+    "sec1_h": "Iqra — barcha 28 harf.",
+    "sec1_p": "Harfga teging — eshiting, koʻring, barmoq bilan chizing.",
+    "sec1_pill": "12 / 28",
+    "progress": "Yutuqlar",
+    "sec2_h": "Birinchi suralar — yurakka.",
+    "sec2_p": "Qisqa, sevimli, muhim. Ular bilan uxlash va uygʻonish osonroq.",
+    "sec2_pill": "4 SURA",
+    "sec2_listen": "Tinglash",
+    "sec2_learn": "Oʻrganish",
+    "sec3_h": "Paygʻambarlar hikoyalari.",
+    "sec3_p": "Sodda aytilgan. Kitob manba sifatida. Toʻqimasiz.",
+    "sec3_pill": "25 HIKOYA",
+    "sec3_minutes": "{n} DAQ OʻQISH",
+    "sec3_listen": "Tinglash →",
+    "sec3_story_n": "HIKOYA №{n}",
+    "streak_alphabet": "Alifbo",
+    "streak_progress": "{done} ta {total} harfdan oʻrganildi",
+    "streak_days_lbl": "Ketma-ketlik",
+    "streak_days_title": "{n} kun Kitob bilan",
+    "parent_eyebrow": "Ota-onalarga",
+    "parent_h": "Oilaviy reja — 6 ta hisobgacha, ota-onalar uchun boshqaruv paneli va umumiy xatchoʻp javoni.",
+    "parent_p": "Siz farzandning qaysi harflarni oʻrganganini, qaysi suralarni yodlaganini koʻrasiz.",
+    "parent_btn": "Oilaviy reja"
+  },
+  "ks": {
+    "badge": "Yodlash · ota-ona dashboard",
+    "h1": "Hifz boshlanadigan birinchi suralar.",
+    "lede": "Al-Fotiha va Kitob oxiridagi toʻrt qisqa sura — odatda birinchi yodlanadi.",
+    "s1": {
+      "label": "5 / 7 oyat · 71%",
+      "meta": "OCHUVCHI · 7 oyat",
+      "note": "Har bir namoz rakʼatida oʻqiladi. Yetti takrorlanuvchi oyat."
+    },
+    "s2": {
+      "label": "3 / 6 oyat · 50%",
+      "meta": "ODAMLAR · 6 oyat",
+      "note": "Odamlar Robbiga panoh izlaymiz — shaytonlar vasvasasidan."
+    },
+    "s3": {
+      "label": "2 / 5 oyat · 40%",
+      "meta": "TONG · 5 oyat",
+      "note": "Tong Robbiga panoh izlaymiz — U yaratgan narsaning yomonligidan."
+    },
+    "s4": {
+      "label": "4 / 4 oyat · 100% ✓",
+      "meta": "IXLOS · 4 oyat",
+      "note": "Maʼno boʻyicha Qurʼonning uchdan biri — toʻrt oyatda tavhid."
+    },
+    "s5": {
+      "label": "3 / 3 oyat · 100% ✓",
+      "meta": "MOʻLLIK · 3 oyat",
+      "note": "Qurʼonning eng qisqa surasi — uchta qisqa oyat."
+    },
+    "s6": {
+      "label": "0 / 6 oyat · hali boshlanmagan",
+      "meta": "KOFIRLAR · 6 oyat",
+      "note": "«Sizniki — sizning diningiz, meniki — mening dinim»."
+    }
+  },
+  "kst": {
+    "adab": "Odamlar va Kaʼba tasvirlari yoʻq · adabga rioya",
+    "badge": "25 paygʻambar · matn + audio",
+    "cta": "Tinglash →",
+    "h1": "Paygʻambarlar hikoyalari, alayhimussalom.",
+    "lede": "Har bir hikoya — ota-onaga qisqa matn va 5-8 daqiqa tinch audio.",
+    "more": "+ yana 16 paygʻambar · Hud · Solih · Lut · Shuayb · Idris · Zakariyo · Yahyo va boshqalar.",
+    "p1": {
+      "meta": "7 DAQ · BIRINCHI INSON",
+      "name": "Paygʻambar Odam ﷺ"
+    },
+    "p2": {
+      "meta": "8 DAQ · KEMA",
+      "name": "Paygʻambar Nuh ﷺ"
+    },
+    "p3": {
+      "meta": "9 DAQ · XALILULLOH",
+      "name": "Paygʻambar Ibrohim ﷺ"
+    },
+    "p4": {
+      "meta": "12 DAQ · YULDUZLAR TUSHI",
+      "name": "Paygʻambar Yusuf ﷺ"
+    },
+    "p5": {
+      "meta": "14 DAQ · DENGIZNI BOʻLISH",
+      "name": "Paygʻambar Muso ﷺ"
+    },
+    "p6": {
+      "meta": "7 DAQ · SABR",
+      "name": "Paygʻambar Ayyub ﷺ"
+    },
+    "p7": {
+      "meta": "8 DAQ · KIT",
+      "name": "Paygʻambar Yunus ﷺ"
+    },
+    "p8": {
+      "meta": "11 DAQ · SHAMOL SALTANATI",
+      "name": "Paygʻambar Sulaymon ﷺ"
+    },
+    "p9": {
+      "meta": "10 DAQ · ALLOHNING BIR SOʻZI",
+      "name": "Paygʻambar Iso ﷺ"
+    }
+  },
+  "ls": {
+    "all": "Hammasi",
+    "all_114": "Hammasi 114 →",
+    "badge": "30 qori · Quran.com CDN",
+    "heading_1": "Ovozlar, ular",
+    "heading_2": "Kitobni yetkazdi.",
+    "lede": "Qorini, oyatlar oraligʻini va tezlikni tanlang. Quran.com CDN dan joriy oyat yoritilishi bilan oqim.",
+    "popular_eyebrow": "Tez-tez tinglashadi",
+    "popular_h": "Qaytib oʻqiladigan suralar",
+    "search": "Qori qidirish..."
+  },
+  "nav": {
+    "ask": "Soʻrash",
+    "ayat": "Oyatlar",
+    "kids": "Bolalar",
+    "listen": "Tinglash",
+    "pricing": "Tariflar",
+    "read": "Oʻqish",
+    "signin": "Kirish",
+    "start": "Boshlash",
+    "profile": "Profil",
+    "signout": "Chiqish"
+  },
+  "nf": {
+    "btn_home": "Bosh sahifaga",
+    "btn_open": "Al-Fotihani ochish",
+    "code": "404 · SAHIFA TOPILMADI",
+    "h1": "Bu eshik ochilmaydi.",
+    "lede": "«Balki yomon koʻrgan narsangiz siz uchun yaxshidir» — Qurʼon 2:216. Havola eskirgan boʻlishi mumkin."
+  },
+  "pf": {
+    "actions": {
+      "export": "Eksport",
+      "signout": "Chiqish"
+    },
+    "ago_1w": "bir hafta oldin",
+    "ago_2d": "2 kun oldin",
+    "ago_2w": "2 hafta oldin",
+    "ago_3d": "3 kun oldin",
+    "bm1": "Oyatul-Kursi — eng buyuk oyat",
+    "bm2": "«Allohni zikr qilishda qalblar orom topadi» — tashvish uchun",
+    "bm3": "«Albatta, har bir qiyinchilik bilan birga yengillik bor»",
+    "bm4": "«Allohning rahmatidan umidsiz boʻlmang»",
+    "bm5": "Qadr surasi toʻliq — Qadr kechasi uchun",
+    "bm_all": "Hammasi 38 →",
+    "bm_eyebrow": "Soʻnggi xatchoʻplar",
+    "bm_h": "Nimaga qaytasiz.",
+    "eyebrow": "Profil",
+    "label_reciter": "Qori",
+    "label_theme": "Mavzu",
+    "label_translation": "Tarjima",
+    "r": {
+      "basit": "Abdulbosit (mujavvad)",
+      "husary": "Mahmud al-Husariy",
+      "sudais": "Abdurahmon as-Sudays"
+    },
+    "settings_eyebrow": "Sozlamalar",
+    "settings_h": "Qanday oʻqish.",
+    "stat_bookmarks": "Xatchoʻplar",
+    "stat_bookmarks_d": "oyat saqlangan · 12 ta eslatma bilan",
+    "stat_streak": "Streak",
+    "stat_streak_d": "uzluksiz oʻqish kunlari · 21 — eng yaxshi",
+    "sub_cta": "Limitni olib tashlash · Premium",
+    "sub_eyebrow": "Obuna",
+    "sub_meta": "2 / 5 savol bugun · 00:00 UTC da reset",
+    "sub_plan": "Free",
+    "t": {
+      "abu": "Abu Adel",
+      "awqaf": "Misr Avqof vazirligi",
+      "kuliev": "Kuliev",
+      "pickthall": "M. M. Pickthall",
+      "sahih": "Sahih International"
+    },
+    "th": {
+      "dark": "Tun (default)",
+      "light": "Yorugʻ",
+      "mushaf": "Mushaf",
+      "sepia": "Sepiya"
+    }
+  },
+  "pr": {
+    "badge": "Bepul — abadiy. Premium — ixtiyoriy.",
+    "cmp": {
+      "col1": "Imkoniyat",
+      "col2": "Bepul",
+      "col3": "Premium",
+      "col4": "Oila",
+      "h_sub": "Agar batafsil xohlasangiz.",
+      "h_title": "Nima qayerda",
+      "row": {
+        "114": "114 sura · 5 tarjima",
+        "30q": "30 qori · oyatga audio",
+        "6acc": "6 ta akkauntgacha",
+        "aiq": "Qurʼon/hadis iqtiboslari bilan savollar",
+        "dash": "Ota-ona dashboard",
+        "kids": "Bolalar rejimi · Iqra · birinchi suralar",
+        "lds": "Light · Dark · Sepia",
+        "mushaf": "Mushaf-paper mavzu",
+        "off": "Oflayn rejim",
+        "sleep": "Sleep-taymer · tezlik 0.5×–2×",
+        "tafsir": "Kengaytirilgan tafsirlar"
+      },
+      "s1": "Oʻqish va audio",
+      "s2": "AI yordamchi",
+      "s3": "Mavzular va interfeys",
+      "s4": "Oila va bolalar"
+    },
+    "faq": {
+      "a1": "Ha. Barcha 114 sura, 5 tarjima, 30 qori, xatchoʻp va eslatma — bepul rejada abadiy. Kitob pullik boʻlmasligi kerak. Faqat asboblar pullik: cheksiz AI, kengaytirilgan tafsirlar, oflayn, bolalar rejimi.",
+      "a2": "Kripto toʻlovlar bu bozorda koʻp savollar tugʻdiradi. Sakeenly faqat shaffof usullar bilan ishlaydi: Stripe, Apple Pay, Google Pay.",
+      "a3": "Har 24 soatda /ask da 5 ta savol mavjud. Limit yarim tunda yangilanadi.",
+      "a4": "AI yordamchi fatvo savollariga javob bermaydi. Ulamolarga yoʻnaltiramiz: SeekersGuidance, Yaqeen Institute, AMJA.",
+      "a5": "Sovgʻa obunalari uch oy ichida paydo boʻladi. Hozir kerak boʻlsa — yozing.",
+      "a6": "hello@sakeenly.com ga yozing — Premium talabalar, imomlar, ehtiyojmandlar uchun bepul.",
+      "h": "Tez-tez beriladigan savollar",
+      "q1": "Haqiqatan ham butun Qurʼon bepulmi?",
+      "q2": "Nima uchun toʻlovlarda kripto yoʻq?",
+      "q3": "Bepul rejadagi «kuniga 5 ta AI savol» nimani anglatadi?",
+      "q4": "Fatvo savollari haqida nima?",
+      "q5": "Obunani sovgʻa qilish mumkinmi?",
+      "q6": "Premiumni sotib ololmasam-chi?"
+    },
+    "h1": "Oʻqish bepul boʻlishi kerak.",
+    "h2": "Chuqurlik — ixtiyoriy.",
+    "lede": "Bepul reja kunlik oʻqish uchun barchasini beradi. Premium cheksiz AI savollar va mavzularni ochadi. Family — bitta oilada olti kishigacha. Reklamasiz. Hech qachon.",
+    "month": "Oylik",
+    "p1": {
+      "cta": "Allaqachon ulanган",
+      "f1": "Barcha 114 sura · 5 tarjima · KFGQPC Hafs",
+      "f2": "30 qori · har oyatga audio",
+      "f3": "Xatchoʻp va eslatma · cheklovsiz",
+      "f4": "AI savollar · kuniga 5 ta",
+      "f5": "Light, Dark, Sepia mavzulari",
+      "f6": "Mushaf-paper mavzu",
+      "f7": "Cheksiz AI savollar",
+      "hint": "Kartasiz. Muddatsiz.",
+      "lbl": "Kiritilgan",
+      "name": "Bepul",
+      "per": "/ abadiy",
+      "sub": "Kunlik oʻqish uchun kerakli hamma narsa. Qurʼonning oʻziga hech qanday cheklov yoʻq."
+    },
+    "p2": {
+      "cta": "Premiumga ulanish",
+      "f1": "Cheksiz AI savollar · RAG va iqtiboslar bilan",
+      "f2": "Barcha mavzu, jumladan Mushaf-paper",
+      "f3": "Kengaytirilgan tafsirlar (Ibn Kasir, Qurtubiy)",
+      "f4": "Oflayn rejim: 10 sura",
+      "f5": "Sleep-taymer, tezlik 0.5×–2×",
+      "f6": "Ustuvor qoʻllab-quvvatlash",
+      "hint": "Oylik toʻlovda yiliga $59.88",
+      "lbl": "Bepuldan hammasi, qoʻshimcha",
+      "per": "/ oyiga",
+      "sub": "Har kuni oʻqib, Kitobga savol beradiganlar uchun."
+    },
+    "p3": {
+      "cta": "Oilaga ulanish",
+      "f1": "Oilada 6 ta akkauntgacha",
+      "f2": "Bolalar rejimi: Iqra, birinchi suralar, paygʻambarlar hikoyalari",
+      "f3": "Ota-ona dashboard · bolaning streak",
+      "f4": "Umumiy xatchoʻp javoni",
+      "f5": "Oflayn rejim: butun Kitob",
+      "hint": "Bitta akkaunt — olti kishi",
+      "lbl": "Premiumdan hammasi, qoʻshimcha",
+      "name": "Oila",
+      "per": "/ oyiga",
+      "sub": "Olti kishigacha, umumiy xatchoʻp kutubxonasi va bolalar rejimi."
+    },
+    "popular": "OMMABOP",
+    "trust1": {
+      "p": "Sakeenly diqqatingizni sotmaydi. Reklama tarmoqlari bilan ishlamaymiz.",
+      "t": "0 reklama, hech qachon"
+    },
+    "trust2": {
+      "p": "At-rest shifrlash. Toʻliq eksport.",
+      "t": "Xatchoʻplar shifrlangan"
+    },
+    "trust3": {
+      "p": "Profilda. Obuna toʻlangan davrning oxirigacha faol qoladi.",
+      "t": "Bir tegishda bekor qilish"
+    },
+    "year": "Yillik"
+  },
+  "priv": {
+    "h1": "Maxfiylik marosim sifatida.",
+    "lede": "Maʼlumotlaringizga amanat sifatida munosabatdamiz."
+  },
+  "rd": {
+    "about_h": "Sura haqida",
+    "about_letters": "Harflar",
+    "about_name": "Nomi",
+    "about_order": "Nozil tartibi",
+    "about_rev": "Vahiy",
+    "about_words": "Soʻzlar",
+    "bm_empty": "Oyatga teging → 💾 Xatchoʻp.",
+    "bm_h": "Bu surada xatchoʻplar",
+    "bm_saved": "Saqlandi",
+    "hk_bm": "Xatchoʻp",
+    "hk_h": "Tezkor tugmalar",
+    "hk_next": "Keyingi oyat",
+    "hk_play": "Play / Pause",
+    "hk_prev": "Oldingi oyat",
+    "lbl_translation": "Tarjima",
+    "reciter_all": "Barcha 30 qori →",
+    "reciter_h": "Qori",
+    "search_ph": "Sura qidirish...",
+    "side_all": "Barcha suralar",
+    "side_more": "+ yana 101 sura",
+    "tt": {
+      "label": "Tarjima"
+    },
+    "ayat_count": "oyat",
+    "surah_prefix": "Sura",
+    "pop_saved": "Saqlandi",
+    "place_madinah": "Madaniy",
+    "ayah": "Oyat",
+    "place_makkah": "Makkiy",
+    "pop_listen": "Tinglash",
+    "pop_share": "Ulashish",
+    "pop_bookmark": "Xatcho‘p"
+  },
+  "sb": {
+    "apply_btn": "Yozish",
+    "apply_eyebrow": "Qoʻshilishni xohlaysizmi?",
+    "apply_h": "Imomlar, muallimlar, islomshunoslarga ochiqmiz.",
+    "apply_p": "Agar islom ilmlarida ijozangiz boʻlsa yoki tadqiqotchi boʻlsangiz — scholars@sakeenly.com.",
+    "badge": "Sifat nazorati",
+    "board_eyebrow": "Kengash",
+    "board_h": "Oʻqishni ishongan olimlar.",
+    "board_p": "Ismlar va tashkilotlar publik-launchgacha qoʻshiladi. Hozircha har bir toʻplam «Tasdiqlanishi kutilmoqda».",
+    "h1": "Scholar Board — siz oʻqishingizdan oldin oʻqiganlar.",
+    "lede": "Foydalanuvchi koʻrgan har bir matn — rad etish xabarlari, oyat toʻplamlari, izohlar, AI promptlar — nashrdan oldin scholar boarddan oʻtadi.",
+    "pending": "tasdiqlanish jarayonida",
+    "pipe_eyebrow": "Review qanday ishlaydi",
+    "pipe_h": "Nashrgacha toʻrt qadam.",
+    "s1": {
+      "d": "Oyatlar toʻplami yoki AI prompt manbalar bilan pull request sifatida tayyorlanadi.",
+      "n": "01 · Draft",
+      "t": "Mahsulot jamoasi"
+    },
+    "s2": {
+      "d": "Kamida ikki olim mustaqil oʻqiydi. Har bir izoh chop etiladi.",
+      "n": "02 · Tekshirish",
+      "t": "Scholar board"
+    },
+    "s3": {
+      "d": "Jamoa tuzatadi, hadis-korpusga havola qiladi, qayta oʻqishga qaytaradi.",
+      "n": "03 · Tahrir",
+      "t": "Iteratsiya"
+    },
+    "s4": {
+      "d": "Tag scholar-vetted: true. Bu badgesiz hech narsa SEOda indekslanmaydi.",
+      "n": "04 · Tasdiq",
+      "t": "Nashr"
+    }
+  },
+  "si": {
+    "aside_cite": "«Fath» surasi · 48:4",
+    "aside_eyebrow": "Sakeenly · personal",
+    "aside_h": "Xatchoʻplar. Streak. Eslatmalar. Hamma joyda.",
+    "aside_q": "«…va U moʻminlar qalbiga sakinani nozil qildi, imonlari ortishi uchun…»",
+    "btn_apple": "Apple bilan kirish",
+    "btn_google": "Google bilan kirish",
+    "btn_magic": "Havola yuborish",
+    "bull1": "Barcha qurilmalarda xatchoʻp va eslatmalar",
+    "bull2": "Vudu orqali kechirimli Streak",
+    "bull3": "Kuniga 5 ta AI-savol bepul",
+    "bull4": "Nol kuzatuv. At-rest shifrlash.",
+    "email_placeholder": "you@example.com",
+    "label_email": "Email",
+    "main_eyebrow": "Kirish / yaratish",
+    "main_h": "Salom va xush kelibsiz.",
+    "main_lede": "Google yoki magic-link bilan kirish. Parol yoʻq.",
+    "or": "yoki · magic-link",
+    "terms_html": "Davom etib, <a href=\"#\">shartlar</a> va <a href=\"privacy.html\">maxfiylik</a> bilan rozisiz."
+  },
+  "sn": {
+    "1": "Ochuvchi",
+    "2": "Sigir",
+    "3": "Imron oilasi",
+    "4": "Ayollar",
+    "5": "Dasturxon",
+    "6": "Chorva",
+    "7": "Aʼrof",
+    "8": "Oʻljalar",
+    "9": "Tavba",
+    "10": "Yunus",
+    "11": "Hud",
+    "12": "Yusuf",
+    "13": "Momoqaldiroq",
+    "14": "Ibrohim",
+    "15": "Hijr",
+    "16": "Asalarilar",
+    "17": "Tungi safar",
+    "18": "Gʻor",
+    "19": "Maryam",
+    "20": "Toha",
+    "21": "Paygʻambarlar",
+    "22": "Haj",
+    "23": "Moʻminlar",
+    "24": "Nur",
+    "25": "Furqon",
+    "26": "Shoirlar",
+    "27": "Chumolilar",
+    "28": "Qissa",
+    "29": "Oʻrgimchak",
+    "30": "Rumlar",
+    "31": "Luqmon",
+    "32": "Sajda",
+    "33": "Ittifoqdoshlar",
+    "34": "Saba",
+    "35": "Yaratuvchi",
+    "36": "Yasin",
+    "37": "Saf tortganlar",
+    "38": "Sod",
+    "39": "Toʻdalar",
+    "40": "Kechiruvchi",
+    "41": "Tafsillab berilgan",
+    "42": "Maslahat",
+    "43": "Bezaklar",
+    "44": "Tutun",
+    "45": "Choʻkka tushish",
+    "46": "Qum tepalari",
+    "47": "Muhammad",
+    "48": "Fath",
+    "49": "Hujralar",
+    "50": "Qof",
+    "51": "Sochuvchilar",
+    "52": "Togʻ",
+    "53": "Yulduz",
+    "54": "Oy",
+    "55": "Rahmon",
+    "56": "Tushuvchi",
+    "57": "Temir",
+    "58": "Bahslashuvchi",
+    "59": "Hashr",
+    "60": "Sinaluvchi",
+    "61": "Saflar",
+    "62": "Juma",
+    "63": "Munofiqlar",
+    "64": "Bir-birini aldash",
+    "65": "Taloq",
+    "66": "Taqiqlash",
+    "67": "Mulk",
+    "68": "Qalam",
+    "69": "Muqarrar",
+    "70": "Marjalar",
+    "71": "Nuh",
+    "72": "Jinlar",
+    "73": "Oʻralgan",
+    "74": "Burkangan",
+    "75": "Qiyomat",
+    "76": "Inson",
+    "77": "Yuborilganlar",
+    "78": "Xabar",
+    "79": "Tortib oluvchilar",
+    "80": "Qovogʻini soldi",
+    "81": "Oʻralish",
+    "82": "Yorilish",
+    "83": "Tarozudan urguvchilar",
+    "84": "Ochilish",
+    "85": "Burjlar",
+    "86": "Tunda yuruvchi",
+    "87": "Aʼlo",
+    "88": "Qoplovchi",
+    "89": "Tong",
+    "90": "Shahar",
+    "91": "Quyosh",
+    "92": "Tun",
+    "93": "Tong",
+    "94": "Ochish",
+    "95": "Anjir",
+    "96": "Loy",
+    "97": "Qadr",
+    "98": "Aniq dalil",
+    "99": "Zilzila",
+    "100": "Choʻrtikkanlar",
+    "101": "Buyuk falokat",
+    "102": "Koʻproqlikni xohlash",
+    "103": "Asr",
+    "104": "Tuhmatchi",
+    "105": "Fil",
+    "106": "Quraysh",
+    "107": "Yordam",
+    "108": "Moʻllik",
+    "109": "Kofirlar",
+    "110": "Yordam",
+    "111": "Lif",
+    "112": "Ixlos",
+    "113": "Tong",
+    "114": "Odamlar"
+  },
+  "streak": {
+    "label": "Ketma-ketlik",
+    "title": "17 kun Qurʼon bilan"
+  },
+  "trust": {
+    "ayat": "Oyat",
+    "reciters": "Qori",
+    "suras": "Sura",
+    "trackers": "Kuzatuv",
+    "translations": "Tarjima"
+  },
+  "votd": {
+    "cite": "Alouddin Mansur tarjimasi · 2:286",
+    "label": "Kun oyati · 18 may",
+    "surah_tag": "«Baqara» surasi · 2:286",
+    "translation": "«Alloh hech bir jonga toqatidan ortigʻini yuklamaydi.»"
+  },
+  "aem": {
+    "crumbs_root": "Sakeenly",
+    "crumbs_ayat": "Mavzu boʻyicha oyatlar",
+    "meta_min_reading": "{n} daq oʻqish",
+    "meta_reviewed": "Ulamolar tomonidan tasdiqlangan",
+    "meta_needs_review": "Tasdiq kutilmoqda",
+    "meta_audio": "Har oyat audiosi",
+    "toc_h": "Bu toʻplamda",
+    "toc_intro": "Toʻplam haqida",
+    "toc_scholar": "Ulamodan",
+    "toc_related": "Oʻxshash mavzular",
+    "body_intro": "Toʻplam asrlar davomida ulamolar va imomlar tayangan oyatlardan tuzilgan — qoʻrquv, tashvish va umidsizlik daqiqalarida.",
+    "scholar_name": "Shayx Abdulloh al-Gʻorib",
+    "scholar_role": "ULAMOLAR KENGASHI · SAKEENLY",
+    "scholar_quote": "«Tashvish iymonning zaifligi emas. Paygʻambar ﷺ kunda Allohdan tashvish va gʻamdan panoh soʻrar edi.»",
+    "disclaimer_lbl": "Eslatma.",
+    "disclaimer_body": "Agar uzoq davom etgan tashvish yoki oʻzingizga zarar yetkazish fikrlari boʻlsa — shifokorga murojaat qiling. Sakeenly tibni almashtirmaydi.",
+    "related_h": "Oʻxshash toʻplamlar",
+    "cta_eyebrow": "Sakeenly · Qurʼon hamrohi",
+    "cta_h": "Ushbu oyatlarni kutubxonangizda saqlang.",
+    "cta_body": "Bir teginish — va xatchoʻplaringiz barcha qurilmalaringizda sinxronlanadi.",
+    "cta_btn_primary": "Sakeenly’da ochish",
+    "cta_btn_ghost": "Ichida nima bor",
+    "all_emotions_h": "Boshqa toʻplamlar",
+    "ayah_n": "Oyat #{n}",
+    "action_listen": "Tinglash",
+    "action_bookmark": "Xatchoʻp",
+    "action_open": "Oʻqigichda ochish →",
+    "translation_by": "Sodiq tarjimasi"
+  },
+  "emo30": {
+    "dlya-trevogi": "Tashvishdan oyatlar",
+    "dlya-sabra": "Sabr haqida oyatlar",
+    "dlya-blagodarnosti": "Allohga shukr",
+    "pered-ekzamenom": "Imtihondan oldin",
+    "dlya-odinochestva": "Yolgʻizlikda",
+    "pri-poteryah": "Yoʻqotishda",
+    "dlya-pokayaniya": "Kechirim va tavba",
+    "pered-snom": "Uxlashdan oldin",
+    "pri-bolezni": "Kasallikda",
+    "dlya-uverennosti": "Ishonch uchun",
+    "pri-trudnostyah": "Qiyinchilikda",
+    "dlya-roditeley": "Ota-onalarga",
+    "dlya-detey": "Bolalar uchun oyatlar",
+    "pri-strahe": "Qoʻrquvda",
+    "dlya-blagosostoyaniya": "Hojatda",
+    "pri-dolgah": "Qarzda",
+    "dlya-puteshestviya": "Safar uchun",
+    "pri-konflikte": "Nizoda",
+    "dlya-pamyati": "Yodlash uchun",
+    "dlya-namaza": "Namoz uchun oyatlar",
+    "dlya-utra": "Ertalabki oyatlar",
+    "dlya-vechera": "Kechki oyatlar",
+    "dlya-zhenitby": "Nikohdan oldin",
+    "dlya-detorozhdeniya": "Tugʻilishda",
+    "dlya-roditeley-prosheniya": "Ota-onalarni kechirish",
+    "dlya-hadzha": "Hajda",
+    "dlya-poста": "Ramazonda",
+    "pri-grehe": "Gunohdan keyin",
+    "dlya-blizosti-allaha": "Allohga yaqinlik",
+    "dlya-doverija": "Allohga tavakkul"
+  }
 }
