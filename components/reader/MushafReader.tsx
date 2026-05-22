@@ -118,6 +118,19 @@ function MushafReaderInner(props: MushafReaderProps) {
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   }, [initialAyah]);
 
+  // Pin the active surah to the top of the sidebar list whenever the surah
+  // changes — otherwise the list keeps its previous scroll offset and the
+  // user has to hunt for where they landed.
+  useEffect(() => {
+    const list = document.querySelector<HTMLDivElement>(".surah-list");
+    if (!list) return;
+    const active = list.querySelector<HTMLAnchorElement>(".surah-item.active");
+    if (!active) return;
+    // offsetTop is relative to the nearest positioned ancestor — surah-list
+    // is the scroll container, so this lands the active item at the top.
+    list.scrollTo({ top: active.offsetTop - 8, behavior: "smooth" });
+  }, [surah.number]);
+
   // Close popover on outside click.
   useEffect(() => {
     function onDown(e: MouseEvent) {
