@@ -322,13 +322,13 @@ function MushafReaderInner(props: MushafReaderProps) {
               className={"trans-toggle" + (showTranslations ? " on" : "")}
               onClick={() => setShowTranslations((v) => !v)}
               aria-pressed={showTranslations}
-              title={showTranslations ? "Скрыть перевод" : "Показать перевод"}
+              title={showTranslations ? t("trans_title_hide") : t("trans_title_show")}
             >
               <span className="trans-toggle-track">
                 <span className="trans-toggle-thumb" />
               </span>
               <span className="trans-toggle-label">
-                {showTranslations ? "Перевод включён" : "Только арабский"}
+                {showTranslations ? t("trans_on") : t("trans_off")}
               </span>
             </button>
             {showTranslations && (

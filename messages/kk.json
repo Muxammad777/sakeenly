@@ -785,7 +785,11 @@
     "pop_share": "Бөлісу",
     "pop_bookmark": "Бетбелгі",
     "side_all_surahs": "Барлық сүрелер",
-    "surah_meta_ayat": "{n} аят"
+    "surah_meta_ayat": "{n} аят",
+    "trans_on": "Аударма қосулы",
+    "trans_off": "Тек арабша",
+    "trans_title_hide": "Аударманы жасыру",
+    "trans_title_show": "Аударманы көрсету"
   },
   "sb": {
     "apply_btn": "Жазу",

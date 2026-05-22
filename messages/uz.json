@@ -785,7 +785,11 @@
     "pop_share": "Ulashish",
     "pop_bookmark": "Xatcho‘p",
     "side_all_surahs": "Barcha suralar",
-    "surah_meta_ayat": "{n} oyat"
+    "surah_meta_ayat": "{n} oyat",
+    "trans_on": "Tarjima yoqilgan",
+    "trans_off": "Faqat arabcha",
+    "trans_title_hide": "Tarjimani yashirish",
+    "trans_title_show": "Tarjimani koʻrsatish"
   },
   "sb": {
     "apply_btn": "Yozish",

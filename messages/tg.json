@@ -785,7 +785,11 @@
     "pop_share": "Мубодила",
     "pop_bookmark": "Хатчӯб",
     "side_all_surahs": "Ҳамаи сураҳо",
-    "surah_meta_ayat": "{n} оят"
+    "surah_meta_ayat": "{n} оят",
+    "trans_on": "Тарҷума фаъол",
+    "trans_off": "Танҳо арабӣ",
+    "trans_title_hide": "Тарҷумаро пинҳон кардан",
+    "trans_title_show": "Тарҷумаро намоиш додан"
   },
   "sb": {
     "apply_btn": "Нависед",

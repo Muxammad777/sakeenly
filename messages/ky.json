@@ -785,7 +785,11 @@
     "pop_share": "Бөлүшүү",
     "pop_bookmark": "Бетбелги",
     "side_all_surahs": "Бардык сүрөлөр",
-    "surah_meta_ayat": "{n} аят"
+    "surah_meta_ayat": "{n} аят",
+    "trans_on": "Котормо күйгөн",
+    "trans_off": "Бир гана арабча",
+    "trans_title_hide": "Котормону жашыруу",
+    "trans_title_show": "Котормону көрсөтүү"
   },
   "sb": {
     "apply_btn": "Жазуу",

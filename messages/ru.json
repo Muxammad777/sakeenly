@@ -785,7 +785,11 @@
     "pop_share": "Поделиться",
     "pop_bookmark": "Закладка",
     "side_all_surahs": "Все суры",
-    "surah_meta_ayat": "{n} аятов"
+    "surah_meta_ayat": "{n} аятов",
+    "trans_on": "Перевод включён",
+    "trans_off": "Только арабский",
+    "trans_title_hide": "Скрыть перевод",
+    "trans_title_show": "Показать перевод"
   },
   "sb": {
     "apply_btn": "Написать",
