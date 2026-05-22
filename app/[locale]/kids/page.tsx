@@ -216,11 +216,6 @@ function Content() {
             <Link key={l.ar} href="/kids/alphabet" className={`iqra-letter ${l.done ? "done" : ""}`}>
               <span className="ar arabic" dir="rtl">{l.ar}</span>
               <span className="name">{l.name}</span>
-              {l.done && (
-                <svg className="check" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
-              )}
             </Link>
           ))}
         </div>

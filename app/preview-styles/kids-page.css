@@ -319,7 +319,7 @@
   }
   @media (max-width: 800px) { .iqra-grid { grid-template-columns: repeat(4, 1fr); } }
   @media (max-width: 480px) { .iqra-grid { grid-template-columns: repeat(3, 1fr); } }
-  .letter {
+  .iqra-letter {
     aspect-ratio: 1;
     background: oklch(var(--surface));
     border: 1px solid oklch(var(--border));
@@ -330,7 +330,7 @@
     position: relative;
     overflow: hidden;
   }
-  .letter::before {
+  .iqra-letter::before {
     content: ""; position: absolute; inset: 0;
     background-color: oklch(var(--accent));
     opacity: 0.05;
@@ -339,35 +339,35 @@
     -webkit-mask-size: 60px 60px; mask-size: 60px 60px;
     pointer-events: none;
   }
-  .letter:hover {
+  .iqra-letter:hover {
     border-color: oklch(var(--accent));
     transform: translateY(-3px);
     background: oklch(var(--surface-2));
   }
-  .letter.done {
+  .iqra-letter.done {
     background: var(--accent-soft);
     border-color: color-mix(in oklab, oklch(var(--accent)) 50%, oklch(var(--border)));
   }
-  .letter.done::after {
+  .iqra-letter.done::after {
     content: "✓";
     position: absolute; top: 8px; right: 10px;
     color: oklch(var(--accent));
     font-size: 14px;
     font-weight: 700;
   }
-  .letter .ar {
+  .iqra-letter .ar {
     font-family: 'Scheherazade New', serif;
     font-size: clamp(2.4rem, 4vw, 3.4rem);
     line-height: 1;
     color: oklch(var(--text));
   }
-  .letter .name {
+  .iqra-letter .name {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px; letter-spacing: 0.06em;
     color: oklch(var(--text-3));
     text-transform: uppercase;
   }
-  .letter.done .name { color: oklch(var(--accent)); }
+  .iqra-letter.done .name { color: oklch(var(--accent)); }
   .iqra-progress {
     margin-top: 18px;
     display: flex; align-items: center; gap: 12px;
@@ -380,7 +380,7 @@
   .iqra-progress .bar > div { height: 100%; background: oklch(var(--accent)); transition: width 240ms; border-radius: 999px; }
 
   /* === ALPHABET POPUP === */
-  .letter-pop {
+  .iqra-letter-pop {
     position: fixed; inset: 0;
     background: color-mix(in oklab, oklch(var(--bg)) 80%, transparent);
     backdrop-filter: blur(8px);
@@ -390,8 +390,8 @@
     align-items: center; justify-content: center;
     padding: 28px;
   }
-  .letter-pop.open { display: flex; }
-  .letter-pop-card {
+  .iqra-letter-pop.open { display: flex; }
+  .iqra-letter-pop-card {
     background: oklch(var(--surface));
     border: 1px solid oklch(var(--border-strong));
     border-radius: 28px;
@@ -402,29 +402,29 @@
     text-align: center;
     position: relative;
   }
-  .letter-pop-close {
+  .iqra-letter-pop-close {
     position: absolute; top: 16px; right: 16px;
     width: 36px; height: 36px; border-radius: 999px;
     background: oklch(var(--surface-2));
     color: oklch(var(--text-2));
     display: grid; place-items: center;
   }
-  .letter-pop-ar {
+  .iqra-letter-pop-ar {
     font-family: 'Scheherazade New', serif;
     font-size: 9rem; line-height: 1;
     color: oklch(var(--text));
   }
-  .letter-pop-name {
+  .iqra-letter-pop-name {
     margin-top: 14px;
     font-family: 'Spectral', serif;
     font-size: 1.5rem;
   }
-  .letter-pop-translit {
+  .iqra-letter-pop-translit {
     margin-top: 6px;
     font-family: 'JetBrains Mono', monospace;
     color: oklch(var(--text-3)); font-size: 12px; letter-spacing: 0.08em;
   }
-  .letter-pop-controls {
+  .iqra-letter-pop-controls {
     margin-top: 28px;
     display: flex; gap: 8px; justify-content: center;
   }
