@@ -4,9 +4,26 @@ import { notFound } from "next/navigation";
 import { Link } from "@/i18n/navigation";
 import { findEmotion, emotionSlugs, EMOTIONS } from "@/lib/data/emotions";
 import { quranApi } from "@/lib/api/quran";
-import { findTranslation } from "@/lib/quran/constants";
+import { findTranslation, DEFAULT_TRANSLATION_BY_LOCALE, TRANSLATIONS } from "@/lib/quran/constants";
 import { VerseAudio } from "@/components/ayat/VerseAudio";
 import type { Locale } from "@/i18n/routing";
+import ayatiMap        from "@/lib/quran/tanzil/ayati.json";
+import sodikMap        from "@/lib/quran/tanzil/sodik.json";
+import altayMap        from "@/lib/quran/tanzil/altay.json";
+import mokhtasarKyMap  from "@/lib/quran/tanzil/mokhtasar-ky.json";
+import krachkovskyMap  from "@/lib/quran/tanzil/krachkovsky.json";
+import osmanovMap      from "@/lib/quran/tanzil/osmanov.json";
+import porokhovaMap    from "@/lib/quran/tanzil/porokhova.json";
+
+const TANZIL_MAPS: Record<string, Record<string, string>> = {
+  ayati:          ayatiMap        as Record<string, string>,
+  sodik:          sodikMap        as Record<string, string>,
+  altay:          altayMap        as Record<string, string>,
+  "mokhtasar-ky": mokhtasarKyMap  as Record<string, string>,
+  krachkovsky:    krachkovskyMap  as Record<string, string>,
+  osmanov:        osmanovMap      as Record<string, string>,
+  porokhova:      porokhovaMap    as Record<string, string>,
+};
 
 interface PageProps {
   params: Promise<{ locale: Locale; emotion: string }>;
@@ -65,25 +82,36 @@ export default async function EmotionPage({ params }: PageProps) {
   let title = bundle.ruTitle;
   try { title = tEmo(bundle.slug); } catch { /* fallback to ruTitle */ }
 
-  const translation = findTranslation("kuliev");
+  // Pick a translation based on the URL locale (instead of always Kuliev).
+  // For Quran.com-backed translations we fetch via the API; for tanzil-corpus
+  // ones (Ayati/Sodik/Altay/Mokhtasar-ky/Krachkovsky/Osmanov/Porokhova) we
+  // overlay the locally bundled JSON over the Arabic verse from quran.com.
+  const localeTranslationKey = DEFAULT_TRANSLATION_BY_LOCALE[locale] ?? "kuliev";
+  const localeMeta = TRANSLATIONS.find((tr) => tr.key === localeTranslationKey)!;
+  const tanzilOverlay = TANZIL_MAPS[localeTranslationKey];
+  // For the API call we still need a Quran.com-backed translation to fetch
+  // arabic + audio for each verse. Use the locale's translation when it's
+  // quran.com-sourced; otherwise fall back to Kuliev (we'll discard its text
+  // and use the tanzil overlay below).
+  const apiTranslation = localeMeta.source === "quran.com" ? localeMeta : findTranslation("kuliev");
 
-  // Fetch every verse in the bundle in parallel via verse_key.
   const enriched = await Promise.all(
     bundle.verses.map(async (pick) => {
       try {
         const verse = await quranApi.verseByKey(pick.key.split("-")[0], {
-          translations: [translation],
+          translations: [apiTranslation],
           reciter: { id: 1, slug: "abdulbaset-mujawwad", name: "Abdul-Basit Abdul-Samad", style: "Mujawwad" },
           language: "en",
         });
         const [surahStr, ayahStr] = verse.verse_key.split(":");
-        const tr = verse.translations.find((t) => t.resource_id === translation.id);
+        const overlayText = tanzilOverlay?.[verse.verse_key];
+        const apiText = verse.translations.find((t) => t.resource_id === apiTranslation.id)?.text;
         return {
           verseKey: verse.verse_key,
           surah: Number(surahStr),
           ayah: Number(ayahStr),
           arabic: verse.text_uthmani,
-          translationHtml: tr?.text ?? "",
+          translationHtml: overlayText || apiText || "",
           audioUrl: verse.audio?.url ? toAbsoluteAudioUrl(verse.audio.url) : undefined,
           emphasis: pick.emphasis,
         };
@@ -166,7 +194,7 @@ export default async function EmotionPage({ params }: PageProps) {
                   <p
                     className="ayah-translation"
                     dangerouslySetInnerHTML={{
-                      __html: v.translationHtml + ` <span class="by">${t("translation_by")}</span>`,
+                      __html: v.translationHtml + ` <span class="by">${localeMeta.author}</span>`,
                     }}
                   />
                   <div className="ayah-actions">
