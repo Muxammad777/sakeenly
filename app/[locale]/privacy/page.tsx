@@ -167,73 +167,56 @@ function Content() {
 
       {/* Глава 3 — шифрование */}
       <section className="wrap section">
-        <span className="eyebrow">Глава 3 · шифрование</span>
-        <h2 style={{ marginTop: 10 }}>Как заметка попадает в базу.</h2>
-        <p style={{ color: "oklch(var(--text-2))", maxWidth: "56ch", marginTop: 8 }}>
-          Цепочка из четырёх шагов, на каждом из которых данные не читаемы посторонним сервисом.
-        </p>
+        <span className="eyebrow">{t("ch3_eyebrow")}</span>
+        <h2 style={{ marginTop: 10 }}>{t("ch3_h")}</h2>
+        <p style={{ color: "oklch(var(--text-2))", maxWidth: "56ch", marginTop: 8 }}>{t("ch3_p")}</p>
 
         <div className="encryption">
           <div className="enc-flow">
             <div className="enc-step">
-              <span className="lbl">01 · Браузер</span>
-              <span className="title">Ты пишешь заметку</span>
-              <span className="meta">Текст существует только в твоём браузере. Никуда не отправлен.</span>
+              <span className="lbl">{t("ch3_s1_lbl")}</span>
+              <span className="title">{t("ch3_s1_t")}</span>
+              <span className="meta">{t("ch3_s1_m")}</span>
             </div>
             <div className="enc-arrow">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </div>
             <div className="enc-step">
-              <span className="lbl">02 · TLS</span>
-              <span className="title">Передача по HTTPS</span>
-              <span className="meta">TLS 1.3 (Vercel Edge). Между тобой и сервером — никто не читает.</span>
+              <span className="lbl">{t("ch3_s2_lbl")}</span>
+              <span className="title">{t("ch3_s2_t")}</span>
+              <span className="meta">{t("ch3_s2_m")}</span>
             </div>
             <div className="enc-arrow">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </div>
             <div className="enc-step">
-              <span className="lbl">03 · Сервер</span>
-              <span className="title">AES-256 шифрование</span>
-              <span className="meta">Текст заметки шифруется ключом из envelope-encryption. Ключ хранится в Vercel KV, не в Supabase.</span>
+              <span className="lbl">{t("ch3_s3_lbl")}</span>
+              <span className="title">{t("ch3_s3_t")}</span>
+              <span className="meta">{t("ch3_s3_m")}</span>
             </div>
           </div>
         </div>
 
         <div className="data-stats">
-          <div className="stat">
-            <div className="v">AES-256-GCM</div>
-            <div className="l">Алгоритм</div>
-            <div className="sub">Стандарт NIST. Без поломанных режимов.</div>
-          </div>
-          <div className="stat">
-            <div className="v">90 дн</div>
-            <div className="l">Ротация ключей</div>
-            <div className="sub">Каждые 90 дней основной ключ перевыпускается. Старые сохраняются для дешифровки.</div>
-          </div>
-          <div className="stat">
-            <div className="v">2-сервиса</div>
-            <div className="l">Разделение</div>
-            <div className="sub">Данные — в Supabase. Ключи — в Vercel KV. Один сервис не видит другого.</div>
-          </div>
-          <div className="stat">
-            <div className="v">30 дн</div>
-            <div className="l">Удаление</div>
-            <div className="sub">При удалении аккаунта данные стираются за 30 дней. Бэкапы — за 90.</div>
-          </div>
+          {(["1", "2", "3", "4"] as const).map((i) => (
+            <div className="stat" key={i}>
+              <div className="v">{t(`ch3_stat${i}_v`)}</div>
+              <div className="l">{t(`ch3_stat${i}_l`)}</div>
+              <div className="sub">{t(`ch3_stat${i}_s`)}</div>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* Глава 4 — запросы от властей */}
       <section className="wrap section">
-        <span className="eyebrow">Глава 4 · запросы от властей</span>
-        <h2 style={{ marginTop: 10 }}>Сколько раз нас просили выдать данные.</h2>
-        <p style={{ color: "oklch(var(--text-2))", maxWidth: "56ch", marginTop: 8 }}>
-          Этот лог обновляется ежеквартально. Мы публикуем абсолютно каждый запрос, в рамках разрешённого законом.
-        </p>
+        <span className="eyebrow">{t("ch4_eyebrow")}</span>
+        <h2 style={{ marginTop: 10 }}>{t("ch4_h")}</h2>
+        <p style={{ color: "oklch(var(--text-2))", maxWidth: "56ch", marginTop: 8 }}>{t("ch4_p")}</p>
 
         <div className="gov-log">
           <div className="gov-row">
-            <span>Период</span><span>Источник запроса</span><span>Запросов</span><span>Выдано</span>
+            <span>{t("ch4_th_period")}</span><span>{t("ch4_th_source")}</span><span>{t("ch4_th_requests")}</span><span>{t("ch4_th_granted")}</span>
           </div>
           {(["Q1 2026", "Q4 2025", "Q3 2025", "Q2 2025"] as const).map((period) => (
             <div className="gov-row" key={period}>
@@ -243,44 +226,39 @@ function Content() {
         </div>
 
         <p style={{ marginTop: 16, color: "oklch(var(--text-3))", fontSize: 13, lineHeight: 1.55, maxWidth: "64ch" }}>
-          Sakeenly зарегистрирована в ЕС. Российский 152-ФЗ не применим напрямую, но мы соблюдаем GDPR. Подробнее — в полном тексте политики.
+          {t("ch4_footer")}
         </p>
       </section>
 
       {/* Глава 5 — твои права */}
       <section className="wrap section">
-        <span className="eyebrow">Глава 5 · твои права</span>
-        <h2 style={{ marginTop: 10 }}>Что ты можешь сделать со своими данными.</h2>
+        <span className="eyebrow">{t("ch5_eyebrow")}</span>
+        <h2 style={{ marginTop: 10 }}>{t("ch5_h")}</h2>
 
         <div className="collect-grid" style={{ marginTop: 28 }}>
           <div className="collect-card">
-            <h3>Экспорт всего</h3>
-            <p style={{ color: "oklch(var(--text-2))", fontSize: 14, lineHeight: 1.6 }}>
-              JSON-файл со всеми твоими закладками, заметками, streak и историей вопросов. Один клик в профиле.
-            </p>
+            <h3>{t("ch5_export_h")}</h3>
+            <p style={{ color: "oklch(var(--text-2))", fontSize: 14, lineHeight: 1.6 }}>{t("ch5_export_p")}</p>
             <a className="btn btn-soft btn-sm" style={{ alignSelf: "flex-start", marginTop: "auto" }}>
-              Скачать архив
+              {t("ch5_export_btn")}
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
             </a>
           </div>
           <div className="collect-card">
-            <h3>Удаление аккаунта</h3>
-            <p style={{ color: "oklch(var(--text-2))", fontSize: 14, lineHeight: 1.6 }}>
-              Полное стирание данных за 30 дней. Без вопросов, без удержания, без писем-возвратов.
-            </p>
+            <h3>{t("ch5_delete_h")}</h3>
+            <p style={{ color: "oklch(var(--text-2))", fontSize: 14, lineHeight: 1.6 }}>{t("ch5_delete_p")}</p>
             <a className="btn btn-soft btn-sm" style={{ alignSelf: "flex-start", marginTop: "auto" }}>
-              Удалить аккаунт
+              {t("ch5_delete_btn")}
             </a>
           </div>
           <div className="collect-card">
-            <h3>Запрос на конкретное</h3>
+            <h3>{t("ch5_request_h")}</h3>
             <p style={{ color: "oklch(var(--text-2))", fontSize: 14, lineHeight: 1.6 }}>
-              Хочешь узнать всё, что мы знаем о конкретном email? Напиши на{" "}
-              <a href="mailto:privacy@sakeenly.com" className="mono" style={{ color: "oklch(var(--accent))" }}>privacy@sakeenly.com</a>{" "}
-              — ответим в течение 7 дней.
+              {t("ch5_request_p")}{" "}
+              <a href="mailto:privacy@sakeenly.com" className="mono" style={{ color: "oklch(var(--accent))" }}>privacy@sakeenly.com</a>
             </p>
             <a className="btn btn-soft btn-sm" href="mailto:privacy@sakeenly.com" style={{ alignSelf: "flex-start", marginTop: "auto" }}>
-              Написать
+              {t("ch5_request_btn")}
             </a>
           </div>
         </div>

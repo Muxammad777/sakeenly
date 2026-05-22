@@ -38,18 +38,16 @@ const IQRA_LETTERS = [
 ];
 
 const KID_SURAHS = [
-  { num: 1,   ar: "الفاتحة", ru: "Аль-Фатиха", ayat: 7, meta: "ОТКРЫВАЮЩАЯ · 0:18", progress: 85 },
-  { num: 112, ar: "الإخلاص",  ru: "Аль-Ихляс",  ayat: 4, meta: "ЕДИНСТВО · 0:11",    progress: 55 },
-  { num: 113, ar: "الفلق",    ru: "Аль-Фаляк",  ayat: 5, meta: "РАССВЕТ · 0:14",     progress: 30 },
-  { num: 114, ar: "الناس",   ru: "Ан-Нас",     ayat: 6, meta: "ЛЮДИ · 0:15",        progress: 12 },
+  { num: 1,   ar: "الفاتحة", ayat: 7, progress: 85, tKey: "surah1" },
+  { num: 112, ar: "الإخلاص",  ayat: 4, progress: 55, tKey: "surah112" },
+  { num: 113, ar: "الفلق",    ayat: 5, progress: 30, tKey: "surah113" },
+  { num: 114, ar: "الناس",   ayat: 6, progress: 12, tKey: "surah114" },
 ];
 
 const PROPHET_STORIES = [
   {
     n: "01",
-    name: "Нух ﷺ и ковчег",
-    ar: "نوح عليه السلام",
-    summary: "Когда люди забыли Аллаха, Нух 950 лет звал их к Книге. Аллах велел построить большой корабль и взять с собой каждого зверя по паре.",
+    tKey: "prophet1",
     mins: 4,
     svg: (
       <>
@@ -63,9 +61,7 @@ const PROPHET_STORIES = [
   },
   {
     n: "02",
-    name: "Юнус ﷺ и кит",
-    ar: "يونس عليه السلام",
-    summary: "В темноте моря, в темноте ночи, в темноте кита Юнус сказал: «Нет божества, кроме Тебя. Я обидел себя». И Аллах ответил.",
+    tKey: "prophet2",
     mins: 3,
     svg: (
       <>
@@ -78,9 +74,7 @@ const PROPHET_STORIES = [
   },
   {
     n: "03",
-    name: "Ибрахим ﷺ и звёзды",
-    ar: "إبراهيم عليه السلام",
-    summary: "Маленький Ибрахим смотрел на звёзды и думал: «Это мой Господь?» — но звёзды погасли. Он искал того, кто не уходит.",
+    tKey: "prophet3",
     mins: 5,
     svg: (
       <>
@@ -92,9 +86,7 @@ const PROPHET_STORIES = [
   },
   {
     n: "04",
-    name: "Мухаммад ﷺ в пещере",
-    ar: "محمد ﷺ",
-    summary: "Враги стояли у входа в пещеру. Абу Бакр заплакал. Пророк ﷺ сказал: «Не печалься, Аллах с нами». И всё было хорошо.",
+    tKey: "prophet4",
     mins: 4,
     svg: (
       <>
@@ -106,9 +98,7 @@ const PROPHET_STORIES = [
   },
   {
     n: "05",
-    name: "Муса ﷺ и море",
-    ar: "موسى عليه السلام",
-    summary: "Враг догонял. Море впереди. Народ кричал: «Нас поймают!» Муса сказал: «Нет. С нами Аллах, Он укажет путь». И море раскрылось.",
+    tKey: "prophet5",
     mins: 5,
     svg: (
       <>
@@ -120,9 +110,7 @@ const PROPHET_STORIES = [
   },
   {
     n: "06",
-    name: "Марьям и пальма",
-    ar: "مريم عليها السلام",
-    summary: "Когда было больно и страшно, Аллах сказал Марьям: «Потряси пальму — упадут свежие финики». И всё стало нежно.",
+    tKey: "prophet6",
     mins: 3,
     svg: (
       <>
@@ -242,9 +230,9 @@ function Content() {
           {KID_SURAHS.map((s) => (
             <Link key={s.num} className="surah-card" href={`/reader/${s.num}/1`}>
               <span className="num">№{s.num} · {s.ayat}</span>
-              <span className="ru">{s.ru}</span>
+              <span className="ru">{t(`${s.tKey}_ru`)}</span>
               <div className="ar arabic" dir="rtl">{s.ar}</div>
-              <div className="meta">{s.meta}</div>
+              <div className="meta">{t(`${s.tKey}_meta`)}</div>
               <div className="memo-progress" style={{ marginTop: 6 }}>
                 <div style={{ width: `${s.progress}%` }} />
               </div>
@@ -284,9 +272,9 @@ function Content() {
               </div>
               <div className="prophet-body">
                 <span className="num">{t("sec3_story_n", { n: p.n })}</span>
-                <span className="name">{p.name}</span>
-                <span className="ar arabic" dir="rtl">{p.ar}</span>
-                <p className="summary">{p.summary}</p>
+                <span className="name">{t(`${p.tKey}_name`)}</span>
+                <span className="ar arabic" dir="rtl">{t(`${p.tKey}_ar`)}</span>
+                <p className="summary">{t(`${p.tKey}_summary`)}</p>
                 <div className="prophet-meta">
                   <span>{t("sec3_minutes", { n: p.mins })}</span>
                   <span>{t("sec3_listen")}</span>
