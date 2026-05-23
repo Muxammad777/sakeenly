@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { setRequestLocale, getTranslations } from "next-intl/server";
+import { AlphabetGrid } from "@/components/kids/AlphabetGrid";
 import type { Locale } from "@/i18n/routing";
 
 interface PageProps { params: Promise<{ locale: Locale }>; }
 
-const LETTERS: { glyph: string; tr: string }[] = [
+const LETTERS = [
   { glyph: "ا", tr: "a" }, { glyph: "ب", tr: "b" }, { glyph: "ت", tr: "t" }, { glyph: "ث", tr: "ṯ" },
   { glyph: "ج", tr: "j" }, { glyph: "ح", tr: "ḥ" }, { glyph: "خ", tr: "ḫ" }, { glyph: "د", tr: "d" },
   { glyph: "ذ", tr: "ḏ" }, { glyph: "ر", tr: "r" }, { glyph: "ز", tr: "z" }, { glyph: "س", tr: "s" },
@@ -44,15 +45,7 @@ function Content() {
           <div><strong>{t("tip_lab")}</strong> <span>{t("tip")}</span></div>
         </div>
 
-        <div className="iqra-grid">
-          {LETTERS.map((l, i) => (
-            <div key={i} className="letter">
-              <div className="letter-glyph">{l.glyph}</div>
-              <div className="letter-name">{t(`l${i + 1}` as `l1`)}</div>
-              <div className="letter-tr">{l.tr}</div>
-            </div>
-          ))}
-        </div>
+        <AlphabetGrid letters={LETTERS} />
       </section>
     </>
   );

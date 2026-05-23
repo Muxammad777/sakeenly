@@ -21,19 +21,37 @@
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     gap: 6px;
     cursor: pointer;
-    transition: border-color 200ms, transform 200ms, background 200ms;
+    transition: border-color 200ms, transform 200ms, background 200ms, box-shadow 200ms;
+    /* button reset — .letter is rendered as <button> for a11y */
+    font: inherit;
+    color: inherit;
+    text-align: center;
+    width: 100%;
   }
-  .letter:hover {
+  .letter:disabled { cursor: default; opacity: 0.7; }
+  .letter:hover:not(:disabled) {
     border-color: oklch(var(--accent));
     transform: translateY(-3px);
     background: linear-gradient(180deg, var(--accent-soft) 0, transparent 80%), oklch(var(--surface));
+  }
+  /* While SpeechSynthesis is speaking this letter — accent ring + pulse */
+  .letter.playing {
+    border-color: oklch(var(--accent));
+    background: linear-gradient(180deg, var(--accent-soft) 0, transparent 80%), oklch(var(--surface));
+    box-shadow: 0 0 0 3px oklch(var(--accent) / 0.25);
+    animation: letterPulse 900ms ease-in-out infinite;
+  }
+  .letter.playing .letter-glyph { color: oklch(var(--accent)); }
+  @keyframes letterPulse {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.035); }
   }
   .letter-glyph {
     font-family: 'Scheherazade New', serif;
     font-size: 2.6rem; line-height: 1;
     color: oklch(var(--text));
   }
-  .letter:hover .letter-glyph { color: oklch(var(--accent)); }
+  .letter:hover:not(:disabled) .letter-glyph { color: oklch(var(--accent)); }
   .letter-name { font-family: 'Spectral', serif; font-size: 0.95rem; color: oklch(var(--text-2)); }
   .letter-tr { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: oklch(var(--text-3)); letter-spacing: 0.1em; }
 

@@ -387,9 +387,10 @@
     "l7": "Xo",
     "l8": "Dol",
     "l9": "Zol",
-    "lede": "Katta KFGQPC shrifti shakl va nuqtalarni koʻrish uchun. Harfga teging — eshitasiz va chizishingiz mumkin.",
+    "lede": "Katta KFGQPC shrifti shakl va nuqtalarni koʻrish uchun. Harfga teging — uning nomini eshitasiz.",
     "tip": "aliftan boshlang. Bolaning audio orqasidan ovoz chiqarib takrorlashini taʼminlang.",
-    "tip_lab": "Ota-onaga maslahat:"
+    "tip_lab": "Ota-onaga maslahat:",
+    "voice_missing": "Qurilmangizda arab ovozi yoʻq — tovush hozircha eshittirilmaydi. iPhone, Android va Mac da arab ovozi odatda mavjud."
   },
   "kid": {
     "badge": "Bolalar uchun · 4–10 yosh",
