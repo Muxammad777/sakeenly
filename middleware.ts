@@ -9,6 +9,6 @@ export const config = {
   //   - static assets (fonts, favicon, sitemap, robots)
   //   - /admin/* — back-office is intentionally NOT localized
   matcher: [
-    "/((?!api|_next|_vercel|admin|fonts|favicon\\.ico|sitemap\\.xml|robots\\.txt).*)",
+    "/((?!api|_next|_vercel|admin|fonts|audio|favicon\\.ico|sitemap\\.xml|robots\\.txt).*)",
   ],
 };
