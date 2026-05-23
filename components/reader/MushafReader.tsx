@@ -300,6 +300,7 @@ function MushafReaderInner(props: MushafReaderProps) {
         {/* ============ MAIN ============ */}
         <main className="reader-main">
           <div className="surah-header">
+            <div className="geo-stars-fade" aria-hidden />
             <div
               className="mihrab-top"
               dangerouslySetInnerHTML={{

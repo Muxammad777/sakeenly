@@ -62,6 +62,9 @@
     text-align: center;
     padding: 40px 0 36px;
     position: relative;
+    /* overflow: hidden contains the .geo-stars-fade overlay inside the
+       header — without it the radial mask bleeds into the trans-bar. */
+    overflow: hidden;
   }
   .surah-header::after {
     content: "";
