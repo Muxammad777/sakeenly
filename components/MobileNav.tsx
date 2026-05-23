@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Menu, X } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
@@ -20,7 +21,11 @@ const NAV = [
 export function MobileNav() {
   const t = useTranslations("nav");
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
+
+  // Portal target is only available after first client render.
+  useEffect(() => { setMounted(true); }, []);
 
   // Close on route change.
   useEffect(() => {
@@ -59,13 +64,15 @@ export function MobileNav() {
         {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
       </button>
 
-      {open && (
+      {open && mounted && createPortal(
         <div
           className="sk-mobile-only fixed inset-0 z-[60] flex flex-col"
           style={{
-            background: "color-mix(in oklab, var(--bg) 96%, transparent)",
-            backdropFilter: "blur(20px) saturate(140%)",
-            WebkitBackdropFilter: "blur(20px) saturate(140%)",
+            // Project design tokens are bare OKLCH triplets ("0.17 0.025 255"),
+            // not CSS colors — they must be wrapped in oklch(). Without the
+            // wrap the value is invalid, browser drops it, overlay paints
+            // transparent and the page underneath bleeds through.
+            background: "oklch(var(--bg))",
             animation: "sakeenlyMobileNavIn 200ms ease-out",
           }}
         >
@@ -90,7 +97,7 @@ export function MobileNav() {
                   href={item.href}
                   className="rounded-2xl px-4 py-3 text-base font-medium transition-colors"
                   style={{
-                    color: active ? "var(--accent)" : "var(--text)",
+                    color: active ? "oklch(var(--accent))" : "oklch(var(--text))",
                     background: active ? "var(--accent-soft)" : "transparent",
                     fontFamily: "'Spectral', serif",
                     letterSpacing: "-0.01em",
@@ -109,12 +116,13 @@ export function MobileNav() {
             </div>
             <div
               className="text-xs uppercase tracking-[0.18em]"
-              style={{ color: "var(--text-3)", fontFamily: "'JetBrains Mono', monospace" }}
+              style={{ color: "oklch(var(--text-3))", fontFamily: "'JetBrains Mono', monospace" }}
             >
               SAKEENLY · سكينة · 2026
             </div>
           </div>
-        </div>
+        </div>,
+        document.body,
       )}
     </>
   );
