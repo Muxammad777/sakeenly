@@ -27,6 +27,7 @@ export function PricingClient() {
     <>
       {/* HERO */}
       <section className="wrap pricing-hero">
+        <div className="geo-stars-fade" aria-hidden />
         <span className="tag">
           <span className="tag-dot" />
           <span>{t("badge")}</span>

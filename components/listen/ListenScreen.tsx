@@ -95,6 +95,7 @@ function ListenScreenInner({ chapters }: ListenScreenProps) {
     <>
       {/* HERO */}
       <section className="wrap listen-hero">
+        <div className="geo-stars-fade" aria-hidden />
         <span className="tag"><span className="tag-dot"></span><span>{t("badge")}</span></span>
         <h1>
           <span>{t("heading_1")}</span><br /><span>{t("heading_2")}</span>

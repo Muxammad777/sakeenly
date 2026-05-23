@@ -11,7 +11,9 @@
     background: var(--glow);
     pointer-events: none;
   }
-  .pricing-hero > * { position: relative; }
+  /* Lift hero content above the ::before glow — but exclude
+     .geo-stars-fade, which must stay absolutely positioned overlay. */
+  .pricing-hero > *:not(.geo-stars-fade) { position: relative; }
   /* Bump selector to beat shared.css `section.wrap h1 { margin: 0 }` */
   section .pricing-hero h1 { font-weight: 300; max-width: 18ch; margin: 14px auto 0; text-align: center; }
   section .pricing-hero p { color: oklch(var(--text-2)); max-width: 56ch; margin: 18px auto 0; line-height: 1.6; text-align: center; }
