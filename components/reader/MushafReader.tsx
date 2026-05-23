@@ -368,16 +368,46 @@ function MushafReaderInner(props: MushafReaderProps) {
                       (activeAyah === a.verseNumber ? " active" : "") +
                       (playingVerseNumber === a.verseNumber ? " playing" : "")
                     }
-                    onClick={(e) => openPopover(e, a.verseNumber)}
                   >
                     <header className="ayah-block-head">
                       <span className="ayah-block-num">{toArabicNum(a.verseNumber)} · {a.verseNumber}</span>
                       <span className="ayah-block-cite">{meta?.author}</span>
-                      {a.isBookmarked && (
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--accent)" style={{ marginLeft: "auto" }}>
-                          <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
-                        </svg>
-                      )}
+                      <div className="ayah-block-actions">
+                        <button
+                          type="button"
+                          className="ayah-block-action"
+                          onClick={(e) => { e.stopPropagation(); playFrom(a.verseNumber); }}
+                          title={t("pop_listen")}
+                          aria-label={t("pop_listen")}
+                        >
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                        <button
+                          type="button"
+                          className={"ayah-block-action" + (a.isBookmarked ? " active" : "")}
+                          onClick={(e) => { e.stopPropagation(); toggleBookmark(a.ayahKey); }}
+                          title={a.isBookmarked ? t("pop_saved") : t("pop_bookmark")}
+                          aria-label={a.isBookmarked ? t("pop_saved") : t("pop_bookmark")}
+                        >
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill={a.isBookmarked ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2">
+                            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+                          </svg>
+                        </button>
+                        <button
+                          type="button"
+                          className="ayah-block-action"
+                          onClick={(e) => { e.stopPropagation(); shareAyah(a.ayahKey); }}
+                          title={t("pop_share")}
+                          aria-label={t("pop_share")}
+                        >
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <circle cx="18" cy="5" r="3" />
+                            <circle cx="6" cy="12" r="3" />
+                            <circle cx="18" cy="19" r="3" />
+                            <path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98" />
+                          </svg>
+                        </button>
+                      </div>
                     </header>
                     <div className="ayah-block-arabic arabic" dir="rtl">
                       {a.textUthmani}
