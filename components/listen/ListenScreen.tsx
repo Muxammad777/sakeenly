@@ -65,6 +65,19 @@ function ListenScreenInner({ chapters }: ListenScreenProps) {
     );
   }, [chapters, query]);
 
+  // Reciter style filter. Hafs is the default qira'at — reciters without
+  // an explicit style field are treated as Hafs. Warsh has no data yet so
+  // the chip surfaces an empty state until reciters in that qira'at are
+  // added (intentional honest UI rather than a dead chip).
+  const filteredReciters = useMemo(() => {
+    if (filter === "all") return RECITERS;
+    if (filter === "hafs") return RECITERS.filter((r) => !r.style);
+    if (filter === "warsh") return [];
+    if (filter === "muratt") return RECITERS.filter((r) => r.style === "Murattal");
+    if (filter === "mujaw") return RECITERS.filter((r) => r.style === "Mujawwad");
+    return RECITERS;
+  }, [filter]);
+
   // Popular surahs strip (handpicked).
   const popularStrip = chapters.filter((c) => [1, 36, 55, 67].includes(c.id));
 
@@ -132,8 +145,13 @@ function ListenScreenInner({ chapters }: ListenScreenProps) {
         </div>
 
         {/* RECITER GRID */}
+        {filteredReciters.length === 0 ? (
+          <div style={{ padding: "32px 0", textAlign: "center", color: "oklch(var(--text-3))", fontFamily: "var(--font-mono), monospace", fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase" }}>
+            {t("no_results")}
+          </div>
+        ) : null}
         <div className="reciter-grid">
-          {RECITERS.map((r) => (
+          {filteredReciters.map((r) => (
             <div
               key={r.slug}
               className={`reciter ${reciter.slug === r.slug ? "playing" : ""}`}
