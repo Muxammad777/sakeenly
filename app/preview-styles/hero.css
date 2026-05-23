@@ -84,7 +84,13 @@
   }
   .votd-top {
     display: flex; justify-content: space-between; align-items: center;
+    gap: 12px; flex-wrap: wrap;
     margin-bottom: 14px;
+  }
+  /* On phones the date eyebrow + surah tag don't fit on one row at
+     375px — stack them so neither collides with the other. */
+  @media (max-width: 520px) {
+    .votd-top { flex-direction: column; align-items: flex-start; }
   }
   .votd-arabic {
     text-align: center;
@@ -291,10 +297,16 @@
   }
   .emotions-head {
     display: flex; align-items: end; justify-content: space-between;
+    gap: 16px;
     margin-bottom: 28px;
   }
   .emotions-head h2 { font-weight: 300; max-width: 22ch; }
-  .emotions-head a { color: oklch(var(--accent)); font-size: 14px; }
+  .emotions-head a { color: oklch(var(--accent)); font-size: 14px; white-space: nowrap; }
+  /* On phones the h2 wraps and the "Все темы →" link slid into the
+     heading area. Stack vertically so the link sits cleanly below. */
+  @media (max-width: 520px) {
+    .emotions-head { flex-direction: column; align-items: flex-start; }
+  }
 
   .emotion-grid {
     display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
@@ -381,7 +393,10 @@
      that live inside .wrap. */
   section .closing h2 { font-weight: 300; max-width: 18ch; margin: 14px auto 0; text-align: center; }
   section .closing p { color: oklch(var(--text-2)); margin: 18px auto 0; max-width: 50ch; text-align: center; }
-  .closing .ctas { margin-top: 32px; display: flex; justify-content: center; gap: 12px; }
+  /* flex-wrap so two CTAs ("Начать с Аль-Фатихи" + "Посмотреть тарифы")
+     drop to two rows on phones instead of overflowing the viewport
+     (was -10px / +10px past edges at 375px). */
+  .closing .ctas { margin-top: 32px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
 
 
 
