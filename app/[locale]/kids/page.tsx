@@ -134,6 +134,7 @@ function Content() {
     <>
       {/* HERO */}
       <section className="wrap kid-hero">
+        <div className="geo-stars-fade" aria-hidden />
         <div className="kid-bubbles" aria-hidden="true">
           <div className="kid-bubble" style={{ width: 56, height: 56, top: "14%", left: "10%" }}>ا</div>
           <div className="kid-bubble" style={{ width: 64, height: 64, top: "30%", right: "12%" }}>ب</div>
