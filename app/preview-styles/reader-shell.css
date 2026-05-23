@@ -616,7 +616,26 @@
     border-bottom: 1px solid color-mix(in oklab, oklch(var(--border)) 70%, transparent);
   }
   .ayah-block-num { color: oklch(var(--accent)); font-weight: 500; justify-self: start; }
-  .ayah-block-cite { color: oklch(var(--text-3)); justify-self: center; text-align: center; }
+  .ayah-block-cite {
+    color: oklch(var(--text-3));
+    justify-self: center; text-align: center;
+    min-width: 0;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    max-width: 100%;
+  }
+  /* On phones the cite text ("ABDOLMOHAMMAD AYATI" etc.) can't fit beside
+     num + 3 action buttons — drop to 2 rows: num+actions on row 1,
+     cite spans the full width on row 2 so it stays readable. */
+  @media (max-width: 520px) {
+    .ayah-block-head {
+      grid-template-columns: auto 1fr;
+      grid-template-areas: "num actions" "cite cite";
+      row-gap: 6px;
+    }
+    .ayah-block-num     { grid-area: num; }
+    .ayah-block-cite    { grid-area: cite; justify-self: center; white-space: normal; }
+    .ayah-block-actions { grid-area: actions; }
+  }
   .ayah-block-arabic {
     font-family: 'KFGQPC-Hafs', 'Amiri', 'Scheherazade New', serif;
     font-size: clamp(1.5rem, 2.6vw, 2rem);
