@@ -7,11 +7,11 @@
 
   .iqra-grid {
     display: grid;
-    grid-template-columns: repeat(7, 1fr); gap: 12px;
+    grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 12px;
     margin-top: 40px;
   }
-  @media (max-width: 900px) { .iqra-grid { grid-template-columns: repeat(4, 1fr); } }
-  @media (max-width: 540px) { .iqra-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 900px) { .iqra-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  @media (max-width: 540px) { .iqra-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
   .letter {
     aspect-ratio: 1;
     background: oklch(var(--surface));

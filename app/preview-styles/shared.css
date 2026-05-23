@@ -8,6 +8,11 @@
 /* ─── LAYOUT WRAPPERS ─── */
 .wrap        { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
 .wrap-tight  { max-width: 880px;  margin: 0 auto; padding: 0 28px; }
+/* On ultra-narrow viewports (<380px — folded phones, old Androids) 28px
+   side padding eats too much of a ~320-360px screen. Tighten to 18px. */
+@media (max-width: 380px) {
+  .wrap, .wrap-tight { padding: 0 18px; }
+}
 
 /* ─── TYPOGRAPHY HELPERS (class form, complementing the @layer utilities) ─── */
 .serif {

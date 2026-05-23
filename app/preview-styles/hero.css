@@ -140,6 +140,14 @@
     border-radius: 18px;
     padding: 22px 24px;
     display: flex; align-items: center; gap: 22px;
+    min-width: 0;
+  }
+  /* On phones the streak-num (3.4rem) + meta + 7-day week (190px) won't
+     fit on one row in a ~340px content area — wrap so the week drops
+     under the meta instead of overflowing the card. */
+  @media (max-width: 520px) {
+    .streak-card { flex-wrap: wrap; }
+    .streak-card .streak-week { margin-left: 0; flex-basis: 100%; }
   }
   .streak-num {
     font-family: 'Spectral', serif;
