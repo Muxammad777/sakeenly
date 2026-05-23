@@ -1,20 +1,34 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Pause, Play, X, Loader2 } from "lucide-react";
-import { usePathname, useSearchParams } from "next/navigation";
 import { useAudioPlayer } from "./AudioPlayerProvider";
 import { RECITERS, DEFAULT_RECITER_SLUG } from "@/lib/quran/constants";
 
 export function AudioPlayer() {
   const { current, isPlaying, isLoading, toggle, stop } = useAudioPlayer();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+  // Read URL via window.* instead of useSearchParams() — the hook forces
+  // every page rendering AudioPlayer (e.g. /listen) to bail out of static
+  // rendering unless wrapped in Suspense. The player itself is purely
+  // client-side anyway, so window.* is the right primitive here.
+  const [pathname, setPathname] = useState("");
+  const [currentSlug, setCurrentSlug] = useState(DEFAULT_RECITER_SLUG);
+  useEffect(() => {
+    const sync = () => {
+      setPathname(window.location.pathname);
+      const sp = new URLSearchParams(window.location.search);
+      setCurrentSlug(sp.get("reciter") ?? DEFAULT_RECITER_SLUG);
+    };
+    sync();
+    window.addEventListener("popstate", sync);
+    return () => window.removeEventListener("popstate", sync);
+  }, []);
+
   if (!current) return null;
 
   // Reciter switching is only meaningful on /reader/* pages — that's the
   // only place audio URLs are tied to a server-resolved reciter param.
   const isReader = /\/reader\//.test(pathname);
-  const currentSlug = searchParams.get("reciter") ?? DEFAULT_RECITER_SLUG;
 
   const handleReciterChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const url = new URL(window.location.href);
