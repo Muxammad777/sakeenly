@@ -31,69 +31,82 @@
 }
 
 [data-theme="light"] {
-  --bg: 0.985 0.004 90;
-  --bg-deep: 0.965 0.006 90;
-  --surface: 1 0 0;
-  --surface-2: 0.975 0.005 90;
-  --border: 0.90 0.008 90;
-  --border-strong: 0.82 0.012 90;
-  --text: 0.18 0.015 255;
-  --text-2: 0.40 0.015 255;
-  --text-3: 0.55 0.015 255;
-  --accent: 0.52 0.130 78;
-  --accent-2: 0.42 0.115 75;
-  --accent-fg: 0.985 0.004 90;
-  --pattern: 0.18 0.015 255;
+  /* Light = tinted cream with elevated cards. Surface lifts ABOVE bg
+     (0.995 vs 0.97) so cards visually float instead of melting into
+     the background. Pure white #fff is intentionally avoided — on a
+     warm cream field it reads as a render bug. */
+  --bg: 0.97 0.008 85;
+  --bg-deep: 0.955 0.010 85;
+  --surface: 0.995 0.003 85;
+  --surface-2: 0.965 0.010 85;
+  --border: 0.84 0.015 80;
+  --border-strong: 0.74 0.022 78;
+  --text: 0.18 0.020 80;
+  --text-2: 0.38 0.020 80;
+  --text-3: 0.46 0.020 80;
+  --accent: 0.48 0.140 72;
+  --accent-2: 0.40 0.125 68;
+  --accent-fg: 0.985 0.004 85;
+  --pattern: 0.18 0.020 80;
   --pattern-soft: oklch(var(--pattern) / 0.05);
-  --accent-soft: oklch(var(--accent) / 0.12);
-  --glow: radial-gradient(60% 80% at 50% 0%, oklch(var(--accent) / 0.08), transparent 70%);
-  --shadow-1: 0 1px 0 oklch(1 0 0 / 0.6) inset, 0 8px 24px -16px oklch(0 0 0 / 0.18);
-  --shadow-2: 0 12px 40px -20px oklch(0 0 0 / 0.18);
+  --accent-soft: oklch(var(--accent) / 0.10);
+  --glow: radial-gradient(60% 80% at 50% 0%, oklch(var(--accent) / 0.06), transparent 70%);
+  /* Umber-tinted shadows instead of pure grey — sit naturally on cream */
+  --shadow-1: 0 1px 0 oklch(1 0 0 / 0.7) inset, 0 8px 24px -14px oklch(0.22 0.05 60 / 0.22);
+  --shadow-2: 0 12px 40px -18px oklch(0.22 0.05 60 / 0.26);
   color-scheme: light;
 }
 
 [data-theme="sepia"] {
-  --bg: 0.94 0.025 85;
-  --bg-deep: 0.92 0.028 85;
-  --surface: 0.96 0.020 85;
-  --surface-2: 0.93 0.025 85;
-  --border: 0.85 0.030 78;
-  --border-strong: 0.74 0.040 75;
-  --text: 0.28 0.035 60;
-  --text-2: 0.42 0.035 60;
-  --text-3: 0.55 0.030 65;
-  --accent: 0.45 0.110 60;
-  --accent-2: 0.38 0.100 55;
+  /* Sepia = aged paper. Bg deepened (0.94 → 0.92) and surface raised
+     (0.96 → 0.965) to widen the elevation delta from 0.02 to 0.045.
+     Borders and text-3 dropped 0.06-0.07 so eyebrow/mono labels and
+     card edges stop drowning in the warm field. */
+  --bg: 0.92 0.028 82;
+  --bg-deep: 0.895 0.032 82;
+  --surface: 0.965 0.022 85;
+  --surface-2: 0.91 0.030 82;
+  --border: 0.78 0.038 75;
+  --border-strong: 0.66 0.052 70;
+  --text: 0.24 0.040 58;
+  --text-2: 0.40 0.038 58;
+  --text-3: 0.48 0.032 62;
+  --accent: 0.42 0.125 55;
+  --accent-2: 0.34 0.110 50;
   --accent-fg: 0.94 0.025 85;
-  --pattern: 0.28 0.035 60;
-  --pattern-soft: oklch(var(--pattern) / 0.06);
-  --accent-soft: oklch(var(--accent) / 0.14);
+  --pattern: 0.24 0.040 58;
+  --pattern-soft: oklch(var(--pattern) / 0.07);
+  --accent-soft: oklch(var(--accent) / 0.13);
   --glow: radial-gradient(60% 80% at 50% 0%, oklch(var(--accent) / 0.10), transparent 70%);
-  --shadow-1: 0 1px 0 oklch(1 0 0 / 0.4) inset, 0 8px 24px -16px oklch(0.3 0.05 60 / 0.18);
-  --shadow-2: 0 12px 40px -20px oklch(0.3 0.05 60 / 0.22);
+  --shadow-1: 0 1px 0 oklch(1 0 0 / 0.5) inset, 0 8px 24px -14px oklch(0.28 0.06 55 / 0.24);
+  --shadow-2: 0 12px 40px -18px oklch(0.28 0.06 55 / 0.30);
   color-scheme: light;
 }
 
 [data-theme="mushaf"],
 [data-theme="mushaf-paper"] {
-  --bg: 0.91 0.035 88;
-  --bg-deep: 0.88 0.040 88;
-  --surface: 0.94 0.030 88;
-  --surface-2: 0.90 0.035 88;
-  --border: 0.78 0.045 78;
-  --border-strong: 0.65 0.055 72;
-  --text: 0.24 0.040 55;
-  --text-2: 0.38 0.040 55;
-  --text-3: 0.52 0.040 60;
-  --accent: 0.42 0.120 55;
-  --accent-2: 0.34 0.105 50;
-  --accent-fg: 0.91 0.035 88;
-  --pattern: 0.24 0.040 55;
-  --pattern-soft: oklch(var(--pattern) / 0.08);
-  --accent-soft: oklch(var(--accent) / 0.16);
+  /* Mushaf-paper = printed Quran page. Strongest elevation of the three
+     light themes (bg 0.88 / surface 0.96, delta 0.08) to mimic a sheet
+     resting on a darker desk. Accent shifted toward terracotta-bronze
+     (hue 50) for that printed-ink-on-paper feel. */
+  --bg: 0.88 0.040 88;
+  --bg-deep: 0.85 0.044 88;
+  --surface: 0.96 0.028 88;
+  --surface-2: 0.91 0.038 88;
+  --border: 0.72 0.052 75;
+  --border-strong: 0.60 0.065 70;
+  --text: 0.22 0.045 52;
+  --text-2: 0.36 0.045 52;
+  --text-3: 0.46 0.040 58;
+  --accent: 0.40 0.130 50;
+  --accent-2: 0.32 0.115 48;
+  --accent-fg: 0.96 0.028 88;
+  --pattern: 0.22 0.045 52;
+  --pattern-soft: oklch(var(--pattern) / 0.09);
+  --accent-soft: oklch(var(--accent) / 0.15);
   --glow: radial-gradient(60% 80% at 50% 0%, oklch(var(--accent) / 0.12), transparent 70%);
-  --shadow-1: 0 1px 0 oklch(1 0 0 / 0.4) inset, 0 8px 24px -16px oklch(0.3 0.05 60 / 0.22);
-  --shadow-2: 0 12px 40px -20px oklch(0.3 0.05 60 / 0.26);
+  --shadow-1: 0 1px 0 oklch(1 0 0 / 0.55) inset, 0 10px 28px -14px oklch(0.26 0.07 52 / 0.28);
+  --shadow-2: 0 14px 44px -18px oklch(0.26 0.07 52 / 0.34);
   color-scheme: light;
 }
 
