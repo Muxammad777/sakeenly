@@ -254,6 +254,11 @@ html[data-reveal-ready] .reveal:not(.is-revealed) {
   from { opacity: 0; transform: translateY(-6px); }
   to   { opacity: 1; transform: none; }
 }
+/* Bottom-sheet slide-in for MobileNav */
+@keyframes sakeenlyMobileNavSheetIn {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
 
 /* ─── Mobile-only visibility helpers (robust against Tailwind content-scan
    misses in dynamic [locale] route — we don't rely on `md:hidden` here). ─── */

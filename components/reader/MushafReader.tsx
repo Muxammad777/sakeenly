@@ -45,6 +45,9 @@ interface MushafReaderProps {
   chapters: ChapterListItem[];
   initialAyah: number;
   isAuthenticated: boolean;
+  /** Slug of the reciter whose audio URLs are baked into ayat[].audioUrl
+   *  on the server. Surfaced to the bottom player so users can switch. */
+  currentReciterSlug: string;
 }
 
 const ARABIC_DIGITS = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"];
@@ -64,19 +67,28 @@ export function MushafReader(props: MushafReaderProps) {
 }
 
 function MushafReaderInner(props: MushafReaderProps) {
-  const { surah, ayat, chapters, initialAyah, isAuthenticated } = props;
+  const { surah, ayat, chapters, initialAyah, isAuthenticated, currentReciterSlug } = props;
   const t = useTranslations("rd");
   const [activeKey, setActiveKey] = useActiveTranslation();
   const player = useAudioPlayer();
 
   const [activeAyah, setActiveAyah] = useState<number | null>(null);
   const [popover, setPopover] = useState<{ top: number; left: number } | null>(null);
-  const [reciterSlug, setReciterSlug] = useState(RECITERS[0].slug);
+  // Real reciter — driven by the ?reciter URL param resolved on the server
+  // and passed down as a prop. The sidebar <select> below navigates with
+  // ?reciter=slug to actually change which audio URLs we render.
+  const reciterSlug = currentReciterSlug;
+  function setReciterSlug(slug: string) {
+    const url = new URL(window.location.href);
+    url.searchParams.set("reciter", slug);
+    window.location.assign(url.toString());
+  }
   const [search, setSearch] = useState("");
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [showTranslations, setShowTranslations] = useState(true);
+  const [transPickerOpen, setTransPickerOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
 
   const playableQueue = useMemo(
@@ -335,16 +347,35 @@ function MushafReaderInner(props: MushafReaderProps) {
             {showTranslations && (
               <>
                 <span className="lbl">{t("lbl_translation")}</span>
-                {TRANSLATIONS.map((tr) => (
-                  <button
-                    key={tr.key}
-                    className={"trans-pill" + (activeKey === tr.key ? " active" : "")}
-                    onClick={() => setActiveKey(tr.key)}
-                    type="button"
-                  >
-                    {tr.short}
-                  </button>
-                ))}
+                {/* Current-translator button — visible only on mobile via CSS.
+                    Tapping toggles the pill list below. */}
+                <button
+                  type="button"
+                  className={"trans-current" + (transPickerOpen ? " open" : "")}
+                  onClick={() => setTransPickerOpen((v) => !v)}
+                  aria-expanded={transPickerOpen}
+                  aria-controls="trans-pills"
+                >
+                  <span>{TRANSLATIONS.find((tr) => tr.key === activeKey)?.short ?? activeKey}</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </button>
+                <div
+                  id="trans-pills"
+                  className={"trans-pills" + (transPickerOpen ? " open" : "")}
+                >
+                  {TRANSLATIONS.map((tr) => (
+                    <button
+                      key={tr.key}
+                      className={"trans-pill" + (activeKey === tr.key ? " active" : "")}
+                      onClick={() => { setActiveKey(tr.key); setTransPickerOpen(false); }}
+                      type="button"
+                    >
+                      {tr.short}
+                    </button>
+                  ))}
+                </div>
               </>
             )}
           </div>

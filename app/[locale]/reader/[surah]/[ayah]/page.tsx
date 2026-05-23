@@ -22,6 +22,7 @@ import type { Locale } from "@/i18n/routing";
 
 interface PageProps {
   params: Promise<{ locale: Locale; surah: string; ayah: string }>;
+  searchParams: Promise<{ reciter?: string }>;
 }
 
 function parseParams(p: { surah: string; ayah: string }): { surah: number; ayah: number } | null {
@@ -47,13 +48,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
-export default async function ReaderPage({ params }: PageProps) {
+export default async function ReaderPage({ params, searchParams }: PageProps) {
   const { locale, surah, ayah } = await params;
+  const { reciter: reciterSlugParam } = await searchParams;
   setRequestLocale(locale);
   const parsed = parseParams({ surah, ayah });
   if (!parsed) notFound();
 
-  const reciter = findReciter(DEFAULT_RECITER_SLUG);
+  const reciter = findReciter(reciterSlugParam ?? DEFAULT_RECITER_SLUG);
 
   const apiTranslations = TRANSLATIONS.filter((t) => t.source === "quran.com");
   const [chapter, chapters, verses, user] = await Promise.all([
@@ -133,6 +135,7 @@ export default async function ReaderPage({ params }: PageProps) {
       chapters={chapterList}
       initialAyah={parsed.ayah}
       isAuthenticated={Boolean(user)}
+      currentReciterSlug={reciter.slug}
     />
   );
 }
