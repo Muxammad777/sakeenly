@@ -4,6 +4,11 @@
   .ask-hero .geo-stars-fade { z-index: -1; }
   .ask-hero h1 { font-weight: 300; max-width: 22ch; margin: 14px auto 0; }
   .ask-hero p { color: oklch(var(--text-2)); max-width: 56ch; margin: 16px auto 0; }
+  /* `section.wrap h1` from shared.css (specificity 0,1,2) overrides our
+     `.ask-hero h1` (0,1,1) and resets text-align to default left.
+     Bumped to `section.wrap.ask-hero h1` (0,2,2) to beat it. */
+  section.wrap.ask-hero h1 { text-align: center; margin: 14px auto 0; }
+  section.wrap.ask-hero p { text-align: center; margin: 16px auto 0; }
   .ask-policy {
     display: inline-flex; gap: 8px; align-items: center;
     margin-top: 22px;
