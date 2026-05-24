@@ -75,6 +75,21 @@ export function AudioPlayerProvider({ children }: { children: React.ReactNode })
     setIsLoading(true);
     audio.src = item.url;
     audio.play().catch(() => setIsLoading(false));
+    // Prefetch the NEXT ayah's MP3 into the browser HTTP cache while the
+    // current one is playing. When loadAndPlay runs for the next item,
+    // its src is already cached → no network gap between ayat. This is
+    // the main source of the perceived pause: each per-ayah file lives
+    // on the Quran.com CDN and an uncached fetch on a 3G phone can take
+    // 300-800ms. With prefetch the browser pulls bytes during playback
+    // and the next track starts ~within audio engine swap latency.
+    const nextIdx = indexRef.current + 1;
+    const next = queueRef.current[nextIdx];
+    if (next?.url) {
+      // mode:no-cors keeps it a cheap byte-fetch; we don't need the
+      // response, just for the bytes to land in the cache. Catch any
+      // network error silently — playback isn't affected.
+      void fetch(next.url, { mode: "no-cors", cache: "force-cache" }).catch(() => {});
+    }
   }
 
   const playOne = useCallback((item: QueueItem) => {

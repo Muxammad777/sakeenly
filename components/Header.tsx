@@ -10,7 +10,7 @@ export function Header() {
   const t = useTranslations("nav");
 
   const NAV = [
-    { href: "/reader/1/1", key: "read" as const },
+    { href: "/reader", key: "read" as const },
     { href: "/listen",     key: "listen" as const },
     { href: "/ask",        key: "ask" as const },
     { href: "/ayat",       key: "ayat" as const },
