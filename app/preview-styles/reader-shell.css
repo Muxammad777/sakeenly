@@ -823,8 +823,9 @@
   .side-tab {
     display: flex;
     position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
+    /* Sit just below the sticky header (58px) with breathing room so
+       the tabs don't overlap the surah-header arch + name area. */
+    top: 120px;
     z-index: 40;
     align-items: center; justify-content: center;
     width: 34px; padding: 14px 0;
