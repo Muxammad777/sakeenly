@@ -11,6 +11,7 @@ import {
 } from "@/lib/quran/constants";
 import { useActiveTranslation } from "./TranslationToggle";
 import { AudioPlayerProvider, useAudioPlayer } from "./AudioPlayerProvider";
+import { SideTab } from "./SideTab";
 
 export interface MushafAyah {
   ayahKey: string;
@@ -720,6 +721,80 @@ function MushafReaderInner(props: MushafReaderProps) {
           </div>
         </div>
       )}
+
+      {/* ============ MOBILE-ONLY SIDE TABS ============ */}
+      {/* Left tab — translation picker. Replaces the inline trans-bar on
+          phones (CSS hides .trans-bar at ≤720px). */}
+      <SideTab side="left" label="ПЕРЕВОД" ariaLabel="Выбрать перевод">
+        <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+          <button
+            type="button"
+            className={"trans-toggle" + (showTranslations ? " on" : "")}
+            onClick={() => setShowTranslations((v) => !v)}
+            aria-pressed={showTranslations}
+            style={{ marginBottom: 14 }}
+          >
+            <span className="trans-toggle-track">
+              <span className="trans-toggle-thumb" />
+            </span>
+            <span className="trans-toggle-label">
+              {showTranslations ? t("trans_on") : t("trans_off")}
+            </span>
+          </button>
+          {showTranslations && TRANSLATIONS.map((tr) => (
+            <button
+              key={tr.key}
+              type="button"
+              onClick={() => setActiveKey(tr.key)}
+              style={{
+                padding: "10px 12px",
+                borderRadius: 10,
+                textAlign: "left",
+                background: activeKey === tr.key ? "var(--accent-soft)" : "transparent",
+                color: activeKey === tr.key ? "oklch(var(--accent))" : "oklch(var(--text))",
+                fontFamily: "'Spectral', serif",
+                fontSize: 15,
+              }}
+            >
+              {tr.short}
+            </button>
+          ))}
+        </div>
+      </SideTab>
+
+      {/* Right tab — reciter picker. Navigates with ?reciter=slug which
+          server-side resolves to the right audio URLs. */}
+      <SideTab side="right" label="ЧТЕЦ" ariaLabel="Выбрать чтеца">
+        <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+          {RECITERS.map((r) => (
+            <button
+              key={r.slug}
+              type="button"
+              onClick={() => setReciterSlug(r.slug)}
+              style={{
+                padding: "12px 14px",
+                borderRadius: 12,
+                textAlign: "left",
+                background: reciterSlug === r.slug ? "var(--accent-soft)" : "transparent",
+                color: reciterSlug === r.slug ? "oklch(var(--accent))" : "oklch(var(--text))",
+                fontFamily: "'Spectral', serif",
+                fontSize: 15,
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "baseline",
+                gap: 12,
+              }}
+            >
+              <span>{r.name}</span>
+              {r.style ? (
+                <span style={{ fontSize: 10, fontFamily: "monospace", letterSpacing: "0.1em", color: "oklch(var(--text-3))", textTransform: "uppercase" }}>
+                  {r.style}
+                </span>
+              ) : null}
+            </button>
+          ))}
+        </div>
+      </SideTab>
     </div>
   );
 }

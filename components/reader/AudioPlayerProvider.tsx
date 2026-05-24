@@ -21,8 +21,23 @@ interface AudioPlayerCtx {
 
 const Ctx = createContext<AudioPlayerCtx | null>(null);
 
+/**
+ * Dual-element gapless audio engine.
+ *
+ * Two <audio> elements (A, B) are kept ready at all times. The "active"
+ * one plays the current item; the "standby" one is preloaded with the
+ * next item's src. When `ended` fires on the active element, we
+ * instantly call `standby.play()` and swap roles — no time is lost to
+ * `audio.src = ...` + the browser fetching/parsing the next MP3.
+ *
+ * The only remaining inter-ayah gap is the natural silence baked into
+ * each per-ayah Quran.com MP3 (reciter's breath/pause as adab). That
+ * is content, not a bug.
+ */
 export function AudioPlayerProvider({ children }: { children: React.ReactNode }) {
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const audioARef = useRef<HTMLAudioElement | null>(null);
+  const audioBRef = useRef<HTMLAudioElement | null>(null);
+  const activeKey = useRef<"A" | "B">("A");
   const queueRef = useRef<QueueItem[]>([]);
   const indexRef = useRef(0);
 
@@ -30,93 +45,132 @@ export function AudioPlayerProvider({ children }: { children: React.ReactNode })
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  // Create the <audio> element once on mount.
+  const getActive = () => activeKey.current === "A" ? audioARef.current : audioBRef.current;
+  const getStandby = () => activeKey.current === "A" ? audioBRef.current : audioARef.current;
+
+  // Preload an item's src into the standby element so it's ready the
+  // instant the active element fires `ended`.
+  const preloadStandby = (item: QueueItem | undefined) => {
+    const standby = getStandby();
+    if (!standby || !item?.url) return;
+    if (standby.src !== item.url) {
+      standby.src = item.url;
+      // load() ensures the browser starts buffering immediately rather
+      // than waiting until the element is asked to play.
+      standby.load();
+    }
+  };
+
   useEffect(() => {
-    const audio = new Audio();
-    audio.preload = "auto";
-    audioRef.current = audio;
+    const a = new Audio();
+    const b = new Audio();
+    a.preload = "auto";
+    b.preload = "auto";
+    audioARef.current = a;
+    audioBRef.current = b;
 
     const onPlay = () => setIsPlaying(true);
-    const onPause = () => setIsPlaying(false);
-    const onWaiting = () => setIsLoading(true);
-    const onCanPlay = () => setIsLoading(false);
-    const onEnded = () => {
-      const next = indexRef.current + 1;
-      if (next < queueRef.current.length) {
-        indexRef.current = next;
-        loadAndPlay(queueRef.current[next]);
-      } else {
-        setIsPlaying(false);
-        setCurrent(null);
-      }
+    const onPause = () => {
+      // Only consider the player paused when the ACTIVE element pauses.
+      if (getActive()?.paused) setIsPlaying(false);
+    };
+    const onWaiting = (e: Event) => {
+      if (e.currentTarget === getActive()) setIsLoading(true);
+    };
+    const onCanPlay = (e: Event) => {
+      if (e.currentTarget === getActive()) setIsLoading(false);
     };
 
-    audio.addEventListener("play", onPlay);
-    audio.addEventListener("pause", onPause);
-    audio.addEventListener("waiting", onWaiting);
-    audio.addEventListener("canplay", onCanPlay);
-    audio.addEventListener("ended", onEnded);
+    // Gapless handoff: when the active element ends, the standby (if it
+    // has the right next-item src) plays immediately, and we swap roles.
+    const onEnded = (e: Event) => {
+      const ended = e.currentTarget as HTMLAudioElement;
+      if (ended !== getActive()) return;
+      const nextIdx = indexRef.current + 1;
+      const next = queueRef.current[nextIdx];
+      if (!next) {
+        setIsPlaying(false);
+        setCurrent(null);
+        return;
+      }
+      // Swap which element is active. Standby already has next.url.
+      activeKey.current = activeKey.current === "A" ? "B" : "A";
+      indexRef.current = nextIdx;
+      setCurrent(next);
+      const newActive = getActive();
+      if (newActive) {
+        // Reset to 0 in case it had been partially auto-buffered past start.
+        try { newActive.currentTime = 0; } catch {}
+        void newActive.play().catch(() => setIsLoading(false));
+      }
+      // Preload N+2 into the freshly-free standby element.
+      preloadStandby(queueRef.current[nextIdx + 1]);
+      // The old "active" element keeps its src for now; standby will be
+      // overwritten on the next handoff cycle.
+    };
+
+    for (const el of [a, b]) {
+      el.addEventListener("play", onPlay);
+      el.addEventListener("pause", onPause);
+      el.addEventListener("waiting", onWaiting);
+      el.addEventListener("canplay", onCanPlay);
+      el.addEventListener("ended", onEnded);
+    }
 
     return () => {
-      audio.pause();
-      audio.removeEventListener("play", onPlay);
-      audio.removeEventListener("pause", onPause);
-      audio.removeEventListener("waiting", onWaiting);
-      audio.removeEventListener("canplay", onCanPlay);
-      audio.removeEventListener("ended", onEnded);
-      audioRef.current = null;
+      for (const el of [a, b]) {
+        el.pause();
+        el.removeEventListener("play", onPlay);
+        el.removeEventListener("pause", onPause);
+        el.removeEventListener("waiting", onWaiting);
+        el.removeEventListener("canplay", onCanPlay);
+        el.removeEventListener("ended", onEnded);
+      }
+      audioARef.current = null;
+      audioBRef.current = null;
     };
   }, []);
 
-  function loadAndPlay(item: QueueItem) {
-    const audio = audioRef.current;
-    if (!audio) return;
+  function loadAndPlay(item: QueueItem, indexInQueue: number) {
+    const active = getActive();
+    if (!active) return;
     setCurrent(item);
     setIsLoading(true);
-    audio.src = item.url;
-    audio.play().catch(() => setIsLoading(false));
-    // Prefetch the NEXT ayah's MP3 into the browser HTTP cache while the
-    // current one is playing. When loadAndPlay runs for the next item,
-    // its src is already cached → no network gap between ayat. This is
-    // the main source of the perceived pause: each per-ayah file lives
-    // on the Quran.com CDN and an uncached fetch on a 3G phone can take
-    // 300-800ms. With prefetch the browser pulls bytes during playback
-    // and the next track starts ~within audio engine swap latency.
-    const nextIdx = indexRef.current + 1;
-    const next = queueRef.current[nextIdx];
-    if (next?.url) {
-      // mode:no-cors keeps it a cheap byte-fetch; we don't need the
-      // response, just for the bytes to land in the cache. Catch any
-      // network error silently — playback isn't affected.
-      void fetch(next.url, { mode: "no-cors", cache: "force-cache" }).catch(() => {});
-    }
+    // Avoid reloading the same src (could already have been preloaded as
+    // the standby — but we're starting fresh so just set + play).
+    if (active.src !== item.url) active.src = item.url;
+    try { active.currentTime = 0; } catch {}
+    void active.play().catch(() => setIsLoading(false));
+    // Prime the standby with the NEXT item so the handoff is gapless.
+    preloadStandby(queueRef.current[indexInQueue + 1]);
   }
 
   const playOne = useCallback((item: QueueItem) => {
     queueRef.current = [item];
     indexRef.current = 0;
-    loadAndPlay(item);
+    loadAndPlay(item, 0);
   }, []);
 
   const playQueue = useCallback((items: QueueItem[], startIndex = 0) => {
     if (items.length === 0) return;
     queueRef.current = items;
-    indexRef.current = Math.max(0, Math.min(startIndex, items.length - 1));
-    loadAndPlay(items[indexRef.current]);
+    const start = Math.max(0, Math.min(startIndex, items.length - 1));
+    indexRef.current = start;
+    loadAndPlay(items[start], start);
   }, []);
 
   const toggle = useCallback(() => {
-    const audio = audioRef.current;
-    if (!audio || !current) return;
-    if (audio.paused) audio.play().catch(() => {});
-    else audio.pause();
+    const active = getActive();
+    if (!active || !current) return;
+    if (active.paused) void active.play().catch(() => {});
+    else active.pause();
   }, [current]);
 
   const stop = useCallback(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    audio.pause();
-    audio.currentTime = 0;
+    const a = audioARef.current;
+    const b = audioBRef.current;
+    if (a) { a.pause(); try { a.currentTime = 0; } catch {} }
+    if (b) { b.pause(); try { b.currentTime = 0; } catch {} }
     queueRef.current = [];
     indexRef.current = 0;
     setCurrent(null);
