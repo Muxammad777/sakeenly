@@ -81,18 +81,19 @@ function ListenScreenInner({ chapters }: ListenScreenProps) {
   // Popular surahs strip (handpicked).
   const popularStrip = chapters.filter((c) => [1, 36, 55, 67].includes(c.id));
 
-  const handlePlay = async (c: ChapterSummary) => {
+  const handlePlay = async (c: ChapterSummary, withReciter?: ReciterMeta) => {
+    const r = withReciter ?? reciter;
     setLoadingId(c.id);
     try {
       const res = await fetch(
-        `/api/chapter-audio?reciter=${reciter.id}&chapter=${c.id}`,
+        `/api/chapter-audio?reciter=${r.id}&chapter=${c.id}`,
       );
       const json = (await res.json()) as { url?: string; error?: string };
       if (!res.ok || !json.url) throw new Error(json.error ?? "no_url");
       playOne({
         url: json.url,
         ayahKey: `${c.id}:0`,
-        label: `${c.nameSimple} · ${reciter.name}${reciter.style ? ` (${reciter.style})` : ""}`,
+        label: `${c.nameSimple} · ${r.name}${r.style ? ` (${r.style})` : ""}`,
       });
     } catch (err) {
       console.error(err);
@@ -100,6 +101,15 @@ function ListenScreenInner({ chapters }: ListenScreenProps) {
     } finally {
       setLoadingId(null);
     }
+  };
+
+  // Card ▶ button — audition the reciter on Al-Fatihah (or whatever sura
+  // is currently playing) so a single tap on the card actually plays.
+  const handleReciterPreview = (r: ReciterMeta) => {
+    setReciter(r);
+    const playingChapterId = current ? Number(current.ayahKey.split(":")[0]) : null;
+    const target = chapters.find((c) => c.id === (playingChapterId ?? 1)) ?? chapters[0];
+    if (target) handlePlay(target, r);
   };
 
   const currentChapterId = current ? Number(current.ayahKey.split(":")[0]) : null;
@@ -172,7 +182,12 @@ function ListenScreenInner({ chapters }: ListenScreenProps) {
                   <span>114 сур</span>
                 </div>
               </div>
-              <button className="reciter-pp" aria-label="Play">
+              <button
+                type="button"
+                className="reciter-pp"
+                aria-label={`Прослушать ${r.name}`}
+                onClick={(e) => { e.stopPropagation(); handleReciterPreview(r); }}
+              >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
               </button>
             </div>

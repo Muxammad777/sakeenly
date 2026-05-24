@@ -68,18 +68,29 @@ export interface ReciterMeta {
   style?: "Mujawwad" | "Murattal" | "Muallim";
 }
 
+/** Curated list of reciters available via Quran.com recitations API.
+ *  IDs come from https://api.quran.com/api/v4/resources/recitations. */
 export const RECITERS: readonly ReciterMeta[] = [
-  { id: 1, slug: "abdulbaset-mujawwad", name: "Abdul-Basit Abdul-Samad", style: "Mujawwad" },
-  { id: 2, slug: "abdulbaset-murattal", name: "Abdul-Basit Abdul-Samad", style: "Murattal" },
-  { id: 3, slug: "sudais", name: "Abdur-Rahman as-Sudais" },
-  { id: 4, slug: "shatri", name: "Abu Bakr al-Shatri" },
-  { id: 5, slug: "rifai", name: "Hani ar-Rifai" },
-  { id: 6, slug: "husary", name: "Mahmoud Khalil Al-Husary" },
-  { id: 8, slug: "minshawi-mujawwad", name: "Mohamed Siddiq al-Minshawi", style: "Mujawwad" },
-  { id: 9, slug: "minshawi-murattal", name: "Mohamed Siddiq al-Minshawi", style: "Murattal" },
-  { id: 10, slug: "shuraym", name: "Sa`ud ash-Shuraym" },
-  { id: 11, slug: "tablawi", name: "Mohamed al-Tablawi" },
-  { id: 12, slug: "husary-muallim", name: "Mahmoud Khalil Al-Husary", style: "Muallim" },
+  { id: 1,  slug: "abdulbaset-mujawwad", name: "Abdul-Basit Abdul-Samad",      style: "Mujawwad" },
+  { id: 2,  slug: "abdulbaset-murattal", name: "Abdul-Basit Abdul-Samad",      style: "Murattal" },
+  { id: 3,  slug: "sudais",              name: "Abdur-Rahman as-Sudais" },
+  { id: 4,  slug: "shatri",              name: "Abu Bakr al-Shatri" },
+  { id: 5,  slug: "rifai",               name: "Hani ar-Rifai" },
+  { id: 6,  slug: "husary",              name: "Mahmoud Khalil Al-Husary" },
+  { id: 7,  slug: "afasy",               name: "Mishary Rashid Alafasy" },
+  { id: 8,  slug: "minshawi-mujawwad",   name: "Mohamed Siddiq al-Minshawi",   style: "Mujawwad" },
+  { id: 9,  slug: "minshawi-murattal",   name: "Mohamed Siddiq al-Minshawi",   style: "Murattal" },
+  { id: 10, slug: "shuraym",             name: "Sa`ud ash-Shuraym" },
+  { id: 11, slug: "tablawi",             name: "Mohamed al-Tablawi" },
+  { id: 12, slug: "husary-muallim",      name: "Mahmoud Khalil Al-Husary",     style: "Muallim" },
+  { id: 161,slug: "ayyub",               name: "Muhammad Ayyub" },
+  { id: 163,slug: "dosari",              name: "Yasser ad-Dosari" },
+  { id: 164,slug: "ghamdi",              name: "Saad al-Ghamdi" },
+  { id: 165,slug: "muaiqly",             name: "Maher al-Muaiqly" },
+  { id: 167,slug: "huthaify",            name: "Ali al-Huthaifi" },
+  { id: 168,slug: "basfar",              name: "Abdullah Basfar" },
+  { id: 169,slug: "ajamy",               name: "Ahmed ibn Ali al-Ajmi" },
+  { id: 170,slug: "juhany",              name: "Abdullah al-Juhany" },
 ] as const;
 
 export const DEFAULT_RECITER_SLUG = "abdulbaset-mujawwad";
