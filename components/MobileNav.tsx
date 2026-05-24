@@ -10,7 +10,10 @@ import { LocaleSwitcher } from "@/components/LocaleSwitcher";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 
 const NAV = [
-  { href: "/reader/1/1", key: "read" as const, match: "/reader" },
+  // Mobile burger nav points at the /reader index (sura picker) rather
+  // than dropping straight into Al-Fatihah — phones need a list-first
+  // pattern. Desktop nav (Header.tsx) keeps the direct deep link.
+  { href: "/reader", key: "read" as const, match: "/reader" },
   { href: "/listen",     key: "listen" as const, match: "/listen" },
   { href: "/ask",        key: "ask" as const, match: "/ask" },
   { href: "/ayat",       key: "ayat" as const, match: "/ayat" },

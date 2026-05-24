@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
+import { useRouter } from "@/i18n/navigation";
 import {
   AudioPlayerProvider,
   useAudioPlayer,
@@ -47,6 +48,7 @@ export function ListenScreen({ chapters }: ListenScreenProps) {
 function ListenScreenInner({ chapters }: ListenScreenProps) {
   const t = useTranslations("ls");
   const tRd = useTranslations("rd");
+  const router = useRouter();
   const [reciter, setReciter] = useState<ReciterMeta>(RECITERS[0]);
   const [query, setQuery] = useState("");
   const [loadingId, setLoadingId] = useState<number | null>(null);
@@ -165,7 +167,18 @@ function ListenScreenInner({ chapters }: ListenScreenProps) {
             <div
               key={r.slug}
               className={`reciter ${reciter.slug === r.slug ? "playing" : ""}`}
-              onClick={() => setReciter(r)}
+              role="link"
+              tabIndex={0}
+              // Card tap → open reader with this reciter selected (Al-Fatihah).
+              // The ▶ button beside it still does a quick in-page preview.
+              onClick={() => router.push(`/reader/1/1?reciter=${r.slug}`)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  router.push(`/reader/1/1?reciter=${r.slug}`);
+                }
+              }}
+              style={{ cursor: "pointer" }}
             >
               <div className="reciter-avatar">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">

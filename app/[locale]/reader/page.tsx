@@ -1,0 +1,53 @@
+import type { Metadata } from "next";
+import { setRequestLocale, getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
+import { quranApi } from "@/lib/api/quran";
+import type { Locale } from "@/i18n/routing";
+
+interface PageProps {
+  params: Promise<{ locale: Locale }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "rd" });
+  return {
+    title: t("surahs_h"),
+    description: t("surahs_lede"),
+    alternates: { canonical: "/reader" },
+  };
+}
+
+export default async function ReaderIndex({ params }: PageProps) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "rd" });
+  const chapters = await quranApi.chapters("en");
+
+  return (
+    <section className="wrap reader-index">
+      <div className="reader-index-head">
+        <span className="tag"><span className="tag-dot" /><span>{t("surahs_eyebrow")}</span></span>
+        <h1>{t("surahs_h")}</h1>
+        <p>{t("surahs_lede")}</p>
+      </div>
+
+      <ul className="surah-list surah-list-grid" aria-label={t("surahs_h")}>
+        {chapters.map((c) => (
+          <li key={c.id}>
+            <Link className="surah-item surah-item-card" href={`/reader/${c.id}/1`}>
+              <span className="surah-num">{c.id}</span>
+              <span className="surah-name">
+                <b>{c.name_simple}</b>
+                <span className="ar">{c.name_arabic}</span>
+              </span>
+              <span className="surah-meta">
+                {c.verses_count} {t("ayat_count")}
+              </span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}

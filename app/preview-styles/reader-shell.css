@@ -54,6 +54,55 @@
     font-family: 'JetBrains Mono', monospace; font-size: 10px; color: oklch(var(--text-3));
   }
 
+  /* ─── /reader index page (mobile-first sura picker) ─── */
+  .reader-index { padding: 56px 0 96px; }
+  .reader-index-head { text-align: center; max-width: 60ch; margin: 0 auto 40px; }
+  .reader-index-head h1 {
+    font-family: var(--font-display), 'Spectral', serif;
+    font-weight: 400; letter-spacing: -0.015em;
+    font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05;
+    margin: 14px 0 0;
+  }
+  .reader-index-head p { color: oklch(var(--text-2)); margin-top: 16px; }
+  .surah-list-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    list-style: none; padding: 0; margin: 0;
+  }
+  @media (min-width: 700px)  { .surah-list-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } }
+  @media (min-width: 1100px) { .surah-list-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .surah-item-card {
+    background: oklch(var(--surface));
+    border: 1px solid oklch(var(--border));
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  .surah-item-card:hover {
+    border-color: color-mix(in oklab, oklch(var(--accent)) 40%, oklch(var(--border)));
+  }
+
+  /* Back-to-list pill — shown on top of the reader content on mobile so
+     users have a clear path back to the sura picker. Hidden on desktop
+     because the left sidebar already lists all suras. */
+  .reader-back {
+    display: none;
+    align-items: center; gap: 8px;
+    margin: 18px 0 -6px;
+    padding: 8px 14px 8px 10px;
+    width: max-content;
+    background: oklch(var(--surface));
+    border: 1px solid oklch(var(--border));
+    border-radius: 999px;
+    color: oklch(var(--text-2));
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    text-decoration: none;
+    transition: border-color 140ms, color 140ms;
+  }
+  .reader-back:hover { border-color: color-mix(in oklab, oklch(var(--accent)) 40%, oklch(var(--border))); color: oklch(var(--text)); }
+  @media (max-width: 1100px) { .reader-back { display: inline-flex; } }
+
   /* main pane */
   .reader-main {
     min-width: 0;

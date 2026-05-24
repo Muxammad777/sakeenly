@@ -253,6 +253,12 @@ function MushafReaderInner(props: MushafReaderProps) {
 
   return (
     <div ref={rootRef} style={{ position: "relative" }}>
+      {/* Back-to-list pill — visible only on mobile (CSS .reader-back) so
+          users can return to the sura picker. Desktop has the left
+          sidebar with all 114 suras and doesn't need it. */}
+      <div className="wrap">
+        <Link href="/reader" className="reader-back">{t("back_to_list")}</Link>
+      </div>
       <div className="reader-shell">
         {/* ============ SIDEBAR ============ */}
         <aside className="reader-side">
