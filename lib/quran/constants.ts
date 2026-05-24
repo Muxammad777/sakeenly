@@ -77,7 +77,6 @@ export const RECITERS: readonly ReciterMeta[] = [
   { id: 4,  slug: "shatri",              name: "Abu Bakr al-Shatri" },
   { id: 5,  slug: "rifai",               name: "Hani ar-Rifai" },
   { id: 6,  slug: "husary",              name: "Mahmoud Khalil Al-Husary" },
-  { id: 7,  slug: "afasy",               name: "Mishary Rashid Alafasy" },
   { id: 8,  slug: "minshawi-mujawwad",   name: "Mohamed Siddiq al-Minshawi",   style: "Mujawwad" },
   { id: 9,  slug: "minshawi-murattal",   name: "Mohamed Siddiq al-Minshawi",   style: "Murattal" },
   { id: 10, slug: "shuraym",             name: "Sa`ud ash-Shuraym" },
