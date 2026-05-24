@@ -55,7 +55,17 @@ export default async function ReaderPage({ params, searchParams }: PageProps) {
   const parsed = parseParams({ surah, ayah });
   if (!parsed) notFound();
 
-  const reciter = findReciter(reciterSlugParam ?? DEFAULT_RECITER_SLUG);
+  const requestedReciter = findReciter(reciterSlugParam ?? DEFAULT_RECITER_SLUG);
+  // mp3quran.net reciters only expose chapter-level audio (used by the
+  // global player on /listen and by the chapter-audio API). The reader
+  // needs per-ayah audio URLs that come from the Quran.com verses API,
+  // and that API only accepts Quran.com reciter ids. Fall back to the
+  // default Quran.com reciter for the verse-level audio, but keep the
+  // user's choice as currentReciterSlug so the UI still reflects it and
+  // the bottom player switches to the right chapter URL on play.
+  const reciter = requestedReciter.mp3quranServer
+    ? findReciter(DEFAULT_RECITER_SLUG)
+    : requestedReciter;
 
   const apiTranslations = TRANSLATIONS.filter((t) => t.source === "quran.com");
   const [chapter, chapters, verses, user] = await Promise.all([
@@ -135,7 +145,7 @@ export default async function ReaderPage({ params, searchParams }: PageProps) {
       chapters={chapterList}
       initialAyah={parsed.ayah}
       isAuthenticated={Boolean(user)}
-      currentReciterSlug={reciter.slug}
+      currentReciterSlug={requestedReciter.slug}
     />
   );
 }
