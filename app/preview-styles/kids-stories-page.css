@@ -42,3 +42,219 @@
   .story-ar { font-family: 'Scheherazade New', serif; font-size: 1.1rem; color: oklch(var(--text-3)); direction: rtl; }
   .story-meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: oklch(var(--text-3)); letter-spacing: 0.08em; margin-top: auto; }
   .story-cta { color: oklch(var(--accent)); font-size: 13px; margin-top: 8px; }
+
+/* ─── Single prophet story page (/kids/stories/[slug]) ─── */
+  .kst-hero {
+    padding: 64px 0 32px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  .kst-hero .geo-stars-fade { z-index: -1; }
+  .kst-crumbs {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: oklch(var(--text-3));
+    display: inline-flex; flex-wrap: wrap; align-items: center;
+    justify-content: center; gap: 8px;
+  }
+  .kst-crumbs a { color: oklch(var(--accent)); }
+  .kst-crumbs .kst-sep { opacity: 0.5; }
+  .kst-crumbs .kst-here { color: oklch(var(--text-2)); }
+  .kst-h1 {
+    font-family: var(--font-display), 'Spectral', Georgia, serif;
+    font-weight: 300;
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    line-height: 1.1;
+    margin: 22px 0 0;
+    letter-spacing: -0.015em;
+  }
+  .kst-arabic {
+    font-family: 'Scheherazade New', 'Amiri', serif;
+    font-size: clamp(2rem, 4.4vw, 3rem);
+    color: oklch(var(--accent));
+    margin-top: 14px;
+    line-height: 1.4;
+  }
+  .kst-meta {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-top: 22px;
+    padding: 6px 14px;
+    background: oklch(var(--surface));
+    border: 1px solid oklch(var(--border));
+    border-radius: 999px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: oklch(var(--text-2));
+  }
+  .kst-meta svg { color: oklch(var(--accent)); }
+  .kst-adab {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-top: 14px; margin-left: 10px;
+    padding: 6px 14px;
+    background: var(--accent-soft); color: oklch(var(--accent));
+    border-radius: 999px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em;
+  }
+
+  /* Article body */
+  .kst-article {
+    max-width: 64ch;
+    margin: 32px auto 0;
+  }
+  .kst-p {
+    font-family: 'Spectral', Georgia, serif;
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: oklch(var(--text));
+    margin: 0 0 22px;
+    max-width: 60ch;
+  }
+  .kst-p:first-child::first-letter {
+    font-size: 3.2rem;
+    float: left;
+    line-height: 1;
+    padding: 4px 10px 0 0;
+    color: oklch(var(--accent));
+    font-weight: 400;
+  }
+
+  .kst-lesson {
+    margin-top: 36px;
+    padding: 24px 28px;
+    background: oklch(var(--surface));
+    border: 1px solid oklch(var(--border));
+    border-left: 3px solid oklch(var(--accent));
+    border-radius: 14px;
+  }
+  .kst-lesson-lbl {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: oklch(var(--accent));
+    margin-bottom: 8px;
+  }
+  .kst-lesson p {
+    font-family: 'Spectral', Georgia, serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: oklch(var(--text));
+    margin: 0;
+  }
+
+  .kst-sources {
+    margin-top: 36px;
+    padding: 22px 24px;
+    background: oklch(var(--bg-deep));
+    border: 1px solid oklch(var(--border));
+    border-radius: 12px;
+  }
+  .kst-sources h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: oklch(var(--text-3));
+    margin: 0 0 12px;
+  }
+  .kst-sources ul {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .kst-sources li {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    color: oklch(var(--text-2));
+    padding-left: 14px;
+    position: relative;
+  }
+  .kst-sources li::before {
+    content: "·";
+    position: absolute; left: 4px; top: 0;
+    color: oklch(var(--accent));
+  }
+
+  .kst-disclaimer {
+    margin-top: 22px;
+    padding: 16px 20px;
+    background: oklch(var(--bg-deep));
+    border: 1px solid oklch(var(--border));
+    border-radius: 10px;
+    font-size: 13px;
+    color: oklch(var(--text-3));
+    line-height: 1.55;
+  }
+  .kst-disclaimer strong { color: oklch(var(--text-2)); }
+
+  /* Next prophet CTA */
+  .kst-next-wrap { margin-top: 56px; }
+  .kst-next {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 16px;
+    padding: 22px 28px;
+    background: oklch(var(--surface));
+    border: 1px solid oklch(var(--border));
+    border-radius: 18px;
+    transition: border-color 200ms, transform 200ms;
+  }
+  .kst-next:hover {
+    border-color: oklch(var(--accent));
+    transform: translateY(-2px);
+  }
+  .kst-next > div { display: flex; flex-direction: column; gap: 4px; }
+  .kst-next-lbl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: oklch(var(--text-3));
+  }
+  .kst-next-name {
+    font-family: 'Spectral', serif;
+    font-size: 1.3rem;
+    color: oklch(var(--text));
+  }
+  .kst-next-theme {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.08em;
+    color: oklch(var(--text-3));
+  }
+  .kst-next svg { color: oklch(var(--accent)); flex-shrink: 0; }
+
+  /* All-prophets mini-grid */
+  .kst-all { margin-top: 40px; }
+  .kst-all h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: oklch(var(--text-3));
+    margin: 0 0 14px;
+    text-align: center;
+  }
+  .kst-all-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  @media (max-width: 900px) { .kst-all-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .kst-all-grid { grid-template-columns: 1fr; } }
+  .kst-all-mini {
+    padding: 14px 16px;
+    background: oklch(var(--surface));
+    border: 1px solid oklch(var(--border));
+    border-radius: 12px;
+    display: flex; flex-direction: column; gap: 4px;
+    transition: border-color 140ms, transform 140ms;
+  }
+  .kst-all-mini:hover {
+    border-color: oklch(var(--accent));
+    transform: translateY(-2px);
+  }
+  .kst-all-mini .ru {
+    font-family: 'Spectral', serif;
+    font-size: 0.98rem;
+    color: oklch(var(--text));
+  }
+  .kst-all-mini .ar {
+    font-family: 'Scheherazade New', serif;
+    font-size: 0.95rem;
+    color: oklch(var(--text-3));
+    direction: rtl;
+  }

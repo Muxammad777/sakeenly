@@ -3,20 +3,22 @@ import { useTranslations } from "next-intl";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
+import { PROPHET_STORIES } from "@/lib/data/prophet-stories";
 
 interface PageProps { params: Promise<{ locale: Locale }>; }
 
-const PROPHETS: { ar: string; svg: React.ReactNode }[] = [
-  { ar: "آدم عليه السلام",   svg: <path d="M12 2 L14.2 9.8 L22 12 L14.2 14.2 L12 22 L9.8 14.2 L2 12 L9.8 9.8 Z"/> },
-  { ar: "نوح عليه السلام",   svg: <><path d="M3 12c4-4 14-4 18 0v6H3z"/><path d="M7 18v3M17 18v3"/></> },
-  { ar: "إبراهيم عليه السلام", svg: <path d="M12 2 L20 8 L20 16 L12 22 L4 16 L4 8 Z"/> },
-  { ar: "يوسف عليه السلام",  svg: <><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></> },
-  { ar: "موسى عليه السلام",  svg: <><path d="M3 12 L9 8 L9 16 Z"/><path d="M15 8 L21 12 L15 16 Z"/></> },
-  { ar: "أيوب عليه السلام",  svg: <><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></> },
-  { ar: "يونس عليه السلام",  svg: <><path d="M5 10 L19 10 L17 18 L7 18 Z"/><path d="M9 10 L11 4 M13 4 L15 10"/></> },
-  { ar: "سليمان عليه السلام",svg: <path d="M6 10 L12 4 L18 10 L18 20 L6 20 Z"/> },
-  { ar: "عيسى عليه السلام",  svg: <><circle cx="12" cy="9" r="5"/><path d="M5 22c0-5 3-8 7-8s7 3 7 8"/></> },
-];
+// Per-slug decorative SVGs (no images of prophets — only abstract geometry).
+const PROPHET_SVG: Record<string, React.ReactNode> = {
+  adam:     <path d="M12 2 L14.2 9.8 L22 12 L14.2 14.2 L12 22 L9.8 14.2 L2 12 L9.8 9.8 Z"/>,
+  nuh:      <><path d="M3 12c4-4 14-4 18 0v6H3z"/><path d="M7 18v3M17 18v3"/></>,
+  ibrahim:  <path d="M12 2 L20 8 L20 16 L12 22 L4 16 L4 8 Z"/>,
+  yusuf:    <><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></>,
+  musa:     <><path d="M3 12 L9 8 L9 16 Z"/><path d="M15 8 L21 12 L15 16 Z"/></>,
+  ayyub:    <><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></>,
+  yunus:    <><path d="M5 10 L19 10 L17 18 L7 18 Z"/><path d="M9 10 L11 4 M13 4 L15 10"/></>,
+  sulayman: <path d="M6 10 L12 4 L18 10 L18 20 L6 20 Z"/>,
+  isa:      <><circle cx="12" cy="9" r="5"/><path d="M5 22c0-5 3-8 7-8s7 3 7 8"/></>,
+};
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
@@ -47,19 +49,19 @@ function Content() {
 
       <section className="wrap">
         <div className="stories">
-          {PROPHETS.map((p, i) => {
-            const n = i + 1;
+          {PROPHET_STORIES.map((story) => {
+            const themeUpper = story.theme.toUpperCase();
             return (
-              <Link key={n} className="story" href="#">
+              <Link key={story.slug} className="story" href={`/kids/stories/${story.slug}`}>
                 <div className="story-illust">
                   <div className="geo-stars-soft"></div>
                   <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
-                    {p.svg}
+                    {PROPHET_SVG[story.slug]}
                   </svg>
                 </div>
-                <div className="story-name">{t(`p${n}.name` as `p1.name`)}</div>
-                <div className="story-ar" dir="rtl">{p.ar}</div>
-                <div className="story-meta">{t(`p${n}.meta` as `p1.meta`)}</div>
+                <div className="story-name">Пророк {story.nameRu}</div>
+                <div className="story-ar" dir="rtl">{`${story.nameAr} ${story.suffix}`}</div>
+                <div className="story-meta">{`${story.readingMin} МИН · ${themeUpper}`}</div>
                 <span className="story-cta">{t("cta")}</span>
               </Link>
             );

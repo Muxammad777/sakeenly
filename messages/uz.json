@@ -409,7 +409,7 @@
     "sec2_learn": "Oʻrganish",
     "sec3_h": "Paygʻambarlar hikoyalari.",
     "sec3_p": "Sodda aytilgan. Kitob manba sifatida. Toʻqimasiz.",
-    "sec3_pill": "25 HIKOYA",
+    "sec3_pill": "9 HIKOYA",
     "sec3_minutes": "{n} DAQ OʻQISH",
     "sec3_listen": "Tinglash →",
     "sec3_story_n": "HIKOYA №{n}",
@@ -485,7 +485,7 @@
   },
   "kst": {
     "adab": "Odamlar va Kaʼba tasvirlari yoʻq · adabga rioya",
-    "badge": "25 paygʻambar · matn + audio",
+    "badge": "9 paygʻambar · ota-ona uchun matnlar",
     "cta": "Tinglash →",
     "h1": "Paygʻambarlar hikoyalari, alayhimussalom.",
     "lede": "Har bir hikoya — ota-onaga qisqa matn va 5-8 daqiqa tinch audio.",

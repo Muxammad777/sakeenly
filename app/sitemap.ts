@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { EMOTIONS } from "@/lib/data/emotions";
+import { PROPHET_STORIES } from "@/lib/data/prophet-stories";
 
 const BASE = "https://sakeenly.com";
 
@@ -13,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/kids`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/kids/alphabet`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/kids/surahs`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE}/kids/stories`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/pricing`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/about`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: `${BASE}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },
@@ -25,6 +27,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const prophetRoutes: MetadataRoute.Sitemap = PROPHET_STORIES.map((p) => ({
+    url: `${BASE}/kids/stories/${p.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
   // First 5 surahs as canonical reader entry points for SEO.
   const readerRoutes: MetadataRoute.Sitemap = [1, 108, 112, 113, 114].map((s) => ({
     url: `${BASE}/reader/${s}/1`,
@@ -33,5 +42,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...emotionRoutes, ...readerRoutes];
+  return [...staticRoutes, ...emotionRoutes, ...prophetRoutes, ...readerRoutes];
 }
