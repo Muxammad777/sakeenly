@@ -13,9 +13,23 @@ const postSchema = z.object({
   tags: z.array(z.string().max(40)).max(20).optional(),
 });
 
-export async function GET() {
+export async function GET(req: Request) {
   const user = await getCurrentUser();
   if (!user) return NextResponse.json({ error: "unauthenticated" }, { status: 401 });
+
+  // Optional single-bookmark check: GET /api/bookmarks?ayahKey=2:286
+  // → { exists: boolean }. Used by widgets that just need to know if a
+  // specific verse is bookmarked (e.g. the home "аят дня" card).
+  const ayahKeyParam = new URL(req.url).searchParams.get("ayahKey");
+  if (ayahKeyParam) {
+    const parsed = ayahKeySchema.safeParse(ayahKeyParam);
+    if (!parsed.success) return NextResponse.json({ error: "invalid_ayah_key" }, { status: 400 });
+    const exists = await db.bookmark.findUnique({
+      where: { userId_ayahKey: { userId: user.id, ayahKey: parsed.data } },
+      select: { id: true },
+    });
+    return NextResponse.json({ exists: Boolean(exists) });
+  }
 
   const bookmarks = await db.bookmark.findMany({
     where: { userId: user.id },
