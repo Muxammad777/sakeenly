@@ -1,9 +1,30 @@
 import type { Metadata } from "next";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
-import { PROPHET_STORIES } from "@/lib/data/prophet-stories";
+import { PROPHET_STORIES, getStoryContent } from "@/lib/data/prophet-stories";
+
+// Local-language prefix word for "Prophet" on the stories index card.
+const PROPHET_PREFIX: Record<Locale, string> = {
+  ru: "Пророк",
+  en: "Prophet",
+  fa: "حضرت",
+  tg: "Пайғамбар",
+  uz: "Payg'ambar",
+  kk: "Пайғамбар",
+  ky: "Пайгамбар",
+};
+
+const MIN_WORD: Record<Locale, string> = {
+  ru: "МИН",
+  en: "MIN",
+  fa: "دقیقه",
+  tg: "ДАҚ",
+  uz: "DAQ",
+  kk: "МИН",
+  ky: "МҮН",
+};
 
 interface PageProps { params: Promise<{ locale: Locale }>; }
 
@@ -34,6 +55,9 @@ export default async function StoriesPage({ params }: PageProps) {
 
 function Content() {
   const t = useTranslations("kst");
+  const locale = useLocale() as Locale;
+  const prefix = PROPHET_PREFIX[locale] ?? PROPHET_PREFIX.ru;
+  const minWord = MIN_WORD[locale] ?? MIN_WORD.ru;
   return (
     <>
       <section className="wrap kid-hero">
@@ -50,7 +74,8 @@ function Content() {
       <section className="wrap">
         <div className="stories">
           {PROPHET_STORIES.map((story) => {
-            const themeUpper = story.theme.toUpperCase();
+            const c = getStoryContent(story, locale);
+            const themeUpper = c.theme.toUpperCase();
             return (
               <Link key={story.slug} className="story" href={`/kids/stories/${story.slug}`}>
                 <div className="story-illust">
@@ -59,9 +84,9 @@ function Content() {
                     {PROPHET_SVG[story.slug]}
                   </svg>
                 </div>
-                <div className="story-name">Пророк {story.nameRu}</div>
+                <div className="story-name">{prefix} {c.name}</div>
                 <div className="story-ar" dir="rtl">{`${story.nameAr} ${story.suffix}`}</div>
-                <div className="story-meta">{`${story.readingMin} МИН · ${themeUpper}`}</div>
+                <div className="story-meta">{`${story.readingMin} ${minWord} · ${themeUpper}`}</div>
                 <span className="story-cta">{t("cta")}</span>
               </Link>
             );
