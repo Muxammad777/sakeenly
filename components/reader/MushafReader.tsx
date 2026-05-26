@@ -11,7 +11,6 @@ import {
 } from "@/lib/quran/constants";
 import { useActiveTranslation } from "./TranslationToggle";
 import { AudioPlayerProvider, useAudioPlayer } from "./AudioPlayerProvider";
-import { AudioPlayer } from "./AudioPlayer";
 import { SideTab } from "./SideTab";
 
 export interface MushafAyah {
@@ -64,10 +63,9 @@ export function MushafReader(props: MushafReaderProps) {
   return (
     <AudioPlayerProvider>
       <MushafReaderInner {...props} />
-      {/* Without this the bottom audio bar was never mounted on the reader
-          page — only on /listen and /reader (SurahReader). Tapping ▶ on
-          an ayah started audio in the provider but no UI showed it. */}
-      <AudioPlayer />
+      {/* No separate <AudioPlayer /> here — MushafReaderInner renders its
+          own richer player bar (with progress + prev/next/stop) further
+          down in the JSX. Mounting both would duplicate the control. */}
     </AudioPlayerProvider>
   );
 }
