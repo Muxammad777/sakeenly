@@ -81,7 +81,11 @@ export default async function ReaderPage({ params, searchParams }: PageProps) {
     getCurrentUser(),
   ]);
 
-  const tanzilByKey: Record<Exclude<TranslationKey, "kuliev" | "sahih-intl">, Record<string, string>> = {
+  // Tanzil-backed translations. Quran.com-sourced entries (kuliev, sahih-intl,
+  // haleem, taji, islamhouse-fa) are fetched via the verses API above and
+  // don't need static map fallbacks. Keep this as Partial so adding more
+  // Quran.com translations won't widen this object.
+  const tanzilByKey: Partial<Record<TranslationKey, Record<string, string>>> = {
     krachkovsky:    krachkovskyMap  as Record<string, string>,
     osmanov:        osmanovMap      as Record<string, string>,
     porokhova:      porokhovaMap    as Record<string, string>,

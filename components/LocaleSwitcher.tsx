@@ -10,6 +10,8 @@ import { cn } from "@/lib/utils";
 
 const LANG_META: Record<Locale, { native: string; short: string }> = {
   ru: { native: "Русский", short: "РУС" },
+  en: { native: "English", short: "EN" },
+  fa: { native: "فارسی", short: "FA" },
   tg: { native: "Тоҷикӣ", short: "ТҶК" },
   uz: { native: "Oʻzbek", short: "UZB" },
   kk: { native: "Қазақ", short: "ҚАЗ" },

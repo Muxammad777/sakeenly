@@ -1,0 +1,1057 @@
+{
+  "ab": {
+    "badge": "Sakeenly · since 2026",
+    "cta_btn1": "Scholar board",
+    "cta_btn2": "Privacy policy",
+    "cta_eyebrow": "Want to help?",
+    "cta_h": "Scholar board · contributors · feedback",
+    "cta_p": "If you're a scholar, an engineer, or you just want to flag a mistake — write to hello@sakeenly.com.",
+    "h1": "Stillness of the heart is not a feature — it's a ritual.",
+    "lede": "Sakina is the tranquillity Allah sends down upon the hearts of the believers. Modern apps are often the opposite of that. We're building the inverse: a product that leaves the heart lighter after using it.",
+    "p1": {
+      "d": "No ad networks. No affiliate links inside answers. No pop-ups.",
+      "n": "01 — Advertising",
+      "t": "No banners. Ever."
+    },
+    "p2": {
+      "d": "No Google Analytics. No Meta Pixel. No AppsFlyer. Only the product itself, server logs, and anonymous performance metrics.",
+      "n": "02 — Trackers",
+      "t": "Zero telemetry."
+    },
+    "p3": {
+      "d": "Our AI answers only from authenticated sources and never issues fatwa. Personal legal questions are routed to qualified scholars.",
+      "n": "03 — Fatwa",
+      "t": "That's a scholar's work."
+    },
+    "p4": {
+      "d": "Illustrations are pure geometry. Prophet stories ﷺ ship as text and audio — never as depicted faces.",
+      "n": "04 — Adab",
+      "t": "No images of people or the Ka'ba."
+    },
+    "p5": {
+      "d": "Encryption at rest. Full export on request. Deleting your account cascades through everything.",
+      "n": "05 — Encryption",
+      "t": "Your bookmarks belong to you."
+    },
+    "p6": {
+      "d": "Premium and Family exist for one reason — so we never have to sell you to advertisers.",
+      "n": "06 — Pricing",
+      "t": "Reading is always free."
+    },
+    "principles_eyebrow": "Six principles",
+    "principles_h": "What we promised ourselves.",
+    "quote_cite": "Surah Al-Fath · 48:4 · Sahih International",
+    "quote_tr": "\"It is He who sent down tranquillity into the hearts of the believers.\"",
+    "sources_eyebrow": "What this is built on",
+    "sources_h": "Sources and fonts."
+  },
+  "ask": {
+    "a1_html": "The Quran places sabr among the believer's defining qualities and promises the patient a reward without measure <span class=\"citation\">Quran 39:10</span>. When the heart contracts, He reminds us that He is with the patient <span class=\"citation\">Quran 2:153</span>, and that ease follows every hardship <span class=\"citation\">Quran 94:5</span>. The Prophet ﷺ was commanded to bear \"a beautiful patience\" <span class=\"citation\">Quran 70:5</span> — without complaint to creation.",
+    "aria_send": "Send",
+    "avatar_you": "YOU",
+    "badge": "RAG · citations · no fatwa",
+    "h1": "A question. A source. An answer.",
+    "label_a": "Sakeenly",
+    "label_q": "Question",
+    "lede": "Sakeenly searches the Quran, tafsir, and the hadith corpus for your question. Every claim is cited. Personal legal questions are routed to qualified scholars.",
+    "placeholder": "Ask about the Quran — for example, \"what does sabr mean?\"",
+    "policy": "100% inline citations · SeekersGuidance / Yaqeen / AMJA for fatwa",
+    "q1": "What does the Quran say about patience in hardship?",
+    "q2": "Can a Muslim woman work at a bank?",
+    "quota": "Free · 2 / 5 questions today",
+    "refusal_h": "This is a question for a scholar",
+    "refusal_p": "Sakeenly does not issue legal rulings. A personal fatwa accounts for madhhab, situation, and intention — that's the work of a qualified scholar.",
+    "sources": "Sources",
+    "src1": "Quran 2:153 — Allah is with the patient",
+    "src2": "Quran 39:10 — The reward of the patient",
+    "src3": "Quran 70:5 — A beautiful patience",
+    "src4": "Quran 94:5 — With every hardship, ease",
+    "sugg1": "What does the Quran say about gratitude?",
+    "sugg2": "Tell me about the Prophet Yusuf ﷺ.",
+    "sugg3": "How important is intention (niyyah)?",
+    "sugg4": "What does \"sabr\" mean, and where does the Quran speak of it?",
+    "upgrade": "Remove the limit → Premium"
+  },
+  "ay": {
+    "all": "All",
+    "badge": "30 collections · scholar review in progress",
+    "c1": {
+      "d": "\"In the remembrance of Allah do hearts find rest.\" A collection for when the chest tightens.",
+      "t": "Ayat for anxiety"
+    },
+    "c10": {
+      "d": "\"Allah is enough for us — and He is the best Disposer of affairs.\"",
+      "t": "When you feel afraid"
+    },
+    "c11": {
+      "d": "Those who restrain their anger — Allah loves them.",
+      "t": "When anger rises"
+    },
+    "c12": {
+      "d": "The hearts of the believers tremble at the remembrance of Allah.",
+      "t": "To strengthen iman"
+    },
+    "c13": {
+      "d": "The du'a of Ayyub ﷺ: \"Hardship has touched me, and You are the Most Merciful.\"",
+      "t": "When you're unwell"
+    },
+    "c14": {
+      "d": "\"Indeed, to Allah we belong, and to Him we shall return.\"",
+      "t": "When you lose a loved one"
+    },
+    "c15": {
+      "d": "\"My Lord, have mercy on them as they raised me when I was small.\"",
+      "t": "Ayat about parents"
+    },
+    "c16": {
+      "d": "The du'a of Zakariyya ﷺ: \"Grant me from Yourself a goodly offspring.\"",
+      "t": "Ayat about children"
+    },
+    "c17": {
+      "d": "\"Whoever fears Allah, He makes a way out for him.\"",
+      "t": "When money is tight"
+    },
+    "c18": {
+      "d": "Doubt becomes dangerous when you keep silent about it.",
+      "t": "When doubt creeps in"
+    },
+    "c19": {
+      "d": "\"Glory be to Him who subjected this to us.\"",
+      "t": "Before a journey"
+    },
+    "c2": {
+      "d": "Sabr is holding the heart back from complaint. Allah is with the patient.",
+      "t": "Ayat on sabr (patience)"
+    },
+    "c20": {
+      "d": "Allah will replace evil deeds with good ones.",
+      "t": "To walk away from a sin"
+    },
+    "c21": {
+      "d": "\"Whoever places his trust in Allah, He is enough for him.\"",
+      "t": "On tawakkul (trust)"
+    },
+    "c22": {
+      "d": "\"Call upon Me — I will respond to you.\"",
+      "t": "Asking Allah for help"
+    },
+    "c23": {
+      "d": "If Shaytan whispers — take refuge in Allah.",
+      "t": "When temptation comes"
+    },
+    "c24": {
+      "d": "\"Let them rejoice in the mercy of Allah.\"",
+      "t": "For joy"
+    },
+    "c25": {
+      "d": "Surah Al-Kahf — light between two Fridays.",
+      "t": "Ayat for Friday"
+    },
+    "c26": {
+      "d": "The month in which the Quran was revealed.",
+      "t": "Ayat of Ramadan"
+    },
+    "c27": {
+      "d": "\"The Night of Qadr is better than a thousand months.\"",
+      "t": "Ayat for Laylat al-Qadr"
+    },
+    "c28": {
+      "d": "He placed love and mercy between spouses.",
+      "t": "For peace at home"
+    },
+    "c29": {
+      "d": "\"My mercy encompasses all things.\"",
+      "t": "On rahma (mercy)"
+    },
+    "c3": {
+      "d": "Shukr is to see a blessing and return it with the heart, the tongue, and your deeds.",
+      "t": "Ayat on gratitude (shukr)"
+    },
+    "c30": {
+      "d": "\"O soul at peace — return to your Lord, well-pleased.\"",
+      "t": "Contentment with Allah"
+    },
+    "c4": {
+      "d": "No one is alone while he knows Allah is closer than the jugular vein.",
+      "t": "When you feel alone"
+    },
+    "c5": {
+      "d": "Musa's ﷺ du'a before Pharaoh — open my chest, ease my task, untie the knot.",
+      "t": "Before an exam"
+    },
+    "c6": {
+      "d": "Ayat al-Kursi and the mu'awwidhat — what the Prophet ﷺ recited before sleep.",
+      "t": "Before sleep"
+    },
+    "c7": {
+      "d": "To enter the day with remembrance.",
+      "t": "Ayat for the morning"
+    },
+    "c8": {
+      "d": "\"Do not despair of the mercy of Allah.\"",
+      "t": "On tawbah (repentance)"
+    },
+    "c9": {
+      "d": "When grief feels endless, the Quran reminds you: it is passing.",
+      "t": "When grief comes"
+    },
+    "cat_family": "Family",
+    "cat_heart": "State of the heart",
+    "cat_life": "Life moments",
+    "cat_time": "Time",
+    "cat_worship": "Worship",
+    "h1": "Open the Book where life made it hard.",
+    "lede": "A warm index: which ayat of the Quran to read when you're anxious, in grief, before sleep, before an exam, in gratitude, in loneliness. Each collection — 3 to 5 ayat with translation and audio.",
+    "open": "Open →",
+    "aya_count": "{count, plural, one {# ayah} other {# ayat}}"
+  },
+  "close": {
+    "cite": "Surah Al-Fath · 48:4",
+    "cta1": "Begin with Al-Fatihah",
+    "cta2": "See plans",
+    "eyebrow": "Every day · with you",
+    "line1": "\"…and He sent down sakina",
+    "line2": "into the hearts of the believers.\""
+  },
+  "cont": {
+    "ayah_of": "ayah 31 of 286",
+    "btn": "Continue reading",
+    "label": "Continue",
+    "surah": "Al-Baqarah"
+  },
+  "emo": {
+    "all": "All themes →",
+    "heading": "Open the Book where life makes it hard.",
+    "ct_audio": "AUDIO",
+    "ct_dua": "DU'A",
+    "ct_count": "{n} AYAT",
+    "chat_q": "\"What is Ayat al-Kursi about?\"",
+    "chat_a": "Ayah 2:255 — about the absolute Being of Allah… [Quran 2:255]"
+  },
+  "feat": {
+    "eyebrow": "What's inside",
+    "f1_b": "KFGQPC Hafs script. Five translations. Tap an ayah — explain, listen, save.",
+    "f1_l": "01 — Reading",
+    "f1_l2": "Open the reader →",
+    "f1_t": "The mushaf, as on paper.",
+    "f2_b": "Abdul-Basit, al-Husary, as-Sudais, and twenty-seven more voices. Sleep timer, speed, current-ayah highlight.",
+    "f2_l": "02 — Listen",
+    "f2_l2": "Listen now →",
+    "f2_t": "Thirty reciters. One tap.",
+    "f3_b": "Sakeenly searches the Quran, hadith, and tafsir. Every claim is footnoted. Fatwa goes to the scholars.",
+    "f3_l": "03 — Ask",
+    "f3_l2": "Soon →",
+    "f3_t": "A question. A source. An answer.",
+    "heading": "Three rituals, one app.",
+    "lede": "No decoration. No banners. No tracking. Just text, voice, and stillness."
+  },
+  "foot": {
+    "about": "About",
+    "ask": "Ask",
+    "ayat": "Ayat by theme",
+    "bottom_made": "Made with نية · sakeenly.com",
+    "company": "Company",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "help": "Help",
+    "kids": "For kids",
+    "pricing": "Pricing",
+    "privacy": "Privacy",
+    "product": "Product",
+    "reader": "Reader",
+    "reciters": "Reciters",
+    "report": "Report an issue",
+    "request": "Request an ayah",
+    "scholars": "Scholar board",
+    "tagline": "Your Quran companion. No ads. No trackers.",
+    "terms": "Terms"
+  },
+  "hero": {
+    "badge": "Sakeenly · MVP",
+    "cta_read": "Start reading",
+    "cta_signin": "Sign in",
+    "meta1": "سكينة · sakina · stillness of the heart",
+    "meta2": "Quran 2:248",
+    "meta3": "0 ads · 0 trackers",
+    "sub": "A modern Quran companion for you. Read the mushaf, listen to reciters, find ayat for every state of heart.",
+    "title_e": "sakeena.",
+    "title_h": "Find your",
+    "title_t": "Every day."
+  },
+  "ix": {
+    "badge": "Design Preview · 17 screens",
+    "grp1_eyebrow": "Original design (7) · untouched",
+    "grp1_h": "From the «Quran» folder",
+    "grp2_eyebrow": "Added in the same style (10)",
+    "grp2_h": "Missing pages",
+    "h1": "Sakeenly · every screen on one page.",
+    "k1": {
+      "d": "VOTD · streak · 3 rituals · emotions · open hero",
+      "t": "Home"
+    },
+    "k10": {
+      "d": "Mission · 6 principles · sources",
+      "t": "About"
+    },
+    "k11": {
+      "d": "Pipeline review · scholar board",
+      "t": "Scholar board"
+    },
+    "k12": {
+      "d": "Google / Apple / magic-link · quota aside",
+      "t": "Sign-in"
+    },
+    "k13": {
+      "d": "Streak · bookmarks · subscription · settings",
+      "t": "Profile"
+    },
+    "k14": {
+      "d": "28 KFGQPC letters · 7-column grid",
+      "t": "Kids · Alphabet"
+    },
+    "k15": {
+      "d": "Al-Fatihah + 5 short surahs · per-ayah progress",
+      "t": "Kids · First surahs"
+    },
+    "k16": {
+      "d": "9 prophets · no depictions of people",
+      "t": "Kids · Prophet stories"
+    },
+    "k17": {
+      "d": "104 · quote 2:216 · return",
+      "t": "404 · Not Found"
+    },
+    "k2": {
+      "d": "3-column mushaf · KFGQPC · sticky player",
+      "t": "Reader"
+    },
+    "k3": {
+      "d": "Reciters · filter · now playing · sleep timer",
+      "t": "Listen"
+    },
+    "k4": {
+      "d": "Iqra · surahs with progress · stories",
+      "t": "Kids"
+    },
+    "k5": {
+      "d": "Free / Premium / Family · comparison · FAQ",
+      "t": "Pricing"
+    },
+    "k6": {
+      "d": "What we collect · full transparency",
+      "t": "Privacy"
+    },
+    "k7": {
+      "d": "Sample SEO landing page",
+      "t": "Ayat for anxiety"
+    },
+    "k8": {
+      "d": "Chat · refusal policy · inline citations · sources",
+      "t": "Ask · AI Q&A"
+    },
+    "k9": {
+      "d": "Category filter + grid of cards",
+      "t": "Ayat · index of 30 collections"
+    },
+    "lede": "On the left — 7 original design pages from the «Quran» folder, opened as-is. On the right — 10 pages added in the same style via shared.css and shared.js, without touching the originals.",
+    "more": "Open →"
+  },
+  "ka": {
+    "badge": "Iqra · 4-10 years",
+    "h1": "Twenty-eight letters.",
+    "l1": "Alif",
+    "l10": "Ra",
+    "l11": "Zay",
+    "l12": "Sin",
+    "l13": "Shin",
+    "l14": "Sad",
+    "l15": "Dad",
+    "l16": "Ta (emphatic)",
+    "l17": "Za (emphatic)",
+    "l18": "'Ayn",
+    "l19": "Ghayn",
+    "l2": "Ba",
+    "l20": "Fa",
+    "l21": "Qaf",
+    "l22": "Kaf",
+    "l23": "Lam",
+    "l24": "Mim",
+    "l25": "Nun",
+    "l26": "Ha (soft)",
+    "l27": "Waw",
+    "l28": "Ya",
+    "l3": "Ta",
+    "l4": "Tha",
+    "l5": "Jim",
+    "l6": "Ha (heavy)",
+    "l7": "Kha",
+    "l8": "Dal",
+    "l9": "Dhal",
+    "lede": "Large KFGQPC type so the shape, dots and tails are easy to see. Tap a letter — hear its name.",
+    "tip": "Start with alif. Have your child repeat the audio aloud — that's half the memorisation.",
+    "tip_lab": "A note for parents:"
+  },
+  "kid": {
+    "badge": "For kids · 4–10 years",
+    "cta1": "Learn the letters",
+    "cta2": "Memorise surahs",
+    "cta3": "Listen to stories",
+    "h1": "Iqra. The Book. The stories.",
+    "lede": "Sakeenly for kids: the alphabet you can hear, the first surahs that are easy to remember, and the stories of the prophets ﷺ.",
+    "sec1_h": "Iqra — all 28 letters.",
+    "sec1_p": "Tap a letter — hear its name. Large letters. No rush.",
+    "sec1_pill": "12 / 28",
+    "progress": "Progress",
+    "sec2_h": "First surahs — for the heart.",
+    "sec2_p": "Short, beloved, important. They make falling asleep and waking easier.",
+    "sec2_pill": "4 SURAHS",
+    "sec2_listen": "Listen",
+    "sec2_learn": "Learn",
+    "sec3_h": "Stories of the prophets.",
+    "sec3_p": "Told simply. With the Book as the source. No invention.",
+    "sec3_pill": "9 STORIES",
+    "sec3_minutes": "{n} MIN READING",
+    "sec3_listen": "Listen →",
+    "sec3_story_n": "STORY №{n}",
+    "streak_alphabet": "Alphabet",
+    "streak_progress": "{done} of {total} letters learned",
+    "streak_days_lbl": "Streak · in a row",
+    "streak_days_title": "{n} days with the Book",
+    "parent_eyebrow": "For parents",
+    "parent_h": "Family plan — up to 6 accounts, a parents' dashboard, and a shared bookmarks shelf.",
+    "parent_p": "You see your child's streak, the letters they've learned, the surahs they're working on. Without surveillance.",
+    "parent_btn": "Family plan",
+    "surah1_ru": "Al-Fatihah",
+    "surah1_meta": "THE OPENING · 0:18",
+    "surah112_ru": "Al-Ikhlas",
+    "surah112_meta": "SINCERITY · 0:11",
+    "surah113_ru": "Al-Falaq",
+    "surah113_meta": "THE DAYBREAK · 0:14",
+    "surah114_ru": "An-Nas",
+    "surah114_meta": "MANKIND · 0:15",
+    "prophet1_name": "Nuh ﷺ and the ark",
+    "prophet1_ar": "نوح عليه السلام",
+    "prophet1_summary": "When the people forgot Allah, Nuh ﷺ called them back to the Book for 950 years. Allah told him to build a great ship and to take with him every animal in pairs.",
+    "prophet2_name": "Yunus ﷺ and the whale",
+    "prophet2_ar": "يونس عليه السلام",
+    "prophet2_summary": "In the darkness of the sea, in the darkness of the night, in the darkness of the whale, Yunus ﷺ said: \"There is no god but You. I have wronged myself.\" And Allah answered.",
+    "prophet3_name": "Ibrahim ﷺ and the stars",
+    "prophet3_ar": "إبراهيم عليه السلام",
+    "prophet3_summary": "Young Ibrahim ﷺ looked at the stars and thought, \"Is this my Lord?\" — but the stars went out. He was searching for the One who never sets.",
+    "prophet4_name": "Muhammad ﷺ in the cave",
+    "prophet4_ar": "محمد ﷺ",
+    "prophet4_summary": "The enemy stood at the mouth of the cave. Abu Bakr ﷺ wept. The Prophet ﷺ said: \"Do not grieve — Allah is with us.\" And all was well.",
+    "prophet5_name": "Musa ﷺ and the sea",
+    "prophet5_ar": "موسى عليه السلام",
+    "prophet5_summary": "The enemy was closing in. The sea was ahead. The people cried: \"They will catch us!\" Musa ﷺ said: \"No. Allah is with us — He will guide us.\" And the sea parted.",
+    "prophet6_name": "Maryam and the palm tree",
+    "prophet6_ar": "مريم عليها السلام",
+    "prophet6_summary": "When it hurt and it was frightening, Allah told Maryam: \"Shake the palm towards yourself — fresh dates will fall.\" And everything became gentle."
+  },
+  "ks": {
+    "badge": "Memorisation · parent dashboard",
+    "h1": "The first surahs of any hifz journey.",
+    "lede": "Al-Fatihah, and the four short surahs at the end of the Book — what is traditionally learned first. Listen, repeat, track progress ayah by ayah.",
+    "s1": {
+      "label": "5 / 7 ayat · 71%",
+      "meta": "THE OPENING · 7 ayat",
+      "note": "Recited in every rak'ah of salah. The seven oft-repeated."
+    },
+    "s2": {
+      "label": "3 / 6 ayat · 50%",
+      "meta": "MANKIND · 6 ayat",
+      "note": "Taking refuge with the Lord of mankind — from the whispers of the shayatin."
+    },
+    "s3": {
+      "label": "2 / 5 ayat · 40%",
+      "meta": "THE DAYBREAK · 5 ayat",
+      "note": "Taking refuge with the Lord of daybreak — from the evil of what He created."
+    },
+    "s4": {
+      "label": "4 / 4 ayat · 100% ✓",
+      "meta": "SINCERITY · 4 ayat",
+      "note": "A third of the Quran by meaning — tawhid in four ayat."
+    },
+    "s5": {
+      "label": "3 / 3 ayat · 100% ✓",
+      "meta": "ABUNDANCE · 3 ayat",
+      "note": "The shortest surah of the Quran — three short ayat."
+    },
+    "s6": {
+      "label": "0 / 6 ayat · not started",
+      "meta": "THE DISBELIEVERS · 6 ayat",
+      "note": "\"For you is your religion, and for me is mine.\""
+    }
+  },
+  "kst": {
+    "adab": "No images of people or the Ka'ba · we follow adab",
+    "badge": "9 prophets · scripts for parents",
+    "cta": "Listen →",
+    "h1": "Stories of the prophets, peace be upon them.",
+    "lede": "Each story — a short script for the parent to read aloud, plus a calm 5–8 minute audio.",
+    "more": "+ 16 more prophets · Hud · Salih · Lut · Shu'ayb · Idris · Zakariyya · Yahya and others.",
+    "p1": {
+      "meta": "7 MIN · THE FIRST HUMAN",
+      "name": "Prophet Adam ﷺ"
+    },
+    "p2": {
+      "meta": "8 MIN · THE ARK",
+      "name": "Prophet Nuh ﷺ"
+    },
+    "p3": {
+      "meta": "9 MIN · KHALIL ALLAH",
+      "name": "Prophet Ibrahim ﷺ"
+    },
+    "p4": {
+      "meta": "12 MIN · THE DREAM OF STARS",
+      "name": "Prophet Yusuf ﷺ"
+    },
+    "p5": {
+      "meta": "14 MIN · THE PARTING OF THE SEA",
+      "name": "Prophet Musa ﷺ"
+    },
+    "p6": {
+      "meta": "7 MIN · PATIENCE",
+      "name": "Prophet Ayyub ﷺ"
+    },
+    "p7": {
+      "meta": "8 MIN · THE WHALE",
+      "name": "Prophet Yunus ﷺ"
+    },
+    "p8": {
+      "meta": "11 MIN · THE KINGDOM OF THE WIND",
+      "name": "Prophet Sulayman ﷺ"
+    },
+    "p9": {
+      "meta": "10 MIN · A WORD FROM ALLAH",
+      "name": "Prophet Isa ﷺ"
+    }
+  },
+  "ls": {
+    "all": "All",
+    "all_114": "All 114 →",
+    "badge": "30 reciters · Quran.com + mp3quran.net",
+    "heading_1": "Voices that",
+    "heading_2": "carried the Book.",
+    "lede": "Pick a reciter, pick a range of ayat, pick a speed. Streamed from Quran.com CDN with current-ayah highlight and a sleep timer.",
+    "no_results": "No reciters in this style yet — we'll add some",
+    "popular_eyebrow": "Often listened to",
+    "popular_h": "Surahs people return to",
+    "search": "Search reciter..."
+  },
+  "nav": {
+    "ask": "Ask",
+    "ayat": "Ayat",
+    "kids": "Kids",
+    "listen": "Listen",
+    "pricing": "Pricing",
+    "read": "Read",
+    "signin": "Sign in",
+    "start": "Get started",
+    "profile": "Profile",
+    "signout": "Sign out"
+  },
+  "nf": {
+    "btn_home": "Back home",
+    "btn_open": "Open Al-Fatihah",
+    "code": "404 · PAGE NOT FOUND",
+    "h1": "This door doesn't open.",
+    "lede": "\"Perhaps you hate a thing, and it is better for you\" — Quran 2:216. Maybe the link is stale. But the Book is right here — one tap away."
+  },
+  "pf": {
+    "actions": {
+      "export": "Export your data",
+      "signout": "Sign out"
+    },
+    "ago_1w": "a week ago",
+    "ago_2d": "2 days ago",
+    "ago_2w": "2 weeks ago",
+    "ago_3d": "3 days ago",
+    "bm1": "Ayat al-Kursi — the greatest ayah, recited before sleep per the sunnah",
+    "bm2": "\"In the remembrance of Allah do hearts find rest\" — for anxiety",
+    "bm3": "\"Indeed, with hardship comes ease\"",
+    "bm4": "\"Do not despair of the mercy of Allah\"",
+    "bm5": "Surah Al-Qadr in full — for Laylat al-Qadr",
+    "bm_all": "All 38 →",
+    "bm_eyebrow": "Recent bookmarks",
+    "bm_h": "What you keep coming back to.",
+    "eyebrow": "Profile",
+    "label_reciter": "Reciter",
+    "label_theme": "Theme",
+    "label_translation": "Translation",
+    "r": {
+      "basit": "Abdul-Basit (mujawwad)",
+      "husary": "Mahmoud Khalil al-Husary",
+      "sudais": "Abdur-Rahman as-Sudais"
+    },
+    "settings_eyebrow": "Settings",
+    "settings_h": "How you read.",
+    "stat_bookmarks": "Bookmarks",
+    "stat_bookmarks_d": "ayat saved · 12 with notes",
+    "stat_streak": "Streak",
+    "stat_streak_d": "consecutive days of reading · 21 best",
+    "sub_cta": "Remove the limit · Premium",
+    "sub_eyebrow": "Subscription",
+    "sub_meta": "2 / 5 AI questions today · resets at 00:00 UTC",
+    "sub_plan": "Free",
+    "t": {
+      "abu": "Abu Adel",
+      "awqaf": "Egyptian Ministry of Awqaf",
+      "kuliev": "Kuliev",
+      "pickthall": "M. M. Pickthall",
+      "sahih": "Sahih International"
+    },
+    "th": {
+      "dark": "Night (default)",
+      "light": "Light",
+      "mushaf": "Mushaf",
+      "sepia": "Sepia"
+    }
+  },
+  "pr": {
+    "badge": "Free — forever. Premium — by choice.",
+    "cmp": {
+      "col1": "Feature",
+      "col2": "Free",
+      "col3": "Premium",
+      "col4": "Family",
+      "h_sub": "If you want the details.",
+      "h_title": "What's where",
+      "row": {
+        "114": "114 surahs · 5 translations",
+        "30q": "30 reciters · audio per ayah",
+        "6acc": "Up to 6 accounts",
+        "aiq": "Questions with citations from Quran/hadith",
+        "dash": "Parents' dashboard",
+        "kids": "Kids mode · Iqra · first surahs",
+        "lds": "Light · Dark · Sepia",
+        "mushaf": "Mushaf-paper theme",
+        "off": "Offline mode",
+        "sleep": "Sleep timer · 0.5×–2× speed",
+        "tafsir": "Extended tafsir"
+      },
+      "s1": "Reading and audio",
+      "s2": "AI companion",
+      "s3": "Themes and interface",
+      "s4": "Family and kids"
+    },
+    "faq": {
+      "a1": "Yes. All 114 surahs, 5 translations, 30 reciters, bookmarks and notes — free on the Free plan forever. The Book should not be paid. Only the tooling becomes paid: unlimited AI companion, extended tafsir, offline mode, kids mode.",
+      "a2": "Crypto payments raise more questions than they answer in this category. Sakeenly works only with transparent methods: Stripe (Visa/Mastercard/MIR via Russian resellers), Apple Pay, Google Pay.",
+      "a3": "You get 5 questions every 24 hours in /ask. The limit resets at midnight in your time zone. Reading, audio and bookmarks are never limited.",
+      "a4": "Sakeenly's AI does not answer fatwa-grade questions (marriage, divorce, inheritance, medicine, politics, business). Instead we route to scholars: SeekersGuidance, Yaqeen Institute, AMJA. This is intentional, not a bug.",
+      "a5": "Gift subscriptions arrive within three months of launch. Need one right now — email hello@sakeenly.com and we'll set it up by hand.",
+      "a6": "Email hello@sakeenly.com — we open Premium free of charge for students, imams, and anyone in difficulty. We refresh access once a year. No questions asked.",
+      "h": "Frequently asked",
+      "q1": "Is the whole Quran really free?",
+      "q2": "Why no crypto payments?",
+      "q3": "What does \"5 AI questions a day\" on Free actually mean?",
+      "q4": "What about fatwa questions?",
+      "q5": "Can I gift a subscription?",
+      "q6": "What if I can't afford Premium?"
+    },
+    "h1": "Reading must be free.",
+    "h2": "Depth — by choice.",
+    "lede": "The Free plan gives you everything you need for daily reading. Premium unlocks unlimited AI questions and themes. Family — up to six people in one household. No ads. Never.",
+    "month": "Monthly",
+    "p1": {
+      "cta": "Already on it",
+      "f1": "All 114 surahs · 5 translations · KFGQPC Hafs",
+      "f2": "30 reciters · audio for every ayah",
+      "f3": "Bookmarks and notes · no limit",
+      "f4": "AI questions · 5 a day",
+      "f5": "Light, Dark, Sepia themes",
+      "f6": "Mushaf-paper theme",
+      "f7": "Unlimited AI questions",
+      "hint": "No card. No expiry.",
+      "lbl": "Included",
+      "name": "Free",
+      "per": "/ forever",
+      "sub": "Everything you need for daily reading. No limit on the Quran itself."
+    },
+    "p2": {
+      "cta": "Get Premium",
+      "f1": "Unlimited AI questions · with RAG and citations",
+      "f2": "Every theme, including Mushaf-paper",
+      "f3": "Extended tafsir (Ibn Kathir, al-Qurtubi)",
+      "f4": "Offline mode: 10 surahs",
+      "f5": "Sleep timer, 0.5×–2× speed",
+      "f6": "Priority support",
+      "hint": "$59.88 a year on the monthly plan",
+      "lbl": "Everything in Free, plus",
+      "per": "/ mo",
+      "sub": "For those who read daily and ask the Book questions."
+    },
+    "p3": {
+      "cta": "Get Family",
+      "f1": "Up to 6 accounts per family",
+      "f2": "Kids mode: Iqra, first surahs, prophet stories",
+      "f3": "Parents' dashboard · your child's streak",
+      "f4": "Shared bookmarks shelf",
+      "f5": "Offline mode: the whole Book",
+      "hint": "One account — six people",
+      "lbl": "Everything in Premium, plus",
+      "name": "Family",
+      "per": "/ mo",
+      "sub": "Up to six people, a shared bookmarks library, and kids mode."
+    },
+    "popular": "POPULAR",
+    "trust1": {
+      "p": "Sakeenly does not sell your attention. We do not work with ad networks. No Google Ads, no Facebook, no AdSense.",
+      "t": "0 ads, ever"
+    },
+    "trust2": {
+      "p": "Encryption at rest. Full export on request. Deleting your account cascades through all data.",
+      "t": "Bookmarks are encrypted"
+    },
+    "trust3": {
+      "p": "From your Profile. Your subscription stays active until the end of the paid period — no surprises.",
+      "t": "Cancel in one click"
+    },
+    "year": "Yearly"
+  },
+  "priv": {
+    "h1": "Privacy as a ritual.",
+    "lede": "We treat your data as an amanah — something entrusted to us for safekeeping. No ads, no trackers, no partners.",
+    "ch3_eyebrow": "Chapter 3 · encryption",
+    "ch3_h": "How a note ends up in the database.",
+    "ch3_p": "A four-step chain — at every step the data is unreadable to any outside service.",
+    "ch3_s1_lbl": "01 · Browser",
+    "ch3_s1_t": "You write the note",
+    "ch3_s1_m": "The text exists only in your browser. Nothing is sent yet.",
+    "ch3_s2_lbl": "02 · TLS",
+    "ch3_s2_t": "Transit over HTTPS",
+    "ch3_s2_m": "TLS 1.3 (Vercel Edge). Between you and the server — no one reads.",
+    "ch3_s3_lbl": "03 · Server",
+    "ch3_s3_t": "AES-256 encryption",
+    "ch3_s3_m": "The note text is encrypted with a key from envelope encryption. The key lives in Vercel KV, not in Supabase.",
+    "ch3_stat1_v": "AES-256-GCM",
+    "ch3_stat1_l": "Algorithm",
+    "ch3_stat1_s": "NIST standard. No broken modes.",
+    "ch3_stat2_v": "90 d",
+    "ch3_stat2_l": "Key rotation",
+    "ch3_stat2_s": "Every 90 days the primary key is re-issued. Old keys are retained to decrypt.",
+    "ch3_stat3_v": "2 services",
+    "ch3_stat3_l": "Separation",
+    "ch3_stat3_s": "Data in Supabase. Keys in Vercel KV. One service can't see the other.",
+    "ch3_stat4_v": "30 d",
+    "ch3_stat4_l": "Deletion",
+    "ch3_stat4_s": "When you delete your account, the data is wiped within 30 days. Backups within 90.",
+    "ch4_eyebrow": "Chapter 4 · government requests",
+    "ch4_h": "How many times we've been asked to hand over data.",
+    "ch4_p": "This log is updated every quarter. We publish every single request, within what the law allows.",
+    "ch4_th_period": "Period",
+    "ch4_th_source": "Request source",
+    "ch4_th_requests": "Requests",
+    "ch4_th_granted": "Granted",
+    "ch4_footer": "Sakeenly is registered in the EU. The Russian 152-FZ law does not directly apply, but we comply with GDPR. See the full policy for details.",
+    "ch5_eyebrow": "Chapter 5 · your rights",
+    "ch5_h": "What you can do with your data.",
+    "ch5_export_h": "Export everything",
+    "ch5_export_p": "A JSON file with all your bookmarks, notes, streak, and question history. One click in your profile.",
+    "ch5_export_btn": "Download archive",
+    "ch5_delete_h": "Delete your account",
+    "ch5_delete_p": "Full data wipe within 30 days. No questions, no retention, no win-back emails.",
+    "ch5_delete_btn": "Delete account",
+    "ch5_request_h": "Ask about something specific",
+    "ch5_request_p": "Want to know everything we hold about a specific email? Write to",
+    "ch5_request_btn": "Write to us",
+    "quote_eyebrow": "The principle Sakeenly is built on",
+    "quote_ru": "\"And do not spy [on one another]…\"",
+    "quote_cite": "Surah Al-Hujurat · 49:12"
+  },
+  "rd": {
+    "about_h": "About this surah",
+    "about_letters": "Letters",
+    "about_name": "Name",
+    "about_order": "Revelation order",
+    "about_rev": "Revelation",
+    "about_words": "Words",
+    "bm_empty": "Tap an ayah → 💾 Bookmark to save it.",
+    "bm_h": "Bookmarks in this surah",
+    "bm_saved": "Saved",
+    "hk_bm": "Bookmark",
+    "hk_h": "Hotkeys",
+    "hk_next": "Next ayah",
+    "hk_play": "Play / Pause",
+    "hk_prev": "Previous ayah",
+    "lbl_translation": "Translation",
+    "reciter_all": "All 30 reciters →",
+    "reciter_h": "Reciter",
+    "search_ph": "Search surah...",
+    "side_all": "All surahs",
+    "side_more": "+ 101 more surahs",
+    "surahs_eyebrow": "All 114 surahs",
+    "surahs_h": "Choose a surah.",
+    "surahs_lede": "From Al-Fatihah to An-Nas. Tap any one — the reader opens with translation and audio.",
+    "back_to_list": "← Back to surahs",
+    "tt": {
+      "label": "Translation"
+    },
+    "ayat_count": "ayat",
+    "surah_prefix": "Surah",
+    "pop_saved": "Saved",
+    "place_madinah": "Madinan",
+    "ayah": "Ayah",
+    "place_makkah": "Makkan",
+    "pop_listen": "Listen",
+    "pop_share": "Share",
+    "pop_bookmark": "Bookmark",
+    "side_all_surahs": "All surahs",
+    "surah_meta_ayat": "{n} ayat",
+    "trans_on": "Translation on",
+    "trans_off": "Arabic only",
+    "trans_title_hide": "Hide translation",
+    "trans_title_show": "Show translation"
+  },
+  "sb": {
+    "apply_btn": "Write to us",
+    "apply_eyebrow": "Want to join?",
+    "apply_h": "We welcome imams, mu'allims, and Islamic scholars.",
+    "apply_p": "If you hold ijaza in the Islamic sciences, or you're a published researcher — write to scholars@sakeenly.com.",
+    "badge": "Quality control",
+    "board_eyebrow": "The board",
+    "board_h": "The scholars we trust to read first.",
+    "board_p": "Names and institutions will be added before public launch. Until then, every themed collection is flagged \"Awaiting approval\".",
+    "h1": "Scholar Board — who reads it before you do.",
+    "lede": "Anything a user sees — refusal messages, themed collections of ayat, contextual notes, AI prompts — passes through the scholar board before publication.",
+    "pending": "awaiting approval",
+    "pipe_eyebrow": "How review works",
+    "pipe_h": "Four steps before anything ships.",
+    "s1": {
+      "d": "A collection of ayat or AI prompt text is opened as a pull request with sources.",
+      "n": "01 · Draft",
+      "t": "Product team"
+    },
+    "s2": {
+      "d": "At least two scholars read it independently. Every comment is published.",
+      "n": "02 · Review",
+      "t": "Scholar board"
+    },
+    "s3": {
+      "d": "The team revises, cites the hadith corpus, sends it back for another reading.",
+      "n": "03 · Revise",
+      "t": "Iterate"
+    },
+    "s4": {
+      "d": "The scholar-vetted: true tag is set. Without that badge nothing gets indexed for SEO.",
+      "n": "04 · Approve",
+      "t": "Publish"
+    }
+  },
+  "si": {
+    "aside_cite": "Surah Al-Fath · 48:4",
+    "aside_eyebrow": "Sakeenly · personal",
+    "aside_h": "Bookmarks. Streak. Notes. Everywhere.",
+    "aside_q": "\"…and He sent down sakina into the hearts of the believers, so that they would increase in faith…\"",
+    "btn_apple": "Sign in with Apple",
+    "btn_google": "Sign in with Google",
+    "btn_magic": "Send me a link",
+    "bull1": "Bookmarks and notes across every device",
+    "bull2": "Streak that forgives via wudu",
+    "bull3": "5 AI questions a day, free",
+    "bull4": "Zero trackers. Encryption at rest.",
+    "email_placeholder": "you@example.com",
+    "label_email": "Email",
+    "main_eyebrow": "Sign in / sign up",
+    "main_h": "Salam, and welcome.",
+    "main_lede": "Sign in with Google or a magic link to your inbox. No passwords — we don't like them either.",
+    "or": "or · magic link",
+    "terms_html": "By continuing you agree to the <a href=\"#\">terms</a> and the <a href=\"privacy.html\">privacy policy</a>."
+  },
+  "sn": {
+    "1": "Al-Fatihah",
+    "2": "Al-Baqarah",
+    "3": "Al 'Imran",
+    "4": "An-Nisa'",
+    "5": "Al-Ma'idah",
+    "6": "Al-An'am",
+    "7": "Al-A'raf",
+    "8": "Al-Anfal",
+    "9": "At-Tawbah",
+    "10": "Yunus",
+    "11": "Hud",
+    "12": "Yusuf",
+    "13": "Ar-Ra'd",
+    "14": "Ibrahim",
+    "15": "Al-Hijr",
+    "16": "An-Nahl",
+    "17": "Al-Isra'",
+    "18": "Al-Kahf",
+    "19": "Maryam",
+    "20": "Ta-Ha",
+    "21": "Al-Anbiya'",
+    "22": "Al-Hajj",
+    "23": "Al-Mu'minun",
+    "24": "An-Nur",
+    "25": "Al-Furqan",
+    "26": "Ash-Shu'ara'",
+    "27": "An-Naml",
+    "28": "Al-Qasas",
+    "29": "Al-'Ankabut",
+    "30": "Ar-Rum",
+    "31": "Luqman",
+    "32": "As-Sajdah",
+    "33": "Al-Ahzab",
+    "34": "Saba'",
+    "35": "Fatir",
+    "36": "Ya-Sin",
+    "37": "As-Saffat",
+    "38": "Sad",
+    "39": "Az-Zumar",
+    "40": "Ghafir",
+    "41": "Fussilat",
+    "42": "Ash-Shura",
+    "43": "Az-Zukhruf",
+    "44": "Ad-Dukhan",
+    "45": "Al-Jathiyah",
+    "46": "Al-Ahqaf",
+    "47": "Muhammad",
+    "48": "Al-Fath",
+    "49": "Al-Hujurat",
+    "50": "Qaf",
+    "51": "Adh-Dhariyat",
+    "52": "At-Tur",
+    "53": "An-Najm",
+    "54": "Al-Qamar",
+    "55": "Ar-Rahman",
+    "56": "Al-Waqi'ah",
+    "57": "Al-Hadid",
+    "58": "Al-Mujadilah",
+    "59": "Al-Hashr",
+    "60": "Al-Mumtahanah",
+    "61": "As-Saff",
+    "62": "Al-Jumu'ah",
+    "63": "Al-Munafiqun",
+    "64": "At-Taghabun",
+    "65": "At-Talaq",
+    "66": "At-Tahrim",
+    "67": "Al-Mulk",
+    "68": "Al-Qalam",
+    "69": "Al-Haqqah",
+    "70": "Al-Ma'arij",
+    "71": "Nuh",
+    "72": "Al-Jinn",
+    "73": "Al-Muzzammil",
+    "74": "Al-Muddaththir",
+    "75": "Al-Qiyamah",
+    "76": "Al-Insan",
+    "77": "Al-Mursalat",
+    "78": "An-Naba'",
+    "79": "An-Nazi'at",
+    "80": "'Abasa",
+    "81": "At-Takwir",
+    "82": "Al-Infitar",
+    "83": "Al-Mutaffifin",
+    "84": "Al-Inshiqaq",
+    "85": "Al-Buruj",
+    "86": "At-Tariq",
+    "87": "Al-A'la",
+    "88": "Al-Ghashiyah",
+    "89": "Al-Fajr",
+    "90": "Al-Balad",
+    "91": "Ash-Shams",
+    "92": "Al-Layl",
+    "93": "Ad-Duha",
+    "94": "Ash-Sharh",
+    "95": "At-Tin",
+    "96": "Al-'Alaq",
+    "97": "Al-Qadr",
+    "98": "Al-Bayyinah",
+    "99": "Az-Zalzalah",
+    "100": "Al-'Adiyat",
+    "101": "Al-Qari'ah",
+    "102": "At-Takathur",
+    "103": "Al-'Asr",
+    "104": "Al-Humazah",
+    "105": "Al-Fil",
+    "106": "Quraysh",
+    "107": "Al-Ma'un",
+    "108": "Al-Kawthar",
+    "109": "Al-Kafirun",
+    "110": "An-Nasr",
+    "111": "Al-Masad",
+    "112": "Al-Ikhlas",
+    "113": "Al-Falaq",
+    "114": "An-Nas"
+  },
+  "streak": {
+    "label": "Streak · in a row",
+    "title": "17 days with the Quran"
+  },
+  "trust": {
+    "ayat": "Ayat",
+    "reciters": "Reciters",
+    "suras": "Surahs",
+    "trackers": "Trackers",
+    "translations": "Translations"
+  },
+  "votd": {
+    "cite": "Sahih International · 2:286",
+    "label": "Ayah of the day · 18 May",
+    "surah_tag": "Surah Al-Baqarah · 2:286",
+    "translation": "\"Allah does not burden a soul beyond that it can bear.\""
+  },
+  "aem": {
+    "crumbs_root": "Sakeenly",
+    "crumbs_ayat": "Ayat by theme",
+    "meta_min_reading": "{n} min reading",
+    "meta_reviewed": "Scholar-reviewed",
+    "meta_needs_review": "Awaiting approval",
+    "meta_audio": "Audio per ayah",
+    "toc_h": "In this collection",
+    "toc_intro": "About this collection",
+    "toc_scholar": "From a scholar",
+    "toc_related": "Related themes",
+    "body_intro": "This collection draws on the ayat that scholars, imams, and ordinary people have leaned on for centuries in moments of fear, anxiety, panic, sleeplessness, and despair. They do not treat anxiety the way medicine does — but they give you the anchor without which treatment cannot hold.",
+    "scholar_name": "Shaykh Abdullah al-Gharib",
+    "scholar_role": "SCHOLAR BOARD · SAKEENLY",
+    "scholar_quote": "\"Anxiety is not proof that your iman is weak. The Prophet ﷺ himself asked Allah for protection from anxiety and grief every day: Allahumma inni a'udhu bika min al-hammi wa-l-hazan. This collection is not a substitute for du'a, and it is not a substitute for a doctor.\"",
+    "disclaimer_lbl": "Disclaimer.",
+    "disclaimer_body": "If you are experiencing prolonged anxiety or thoughts of self-harm — please see a doctor. Sakeenly is not a substitute for medical care.",
+    "related_h": "Related collections",
+    "cta_eyebrow": "Sakeenly · Quran companion",
+    "cta_h": "Save these ayat to your library.",
+    "cta_body": "One tap — and your bookmarks sync across every device.",
+    "cta_btn_primary": "Open in Sakeenly",
+    "cta_btn_ghost": "What's inside",
+    "all_emotions_h": "Other collections",
+    "ayah_n": "Ayah #{n}",
+    "action_listen": "Listen",
+    "action_bookmark": "Bookmark",
+    "action_open": "Open in the reader →",
+    "translation_by": "Sahih International"
+  },
+  "emo30": {
+    "dlya-trevogi": "Ayat for anxiety",
+    "dlya-sabra": "Ayat on sabr (patience)",
+    "dlya-blagodarnosti": "Ayat on gratitude (shukr)",
+    "dlya-odinochestva": "Ayat when you feel alone",
+    "pered-ekzamenom": "Ayat before an exam",
+    "pered-snom": "Ayat before sleep",
+    "utrom": "Ayat for the morning",
+    "dlya-pokayaniya": "Ayat on tawbah (repentance)",
+    "pri-pechali": "Ayat when grief comes",
+    "pri-strakhe": "Ayat when you feel afraid",
+    "pri-gneve": "Ayat when anger rises",
+    "dlya-ukrepleniya-imana": "Ayat to strengthen iman",
+    "pri-bolezni": "Ayat when you're unwell",
+    "pri-poteryah": "Ayat when you lose a loved one",
+    "dlya-roditelei": "Ayat about parents",
+    "dlya-detei": "Ayat about children",
+    "pri-finansovykh-trudnostyakh": "Ayat when money is tight",
+    "pri-somneniyakh": "Ayat when doubt creeps in",
+    "pered-puteshestviem": "Ayat before a journey",
+    "dlya-otkaza-ot-grekha": "Ayat to walk away from a sin",
+    "dlya-tavakkul": "Ayat on tawakkul (trust)",
+    "dlya-prosheniya-pomoshchi": "Ayat asking Allah for help",
+    "pri-iskushenii": "Ayat when temptation comes",
+    "dlya-radosti": "Ayat for joy",
+    "v-pyatnitsu": "Ayat for Friday",
+    "v-ramadan": "Ayat of Ramadan",
+    "v-noch-kadr": "Ayat for Laylat al-Qadr",
+    "dlya-mira-v-sem-e": "Ayat for peace at home",
+    "dlya-rakhma": "Ayat on rahma (mercy)",
+    "dlya-dovolstva-allahom": "Ayat on contentment with Allah"
+  }
+}

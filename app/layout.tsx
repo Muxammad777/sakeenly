@@ -48,9 +48,14 @@ export const viewport: Viewport = {
  * app/[locale]/layout.tsx.  This file only provides fonts + theme script.
  */
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  // The lang/dir attributes set here are placeholders for the very first
+  // paint on the root segment (e.g. /robots.txt manifest requests). The
+  // actual locale-aware shell in app/[locale]/layout.tsx updates them via
+  // a small client effect so we honour the resolved locale (fa → rtl).
   return (
     <html
       lang="ru"
+      dir="ltr"
       suppressHydrationWarning
       className={`${spectral.variable} ${golos.variable} ${jetbrains.variable}`}
     >

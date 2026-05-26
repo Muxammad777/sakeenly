@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { quranApi } from "@/lib/api/quran";
+import { toLocaleDigits } from "@/lib/quran/format";
 import type { Locale } from "@/i18n/routing";
 
 interface PageProps {
@@ -36,13 +37,13 @@ export default async function ReaderIndex({ params }: PageProps) {
         {chapters.map((c) => (
           <li key={c.id}>
             <Link className="surah-item surah-item-card" href={`/reader/${c.id}/1`}>
-              <span className="surah-num">{c.id}</span>
+              <span className="surah-num">{toLocaleDigits(c.id, locale)}</span>
               <span className="surah-name">
                 <b>{c.name_simple}</b>
                 <span className="ar">{c.name_arabic}</span>
               </span>
               <span className="surah-meta">
-                {c.verses_count} {t("ayat_count")}
+                {toLocaleDigits(c.verses_count, locale)} {t("ayat_count")}
               </span>
             </Link>
           </li>

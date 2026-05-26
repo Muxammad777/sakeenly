@@ -269,3 +269,24 @@ html[data-reveal-ready] .reveal:not(.is-revealed) {
   .sk-mobile-hide { display: revert !important; }
 }
 
+/* ─────────────────────────────────────────────────────────────────────────
+   RTL adjustments — applied when the locale is fa/ar/ur (see LocaleDirSync).
+   We rely on logical-property CSS (margin-inline-*, padding-inline-*) for
+   most components; the few legacy left/right rules that flip awkwardly are
+   handled per-class here. Arabic ayah blocks keep their own dir="rtl" and
+   are unaffected.
+   ───────────────────────────────────────────────────────────────────────── */
+html[dir="rtl"] body { text-align: start; }
+html[dir="rtl"] .reader-shell { direction: rtl; }
+html[dir="rtl"] .reader-side .surah-num,
+html[dir="rtl"] .surah-item .surah-num { font-feature-settings: "tnum"; }
+/* Keep monospaced/technical strings LTR even in RTL context */
+html[dir="rtl"] .kbd,
+html[dir="rtl"] code,
+html[dir="rtl"] .citation,
+html[dir="rtl"] [data-keep-ltr] { direction: ltr; unicode-bidi: isolate; }
+/* The Latin sakeena. wordmark must stay LTR */
+html[dir="rtl"] .hero-title-e,
+html[dir="rtl"] .ru,
+html[dir="rtl"] [class*="badge"] { unicode-bidi: isolate; }
+

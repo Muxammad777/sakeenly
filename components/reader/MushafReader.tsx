@@ -1,7 +1,7 @@
 "use client";
 
 import { Fragment, useEffect, useMemo, useRef, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import {
   TRANSLATIONS,
@@ -9,6 +9,7 @@ import {
   type TranslationMeta,
   RECITERS,
 } from "@/lib/quran/constants";
+import { toLocaleDigits } from "@/lib/quran/format";
 import { useActiveTranslation } from "./TranslationToggle";
 import { AudioPlayerProvider, useAudioPlayer } from "./AudioPlayerProvider";
 import { SideTab } from "./SideTab";
@@ -73,6 +74,8 @@ export function MushafReader(props: MushafReaderProps) {
 function MushafReaderInner(props: MushafReaderProps) {
   const { surah, ayat, chapters, initialAyah, isAuthenticated, currentReciterSlug } = props;
   const t = useTranslations("rd");
+  const uiLocale = useLocale();
+  const fmt = (n: number | string) => toLocaleDigits(n, uiLocale);
   const [activeKey, setActiveKey] = useActiveTranslation();
   const player = useAudioPlayer();
 
@@ -306,14 +309,14 @@ function MushafReaderInner(props: MushafReaderProps) {
                 href={`/reader/${c.id}/1`}
                 className={"surah-item" + (c.id === surah.number ? " active" : "")}
               >
-                <span className="surah-num">{c.id}</span>
+                <span className="surah-num">{fmt(c.id)}</span>
                 <span className="surah-name">
                   <b>{c.nameSimple}</b>
                   <span className="ar arabic" dir="rtl">
                     {c.nameArabic}
                   </span>
                 </span>
-                <span className="surah-meta">{c.versesCount}</span>
+                <span className="surah-meta">{fmt(c.versesCount)}</span>
               </Link>
             ))}
           </div>
@@ -332,9 +335,9 @@ function MushafReaderInner(props: MushafReaderProps) {
             <div className="ar arabic">{surah.nameArabic}</div>
             <h1>{surah.nameSimple}</h1>
             <div className="meta">
-              {t("surah_prefix")} №{surah.number} ·{" "}
+              {t("surah_prefix")} №{fmt(surah.number)} ·{" "}
               {surah.revelationPlace === "makkah" ? t("place_makkah") : t("place_madinah")} ·{" "}
-              {surah.versesCount} {t("ayat_count")}
+              {fmt(surah.versesCount)} {t("ayat_count")}
             </div>
           </div>
 
@@ -412,7 +415,7 @@ function MushafReaderInner(props: MushafReaderProps) {
                     }
                   >
                     <header className="ayah-block-head">
-                      <span className="ayah-block-num">{toArabicNum(a.verseNumber)} · {a.verseNumber}</span>
+                      <span className="ayah-block-num">{toArabicNum(a.verseNumber)} · {fmt(a.verseNumber)}</span>
                       <span className="ayah-block-cite">{meta?.author}</span>
                       <div className="ayah-block-actions">
                         <button
@@ -562,7 +565,7 @@ function MushafReaderInner(props: MushafReaderProps) {
                     href={`#ayah-${a.verseNumber}`}
                     style={{ display: "flex", justifyContent: "space-between", fontSize: 13 }}
                   >
-                    <span>{t("ayah")} {a.verseNumber}</span>
+                    <span>{t("ayah")} {fmt(a.verseNumber)}</span>
                     <span style={{ color: "var(--text-3)", fontSize: 11, fontFamily: "JetBrains Mono, monospace" }}>
                       {a.ayahKey}
                     </span>

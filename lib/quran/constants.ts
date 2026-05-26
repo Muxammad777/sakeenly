@@ -11,6 +11,9 @@ export type TranslationKey =
   | "osmanov"
   | "porokhova"
   | "sahih-intl"
+  | "haleem"
+  | "taji"
+  | "islamhouse-fa"
   | "ayati"
   | "sodik"
   | "altay"
@@ -18,7 +21,7 @@ export type TranslationKey =
 
 export type TranslationSource = "quran.com" | "tanzil";
 
-export type TranslationLanguage = "ru" | "en" | "tg" | "uz" | "kk" | "ky";
+export type TranslationLanguage = "ru" | "en" | "fa" | "tg" | "uz" | "kk" | "ky";
 
 export interface TranslationMeta {
   key: TranslationKey;
@@ -41,11 +44,16 @@ export const TRANSLATIONS: readonly TranslationMeta[] = [
   { key: "altay",        id: 0,   short: "Алтай",       label: "Алтай (қазақша)",          language: "kk", author: "Халифа Алтай",                source: "tanzil"   },
   { key: "mokhtasar-ky", id: 0,   short: "Мухтасар",    label: "Мухтасар (кыргызча)",      language: "ky", author: "Мухтасар тафсири · KG",       source: "tanzil"   },
   { key: "sahih-intl",   id: 20,  short: "Sahih Int.",  label: "Sahih International",      language: "en", author: "Sahih International",         source: "quran.com" },
+  { key: "haleem",       id: 85,  short: "Haleem",      label: "M.A.S. Abdel Haleem",      language: "en", author: "M.A.S. Abdel Haleem · Oxford World's Classics 2004", source: "quran.com" },
+  { key: "taji",         id: 29,  short: "تاجی",        label: "Hussein Taji Kal Dari",    language: "fa", author: "حسین تاجی گله‌داری",          source: "quran.com" },
+  { key: "islamhouse-fa",id: 135, short: "اسلام‌هاوس",  label: "IslamHouse · فارسی",       language: "fa", author: "IslamHouse.com",              source: "quran.com" },
 ] as const;
 
 /** Locale → default translation key. Used to preselect the right pill per UI language. */
 export const DEFAULT_TRANSLATION_BY_LOCALE: Record<string, TranslationKey> = {
   ru: "kuliev",
+  en: "sahih-intl",
+  fa: "taji",
   tg: "ayati",
   uz: "sodik",
   kk: "altay",
