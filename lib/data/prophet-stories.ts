@@ -78,6 +78,52 @@ export const PROPHET_STORIES: ProphetStory[] = [
     suffix: "عليه السلام",
     readingMin: 6,
     byLocale: {
+      en: {
+        name: "Adam",
+        theme: "the first human",
+        paragraphs: [
+          "Long before there were people, before there were cities, before any child had ever laughed in a garden — there was only the earth, the sky, the angels, and Allah, who had made all of it. The angels worshipped Allah day and night, and they never grew tired. They were made of light, and they obeyed every word their Lord spoke.",
+          "One day Allah said to the angels: \"I am going to place a successor on the earth.\" The angels were puzzled. They asked, \"My Lord, will You place on it one who will spread corruption and shed blood, while we glorify Your praise?\" And Allah answered them: \"Indeed, I know what you do not know.\"",
+          "Then Allah took a handful of clay from the earth, and from that clay, by His command, He shaped the first human. His name was Adam. Allah breathed into him from His spirit, and Adam came alive. Allah taught Adam the names of everything — what is a tree, what is a stone, what is water, what is a bird. Adam remembered every one, because Allah placed inside him something that animals do not have: a mind that can know.",
+          "Allah then told the angels to bow to Adam as a sign of honour for this new creation. All the angels bowed. Only Iblis, who was from the jinn, refused. He said, \"I am better than him. You created me from fire, and You created him from clay.\" Iblis's heart was full of pride, and pride is the disease that blinds a soul to the truth. So Allah drove Iblis out.",
+          "Adam lived in Jannah, the Garden. Allah created a wife for him, Hawwa (Eve). They lived together, ate its sweet fruits, drank its clear water, and heard the voices of the angels. But Allah said to them: \"Live in the Garden, eat from it as you wish, but do not go near this one tree.\" It was a test. Allah wanted Adam and Hawwa to choose for themselves whether to obey.",
+          "Iblis, who had not forgotten his anger, came whispering to Adam and Hawwa. He spoke beautiful, twisted words: \"If you eat from this tree, you will become like angels and live forever.\" Adam and Hawwa forgot the warning and tasted the fruit. The moment they did, they felt ashamed.",
+          "But Adam did not run from his mistake. He turned to Allah with the very words Allah Himself had taught him: \"Our Lord, we have wronged ourselves. If You do not forgive us and have mercy on us, we will surely be among the losers.\" And Allah accepted his repentance, because Allah loves those who turn back to Him. Adam and Hawwa were sent down to live on the earth, and Adam became the first prophet and the first human to walk it.",
+          "Ever since, every human being is a child of Adam. All people are brothers and sisters through their first father. And whenever we make a mistake, we can do exactly what Adam did: turn back to Allah and ask for forgiveness. Allah is al-Ghafur, the Ever-Forgiving.",
+        ],
+        lesson:
+          "Lesson: making a mistake is part of being human, but a believer does not run from it. He turns to Allah and says, \"Forgive me.\" And Allah forgives.",
+        sources: [
+          "Quran 2:30-39 (creation of Adam, the angels' bow, the test, and tawbah)",
+          "Quran 7:11-25 (Iblis's refusal and expulsion from the Garden)",
+          "Quran 20:115-122 (Adam forgetting and Allah accepting his repentance)",
+          "Sahih al-Bukhari 3326 (the creation of Adam)",
+          "Ibn Kathir, Qisas al-Anbiya, chapter on Adam",
+        ],
+      },
+      fa: {
+        name: "آدم",
+        theme: "نخستین انسان",
+        paragraphs: [
+          "روزگاری بسیار دور، پیش از آنکه انسانی روی زمین قدم بگذارد، پیش از آنکه شهری ساخته شود یا کودکی در باغی بخندد، تنها زمین بود و آسمان و فرشتگانی که خداوند آنها را آفریده بود. فرشتگان شب و روز خداوند را عبادت می‌کردند و هرگز خسته نمی‌شدند. آنها از نور آفریده شده بودند و هر سخن پروردگارشان را اطاعت می‌کردند.",
+          "روزی خداوند به فرشتگان فرمود: «من در زمین جانشینی قرار خواهم داد.» فرشتگان شگفت‌زده شدند و گفتند: «پروردگارا، آیا کسی را در آن قرار می‌دهی که فساد کند و خون بریزد، در حالی که ما تو را تسبیح و تقدیس می‌کنیم؟» خداوند به آنان پاسخ داد: «من می‌دانم آنچه را که شما نمی‌دانید.»",
+          "آنگاه خداوند مشتی از خاک زمین برداشت و به فرمان خویش از آن، نخستین انسان را آفرید. نامش آدم بود. خداوند از روح خود در او دمید و آدم زنده شد. خداوند نام همه چیز را به آدم آموخت: نام درخت، نام سنگ، نام آب، نام پرنده. آدم همه را به خاطر سپرد، چرا که خداوند در درون او چیزی نهاده بود که جانوران ندارند: عقلی که می‌اندیشد.",
+          "سپس خداوند به فرشتگان فرمود که برای احترام به این آفریده‌ی تازه، در برابر آدم سجده کنند. همه‌ی فرشتگان سجده کردند. تنها ابلیس که از جنّیان بود، سرپیچی کرد. گفت: «من از او بهترم؛ مرا از آتش آفریدی و او را از خاک.» در دل ابلیس کبر و غرور خانه کرده بود، و غرور دردی است که دل را از دیدن حقیقت کور می‌کند. پس خداوند ابلیس را راند.",
+          "آدم در بهشت زندگی می‌کرد. خداوند برای او همسری به نام حوّا آفرید. آنان در کنار هم زندگی می‌کردند، از میوه‌های شیرین بهشت می‌خوردند و آب گوارای آن را می‌نوشیدند. اما خداوند به آنها فرمود: «در بهشت ساکن شوید و از آن هر چه خواستید بخورید، ولی به این درخت نزدیک نشوید.» این یک آزمایش بود؛ خداوند می‌خواست آدم و حوّا خود انتخاب کنند که فرمان ببرند یا نه.",
+          "ابلیس که کینه‌اش را فراموش نکرده بود، در گوش آدم و حوّا وسوسه خواند. با سخنانی زیبا اما فریبنده گفت: «اگر از این درخت بخورید، چون فرشتگان می‌شوید و جاودانه خواهید زیست.» آدم و حوّا فرمان را از یاد بردند و از میوه چشیدند. در همان لحظه فهمیدند که خطا کرده‌اند. شرمنده شدند.",
+          "اما آدم از اشتباه خود نگریخت. به سوی خداوند بازگشت و همان کلماتی را گفت که خود خداوند به او آموخته بود: «پروردگارا، ما به خویشتن ستم کردیم؛ اگر ما را نیامرزی و بر ما رحم نکنی، از زیانکاران خواهیم بود.» خداوند توبه‌ی او را پذیرفت، چرا که خداوند توبه‌کنندگان را دوست می‌دارد. آدم و حوّا به زمین فرود آمدند و آدم نخستین پیامبر و نخستین انسان روی زمین شد.",
+          "از آن روز هر انسانی فرزند آدم است. همه‌ی مردم برادر و خواهرند، چرا که از یک پدر آمده‌اند. و هر بار که ما اشتباه می‌کنیم، می‌توانیم همان کاری را کنیم که آدم کرد: به سوی خداوند بازگردیم و آمرزش بخواهیم. خداوند الغفور است، آمرزنده‌ی همیشگی.",
+        ],
+        lesson:
+          "درس: اشتباه کردن جزء انسان بودن است، اما مؤمن واقعی از اشتباه خود نمی‌گریزد. به سوی خداوند بازمی‌گردد و می‌گوید: «مرا ببخش.» و خداوند می‌بخشد.",
+        sources: [
+          "قرآن ۲:۳۰-۳۹ (آفرینش آدم، سجده‌ی فرشتگان، آزمایش و توبه)",
+          "قرآن ۷:۱۱-۲۵ (سرپیچی ابلیس و اخراج از بهشت)",
+          "قرآن ۲۰:۱۱۵-۱۲۲ (فراموشی آدم و پذیرش توبه)",
+          "صحیح بخاری ۳۳۲۶ (حدیث آفرینش آدم)",
+          "ابن کثیر، قصص الانبیاء، باب آدم علیه‌السلام",
+        ],
+      },
       ru: {
         name: "Адам",
         theme: "первый человек",
@@ -111,6 +157,52 @@ export const PROPHET_STORIES: ProphetStory[] = [
     suffix: "عليه السلام",
     readingMin: 7,
     byLocale: {
+      en: {
+        name: "Nuh",
+        theme: "the ark",
+        paragraphs: [
+          "Many generations passed after Adam. People lived on the earth, and at first they remembered Allah. But over time they began to forget. They started worshipping stones they had carved themselves and trees they had planted themselves. The stones first carried the names of righteous people who had died, and then — slowly — the people came to believe the stones themselves could help and protect them. And so they forgot their Creator.",
+          "Allah then sent to them the Prophet Nuh. Nuh began calling his people back to Allah. He said, \"My people, worship Allah. You have no god besides Him. I fear for you the punishment of a tremendous Day.\" He called them by day, and he called them by night. He called them in secret, and he called them openly. He called them gently, and he called them firmly.",
+          "Years passed — not one year, not ten, but nearly a thousand. Nuh called his people to Allah for nine hundred and fifty years. Yet hardly anyone listened. People stuffed their fingers in their ears and pulled their cloaks over their heads so they would not hear him. They laughed at Nuh and told each other, \"Do not abandon your idols.\"",
+          "Finally Nuh turned to Allah. He did not complain about his exhaustion — he asked for justice. And Allah answered him: \"None of your people will believe except those who have already believed.\" Then Allah commanded Nuh to build a ship — a great ark.",
+          "Nuh began building the ark on dry land, far from any sea. People came to watch and laugh. \"Nuh, you are building a ship in the desert! Where will you sail it?\" Nuh would answer calmly, \"If you mock us now, we will mock you later as you mock us today.\" He did not get angry. He just kept building.",
+          "When the ark was ready, Allah commanded Nuh to take his family, those who had believed, and a pair from every kind of animal, so that life could continue after the flood. Then the springs burst open from the earth, and the sky poured down rain such as had never been seen. The water rose and rose. Rivers overflowed; the sea climbed above the mountains. The whole world was covered.",
+          "One of Nuh's sons refused to enter the ark. He said proudly, \"I will climb a mountain that will protect me from the water.\" Nuh cried out to him, \"Today there is no protection from the command of Allah except for those He has mercy upon.\" But a wave passed between them, and the son drowned. Nuh wept and asked his Lord about him, for this was his son. And Allah gently reminded Nuh that salvation is not in blood or kinship — it is in faith.",
+          "When the punishment was over, Allah commanded the earth, \"Swallow your water,\" and the sky, \"Hold back.\" The waters receded. The ark came to rest on a mountain, and Nuh and the believers stepped out onto a cleansed earth. Allah blessed their descendants, and from those believers came all the peoples who live on earth today.",
+        ],
+        lesson:
+          "Lesson: a true caller does not give up, even when people mock him for years. And a true family is not only blood — it is faith. What truly saves a person is what is inside the heart.",
+        sources: [
+          "Quran 71 (Surah Nuh — the full account of the call)",
+          "Quran 11:25-49 (the building of the ark, the flood, and Nuh's son)",
+          "Quran 29:14 (mention of the 950 years of preaching)",
+          "Ibn Kathir, Qisas al-Anbiya, chapter on Nuh",
+          "al-Tabari, Tarikh, section on Nuh and the flood",
+        ],
+      },
+      fa: {
+        name: "نوح",
+        theme: "کشتی نجات",
+        paragraphs: [
+          "نسل‌های بسیاری پس از آدم گذشت. مردم روی زمین زندگی می‌کردند و در آغاز خداوند را به یاد داشتند. اما به مرور زمان فراموش کردند. به پرستش سنگ‌هایی روی آوردند که خود تراشیده بودند و درختانی که خود کاشته بودند. در ابتدا آن سنگ‌ها را به نام صالحانِ درگذشته می‌خواندند، و سپس کم‌کم باور کردند که خودِ سنگ‌ها به آنان یاری و پناه می‌دهند. بدین‌سان آفریدگار خود را از یاد بردند.",
+          "آنگاه خداوند پیامبرش نوح را به سوی آنان فرستاد. نوح قومش را به سوی خداوند فرا می‌خواند و می‌گفت: «ای قوم من! خدا را بپرستید که جز او معبودی برای شما نیست. من بر شما از عذاب روزی بزرگ می‌ترسم.» روز و شب می‌خواند. در نهان و آشکار می‌خواند. به نرمی می‌خواند و به سختی می‌خواند.",
+          "سال‌ها گذشت؛ نه یک سال، نه ده سال، بلکه نزدیک به هزار سال. نوح نهصد و پنجاه سال قوم خود را به سوی خداوند دعوت کرد. اما جز اندکی کسی نشنید. مردم انگشت در گوش می‌گذاشتند و جامه بر سر می‌کشیدند تا صدای او را نشنوند. به او می‌خندیدند و به یکدیگر می‌گفتند: «بت‌های خویش را وامگذارید.»",
+          "سرانجام نوح به سوی پروردگارش بازگشت. از خستگی خود گله نکرد، بلکه خواستار عدل شد. خداوند به او پاسخ داد: «هیچ‌کس از قوم تو ایمان نخواهد آورد جز کسانی که ایمان آورده‌اند.» سپس خداوند به نوح فرمان داد کشتی‌ای بسازد ـ کشتی‌ای بزرگ.",
+          "نوح در میان خشکی شروع به ساختن کشتی کرد، دور از هر دریایی. مردم می‌آمدند و می‌خندیدند: «ای نوح، در بیابان کشتی می‌سازی؟ کجا با آن خواهی رفت؟» نوح آرام پاسخ می‌داد: «اگر امروز شما به ما می‌خندید، روزی ما نیز چنان‌که شما اکنون می‌خندید، به شما خواهیم خندید.» خشم نمی‌گرفت ـ فقط می‌ساخت.",
+          "وقتی کشتی آماده شد، خداوند به نوح فرمود تا خانواده‌اش و آنان که ایمان آورده بودند را با خود ببرد و از هر جانوری یک جفت سوار کند تا زندگی پس از طوفان تداوم یابد. آنگاه از زمین چشمه‌ها جوشید و از آسمان بارانی فرود آمد که هرگز چنان نباریده بود. آب بالا و بالاتر آمد. رودها از کناره‌ها گذشتند و دریاها از کوه‌ها فراتر رفتند. سراسر جهان زیر آب رفت.",
+          "یکی از پسران نوح در کشتی ننشست. با تکبر گفت: «من به کوهی پناه می‌برم که مرا از آب حفظ کند.» نوح بانگ زد: «امروز هیچ پناهی از فرمان خداوند نیست جز برای آن‌که مورد رحمت اوست.» اما موجی میان آن دو افتاد و پسر غرق شد. نوح گریست و درباره‌ی او از پروردگار خویش پرسید، چرا که فرزندش بود. خداوند به نرمی او را یادآور شد که نجات در خویشاوندی و خون نیست، بلکه در ایمان است.",
+          "وقتی عذاب پایان یافت، خداوند به زمین فرمود: «آب خود را فرو ببر» و به آسمان فرمود: «بایست.» آب فروکش کرد. کشتی بر کوهی آرام گرفت و نوح و مؤمنان بر زمینِ پاک شده فرود آمدند. خداوند نسل آنان را برکت داد و از همان مؤمنان همه‌ی مردمان زمین امروز پدید آمدند.",
+        ],
+        lesson:
+          "درس: داعی راستین حتی اگر سال‌ها به او بخندند، تسلیم نمی‌شود. و خانواده‌ی واقعی تنها خویشاوندی خونی نیست؛ ایمان است. تنها چیزی که انسان را نجات می‌دهد، آن چیزی است که در دل اوست.",
+        sources: [
+          "قرآن، سوره‌ی نوح (سوره‌ی ۷۱ - تمام داستان دعوت)",
+          "قرآن ۱۱:۲۵-۴۹ (ساختن کشتی، طوفان و پسر نوح)",
+          "قرآن ۲۹:۱۴ (یادکرد از ۹۵۰ سال دعوت)",
+          "ابن کثیر، قصص الانبیاء، باب نوح علیه‌السلام",
+          "طبری، تاریخ الرسل و الملوک، باب نوح و طوفان",
+        ],
+      },
       ru: {
         name: "Нух",
         theme: "ковчег",
@@ -144,6 +236,56 @@ export const PROPHET_STORIES: ProphetStory[] = [
     suffix: "عليه السلام",
     readingMin: 8,
     byLocale: {
+      en: {
+        name: "Ibrahim",
+        theme: "Khalil Allah",
+        paragraphs: [
+          "Long ago, in a land between two great rivers, lived a boy named Ibrahim. His people worshipped idols — statues of stone and wood. They believed these statues could help, heal sickness, and bring rain. Even Ibrahim's father carved such statues and sold them in the marketplace.",
+          "But young Ibrahim thought differently. He looked at the sky and asked himself, \"Who made all of this?\" One night he saw a bright star and said, \"Perhaps this is my Lord.\" But the star set. So Ibrahim said, \"I do not love things that set.\" Then he saw the moon and said, \"Perhaps this is my Lord.\" But the moon set too. Then he saw the sun — large and powerful — but the sun also slipped behind the horizon. And Ibrahim understood: anything that changes and disappears cannot be God. God must be the One who is always there, who never changes. And Ibrahim's heart turned to Allah.",
+          "Ibrahim began to say to his people, \"These statues cannot hear you, see you, or help you. Why do you worship them?\" The people grew angry. One day, when everyone had gone to a festival, Ibrahim went alone into the idol temple. He took an axe and smashed every statue except the biggest one. He hung the axe on the shoulder of that great idol.",
+          "When the people returned and saw the broken idols, they cried out, \"Who did this?\" They suspected Ibrahim and brought him to trial. Ibrahim said calmly, \"Ask the big one — perhaps it did this.\" The people answered, \"You know these idols do not speak!\" Then Ibrahim said, \"So how can you worship something that cannot speak and cannot help?\" They lowered their heads, because deep down they knew Ibrahim was right. But pride would not let them admit it.",
+          "They decided to punish Ibrahim by burning him in a tremendous fire. For days they gathered wood and lit a blaze so fierce that no one could come near it. They flung Ibrahim into the flames. But Allah commanded the fire: \"O fire, be cool and safe for Ibrahim.\" The fire did not touch him. Ibrahim walked out of the flames whole and at peace, because Allah was with him.",
+          "Ibrahim left that land with his family. Allah commanded him to travel far away — to the place where the city of Makkah stands today. At that time it was an empty, dry valley with no water and no people. Ibrahim left his wife Hajar and his baby son Isma'il there because Allah had commanded it. Hajar asked, \"Has Allah commanded you to do this?\" Ibrahim said, \"Yes.\" And Hajar said, \"Then Allah will not abandon us.\"",
+          "When Isma'il ran out of water, Hajar ran seven times between two hills, Safa and Marwa, searching for help. And Allah opened a spring from the earth right at the feet of the infant Isma'il. That spring is called Zamzam, and it has been flowing for more than four thousand years. Every Muslim who comes to Makkah for Hajj drinks from it and walks between Safa and Marwa, in memory of Hajar's patience.",
+          "When Isma'il grew up, Allah commanded Ibrahim and Isma'il to build together the first House for the worship of Allah — the Ka'bah. They lifted the stones with their own hands, and Ibrahim prayed, \"Our Lord, accept this from us.\" To this day, every Muslim in the world, wherever they are, turns toward that Ka'bah when they pray. For his faithfulness Allah gave Ibrahim a title He gave no one else: Khalil Allah, the intimate friend of Allah.",
+        ],
+        lesson:
+          "Lesson: Ibrahim stood alone against a whole nation because Allah was in his heart. When you are with Allah, even fire becomes cool.",
+        sources: [
+          "Quran 6:74-79 (Ibrahim's reflections on the star, moon, and sun)",
+          "Quran 21:51-70 (breaking the idols and the rescue from the fire)",
+          "Quran 14:35-41 (Ibrahim's du'a for Makkah and his descendants)",
+          "Quran 2:124-129 (the building of the Ka'bah)",
+          "Quran 4:125 (Allah named Ibrahim Khalil)",
+          "Sahih al-Bukhari 3364-3365 (the story of Hajar, Isma'il, and Zamzam)",
+          "Ibn Kathir, Qisas al-Anbiya, chapters on Ibrahim",
+        ],
+      },
+      fa: {
+        name: "ابراهیم",
+        theme: "خلیل‌الله",
+        paragraphs: [
+          "روزگاری دور، در سرزمینی میان دو رود بزرگ، پسری به نام ابراهیم می‌زیست. قومش بت می‌پرستیدند ـ مجسمه‌هایی از سنگ و چوب. باور داشتند که این مجسمه‌ها می‌توانند یاری دهند، بیماری را شفا بخشند و باران بیاورند. حتی پدر ابراهیم نیز چنین مجسمه‌هایی می‌تراشید و در بازار می‌فروخت.",
+          "اما ابراهیمِ کوچک از آغاز اندیشه‌ای دیگر داشت. به آسمان می‌نگریست و از خود می‌پرسید: «چه کسی همه‌ی اینها را آفریده است؟» شبی ستاره‌ای درخشان در آسمان دید و گفت: «شاید این پروردگار من باشد.» اما ستاره غروب کرد. ابراهیم گفت: «من غروب‌کنندگان را دوست ندارم.» سپس ماه را دید و گفت: «شاید این پروردگار من باشد.» اما ماه نیز پنهان شد. آنگاه خورشید را دید ـ بزرگ و نیرومند ـ اما خورشید نیز در افق فرو نشست. ابراهیم دریافت: هر چه تغییر می‌کند و می‌رود، نمی‌تواند خدا باشد. خدا باید آن باشد که همیشه هست و دگرگون نمی‌شود. دل ابراهیم به سوی الله گردید.",
+          "ابراهیم به قوم خود گفت: «این مجسمه‌ها نه می‌شنوند، نه می‌بینند و نه می‌توانند به شما سود رسانند. چرا آنها را می‌پرستید؟» قومش خشمگین شدند. روزی که همه به جشنی رفته بودند، ابراهیم تنها به بتکده درآمد. تبری برداشت و همه‌ی بت‌ها را شکست، مگر بزرگ‌ترین آنها را. تبر را بر دوش بت بزرگ نهاد.",
+          "وقتی قوم بازگشتند و بت‌های شکسته را دیدند، فریاد زدند: «چه کسی این کار را کرد؟» ابراهیم را گمان بردند و به محاکمه کشاندند. ابراهیم آرام گفت: «از این بت بزرگ بپرسید؛ شاید او این کار را کرده باشد.» قوم پاسخ دادند: «تو خود می‌دانی که این بت‌ها سخن نمی‌گویند!» آنگاه ابراهیم گفت: «پس چگونه چیزی را می‌پرستید که نه می‌تواند سخن گوید و نه به شما سود رساند؟» سرها فرو افتاد ـ چرا که در درون می‌دانستند ابراهیم بر حق است. اما کبر نگذاشت بپذیرند.",
+          "تصمیم گرفتند ابراهیم را به مجازاتی هولناک بکشانند ـ او را در آتشی بزرگ بسوزانند. روزها هیزم گرد آوردند و آتشی برافروختند که هیچ‌کس به آن نزدیک نمی‌توانست شد. ابراهیم را در میان شعله افکندند. اما خداوند به آتش فرمود: «ای آتش، بر ابراهیم سرد و سلامت باش.» آتش او را نسوزاند. ابراهیم تندرست و آرام از میان شعله بیرون آمد، زیرا خداوند با او بود.",
+          "ابراهیم با خانواده‌اش از آن سرزمین کوچ کرد. خداوند فرمان داد تا به جایی دور برود ـ همان جایی که امروز مکه است. در آن روزگار، آن سرزمین درّه‌ای خالی و خشک بود، بی‌آب و بی‌مردم. ابراهیم همسرش هاجر و کودک خردسالش اسماعیل را در آنجا گذاشت، چرا که خداوند چنین خواسته بود. هاجر پرسید: «آیا خداوند تو را به این کار فرموده است؟» ابراهیم گفت: «آری.» هاجر پاسخ داد: «پس خداوند ما را وانخواهد گذاشت.»",
+          "وقتی آبِ اسماعیل تمام شد، هاجر هفت بار میان دو تپه‌ی صفا و مروه دوید و جست‌و‌جوی یاری کرد. خداوند چشمه‌ای از زمین، درست در کنار پای اسماعیلِ شیرخوار، بیرون آورد. این چشمه «زمزم» نام دارد و بیش از چهار هزار سال است که جاری است. هر مسلمانی که برای حج به مکه می‌آید، از آن می‌نوشد و میان صفا و مروه می‌رود، به یاد صبر هاجر.",
+          "وقتی اسماعیل بزرگ شد، خداوند به ابراهیم و اسماعیل فرمان داد که نخستین خانه را برای پرستش الله بنا کنند ـ کعبه را. آن دو با دستان خویش سنگ‌ها را برمی‌داشتند و ابراهیم دعا می‌کرد: «پروردگارا، از ما بپذیر.» امروز هر مسلمانی در جهان، هر جا که باشد، هنگام نماز رو به همان کعبه می‌کند. خداوند برای پاسداشت وفاداری ابراهیم، نامی به او ارزانی کرد که به هیچ‌کس دیگر نداده است: «خلیل‌الله»، دوست خدا.",
+        ],
+        lesson:
+          "درس: ابراهیم تنها در برابر یک قوم ایستاد، زیرا الله در دل او بود. وقتی با خداوند باشی، حتی آتش سرد می‌شود.",
+        sources: [
+          "قرآن ۶:۷۴-۷۹ (تأملات ابراهیم در ستاره و ماه و خورشید)",
+          "قرآن ۲۱:۵۱-۷۰ (شکستن بت‌ها و رهایی از آتش)",
+          "قرآن ۱۴:۳۵-۴۱ (دعای ابراهیم برای مکه و فرزندانش)",
+          "قرآن ۲:۱۲۴-۱۲۹ (ساختن کعبه)",
+          "قرآن ۴:۱۲۵ (نامگذاری ابراهیم به «خلیل»)",
+          "صحیح بخاری ۳۳۶۴-۳۳۶۵ (داستان هاجر، اسماعیل و زمزم)",
+          "ابن کثیر، قصص الانبیاء، باب ابراهیم علیه‌السلام",
+        ],
+      },
       ru: {
         name: "Ибрахим",
         theme: "халиль-Аллах",
@@ -179,6 +321,50 @@ export const PROPHET_STORIES: ProphetStory[] = [
     suffix: "عليه السلام",
     readingMin: 8,
     byLocale: {
+      en: {
+        name: "Yusuf",
+        theme: "the dream of stars",
+        paragraphs: [
+          "In a faraway land lived the Prophet Ya'qub, the son of Ishaq, the son of Ibrahim. He had twelve sons, and one of the younger ones was named Yusuf. Ya'qub loved all his children, but Yusuf was especially close to his heart, because he could see in the boy a light that belongs only to those Allah chooses.",
+          "One day Yusuf came to his father and told him a dream: \"Father, I saw in a dream eleven stars, the sun, and the moon — all of them bowing to me.\" Ya'qub understood that Allah was preparing Yusuf for a great future. He told his son, \"My son, do not tell this dream to your brothers, lest they plot something against you. Indeed, Shaytan is a clear enemy to man.\"",
+          "But the brothers had already seen how much their father loved Yusuf, and an ugly flower grew in their hearts: envy. They plotted, and one day they took Yusuf out into the open country. They threw him into a deep well, and they told their father that a wolf had eaten him. Ya'qub did not believe them, but what could he do? He only said, \"Beautiful patience.\" And he waited. He wept so long that his eyes grew weak.",
+          "Yusuf sat alone in the well. But Allah did not abandon him. A caravan passed by, and they pulled the boy out. They sold Yusuf in Egypt, into the household of one of the noblest men of the land. Yusuf grew up there, and Allah gave him intelligence, kindness, and a beautiful character.",
+          "The wife of that nobleman tried to tempt Yusuf to do something wrong. She called him, she enticed him, she promised him everything. But Yusuf said, \"I seek refuge in Allah.\" He would not give in, because he feared Allah more than anyone on earth. For refusing, he was sent unjustly to prison. Yusuf spent many years there.",
+          "In prison, Allah taught Yusuf how to interpret dreams. One day the king of Egypt had a strange dream — seven fat cows being devoured by seven lean ones, and seven green ears of grain and seven dry ones. None of his wise men could explain it. Then they remembered Yusuf. Yusuf explained: \"There will be seven years of plenty, then seven years of famine. Plant grain and leave it in the ear, so there will be enough for the hard years.\"",
+          "The king was so amazed by Yusuf's wisdom that he brought him out of prison and put him in charge of all the storehouses of Egypt. When the famine came, people came to Egypt from every direction for grain. Yusuf's brothers also came — the very ones who had thrown him into the well years before. They did not recognize him, but he recognized them. Yusuf could have taken revenge. But he chose something else.",
+          "Yusuf forgave them. He said, \"There is no blame on you today. May Allah forgive you, and He is the Most Merciful of the merciful.\" He asked them to bring his father. When Ya'qub saw Yusuf, his sight returned with joy. The whole family met again in Egypt. When they all came in to Yusuf, his parents and his eleven brothers bowed before him in respect. And Yusuf remembered his childhood dream — eleven stars, the sun, and the moon. He said, \"This is the interpretation of my dream from long ago. My Lord has made it true.\"",
+        ],
+        lesson:
+          "Lesson: even if people wrong you, Allah knows the truth. Forgiveness is stronger than revenge. And a dream Allah places in your heart will come true in its time.",
+        sources: [
+          "Quran 12 (Surah Yusuf — the whole story, revealed as one)",
+          "Ibn Kathir, Qisas al-Anbiya, chapter on Yusuf",
+          "Sahih al-Bukhari 3375 (on the nobility of Yusuf)",
+          "al-Tabari, tafsir on Surah Yusuf",
+        ],
+      },
+      fa: {
+        name: "یوسف",
+        theme: "خواب ستاره‌ها",
+        paragraphs: [
+          "در سرزمینی دور، حضرت یعقوب پسر اسحاق پسر ابراهیم می‌زیست. دوازده پسر داشت و یکی از کوچک‌ترهایشان یوسف بود. یعقوب همه‌ی فرزندانش را دوست می‌داشت، اما یوسف در دل او جای ویژه‌ای داشت ـ زیرا در آن پسر نوری می‌دید که تنها از آنِ برگزیدگانِ خداست.",
+          "روزی یوسف نزد پدر آمد و خوابی را برای او بازگو کرد: «پدر! در خواب یازده ستاره و خورشید و ماه را دیدم که در برابر من سجده می‌کنند.» یعقوب دریافت که خداوند یوسف را برای آینده‌ای بزرگ آماده می‌کند. به پسر خود گفت: «فرزندم، این رؤیا را برای برادرانت بازگو مکن، مبادا بر تو نیرنگی بزنند. به‌راستی شیطان دشمن آشکار آدمی است.»",
+          "اما برادران از پیش دیده بودند که پدر یوسف را چقدر دوست می‌دارد و گلِ ناپاکی در دل‌هایشان روییده بود: حسد. توطئه چیدند و روزی یوسف را با خود به دشت بردند. او را در چاهی عمیق افکندند و به پدرشان گفتند که گرگ، یوسف را دریده است. یعقوب باور نکرد، اما چه می‌توانست بکند؟ تنها گفت: «صبر زیبا، صبر جمیل.» و به انتظار ماند. آن‌قدر گریست تا چشمانش از اندوه نا‌توان شد.",
+          "یوسف تنها در چاه نشسته بود. اما خداوند او را وانگذاشت. کاروانی از آنجا گذشت و کودک را از چاه بیرون کشید. او را در مصر به یکی از بزرگان آن سرزمین فروختند. یوسف در آن خانه بزرگ شد و خداوند به او خرد و مهربانی و زیبایی نهاد بخشید.",
+          "همسر آن بزرگ‌مرد می‌خواست یوسف را به کار ناشایست وادارد. او را خواند، فریب داد و همه چیز را به او وعده داد. اما یوسف گفت: «به خدا پناه می‌برم.» تسلیم نشد، زیرا از خداوند بیش از هر کس بر روی زمین بیم داشت. به همین سبب، به ناحق به زندان افتاد. یوسف سال‌ها در زندان ماند.",
+          "در زندان، خداوند به یوسف تعبیر خواب آموخت. روزی پادشاه مصر خوابی شگفت دید: هفت گاو فربه که هفت گاو لاغر آنها را می‌خورند، و هفت خوشه‌ی سبز و هفت خوشه‌ی خشک. هیچ‌یک از خردمندان نتوانستند آن را تعبیر کنند. آنگاه یوسف را به یاد آوردند. یوسف گفت: «هفت سال فراوانی خواهد آمد و سپس هفت سال خشکسالی. گندم را بکارید و در خوشه نگاه دارید تا برای سال‌های سخت کافی باشد.»",
+          "پادشاه از خرد یوسف چنان شگفت‌زده شد که او را از زندان درآورد و سرپرستی همه‌ی انبارهای مصر را به او سپرد. وقتی خشکسالی آمد، مردم از هر سو برای گندم به مصر می‌آمدند. برادران یوسف نیز آمدند ـ همان‌ها که سال‌ها پیش او را در چاه افکنده بودند. آنان یوسف را نشناختند، اما او ایشان را شناخت. یوسف می‌توانست انتقام بگیرد. اما راه دیگری برگزید.",
+          "یوسف برادرانش را بخشید. گفت: «امروز بر شما هیچ سرزنشی نیست. خداوند شما را بیامرزد و او ارحم‌الراحمین است.» از آنان خواست پدر را نزد او بیاورند. وقتی یعقوب یوسف را دید، بینایی‌اش از شادی بازگشت. همه‌ی خانواده در مصر گرد آمدند. آنگاه که همه نزد یوسف رفتند، پدر و مادر و یازده برادر در برابر او به نشانه‌ی احترام خم شدند. یوسف خواب کودکی‌اش را به یاد آورد ـ یازده ستاره، خورشید و ماه. گفت: «این تعبیر خواب دیرینه‌ی من است؛ پروردگار من آن را راست گرداند.»",
+        ],
+        lesson:
+          "درس: حتی اگر مردم به تو بدی کنند، خداوند حقیقت را می‌داند. بخشش از انتقام نیرومندتر است. و رؤیایی که خداوند در دل تو می‌نهد، در وقت خویش به حقیقت می‌پیوندد.",
+        sources: [
+          "قرآن، سوره‌ی یوسف (سوره‌ی ۱۲ - تمام داستان به یکباره نازل شده است)",
+          "ابن کثیر، قصص الانبیاء، باب یوسف علیه‌السلام",
+          "صحیح بخاری ۳۳۷۵ (در فضل یوسف)",
+          "تفسیر طبری بر سوره‌ی یوسف",
+        ],
+      },
       ru: {
         name: "Юсуф",
         theme: "сон о звёздах",
@@ -211,6 +397,52 @@ export const PROPHET_STORIES: ProphetStory[] = [
     suffix: "عليه السلام",
     readingMin: 8,
     byLocale: {
+      en: {
+        name: "Musa",
+        theme: "the parting of the sea",
+        paragraphs: [
+          "In Egypt there ruled a proud king — Pharaoh. He thought himself a god and told the people that no one was higher than he was. In his land lived the descendants of the Prophet Ya'qub, a people called Bani Isra'il, the Children of Israel. Pharaoh made them slaves. They hauled stones and built his palaces and pyramids, and no one had any mercy on them.",
+          "Pharaoh had a terrible dream, and his interpreters told him: \"Among the Children of Israel, a boy will be born who will destroy your kingdom.\" Pharaoh issued a cruel command: every newborn boy of that people was to be killed. Mothers wept and hid their babies. It was in that fearful time that the little Musa was born.",
+          "Musa's mother was afraid for him. And Allah inspired her: \"Place him in a basket and put it on the river Nile. Do not fear, do not grieve. We will return him to you and make him a messenger.\" With a trembling heart she did so. The basket floated down the river — and came to rest right at Pharaoh's palace. Pharaoh's wife found the baby and loved him so much that she begged her husband to let her keep him. So Musa grew up in the very house of the man who wanted to kill him.",
+          "When Musa grew up, Allah gave him wisdom. One day Musa saw an Egyptian harming a man from his own people. Musa wanted to separate them, but his blow killed the Egyptian. Musa had not meant that. He was afraid and fled from Egypt. He walked for many days through the desert and came to a foreign land — Madyan. There he married and tended sheep for eight or ten years, living a quiet life.",
+          "One night, as Musa traveled with his family, he saw a fire in the distance. He said to his wife, \"Wait — I will go and bring back an ember.\" When Musa came near the fire, he heard a voice — and it was the voice of Allah Himself. Allah said to him, \"O Musa, indeed I am your Lord. Take off your sandals — you are in the sacred valley of Tuwa.\" Allah made Musa a prophet and commanded, \"Go to Pharaoh — he has transgressed all bounds.\" It was a terrifying command, for Pharaoh was hunting Musa.",
+          "Musa asked Allah for help: \"My Lord, untie the knot from my tongue, that they may understand my speech. And make my brother Harun a helper for me.\" Allah answered his du'a. Musa and Harun came to Pharaoh and said: \"Believe in Allah and let our people go.\" But Pharaoh only laughed and gathered his best magicians to defeat Musa.",
+          "The magicians threw down their ropes and staffs, and they seemed to slither like snakes. It was an illusion. Then Musa threw down his staff — and it became a real, great serpent that swallowed everything the magicians had made. The magicians themselves fell down in prostration and said: \"We believe in the Lord of Musa and Harun.\" In his rage Pharaoh killed them, but they died as believers.",
+          "Allah commanded Musa to lead his people out of Egypt by night. They marched all night until they reached the sea. Then Pharaoh's army appeared behind them — horses, chariots, weapons. The Children of Israel cried out, \"We are caught!\" Musa answered calmly, \"No. My Lord is with me; He will guide me.\" Allah commanded Musa to strike the sea with his staff. The sea split open — a dry path appeared between two walls of water. Musa's people walked across on the seabed. When Pharaoh and his army charged in behind them, the sea closed over them — and Pharaoh drowned with all his army. Musa and his people walked into freedom.",
+        ],
+        lesson:
+          "Lesson: even the mightiest king is weak before Allah. If you do what Allah commands, He will open a road for you — even through the sea.",
+        sources: [
+          "Quran 28:1-42 (the birth of Musa, his flight to Madyan, and the call at Mount Tur)",
+          "Quran 20:9-79 (the meeting with Allah, the staff, the confrontation with Pharaoh)",
+          "Quran 26:10-66 (Pharaoh's magicians, the exodus, the parting of the sea)",
+          "Ibn Kathir, Qisas al-Anbiya, chapters on Musa",
+          "Sahih al-Bukhari 3398 (ahadith on Musa)",
+        ],
+      },
+      fa: {
+        name: "موسی",
+        theme: "شکافتن دریا",
+        paragraphs: [
+          "در مصر، پادشاهی مغرور حکم می‌راند ـ فرعون. خود را خدا می‌پنداشت و به مردم می‌گفت کسی بالاتر از او نیست. در سرزمینش نسل پیامبر یعقوب می‌زیستند، قومی که آنها را «بنی‌اسرائیل» می‌خواندند. فرعون آنان را برده‌ی خود ساخته بود. سنگ می‌کشیدند و کاخ‌ها و اهرام او را می‌ساختند، و کسی بر آنان رحم نمی‌کرد.",
+          "فرعون خوابی هولناک دید و خوابگزارانش گفتند: «در میان بنی‌اسرائیل پسری زاده خواهد شد که پادشاهی تو را بر باد می‌دهد.» فرعون فرمانی بی‌رحم صادر کرد: هر نوزاد پسر از آن قوم باید کشته شود. مادران می‌گریستند و فرزندانشان را پنهان می‌کردند. در همان روزگار سخت، موسای کوچک به دنیا آمد.",
+          "مادر موسی بر او بیمناک بود. خداوند به دل او الهام کرد: «او را در سبدی بگذار و به رودخانه‌ی نیل بسپار. مترس و اندوهگین مباش؛ ما او را به تو بازمی‌گردانیم و از فرستادگان قرار می‌دهیم.» با دلی لرزان چنین کرد. سبد روی آب رفت و درست به کاخ فرعون رسید. همسر فرعون کودک را یافت و چنان دل به او بست که شوهرش را قانع کرد تا کودک را در کاخ نگاه دارند. این‌گونه موسی در همان خانه‌ای بزرگ شد که صاحبش می‌خواست او را بکشد.",
+          "وقتی موسی بزرگ شد، خداوند به او حکمت بخشید. روزی دید مردی مصری به یکی از قوم خود ستم می‌کند. موسی خواست آن دو را از هم جدا کند، اما با ضربه‌اش، مرد مصری از پا درآمد. موسی چنین نمی‌خواست. ترسید و از مصر گریخت. روزها در بیابان راه پیمود تا به سرزمینی بیگانه به نام مَدْیَن رسید. آنجا ازدواج کرد و هشت یا ده سال گوسفند چراند و زندگی آرامی داشت.",
+          "شبی که موسی با خانواده‌اش در راه بود، در دوردست آتشی دید. به همسرش گفت: «بمانید، من می‌روم و پاره‌آتشی می‌آورم.» چون به آتش نزدیک شد، صدایی شنید ـ سخن خود خداوند بود. الله فرمود: «ای موسی، همانا منم پروردگار تو. کفش‌های خود را بیرون آور؛ تو در وادی مقدس طُوی هستی.» خداوند موسی را پیامبر گرداند و فرمان داد: «به سوی فرعون برو؛ او سرکشی کرده است.» این فرمانی هراس‌انگیز بود، زیرا فرعون در جست‌وجوی موسی بود.",
+          "موسی از پروردگارش یاری خواست: «پروردگارا، گره از زبانم بگشای تا سخن مرا دریابند. و برادرم هارون را یاور من قرار ده.» خداوند دعای او را پذیرفت. موسی و هارون نزد فرعون رفتند و گفتند: «به الله ایمان آور و قوم ما را آزاد کن.» اما فرعون تنها خندید و بهترین جادوگرانش را گرد آورد تا موسی را شکست دهند.",
+          "جادوگران ریسمان‌ها و عصاهای خود را افکندند و چنان نمودند که گویی ماران در حال جنبیدن‌اند. این یک پندار بود. آنگاه موسی عصای خود را افکند ـ و عصا اژدهایی راستین شد که هر چه را جادوگران ساخته بودند بلعید. خودِ جادوگران به سجده افتادند و گفتند: «به پروردگار موسی و هارون ایمان آوردیم.» فرعون به خشم آمد و آنان را کشت، اما آنان مؤمن از دنیا رفتند.",
+          "خداوند به موسی فرمان داد که قومش را شبانه از مصر بیرون برد. تمام شب راه رفتند تا به دریا رسیدند. در پشت سر، لشکر فرعون پدیدار شد ـ اسبان، گردونه‌ها، سلاح‌ها. بنی‌اسرائیل فریاد زدند: «ما را گرفتار کردند!» موسی آرام گفت: «نه، پروردگار من با من است؛ او مرا راه می‌نماید.» خداوند به موسی فرمود تا با عصای خویش بر دریا زند. دریا شکافت ـ راهی خشک میان دو دیوار آب پدید آمد. قوم موسی از کف دریا گذشتند. وقتی فرعون با لشکرش از پی آنان درآمد، دریا بر سرشان فروریخت ـ و فرعون با تمام سپاهش غرق شد. موسی و قومش به سوی آزادی گام نهادند.",
+        ],
+        lesson:
+          "درس: حتی توانمندترین پادشاه در برابر خداوند ناتوان است. اگر آنچه را الله فرمان داده انجام دهی، او راهی برایت می‌گشاید ـ حتی از میان دریا.",
+        sources: [
+          "قرآن ۲۸:۱-۴۲ (تولد موسی، گریز به مدین، دعوت در طُوی)",
+          "قرآن ۲۰:۹-۷۹ (لقای الهی، عصا، رویارویی با فرعون)",
+          "قرآن ۲۶:۱۰-۶۶ (جادوگران فرعون، خروج، شکافتن دریا)",
+          "ابن کثیر، قصص الانبیاء، باب موسی علیه‌السلام",
+          "صحیح بخاری ۳۳۹۸ (احادیث در باب موسی)",
+        ],
+      },
       ru: {
         name: "Муса",
         theme: "разделение моря",
@@ -244,6 +476,44 @@ export const PROPHET_STORIES: ProphetStory[] = [
     suffix: "عليه السلام",
     readingMin: 5,
     byLocale: {
+      en: {
+        name: "Ayyub",
+        theme: "patience",
+        paragraphs: [
+          "The Prophet Ayyub was a good man. Allah had given him much: a large family, many children, fertile land, livestock, homes. Ayyub never forgot Who gave him all of this. Every day he thanked Allah and helped the poor.",
+          "Then Allah sent Ayyub a great trial. Ayyub lost almost everything — both his wealth and his health. A heavy illness came over him and did not leave him for a long time. For years Ayyub lay sick. He could not work. He could not do the things he once did. Only his wife stayed by him and cared for him.",
+          "But Ayyub did not complain. He did not get angry with Allah. He did not say, \"Why me?\" Ayyub remembered: what Allah gives, Allah may also take back. So he bore it patiently. He bore it quietly, without loud words. He simply kept believing.",
+          "Only when the trial became truly heavy did Ayyub turn to Allah with a single short prayer. He said, \"My Lord, indeed adversity has touched me, and You are the Most Merciful of the merciful.\" He did not say, \"Lift this from me at once.\" He did not demand. He simply reminded Allah of His mercy — and trusted Him.",
+          "And Allah answered Ayyub. In the Qur'an Allah says, \"So We responded to him and removed the harm.\" Allah said to Ayyub, \"Strike with your foot upon the ground.\" Ayyub did, and a cool, clear spring burst out of the earth. Allah said, \"This is for washing and drinking.\" Ayyub washed himself, drank from it, and the illness left. Allah restored his health, returned his family to him, and gave him even more than before.",
+          "And Allah spoke beautiful words about Ayyub in the Qur'an: \"Indeed, We found him patient. An excellent servant!\" These are among the highest words that can be said about any human being. Whenever people in difficulty remember Ayyub, their burden grows lighter. Because Ayyub showed: even the greatest pain ends one day, if you stay with Allah.",
+        ],
+        lesson:
+          "Lesson: patience is not staying silent while resentful — it is trusting Allah when life is hard. Ayyub did not demand. He asked gently. And Allah answered.",
+        sources: [
+          "Quran 21:83-84 (the du'a of Ayyub and Allah's response)",
+          "Quran 38:41-44 (the spring, the healing, and Allah's praise of Ayyub)",
+          "Ibn Kathir, Qisas al-Anbiya, chapter on Ayyub",
+        ],
+      },
+      fa: {
+        name: "ایوب",
+        theme: "صبر",
+        paragraphs: [
+          "حضرت ایوب مردی نیکوکار بود. خداوند بسیار به او داده بود: خانواده‌ای بزرگ، فرزندان فراوان، زمینی حاصلخیز، دام و خانه. ایوب هرگز فراموش نمی‌کرد که این همه از کیست. هر روز خداوند را سپاس می‌گفت و به نیازمندان یاری می‌رساند.",
+          "آنگاه خداوند آزمونی بزرگ برای ایوب فرستاد. ایوب نزدیک به همه چیز خویش را از دست داد ـ هم مال و هم تندرستی. بیماری سنگینی بر او وارد آمد و سال‌ها از او دور نشد. ایوب سال‌ها در بستر بیماری ماند. نمی‌توانست کار کند. نمی‌توانست آنچه پیش‌تر می‌توانست انجام دهد. تنها همسرش در کنار او ماند و از او پرستاری کرد.",
+          "اما ایوب شکایت نکرد. بر خداوند خشم نگرفت. نگفت: «چرا من؟» ایوب می‌دانست: آنچه را خدا داد، خود نیز می‌تواند بازستاند. پس صبر کرد. آرام صبر کرد، بی هیچ گله‌ای. تنها به ایمان خود ادامه داد.",
+          "زمانی که آزمون بسیار سنگین شد، ایوب با دعایی کوتاه به سوی پروردگار خود بازگشت. گفت: «پروردگارا، رنج به من رسیده است و تو ارحم‌الراحمینی.» نگفت: «این بلا را همین اکنون بردار.» چیزی نخواست به اصرار. تنها مهربانی خدا را به یاد او آورد ـ و به او توکل کرد.",
+          "خداوند ایوب را پاسخ داد. در قرآن می‌فرماید: «دعای او را اجابت کردیم و آنچه را از سختی به او رسیده بود برداشتیم.» خداوند به ایوب فرمان داد: «پای بر زمین بکوب.» ایوب چنین کرد و چشمه‌ای سرد و پاک از زمین جوشید. خداوند فرمود: «این برای شستشو و نوشیدن است.» ایوب با آن آب خود را شست، از آن نوشید و بیماری از او رفت. خداوند تندرستی را به او بازگرداند، خانواده‌اش را به او رساند، و حتی بیش از پیش به او بخشید.",
+          "خداوند در قرآن درباره‌ی ایوب سخنی بس زیبا فرموده است: «همانا او را شکیبا یافتیم؛ نیکو بنده‌ای بود.» این از بالاترین سخنانی است که درباره‌ی یک انسان می‌توان گفت. هر گاه مردمان در سختی به یاد ایوب می‌افتند، بار از دل آنان سبک می‌شود. زیرا ایوب نشان داد: بزرگ‌ترین درد روزی پایان می‌گیرد، اگر با خدا بمانی.",
+        ],
+        lesson:
+          "درس: صبر، خاموش نشستن با کینه نیست؛ توکل بر خداست در سختی. ایوب چیزی نخواست به اصرار، آرام دعا کرد ـ و خداوند پاسخ داد.",
+        sources: [
+          "قرآن ۲۱:۸۳-۸۴ (دعای ایوب و پاسخ خداوند)",
+          "قرآن ۳۸:۴۱-۴۴ (چشمه، شفا و ستایش خداوند)",
+          "ابن کثیر، قصص الانبیاء، باب ایوب علیه‌السلام",
+        ],
+      },
       ru: {
         name: "Аййюб",
         theme: "терпение",
@@ -273,6 +543,48 @@ export const PROPHET_STORIES: ProphetStory[] = [
     suffix: "عليه السلام",
     readingMin: 5,
     byLocale: {
+      en: {
+        name: "Yunus",
+        theme: "the whale",
+        paragraphs: [
+          "Allah sent the Prophet Yunus to a people who lived in the city of Nineveh. They had forgotten Allah and worshipped idols. Yunus called them to the truth for many days, but they did not listen. They laughed at him, turned away, and kept worshipping what they had made with their own hands.",
+          "Yunus grew tired and upset. So he left the city without waiting for Allah's permission. He boarded a ship and sailed out to sea — far from that people. But Yunus had done this without asking his Lord. Prophets must wait for the command of Allah.",
+          "A violent storm rose at sea. The ship rocked, the wind howled, the waves threw the ship up and down. The sailors were terrified — the ship could sink. As was the custom of that time, they drew lots to decide whom to throw overboard to lighten the load. Three times the lot fell on Yunus. Then Yunus understood: this was a trial from Allah. He himself jumped into the sea.",
+          "A great whale swallowed him in the sea. By Allah's will, the whale did Yunus no harm. Yunus found himself in darkness — the darkness of the sea, the darkness of night, the darkness of the whale's belly. Three layers of darkness around him. And there, in complete darkness, Yunus understood his mistake — he had left his people before Allah had said so.",
+          "Then from within that darkness Yunus spoke the words Allah has preserved in the Qur'an for every person until the Day of Judgement: \"There is no god but You. Glory to You. Indeed, I have been among the wrongdoers.\" He did not make excuses. He did not say, \"The people were bad.\" He admitted, \"It was I who erred.\"",
+          "And Allah answered him. Allah commanded the whale, and the whale cast Yunus out onto a shore. Yunus was very weak. Allah caused a plant to grow next to him, whose leaves shaded him from the sun and gave him food. Yunus recovered his strength and returned to his people. And in that time his people — every single one of them — had believed in Allah. And Allah forgave them.",
+        ],
+        lesson:
+          "Lesson: when we make a mistake, we should not blame others. Say what Yunus said: \"I was wrong.\" And Allah will hear you, even from the deepest darkness.",
+        sources: [
+          "Quran 21:87-88 (Yunus's du'a from the darkness and Allah's response)",
+          "Quran 37:139-148 (the ship, the whale, and the rescue)",
+          "Quran 10:98 (the people of Yunus all believed)",
+          "Jami' at-Tirmidhi 3505 (the du'a of Yunus, graded hasan)",
+          "Ibn Kathir, Qisas al-Anbiya, chapter on Yunus",
+        ],
+      },
+      fa: {
+        name: "یونس",
+        theme: "ماهی",
+        paragraphs: [
+          "خداوند پیامبرش یونس را به سوی قومی که در شهر نینوا می‌زیستند، فرستاد. آن قوم خدای خود را فراموش کرده بودند و بت می‌پرستیدند. یونس روزها آنان را به حقیقت فراخواند، اما گوش نسپردند. به او می‌خندیدند، روی برمی‌گرداندند و همچنان آنچه را با دست خود ساخته بودند می‌پرستیدند.",
+          "یونس خسته و دلگیر شد. پیش از آنکه اذن از پروردگارش بگیرد، شهر را ترک کرد. سوار کشتی شد و به دریا رفت ـ دور از آن قوم. اما این کار را بی‌اذنِ الله انجام داد. حال آنکه پیامبران باید منتظر فرمان پروردگار بمانند.",
+          "در دریا توفانی سخت برخاست. کشتی می‌لرزید، باد می‌غرید و موج‌ها کشتی را بالا و پایین می‌بردند. ملاحان ترسیدند که کشتی غرق شود. به رسم آن زمان قرعه افکندند تا تصمیم گیرند چه کسی را به دریا اندازند تا بار سبک شود. سه بار قرعه به نام یونس افتاد. آنگاه یونس دریافت: این آزمونی از سوی خداست. خود به دریا افکند.",
+          "ماهیِ بزرگی او را در دریا فرو بلعید. به اراده‌ی خدا، ماهی هیچ گزندی به یونس نرساند. یونس در تاریکی فرو رفت ـ تاریکی دریا، تاریکی شب، تاریکی شکم ماهی. سه تاریکی او را در میان گرفته بود. و در آن تاریکیِ تمام، یونس به خطای خویش پی برد ـ که پیش از فرمان خدا قوم خود را ترک کرده بود.",
+          "آنگاه یونس از میان آن تاریکی همان سخنی را بر زبان آورد که خداوند تا روز قیامت در قرآن نگاه داشته است: «لا اله الا انت سبحانک انی کنت من الظالمین» ـ «هیچ معبودی جز تو نیست؛ پاک و منزهی. به‌راستی من از ستمکاران بودم.» عذر نتراشید. نگفت: «قوم بد بودند.» اعتراف کرد: «من خود خطا کردم.»",
+          "خداوند او را پاسخ داد. به ماهی فرمان داد و ماهی یونس را بر ساحل افکند. یونس بسیار ناتوان بود. خداوند گیاهی در کنار او رویاند که برگ‌هایش او را از آفتاب پناه می‌داد و خوراکش بود. یونس نیرو گرفت و به سوی قوم خویش بازگشت. در آن مدت، همه‌ی قوم او ـ تا آخرین تن ـ ایمان آورده بودند. خداوند آنان را آمرزید.",
+        ],
+        lesson:
+          "درس: وقتی اشتباه می‌کنیم، نباید دیگران را سرزنش کنیم. مثل یونس بگو: «من ستم کردم.» و خداوند صدای تو را حتی از ژرف‌ترین تاریکی‌ها می‌شنود.",
+        sources: [
+          "قرآن ۲۱:۸۷-۸۸ (دعای یونس از تاریکی‌ها و پاسخ خداوند)",
+          "قرآن ۳۷:۱۳۹-۱۴۸ (داستان کشتی، ماهی و نجات)",
+          "قرآن ۱۰:۹۸ (ایمان آوردن همه‌ی قوم یونس)",
+          "ترمذی ۳۵۰۵ (دعای یونس، حدیث حسن)",
+          "ابن کثیر، قصص الانبیاء، باب یونس علیه‌السلام",
+        ],
+      },
       ru: {
         name: "Юнус",
         theme: "кит",
@@ -304,6 +616,48 @@ export const PROPHET_STORIES: ProphetStory[] = [
     suffix: "عليه السلام",
     readingMin: 7,
     byLocale: {
+      en: {
+        name: "Sulayman",
+        theme: "the kingdom of the wind",
+        paragraphs: [
+          "The Prophet Sulayman was the son of the Prophet Dawud. Allah gave him gifts He had given no one else. Sulayman was both a prophet and a king. Allah gave him a great kingdom, wisdom, and three remarkable abilities: the wind served him, the jinn worked for him, and he could understand the speech of animals and birds.",
+          "When Sulayman wanted to travel far, he did not need ships or camels. The wind lifted his throne and carried him in a single day to a place an ordinary traveller would have reached in a month. The jinn built tall buildings for him, brought pearls up from the depths of the sea, and did things ordinary people cannot do.",
+          "One day Sulayman was passing with his army through a valley of ants. A female ant cried out to her people: \"O ants, enter your homes lest Sulayman and his army crush you while they do not perceive you!\" Sulayman heard her, because Allah had given him the ability to understand the speech of animals. He smiled at her words and said, \"My Lord, enable me to be grateful for the favour You have bestowed upon me and upon my parents.\"",
+          "Another time Sulayman gathered all his birds and noticed that the hoopoe was missing. He said, \"Where is the hoopoe? If he does not come with a clear excuse, I shall punish him.\" After a while the hoopoe arrived and said, \"I have come to know what you did not. I have come from Saba. There a woman named Bilqis rules. She has a great throne. But she and her people worship the sun, not Allah.\"",
+          "Sulayman did not attack. He wrote Bilqis a letter and invited her to the truth. Bilqis thought long and then came herself to Sulayman. When she saw his kingdom, his wisdom, and his kindness, she understood that Sulayman was no ordinary king. And when she saw how Sulayman worshipped Allah alone and was not proud of his kingdom, her heart turned. She said, \"I have submitted with Sulayman to Allah, the Lord of the worlds.\"",
+          "Sulayman knew that his entire kingdom was from Allah. He did not say, \"This is mine.\" He said, \"This is by the favour of my Lord, that He may test me — whether I will be grateful or ungrateful.\" It is very hard to have so much and not become proud. Sulayman managed it because his heart was full of Allah, not of things.",
+          "At the end of his life, Sulayman died leaning on his staff, and he stood that way so long that the jinn working below did not notice his death. They kept working, thinking the king was watching them. Only when the staff broke did Sulayman fall — and the jinn realized. This is a sign for all of us: even the greatest people are mortal. Only what we did for the sake of Allah will remain.",
+        ],
+        lesson:
+          "Lesson: having much is a test no less than having nothing. Sulayman had everything — and remembered Allah in every gift. That is real wealth.",
+        sources: [
+          "Quran 27:15-44 (Sulayman's wisdom, the ants, the hoopoe, and Bilqis)",
+          "Quran 38:30-40 (kingdom, the wind, and Sulayman's gratitude)",
+          "Quran 34:12-14 (the service of the jinn and Sulayman's death)",
+          "Ibn Kathir, Qisas al-Anbiya, chapters on Dawud and Sulayman",
+        ],
+      },
+      fa: {
+        name: "سلیمان",
+        theme: "پادشاهیِ باد",
+        paragraphs: [
+          "حضرت سلیمان فرزند حضرت داوود بود. خداوند به او عطایایی بخشید که به هیچ‌کس دیگر نداده بود. سلیمان هم پیامبر بود و هم پادشاه. خداوند پادشاهیِ بزرگ، حکمت و سه توانایی شگفت به او ارزانی فرمود: باد به فرمان او بود، جنّیان برای او کار می‌کردند و او زبان جانوران و پرندگان را می‌فهمید.",
+          "هرگاه سلیمان می‌خواست به جایی دور سفر کند، به کشتی و شتر نیاز نداشت. باد تخت او را برمی‌داشت و در یک روز به جایی می‌رساند که مسافری معمولی یک ماه راه می‌پیمود. جنّیان برای او ساختمان‌های بلند می‌ساختند، از ژرفای دریا مروارید می‌آوردند و کارهایی می‌کردند که از دست انسان معمولی برنمی‌آید.",
+          "روزی سلیمان با سپاهش از وادی مورچگان می‌گذشت. ناگاه مورچه‌ای فریاد برآورد: «ای مورچگان! به لانه‌های خود درآیید تا سلیمان و سپاهیانش، ناخواسته، شما را پایمال نکنند.» سلیمان سخن او را شنید، زیرا خداوند زبان جانوران را به او آموخته بود. به سخن آن مورچه لبخند زد و گفت: «پروردگارا، به من توفیق ده تا نعمت تو را که بر من و بر پدر و مادرم ارزانی داشته‌ای، سپاس گویم.»",
+          "روزی دیگر سلیمان همه‌ی پرندگان خویش را گرد آورد، اما هدهد را در میان آنان ندید. گفت: «هدهد کجاست؟ اگر برهانی روشن نیاورد، او را کیفر می‌دهم.» چندی بعد هدهد بازگشت و گفت: «من به چیزی پی برده‌ام که تو ندانسته‌ای. از سرزمین سبأ آمده‌ام. در آنجا زنی به نام بلقیس فرمانروایی می‌کند. او تختی بزرگ دارد. اما او و قومش خورشید را می‌پرستند، نه خدا را.»",
+          "سلیمان حمله نکرد. به بلقیس نامه‌ای نوشت و او را به حقیقت دعوت کرد. بلقیس بسیار اندیشید و سپس خود نزد سلیمان آمد. چون پادشاهی، حکمت و مهربانی او را دید، دریافت که سلیمان شاهی معمولی نیست. و چون دید که سلیمان تنها خدا را می‌پرستد و به پادشاهی خود نمی‌بالد، دلش گردید. گفت: «همراه با سلیمان، در برابر خداوند پروردگار جهانیان تسلیم شدم.»",
+          "سلیمان می‌دانست که همه‌ی پادشاهی او از خداست. نمی‌گفت: «این مالِ من است.» می‌گفت: «این از فضلِ پروردگار من است تا مرا بیازماید که آیا سپاس می‌گزارم یا ناسپاسی می‌کنم.» این بسیار دشوار است: داشتنِ چنین فراوانی و در عین حال متکبر نشدن. سلیمان از این آزمون پیروز بیرون آمد، زیرا دلش به یاد خدا بود، نه به چیزها.",
+          "در پایان زندگی، سلیمان بر عصای خویش تکیه داده درگذشت و چنان ایستاده ماند که جنّیان پایین در حال کار، از مرگش آگاه نشدند. آنان همچنان کار می‌کردند به این پندار که پادشاه به آنان می‌نگرد. تنها زمانی که عصا شکست، سلیمان فروافتاد و جنّیان آگاه شدند. این نشانه‌ای است برای همه‌ی ما: حتی بزرگ‌ترینِ آدمیان نیز فناپذیرند. تنها آن چه برای خدا کرده‌ایم باقی می‌ماند.",
+        ],
+        lesson:
+          "درس: داشتنِ بسیار نیز همانند نداشتن، آزمونی است. سلیمان همه چیز داشت و در هر نعمت خدا را به یاد داشت. این، توانگری حقیقی است.",
+        sources: [
+          "قرآن ۲۷:۱۵-۴۴ (حکمت سلیمان، مورچگان، هدهد و بلقیس)",
+          "قرآن ۳۸:۳۰-۴۰ (پادشاهی، باد و سپاس سلیمان)",
+          "قرآن ۳۴:۱۲-۱۴ (خدمت جنّیان و مرگ سلیمان)",
+          "ابن کثیر، قصص الانبیاء، باب داوود و سلیمان علیهماالسلام",
+        ],
+      },
       ru: {
         name: "Сулейман",
         theme: "царство ветра",
@@ -335,6 +689,52 @@ export const PROPHET_STORIES: ProphetStory[] = [
     suffix: "عليه السلام",
     readingMin: 7,
     byLocale: {
+      en: {
+        name: "Isa",
+        theme: "a word from Allah",
+        paragraphs: [
+          "There once lived a very pure, very God-conscious young woman. Her name was Maryam, the daughter of Imran. From childhood she was dedicated to the worship of Allah and lived in the sanctuary under the care of the Prophet Zakariyya. Every time Zakariyya came to her, he found food beside her that had appeared by a means he could not explain. He asked, \"Where is this from, Maryam?\" She answered, \"It is from Allah. Allah provides for whom He wills without measure.\"",
+          "One day an angel came to Maryam — it was Jibril (peace be upon him). He brought her news that made her heart tremble. The angel said, \"Allah gives you good news of a word from Him. His name is the Masih, Isa son of Maryam.\" Maryam asked in wonder, \"How can I have a child when no man has touched me?\" The angel replied, \"So does Allah create whatever He wills. When He decrees a matter, He only says to it, 'Be,' and it is.\"",
+          "This is a tremendous miracle. If Allah created Adam without father or mother — from clay alone — why could He not create Isa without a father? Nothing is difficult for Allah. Isa is not \"a son of God\" as some imagine. Isa is a servant of Allah, a human being like every prophet. Allah simply created him in a special way to show people: I am Allah, and I am able to do all things.",
+          "When Maryam gave birth to Isa, she returned to her people with the baby in her arms. People began to accuse her, to say ugly things. Maryam said nothing back to them — Allah had commanded her silence. She only pointed at the infant. The people exclaimed, \"How can we speak to a baby in a cradle?\" And then Isa — still tiny, still unable to walk — spoke by Allah's permission. He said, \"I am the servant of Allah. He has given me the Scripture and made me a prophet. He has made me blessed wherever I may be.\"",
+          "When Isa grew up, Allah made him a prophet to the Children of Israel. And Allah gave him miracles such as He gave to almost no one else. Isa healed those born blind. He healed lepers. He brought the dead back to life — but only by Allah's permission. He shaped a bird out of clay, breathed on it, and it became a living bird and flew away. None of these miracles came from Isa himself; they all came from Allah. And Isa always told the people, \"Worship Allah, my Lord and your Lord.\"",
+          "But not everyone believed. Some of his people decided to kill Isa. They came to arrest him. But Allah protected His prophet. Allah raised Isa to Himself — alive, into the heavens. And the man who came to arrest him, Allah made him resemble Isa. Those who came seized that man and crucified him — thinking they had crucified Isa. But Isa did not die on the cross. Allah states clearly in the Qur'an: \"They did not kill him nor did they crucify him; but it only appeared so to them.\" Isa is alive with his Lord.",
+          "We Muslims love Isa. Isa is one of the great messengers of Allah. He is one of the Ulul Azm, the messengers of firm resolve. And Muslims believe that at the end of times, Isa will return to the earth, before the Day of Judgement, as a just leader who will establish truth and the worship of Allah alone over the whole earth. That is why, whenever we mention Isa, we say, \"alayhi as-salam\" — peace be upon him.",
+        ],
+        lesson:
+          "Lesson: for Allah it is enough to say \"Be,\" and a thing comes into being. Isa is not God — he is a great servant of Allah. We love him and we await his return.",
+        sources: [
+          "Quran 3:42-59 (good news to Maryam, the birth of Isa, his prophethood)",
+          "Quran 19:16-36 (Maryam, the birth, and the speech of the infant)",
+          "Quran 5:110-118 (the miracles of Isa and his testimony on the Day of Judgement)",
+          "Quran 4:157-158 (Allah did not allow them to kill Isa; He raised him to Himself)",
+          "Sahih al-Bukhari 3448 / Sahih Muslim 155 (the return of Isa)",
+          "Ibn Kathir, Qisas al-Anbiya, chapter on Isa ibn Maryam",
+        ],
+      },
+      fa: {
+        name: "عیسی",
+        theme: "کلمه‌ای از سوی الله",
+        paragraphs: [
+          "روزگاری دختری بسیار پاک و خداترس می‌زیست. نام او مریم، دختر عمران بود. از کودکی به خدمت خداوند پیشکش شده بود و در محرابی زیر سرپرستی حضرت زکریا زندگی می‌کرد. هر بار که زکریا نزد او می‌آمد، در کنار او خوراکی می‌یافت که از راهی شگفت پدید آمده بود. می‌پرسید: «این از کجاست، مریم؟» مریم پاسخ می‌داد: «از سوی خداست. خداوند به هر که بخواهد، بی‌حساب روزی می‌دهد.»",
+          "روزی فرشته‌ای بر مریم نازل شد ـ جبرئیل علیه‌السلام بود. خبری آورد که دل مریم را به لرزه افکند. فرشته گفت: «خداوند به تو مژده‌ی کلمه‌ای از سوی خود را می‌دهد؛ نام او مسیح، عیسی پسر مریم است.» مریم با شگفتی گفت: «چگونه فرزندی خواهم داشت در حالی که هیچ مردی به من دست نزده است؟» فرشته پاسخ داد: «این‌گونه خداوند آنچه را بخواهد می‌آفریند. هرگاه به کاری حکم کند، تنها به آن می‌گوید: باش! و می‌شود.»",
+          "این معجزه‌ای بزرگ است. اگر خداوند آدم را بی پدر و بی مادر ـ تنها از خاک ـ آفرید، چرا نتواند عیسی را بی‌پدر بیافریند؟ هیچ‌چیز بر خداوند دشوار نیست. عیسی «پسر خدا» نیست، چنان‌که برخی می‌پندارند. عیسی بنده‌ی خداست، انسانی مانند دیگر پیامبران. خداوند تنها او را به گونه‌ای ویژه آفرید تا به مردم بنمایاند: من اللّهم و بر همه چیز توانا.",
+          "آنگاه که مریم عیسی را به دنیا آورد، با کودک به میان مردم بازگشت. مردم به او تهمت زدند و سخنان زشت گفتند. مریم چیزی پاسخ نگفت ـ خداوند به او فرمان سکوت داده بود. تنها به کودک اشاره کرد. مردم شگفت‌زده گفتند: «چگونه با کودکی در گهواره سخن بگوییم؟» آنگاه عیسیِ بسیار کوچک، که هنوز راه نمی‌رفت، به اذن الهی سخن گفت: «من بنده‌ی خدایم. او به من کتاب داده و مرا پیامبر گردانده است. هر جا که باشم، مرا مبارک ساخته است.»",
+          "وقتی عیسی بزرگ شد، خداوند او را پیامبر بنی‌اسرائیل قرار داد. خداوند به او معجزاتی بخشید که به کسی دیگر چنین نداده بود. عیسی نابینایان مادرزاد را شفا می‌داد. جذامیان را شفا می‌داد. مردگان را به اذن خدا زنده می‌کرد. از گِل پیکره‌ی پرنده‌ای می‌ساخت، در آن می‌دمید و به اذن خدا پرنده‌ای زنده می‌شد و پرواز می‌کرد. هیچ‌یک از این معجزات از خود عیسی نبود؛ همگی از سوی خدا بود. عیسی همواره به مردم می‌گفت: «الله را بپرستید، پروردگار من و پروردگار شما.»",
+          "اما همه ایمان نیاوردند. گروهی از قومش بر آن شدند که عیسی را بکشند. برای دستگیر کردن او آمدند. اما خداوند پیامبر خویش را پاس داشت. خداوند عیسی را زنده به سوی خود بالا برد. و آن کس را که برای دستگیری‌اش آمده بود، خداوند به شکل عیسی درآورد. آنان او را گرفتند و به دار آویختند، به این پندار که عیسی را به دار کشیده‌اند. اما عیسی بر صلیب کشته نشد. خداوند در قرآن آشکارا می‌فرماید: «او را نکشتند و به صلیب نکشیدند، بلکه امر بر آنان مشتبه شد.» عیسی نزد پروردگار خویش زنده است.",
+          "ما مسلمانان عیسی را دوست می‌داریم. عیسی یکی از فرستادگان بزرگ خداست. او از پیامبران اولوالعزم است. مسلمانان بر این باورند که در آخر زمان، پیش از روز قیامت، عیسی به زمین بازخواهد گشت ـ پیشوایی عادل که بر سراسر زمین، حقیقت و پرستش الله یکتا را برقرار خواهد ساخت. از این رو، هرگاه از عیسی یاد می‌کنیم، می‌گوییم: «علیه السلام» ـ درود بر او باد.",
+        ],
+        lesson:
+          "درس: خداوند را کافی است که بفرماید «باش» تا چیزی پدید آید. عیسی خدا نیست؛ بنده‌ی بزرگ خداست. ما او را دوست می‌داریم و بازگشتش را چشم به راهیم.",
+        sources: [
+          "قرآن ۳:۴۲-۵۹ (بشارت به مریم، تولد عیسی و نبوت او)",
+          "قرآن ۱۹:۱۶-۳۶ (مریم، تولد و سخن گفتن کودک)",
+          "قرآن ۵:۱۱۰-۱۱۸ (معجزات عیسی و گواهی او در روز قیامت)",
+          "قرآن ۴:۱۵۷-۱۵۸ (الله اجازه نداد عیسی کشته شود و او را به سوی خود بالا برد)",
+          "صحیح بخاری ۳۴۴۸ / صحیح مسلم ۱۵۵ (بازگشت عیسی)",
+          "ابن کثیر، قصص الانبیاء، باب عیسی بن مریم علیه‌السلام",
+        ],
+      },
       ru: {
         name: "Иса",
         theme: "одно слово Аллаха",
