@@ -78,6 +78,52 @@ export const PROPHET_STORIES: ProphetStory[] = [
     suffix: "عليه السلام",
     readingMin: 6,
     byLocale: {
+      tg: {
+        name: "Одам",
+        theme: "нахустин инсон",
+        paragraphs: [
+          "Хеле пеш, ҳанӯз одам набуд, шаҳре набуд, кӯдакон дар кӯчаҳо намедавиданд — танҳо замин ва осмон буд, фариштагон ва Аллоҳе, ки ҳамаашро офарид. Фариштагон шабу рӯз Аллоҳро ибодат мекарданд ва ҳаргиз хаста намешуданд. Онҳо аз нур офарида шуда буданд ва ҳар сухани Парвардигорашонро итоат мекарданд.",
+          "Як рӯз Аллоҳ ба фариштагон фармуд: «Ман дар замин халифае хоҳам гузошт». Фариштагон ҳайрон шуданд ва пурсиданд: «Эй Парвардигор, оё касеро мегузорӣ, ки фасод кунад ва хун резад, дар ҳоле ки мо Туро тасбеҳ мегӯем ва пок медонем?» Аллоҳ ҷавоб дод: «Ман медонам он чизе ро, ки шумо намедонед».",
+          "Он гоҳ Аллоҳ як каф хок аз замин гирифт ва ба амри Худ аз он нахустин инсонро офарид. Номи ӯ Одам буд. Аллоҳ аз рӯҳи Худ дар ӯ дамид ва Одам зинда шуд. Аллоҳ ба Одам номи ҳама чизро омӯзонд: дарахт чист, санг чист, об чист, парранда чист. Одам ҳамаашро аз бар кард, зеро Аллоҳ дар ӯ чизе нихода буд, ки ҳайвонҳо надоранд — ақле, ки фикр карда метавонад.",
+          "Сипас Аллоҳ ба фариштагон фармуд, ки ба Одам ба нишонаи эҳтиром барои ин махлуқи нав саҷда кунанд. Ҳама фариштагон саҷда карданд. Танҳо Иблис, ки аз ҷинниён буд, рад кард. Гуфт: «Ман аз ӯ беҳтарам — маро аз оташ офаридӣ, аммо ӯро аз гил». Дар дили Иблис кибру ғурур буд, ва ғурур бемориест, ки чашми дилро бар ҳақиқат кӯр мекунад. Пас Аллоҳ Иблисро ронд.",
+          "Одам дар ҷаннат зиндагӣ мекард. Аллоҳ барои ӯ ҳамсаре офарид — Ҳавво. Якҷоя зиндагӣ мекарданд, аз меваҳои ширини он мехӯрданд, оби соф менӯшиданд ва овози фариштагонро мешуниданд. Аммо Аллоҳ ба онҳо фармуд: «Дар ҷаннат сокин бошед ва аз он ҳар чи мехоҳед бихӯред, лекин ба ин дарахт наздик нашавед». Ин озмоиш буд. Аллоҳ мехост, ки Одам ва Ҳавво худашон интихоб кунанд — итоат кунанд ё на.",
+          "Иблис, ки кинаашро фаромӯш накарда буд, ба Одам ва Ҳавво васваса омӯхт. Сухани зебо, аммо фиребкорона гуфт: «Агар аз ин дарахт бихӯред, чун фариштагон мешавед ва ҷовидона мемонед». Одам ва Ҳавво манъро аз ёд бурданд ва аз мева чашиданд. Дар ҳамон лаҳза фаҳмиданд, ки кори бад кардаанд. Шарманда шуданд.",
+          "Аммо Одам аз хатои худ нагурехт. Ба сӯи Аллоҳ баргашт ва ҳамон калимаҳоеро гуфт, ки худи Аллоҳ ба ӯ омӯхта буд: «Парвардигоро! Мо ба худамон ситам кардем; агар Ту моро набахшӣ ва раҳм накунӣ, аз зиёнкорон хоҳем буд». Аллоҳ тавбаи ӯро қабул кард, чун Аллоҳ тавбакунандагонро дӯст медорад. Одам ва Ҳавво ба замин фуруд оварда шуданд ва Одам нахустин пайғамбар ва нахустин инсон дар замин шуд.",
+          "Аз он рӯз ҳар инсон фарзанди Одам аст. Ҳама мардум бародар ва хоҳаранд, чун аз як падар омадаанд. Ва ҳар бор ки мо хато мекунем, ҳамон корро карда метавонем, ки Одам кард: ба сӯи Аллоҳ баргардем ва мағфират пурсем. Аллоҳ Ал-Ғафур — Бахшандаи доим аст.",
+        ],
+        lesson:
+          "Дарс: хато кардан як ҷузъи инсон будан аст, аммо мӯъмини ҳақиқӣ аз хатои худ намегурезад. Ба сӯи Аллоҳ меравад ва мегӯяд: «Маро бубахш». Ва Аллоҳ мебахшад.",
+        sources: [
+          "Қуръон 2:30-39 (офариниши Одам, саҷдаи фариштагон, озмоиш ва тавба)",
+          "Қуръон 7:11-25 (саркашии Иблис ва аз ҷаннат ронда шудан)",
+          "Қуръон 20:115-122 (фаромӯшии Одам ва қабули тавба)",
+          "Саҳеҳи Бухорӣ 3326 (ҳадис дар офариниши Одам)",
+          "Ибни Касир, Қисас ул-Анбиё, боби Одам алайҳис-салом",
+        ],
+      },
+      uz: {
+        name: "Odam",
+        theme: "birinchi inson",
+        paragraphs: [
+          "Juda qadim zamonlarda, hali odam ham yo'q edi, shahar ham yo'q edi, ko'chada yugurib yuradigan bolalar ham yo'q edi — faqat yer va osmon, farishtalar va hammasini yaratgan Alloh bor edi. Farishtalar kechayu kunduz Allohga ibodat qilar, hech qachon charchamasdilar. Ular nurdan yaratilgan bo'lib, Rabbining har bir so'ziga itoat qilardilar.",
+          "Bir kuni Alloh farishtalarga: \"Men yer yuzida xalifa qilmoqchiman\", — dedi. Farishtalar hayron bo'lib so'rashdi: \"Yo Rabbi, biz Senga tasbeh aytib, Seni ulug'lab turganimizda, Sen yer yuzida buzg'unchilik qilib qon to'kadiganlarni qo'yasanmi?\" Alloh ularga: \"Men sizlar bilmaydigan narsalarni bilaman\", — deb javob berdi.",
+          "Shunda Alloh yerdan bir hovuch tuproq olib, O'z amri bilan undan birinchi insonni yaratdi. Uning ismi Odam edi. Alloh unga O'z ruhidan puflab, Odam tirildi. Alloh Odamga hamma narsaning nomini o'rgatdi: daraxt nima, tosh nima, suv nima, qush nima. Odam hammasini yodlab oldi, chunki Alloh uning ichiga hayvonlarda yo'q narsani — fikrlay oladigan aqlni qo'ygan edi.",
+          "Keyin Alloh farishtalarga yangi yaratilgan zotga hurmat sifatida Odamga sajda qilishni amr qildi. Hamma farishtalar sajdaga bosh qo'ydi. Faqat jinlardan bo'lgan Iblis bosh tortdi. U: \"Men undan yaxshiman — meni o'tdan, uni esa tuproqdan yaratding\", — dedi. Iblisning yuragida kibr bor edi, kibr esa qalbni haqiqatdan ko'r qiladigan kasallikdir. Shu sababli Alloh Iblisni quvib chiqardi.",
+          "Odam Jannatda yashar edi. Alloh unga juft sifatida Havvoni yaratdi. Ular birga yashardi, shirin mevalaridan yer, tiniq suvini ichar, farishtalar ovozini eshitardi. Lekin Alloh ularga: \"Jannatda istaganingizdek yashang, undan nimani xohlasangiz yeng, ammo mana shu daraxtga yaqinlashmang\", — dedi. Bu sinov edi. Alloh Odam va Havvo o'zlari itoat etishni yoki etmaslikni tanlashlarini xohlardi.",
+          "Iblis kinasini unutmagani uchun Odam va Havvoga vasvasa qila boshladi. Chiroyli, ammo aldovchi so'zlar bilan: \"Agar shu daraxtdan tatib ko'rsangiz, farishtalarga aylanasiz va abadiy yashaysiz\", — dedi. Odam va Havvo taqiqni unutib, mevadan totishdi. O'sha onda yomon ish qilganlarini tushunishdi. Uyalishdi.",
+          "Lekin Odam o'z xatosidan qochmadi. Allohga yuzlanib, Alloh O'zi unga o'rgatgan so'zlarni aytdi: \"Ey Rabbimiz! Biz o'zimizga zulm qildik. Agar Sen bizni kechirmasang va rahm qilmasang, biz albatta ziyon ko'rganlardan bo'lamiz\". Alloh uning tavbasini qabul qildi, chunki Alloh tavba qiluvchilarni sevadi. Odam va Havvo yer yuziga tushirildi va Odam yer yuzidagi birinchi payg'ambar va birinchi inson bo'ldi.",
+          "O'shandan beri har bir inson Odamning farzandidir. Hamma odamlar bir otadan kelgan, shuning uchun aka-uka va opa-singildirlar. Va biz har gal xato qilganimizda, Odam qilgan ishni qila olamiz: Allohga yuzlanib, mag'firat so'raymiz. Alloh — Al-G'afur, doim kechiruvchidir.",
+        ],
+        lesson:
+          "Saboq: xato qilish insonlikning bir qismi, ammo haqiqiy mo'min xatosidan qochmaydi. U Allohga yuzlanib, \"Meni kechir\", — deydi. Va Alloh kechiradi.",
+        sources: [
+          "Qur'on 2:30-39 (Odamning yaratilishi, farishtalarning sajdasi, sinov va tavba)",
+          "Qur'on 7:11-25 (Iblisning bosh tortishi, jannatdan haydalishi)",
+          "Qur'on 20:115-122 (Odamning unutishi va tavbaning qabul etilishi)",
+          "Sahihul Buxoriy 3326 (Odamning yaratilishi haqida)",
+          "Ibn Kasir, Qisasul Anbiyo, Odam alayhissalom bobi",
+        ],
+      },
       en: {
         name: "Adam",
         theme: "the first human",
@@ -157,6 +203,52 @@ export const PROPHET_STORIES: ProphetStory[] = [
     suffix: "عليه السلام",
     readingMin: 7,
     byLocale: {
+      tg: {
+        name: "Нӯҳ",
+        theme: "киштии наҷот",
+        paragraphs: [
+          "Пас аз Одам асрҳои бисёр гузашт. Одамон дар замин зиндагӣ мекарданд ва дар оғоз Аллоҳро ёд медоштанд. Аммо бо мурури замон фаромӯш карданд. Ба санггҳое, ки худашон тарошида буданд, ва ба дарахтоне, ки худашон шинонида буданд, ибодат сар карданд. Аввал ин сангҳоро ба номи мардуми солеҳи фавтида ёд мекарданд, баъд кам-кам бовар карданд, ки худи сангҳо метавонанд ёрӣ диҳанд ва ҳифз кунанд. Ва ҳамин тариқ Офаридгорашонро фаромӯш карданд.",
+          "Он гоҳ Аллоҳ ба онҳо пайғамбари худ Нӯҳро фиристод. Нӯҳ қавмашро ба сӯи Аллоҳ даъват кардан гирифт. Мегуфт: «Эй қавми ман! Аллоҳро ибодат кунед, ҷуз Ӯ барои шумо маъбуде нест. Ман аз азоби рӯзи бузург бар шумо метарсам». Ӯ рӯзу шаб мехонд. Пинҳон ва ошкоро мехонд. Бо нармӣ ва бо сахтгирӣ мехонд.",
+          "Солҳо гузашт — на як, на даҳ, балки наздик ҳазор сол. Нӯҳ нӯҳсаду панҷоҳ сол қавми худро ба сӯи Аллоҳ даъват кард. Аммо қариб ҳеҷ кас гӯш надод. Мардум ангуштонашонро дар гӯш мегузоштанд, либосашонро ба сар мекашиданд, то садои ӯро нашунаванд. Ба Нӯҳ механдиданд ва ба ҳамдигар мегуфтанд: «Бутҳои худро тарк накунед».",
+          "Ниҳоят Нӯҳ ба Парвардигораш руҷӯъ кард. Аз хастагии худ шиква накард — балки адолат хост. Аллоҳ ба ӯ ҷавоб дод: «Ҳеҷ кас аз қавми ту имон нахоҳад овард, ҷуз онҳое ки аллакай имон овардаанд». Сипас Аллоҳ ба Нӯҳ амр кард, ки киштие — киштии бузурге — созад.",
+          "Нӯҳ бар замини хушк, дур аз ҳар баҳре, ба сохтани киштӣ оғоз кард. Мардум меомаданд ва механдиданд: «Эй Нӯҳ, ту дар биёбон киштӣ месозӣ! Куҷо мехоҳӣ онро ронӣ?» Нӯҳ бо оромӣ ҷавоб медод: «Агар имрӯз шумо ба мо механдед, мо низ боре ба шумо хоҳем хандид, ҳамчунон ки ҳоло механдед». Ӯ хашмгин намешуд — танҳо месохт.",
+          "Вақте киштӣ омода шуд, Аллоҳ ба Нӯҳ амр кард, ки оилаашро, имонорандагон ва аз ҳар ҷонваре як ҷуфт бо худ гирад, то зиндагӣ пас аз тӯфон давом ёбад. Сипас аз замин чашмаҳо ҷӯшид ва аз осмон бороне борид, ки ҳеҷ гоҳ чунин набуд. Об боло мерафт. Дарёҳо аз соҳилҳояшон гузаштанд, баҳрҳо аз кӯҳҳо болотар шуданд. Тамоми ҷаҳон зери об шуд.",
+          "Яке аз писарони Нӯҳ ба киштӣ нанишаст. Бо ғурур гуфт: «Ман бар кӯҳе мебароям, ки маро аз об наҷот диҳад». Нӯҳ ба ӯ фарёд кашид: «Имрӯз ҳеҷ ҳифзкунандае аз амри Аллоҳ нест, ҷуз касе, ки Аллоҳ ба ӯ раҳм кунад». Аммо мавҷе байни онҳо гузашт — ва писар ғарқ шуд. Нӯҳ гирист ва дар бораи писараш аз Аллоҳ пурсид, чун ин писари ӯ буд. Аллоҳ бо нармӣ ба Нӯҳ ёдрас кард: наҷот на дар хун ва на дар хешу табор, балки дар имон аст.",
+          "Вақте азоб ба охир расид, Аллоҳ ба замин фармуд: «Оби худро фурӯ бар» ва ба осмон гуфт: «Бас кун». Об қафо нишаст. Киштӣ бар кӯҳе истод ва Нӯҳ бо мӯъминон бар замини пок қадам гузошт. Аллоҳ насли онҳоро баракат дод — ва аз ҳамон мӯъминон ҳама халқҳое, ки имрӯз дар замин зиндагӣ мекунанд, ба дунё омаданд.",
+        ],
+        lesson:
+          "Дарс: даъватгари ҳақиқӣ ҳатто агар солҳо ба ӯ хандиданд, таслим намешавад. Ва оилаи ҳақиқӣ танҳо хун нест — балки имон аст. Танҳо он чизе наҷот медиҳад, ки дар дил аст.",
+        sources: [
+          "Қуръон 71 (сураи «Нӯҳ» — пурраи қиссаи даъват)",
+          "Қуръон 11:25-49 (сохтани киштӣ, тӯфон ва писари Нӯҳ)",
+          "Қуръон 29:14 (ёдоварии 950 сол даъват)",
+          "Ибни Касир, Қисас ул-Анбиё, боби Нӯҳ алайҳис-салом",
+          "Табарӣ, Таърих, боби Нӯҳ ва тӯфон",
+        ],
+      },
+      uz: {
+        name: "Nuh",
+        theme: "kema",
+        paragraphs: [
+          "Odamdan keyin ko'p avlodlar o'tdi. Odamlar yer yuzida yashar, dastlab Allohni eslab turardilar. Lekin vaqt o'tishi bilan unuta boshladilar. O'zlari o'yib chiqargan toshlarga, o'zlari ekkan daraxtlarga sajda qila boshladilar. Avval bu toshlarni o'tib ketgan solih kishilarning ismi bilan atashar, keyin asta-sekin toshlarning o'zi yordam berib, himoya qiladi deb ishonib qolishdi. Shunday qilib Yaratganlarini unutdilar.",
+          "Shunda Alloh ularga payg'ambar Nuhni yubordi. Nuh qavmini yana Allohga qaytishga chaqira boshladi. U: \"Ey qavmim! Allohga ibodat qiling, Undan o'zga sizning iloh yo'q. Men sizlar uchun katta Kunning azobidan qo'rqaman\", — derdi. Kechayu kunduz chaqirardi. Yashirin va oshkor chaqirardi. Yumshoq va qattiq chaqirardi.",
+          "Yillar o'tdi — bir yil emas, o'n yil emas, balki ming yilga yaqin. Nuh to'qqiz yuz ellik yil davomida qavmini Allohga chaqirdi. Lekin deyarli hech kim quloq solmadi. Odamlar uning ovozini eshitmaslik uchun barmoqlarini quloqlariga tiqar, kiyimlarini boshlariga yopib olishar edi. Nuhni masxara qilishar va bir-birlariga: \"Butlaringizni tashlamang\", — deyishar edi.",
+          "Nihoyat Nuh Rabbiga yuzlandi. U o'z charchog'idan shikoyat qilmadi — adolat so'radi. Alloh unga: \"Sening qavmingdan iymon keltirganlardan boshqa hech kim iymon keltirmaydi\", — deb javob berdi. So'ng Alloh Nuhga katta kema — kema qurishni amr qildi.",
+          "Nuh quruq yerda, dengizdan uzoqda kemani qurishni boshladi. Odamlar kelib tomosha qilib, kulishardi: \"Ey Nuh, sahroda kema qurayapsanmi? Uni qayerga olib borasan?\" Nuh xotirjam: \"Agar bugun siz bizni mazax qilsangiz, biz ham keyin xuddi shunday siz hozir mazax qilayotganingizdek sizdan kuldiramiz\", — deb javob berardi. U jahli chiqmasdan, faqat qurishni davom ettirardi.",
+          "Kema tayyor bo'lganida, Alloh Nuhga oilasini, iymon keltirganlarni va har bir hayvondan bir juftdan o'zi bilan olib chiqishni amr qildi — to'fondan keyin hayot davom etishi uchun. Shunda yerdan chashmalar otilib chiqdi, osmondan esa shunday yomg'ir yog'a boshladiki, hech qachon bunday bo'lmagan edi. Suv ko'tarila-ko'tarila ketdi. Daryolar qirg'oqlaridan oshib, dengizlar tog'lardan ham yuqori ko'tarildi. Butun olam suv ostida qoldi.",
+          "Nuhning bir o'g'li kemaga chiqmadi. U mag'rurlanib: \"Men suvdan saqlanish uchun tog'ga chiqib olaman\", — dedi. Nuh unga: \"Bugun Allohning amridan saqlovchi yo'q, faqat U rahm qilgan kishidangina najot bor\", — deb baqirdi. Ammo ular o'rtasidan to'lqin o'tib, o'g'il g'arq bo'ldi. Nuh yig'lab, o'g'li haqida Rabbidan so'radi, axir bu uning o'g'li edi. Alloh unga yumshoqlik bilan eslatdi: najot qon yoki qarindoshlikda emas, balki iymondadir.",
+          "Azob tugaganda, Alloh yerga: \"Suvingni yutib ol\", deb, osmonga: \"To'xta\", deb amr qildi. Suv qaytdi. Kema bir tog'da to'xtadi va Nuh iymonlilar bilan birga toza yerga qadam qo'ydi. Alloh ularning naslini barakali qildi — va o'sha mo'minlardan bugungi yer yuzida yashayotgan barcha xalqlar kelib chiqdi.",
+        ],
+        lesson:
+          "Saboq: haqiqiy da'vatchi, hatto ustidan yillar davomida kulishsa ham, taslim bo'lmaydi. Haqiqiy oila esa faqat qon emas, balki iymondir. Kishini qutqaradigan narsa — yuragidagidir.",
+        sources: [
+          "Qur'on, Nuh surasi (71-sura — to'liq da'vat qissasi)",
+          "Qur'on 11:25-49 (kemaning qurilishi, to'fon, Nuhning o'g'li)",
+          "Qur'on 29:14 (950 yil da'vat haqida zikr)",
+          "Ibn Kasir, Qisasul Anbiyo, Nuh alayhissalom bobi",
+          "Tabariy, Tarixul rusul val-muluk, Nuh va to'fon bo'limi",
+        ],
+      },
       en: {
         name: "Nuh",
         theme: "the ark",
@@ -236,6 +328,56 @@ export const PROPHET_STORIES: ProphetStory[] = [
     suffix: "عليه السلام",
     readingMin: 8,
     byLocale: {
+      tg: {
+        name: "Иброҳим",
+        theme: "халилуллоҳ",
+        paragraphs: [
+          "Замоне дар сарзамине миёни ду дарёи бузург, писаре ба номи Иброҳим зиндагӣ мекард. Қавми ӯ ба бутҳо — ҳайкалҳои сангиву чӯбин ибодат мекард. Бовар доштанд, ки ин ҳайкалҳо метавонанд ёрӣ диҳанд, бемориро шифо бахшанд ва борон оваранд. Ҳатто падари Иброҳим чунин ҳайкалҳоро мепардохт ва дар бозор мефурӯхт.",
+          "Аммо Иброҳими хурд аз аввал тарзи дигаре фикр мекард. Ба осмон менигарист ва аз худ мепурсид: «Кӣ ҳамаи инро офарид?» Як шаб ситораи рӯшане дар осмон дид ва гуфт: «Шояд ин Парвардигори ман бошад». Аммо ситора ғуруб кард. Иброҳим гуфт: «Ман ғурубкунандагонро дӯст намедорам». Сипас моҳро дид ва гуфт: «Шояд ин Парвардигори ман бошад». Аммо моҳ ҳам пинҳон шуд. Сипас офтобро дид — бузургу пурзӯр. Аммо офтоб низ дар уфуқ нишаст. Он гоҳ Иброҳим фаҳмид: ҳар чи тағйир мекунад ва меравад, наметавонад Худо бошад. Худо бояд он бошад, ки ҳамеша ҳаст ва тағйир намепазирад. Дили Иброҳим ба сӯи Аллоҳ гардид.",
+          "Иброҳим ба қавми худ гуфт: «Ин ҳайкалҳо на мешунаванд, на мебинанд ва на ба шумо ёрӣ дода метавонанд. Барои чӣ онҳоро мепарастед?» Қавмаш хашмгин шуд. Як рӯз, вақте ҳама ба ҷашне рафта буданд, Иброҳим танҳо ба бутхона даромад. Таборе гирифт ва ҳамаи бутҳоро шикаст, ҷуз бузургтаринашонро. Таборро бар дӯши он бути бузург гузошт.",
+          "Вақте қавм баргашт ва бутҳои шикастаро дид, фарёд заданд: «Кӣ ин корро кардааст?» Иброҳимро гумон бурданд ва ба муҳокима кашиданд. Иброҳим бо оромӣ гуфт: «Аз ин бути бузург пурсед — шояд ин ӯ кардааст». Қавм гуфтанд: «Ту худ медонӣ, ки ин бутҳо сухан намегӯянд!» Он гоҳ Иброҳим гуфт: «Пас чӣ гуна чизе ро мепарастед, ки на сухан гуфта метавонад ва на ба шумо ёрӣ дода метавонад?» Сарҳояшонро ба зер партофтанд — чун дар дил медонистанд, ки Иброҳим бар ҳақ аст. Аммо кибру ғурур нагузошт, ки эътироф кунанд.",
+          "Қарор доданд Иброҳимро ба ҷазои даҳшатноке маҳкум кунанд — дар оташи бузурге сӯзонад. Рӯзҳо ҳезум ҷамъ карданд ва оташе афрӯхтанд, ки ҳатто наздик шудан ба он имконнопазир буд. Иброҳимро дар он афканданд. Аммо Аллоҳ ба оташ фармуд: «Эй оташ! Барои Иброҳим хунук ва саломат бош». Оташ ӯро насӯзонд. Иброҳим тану осуда аз шӯъла берун омад, чун Аллоҳ бо ӯ буд.",
+          "Иброҳим бо оилааш аз он сарзамин кӯч кард. Аллоҳ ба ӯ амр кард, ки ба ҷое дур равад — ҳамон ҷое ки имрӯз Макка аст. Дар он замон ин ҷо водии хушку холӣ буд, бе об ва бе мардум. Иброҳим занаш Ҳоҷар ва писари хурдсолаш Исмоилро дар он ҷо гузошт, чун Аллоҳ амр карда буд. Ҳоҷар пурсид: «Оё Аллоҳ ба ту амр кардааст?» Иброҳим гуфт: «Бале». Ҳоҷар гуфт: «Пас Аллоҳ моро тарк нахоҳад кард».",
+          "Вақте оби Исмоил тамом шуд, Ҳоҷар ҳафт бор миёни ду теппа — Сафо ва Марва давид, дар ҷустуҷӯи ёрӣ. Аллоҳ аз замин чашмае ҷӯшонд, рост дар назди пои Исмоили хурдсол. Ин чашмаро Замзам меноманд ва беш аз чор ҳазор сол аст, ки ҷорӣ аст. Ҳар мусулмоне, ки ба Макка барои ҳаҷ меояд, аз он менӯшад ва миёни Сафо ва Марва меравад, ба ёди сабри Ҳоҷар.",
+          "Вақте Исмоил калон шуд, Аллоҳ ба Иброҳим ва Исмоил амр кард, ки якҷоя нахустин Хонаро барои ибодати Аллоҳ бино кунанд — Каъбаро. Бо дастони худ сангҳоро мебардоштанд ва Иброҳим дуо мекард: «Парвардигоро, аз мо қабул кун». Имрӯз ҳар мусулмоне дар ҷаҳон, ҳар куҷое бошад, ҳангоми намоз рӯ ба ҳамон Каъба мекунад. Аллоҳ барои вафодории Иброҳим номеро ба ӯ ато кард, ки ба ҳеҷ кас надода буд — «Халилуллоҳ», дӯсти Аллоҳ.",
+        ],
+        lesson:
+          "Дарс: Иброҳим танҳо дар муқобили як қавми пурра истода буд, чун Аллоҳ дар дилаш буд. Вақте бо Аллоҳ бошӣ — ҳатто оташ хунук мешавад.",
+        sources: [
+          "Қуръон 6:74-79 (тааммули Иброҳим бар ситора, моҳ, офтоб)",
+          "Қуръон 21:51-70 (шикастани бутҳо ва наҷот аз оташ)",
+          "Қуръон 14:35-41 (дуои Иброҳим барои Макка ва насл)",
+          "Қуръон 2:124-129 (бино кардани Каъба)",
+          "Қуръон 4:125 (Аллоҳ Иброҳимро «халил» номид)",
+          "Саҳеҳи Бухорӣ 3364-3365 (қиссаи Ҳоҷар, Исмоил ва Замзам)",
+          "Ибни Касир, Қисас ул-Анбиё, бобҳои Иброҳим алайҳис-салом",
+        ],
+      },
+      uz: {
+        name: "Ibrohim",
+        theme: "Xalilulloh",
+        paragraphs: [
+          "Qadim zamonlarda, ikki ulug' daryo orasidagi bir yurtda Ibrohim ismli o'g'il bola yashar edi. Uning qavmi butlarga — tosh va yog'och haykallarga sig'inar edi. Bu haykallar odamlarga yordam berishi, kasalliklarni davolashi va yomg'ir keltirishi mumkin deb ishonardilar. Hatto Ibrohimning otasi ham shunday haykallar yasab, bozorda sotardi.",
+          "Lekin yosh Ibrohim avvaldan boshqacha o'ylar edi. U osmonga qarab o'zidan so'rar edi: \"Bularning hammasini kim yaratdi?\" Bir kechasi yorqin yulduzni ko'rib: \"Balki bu mening Rabbimdir\", — dedi. Lekin yulduz botdi. Ibrohim: \"Men botadiganlarni sevmayman\", — dedi. Keyin oyni ko'rib: \"Balki bu mening Rabbimdir\", — dedi. Oy ham botdi. Keyin quyoshni ko'rdi — katta va kuchli. Ammo quyosh ham ufqda botdi. O'shanda Ibrohim tushundi: o'zgaradigan va g'oyib bo'ladigan narsa Xudo bo'la olmaydi. Xudo doimo bor va o'zgarmas bo'lishi kerak. Ibrohimning yuragi Allohga burildi.",
+          "Ibrohim qavmiga: \"Bu haykallar sizni eshitmaydi, ko'rmaydi va sizga yordam bera olmaydi. Nega ularga sajda qilasiz?\" — dedi. Odamlar g'azablandi. Bir kuni hamma bayramga ketganda, Ibrohim yolg'iz butxonaga kirib bordi. Boltani olib, eng kattasidan boshqa hamma haykalni sindirdi. Boltani esa o'sha katta butning yelkasiga osib qo'ydi.",
+          "Qavm qaytib kelib, sindirilgan butlarni ko'rib: \"Bu ishni kim qildi?\" — deb baqirishdi. Ibrohimdan shubhalanib, uni sudga keltirishdi. Ibrohim xotirjam: \"Mana shu kattadan so'rang — balki o'sha qilgandir\", — dedi. Qavm: \"Sen o'zing bilasanki, bu butlar gapirmaydi-ku!\" — deyishdi. Shunda Ibrohim: \"Bo'lmasa, qanday qilib gapirolmaydigan va sizga yordam bera olmaydigan narsaga sig'inasizlar?\" — dedi. Ular boshlarini quyi soldilar — chunki yuraklarining tubida Ibrohim haq ekanini bilishardi. Lekin kibrlari tan olishga qo'ymadi.",
+          "Ular Ibrohimni dahshatli jazoga — katta gulxanda yondirishga qaror qilishdi. Bir necha kun davomida o'tin to'plashdi va shu darajada o'tni yoqishdiki, hech kim unga yaqinlasholmas edi. Ibrohimni o'sha olovga tashlashdi. Lekin Alloh olovga: \"Ey olov! Ibrohim uchun sovuq va omon bo'l\", — deb amr qildi. Olov uni kuydirmadi. Ibrohim alangadan eson-omon va xotirjam chiqdi, chunki Alloh u bilan edi.",
+          "Ibrohim oilasi bilan u yurtni tark etdi. Alloh unga uzoqqa — bugungi Makka shahriga ketishni amr qildi. O'sha paytda bu joy suvsiz va odamlarsiz, quruq, bo'sh vodiy edi. Ibrohim xotini Hojar va kichik o'g'li Ismoilni o'sha joyda qoldirdi, chunki Alloh shunday buyurgan edi. Hojar: \"Buni senga Alloh buyurdimi?\" — deb so'radi. Ibrohim: \"Ha\", — dedi. Shunda Hojar: \"Bo'lmasa Alloh bizni tashlab qo'ymaydi\", — dedi.",
+          "Ismoilning suvi tugaganda, Hojar yordam axtarib, Safo va Marva degan ikki tepalik orasida yetti marta yugurdi. Alloh chaqaloq Ismoilning oyog'i ostidan yerdan buloq otib chiqardi. Bu buloq Zamzam deb ataladi va to'rt ming yildan beri oqib turibdi. Hajga kelgan har bir musulmon undan ichadi va Hojarning sabrini eslab, Safo va Marva orasida yuradi.",
+          "Ismoil katta bo'lganida, Alloh Ibrohim va Ismoilga birgalikda Allohga ibodat qilish uchun birinchi uyni — Ka'bani qurishni amr qildi. Ular toshlarni o'z qo'llari bilan ko'tarib, Ibrohim duo qilardi: \"Ey Rabbimiz, bizdan qabul qilgin\". Bugun dunyoning qaysi burchagida bo'lmasin, har bir musulmon namoz o'qiyotganda o'sha Ka'baga yuzlanadi. Ibrohimning sodiqligi uchun Alloh unga hech kimga bermagan nomni berdi — \"Xalilulloh\", Allohning do'sti.",
+        ],
+        lesson:
+          "Saboq: Ibrohim yolg'iz o'zi butun qavmga qarshi turdi, chunki yuragida Alloh bor edi. Alloh bilan birga bo'lganda, hatto olov ham sovib qoladi.",
+        sources: [
+          "Qur'on 6:74-79 (Ibrohimning yulduz, oy, quyosh haqidagi tafakkuri)",
+          "Qur'on 21:51-70 (butlarning sindirilishi va olovdan najot)",
+          "Qur'on 14:35-41 (Ibrohimning Makka va avlod uchun duosi)",
+          "Qur'on 2:124-129 (Ka'baning qurilishi)",
+          "Qur'on 4:125 (Alloh Ibrohimni \"xalil\" deb atadi)",
+          "Sahihul Buxoriy 3364-3365 (Hojar, Ismoil va Zamzam qissasi)",
+          "Ibn Kasir, Qisasul Anbiyo, Ibrohim alayhissalom boblari",
+        ],
+      },
       en: {
         name: "Ibrahim",
         theme: "Khalil Allah",
@@ -321,6 +463,50 @@ export const PROPHET_STORIES: ProphetStory[] = [
     suffix: "عليه السلام",
     readingMin: 8,
     byLocale: {
+      tg: {
+        name: "Юсуф",
+        theme: "хоби ситораҳо",
+        paragraphs: [
+          "Дар сарзамини дур пайғамбар Яъқуб, писари Исҳоқ, писари Иброҳим зиндагӣ мекард. Дувоздаҳ писар дошт ва яке аз хурдиҳояш Юсуф ном дошт. Яъқуб ҳама фарзандонашро дӯст медошт, аммо Юсуф ба дилаш наздиктар буд — чун дар ин писар нуре медид, ки танҳо аз они баргузидагони Аллоҳ аст.",
+          "Як рӯз Юсуф пеши падар омад ва хобашро гуфт: «Падарҷон, дар хоб ёздаҳ ситора ва офтобу моҳро дидам, ки ҳама ба ман саҷда мекунанд». Яъқуб фаҳмид, ки Аллоҳ барои Юсуф ояндаи бузурге омода мекунад. Ба писараш гуфт: «Писарам, ин хобро ба бародаронат накун, мабодо бар ту ҳилае андешанд. Шайтон душмани ошкори инсон аст».",
+          "Аммо бародарон аллакай дида буданд, ки падар Юсуфро бештар дӯст медорад, ва дар дилҳояшон гули нохуше шукуфт — рашк. Тавтиа карданд ва як рӯз Юсуфро ба саҳро бурданд. Ӯро ба чоҳи чуқуре партофтанд ва ба падар гуфтанд, ки Юсуфро гург хӯрдааст. Яъқуб боварашон накард, лекин чӣ карда метавонист? Танҳо гуфт: «Сабри ҷамил». Ва интизорӣ кашид. Он қадар гирист, ки чашмонаш аз ашк суст шуданд.",
+          "Юсуф танҳо дар чоҳ нишаст. Аммо Аллоҳ ӯро тарк накард. Корвоне аз он ҷо мегузашт ва писаракро аз чоҳ берун кашид. Юсуфро дар Миср ба яке аз бузургтарин одамони он сарзамин фурӯхтанд. Юсуф дар он ҷо ба воя расид ва Аллоҳ ба ӯ ақл, меҳрубонӣ ва зебоии хуй ато кард.",
+          "Ҳамсари он мардак мехост Юсуфро ба кори бад водор созад. Ӯро мехонд, васваса мекард, ҳама чизро ваъда мекард. Аммо Юсуф гуфт: «Ба Аллоҳ паноҳ мебарам». Ҳаргиз ризо нашуд, чун аз Аллоҳ беш аз ҳар каси замин метарсид. Барои ҳамин ба ноҳақ ба зиндон андохта шуд. Юсуф солҳои зиёд дар зиндон монд.",
+          "Дар зиндон Аллоҳ ба Юсуф таъбири хоб омӯзонд. Як рӯз подшоҳи Миср хоби аҷибе дид — ҳафт гови фарбеҳ, ки ҳафт гови лоғар онҳоро мехӯранд, ва ҳафт хӯшаи сабз ва ҳафт хӯшаи хушк. Ҳеҷ кас аз хирадмандон наметавонист онро шарҳ диҳад. Он гоҳ Юсуфро ба ёд оварданд. Юсуф гуфт: «Ҳафт сол фаровонӣ хоҳад буд, баъд ҳафт сол гуруснагӣ. Гандумро коред ва дар хӯша нигоҳ доред, то барои солҳои сахт кофӣ бошад».",
+          "Подшоҳ аз ҳикмати Юсуф чунон ҳайрон шуд, ки ӯро аз зиндон берун овард ва сардори ҳамаи анборҳои Мисрро ба ӯ супорид. Вақте гуруснагӣ омад, мардум аз ҳама ҷо барои гандум ба Миср меомаданд. Бародарони Юсуф низ омаданд — ҳамонҳое, ки солҳои пеш ӯро ба чоҳ андохта буданд. Онҳо Юсуфро нашинохтанд, аммо ӯ онҳоро шинохт. Юсуф метавонист интиқом гирад. Аммо роҳи дигарро интихоб кард.",
+          "Юсуф онҳоро бахшид. Гуфт: «Имрӯз бар шумо ҳеҷ маломате нест. Аллоҳ шуморо бубахшад, ки Ӯ Меҳрубонтарини меҳрубонон аст». Аз онҳо хост, ки падарро биёваранд. Вақте Яъқуб Юсуфро дид, биноии чашмонаш аз шодӣ баргашт. Тамоми оила дар Миср ҷамъ омад. Вақте ҳама пеши Юсуф расиданд, падару модар ва ёздаҳ бародар бар ӯ ба нишонаи эҳтиром саҷда карданд. Юсуф хоби кӯдакиашро ба ёд овард — ёздаҳ ситора, офтоб ва моҳ. Гуфт: «Ин таъбири хоби кӯҳнаи ман аст; Парвардигорам онро ҳақиқат сохт».",
+        ],
+        lesson:
+          "Дарс: ҳатто агар одамон ба ту бадӣ кунанд — Аллоҳ ҳақро медонад. Бахшиш аз интиқом нерумандтар аст. Ва он орзуе, ки Аллоҳ дар дил мегузорад, дар вақташ ҳатман амалӣ мешавад.",
+        sources: [
+          "Қуръон 12 (сураи «Юсуф» — тамоми қисса якбора нозил шудааст)",
+          "Ибни Касир, Қисас ул-Анбиё, боби Юсуф алайҳис-салом",
+          "Саҳеҳи Бухорӣ 3375 (ҳадис дар бораи шарафи Юсуф)",
+          "Тафсири Табарӣ бар сураи Юсуф",
+        ],
+      },
+      uz: {
+        name: "Yusuf",
+        theme: "yulduzlar tushi",
+        paragraphs: [
+          "Uzoq bir yurtda payg'ambar Ya'qub yashar edi, u Is'hoqning o'g'li, Iso'hoq esa Ibrohimning o'g'li edi. Uning o'n ikki o'g'li bor edi, kichkinalaridan birining ismi Yusuf edi. Ya'qub barcha farzandlarini sevardi, lekin Yusuf yuragiga juda yaqin edi — chunki bu o'g'ilda Alloh tanlagan zotlarga xos nurni ko'rar edi.",
+          "Bir kuni Yusuf otasining oldiga kelib, ko'rgan tushini aytdi: \"Ota, men tushimda o'n bir yulduz, quyosh va oyni ko'rdim — hammasi menga sajda qildi\". Ya'qub Allohning Yusufga buyuk kelajak tayyorlayotganini tushundi. O'g'liga: \"O'g'lim, bu tushni akalaringga aytmagin, sizga qarshi biror narsa ko'ylab qo'yishlari mumkin. Albatta, shayton insonning ochiq dushmanidir\", — dedi.",
+          "Lekin akalari otaning Yusufni qanchalik sevishini ko'rib qo'yishgan edi va yuraklarida xunuk gul — hasad ungan edi. Ular til biriktirishib, bir kuni Yusufni dalaga olib chiqishdi. Uni chuqur quduqqa tashladilar, otalariga esa Yusufni bo'ri yeb ketdi, deyishdi. Ya'qub ularga ishonmadi, lekin nima qila olardi? Faqat: \"Chiroyli sabr\", — dedi. Va kutdi. Yig'lay-yig'lay ko'zlari ham xira tortdi.",
+          "Yusuf yolg'iz o'zi quduqda o'tirar edi. Lekin Alloh uni yolg'iz qoldirmadi. O'tib ketayotgan karvon bolani quduqdan tortib oldi. Yusufni Misrga olib borib, yurtning eng kattalaridan birining xonadoniga sotishdi. Yusuf o'sha yerda ulg'aydi va Alloh unga aql, mehribonlik va go'zal axloq berdi.",
+          "Ana shu katta odamning xotini Yusufni nojo'ya ishga undamoqchi bo'ldi. Uni chaqirar, vasvasaga solar, hamma narsani va'da qilar edi. Lekin Yusuf: \"Allohdan panoh tilayman\", — dedi. U bunga ko'nmadi, chunki Allohdan yer yuzidagi har qanday mavjudotdan ko'ra ko'proq qo'rqar edi. Shuning uchun u nohaq zindonga tashlandi. Yusuf ko'p yillar davomida zindonda qoldi.",
+          "Zindonda Alloh Yusufga tush ta'birini o'rgatdi. Bir kuni Misr podshohi g'aroyib tush ko'rdi — yetti semiz sigirni yetti oriq sigir yeyayotgani, va yetti yashil boshoq va yetti quruq boshoq. Donishmandlarning hech biri uni izohlay olmadi. O'shanda Yusufni esladilar. Yusuf shunday tushuntirdi: \"Yetti yil hosil yili bo'ladi, keyin yetti yil ocharchilik. Donni eking va boshoqda qoldiring, qiyin yillarga yetadi\".",
+          "Podshoh Yusufning donoligidan shu qadar hayratga tushdiki, uni zindondan chiqarib, butun Misr omborlariga bosh qildi. Ocharchilik kelganida, hamma yurtdan don olishga Misrga oqib kelar edi. Yusufning akalari ham keldi — bir necha yil oldin uni quduqqa tashlaganlar. Ular Yusufni tanimadilar, lekin u ularni tanidi. Yusuf qasos olishi mumkin edi. Lekin u boshqa yo'lni tanladi.",
+          "Yusuf ularni kechirdi. \"Bugun sizlarga hech qanday tanbeh yo'q. Alloh sizlarni kechirsin, U eng rahmlilarning rahmlisidir\", — dedi. Otasini olib kelishlarini so'radi. Ya'qub Yusufni ko'rganda, ko'zlari quvonchdan yana ochildi. Butun oila Misrda jamuljam bo'ldi. Hamma Yusufning oldiga kirib kelganlarida, ota-ona va o'n bir aka unga hurmat yuzasidan bosh egishdi. Yusuf bolaligida ko'rgan tushini esladi — o'n bir yulduz, quyosh va oy. \"Mana, qadimgi tushimning ta'biri shu; Rabbim uni haqiqatga aylantirdi\", — dedi.",
+        ],
+        lesson:
+          "Saboq: odamlar senga yomonlik qilsa ham, Alloh haqiqatni biladi. Kechirim qasosdan kuchliroq. Va Alloh yuragingga solgan orzu o'z vaqtida amalga oshadi.",
+        sources: [
+          "Qur'on, Yusuf surasi (12-sura — to'liq qissa bir martada nozil bo'lgan)",
+          "Ibn Kasir, Qisasul Anbiyo, Yusuf alayhissalom bobi",
+          "Sahihul Buxoriy 3375 (Yusufning sharafi haqida)",
+          "Tabariy tafsiri, Yusuf surasiga",
+        ],
+      },
       en: {
         name: "Yusuf",
         theme: "the dream of stars",
@@ -397,6 +583,52 @@ export const PROPHET_STORIES: ProphetStory[] = [
     suffix: "عليه السلام",
     readingMin: 8,
     byLocale: {
+      tg: {
+        name: "Мусо",
+        theme: "шикофтани баҳр",
+        paragraphs: [
+          "Дар Миср подшоҳи мағруре ҳукм меронд — фиръавн. Худро худо мепиндошт ва ба мардум мегуфт, ки боло аз ӯ касе нест. Дар сарзамини ӯ насли пайғамбар Яъқуб зиндагӣ мекард — қавме, ки онҳоро «Бани Исроил» меномиданд. Фиръавн онҳоро ғулом сохта буд. Сангҳоро мекашонданд, қасрҳо ва аҳромҳои ӯро месохтанд, ва ҳеҷ кас ба онҳо раҳм намекард.",
+          "Фиръавн хоби даҳшатноке дид ва хобгузоронаш гуфтанд: «Дар миёни Бани Исроил писаре зода хоҳад шуд, ки подшоҳии туро вайрон мекунад». Фиръавн фармони бераҳмонае дод: ҳамаи писарбачаҳои тозазод аз он қавмро бикушед. Модарон мегиристанд ва фарзандонашонро пинҳон мекарданд. Дар чунин рӯзгори даҳшат Мусои хурдсол ба дунё омад.",
+          "Модари Мусо барои ӯ метарсид. Аллоҳ ба дилаш илҳом кард: «Ӯро дар сабаде гузор ва ба дарёи Нил бифирист. Натарс ва ғам нахӯр — Мо ӯро ба ту бармегардонем ва аз фиристодагон қарор медиҳем». Бо дили ларзон чунин кард. Сабад бар об равон шуд ва ба қаср фиръавн расид. Зани фиръавн кӯдакро ёфт ва чунон ба ӯ дил баст, ки шавҳарашро розӣ кард, то кӯдакро дар қаср нигоҳ доранд. Ҳамин тариқ Мусо дар ҳамон хонае ба воя расид, ки соҳибаш мехост ӯро бикушад.",
+          "Вақте Мусо калон шуд, Аллоҳ ба ӯ ҳикмат бахшид. Як рӯз дид, ки мисриёне ба яке аз қавми ӯ ситам мекунанд. Мусо хост онҳоро ҷудо кунад, аммо бо зарбааш мисриён аз пой афтод. Мусо чунин намехост. Тарсид ва аз Миср гурехт. Рӯзҳои зиёд дар биёбон роҳ пеймуд то ба сарзамини бегонае ба номи Мадян расид. Дар он ҷо хонадор шуд ва ҳашт ё даҳ сол гӯсфанд чаронд ва зиндагии оромро сипарӣ кард.",
+          "Шабе, ки Мусо бо оилааш дар роҳ буд, аз дур оташеро дид. Ба ҳамсараш гуфт: «Биистед, ман меравам ва пораи оташе меорам». Чун ба наздикии оташ расид, садоеро шунид — ки сухани худи Аллоҳ буд. Аллоҳ гуфт: «Эй Мусо, ҳамоно манам Парвардигори ту. Кафшонатро аз пойҳоят берун бияр — ту дар водии муқаддаси Тувво ҳастӣ». Аллоҳ Мусоро пайғамбар гардонд ва фармуд: «Ба сӯи фиръавн бирав — ӯ аз ҳад гузаштааст». Ин фармони пур аз тарс буд, чун фиръавн дар ҷустуҷӯи Мусо буд.",
+          "Мусо аз Парвардигораш ёрӣ хост: «Парвардигоро! Гиреҳ аз забонам бикшо, то сухани ман дарк кунанд. Ва бародарам Ҳорунро ёварам гардон». Аллоҳ дуои ӯро қабул кард. Мусо ва Ҳорун ба назди фиръавн рафтанд ва гуфтанд: «Ба Аллоҳ имон ор ва қавми моро озод кун». Аммо фиръавн танҳо хандид ва беҳтарин ҷодугаронашро ҷамъ кард, то Мусоро шикаст диҳанд.",
+          "Ҷодугарон ресмонҳо ва асоҳои худро партофтанд — ва он чун морон ҷунбидан гирифт. Ин як хаёл буд. Сипас Мусо асои худро партофт — ва он ба море бузург ва ҳақиқӣ табдил ёфт, ки ҳар чизе ки ҷодугарон сохта буданд, фурӯ бурд. Ҷодугарон ба саҷда афтоданд ва гуфтанд: «Ба Парвардигори Мусо ва Ҳорун имон овардем». Фиръавн дар хашм онҳоро кушт, аммо онҳо мӯъмин аз дунё рафтанд.",
+          "Аллоҳ ба Мусо амр кард, ки шабона қавми худро аз Миср берун орад. Тамоми шаб роҳ рафтанд то ба баҳр расиданд. Аз қафо лашкари фиръавн пайдо шуд — аспон, аробаҳо, силоҳ. Бани Исроил фарёд карданд: «Гирифтор шудем!» Мусо бо оромӣ ҷавоб дод: «Не. Парвардигорам бо ман аст; Ӯ ба ман роҳ нишон медиҳад». Аллоҳ ба Мусо амр кард, ки бо асояш бар баҳр занад. Баҳр шикофт — роҳи хушк миёни ду девори об пайдо шуд. Қавми Мусо аз қаъри баҳр гузаштанд. Вақте фиръавн бо лашкараш аз пайи онҳо ҳамла кард, баҳр бар сараш фурӯ омад — ва фиръавн бо ҳамаи лашкараш ғарқ шуд. Мусо ва қавмаш ба сӯи озодӣ қадам гузоштанд.",
+        ],
+        lesson:
+          "Дарс: ҳатто пурзӯртарин подшоҳ дар муқобили Аллоҳ нотавон аст. Агар он чи Аллоҳ амр кардааст иҷро кунӣ, Ӯ ба ту роҳе боз мекунад — ҳатто аз миёни баҳр.",
+        sources: [
+          "Қуръон 28:1-42 (зодрӯзи Мусо, гурез ба Мадян, даъват дар Тур)",
+          "Қуръон 20:9-79 (мулоқот бо Аллоҳ, асо, рӯёрӯӣ бо фиръавн)",
+          "Қуръон 26:10-66 (ҷодугарони фиръавн, хуруҷ, шикофтани баҳр)",
+          "Ибни Касир, Қисас ул-Анбиё, бобҳои Мусо алайҳис-салом",
+          "Саҳеҳи Бухорӣ 3398 (аҳодис дар бораи Мусо)",
+        ],
+      },
+      uz: {
+        name: "Muso",
+        theme: "dengizning bo'linishi",
+        paragraphs: [
+          "Misrda mag'rur podshoh hukm surardi — Fir'avn. U o'zini xudo deb hisoblar, odamlarga undan baland zot yo'qligini aytar edi. Uning yurtida payg'ambar Ya'qubning avlodlari — \"Bani Isroil\" deb atalgan qavm yashar edi. Fir'avn ularni qul qilib olgan edi. Ular tosh tashir, uning saroylari va piramidalarini qurar, ularga hech kim rahm qilmas edi.",
+          "Fir'avn dahshatli tush ko'rdi va tushni izohlovchilari unga: \"Bani Isroil orasida senga shohlikni vayron qiladigan o'g'il tug'iladi\", — deyishdi. Fir'avn shafqatsiz farmon chiqardi: o'sha qavmning hamma yangi tug'ilgan o'g'illarini o'ldirish. Onalar yig'lab, bolalarini yashirardi. Aynan o'sha qo'rqinchli paytda kichkina Muso dunyoga keldi.",
+          "Musoning onasi u uchun qo'rqdi. Alloh uning qalbiga ilhom soldi: \"Uni savatga solib, Nil daryosiga oqizib yubor. Qo'rqma va g'amlanma — Biz uni senga qaytaramiz va elchilardan qilamiz\". Titroq yurak bilan u shunday qildi. Savat oqib borib, to'g'ri Fir'avnning saroyiga keldi. Fir'avnning xotini chaqaloqni topib, unga shu qadar bog'lanib qoldiki, erini bolani saroyda saqlashga ko'ndirdi. Shunday qilib Muso uni o'ldirmoqchi bo'lgan odamning xonadonida ulg'aydi.",
+          "Muso ulg'ayganda, Alloh unga hikmat berdi. Bir kuni Muso bir misrlik o'z qavmidan birini xafa qilayotganini ko'rdi. Muso ularni ajratmoqchi bo'ldi, lekin uning urishidan misrlik o'lib qoldi. Muso buni xohlamagandi. U qo'rqib, Misrdan qochdi. U sahroda ko'p kun yurib, Madyan degan begona yurtga keldi. Bu yerda uylandi va sakkiz yoki o'n yil davomida qo'y boqib, tinch hayot kechirdi.",
+          "Bir kechasi Muso oilasi bilan yo'lda ketayotganda, uzoqdan olov ko'rdi. Xotiniga: \"Kuting, men borib bir cho'g' olib kelaman\", — dedi. Muso olovga yaqinlashganda, ovoz eshitdi — bu Allohning O'zining ovozi edi. Alloh: \"Ey Muso, albatta Men sening Rabbingman. Oyog'ingdan kavshlaringni yech — sen muqaddas Tuvo vodiysidasan\", — dedi. Alloh Musoni payg'ambar qildi va: \"Fir'avnning oldiga bor — u haddan oshdi\", — deb amr qildi. Bu juda qo'rqinchli buyruq edi, chunki Fir'avn Musoni izlardi.",
+          "Muso Allohdan yordam so'radi: \"Yo Rabbi, tilimning tugunini yech, ular nutqimni tushunadigan bo'lsin. Akam Horunni menga yordamchi qil\". Alloh uning duosini qabul qildi. Muso va Horun Fir'avnning oldiga kelib: \"Allohga iymon keltir va qavmimizni qo'yib yubor\", — dedi. Lekin Fir'avn faqat kuldi va Musoni mag'lub etish uchun eng yaxshi sehrgarlarini to'pladi.",
+          "Sehrgarlar ip va hassalarini tashladilar — va ular ilonlar kabi qimirlay boshladi. Bu illyuziya edi. Shunda Muso hassasini tashladi — va u haqiqiy katta ilonga aylanib, sehrgarlarning yasagan hammasini yutib yubordi. Sehrgarlarning o'zlari sajdaga yiqilishib: \"Biz Muso va Horunning Rabbiga iymon keltirdik\", — deyishdi. Fir'avn g'azab bilan ularni o'ldirdi, lekin ular mo'min holicha o'ldilar.",
+          "Alloh Musoga qavmini Misrdan tunda olib chiqishni amr qildi. Ular tun bo'yi yurib, dengiz qirg'og'iga keldilar. Orqadan Fir'avn lashkari ko'rindi — otlar, aravalar, qurollar. Bani Isroil: \"Bizni tutib oladilar!\" — deb baqirishdi. Muso xotirjam javob berdi: \"Yo'q. Rabbim men bilan; U meni yo'l ko'rsatadi\". Alloh Musoga hassasini dengizga urishni amr qildi. Dengiz ikkiga bo'lindi — ikki suv devori orasida quruq yo'l paydo bo'ldi. Musoning qavmi dengiz tubidan o'tib oldi. Fir'avn lashkari bilan ularning orqasidan kirganda, dengiz ustiga yopilib ketdi — va Fir'avn butun lashkari bilan g'arq bo'ldi. Muso va qavmi ozodlik tomon chiqib ketdilar.",
+        ],
+        lesson:
+          "Saboq: hatto eng qudratli podshoh Alloh oldida ojizdir. Agar Alloh amr qilgan ishni qilsang, U senga yo'l ochib beradi — hatto dengiz orqali ham.",
+        sources: [
+          "Qur'on 28:1-42 (Musoning tug'ilishi, Madyanga qochishi, Tur tog'ida da'vat)",
+          "Qur'on 20:9-79 (Alloh bilan uchrashuv, hassa, Fir'avn bilan qarama-qarshilik)",
+          "Qur'on 26:10-66 (Fir'avnning sehrgarlari, chiqib ketish, dengizning bo'linishi)",
+          "Ibn Kasir, Qisasul Anbiyo, Muso alayhissalom boblari",
+          "Sahihul Buxoriy 3398 (Muso haqidagi hadislar)",
+        ],
+      },
       en: {
         name: "Musa",
         theme: "the parting of the sea",
@@ -476,6 +708,44 @@ export const PROPHET_STORIES: ProphetStory[] = [
     suffix: "عليه السلام",
     readingMin: 5,
     byLocale: {
+      tg: {
+        name: "Айюб",
+        theme: "сабр",
+        paragraphs: [
+          "Пайғамбар Айюб марди некхоҳ буд. Аллоҳ ба ӯ зиёд дода буд: оилаи бузург, фарзандони бисёр, замини ҳосилхез, чорво, хонаҳо. Айюб ҳаргиз фаромӯш намекард, ки ҳамаи ин аз кист. Ҳар рӯз ба Аллоҳ шукр мегуфт ва ба бенавоён ёрӣ мерасонд.",
+          "Сипас Аллоҳ ба Айюб озмоиши бузургро фиристод. Айюб қариб ҳамаашро аз даст дод — ҳам молу мулкаш ва ҳам саломатиашро. Бемории сахт ба ӯ ҳамла кард ва дер бо ӯ монд. Солҳои зиёд Айюб бемор хоб буд. Кор карда наметавонист. Он чи пеш карда метавонист, акнун карда наметавонист. Танҳо ҳамсараш дар назди ӯ монд ва ӯро парасторӣ кард.",
+          "Аммо Айюб шикоят накард. Бар Аллоҳ хашм нагирифт. Нагуфт: «Чаро ман?» Айюб медонист: он чи Аллоҳ дод, метавонад худаш бозсонад. Сабр кард. Сабри хомӯш, бе ҳеҷ нолае. Танҳо имонашро давом дод.",
+          "Танҳо вақте озмоиш хеле сангин шуд, Айюб бо як дуои кӯтоҳ ба Парвардигораш руҷӯъ кард. Гуфт: «Парвардигоро! Маро ранҷ расидааст ва Ту Меҳрубонтарини меҳрубононӣ». Нагуфт: «Парвардигоро, ин балоро ҳамин лаҳза бардор». Чизе талаб накард. Танҳо меҳрубонии Аллоҳро ба ёди Ӯ овард — ва ба Ӯ таваккал кард.",
+          "Аллоҳ ба Айюб ҷавоб дод. Дар Қуръон Аллоҳ мефармояд: «Дуои ӯро қабул кардем ва он чи аз ранҷ ба ӯ расида буд, бардоштем». Аллоҳ ба Айюб амр кард: «По бар замин зан». Айюб чунин кард ва аз замин чашмаи хунуку соф ҷӯшид. Аллоҳ гуфт: «Ин барои шустушӯ ва нӯшидан аст». Айюб бо он об худро шуст, аз он нӯшид ва беморӣ аз ӯ рафт. Аллоҳ саломатияшро баргардонид, оилаашро ба ӯ дод ва ҳатто беш аз пеш ба ӯ ато кард.",
+          "Аллоҳ дар Қуръон дар бораи Айюб сухани зебое гуфт: «Ҳамоно Мо ӯро сабркунанда ёфтем. Чӣ некӯ бандае!» Ин аз баландтарин суханҳоест, ки дар бораи як инсон гуфта мешавад. Ҳар гоҳ мардум дар сахтӣ Айюбро ба ёд меоранд, дилашон сабук мешавад. Чун Айюб нишон дод: ҳатто бузургтарин дард рӯзе ба охир мерасад, агар бо Аллоҳ бимонӣ.",
+        ],
+        lesson:
+          "Дарс: сабр ин хомӯш мондан бо қаҳр нест, балки таваккал ба Аллоҳ дар сахтӣ аст. Айюб талаб накард — балки бо нармӣ дуо кард. Ва Аллоҳ ҷавоб дод.",
+        sources: [
+          "Қуръон 21:83-84 (дуои Айюб ва ҷавоби Аллоҳ)",
+          "Қуръон 38:41-44 (чашма, шифо ва ситоиши Аллоҳ)",
+          "Ибни Касир, Қисас ул-Анбиё, боби Айюб алайҳис-салом",
+        ],
+      },
+      uz: {
+        name: "Ayyub",
+        theme: "sabr",
+        paragraphs: [
+          "Payg'ambar Ayyub yaxshi inson edi. Alloh unga ko'p narsa bergan edi: katta oila, ko'p farzandlar, hosildor yer, mol-qo'y, uylar. Ayyub bularning hammasi kimdan ekanini hech qachon unutmas edi. Har kuni Allohga shukr qilar, kambag'allarga yordam berar edi.",
+          "Keyin Alloh Ayyubga katta sinov yubordi. Ayyub deyarli hammasini — mol-mulkini ham, sog'lig'ini ham yo'qotdi. Og'ir kasallik unga keldi va uzoq vaqt undan ketmadi. Yillar davomida Ayyub kasallikda yotdi. Ishlay olmas edi. Ilgari qila olgan ishlarini endi qila olmas edi. Faqat xotini uning yonida qoldi va u haqida g'amxo'rlik qildi.",
+          "Lekin Ayyub shikoyat qilmadi. Allohga g'azablanmadi. \"Nega bu menga?\" demadi. Ayyub yodida tutar edi: Alloh bergan narsani O'zi qaytib olishi mumkin. Va sabr qildi. Jimgina, hech qanday shovqinsiz sabr qildi. Faqat iymonida davom etdi.",
+          "Sinov juda og'irlashganda, Ayyub qisqa bir duo bilan Rabbiga yuzlandi. \"Ey Rabbim! Menga ofat tegdi, Sen esa eng rahmlilarning rahmlisidirsan\", — dedi. \"Ey Rabbim, bu ofatni darhol olib tashla\", demadi. Talab qilmadi. Faqat Allohga O'zining rahmatini eslatdi — va Unga tavakkul qildi.",
+          "Alloh Ayyubga javob berdi. Qur'onda Alloh: \"Biz uning duosini qabul qildik va undan zararni olib tashladik\", — deydi. Alloh Ayyubga: \"Oyog'ingni yerga ur\", — deb amr qildi. Ayyub urdi — va yerdan sovuq, tiniq buloq otilib chiqdi. Alloh: \"Bu yuvinish va ichish uchun\", — dedi. Ayyub u suv bilan yuvinib, undan ichdi va kasallik undan ketdi. Alloh unga sog'liqni qaytarib berdi, oilasini qaytardi, hatto avvalgidan ham ko'proq berdi.",
+          "Alloh Ayyub haqida Qur'onda juda chiroyli so'zlar aytdi: \"Albatta, Biz uni sabrli topdik. U qanday yaxshi banda edi!\" Bu inson haqida aytilishi mumkin bo'lgan eng yuksak so'zlar. Qiyinchilikda yashayotgan odamlar Ayyubni eslagani, ko'ngillari yengillashadi. Chunki Ayyub ko'rsatdi: hatto eng katta og'riq ham bir kun tugaydi, agar Alloh bilan birga qolsang.",
+        ],
+        lesson:
+          "Saboq: sabr — bu g'azablanib jimligini saqlash emas, balki qiyinchilikda Allohga tavakkul qilishdir. Ayyub talab qilmadi — yumshoq so'radi. Va Alloh javob berdi.",
+        sources: [
+          "Qur'on 21:83-84 (Ayyubning duosi va Allohning javobi)",
+          "Qur'on 38:41-44 (buloq, shifo va Allohning maqtovi)",
+          "Ibn Kasir, Qisasul Anbiyo, Ayyub alayhissalom bobi",
+        ],
+      },
       en: {
         name: "Ayyub",
         theme: "patience",
@@ -543,6 +813,48 @@ export const PROPHET_STORIES: ProphetStory[] = [
     suffix: "عليه السلام",
     readingMin: 5,
     byLocale: {
+      tg: {
+        name: "Юнус",
+        theme: "наҳанг",
+        paragraphs: [
+          "Аллоҳ пайғамбар Юнусро ба сӯи қавме фиристод, ки дар шаҳри Найнаво зиндагӣ мекард. Он қавм Аллоҳро фаромӯш карда буд ва бутҳоро мепарастид. Юнус рӯзҳои бисёр онҳоро ба ҳақ даъват кард, аммо мардум гӯш надоданд. Ба ӯ механдиданд, рӯй мегардониданд ва ҳамоно он чи бо дасти худ сохта буданд, мепарастиданд.",
+          "Юнус хаста ва нохуш шуд. Бе он ки изни Аллоҳро бигирад, шаҳрро тарк кард. Ба киштӣ нишаст ва ба баҳр рафт — дур аз он қавм. Аммо Юнус ин корро бе пурсиши Парвардигор кард. Ва пайғамбарон бояд интизори амри Парвардигор шаванд.",
+          "Дар баҳр тӯфони шадиде хест. Киштӣ меларзид, бод фарёд мекашид ва мавҷҳо киштиро ба боло ва поён мепартофтанд. Маллоҳон тарсиданд, ки киштӣ ғарқ мешавад. Ба расми он замон қуръа партофтанд, то муайян кунанд кӣ ро ба баҳр пайдо кунанд, то бор сабук шавад. Се бор қуръа ба номи Юнус афтод. Юнус фаҳмид: ин озмоиш аз ҷониби Аллоҳ аст. Худ ба баҳр ҷаст.",
+          "Дар баҳр наҳанги бузурге ӯро фурӯ бурд. Ба амри Аллоҳ, наҳанг ба Юнус ҳеҷ зараре нарасонд. Юнус худро дар торикӣ ёфт — торикии баҳр, торикии шаб, торикии шиками наҳанг. Се торикӣ ӯро иҳота карда буд. Ва дар ҳамон торикии комил, Юнус ба хатои худ пай бурд — ки қавмашро пеш аз амри Аллоҳ тарк кардааст.",
+          "Он гоҳ Юнус аз он торикӣ ҳамон калимаҳоро бар забон овард, ки Аллоҳ то рӯзи қиёмат дар Қуръон нигоҳ доштааст: «Ҳеҷ маъбуде ҷуз Ту нест, пок ҳастӣ Ту; ҳамоно ман аз ситамкорон будам». Узр натарошид. Нагуфт: «Қавм бад буд». Эътироф кард: «Ман худ хато кардам».",
+          "Аллоҳ ҷавобашро дод. Ба наҳанг амр кард ва наҳанг Юнусро ба соҳил андохт. Юнус хеле бенаво буд. Аллоҳ дар канораш растание рӯёнд, ки баргҳояш ӯро аз офтоб ҳифз мекард ва хӯроки ӯ буд. Юнус нерӯ гирифт ва ба сӯи қавмаш баргашт. Дар ҳамин миён, тамоми қавми ӯ — то охирин нафар — ба Аллоҳ имон оварда буданд. Аллоҳ онҳоро бубахшид.",
+        ],
+        lesson:
+          "Дарс: вақте мо хато мекунем, набояд дигаронро айбдор кунем. Чун Юнус бигӯ: «Ман ситам кардам». Ва Аллоҳ ҳатто аз чуқуртарин торикиҳо садои туро мешунавад.",
+        sources: [
+          "Қуръон 21:87-88 (дуои Юнус аз торикиҳо ва ҷавоби Аллоҳ)",
+          "Қуръон 37:139-148 (киштӣ, наҳанг ва наҷот)",
+          "Қуръон 10:98 (имон овардани тамоми қавми Юнус)",
+          "Тирмизӣ 3505 (дуои Юнус, ҳасан)",
+          "Ибни Касир, Қисас ул-Анбиё, боби Юнус алайҳис-салом",
+        ],
+      },
+      uz: {
+        name: "Yunus",
+        theme: "baliq",
+        paragraphs: [
+          "Alloh payg'ambar Yunusni Nineviya shahrida yashagan qavmga yubordi. Bu qavm Allohni unutgan va butlarga sig'inardi. Yunus ularni ko'p kun davomida haqqa chaqirdi, lekin odamlar quloq solmadi. Uni masxara qilishar, yuz o'girishar va o'z qo'llari bilan yasagan narsalariga sig'inishda davom etardilar.",
+          "Yunus charchadi va xafa bo'ldi. U Allohning izinini kutmasdan shaharni tark etdi. Kemaga chiqib, dengizga jo'nadi — o'sha qavmdan uzoqqa. Lekin Yunus bu ishni Rabbisidan so'ramay qildi. Vaholanki, payg'ambarlar Rabbining amrini kutishlari kerak edi.",
+          "Dengizda qattiq bo'ron boshlandi. Kema chayqalar, shamol uvillab, to'lqinlar kemani yuqoriga va pastga otib turardi. Dengizchilar qo'rqib ketishdi — kema cho'kishi mumkin edi. O'sha davrning odatiga ko'ra, yukni yengillatish uchun kimni dengizga tashlashni qur'a tashlab aniqlamoqchi bo'lishdi. Qur'a uch marta Yunusga tushdi. Shunda Yunus tushundi: bu Allohdan sinov. U o'zi dengizga sakradi.",
+          "Dengizda katta baliq uni yutib yubordi. Allohning irodasi bilan baliq Yunusga hech qanday zarar yetkazmadi. Yunus zulmatda qoldi — dengiz zulmati, kechaning zulmati, baliq qornining zulmati. Uch zulmat uni o'rab oldi. Va o'sha to'liq zulmatda Yunus xatosini tushundi — Allohning amrisiz qavmini tark etgan edi.",
+          "Shunda Yunus o'sha zulmat ichidan, Alloh qiyomatgacha Qur'onda saqlab qoldirgan so'zlarni aytdi: \"Sendan o'zga iloh yo'q. Senga tasbeh aytaman. Albatta, men zolimlardan bo'ldim\". U bahona qilmadi. \"Qavm yomon edi\", demadi. Tan oldi: \"Men xato qildim\".",
+          "Alloh unga javob berdi. Alloh baliqqa amr qildi va baliq Yunusni sohilga tashladi. Yunus juda zaif edi. Alloh uning yonida bir o'simlik o'stirdi, uning barglari uni quyoshdan himoya qilar va oziq berardi. Yunus kuchini tikladi va qavmiga qaytdi. Bu vaqt ichida uning qavmi — har bir kishi — Allohga iymon keltirgan edi. Alloh ularni kechirdi.",
+        ],
+        lesson:
+          "Saboq: xato qilganimizda, boshqalarni ayblamasligimiz kerak. Yunus kabi ayt: \"Men zolim edim\". Va Alloh seni hatto eng chuqur zulmatdan ham eshitadi.",
+        sources: [
+          "Qur'on 21:87-88 (Yunusning zulmatdagi duosi va Allohning javobi)",
+          "Qur'on 37:139-148 (kema, baliq va najot)",
+          "Qur'on 10:98 (Yunus qavmining to'liq iymon keltirishi)",
+          "Tirmiziy 3505 (Yunusning duosi, hadis hasan)",
+          "Ibn Kasir, Qisasul Anbiyo, Yunus alayhissalom bobi",
+        ],
+      },
       en: {
         name: "Yunus",
         theme: "the whale",
@@ -616,6 +928,48 @@ export const PROPHET_STORIES: ProphetStory[] = [
     suffix: "عليه السلام",
     readingMin: 7,
     byLocale: {
+      tg: {
+        name: "Сулаймон",
+        theme: "подшоҳии бод",
+        paragraphs: [
+          "Пайғамбар Сулаймон писари пайғамбар Довуд буд. Аллоҳ ба ӯ туҳфаҳое дод, ки ба ҳеҷ каси дигар надода буд. Сулаймон ҳам пайғамбар буд ва ҳам подшоҳ. Аллоҳ ба ӯ подшоҳии бузург, ҳикмат ва се қобилияти аҷиб ато кард: бод ба ӯ хидмат мекард, ҷинниён барои ӯ кор мекарданд, ва Сулаймон забони ҳайвонҳо ва паррандаҳоро мефаҳмид.",
+          "Вақте Сулаймон мехост ба ҷое дур равад, ба киштӣ ё шутур ниёз надошт. Бод тахти ӯро бармедошт ва дар як рӯз ба он ҷое мерасонд, ки одами муқаррарӣ як моҳ роҳ мепаймуд. Ҷинниён барои ӯ биноҳои баланд месохтанд, аз қаъри баҳр марворид мегирифтанд ва кориҳое мекарданд, ки аз дасти инсони муқаррарӣ намеояд.",
+          "Як рӯз Сулаймон бо лашкараш аз водии мӯрчагон гузашт. Як мӯрча ба ҳамҷинсонаш фарёд кашид: «Эй мӯрчагон! Ба хонаҳои худ даройед, то Сулаймон ва лашкараш шуморо нохост поймол накунанд!» Сулаймон ӯро шунид, чун Аллоҳ ба ӯ фаҳмидани забони ҳайвонҳоро дода буд. Ба сухани он мӯрча табассум кард ва гуфт: «Парвардигоро, ба ман тавфиқ деҳ, то неъматеро, ки ба ман ва падару модарам ато кардаӣ, шукр гузорам».",
+          "Як бори дигар Сулаймон ҳамаи паррандагонашро ҷамъ кард, аммо ҳудҳудро надид. Гуфт: «Ҳудҳуд куҷост? Агар бо узр баргардад, ӯро ҷазо медиҳам». Каме баъд ҳудҳуд омад ва гуфт: «Чизе ёфтам, ки ту намедонистӣ. Аз Сабаъ омадам. Дар он ҷо зане ба номи Билқис фармонравоӣ мекунад. Тахти бузурге дорад. Аммо ӯ ва қавмаш офтобро мепарастанд, на Аллоҳро».",
+          "Сулаймон ҳамла накард. Ба Билқис мактубе навишт ва ӯро ба ҳақ даъват кард. Билқис муддате андешид ва худ ба назди Сулаймон омад. Чун подшоҳӣ, ҳикмат ва меҳрубонии ӯро дид, фаҳмид, ки Сулаймон подшоҳи муқаррарӣ нест. Ва вақте дид, ки Сулаймон танҳо Аллоҳро мепарастад ва ба подшоҳии худ бо такаббур барахӯрд намекунад, дилаш гардид. Гуфт: «Бо Сулаймон ба Аллоҳи Парвардигори оламиён таслим шудам».",
+          "Сулаймон медонист, ки тамоми подшоҳиаш аз Аллоҳ аст. Намегуфт: «Ин аз они ман аст». Мегуфт: «Ин аз фазли Парвардигорам аст, то маро биозмояд — шукр мекунам ё нашукрӣ». Хеле сахт аст: ин қадар чиз доштан ва такаббур накардан. Сулаймон аз ин озмоиш ғолиб баромад, чун дилаш машғули Аллоҳ буд, на машғули ашё.",
+          "Дар охири умраш Сулаймон бар асои худ такя дода ҷон супурд ва он қадар истода монд, ки ҷинниёни поён, дар ҳоли кор, аз марги ӯ огоҳ нашуданд. Онҳо ҳамоно кор мекарданд, гумон карда ки подшоҳ ба онҳо менигарад. Танҳо вақте асо шикаст, Сулаймон афтод ва ҷинниён огоҳ шуданд. Ин нишонае барои ҳамаи мост: ҳатто бузургтарини одамон ҳам мирандаанд. Танҳо он чи барои Аллоҳ кардаем, мемонад.",
+        ],
+        lesson:
+          "Дарс: доштани бисёр низ озмоишест на камтар аз надоштани ҳеҷ. Сулаймон ҳама чиз дошт ва дар ҳар неъмат Аллоҳро ба ёд дошт. Ин шоҳии ҳақиқӣ аст.",
+        sources: [
+          "Қуръон 27:15-44 (ҳикмати Сулаймон, мӯрчагон, ҳудҳуд, Билқис)",
+          "Қуръон 38:30-40 (подшоҳӣ, бод, шукри Сулаймон)",
+          "Қуръон 34:12-14 (хидмати ҷинниён ва марги Сулаймон)",
+          "Ибни Касир, Қисас ул-Анбиё, бобҳои Довуд ва Сулаймон алайҳимас-салом",
+        ],
+      },
+      uz: {
+        name: "Sulaymon",
+        theme: "shamol saltanati",
+        paragraphs: [
+          "Payg'ambar Sulaymon payg'ambar Dovudning o'g'li edi. Alloh unga hech kimga bermagan in'omlarni berdi. Sulaymon ham payg'ambar, ham podshoh edi. Alloh unga buyuk podshohlik, hikmat va uchta ajoyib qobiliyat berdi: shamol unga xizmat qilardi, jinlar uning uchun ishlardi va Sulaymon hayvonlar va qushlar tilini tushunardi.",
+          "Sulaymon uzoq joyga safarga chiqmoqchi bo'lsa, unga kema yoki tuya kerak emas edi. Shamol uning taxtini ko'tarib, bir kunda oddiy odam bir oyda boradigan joyga olib borardi. Jinlar unga baland binolar qurar, dengiz tubidan marvarid keltirar, oddiy odamlar bajara olmaydigan ishlarni qilardilar.",
+          "Bir kuni Sulaymon lashkari bilan chumolilar vodiysidan o'tdi. Birdan bir chumoli o'z toifasiga: \"Ey chumolilar! Uylaringizga kiring, Sulaymon va uning lashkari sezmasdan sizlarni ezib qo'ymasin!\" — deb baqirdi. Sulaymon uni eshitdi, chunki Alloh unga hayvonlar tilini tushunish qobiliyatini bergan edi. U bu so'zlarga jilmayib: \"Yo Rabbim! Menga va ota-onamga in'om qilgan ne'matlaringga shukr qiluvchi qil meni\", — dedi.",
+          "Yana bir kuni Sulaymon barcha qushlarini to'pladi, lekin hudhudni ko'rmadi. \"Hudhud qayerda? Agar uzrli sabab bilan kelmasa, uni jazolayman\", — dedi. Sal o'tib hudhud kelib: \"Men sen bilmaydigan narsani bildim. Sabodan keldim. U yerda Bilqis ismli ayol hukmronlik qiladi. Uning katta taxti bor. Lekin u va qavmi quyoshga sig'inadi, Allohga emas\", — dedi.",
+          "Sulaymon hujum qilmadi. Bilqisga maktub yozib, uni haqqa chaqirdi. Bilqis uzoq o'ylab, o'zi Sulaymonning oldiga keldi. Uning podshohligini, hikmatini va mehribonligini ko'rib, Sulaymon oddiy podshoh emasligini tushundi. Sulaymonning faqat Allohga sig'inishini va podshohligi bilan g'ururlanmasligini ko'rib, qalbi yumshadi. \"Sulaymon bilan birga olamlarning Rabbi Allohga taslim bo'ldim\", — dedi.",
+          "Sulaymon butun podshohligini Allohdan ekanini bilar edi. \"Bu mening\", demas edi. \"Bu Rabbimning fazlidan, U menga: shukr qilamanmi yoki nashukrlik qilamanmi, deb sinash uchun\", — der edi. Bunchalik ko'p narsaga ega bo'lib, mag'rurlanmaslik juda qiyin. Sulaymon bunga eridi, chunki qalbi narsalar bilan emas, Alloh bilan band edi.",
+          "Hayotining oxirida Sulaymon hassasiga suyanib jon berdi va shu holatda shunday uzoq turdiki, pastda ishlayotgan jinlar uning vafotini sezmadilar. Ular podshoh ularga qarab turibdi deb o'ylab, ishni davom ettiraverdilar. Faqat hassa singandagina Sulaymon yiqildi, va jinlar tushundilar. Bu hammamiz uchun belgidir: hatto eng buyuk odamlar ham o'tkinchidir. Faqat Alloh uchun qilgan ishlarimiz qoladi.",
+        ],
+        lesson:
+          "Saboq: ko'p narsaga ega bo'lish — hech narsasiz qolishdan kam sinov emas. Sulaymonda hamma narsa bor edi — va u har in'omda Allohni eslar edi. Asl boylik shu.",
+        sources: [
+          "Qur'on 27:15-44 (Sulaymonning hikmati, chumolilar, hudhud, Bilqis)",
+          "Qur'on 38:30-40 (podshohlik, shamol, Sulaymonning shukri)",
+          "Qur'on 34:12-14 (jinlar xizmati va Sulaymonning vafoti)",
+          "Ibn Kasir, Qisasul Anbiyo, Dovud va Sulaymon alayhimassalom boblari",
+        ],
+      },
       en: {
         name: "Sulayman",
         theme: "the kingdom of the wind",
@@ -689,6 +1043,52 @@ export const PROPHET_STORIES: ProphetStory[] = [
     suffix: "عليه السلام",
     readingMin: 7,
     byLocale: {
+      tg: {
+        name: "Исо",
+        theme: "як калимаи Аллоҳ",
+        paragraphs: [
+          "Замоне духтаре бисёр пок ва тарсонда зиндагӣ мекард. Номаш Марьям, духтари Имрон буд. Аз кӯдакӣ ба хидмати Аллоҳ бахшида шуда буд ва дар маъбад зери сарпарастии пайғамбар Закариё зиндагӣ мекард. Ҳар бор ки Закариё ба назди ӯ меомад, дар канораш хӯроке меёфт, ки бо роҳе пайдо шуда буд, ки наметавонист бифаҳмад. Мепурсид: «Ин аз куҷост, Марьям?» Марьям ҷавоб медод: «Аз ҷониби Аллоҳ. Аллоҳ ба ҳар кӣ хоҳад, бе ҳисоб рӯзӣ медиҳад».",
+          "Як рӯз ба назди Марьям фариштае омад — Ҷабраил (алайҳис-салом) буд. Хабаре овард, ки дилашро ба ларза овард. Фаришта гуфт: «Аллоҳ ба ту муждаи калимае аз сӯи Худро медиҳад; номаш Масеҳ, Исо писари Марьям аст». Марьям бо ҳайрат гуфт: «Чи гуна ман фарзанд хоҳам дошт, дар ҳоле ки ҳеҷ мард ба ман нарасидааст?» Фаришта ҷавоб дод: «Чунин Аллоҳ ҳар чи бихоҳад меофарад. Чун ба коре ҳукм кунад, ба он мегӯяд: «Бош» — ва мешавад».",
+          "Ин муъҷизаи бузургест. Агар Аллоҳ Одамро бе падару модар — танҳо аз хок — офарид, чаро натавонад Исоро бе падар биофарад? Барои Аллоҳ ҳеҷ чиз сангин нест. Исо «писари Худо» нест, ҳамчун баъзеҳо мепиндоранд. Исо бандаи Аллоҳ аст, инсонест ҳамчун дигар пайғамбарон. Аллоҳ танҳо ӯро ба тарзи махсус офарид, то ба мардум нишон диҳад: Манам Аллоҳ ва бар ҳар чиз тавоно.",
+          "Вақте Марьям Исоро ба дунё овард, бо кӯдак ба миёни мардум баргашт. Мардум ӯро муттаҳам сохтанд ва суханҳои зишт гуфтанд. Марьям чизе ҷавоб надод — Аллоҳ ба ӯ фармони хомӯшӣ дода буд. Танҳо ба кӯдак ишора кард. Мардум ҳайрон гуфтанд: «Чи гуна бо кӯдаке дар гаҳвора сухан гӯем?» Он гоҳ Исои бисёр хурдсол, ки ҳанӯз қадам намезад, ба изни Аллоҳ гуфт: «Ман бандаи Аллоҳам. Ӯ ба ман китоб додааст ва маро пайғамбар гардонидааст. Ҳар куҷо бошам, маро муборак сохтааст».",
+          "Вақте Исо калон шуд, Аллоҳ ӯро пайғамбари Бани Исроил гардонид. Аллоҳ ба ӯ муъҷизаҳое дод, ки қариб ба ҳеҷ каси дигар надода буд. Исо нобиноёни модарзодро шифо мебахшид. Махтавкаронро шифо медод. Мурдагонро ба изни Аллоҳ зинда мекард. Аз гил пайкари паррандае месохт, ба он медамид ва ба изни Аллоҳ паррандаи зинда мешуд ва парвоз мекард. Ҳеҷ кадоми ин муъҷизаҳо аз худи Исо набуд — ҳама аз ҷониби Аллоҳ буд. Исо ҳамеша ба мардум мегуфт: «Аллоҳро ибодат кунед, Парвардигори ман ва Парвардигори шумо».",
+          "Аммо на ҳама имон оварданд. Гурӯҳе аз қавмаш қарор доданд, ки Исоро бикушанд. Барои дастгир кардани ӯ омаданд. Аммо Аллоҳ пайғамбари худро ҳифз кард. Аллоҳ Исоро зинда ба сӯи Худ ба осмон бардошт. Ва он касеро, ки барои дастгирии ӯ омада буд, Аллоҳ ба шакли Исо даровард. Онҳо ӯро гирифтанд ва ба дор кашиданд — ба ин гумон ки Исоро ба дор кашидаанд. Аммо Исо бар салиб намурд. Аллоҳ дар Қуръон ошкоро мефармояд: «Ӯро накуштанд ва ба дор накашиданд, балки барои онҳо мушаббаҳ шуд». Исо назди Парвардигораш зинда аст.",
+          "Мо мусулмонон Исоро дӯст медорем. Исо яке аз фиристодагони бузурги Аллоҳ аст. Ӯ аз пайғамбарони улул-азм аст. Мусулмонон бар ин боваранд, ки дар охирзамон, пеш аз рӯзи қиёмат, Исо ба замин бармегардад — ҳокими одиле ки бар тамоми замин ҳақ ва ибодати Аллоҳи ягонаро барқарор хоҳад сохт. Аз ин рӯ, ҳар гоҳ Исоро ёд мекунем, мегӯем: «алайҳис-салом» — салом бар ӯ бод.",
+        ],
+        lesson:
+          "Дарс: Аллоҳро кофист, ки бигӯяд «Бош» ва чизе пайдо мешавад. Исо Худо нест, балки бандаи бузурги Аллоҳ аст. Мо ӯро дӯст медорем ва бозгашташро интизорем.",
+        sources: [
+          "Қуръон 3:42-59 (мужда ба Марьям, зодрӯзи Исо ва пайғамбариаш)",
+          "Қуръон 19:16-36 (Марьям, зодрӯз ва сухани кӯдак)",
+          "Қуръон 5:110-118 (муъҷизаҳои Исо ва шаҳодаташ дар рӯзи қиёмат)",
+          "Қуръон 4:157-158 (Аллоҳ нагузошт Исоро бикушанд, ӯро ба сӯи Худ бардошт)",
+          "Саҳеҳи Бухорӣ 3448 / Саҳеҳи Муслим 155 (бозгашти Исо)",
+          "Ибни Касир, Қисас ул-Анбиё, боби Исо ибни Марьям алайҳис-салом",
+        ],
+      },
+      uz: {
+        name: "Iso",
+        theme: "Allohning bir kalimasi",
+        paragraphs: [
+          "Bir vaqtlar juda pok va Allohdan qo'rqadigan qiz yashardi. Uning ismi Maryam, Imronning qizi edi. Bolaligidan Allohga xizmatga bag'ishlangan bo'lib, payg'ambar Zakariyoning g'amxo'rligida ibodatxonada yashardi. Zakariyo har gal uning oldiga kelganda, yonida tushuntirib bo'lmaydigan tarzda paydo bo'lgan ovqatni topib turardi. \"Bu qayerdan keldi, Maryam?\" — der edi. Maryam: \"Bu Allohdan. Alloh xohlagan kishisiga hisobsiz rizq beradi\", — deb javob berardi.",
+          "Bir kuni Maryamning oldiga farishta keldi — bu Jabroil alayhissalom edi. U Maryamning yuragini titratgan xabar olib keldi. Farishta: \"Alloh senga O'zidan bir kalimaning xushxabarini bermoqda; uning ismi Masih, Maryamning o'g'li Iso\", — dedi. Maryam hayrat bilan: \"Menda qanday farzand bo'lardi, hech bir erkak menga tegmagan bo'lsa?\" — dedi. Farishta: \"Alloh shu tariqa xohlaganini yaratadi. U bir ishni hukm qilsa, faqat unga: 'Bo'l' — deydi, va u bo'ladi\", — deb javob berdi.",
+          "Bu buyuk mo'jiza. Agar Alloh Odamni ota-onasiz — faqat tuproqdan — yaratgan bo'lsa, Isoni otasiz yarata olmasmidi? Alloh uchun hech narsa qiyin emas. Iso ba'zilar o'ylagandek \"Xudoning o'g'li\" emas. Iso Allohning bandasi, boshqa payg'ambarlar kabi insondir. Alloh uni odamlarga: \"Men Allohman va hamma narsaga qodirman\", deyish uchun shunchaki maxsus tarzda yaratdi.",
+          "Maryam Isoni dunyoga keltirganda, chaqaloq bilan odamlarga qaytdi. Odamlar uni ayblay boshladilar, xunuk gaplar ayta boshladilar. Maryam hech narsa demadi — Alloh unga jim turishni amr qilgan edi. U faqat chaqaloqqa ishora qildi. Odamlar: \"Beshikdagi chaqaloq bilan qanday gaplashamiz?\" — deb hayron bo'lishdi. Shunda hali yura olmaydigan, juda kichkina Iso Allohning iznidan gapirdi: \"Men Allohning bandasiman. U menga Kitob bergan va meni payg'ambar qilgan. Qaerda bo'lsam, meni baraka qilgan\".",
+          "Iso ulg'aygach, Alloh uni Bani Isroilning payg'ambari qildi. Alloh unga deyarli hech kimga bermagan mo'jizalarni berdi. Iso ko'rsiz tug'ilganlarni davolardi. Moxovlilarni davolardi. O'lganlarni Allohning izni bilan tiriltirar edi. Loydan qush shaklini yasab, unga puflar, va Allohning izni bilan u tirik qushga aylanib uchib ketardi. Bu mo'jizalarning birortasi Isoning o'zidan emas edi — hammasi Allohdan edi. Iso doim odamlarga: \"Mening Rabbim va sizning Rabbingiz bo'lgan Allohga ibodat qiling\", — deb aytardi.",
+          "Lekin hamma iymon keltirmadi. Qavmidan ba'zilari Isoni o'ldirmoqchi bo'ldilar. Uni qo'lga olgani keldilar. Lekin Alloh O'z payg'ambarini himoya qildi. Alloh Isoni tirik holida O'ziga, osmonga ko'tardi. Uni qo'lga olishga kelgan kishini esa Alloh Isoga o'xshatib qo'ydi. Kelganlar o'sha odamni tutib, xochga mixladilar — Isoni xochga mixladik deb o'ylab. Lekin Iso xochda o'lmadi. Alloh Qur'onda ochiq aytadi: \"Ular uni o'ldirmadilar ham, xochga mixlamadilar ham, balki ularga shunday tuyuldi\". Iso Rabbi huzurida tirikdir.",
+          "Biz musulmonlar Isoni sevamiz. Iso Allohning ulug' elchilaridan biridir. U Ulul-Azm payg'ambarlardan. Musulmonlar Iso oxir zamonda, qiyomatdan oldin, yer yuziga qaytib kelishiga — butun yer yuzida haqqa va yagona Allohga ibodatga adolatli rahbarlik qiladigan hokim sifatida — ishonadilar. Shuning uchun, Isoni eslagan har gal: \"alayhissalom\" — unga salom bo'lsin — deymiz.",
+        ],
+        lesson:
+          "Saboq: Allohga \"Bo'l\" deyish kifoya — va narsa paydo bo'ladi. Iso Xudo emas, balki Allohning ulug' bandasi. Biz uni sevamiz va qaytib kelishini kutamiz.",
+        sources: [
+          "Qur'on 3:42-59 (Maryamga xushxabar, Isoning tug'ilishi, uning payg'ambarligi)",
+          "Qur'on 19:16-36 (Maryam, tug'ilish, chaqaloqning nutqi)",
+          "Qur'on 5:110-118 (Isoning mo'jizalari va qiyomatdagi guvohligi)",
+          "Qur'on 4:157-158 (Alloh Isoni o'ldirishlariga yo'l qo'ymadi, uni O'ziga ko'tardi)",
+          "Sahihul Buxoriy 3448 / Sahihul Muslim 155 (Isoning qaytishi)",
+          "Ibn Kasir, Qisasul Anbiyo, Iso ibn Maryam alayhissalom bobi",
+        ],
+      },
       en: {
         name: "Isa",
         theme: "a word from Allah",
