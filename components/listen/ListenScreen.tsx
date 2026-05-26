@@ -141,10 +141,10 @@ function ListenScreenInner({ chapters }: ListenScreenProps) {
           </div>
           {[
             { id: "all", label: t("all") },
-            { id: "hafs", label: "Хафс" },
-            { id: "warsh", label: "Варш" },
-            { id: "muratt", label: "Муратталь" },
-            { id: "mujaw", label: "Муджаввад" },
+            { id: "hafs", label: t("qiraat_hafs") },
+            { id: "warsh", label: t("qiraat_warsh") },
+            { id: "muratt", label: t("style_muratt") },
+            { id: "mujaw", label: t("style_mujaw") },
           ].map((p) => (
             <button
               key={p.id}

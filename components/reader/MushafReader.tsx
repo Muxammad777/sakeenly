@@ -731,7 +731,7 @@ function MushafReaderInner(props: MushafReaderProps) {
       {/* ============ MOBILE-ONLY SIDE TABS ============ */}
       {/* Left tab — translation picker. Replaces the inline trans-bar on
           phones (CSS hides .trans-bar at ≤720px). */}
-      <SideTab side="left" label="ПЕРЕВОД" ariaLabel="Выбрать перевод">
+      <SideTab side="left" label={t("side_translation")} ariaLabel={t("side_pick_translation")}>
         <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
           <button
             type="button"
@@ -770,7 +770,7 @@ function MushafReaderInner(props: MushafReaderProps) {
 
       {/* Right tab — reciter picker. Navigates with ?reciter=slug which
           server-side resolves to the right audio URLs. */}
-      <SideTab side="right" label="ЧТЕЦ" ariaLabel="Выбрать чтеца">
+      <SideTab side="right" label={t("side_reciter")} ariaLabel={t("side_pick_reciter")}>
         <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
           {RECITERS.map((r) => (
             <button

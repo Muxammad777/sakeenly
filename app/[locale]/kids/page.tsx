@@ -129,6 +129,7 @@ const PROPHET_STORIES = [
 
 function Content() {
   const t = useTranslations("kid");
+  const tKa = useTranslations("ka");
 
   return (
     <>
@@ -201,10 +202,10 @@ function Content() {
         </div>
 
         <div className="iqra-grid">
-          {IQRA_LETTERS.map((l) => (
+          {IQRA_LETTERS.map((l, i) => (
             <Link key={l.ar} href="/kids/alphabet" className={`iqra-letter ${l.done ? "done" : ""}`}>
               <span className="ar arabic" dir="rtl">{l.ar}</span>
-              <span className="name">{l.name}</span>
+              <span className="name">{tKa(`l${i + 1}` as `l1`)}</span>
             </Link>
           ))}
         </div>

@@ -170,7 +170,7 @@ export function PricingClient() {
 
           <div className="compare-row">
             <div>{t("cmp.row.aiq")}</div>
-            <div className="compare-cell center"><span className="v">5 / день</span></div>
+            <div className="compare-cell center"><span className="v">5 / {t("per_day")}</span></div>
             <div className="compare-cell center"><span className="v">∞</span></div>
             <div className="compare-cell center"><span className="v">∞ × 6</span></div>
           </div>
