@@ -12,8 +12,11 @@ export type TranslationKey =
   | "porokhova"
   | "sahih-intl"
   | "haleem"
+  | "pickthall"
+  | "yusufali"
   | "taji"
   | "islamhouse-fa"
+  | "fooladvand"
   | "ayati"
   | "sodik"
   | "altay"
@@ -45,15 +48,20 @@ export const TRANSLATIONS: readonly TranslationMeta[] = [
   { key: "mokhtasar-ky", id: 0,   short: "Мухтасар",    label: "Мухтасар (кыргызча)",      language: "ky", author: "Мухтасар тафсири · KG",       source: "tanzil"   },
   { key: "sahih-intl",   id: 20,  short: "Sahih Int.",  label: "Sahih International",      language: "en", author: "Sahih International",         source: "quran.com" },
   { key: "haleem",       id: 85,  short: "Haleem",      label: "M.A.S. Abdel Haleem",      language: "en", author: "M.A.S. Abdel Haleem · Oxford World's Classics 2004", source: "quran.com" },
+  { key: "pickthall",    id: 19,  short: "Pickthall",   label: "M. Pickthall",             language: "en", author: "Marmaduke Pickthall · 1930",  source: "quran.com" },
+  { key: "yusufali",     id: 22,  short: "Yusuf Ali",   label: "A. Yusuf Ali",             language: "en", author: "Abdullah Yusuf Ali · 1934",   source: "quran.com" },
   { key: "taji",         id: 29,  short: "تاجی",        label: "Hussein Taji Kal Dari",    language: "fa", author: "حسین تاجی گله‌داری",          source: "quran.com" },
   { key: "islamhouse-fa",id: 135, short: "اسلام‌هاوس",  label: "IslamHouse · فارسی",       language: "fa", author: "IslamHouse.com",              source: "quran.com" },
+  { key: "fooladvand",   id: 0,   short: "فولادوند",    label: "محمدمهدی فولادوند",        language: "fa", author: "محمدمهدی فولادوند · 1373",   source: "tanzil"   },
 ] as const;
 
 /** Locale → default translation key. Used to preselect the right pill per UI language. */
 export const DEFAULT_TRANSLATION_BY_LOCALE: Record<string, TranslationKey> = {
   ru: "kuliev",
   en: "sahih-intl",
-  fa: "taji",
+  // Fooladvand is the gold-standard scholarly Persian translation
+  // (used by tanzil.net and most Persian Quran apps). Default for fa.
+  fa: "fooladvand",
   tg: "ayati",
   uz: "sodik",
   kk: "altay",

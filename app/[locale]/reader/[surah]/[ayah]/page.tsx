@@ -15,6 +15,7 @@ import ayatiMap from "@/lib/quran/tanzil/ayati.json";
 import sodikMap from "@/lib/quran/tanzil/sodik.json";
 import altayMap from "@/lib/quran/tanzil/altay.json";
 import mokhtasarKyMap from "@/lib/quran/tanzil/mokhtasar-ky.json";
+import fooladvandMap from "@/lib/quran/tanzil/fooladvand.json";
 import { MushafReader, type MushafAyah, type ChapterListItem } from "@/components/reader/MushafReader";
 import { getCurrentUser } from "@/lib/auth-helpers";
 import { db } from "@/lib/db";
@@ -93,6 +94,7 @@ export default async function ReaderPage({ params, searchParams }: PageProps) {
     sodik:          sodikMap        as Record<string, string>,
     altay:          altayMap        as Record<string, string>,
     "mokhtasar-ky": mokhtasarKyMap  as Record<string, string>,
+    fooladvand:     fooladvandMap   as Record<string, string>,
   };
 
   if (parsed.ayah > chapter.verses_count) notFound();
