@@ -49,7 +49,7 @@
   .surah-item.active .surah-num { border-color: color-mix(in oklab, oklch(var(--accent)) 50%, oklch(var(--border))); color: oklch(var(--accent)); }
   .surah-name { display: flex; flex-direction: column; line-height: 1.2; flex: 1; min-width: 0; }
   .surah-name b { font-weight: 500; }
-  .surah-name .ar { font-family: 'Scheherazade New', serif; color: oklch(var(--text-3)); direction: rtl; font-size: 13px; }
+  .surah-name .ar { font-family: 'Scheherazade New', serif; color: oklch(var(--text-3)); direction: rtl; font-size: 17px; line-height: 1.5; }
   .surah-meta {
     font-family: 'JetBrains Mono', monospace; font-size: 10px; color: oklch(var(--text-3));
   }
@@ -166,8 +166,10 @@
   .mushaf-inner {
     direction: rtl;
     font-family: 'Scheherazade New', serif;
-    font-size: clamp(2rem, 3.2vw, 2.6rem);
-    line-height: 2.2;
+    /* Match .ayah-block-arabic so mushaf-mode and interleaved-mode read at
+       the same size on every breakpoint, mobile included. */
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    line-height: 2.3;
     text-align: justify;
     text-align-last: center;
     color: oklch(var(--text));
