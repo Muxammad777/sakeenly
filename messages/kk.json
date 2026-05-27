@@ -990,6 +990,19 @@
     "filter_short_hint": "30 аятқа дейінгі сүрелер",
     "filter_empty": "Бұл сүзгімен ештеңе табылмады.",
     "filtered_count": "{n} / {total} · {q}",
-    "filters_aria": "Нәтиже сүзгілері"
+    "filters_aria": "Нәтиже сүзгілері",
+    "tr_kuliev": "Кулиев",
+    "tr_krachkovsky": "Крачковский",
+    "tr_osmanov": "Османов",
+    "tr_porokhova": "Порохова",
+    "tr_abuadel": "Абу Әдел",
+    "tr_sahih-intl": "Sahih Intl",
+    "tr_khattab": "Khattab",
+    "tr_ayati": "Аяти",
+    "tr_sodik": "Содық",
+    "tr_altay": "Алтай",
+    "tr_mokhtasar-ky": "Мұхтасар",
+    "tr_fooladvand": "Фуладванд",
+    "translator_label": "аударма"
   }
 }

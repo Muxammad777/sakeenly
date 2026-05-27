@@ -236,3 +236,15 @@
   border-radius: 4px;
   font-weight: 600;
 }
+.search-result-tr-tag {
+  margin-top: 10px;
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: oklch(var(--text-3));
+  padding: 2px 8px;
+  border: 1px solid oklch(var(--border));
+  border-radius: 999px;
+}

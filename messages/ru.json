@@ -990,6 +990,19 @@
     "filter_short_hint": "Суры до 30 аятов",
     "filter_empty": "Под фильтр ничего не попадает.",
     "filtered_count": "Показано {n} из {total} · {q}",
-    "filters_aria": "Фильтры результатов"
+    "filters_aria": "Фильтры результатов",
+    "tr_kuliev": "Кулиев",
+    "tr_krachkovsky": "Крачковский",
+    "tr_osmanov": "Османов",
+    "tr_porokhova": "Порохова",
+    "tr_abuadel": "Абу Адель",
+    "tr_sahih-intl": "Sahih Intl",
+    "tr_khattab": "Khattab",
+    "tr_ayati": "Аятӣ",
+    "tr_sodik": "Содиқ",
+    "tr_altay": "Алтай",
+    "tr_mokhtasar-ky": "Мухтасар",
+    "tr_fooladvand": "Фуладванд",
+    "translator_label": "перевод"
   }
 }

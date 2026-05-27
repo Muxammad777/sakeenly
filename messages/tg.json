@@ -990,6 +990,19 @@
     "filter_short_hint": "Сураҳое то 30 оят",
     "filter_empty": "Бо ин филтр чизе нест.",
     "filtered_count": "{n} аз {total} · {q}",
-    "filters_aria": "Филтрҳои натиҷа"
+    "filters_aria": "Филтрҳои натиҷа",
+    "tr_kuliev": "Кулиев",
+    "tr_krachkovsky": "Крачковский",
+    "tr_osmanov": "Усмонов",
+    "tr_porokhova": "Порохова",
+    "tr_abuadel": "Абу Одел",
+    "tr_sahih-intl": "Sahih Intl",
+    "tr_khattab": "Khattab",
+    "tr_ayati": "Оятӣ",
+    "tr_sodik": "Содиқ",
+    "tr_altay": "Алтай",
+    "tr_mokhtasar-ky": "Мухтасар",
+    "tr_fooladvand": "Фӯлодванд",
+    "translator_label": "тарҷума"
   }
 }

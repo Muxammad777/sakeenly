@@ -990,6 +990,19 @@
     "filter_short_hint": "سوره‌های با حداکثر ۳۰ آیه",
     "filter_empty": "با این صافی نتیجه‌ای نیست.",
     "filtered_count": "{n} از {total} · {q}",
-    "filters_aria": "صافی‌های نتیجه"
+    "filters_aria": "صافی‌های نتیجه",
+    "tr_kuliev": "کولیف",
+    "tr_krachkovsky": "کراچکوفسکی",
+    "tr_osmanov": "عثمانوف",
+    "tr_porokhova": "پورخووا",
+    "tr_abuadel": "ابوعادل",
+    "tr_sahih-intl": "صحیح",
+    "tr_khattab": "خطاب",
+    "tr_ayati": "آیتی",
+    "tr_sodik": "صادق",
+    "tr_altay": "آلتای",
+    "tr_mokhtasar-ky": "مختصر",
+    "tr_fooladvand": "فولادوند",
+    "translator_label": "ترجمه"
   }
 }

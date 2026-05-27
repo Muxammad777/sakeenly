@@ -12,6 +12,7 @@ interface SearchResult {
   ayah: number;
   arabic: string;
   translation: string | null;
+  translator: string | null;
   matched: "arabic" | "translation" | "both";
 }
 
@@ -222,10 +223,17 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
                             dangerouslySetInnerHTML={{ __html: highlight(r.arabic, committedQuery, true) }}
                           />
                           {r.translation && (
-                            <div
-                              className="search-result-trans"
-                              dangerouslySetInnerHTML={{ __html: highlight(r.translation, committedQuery, isArabicQuery) }}
-                            />
+                            <>
+                              <div
+                                className="search-result-trans"
+                                dangerouslySetInnerHTML={{ __html: highlight(r.translation, committedQuery, isArabicQuery) }}
+                              />
+                              {r.translator && (
+                                <div className="search-result-tr-tag">
+                                  {t("translator_label")}: {t(`tr_${r.translator}` as Parameters<typeof t>[0])}
+                                </div>
+                              )}
+                            </>
                           )}
                         </Link>
                       </li>

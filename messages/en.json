@@ -990,6 +990,19 @@
     "filter_short_hint": "Surahs with ≤30 verses",
     "filter_empty": "No matches under this filter.",
     "filtered_count": "Showing {n} of {total} · {q}",
-    "filters_aria": "Result filters"
+    "filters_aria": "Result filters",
+    "tr_kuliev": "Kuliev",
+    "tr_krachkovsky": "Krachkovsky",
+    "tr_osmanov": "Osmanov",
+    "tr_porokhova": "Porokhova",
+    "tr_abuadel": "Abu Adel",
+    "tr_sahih-intl": "Sahih Intl",
+    "tr_khattab": "Khattab",
+    "tr_ayati": "Ayati",
+    "tr_sodik": "Sodiq",
+    "tr_altay": "Altay",
+    "tr_mokhtasar-ky": "Mokhtasar",
+    "tr_fooladvand": "Fooladvand",
+    "translator_label": "translation"
   }
 }

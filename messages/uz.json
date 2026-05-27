@@ -990,6 +990,19 @@
     "filter_short_hint": "30 oyatgacha bo'lgan suralar",
     "filter_empty": "Bu filtr ostida hech narsa yo'q.",
     "filtered_count": "{n}/{total} · {q}",
-    "filters_aria": "Natija filtrlari"
+    "filters_aria": "Natija filtrlari",
+    "tr_kuliev": "Kuliev",
+    "tr_krachkovsky": "Krachkovsky",
+    "tr_osmanov": "Osmonov",
+    "tr_porokhova": "Poroxova",
+    "tr_abuadel": "Abu Adel",
+    "tr_sahih-intl": "Sahih Intl",
+    "tr_khattab": "Khattab",
+    "tr_ayati": "Ayotiy",
+    "tr_sodik": "Sodiq",
+    "tr_altay": "Oltoy",
+    "tr_mokhtasar-ky": "Muxtasar",
+    "tr_fooladvand": "Foʻlodvand",
+    "translator_label": "tarjima"
   }
 }

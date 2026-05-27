@@ -172,7 +172,15 @@ export interface SearchResult {
   surah: number;
   ayah: number;
   arabic: string;
+  /** The translation snippet shown to the user. When matched in a
+   *  non-default translator, this is THAT translator's text (not the
+   *  display default) — so the user sees the words their query actually
+   *  hit. Otherwise it's the locale's default-translator snippet. */
   translation: string | null;
+  /** Which translator the snippet above is from. Frontend renders this
+   *  as a small "перевод: Османов" chip so the user understands why
+   *  the wording differs from elsewhere on the site. */
+  translator: string | null;
   matched: "arabic" | "translation" | "both";
 }
 
@@ -186,10 +194,14 @@ export function searchQuran(
 
   const corpus = loadCorpus();
   const trKeys = TRANSLATORS_BY_LOCALE[locale];
-  const trMaps = trKeys
-    .map((k) => corpus.translations.get(k))
-    .filter((m): m is Map<string, string> => Boolean(m));
-  const displayMap = trMaps[0] ?? null;
+  // Pair each translator key with its loaded map (skip any that
+  // failed to load). First entry is the locale's display default.
+  const trEntries: Array<[string, Map<string, string>]> = [];
+  for (const k of trKeys) {
+    const m = corpus.translations.get(k);
+    if (m) trEntries.push([k, m]);
+  }
+  const defaultEntry = trEntries[0] ?? null;
 
   // Tokenize: split on whitespace + punctuation, drop tokens < 2 chars.
   // Each token must hit somewhere in the haystack (AND-match) — so
@@ -231,12 +243,19 @@ export function searchQuran(
       if (allTokensIn(normAr, arTokens)) arHit = true;
     }
 
+    // Track WHICH translator caught the match so we can show that
+    // translator's snippet (not the default's) — otherwise the user
+    // sees a verse whose displayed text doesn't contain the query.
+    let matchedTranslator: string | null = null;
+    let matchedText: string | null = null;
     if (txTokenGroups.length > 0) {
-      for (const map of trMaps) {
+      for (const [key, map] of trEntries) {
         const txt = map.get(verseKey);
         if (!txt) continue;
         if (allGroupsIn(normalizeText(txt), txTokenGroups)) {
           txHit = true;
+          matchedTranslator = key;
+          matchedText = txt;
           break;
         }
       }
@@ -244,12 +263,17 @@ export function searchQuran(
 
     if (!arHit && !txHit) continue;
     const [s, a] = verseKey.split(":").map(Number);
+    // Prefer the matched translator's text in the snippet, falling
+    // back to the locale default for arabic-only / pure-arabic hits.
+    const snippetText = matchedText ?? defaultEntry?.[1].get(verseKey) ?? null;
+    const snippetKey  = matchedTranslator ?? (snippetText ? defaultEntry?.[0] ?? null : null);
     results.push({
       verseKey,
       surah: s,
       ayah: a,
       arabic: arabicText,
-      translation: displayMap?.get(verseKey) ?? null,
+      translation: snippetText,
+      translator: snippetKey,
       matched: arHit && txHit ? "both" : arHit ? "arabic" : "translation",
     });
 
