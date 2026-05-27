@@ -814,6 +814,59 @@
   }
   .trans-toggle.on .trans-toggle-label { color: oklch(var(--accent)); }
 
+  /* ============ MUSHAF MODE TOGGLE (continuous / pages) ============ */
+  .mode-toggle {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: oklch(var(--surface));
+    border: 1px solid oklch(var(--border));
+    color: oklch(var(--text-2));
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
+    transition: border-color 140ms, color 140ms, background 140ms;
+    margin-right: 8px;
+  }
+  .mode-toggle svg { color: oklch(var(--text-3)); transition: color 140ms; }
+  .mode-toggle:hover { border-color: oklch(var(--border-strong)); color: oklch(var(--text)); }
+  .mode-toggle:hover svg { color: oklch(var(--text-2)); }
+  .mode-toggle.on {
+    background: var(--accent-soft);
+    border-color: color-mix(in oklab, oklch(var(--accent)) 40%, oklch(var(--border)));
+    color: oklch(var(--accent));
+  }
+  .mode-toggle.on svg { color: oklch(var(--accent)); }
+
+  /* Pager controls under .mushaf when pageMode is on */
+  .mushaf-pager {
+    display: flex; align-items: center; justify-content: center;
+    gap: 16px; margin: 18px auto 8px;
+  }
+  .pager-btn {
+    display: inline-grid; place-items: center;
+    width: 40px; height: 40px;
+    border-radius: 999px;
+    background: oklch(var(--surface));
+    border: 1px solid oklch(var(--border));
+    color: oklch(var(--text-2));
+    cursor: pointer;
+    transition: border-color 140ms, color 140ms, background 140ms;
+  }
+  .pager-btn:hover:not(:disabled) {
+    border-color: color-mix(in oklab, oklch(var(--accent)) 50%, oklch(var(--border)));
+    color: oklch(var(--accent));
+  }
+  .pager-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .pager-indicator {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: oklch(var(--text-2));
+    min-width: 8ch;
+    text-align: center;
+  }
+
   /* Inline action buttons in ayah-block-head (translation mode) */
   .ayah-block-actions {
     justify-self: end;

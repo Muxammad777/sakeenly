@@ -23,7 +23,6 @@ export function Footer() {
             <li><Link href="/listen"    className="block py-1 text-fg-muted transition-colors hover:text-fg">{t("reciters")}</Link></li>
             <li><Link href="/ask"       className="block py-1 text-fg-muted transition-colors hover:text-fg">{tNav("ask")}</Link></li>
             <li><Link href="/ayat"      className="block py-1 text-fg-muted transition-colors hover:text-fg">{t("ayat")}</Link></li>
-            <li><Link href="/pricing"   className="block py-1 text-fg-muted transition-colors hover:text-fg">{tNav("pricing")}</Link></li>
           </ul>
         </div>
 

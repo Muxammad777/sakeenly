@@ -140,7 +140,6 @@ export function AskChat({ isAuthenticated }: AskChatProps) {
                 ? t("quota_live", { used: lastQuota.used, limit: lastQuota.limit })
                 : t("quota")}
             </span>
-            <Link href="/pricing" className="up">{t("upgrade")}</Link>
           </div>
         </div>
       </section>

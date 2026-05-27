@@ -18,7 +18,6 @@ const NAV = [
   { href: "/ask",        key: "ask" as const, match: "/ask" },
   { href: "/ayat",       key: "ayat" as const, match: "/ayat" },
   { href: "/kids",       key: "kids" as const, match: "/kids" },
-  { href: "/pricing",    key: "pricing" as const, match: "/pricing" },
 ];
 
 export function MobileNav() {

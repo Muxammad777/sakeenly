@@ -116,6 +116,16 @@ function MushafReaderInner(props: MushafReaderProps) {
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [showTranslations, setShowTranslations] = useState(true);
+  // Mushaf-mode pagination: when on, the verse stream is sliced into
+  // book-like pages. Reset when the surah changes.
+  const [pageMode, setPageMode] = useState(false);
+  const [pageIdx, setPageIdx] = useState(0);
+  const AYAHS_PER_PAGE = 8;
+  const pageCount = Math.max(1, Math.ceil(ayat.length / AYAHS_PER_PAGE));
+  useEffect(() => { setPageIdx(0); }, [surah.number]);
+  const pageAyat = pageMode
+    ? ayat.slice(pageIdx * AYAHS_PER_PAGE, (pageIdx + 1) * AYAHS_PER_PAGE)
+    : ayat;
   const [transPickerOpen, setTransPickerOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
 
@@ -392,6 +402,33 @@ function MushafReaderInner(props: MushafReaderProps) {
                 {showTranslations ? t("trans_on") : t("trans_off")}
               </span>
             </button>
+            {/* Page-mode toggle — only relevant when translations are off
+                (i.e. mushaf reading mode). Switches between continuous
+                scroll and book-like paginated reading. */}
+            {!showTranslations && (
+              <button
+                type="button"
+                className={"mode-toggle" + (pageMode ? " on" : "")}
+                onClick={() => { setPageMode((v) => !v); setPageIdx(0); }}
+                aria-pressed={pageMode}
+                title={pageMode ? t("mode_continuous") : t("mode_pages")}
+              >
+                {pageMode ? (
+                  // Book icon (currently on)
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M2 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H2z"/><path d="M22 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8z"/>
+                  </svg>
+                ) : (
+                  // Scroll/lines icon (currently on continuous)
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M4 7h16M4 12h16M4 17h10"/>
+                  </svg>
+                )}
+                <span className="trans-toggle-label">
+                  {pageMode ? t("mode_pages") : t("mode_continuous")}
+                </span>
+              </button>
+            )}
             {showTranslations && (
               <>
                 <span className="lbl">{t("lbl_translation")}</span>
@@ -502,36 +539,69 @@ function MushafReaderInner(props: MushafReaderProps) {
               })}
             </div>
           ) : (
-            /* MUSHAF MODE — flowing arabic block, no translations */
-            <div className="mushaf mushaf-ornament">
-              {surah.number !== 1 && surah.number !== 9 && (
-                <div className="basmala arabic" dir="rtl">
-                  <span className="basmala-frame">﷽</span>
+            /* MUSHAF MODE — flowing arabic block, no translations.
+               If pageMode is on, slice to one book-like page at a time. */
+            <>
+              <div className="mushaf mushaf-ornament">
+                {/* Basmala only on page 1 in pageMode, or always in continuous mode */}
+                {surah.number !== 1 && surah.number !== 9 && (!pageMode || pageIdx === 0) && (
+                  <div className="basmala arabic" dir="rtl">
+                    <span className="basmala-frame">﷽</span>
+                  </div>
+                )}
+                <div className="mushaf-inner arabic" dir="rtl">
+                  {pageAyat.map((a, i) => (
+                    <Fragment key={a.ayahKey}>
+                      <span
+                        id={`ayah-${a.verseNumber}`}
+                        className={
+                          "ayah-span" +
+                          (activeAyah === a.verseNumber ? " active" : "") +
+                          (playingVerseNumber === a.verseNumber ? " playing" : "")
+                        }
+                        data-ayah={a.verseNumber}
+                        onClick={(e) => openPopover(e, a.verseNumber)}
+                      >
+                        {a.textUthmani}
+                      </span>
+                      <span className="ayah-mark" aria-hidden="true">
+                        ﴿{toArabicNum(a.verseNumber)}﴾
+                      </span>
+                      {i < pageAyat.length - 1 && " "}
+                    </Fragment>
+                  ))}
+                </div>
+              </div>
+              {pageMode && (
+                <div className="mushaf-pager" aria-label="Pagination">
+                  <button
+                    type="button"
+                    className="pager-btn"
+                    disabled={pageIdx === 0}
+                    onClick={() => setPageIdx((p) => Math.max(0, p - 1))}
+                    aria-label={t("prev_page")}
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                      <path d="M15 6l-6 6 6 6"/>
+                    </svg>
+                  </button>
+                  <span className="pager-indicator">
+                    {t("page_of", { n: fmt(pageIdx + 1), total: fmt(pageCount) })}
+                  </span>
+                  <button
+                    type="button"
+                    className="pager-btn"
+                    disabled={pageIdx >= pageCount - 1}
+                    onClick={() => setPageIdx((p) => Math.min(pageCount - 1, p + 1))}
+                    aria-label={t("next_page")}
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                      <path d="M9 6l6 6-6 6"/>
+                    </svg>
+                  </button>
                 </div>
               )}
-              <div className="mushaf-inner arabic" dir="rtl">
-                {ayat.map((a, i) => (
-                  <Fragment key={a.ayahKey}>
-                    <span
-                      id={`ayah-${a.verseNumber}`}
-                      className={
-                        "ayah-span" +
-                        (activeAyah === a.verseNumber ? " active" : "") +
-                        (playingVerseNumber === a.verseNumber ? " playing" : "")
-                      }
-                      data-ayah={a.verseNumber}
-                      onClick={(e) => openPopover(e, a.verseNumber)}
-                    >
-                      {a.textUthmani}
-                    </span>
-                    <span className="ayah-mark" aria-hidden="true">
-                      ﴿{toArabicNum(a.verseNumber)}﴾
-                    </span>
-                    {i < ayat.length - 1 && " "}
-                  </Fragment>
-                ))}
-              </div>
-            </div>
+            </>
           )}
         </main>
 
@@ -784,6 +854,28 @@ function MushafReaderInner(props: MushafReaderProps) {
               {showTranslations ? t("trans_on") : t("trans_off")}
             </span>
           </button>
+          {!showTranslations && (
+            <button
+              type="button"
+              className={"mode-toggle" + (pageMode ? " on" : "")}
+              onClick={() => { setPageMode((v) => !v); setPageIdx(0); }}
+              aria-pressed={pageMode}
+              style={{ marginBottom: 14 }}
+            >
+              {pageMode ? (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M2 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H2z"/><path d="M22 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8z"/>
+                </svg>
+              ) : (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M4 7h16M4 12h16M4 17h10"/>
+                </svg>
+              )}
+              <span className="trans-toggle-label">
+                {pageMode ? t("mode_pages") : t("mode_continuous")}
+              </span>
+            </button>
+          )}
           {showTranslations && TRANSLATIONS.map((tr) => (
             <button
               key={tr.key}

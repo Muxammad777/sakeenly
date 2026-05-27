@@ -15,7 +15,6 @@ export function Header() {
     { href: "/ask",        key: "ask" as const },
     { href: "/ayat",       key: "ayat" as const },
     { href: "/kids",       key: "kids" as const },
-    { href: "/pricing",    key: "pricing" as const },
   ];
 
   return (

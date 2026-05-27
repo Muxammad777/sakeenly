@@ -7,7 +7,6 @@ import { getCurrentUser } from "@/lib/auth-helpers";
 import { db } from "@/lib/db";
 import { getQuota } from "@/lib/ai/rate-limit";
 import { SignOutButton } from "@/components/profile/SignOutButton";
-import { ManageBillingButton } from "@/components/pricing/ManageBillingButton";
 import type { Locale } from "@/i18n/routing";
 
 interface PageProps {
@@ -139,24 +138,6 @@ function Content({
             <path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16l7-3 7 3z" />
           </svg>
         </div>
-      </div>
-
-      {/* SUBSCRIPTION */}
-      <div className="subscription-card">
-        <div className="geo-stars-soft"></div>
-        <div>
-          <span className="eyebrow" style={{ color: "var(--accent)" }}>{t("sub_eyebrow")}</span>
-          <div className="sub-plan">{plan === "free" ? t("sub_plan") : plan}</div>
-          <div className="sub-meta">{t("sub_meta")}</div>
-        </div>
-        {plan === "free" ? (
-          <Link className="btn btn-primary" href="/pricing">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 L14.2 9.8 L22 12 L14.2 14.2 L12 22 L9.8 14.2 L2 12 L9.8 9.8 Z" /></svg>
-            <span>{t("sub_cta")}</span>
-          </Link>
-        ) : subscription?.stripeCustomerId ? (
-          <ManageBillingButton />
-        ) : null}
       </div>
 
       {/* SETTINGS */}

@@ -70,7 +70,6 @@
     "sugg2": "Tell me about the Prophet Yusuf ﷺ.",
     "sugg3": "How important is intention (niyyah)?",
     "sugg4": "What does \"sabr\" mean, and where does the Quran speak of it?",
-    "upgrade": "Remove the limit → Premium",
     "quota_live": "Free · {used} / {limit} questions today",
     "searching": "Searching the Qur'an…",
     "error_prefix": "Error"
@@ -211,7 +210,6 @@
   "close": {
     "cite": "Surah Al-Fath · 48:4",
     "cta1": "Begin with Al-Fatihah",
-    "cta2": "See plans",
     "eyebrow": "Every day · with you",
     "line1": "\"…and He sent down sakina",
     "line2": "into the hearts of the believers.\""
@@ -420,10 +418,6 @@
     "streak_progress": "{done} of {total} letters learned",
     "streak_days_lbl": "Streak · in a row",
     "streak_days_title": "{n} days with the Book",
-    "parent_eyebrow": "For parents",
-    "parent_h": "Family plan — up to 6 accounts, a parents' dashboard, and a shared bookmarks shelf.",
-    "parent_p": "You see your child's streak, the letters they've learned, the surahs they're working on. Without surveillance.",
-    "parent_btn": "Family plan",
     "surah1_ru": "Al-Fatihah",
     "surah1_meta": "THE OPENING · 0:18",
     "surah112_ru": "Al-Ikhlas",
@@ -552,7 +546,6 @@
     "ayat": "Ayat",
     "kids": "Kids",
     "listen": "Listen",
-    "pricing": "Pricing",
     "read": "Read",
     "signin": "Sign in",
     "start": "Get started",
@@ -600,10 +593,6 @@
     "stat_bookmarks_d": "ayat saved · 12 with notes",
     "stat_streak": "Streak",
     "stat_streak_d": "consecutive days of reading · 21 best",
-    "sub_cta": "Remove the limit · Premium",
-    "sub_eyebrow": "Subscription",
-    "sub_meta": "2 / 5 AI questions today · resets at 00:00 UTC",
-    "sub_plan": "Free",
     "t": {
       "abu": "Abu Adel",
       "awqaf": "Egyptian Ministry of Awqaf",
@@ -617,109 +606,6 @@
       "mushaf": "Mushaf",
       "sepia": "Sepia"
     }
-  },
-  "pr": {
-    "badge": "Free — forever. Premium — by choice.",
-    "cmp": {
-      "col1": "Feature",
-      "col2": "Free",
-      "col3": "Premium",
-      "col4": "Family",
-      "h_sub": "If you want the details.",
-      "h_title": "What's where",
-      "row": {
-        "114": "114 surahs · 5 translations",
-        "30q": "30 reciters · audio per ayah",
-        "6acc": "Up to 6 accounts",
-        "aiq": "Questions with citations from Quran/hadith",
-        "dash": "Parents' dashboard",
-        "kids": "Kids mode · Iqra · first surahs",
-        "lds": "Light · Dark · Sepia",
-        "mushaf": "Mushaf-paper theme",
-        "off": "Offline mode",
-        "sleep": "Sleep timer · 0.5×–2× speed",
-        "tafsir": "Extended tafsir"
-      },
-      "s1": "Reading and audio",
-      "s2": "AI companion",
-      "s3": "Themes and interface",
-      "s4": "Family and kids"
-    },
-    "faq": {
-      "a1": "Yes. All 114 surahs, 5 translations, 30 reciters, bookmarks and notes — free on the Free plan forever. The Book should not be paid. Only the tooling becomes paid: unlimited AI companion, extended tafsir, offline mode, kids mode.",
-      "a2": "Crypto payments raise more questions than they answer in this category. Sakeenly works only with transparent methods: Stripe (Visa/Mastercard/MIR via Russian resellers), Apple Pay, Google Pay.",
-      "a3": "You get 5 questions every 24 hours in /ask. The limit resets at midnight in your time zone. Reading, audio and bookmarks are never limited.",
-      "a4": "Sakeenly's AI does not answer fatwa-grade questions (marriage, divorce, inheritance, medicine, politics, business). Instead we route to scholars: SeekersGuidance, Yaqeen Institute, AMJA. This is intentional, not a bug.",
-      "a5": "Gift subscriptions arrive within three months of launch. Need one right now — email hello@sakeenly.com and we'll set it up by hand.",
-      "a6": "Email hello@sakeenly.com — we open Premium free of charge for students, imams, and anyone in difficulty. We refresh access once a year. No questions asked.",
-      "h": "Frequently asked",
-      "q1": "Is the whole Quran really free?",
-      "q2": "Why no crypto payments?",
-      "q3": "What does \"5 AI questions a day\" on Free actually mean?",
-      "q4": "What about fatwa questions?",
-      "q5": "Can I gift a subscription?",
-      "q6": "What if I can't afford Premium?"
-    },
-    "h1": "Reading must be free.",
-    "h2": "Depth — by choice.",
-    "lede": "The Free plan gives you everything you need for daily reading. Premium unlocks unlimited AI questions and themes. Family — up to six people in one household. No ads. Never.",
-    "month": "Monthly",
-    "p1": {
-      "cta": "Already on it",
-      "f1": "All 114 surahs · 5 translations · KFGQPC Hafs",
-      "f2": "30 reciters · audio for every ayah",
-      "f3": "Bookmarks and notes · no limit",
-      "f4": "AI questions · 5 a day",
-      "f5": "Light, Dark, Sepia themes",
-      "f6": "Mushaf-paper theme",
-      "f7": "Unlimited AI questions",
-      "hint": "No card. No expiry.",
-      "lbl": "Included",
-      "name": "Free",
-      "per": "/ forever",
-      "sub": "Everything you need for daily reading. No limit on the Quran itself."
-    },
-    "p2": {
-      "cta": "Get Premium",
-      "f1": "Unlimited AI questions · with RAG and citations",
-      "f2": "Every theme, including Mushaf-paper",
-      "f3": "Extended tafsir (Ibn Kathir, al-Qurtubi)",
-      "f4": "Offline mode: 10 surahs",
-      "f5": "Sleep timer, 0.5×–2× speed",
-      "f6": "Priority support",
-      "hint": "$59.88 a year on the monthly plan",
-      "lbl": "Everything in Free, plus",
-      "per": "/ mo",
-      "sub": "For those who read daily and ask the Book questions."
-    },
-    "p3": {
-      "cta": "Get Family",
-      "f1": "Up to 6 accounts per family",
-      "f2": "Kids mode: Iqra, first surahs, prophet stories",
-      "f3": "Parents' dashboard · your child's streak",
-      "f4": "Shared bookmarks shelf",
-      "f5": "Offline mode: the whole Book",
-      "hint": "One account — six people",
-      "lbl": "Everything in Premium, plus",
-      "name": "Family",
-      "per": "/ mo",
-      "sub": "Up to six people, a shared bookmarks library, and kids mode."
-    },
-    "per_day": "per day",
-    "popular": "POPULAR",
-    "trust1": {
-      "p": "Sakeenly does not sell your attention. We do not work with ad networks. No Google Ads, no Facebook, no AdSense.",
-      "t": "0 ads, ever"
-    },
-    "trust2": {
-      "p": "Encryption at rest. Full export on request. Deleting your account cascades through all data.",
-      "t": "Bookmarks are encrypted"
-    },
-    "trust3": {
-      "p": "From your Profile. Your subscription stays active until the end of the paid period — no surprises.",
-      "t": "Cancel in one click"
-    },
-    "year": "Yearly"
   },
   "priv": {
     "h1": "Privacy as a ritual.",
@@ -825,7 +711,12 @@
     "pop_next": "Next",
     "audio_player": "Audio player",
     "close_btn": "Close",
-    "metadata_desc_suffix": " — reading, translation, audio"
+    "metadata_desc_suffix": " — reading, translation, audio",
+    "mode_continuous": "Scroll",
+    "mode_pages": "Pages",
+    "page_of": "Page {n} / {total}",
+    "prev_page": "Previous page",
+    "next_page": "Next page"
   },
   "sb": {
     "apply_btn": "Write to us",
@@ -1037,7 +928,6 @@
     "cta_h": "Save these ayat to your library.",
     "cta_body": "One tap — and your bookmarks sync across every device.",
     "cta_btn_primary": "Open in Sakeenly",
-    "cta_btn_ghost": "What's inside",
     "all_emotions_h": "Other collections",
     "ayah_n": "Ayah #{n}",
     "action_listen": "Listen",

@@ -31,7 +31,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/kids/alphabet",   freq: "monthly", priority: 0.6 },
     { path: "/kids/surahs",     freq: "monthly", priority: 0.6 },
     { path: "/kids/stories",    freq: "monthly", priority: 0.6 },
-    { path: "/pricing",         freq: "monthly", priority: 0.7 },
     { path: "/about",           freq: "yearly",  priority: 0.5 },
     { path: "/privacy",         freq: "yearly",  priority: 0.4 },
   ];

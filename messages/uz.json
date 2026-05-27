@@ -70,7 +70,6 @@
     "sugg2": "Yusuf paygʻambar haqida hikoya qil.",
     "sugg3": "Niyatning ahamiyati qanday?",
     "sugg4": "«Sabr» nima maʼno beradi va Qurʼonda qayerda?",
-    "upgrade": "Limitni olib tashlash → Premium",
     "quota_live": "Free · {used} / {limit} savol bugun",
     "searching": "Qur'ondan qidiryapman…",
     "error_prefix": "Xatolik"
@@ -211,7 +210,6 @@
   "close": {
     "cite": "«Fath» surasi · 48:4",
     "cta1": "Fotihadan boshlash",
-    "cta2": "Tariflarni koʻrish",
     "eyebrow": "Har kuni · siz bilan",
     "line1": "«…va sakinani nozil qildi",
     "line2": "moʻminlar qalbiga.»"
@@ -420,10 +418,6 @@
     "streak_progress": "{done} ta {total} harfdan oʻrganildi",
     "streak_days_lbl": "Ketma-ketlik",
     "streak_days_title": "{n} kun Kitob bilan",
-    "parent_eyebrow": "Ota-onalarga",
-    "parent_h": "Oilaviy reja — 6 ta hisobgacha, ota-onalar uchun boshqaruv paneli va umumiy xatchoʻp javoni.",
-    "parent_p": "Siz farzandning qaysi harflarni oʻrganganini, qaysi suralarni yodlaganini koʻrasiz.",
-    "parent_btn": "Oilaviy reja",
     "surah1_ru": "Fotiha",
     "surah1_meta": "OCHILISH · 0:18",
     "surah112_ru": "Ixlos",
@@ -552,7 +546,6 @@
     "ayat": "Oyatlar",
     "kids": "Bolalar",
     "listen": "Tinglash",
-    "pricing": "Tariflar",
     "read": "Oʻqish",
     "signin": "Kirish",
     "start": "Boshlash",
@@ -600,10 +593,6 @@
     "stat_bookmarks_d": "oyat saqlangan · 12 ta eslatma bilan",
     "stat_streak": "Streak",
     "stat_streak_d": "uzluksiz oʻqish kunlari · 21 — eng yaxshi",
-    "sub_cta": "Limitni olib tashlash · Premium",
-    "sub_eyebrow": "Obuna",
-    "sub_meta": "2 / 5 savol bugun · 00:00 UTC da reset",
-    "sub_plan": "Free",
     "t": {
       "abu": "Abu Adel",
       "awqaf": "Misr Avqof vazirligi",
@@ -617,109 +606,6 @@
       "mushaf": "Mushaf",
       "sepia": "Sepiya"
     }
-  },
-  "pr": {
-    "badge": "Bepul — abadiy. Premium — ixtiyoriy.",
-    "cmp": {
-      "col1": "Imkoniyat",
-      "col2": "Bepul",
-      "col3": "Premium",
-      "col4": "Oila",
-      "h_sub": "Agar batafsil xohlasangiz.",
-      "h_title": "Nima qayerda",
-      "row": {
-        "114": "114 sura · 5 tarjima",
-        "30q": "30 qori · oyatga audio",
-        "6acc": "6 ta akkauntgacha",
-        "aiq": "Qurʼon/hadis iqtiboslari bilan savollar",
-        "dash": "Ota-ona dashboard",
-        "kids": "Bolalar rejimi · Iqra · birinchi suralar",
-        "lds": "Light · Dark · Sepia",
-        "mushaf": "Mushaf-paper mavzu",
-        "off": "Oflayn rejim",
-        "sleep": "Uxlash taymeri · tezlik 0.5×–2×",
-        "tafsir": "Kengaytirilgan tafsirlar"
-      },
-      "s1": "Oʻqish va audio",
-      "s2": "AI yordamchi",
-      "s3": "Mavzular va interfeys",
-      "s4": "Oila va bolalar"
-    },
-    "faq": {
-      "a1": "Ha. Barcha 114 sura, 5 tarjima, 30 qori, xatchoʻp va eslatma — bepul rejada abadiy. Kitob pullik boʻlmasligi kerak. Faqat asboblar pullik: cheksiz AI, kengaytirilgan tafsirlar, oflayn, bolalar rejimi.",
-      "a2": "Kripto toʻlovlar bu bozorda koʻp savollar tugʻdiradi. Sakeenly faqat shaffof usullar bilan ishlaydi: Stripe, Apple Pay, Google Pay.",
-      "a3": "Har 24 soatda /ask da 5 ta savol mavjud. Limit yarim tunda yangilanadi.",
-      "a4": "AI yordamchi fatvo savollariga javob bermaydi. Ulamolarga yoʻnaltiramiz: SeekersGuidance, Yaqeen Institute, AMJA.",
-      "a5": "Sovgʻa obunalari uch oy ichida paydo boʻladi. Hozir kerak boʻlsa — yozing.",
-      "a6": "hello@sakeenly.com ga yozing — Premium talabalar, imomlar, ehtiyojmandlar uchun bepul.",
-      "h": "Tez-tez beriladigan savollar",
-      "q1": "Haqiqatan ham butun Qurʼon bepulmi?",
-      "q2": "Nima uchun toʻlovlarda kripto yoʻq?",
-      "q3": "Bepul rejadagi «kuniga 5 ta AI savol» nimani anglatadi?",
-      "q4": "Fatvo savollari haqida nima?",
-      "q5": "Obunani sovgʻa qilish mumkinmi?",
-      "q6": "Premiumni sotib ololmasam-chi?"
-    },
-    "h1": "Oʻqish bepul boʻlishi kerak.",
-    "h2": "Chuqurlik — ixtiyoriy.",
-    "lede": "Bepul reja kunlik oʻqish uchun barchasini beradi. Premium cheksiz AI savollar va mavzularni ochadi. Family — bitta oilada olti kishigacha. Reklamasiz. Hech qachon.",
-    "month": "Oylik",
-    "p1": {
-      "cta": "Allaqachon ulanган",
-      "f1": "Barcha 114 sura · 5 tarjima · KFGQPC Hafs",
-      "f2": "30 qori · har oyatga audio",
-      "f3": "Xatchoʻp va eslatma · cheklovsiz",
-      "f4": "AI savollar · kuniga 5 ta",
-      "f5": "Light, Dark, Sepia mavzulari",
-      "f6": "Mushaf-paper mavzu",
-      "f7": "Cheksiz AI savollar",
-      "hint": "Kartasiz. Muddatsiz.",
-      "lbl": "Kiritilgan",
-      "name": "Bepul",
-      "per": "/ abadiy",
-      "sub": "Kunlik oʻqish uchun kerakli hamma narsa. Qurʼonning oʻziga hech qanday cheklov yoʻq."
-    },
-    "p2": {
-      "cta": "Premiumga ulanish",
-      "f1": "Cheksiz AI savollar · RAG va iqtiboslar bilan",
-      "f2": "Barcha mavzu, jumladan Mushaf-paper",
-      "f3": "Kengaytirilgan tafsirlar (Ibn Kasir, Qurtubiy)",
-      "f4": "Oflayn rejim: 10 sura",
-      "f5": "Uxlash taymeri, tezlik 0.5×–2×",
-      "f6": "Ustuvor qoʻllab-quvvatlash",
-      "hint": "Oylik toʻlovda yiliga $59.88",
-      "lbl": "Bepuldan hammasi, qoʻshimcha",
-      "per": "/ oyiga",
-      "sub": "Har kuni oʻqib, Kitobga savol beradiganlar uchun."
-    },
-    "p3": {
-      "cta": "Oilaga ulanish",
-      "f1": "Oilada 6 ta akkauntgacha",
-      "f2": "Bolalar rejimi: Iqra, birinchi suralar, paygʻambarlar hikoyalari",
-      "f3": "Ota-ona dashboard · bolaning streak",
-      "f4": "Umumiy xatchoʻp javoni",
-      "f5": "Oflayn rejim: butun Kitob",
-      "hint": "Bitta akkaunt — olti kishi",
-      "lbl": "Premiumdan hammasi, qoʻshimcha",
-      "name": "Oila",
-      "per": "/ oyiga",
-      "sub": "Olti kishigacha, umumiy xatchoʻp kutubxonasi va bolalar rejimi."
-    },
-    "per_day": "kuniga",
-    "popular": "OMMABOP",
-    "trust1": {
-      "p": "Sakeenly diqqatingizni sotmaydi. Reklama tarmoqlari bilan ishlamaymiz.",
-      "t": "0 reklama, hech qachon"
-    },
-    "trust2": {
-      "p": "At-rest shifrlash. Toʻliq eksport.",
-      "t": "Xatchoʻplar shifrlangan"
-    },
-    "trust3": {
-      "p": "Profilda. Obuna toʻlangan davrning oxirigacha faol qoladi.",
-      "t": "Bir tegishda bekor qilish"
-    },
-    "year": "Yillik"
   },
   "priv": {
     "h1": "Maxfiylik marosim sifatida.",
@@ -825,7 +711,12 @@
     "pop_next": "Keyingi",
     "audio_player": "Audio pleyer",
     "close_btn": "Yopish",
-    "metadata_desc_suffix": " — oʻqish, tarjima, audio"
+    "metadata_desc_suffix": " — oʻqish, tarjima, audio",
+    "mode_continuous": "Lenta",
+    "mode_pages": "Sahifa",
+    "page_of": "Sah. {n} / {total}",
+    "prev_page": "Oldingi sahifa",
+    "next_page": "Keyingi sahifa"
   },
   "sb": {
     "apply_btn": "Yozish",
@@ -1037,7 +928,6 @@
     "cta_h": "Ushbu oyatlarni kutubxonangizda saqlang.",
     "cta_body": "Bir teginish — va xatchoʻplaringiz barcha qurilmalaringizda sinxronlanadi.",
     "cta_btn_primary": "Sakeenly’da ochish",
-    "cta_btn_ghost": "Ichida nima bor",
     "all_emotions_h": "Boshqa toʻplamlar",
     "ayah_n": "Oyat #{n}",
     "action_listen": "Tinglash",

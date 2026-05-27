@@ -9,8 +9,11 @@
   .listen-hero p { color: oklch(var(--text-2)); max-width: 56ch; margin: 16px auto 0; }
 
   .filter-bar {
-    display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+    display: flex; flex-direction: column; gap: 14px;
     margin: 32px 0 24px;
+  }
+  .filter-pills {
+    display: flex; gap: 8px; flex-wrap: wrap;
   }
   .filter-pill {
     padding: 8px 14px;
@@ -28,17 +31,18 @@
     border-color: oklch(var(--accent));
   }
   .filter-bar input {
-    flex: 1; min-width: 200px;
-    padding: 10px 14px 10px 38px;
+    width: 100%;
+    padding: 11px 14px 11px 40px;
     background: oklch(var(--surface));
     border: 1px solid oklch(var(--border));
     border-radius: 999px;
     color: oklch(var(--text));
     font-size: 14px; outline: none;
     font-family: inherit;
+    box-sizing: border-box;
   }
   .filter-search {
-    position: relative; flex: 1; min-width: 220px;
+    position: relative; width: 100%;
   }
   .filter-search svg { position: absolute; left: 14px; top: 12px; color: oklch(var(--text-3)); }
 

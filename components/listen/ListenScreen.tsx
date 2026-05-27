@@ -135,6 +135,23 @@ function ListenScreenInner({ chapters }: ListenScreenProps) {
       {/* FILTER */}
       <section className="wrap">
         <div className="filter-bar">
+          <div className="filter-pills">
+            {[
+              { id: "all", label: t("all") },
+              { id: "hafs", label: t("qiraat_hafs") },
+              { id: "warsh", label: t("qiraat_warsh") },
+              { id: "muratt", label: t("style_muratt") },
+              { id: "mujaw", label: t("style_mujaw") },
+            ].map((p) => (
+              <button
+                key={p.id}
+                className={`filter-pill ${filter === p.id ? "active" : ""}`}
+                onClick={() => setFilter(p.id)}
+              >
+                {p.label}
+              </button>
+            ))}
+          </div>
           <div className="filter-search">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
             <input
@@ -143,21 +160,6 @@ function ListenScreenInner({ chapters }: ListenScreenProps) {
               onChange={(e) => setQuery(e.target.value)}
             />
           </div>
-          {[
-            { id: "all", label: t("all") },
-            { id: "hafs", label: t("qiraat_hafs") },
-            { id: "warsh", label: t("qiraat_warsh") },
-            { id: "muratt", label: t("style_muratt") },
-            { id: "mujaw", label: t("style_mujaw") },
-          ].map((p) => (
-            <button
-              key={p.id}
-              className={`filter-pill ${filter === p.id ? "active" : ""}`}
-              onClick={() => setFilter(p.id)}
-            >
-              {p.label}
-            </button>
-          ))}
         </div>
 
         {/* RECITER GRID */}
