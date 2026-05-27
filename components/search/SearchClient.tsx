@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { useRouter, Link } from "@/i18n/navigation";
+import { Link } from "@/i18n/navigation";
 import { toLocaleDigits } from "@/lib/quran/format";
 
 interface SearchResult {
@@ -48,7 +48,6 @@ function highlight(text: string, query: string, isArabic: boolean): string {
 export function SearchClient({ initialQuery }: SearchClientProps) {
   const locale = useLocale();
   const t = useTranslations("sr");
-  const router = useRouter();
   const fmt = (n: number | string) => toLocaleDigits(n, locale);
   const inputRef = useRef<HTMLInputElement | null>(null);
 

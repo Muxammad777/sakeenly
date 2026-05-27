@@ -14,6 +14,15 @@
 // match Arabic only — a future PR can add Sahih International or Khattab.
 
 import type { Locale } from "@/i18n/routing";
+import uthmaniRaw from "@/lib/knowledge/quran/uthmani.json";
+import krachkovskyMap from "@/lib/quran/tanzil/krachkovsky.json";
+import osmanovMap     from "@/lib/quran/tanzil/osmanov.json";
+import porokhovaMap   from "@/lib/quran/tanzil/porokhova.json";
+import ayatiMap       from "@/lib/quran/tanzil/ayati.json";
+import sodikMap       from "@/lib/quran/tanzil/sodik.json";
+import altayMap       from "@/lib/quran/tanzil/altay.json";
+import mokhtasarKyMap from "@/lib/quran/tanzil/mokhtasar-ky.json";
+import fooladvandMap  from "@/lib/quran/tanzil/fooladvand.json";
 
 type VerseEntry = { chapter: number; verse: number; text: string };
 
@@ -24,33 +33,29 @@ interface Corpus {
 
 let _corpus: Corpus | null = null;
 
+function buildMap(data: Record<string, string>): Map<string, string> {
+  const m = new Map<string, string>();
+  for (const k in data) m.set(k, data[k]);
+  return m;
+}
+
 function loadCorpus(): Corpus {
   if (_corpus) return _corpus;
 
-  // Lazy require so the bundle doesn't drag JSON into client code.
-  const uthmaniRaw = require("@/lib/knowledge/quran/uthmani.json") as { quran: VerseEntry[] };
   const arabic = new Map<string, string>();
-  for (const v of uthmaniRaw.quran) {
+  for (const v of (uthmaniRaw as { quran: VerseEntry[] }).quran) {
     arabic.set(`${v.chapter}:${v.verse}`, v.text);
   }
 
   const translations = new Map<string, Map<string, string>>();
-  const trMaps: Array<[string, () => Record<string, string>]> = [
-    ["krachkovsky",  () => require("@/lib/quran/tanzil/krachkovsky.json")],
-    ["osmanov",      () => require("@/lib/quran/tanzil/osmanov.json")],
-    ["porokhova",    () => require("@/lib/quran/tanzil/porokhova.json")],
-    ["ayati",        () => require("@/lib/quran/tanzil/ayati.json")],
-    ["sodik",        () => require("@/lib/quran/tanzil/sodik.json")],
-    ["altay",        () => require("@/lib/quran/tanzil/altay.json")],
-    ["mokhtasar-ky", () => require("@/lib/quran/tanzil/mokhtasar-ky.json")],
-    ["fooladvand",   () => require("@/lib/quran/tanzil/fooladvand.json")],
-  ];
-  for (const [key, load] of trMaps) {
-    const m = new Map<string, string>();
-    const data = load();
-    for (const k in data) m.set(k, data[k]);
-    translations.set(key, m);
-  }
+  translations.set("krachkovsky",  buildMap(krachkovskyMap as Record<string, string>));
+  translations.set("osmanov",      buildMap(osmanovMap     as Record<string, string>));
+  translations.set("porokhova",    buildMap(porokhovaMap   as Record<string, string>));
+  translations.set("ayati",        buildMap(ayatiMap       as Record<string, string>));
+  translations.set("sodik",        buildMap(sodikMap       as Record<string, string>));
+  translations.set("altay",        buildMap(altayMap       as Record<string, string>));
+  translations.set("mokhtasar-ky", buildMap(mokhtasarKyMap as Record<string, string>));
+  translations.set("fooladvand",   buildMap(fooladvandMap  as Record<string, string>));
 
   _corpus = { arabic, translations };
   return _corpus;

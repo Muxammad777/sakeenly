@@ -5,7 +5,6 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { getCurrentUser } from "@/lib/auth-helpers";
 import { db } from "@/lib/db";
-import { getQuota } from "@/lib/ai/rate-limit";
 import { SignOutButton } from "@/components/profile/SignOutButton";
 import type { Locale } from "@/i18n/routing";
 
@@ -27,13 +26,6 @@ interface BookmarkRow {
   createdAt: Date;
 }
 
-interface SubRow {
-  plan: string;
-  isActive: boolean;
-  expiresAt: Date | null;
-  stripeCustomerId: string | null;
-}
-
 interface ProfileUser {
   id: string;
   name: string | null;
@@ -46,29 +38,18 @@ export default async function ProfilePage({ params, searchParams }: PageProps) {
   const user = await getCurrentUser();
   if (!user) redirect(`/${locale}/signin?callbackUrl=/${locale}/profile`);
 
-  const [subscription, bookmarks, quota] = await Promise.all([
-    db.subscription.findUnique({
-      where: { userId: user.id },
-      select: { plan: true, isActive: true, expiresAt: true, stripeCustomerId: true },
-    }),
-    db.bookmark.findMany({
-      where: { userId: user.id },
-      orderBy: { createdAt: "desc" },
-      take: 50,
-      select: { id: true, ayahKey: true, note: true, createdAt: true },
-    }),
-    getQuota(user.id),
-  ]);
+  const bookmarks = await db.bookmark.findMany({
+    where: { userId: user.id },
+    orderBy: { createdAt: "desc" },
+    take: 50,
+    select: { id: true, ayahKey: true, note: true, createdAt: true },
+  });
 
-  const plan = subscription?.isActive ? subscription.plan : "free";
   const sp = await searchParams;
-  void quota;
   return (
     <Content
       user={user as ProfileUser}
-      subscription={subscription as SubRow | null}
       bookmarks={bookmarks as BookmarkRow[]}
-      plan={plan}
       upgraded={sp.upgraded === "1"}
     />
   );
@@ -76,15 +57,11 @@ export default async function ProfilePage({ params, searchParams }: PageProps) {
 
 function Content({
   user,
-  subscription,
   bookmarks,
-  plan,
   upgraded,
 }: {
   user: ProfileUser;
-  subscription: SubRow | null;
   bookmarks: BookmarkRow[];
-  plan: string;
   upgraded: boolean;
 }) {
   const t = useTranslations("pf");
