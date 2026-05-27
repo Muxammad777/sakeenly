@@ -911,4 +911,8 @@
 @media (max-width: 720px) {
   .reader-shell { padding-left: 8px; padding-right: 8px; }
   .ayah-block { padding: 18px 12px 16px; }
+  /* mushaf-mode (translations off): desktop is padding:48px 56px which
+     eats most of a phone's width. Drop side padding to match .ayah-block
+     so the Arabic verse uses the full screen on phones. */
+  .mushaf { padding: 22px 12px; border-radius: 14px; }
 }
