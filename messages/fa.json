@@ -819,7 +819,12 @@
       "label": "ترجمه"
     },
     "pop_pause": "توقف",
-    "play_surah": "پخش سوره"
+    "play_surah": "پخش سوره",
+    "pop_stop": "توقف",
+    "pop_prev": "قبلی",
+    "pop_next": "بعدی",
+    "audio_player": "پخش‌کننده صدا",
+    "close_btn": "بستن"
   },
   "sb": {
     "apply_btn": "نوشتن",

@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import { Pause, Play, X, Loader2, ChevronDown } from "lucide-react";
 import { useAudioPlayer } from "./AudioPlayerProvider";
 import { RECITERS, DEFAULT_RECITER_SLUG } from "@/lib/quran/constants";
 
 export function AudioPlayer() {
+  const t = useTranslations("rd");
   const { current, isPlaying, isLoading, toggle, stop } = useAudioPlayer();
   // Read URL via window.* instead of useSearchParams() — the hook forces
   // every page rendering AudioPlayer (e.g. /listen) to bail out of static
@@ -40,14 +42,14 @@ export function AudioPlayer() {
   return (
     <div
       role="region"
-      aria-label="Audio player"
+      aria-label={t("audio_player")}
       className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-bg-elevated/95 backdrop-blur supports-[backdrop-filter]:bg-bg-elevated/80"
     >
       <div className="mx-auto flex max-w-3xl items-center gap-3 px-4 py-3 sm:px-6">
         <button
           type="button"
           onClick={toggle}
-          aria-label={isPlaying ? "Pause" : "Play"}
+          aria-label={isPlaying ? t("pop_pause") : t("pop_listen")}
           className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-accent text-accent-fg transition-opacity hover:opacity-90"
         >
           {isLoading ? (
@@ -61,7 +63,7 @@ export function AudioPlayer() {
 
         <div className="min-w-0 flex-1">
           <p className="truncate text-sm font-medium text-fg">
-            {current.label ?? `Аят ${current.ayahKey}`}
+            {current.label ?? `${t("ayah")} ${current.ayahKey}`}
           </p>
           {isReader ? (
             // Reciter chip — visible label + chevron. Tapping opens the
@@ -76,7 +78,7 @@ export function AudioPlayer() {
               <select
                 value={currentSlug}
                 onChange={handleReciterChange}
-                aria-label="Чтец"
+                aria-label={t("reciter_h")}
                 className="absolute inset-0 opacity-0 cursor-pointer"
                 style={{ fontSize: 16 /* prevent iOS zoom */ }}
               >
@@ -95,7 +97,7 @@ export function AudioPlayer() {
         <button
           type="button"
           onClick={stop}
-          aria-label="Stop"
+          aria-label={t("pop_stop")}
           className="grid h-9 w-9 shrink-0 place-items-center rounded-full text-fg-muted transition-colors hover:bg-bg hover:text-fg"
         >
           <X className="h-4 w-4" />

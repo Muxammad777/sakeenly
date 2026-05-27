@@ -819,7 +819,12 @@
       "label": "Tarjima"
     },
     "pop_pause": "Pauza",
-    "play_surah": "Surani eshitish"
+    "play_surah": "Surani eshitish",
+    "pop_stop": "Toʼxtatish",
+    "pop_prev": "Oldingi",
+    "pop_next": "Keyingi",
+    "audio_player": "Audio pleyer",
+    "close_btn": "Yopish"
   },
   "sb": {
     "apply_btn": "Yozish",

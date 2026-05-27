@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+import { useTranslations } from "next-intl";
 import { X } from "lucide-react";
 
 interface SideTabProps {
@@ -26,6 +27,7 @@ interface SideTabProps {
  * pickers (trans-bar, AudioPlayer reciter chip) are the desktop UX.
  */
 export function SideTab({ side, label, ariaLabel, children }: SideTabProps) {
+  const t = useTranslations("rd");
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -72,7 +74,7 @@ export function SideTab({ side, label, ariaLabel, children }: SideTabProps) {
               <span className="side-tab-drawer-title">{label}</span>
               <button
                 type="button"
-                aria-label="Закрыть"
+                aria-label={t("close_btn")}
                 onClick={() => setOpen(false)}
                 className="side-tab-drawer-close"
               >

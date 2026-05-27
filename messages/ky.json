@@ -819,7 +819,12 @@
       "label": "Котормо"
     },
     "pop_pause": "Тыныгуу",
-    "play_surah": "Сүрөнү угуу"
+    "play_surah": "Сүрөнү угуу",
+    "pop_stop": "Токтотуу",
+    "pop_prev": "Мурунку",
+    "pop_next": "Кийинки",
+    "audio_player": "Аудиоойноткуч",
+    "close_btn": "Жабуу"
   },
   "sb": {
     "apply_btn": "Жазуу",

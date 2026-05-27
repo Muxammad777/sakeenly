@@ -819,7 +819,12 @@
       "label": "Тарҷума"
     },
     "pop_pause": "Таваққуф",
-    "play_surah": "Пахши сура"
+    "play_surah": "Пахши сура",
+    "pop_stop": "Истодан",
+    "pop_prev": "Қаблӣ",
+    "pop_next": "Баъдӣ",
+    "audio_player": "Плеери овоз",
+    "close_btn": "Бастан"
   },
   "sb": {
     "apply_btn": "Нависед",

@@ -702,7 +702,7 @@ function MushafReaderInner(props: MushafReaderProps) {
                 const i = playableQueue.findIndex((q) => q.ayahKey === player.current!.ayahKey);
                 if (i > 0) player.playQueue(playableQueue, i - 1);
               }}
-              aria-label="Предыдущий"
+              aria-label={t("pop_prev")}
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M19 20 9 12l10-8zM5 4h2v16H5z" />
@@ -715,13 +715,13 @@ function MushafReaderInner(props: MushafReaderProps) {
                 const i = playableQueue.findIndex((q) => q.ayahKey === player.current!.ayahKey);
                 if (i >= 0 && i < playableQueue.length - 1) player.playQueue(playableQueue, i + 1);
               }}
-              aria-label="Следующий"
+              aria-label={t("pop_next")}
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M5 4 15 12 5 20zM17 4h2v16h-2z" />
               </svg>
             </button>
-            <button className="pic-btn" type="button" onClick={() => player.stop()} aria-label="Стоп">
+            <button className="pic-btn" type="button" onClick={() => player.stop()} aria-label={t("pop_stop")}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                 <rect x="5" y="5" width="14" height="14" rx="1" />
               </svg>

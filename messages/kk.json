@@ -819,7 +819,12 @@
       "label": "Аударма"
     },
     "pop_pause": "Кідірту",
-    "play_surah": "Сүрені тыңдау"
+    "play_surah": "Сүрені тыңдау",
+    "pop_stop": "Тоқтату",
+    "pop_prev": "Алдыңғы",
+    "pop_next": "Келесі",
+    "audio_player": "Аудиоойнатқыш",
+    "close_btn": "Жабу"
   },
   "sb": {
     "apply_btn": "Жазу",

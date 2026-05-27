@@ -819,7 +819,12 @@
       "label": "Translation"
     },
     "pop_pause": "Pause",
-    "play_surah": "Play the surah"
+    "play_surah": "Play the surah",
+    "pop_stop": "Stop",
+    "pop_prev": "Previous",
+    "pop_next": "Next",
+    "audio_player": "Audio player",
+    "close_btn": "Close"
   },
   "sb": {
     "apply_btn": "Write to us",
