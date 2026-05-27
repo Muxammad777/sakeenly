@@ -552,7 +552,8 @@
     "profile": "Profile",
     "signout": "Sign out",
     "menu_open": "Open menu",
-    "menu_close": "Close menu"
+    "menu_close": "Close menu",
+    "search": "Search"
   },
   "nf": {
     "btn_home": "Back home",
@@ -973,5 +974,16 @@
     "sepia": "Sepia",
     "mushaf": "Mushaf",
     "dark": "Dark"
+  },
+  "sr": {
+    "eyebrow": "Quran search",
+    "title": "Find an ayah. By meaning or by word.",
+    "lede": "Full-text search over the Arabic Uthmani text. Results show matching verses with highlighted hits and a tap-through to the reader.",
+    "placeholder": "A word, a phrase, or Arabic text…",
+    "submit": "Search",
+    "loading": "Searching…",
+    "hint": "Type at least 2 characters.",
+    "no_results": "Nothing matched “{q}”.",
+    "found_count": "Found {n} matches for {q}"
   }
 }

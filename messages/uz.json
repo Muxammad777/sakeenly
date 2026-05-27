@@ -552,7 +552,8 @@
     "profile": "Profil",
     "signout": "Chiqish",
     "menu_open": "Menyuni ochish",
-    "menu_close": "Menyuni yopish"
+    "menu_close": "Menyuni yopish",
+    "search": "Qidirish"
   },
   "nf": {
     "btn_home": "Bosh sahifaga",
@@ -973,5 +974,16 @@
     "sepia": "Sepiya",
     "mushaf": "Mushaf",
     "dark": "Tun"
+  },
+  "sr": {
+    "eyebrow": "Qurʼondan qidirish",
+    "title": "Oyatni toping. Maʼno yoki soʻz boʻyicha.",
+    "lede": "Arab matni va Shayx Sodiq tarjimasi boʻylab toʻliq matnli qidiruv. Natija — mos oyatlar roʻyxati ajratib koʻrsatish va oʻqishga oʻtish bilan.",
+    "placeholder": "Soʻz, ibora yoki arab matni…",
+    "submit": "Qidirish",
+    "loading": "Qidirilmoqda…",
+    "hint": "Kamida 2 belgi kiriting.",
+    "no_results": "«{q}» uchun hech narsa topilmadi.",
+    "found_count": "{n} natija · {q}"
   }
 }

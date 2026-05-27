@@ -3,6 +3,7 @@ import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { HomeVotd, HomeStreak } from "./HomeClient";
 import { Reveal } from "@/components/Reveal";
+import { SearchClient } from "@/components/search/SearchClient";
 import type { Locale } from "@/i18n/routing";
 
 interface PageProps { params: Promise<{ locale: Locale }>; }
@@ -23,6 +24,7 @@ function HomeContent() {
   const tEmo30 = useTranslations("emo30");
   const tTrust = useTranslations("trust");
   const tClose = useTranslations("close");
+  const tSr = useTranslations("sr");
 
   return (
     <>
@@ -63,6 +65,15 @@ function HomeContent() {
           </div>
         </div>
       </section>
+
+      {/* SEARCH — full-text over Quran, drops users straight into the reader */}
+      <Reveal as="section" className="wrap home-search">
+        <div className="home-search-head">
+          <span className="eyebrow">{tSr("eyebrow")}</span>
+          <h2>{tSr("title")}</h2>
+        </div>
+        <SearchClient initialQuery="" />
+      </Reveal>
 
       {/* VOTD + Streak */}
       <Reveal as="section" className="votd-section">

@@ -1,0 +1,143 @@
+/* Search page — minimal, same palette as other reader-adjacent pages. */
+
+.search-page { padding: 56px 0 80px; }
+@media (max-width: 720px) { .search-page { padding: 28px 0 60px; } }
+
+/* Embedded variant on the home page — sits between hero and VOTD */
+.home-search { padding: 56px 0 32px; }
+@media (max-width: 720px) { .home-search { padding: 28px 0 16px; } }
+.home-search-head {
+  text-align: center;
+  margin-bottom: 22px;
+}
+.home-search-head .eyebrow { color: oklch(var(--accent)); }
+.home-search-head h2 {
+  font-weight: 300;
+  margin-top: 10px;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+}
+
+.search-hero {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.search-hero h1 { font-weight: 300; margin: 14px auto 0; }
+.search-hero p {
+  color: oklch(var(--text-2));
+  max-width: 56ch;
+  margin: 16px auto 0;
+  line-height: 1.6;
+}
+
+.search-shell { max-width: 760px; margin: 0 auto; }
+
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 6px 6px 18px;
+  background: oklch(var(--surface));
+  border: 1px solid oklch(var(--border));
+  border-radius: 999px;
+  margin-bottom: 24px;
+  transition: border-color 140ms;
+}
+.search-form:focus-within {
+  border-color: color-mix(in oklab, oklch(var(--accent)) 60%, oklch(var(--border)));
+}
+.search-form > svg { color: oklch(var(--text-3)); shrink: 0; flex: 0 0 auto; }
+.search-form input {
+  flex: 1;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: oklch(var(--text));
+  font-size: 15px;
+  font-family: inherit;
+  padding: 12px 4px;
+}
+.search-form input::placeholder { color: oklch(var(--text-3)); }
+.search-submit {
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: oklch(var(--accent));
+  color: oklch(0.15 0.02 60);
+  border: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 140ms;
+}
+.search-submit:disabled { opacity: 0.4; cursor: not-allowed; }
+.search-submit:hover:not(:disabled) { opacity: 0.92; }
+
+.search-status {
+  text-align: center;
+  color: oklch(var(--text-2));
+  padding: 28px 0;
+  font-size: 14px;
+}
+.search-status-error { color: oklch(0.65 0.18 30); }
+
+.search-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: oklch(var(--text-3));
+  margin: 0 4px 14px;
+}
+
+.search-results {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.search-result-link {
+  display: block;
+  padding: 18px 20px;
+  background: oklch(var(--surface));
+  border: 1px solid oklch(var(--border));
+  border-radius: 16px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 160ms, transform 160ms, background 160ms;
+}
+.search-result-link:hover {
+  border-color: color-mix(in oklab, oklch(var(--accent)) 50%, oklch(var(--border)));
+  background: color-mix(in oklab, oklch(var(--surface)) 90%, oklch(var(--accent)) 10%);
+  transform: translateY(-1px);
+}
+.search-result-key {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: oklch(var(--accent));
+  margin-bottom: 10px;
+}
+.search-result-arabic {
+  font-family: 'Scheherazade New', 'Amiri', serif;
+  font-size: clamp(1.4rem, 2.4vw, 1.8rem);
+  line-height: 2;
+  color: oklch(var(--text));
+  margin-bottom: 10px;
+  text-align: right;
+}
+.search-result-trans {
+  font-family: 'Spectral', Georgia, serif;
+  color: oklch(var(--text-2));
+  font-size: 15px;
+  line-height: 1.65;
+}
+.search-result mark {
+  background: var(--accent-soft);
+  color: oklch(var(--accent));
+  padding: 0 3px;
+  border-radius: 4px;
+  font-weight: 600;
+}
