@@ -984,6 +984,12 @@
     "loading": "Ізделуде…",
     "hint": "Кемінде 2 таңба енгізіңіз.",
     "no_results": "«{q}» бойынша ештеңе табылмады.",
-    "found_count": "Табылды: {n} · {q}"
+    "found_count": "Табылды: {n} · {q}",
+    "filter_all": "Барлығы",
+    "filter_short": "Қысқа сүрелер",
+    "filter_short_hint": "30 аятқа дейінгі сүрелер",
+    "filter_empty": "Бұл сүзгімен ештеңе табылмады.",
+    "filtered_count": "{n} / {total} · {q}",
+    "filters_aria": "Нәтиже сүзгілері"
   }
 }

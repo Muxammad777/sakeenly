@@ -81,6 +81,101 @@
 }
 .search-status-error { color: oklch(0.65 0.18 30); }
 
+/* ---- FILTERS ---- */
+.search-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 6px 0 18px;
+}
+.search-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: oklch(var(--surface));
+  border: 1px solid oklch(var(--border));
+  color: oklch(var(--text-2));
+  cursor: pointer;
+  font-family: 'Spectral', serif;
+  font-size: 13.5px;
+  transition: border-color 140ms, color 140ms, background 140ms;
+}
+.search-chip:hover {
+  border-color: color-mix(in oklab, oklch(var(--accent)) 40%, oklch(var(--border)));
+  color: oklch(var(--text));
+}
+.search-chip.active {
+  background: var(--accent-soft);
+  border-color: color-mix(in oklab, oklch(var(--accent)) 60%, oklch(var(--border)));
+  color: oklch(var(--accent));
+}
+.search-chip-n {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: oklch(var(--text-3));
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: color-mix(in oklab, oklch(var(--surface)) 70%, transparent);
+}
+.search-chip.active .search-chip-n { color: oklch(var(--accent)); }
+.search-chip-toggle {
+  margin-left: auto;
+  font-style: italic;
+}
+@media (max-width: 520px) {
+  .search-chip-toggle { margin-left: 0; }
+}
+
+/* ---- GROUPS ---- */
+.search-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.search-group { display: flex; flex-direction: column; gap: 10px; }
+.search-group-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 0 4px 4px;
+  border-bottom: 1px dashed oklch(var(--border));
+}
+.search-group-title {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  text-decoration: none;
+  color: oklch(var(--text));
+  font-family: 'Spectral', serif;
+  font-size: 17px;
+  transition: color 140ms;
+}
+.search-group-title:hover { color: oklch(var(--accent)); }
+.search-group-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: oklch(var(--accent));
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+}
+.search-group-ar {
+  font-family: 'Scheherazade New', 'Amiri', serif;
+  font-size: 18px;
+  color: oklch(var(--text-3));
+}
+.search-group-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: oklch(var(--text-3));
+}
+
 .search-meta {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;

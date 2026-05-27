@@ -984,6 +984,12 @@
     "loading": "Qidirilmoqda…",
     "hint": "Kamida 2 belgi kiriting.",
     "no_results": "«{q}» uchun hech narsa topilmadi.",
-    "found_count": "{n} natija · {q}"
+    "found_count": "{n} natija · {q}",
+    "filter_all": "Hammasi",
+    "filter_short": "Qisqa suralar",
+    "filter_short_hint": "30 oyatgacha bo'lgan suralar",
+    "filter_empty": "Bu filtr ostida hech narsa yo'q.",
+    "filtered_count": "{n}/{total} · {q}",
+    "filters_aria": "Natija filtrlari"
   }
 }

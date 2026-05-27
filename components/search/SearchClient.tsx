@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { toLocaleDigits } from "@/lib/quran/format";
+import { isShortSurah, getNameArabic } from "@/lib/quran/chapter-meta";
 
 interface SearchResult {
   verseKey: string;
@@ -46,6 +47,7 @@ function highlight(text: string, query: string, isArabic: boolean): string {
 export function SearchClient({ initialQuery }: SearchClientProps) {
   const locale = useLocale();
   const t = useTranslations("sr");
+  const tSn = useTranslations("sn");
   const fmt = (n: number | string) => toLocaleDigits(n, locale);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
@@ -55,7 +57,10 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Run a fetch when committedQuery changes (on submit + on initial load).
+  // Client-side filters applied on top of the API response.
+  const [surahFilter, setSurahFilter] = useState<number | "all">("all");
+  const [shortOnly, setShortOnly] = useState(false);
+
   useEffect(() => {
     const q = committedQuery.trim();
     if (q.length < 2) {
@@ -65,6 +70,8 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
     let cancelled = false;
     setLoading(true);
     setError(null);
+    setSurahFilter("all");
+    setShortOnly(false);
     fetch(`/api/search?q=${encodeURIComponent(q)}&locale=${locale}`)
       .then((r) => r.json() as Promise<ApiResponse>)
       .then((data) => {
@@ -79,7 +86,6 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
     return () => { cancelled = true; };
   }, [committedQuery, locale]);
 
-  // Sync URL ?q= when committed query changes (without full reload).
   useEffect(() => {
     const url = new URL(window.location.href);
     if (committedQuery.trim()) url.searchParams.set("q", committedQuery.trim());
@@ -87,8 +93,37 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
     window.history.replaceState(null, "", url.toString());
   }, [committedQuery]);
 
-  // Focus the input on mount.
   useEffect(() => { inputRef.current?.focus(); }, []);
+
+  // Bucket results per surah and keep insertion order (= original
+  // verse order from the API, which sorts by surah:ayah).
+  const grouped = useMemo(() => {
+    const map = new Map<number, SearchResult[]>();
+    for (const r of results ?? []) {
+      let bucket = map.get(r.surah);
+      if (!bucket) { bucket = []; map.set(r.surah, bucket); }
+      bucket.push(r);
+    }
+    return map;
+  }, [results]);
+
+  // Active filter set after surah + short-only checks.
+  const visibleGrouped = useMemo(() => {
+    if (!results) return new Map<number, SearchResult[]>();
+    const out = new Map<number, SearchResult[]>();
+    for (const [surahId, items] of grouped) {
+      if (surahFilter !== "all" && surahFilter !== surahId) continue;
+      if (shortOnly && !isShortSurah(surahId)) continue;
+      out.set(surahId, items);
+    }
+    return out;
+  }, [grouped, surahFilter, shortOnly]);
+
+  const visibleCount = useMemo(() => {
+    let n = 0;
+    for (const items of visibleGrouped.values()) n += items.length;
+    return n;
+  }, [visibleGrouped]);
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -125,31 +160,81 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
 
       {results && results.length > 0 && (
         <>
-          <div className="search-meta">
-            {t("found_count", { n: fmt(results.length), q: committedQuery })}
-          </div>
-          <ol className="search-results">
-            {results.map((r) => (
-              <li key={r.verseKey} className="search-result">
-                <Link href={`/reader/${r.surah}/${r.ayah}`} className="search-result-link">
-                  <div className="search-result-key">
-                    {fmt(r.surah)}:{fmt(r.ayah)}
-                  </div>
-                  <div
-                    className="search-result-arabic arabic"
-                    dir="rtl"
-                    dangerouslySetInnerHTML={{ __html: highlight(r.arabic, committedQuery, true) }}
-                  />
-                  {r.translation && (
-                    <div
-                      className="search-result-trans"
-                      dangerouslySetInnerHTML={{ __html: highlight(r.translation, committedQuery, isArabicQuery) }}
-                    />
-                  )}
-                </Link>
-              </li>
+          {/* FILTERS — surah chips with per-surah counts, plus short-only toggle */}
+          <div className="search-filters" role="toolbar" aria-label={t("filters_aria")}>
+            <button
+              type="button"
+              className={"search-chip" + (surahFilter === "all" ? " active" : "")}
+              onClick={() => setSurahFilter("all")}
+            >
+              {t("filter_all")} <span className="search-chip-n">{fmt(results.length)}</span>
+            </button>
+            {Array.from(grouped.entries()).map(([surahId, items]) => (
+              <button
+                key={surahId}
+                type="button"
+                className={"search-chip" + (surahFilter === surahId ? " active" : "")}
+                onClick={() => setSurahFilter((cur) => cur === surahId ? "all" : surahId)}
+              >
+                {tSn(String(surahId))} <span className="search-chip-n">{fmt(items.length)}</span>
+              </button>
             ))}
-          </ol>
+            <button
+              type="button"
+              className={"search-chip search-chip-toggle" + (shortOnly ? " active" : "")}
+              onClick={() => setShortOnly((v) => !v)}
+              title={t("filter_short_hint")}
+            >
+              {t("filter_short")}
+            </button>
+          </div>
+
+          <div className="search-meta">
+            {visibleCount === results.length
+              ? t("found_count", { n: fmt(results.length), q: committedQuery })
+              : t("filtered_count", { n: fmt(visibleCount), total: fmt(results.length), q: committedQuery })}
+          </div>
+
+          {visibleCount === 0 ? (
+            <div className="search-status">{t("filter_empty")}</div>
+          ) : (
+            <div className="search-groups">
+              {Array.from(visibleGrouped.entries()).map(([surahId, items]) => (
+                <section key={surahId} className="search-group">
+                  <header className="search-group-head">
+                    <Link href={`/reader/${surahId}/1`} className="search-group-title">
+                      <span className="search-group-num">{fmt(surahId)}</span>
+                      <span>{tSn(String(surahId))}</span>
+                      <span className="search-group-ar arabic" dir="rtl">{getNameArabic(surahId)}</span>
+                    </Link>
+                    <span className="search-group-count">{fmt(items.length)}</span>
+                  </header>
+                  <ol className="search-results">
+                    {items.map((r) => (
+                      <li key={r.verseKey} className="search-result">
+                        <Link href={`/reader/${r.surah}/${r.ayah}`} className="search-result-link">
+                          <div className="search-result-key">
+                            {fmt(r.surah)}:{fmt(r.ayah)}
+                          </div>
+                          <div
+                            className="search-result-arabic arabic"
+                            dir="rtl"
+                            dangerouslySetInnerHTML={{ __html: highlight(r.arabic, committedQuery, true) }}
+                          />
+                          {r.translation && (
+                            <div
+                              className="search-result-trans"
+                              dangerouslySetInnerHTML={{ __html: highlight(r.translation, committedQuery, isArabicQuery) }}
+                            />
+                          )}
+                        </Link>
+                      </li>
+                    ))}
+                  </ol>
+                </section>
+              ))}
+            </div>
+          )}
         </>
       )}
     </div>

@@ -984,6 +984,12 @@
     "loading": "Searching…",
     "hint": "Type at least 2 characters.",
     "no_results": "Nothing matched “{q}”.",
-    "found_count": "Found {n} matches for {q}"
+    "found_count": "Found {n} matches for {q}",
+    "filter_all": "All",
+    "filter_short": "Short surahs",
+    "filter_short_hint": "Surahs with ≤30 verses",
+    "filter_empty": "No matches under this filter.",
+    "filtered_count": "Showing {n} of {total} · {q}",
+    "filters_aria": "Result filters"
   }
 }

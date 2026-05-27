@@ -984,6 +984,12 @@
     "loading": "Изделүүдө…",
     "hint": "Кеминде 2 белги киргизиңиз.",
     "no_results": "«{q}» боюнча эч нерсе табылган жок.",
-    "found_count": "Табылды: {n} · {q}"
+    "found_count": "Табылды: {n} · {q}",
+    "filter_all": "Баары",
+    "filter_short": "Кыска сүрөлөр",
+    "filter_short_hint": "30 аятка чейинки сүрөлөр",
+    "filter_empty": "Бул чыпка боюнча эч нерсе жок.",
+    "filtered_count": "{n} / {total} · {q}",
+    "filters_aria": "Натыйжа чыпкалары"
   }
 }

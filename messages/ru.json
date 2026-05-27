@@ -984,6 +984,12 @@
     "loading": "Ищу…",
     "hint": "Введите минимум 2 символа.",
     "no_results": "Ничего не нашлось по запросу «{q}».",
-    "found_count": "Найдено: {n} · {q}"
+    "found_count": "Найдено: {n} · {q}",
+    "filter_all": "Все",
+    "filter_short": "Короткие суры",
+    "filter_short_hint": "Суры до 30 аятов",
+    "filter_empty": "Под фильтр ничего не попадает.",
+    "filtered_count": "Показано {n} из {total} · {q}",
+    "filters_aria": "Фильтры результатов"
   }
 }

@@ -984,6 +984,12 @@
     "loading": "Ҷустуҷӯ...",
     "hint": "Камаш 2 рамз ворид кунед.",
     "no_results": "Ҳеҷ чиз барои «{q}» ёфт нашуд.",
-    "found_count": "Ёфт шуд: {n} · {q}"
+    "found_count": "Ёфт шуд: {n} · {q}",
+    "filter_all": "Ҳама",
+    "filter_short": "Сураҳои кӯтоҳ",
+    "filter_short_hint": "Сураҳое то 30 оят",
+    "filter_empty": "Бо ин филтр чизе нест.",
+    "filtered_count": "{n} аз {total} · {q}",
+    "filters_aria": "Филтрҳои натиҷа"
   }
 }

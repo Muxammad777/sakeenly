@@ -984,6 +984,12 @@
     "loading": "در حال جست‌وجو…",
     "hint": "حداقل ۲ نویسه وارد کنید.",
     "no_results": "هیچ نتیجه‌ای برای «{q}» یافت نشد.",
-    "found_count": "{n} نتیجه برای {q}"
+    "found_count": "{n} نتیجه برای {q}",
+    "filter_all": "همه",
+    "filter_short": "سوره‌های کوتاه",
+    "filter_short_hint": "سوره‌های با حداکثر ۳۰ آیه",
+    "filter_empty": "با این صافی نتیجه‌ای نیست.",
+    "filtered_count": "{n} از {total} · {q}",
+    "filters_aria": "صافی‌های نتیجه"
   }
 }
