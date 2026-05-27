@@ -941,4 +941,9 @@
      eats most of a phone's width. Drop side padding to match .ayah-block
      so the Arabic verse uses the full screen on phones. */
   .mushaf { padding: 22px 12px; border-radius: 14px; }
+  /* Ayah popover: 3 localized text labels make it ~370px wide — wider
+     than an iPhone. On phones go icon-only so it always fits. */
+  .ayah-popover { padding: 4px; gap: 0; }
+  .pop-btn { padding: 10px; }
+  .pop-btn-label { display: none; }
 }

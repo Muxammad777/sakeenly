@@ -640,16 +640,17 @@ function MushafReaderInner(props: MushafReaderProps) {
           style={{ top: popover.top, left: popover.left }}
           onClick={(e) => e.stopPropagation()}
         >
-          <button className="pop-btn" onClick={() => playFrom(activeAyah)} type="button">
+          <button className="pop-btn" onClick={() => playFrom(activeAyah)} type="button" aria-label={t("pop_listen")}>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
               <path d="M8 5v14l11-7z" />
             </svg>
-            {t("pop_listen")}
+            <span className="pop-btn-label">{t("pop_listen")}</span>
           </button>
           <button
             className={"pop-btn" + (activeAyahData.isBookmarked ? " bookmarked" : "")}
             onClick={() => toggleBookmark(activeAyahData.ayahKey)}
             type="button"
+            aria-label={activeAyahData.isBookmarked ? t("pop_saved") : t("pop_bookmark")}
           >
             <svg
               width="13"
@@ -661,16 +662,16 @@ function MushafReaderInner(props: MushafReaderProps) {
             >
               <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
             </svg>
-            {activeAyahData.isBookmarked ? t("pop_saved") : t("pop_bookmark")}
+            <span className="pop-btn-label">{activeAyahData.isBookmarked ? t("pop_saved") : t("pop_bookmark")}</span>
           </button>
-          <button className="pop-btn" onClick={() => shareAyah(activeAyahData.ayahKey)} type="button">
+          <button className="pop-btn" onClick={() => shareAyah(activeAyahData.ayahKey)} type="button" aria-label={t("pop_share")}>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <circle cx="18" cy="5" r="3" />
               <circle cx="6" cy="12" r="3" />
               <circle cx="18" cy="19" r="3" />
               <path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98" />
             </svg>
-            {t("pop_share")}
+            <span className="pop-btn-label">{t("pop_share")}</span>
           </button>
           <span style={{ width: 1, background: "var(--border)", margin: "4px 4px" }} />
           <button
