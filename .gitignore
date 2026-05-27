@@ -42,4 +42,11 @@ next-env.d.ts
 lib/knowledge/*
 !lib/knowledge/quran/
 !lib/knowledge/MANIFEST.md
+# Translations used by the search corpus — checked in selectively.
+!lib/knowledge/translations/
+lib/knowledge/translations/*
+!lib/knowledge/translations/ru_elmirkuliev.json
+!lib/knowledge/translations/ru_abuadel.json
+!lib/knowledge/translations/en_sahih_international.json
+!lib/knowledge/translations/en_mustafakhattabg.json
 

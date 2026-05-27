@@ -1,7 +1,7 @@
 // Full-text search over the Qur'an — Arabic Uthmani + per-locale translation.
 //
 // Loads the entire corpus once per Node worker (6236 verses × a handful of
-// strings = ~6MB heap). On each query we run a normalized substring scan;
+// strings = ~6MB heap). On each query we run a normalized token AND scan;
 // for 6236 records this is ~5–10ms which is fine before we invest in
 // pgvector / Voyage embeddings.
 //
@@ -9,9 +9,10 @@
 //   - lib/knowledge/quran/uthmani.json — Hafs `an Asim Uthmani text
 //   - lib/quran/tanzil/<translator>.json — translation maps
 //
-// Per-locale translator pick keeps the snippet language matching the UI
-// locale. English has no local Tanzil translation yet, so EN searches
-// match Arabic only — a future PR can add Sahih International or Khattab.
+// Per-locale translator stack:
+//   - First entry's text shows up in results (the snippet language).
+//   - All entries are searched, so a query worded by one translator
+//     still finds verses that match another's phrasing.
 
 import type { Locale } from "@/i18n/routing";
 import uthmaniRaw from "@/lib/knowledge/quran/uthmani.json";
@@ -23,12 +24,16 @@ import sodikMap       from "@/lib/quran/tanzil/sodik.json";
 import altayMap       from "@/lib/quran/tanzil/altay.json";
 import mokhtasarKyMap from "@/lib/quran/tanzil/mokhtasar-ky.json";
 import fooladvandMap  from "@/lib/quran/tanzil/fooladvand.json";
+import kulievRaw      from "@/lib/knowledge/translations/ru_elmirkuliev.json";
+import abuadelRaw     from "@/lib/knowledge/translations/ru_abuadel.json";
+import sahihRaw       from "@/lib/knowledge/translations/en_sahih_international.json";
+import khattabRaw     from "@/lib/knowledge/translations/en_mustafakhattabg.json";
 
 type VerseEntry = { chapter: number; verse: number; text: string };
 
 interface Corpus {
-  arabic: Map<string, string>;           // "11:1" → uthmani text
-  translations: Map<string, Map<string, string>>; // translatorKey → verseKey → text
+  arabic: Map<string, string>;
+  translations: Map<string, Map<string, string>>;
 }
 
 let _corpus: Corpus | null = null;
@@ -36,6 +41,22 @@ let _corpus: Corpus | null = null;
 function buildMap(data: Record<string, string>): Map<string, string> {
   const m = new Map<string, string>();
   for (const k in data) m.set(k, data[k]);
+  return m;
+}
+
+// Same shape as uthmani.json: {quran: [{chapter, verse, text}]}.
+function buildMapFromVerseArray(data: { quran: VerseEntry[] }): Map<string, string> {
+  const m = new Map<string, string>();
+  for (const v of data.quran) m.set(`${v.chapter}:${v.verse}`, v.text);
+  return m;
+}
+
+// Quran.com API response shape: {data: {surahs: [{number, ayahs: [{numberInSurah, text}]}]}}
+function buildMapFromQuranComApi(data: { data: { surahs: Array<{ number: number; ayahs: Array<{ numberInSurah: number; text: string }> }> } }): Map<string, string> {
+  const m = new Map<string, string>();
+  for (const sura of data.data.surahs) {
+    for (const a of sura.ayahs) m.set(`${sura.number}:${a.numberInSurah}`, a.text);
+  }
   return m;
 }
 
@@ -48,6 +69,10 @@ function loadCorpus(): Corpus {
   }
 
   const translations = new Map<string, Map<string, string>>();
+  translations.set("kuliev",       buildMapFromVerseArray(kulievRaw  as { quran: VerseEntry[] }));
+  translations.set("abuadel",      buildMapFromVerseArray(abuadelRaw as { quran: VerseEntry[] }));
+  translations.set("sahih-intl",   buildMapFromQuranComApi(sahihRaw as Parameters<typeof buildMapFromQuranComApi>[0]));
+  translations.set("khattab",      buildMapFromVerseArray(khattabRaw as { quran: VerseEntry[] }));
   translations.set("krachkovsky",  buildMap(krachkovskyMap as Record<string, string>));
   translations.set("osmanov",      buildMap(osmanovMap     as Record<string, string>));
   translations.set("porokhova",    buildMap(porokhovaMap   as Record<string, string>));
@@ -61,21 +86,37 @@ function loadCorpus(): Corpus {
   return _corpus;
 }
 
-// Default translator per UI locale — the snippet language users will read.
-const TRANSLATOR_BY_LOCALE: Record<Locale, string | null> = {
-  ru: "krachkovsky",
-  fa: "fooladvand",
-  tg: "ayati",
-  uz: "sodik",
-  kk: "altay",
-  ky: "mokhtasar-ky",
-  en: null, // no local English Tanzil yet — Arabic-only matching
+const TRANSLATORS_BY_LOCALE: Record<Locale, string[]> = {
+  ru: ["kuliev", "krachkovsky", "osmanov", "porokhova", "abuadel"],
+  en: ["sahih-intl", "khattab"],
+  fa: ["fooladvand"],
+  tg: ["ayati"],
+  uz: ["sodik"],
+  kk: ["altay"],
+  ky: ["mokhtasar-ky"],
 };
 
-// Strip Arabic harakat (tashkeel) and tatweel so "بسم" finds "بِسْمِ".
-const HARAKAT = /[ً-ٰٟـ]/g;
+// Arabic normalization — strip ALL Quranic tashkeel + tatweel and fold
+// the common letter variants so a user typing "الله" finds the Uthmani
+// "ٱللَّهِ" (alef-wasla + shadda + harakat), and "بسم" finds "بِسۡمِ"
+// (sukun above is U+06E1, well inside the Quranic mark range).
+//
+// Mark ranges covered:
+//   U+0610–U+061A  Arabic-script annotation marks
+//   U+064B–U+065F  Basic tashkeel + Quranic marks
+//   U+0670         Superscript alef
+//   U+06D6–U+06ED  Quranic annotation marks (incl. sukun above U+06E1)
+//   U+0640         Tatweel
+const HARAKAT = /[ؐ-ًؚ-ٰٟۖ-ۭـ]/g;
+const ALEF_VARIANTS = /[ٱآأإ]/g; // ٱ آ أ إ → ا
 function normalizeArabic(s: string): string {
-  return s.normalize("NFKD").replace(HARAKAT, "").trim();
+  return s
+    .normalize("NFKD")
+    .replace(HARAKAT, "")
+    .replace(ALEF_VARIANTS, "ا") // ا
+    .replace(/ى/g, "ي")     // ى → ي
+    .replace(/ة/g, "ه")     // ة → ه
+    .trim();
 }
 
 // Lowercase + NFD-strip combining marks for Latin/Cyrillic translations,
@@ -92,13 +133,46 @@ function looksArabic(s: string): boolean {
   return /[؀-ۿ]/.test(s);
 }
 
+// Russian/transliteration aliases for prophet & figure names.
+// Quran translations consistently use the classical "Йусуф / Йунус /
+// Йакуб" forms but most users type the colloquial "Юсуф / Юнус / Якуб"
+// (and a few try the Biblical forms — Иосиф, Иона). For each canonical
+// token we keep every variant readers might type; a query token that
+// hits this map expands into an OR across all variants.
+const RU_NAME_ALIASES: ReadonlyArray<readonly string[]> = [
+  ["юсуф",   "йусуф",   "иосиф"],
+  ["юнус",   "йунус",   "иона"],
+  ["якуб",   "йакуб",   "иаков", "яков"],
+  ["ясин",   "йасин"],
+  ["иса",    "иисус"],
+  ["муса",   "моисей"],
+  ["дауд",   "давид"],
+  ["сулайман", "сулейман", "соломон"],
+  ["ибрахим", "авраам"],
+  ["исхак",  "исаак"],
+  ["исмаил", "исмаэль", "измаил"],
+  ["харун",  "аарон"],
+  ["нух",    "ной"],
+  ["идрис",  "енох"],
+  ["закария","захария"],
+  ["яхья",   "иоанн"],
+  ["мириам", "марьям", "мария"],
+];
+
+// Token → its alias group (or just [token] when not aliased).
+function aliasesFor(token: string): string[] {
+  for (const group of RU_NAME_ALIASES) {
+    if (group.includes(token)) return [...group];
+  }
+  return [token];
+}
+
 export interface SearchResult {
   verseKey: string;
   surah: number;
   ayah: number;
   arabic: string;
   translation: string | null;
-  /** Which haystack matched: arabic, translation, or both. */
   matched: "arabic" | "translation" | "both";
 }
 
@@ -111,11 +185,40 @@ export function searchQuran(
   if (q.length < 2) return [];
 
   const corpus = loadCorpus();
-  const trKey = TRANSLATOR_BY_LOCALE[locale];
-  const trMap = trKey ? corpus.translations.get(trKey) : null;
+  const trKeys = TRANSLATORS_BY_LOCALE[locale];
+  const trMaps = trKeys
+    .map((k) => corpus.translations.get(k))
+    .filter((m): m is Map<string, string> => Boolean(m));
+  const displayMap = trMaps[0] ?? null;
+
+  // Tokenize: split on whitespace + punctuation, drop tokens < 2 chars.
+  // Each token must hit somewhere in the haystack (AND-match) — so
+  // "Господ миров" finds "Господу миров" because both stems are present.
+  const splitTokens = (s: string) =>
+    s.split(/[\s.,;:!?()«»"'\-—–]+/).filter((t) => t.length >= 2);
 
   const arQuery = looksArabic(q) ? normalizeArabic(q) : null;
-  const txQuery = normalizeText(q);
+  const arTokens = arQuery ? splitTokens(arQuery) : [];
+  const txTokens = splitTokens(normalizeText(q));
+
+  // Pre-compute alias OR-groups per text token (Arabic tokens have no
+  // alias map yet, so they pass through as single-element groups).
+  const txTokenGroups = txTokens.map(aliasesFor);
+
+  const allTokensIn = (haystack: string, tokens: string[]) => {
+    if (tokens.length === 0) return false;
+    for (const t of tokens) if (!haystack.includes(t)) return false;
+    return true;
+  };
+  const allGroupsIn = (haystack: string, groups: string[][]) => {
+    if (groups.length === 0) return false;
+    for (const g of groups) {
+      let hit = false;
+      for (const v of g) if (haystack.includes(v)) { hit = true; break; }
+      if (!hit) return false;
+    }
+    return true;
+  };
 
   const results: SearchResult[] = [];
 
@@ -123,17 +226,19 @@ export function searchQuran(
     let arHit = false;
     let txHit = false;
 
-    if (arQuery && arQuery.length >= 2) {
+    if (arTokens.length > 0) {
       const normAr = normalizeArabic(arabicText);
-      if (normAr.includes(arQuery)) arHit = true;
+      if (allTokensIn(normAr, arTokens)) arHit = true;
     }
 
-    let translationText: string | null = null;
-    if (trMap) {
-      translationText = trMap.get(verseKey) ?? null;
-      if (translationText && txQuery.length >= 2) {
-        const normTx = normalizeText(translationText);
-        if (normTx.includes(txQuery)) txHit = true;
+    if (txTokenGroups.length > 0) {
+      for (const map of trMaps) {
+        const txt = map.get(verseKey);
+        if (!txt) continue;
+        if (allGroupsIn(normalizeText(txt), txTokenGroups)) {
+          txHit = true;
+          break;
+        }
       }
     }
 
@@ -144,7 +249,7 @@ export function searchQuran(
       surah: s,
       ayah: a,
       arabic: arabicText,
-      translation: translationText,
+      translation: displayMap?.get(verseKey) ?? null,
       matched: arHit && txHit ? "both" : arHit ? "arabic" : "translation",
     });
 

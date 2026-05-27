@@ -25,21 +25,19 @@ interface SearchClientProps {
   initialQuery: string;
 }
 
-// Wrap query matches in <mark> using a normalized comparison that mirrors
-// the server-side substring matcher. Strips Arabic harakat so highlighting
-// works on undecorated and decorated forms.
+// Wrap query tokens (each >=2 chars) in <mark>. The server-side matcher
+// is AND-over-tokens, so the highlight has to mirror that and not insist
+// on the whole phrase being a contiguous substring.
 function highlight(text: string, query: string, isArabic: boolean): string {
   if (!text || !query) return text;
-  // Build the regex against the original characters but case-insensitive.
-  // For the server we normalize harakat — for *visual* highlight we keep
-  // the original glyphs and accept that some matches won't be wrapped if
-  // the user typed without harakat against a fully-vocalized verse. This
-  // is intentional: a perfect highlight requires DOM-level segmentation
-  // we don't yet have.
+  const tokens = query
+    .split(/[\s.,;:!?()«»"'\-—–]+/)
+    .filter((t) => t.length >= 2)
+    .map((t) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  if (tokens.length === 0) return text;
   try {
-    const safe = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const re = new RegExp(safe, isArabic ? "g" : "gi");
-    return text.replace(re, (m) => `<mark>${m}</mark>`);
+    const re = new RegExp(`(${tokens.join("|")})`, isArabic ? "g" : "gi");
+    return text.replace(re, "<mark>$1</mark>");
   } catch {
     return text;
   }
