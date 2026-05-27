@@ -23,6 +23,7 @@ export default async function ReaderIndex({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "rd" });
+  const tSn = await getTranslations({ locale, namespace: "sn" });
   const chapters = await quranApi.chapters("en");
 
   return (
@@ -39,7 +40,7 @@ export default async function ReaderIndex({ params }: PageProps) {
             <Link className="surah-item surah-item-card" href={`/reader/${c.id}/1`}>
               <span className="surah-num">{toLocaleDigits(c.id, locale)}</span>
               <span className="surah-name">
-                <b>{c.name_simple}</b>
+                <b>{tSn(String(c.id))}</b>
                 <span className="ar">{c.name_arabic}</span>
               </span>
               <span className="surah-meta">

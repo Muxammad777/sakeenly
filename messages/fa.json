@@ -824,7 +824,8 @@
     "pop_prev": "قبلی",
     "pop_next": "بعدی",
     "audio_player": "پخش‌کننده صدا",
-    "close_btn": "بستن"
+    "close_btn": "بستن",
+    "metadata_desc_suffix": " — خوانش، ترجمه، صوت"
   },
   "sb": {
     "apply_btn": "نوشتن",

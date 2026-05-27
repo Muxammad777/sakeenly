@@ -824,7 +824,8 @@
     "pop_prev": "Алдыңғы",
     "pop_next": "Келесі",
     "audio_player": "Аудиоойнатқыш",
-    "close_btn": "Жабу"
+    "close_btn": "Жабу",
+    "metadata_desc_suffix": " — оқу, аударма, аудио"
   },
   "sb": {
     "apply_btn": "Жазу",

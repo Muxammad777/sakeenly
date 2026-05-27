@@ -824,7 +824,8 @@
     "pop_prev": "Предыдущий",
     "pop_next": "Следующий",
     "audio_player": "Аудиоплеер",
-    "close_btn": "Закрыть"
+    "close_btn": "Закрыть",
+    "metadata_desc_suffix": " — чтение, перевод, аудио"
   },
   "sb": {
     "apply_btn": "Написать",

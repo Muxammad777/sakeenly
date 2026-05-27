@@ -824,7 +824,8 @@
     "pop_prev": "Қаблӣ",
     "pop_next": "Баъдӣ",
     "audio_player": "Плеери овоз",
-    "close_btn": "Бастан"
+    "close_btn": "Бастан",
+    "metadata_desc_suffix": " — хониш, тарҷума, овоз"
   },
   "sb": {
     "apply_btn": "Нависед",

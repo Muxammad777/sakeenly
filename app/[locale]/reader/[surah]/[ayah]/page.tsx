@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import { quranApi } from "@/lib/api/quran";
 import {
   TRANSLATIONS,
@@ -35,17 +35,20 @@ function parseParams(p: { surah: string; ayah: string }): { surah: number; ayah:
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { surah, ayah } = await params;
+  const { locale, surah, ayah } = await params;
   const parsed = parseParams({ surah, ayah });
   if (!parsed) return { title: "Reader" };
+  const tRd = await getTranslations({ locale, namespace: "rd" });
+  const tSn = await getTranslations({ locale, namespace: "sn" });
+  const name = tSn(String(parsed.surah));
   try {
     const chapter = await quranApi.chapter(parsed.surah, "en");
     return {
-      title: `${chapter.name_simple} · аят ${parsed.ayah}`,
-      description: `Сура ${chapter.name_simple} (${chapter.name_arabic}) — чтение, перевод, аудио.`,
+      title: `${name} · ${parsed.ayah}`,
+      description: `${tRd("surah_prefix")} ${name} (${chapter.name_arabic})${tRd("metadata_desc_suffix")}.`,
     };
   } catch {
-    return { title: `Сура ${parsed.surah} · аят ${parsed.ayah}` };
+    return { title: `${tRd("surah_prefix")} ${parsed.surah} · ${parsed.ayah}` };
   }
 }
 

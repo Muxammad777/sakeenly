@@ -824,7 +824,8 @@
     "pop_prev": "Previous",
     "pop_next": "Next",
     "audio_player": "Audio player",
-    "close_btn": "Close"
+    "close_btn": "Close",
+    "metadata_desc_suffix": " — reading, translation, audio"
   },
   "sb": {
     "apply_btn": "Write to us",
