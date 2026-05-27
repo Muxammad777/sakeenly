@@ -301,6 +301,7 @@
 
   /* Ayah popover */
   .ayah-popover {
+    --popover-shift: 0px;
     position: absolute;
     z-index: 30;
     background: oklch(var(--surface));
@@ -309,19 +310,26 @@
     padding: 6px;
     box-shadow: var(--shadow-2);
     display: flex; gap: 2px;
-    transform: translate(-50%, -100%);
+    /* --popover-shift is set in JS (useLayoutEffect) after the popover
+       renders to nudge it back inside the viewport if needed. */
+    transform: translate(calc(-50% + var(--popover-shift)), -100%);
     margin-top: -8px;
     animation: pop 160ms cubic-bezier(.2, 1.2, .3, 1);
     white-space: nowrap;
+    max-width: calc(100vw - 16px);
   }
   @keyframes pop {
-    from { opacity: 0; transform: translate(-50%, -90%) scale(0.95); }
-    to { opacity: 1; transform: translate(-50%, -100%) scale(1); }
+    from { opacity: 0; transform: translate(calc(-50% + var(--popover-shift)), -90%) scale(0.95); }
+    to { opacity: 1; transform: translate(calc(-50% + var(--popover-shift)), -100%) scale(1); }
   }
   .ayah-popover::after {
     content: "";
     position: absolute;
-    bottom: -6px; left: 50%; transform: translateX(-50%) rotate(45deg);
+    /* Keep arrow above the actual tap point even when the popover is
+       horizontally shifted to fit inside the viewport. */
+    bottom: -6px;
+    left: calc(50% - var(--popover-shift));
+    transform: translateX(-50%) rotate(45deg);
     width: 10px; height: 10px;
     background: oklch(var(--surface));
     border-right: 1px solid oklch(var(--border-strong));
@@ -330,7 +338,7 @@
   /* When the anchor is too close to the top (sticky header), the
      popover is flipped to render below the tap point — arrow on top. */
   .ayah-popover.below {
-    transform: translate(-50%, 14px);
+    transform: translate(calc(-50% + var(--popover-shift)), 14px);
     margin-top: 0;
     animation-name: popBelow;
   }
@@ -342,8 +350,8 @@
     border-top: 1px solid oklch(var(--border-strong));
   }
   @keyframes popBelow {
-    from { opacity: 0; transform: translate(-50%, 4px) scale(0.95); }
-    to { opacity: 1; transform: translate(-50%, 14px) scale(1); }
+    from { opacity: 0; transform: translate(calc(-50% + var(--popover-shift)), 4px) scale(0.95); }
+    to { opacity: 1; transform: translate(calc(-50% + var(--popover-shift)), 14px) scale(1); }
   }
   .pop-btn {
     padding: 8px 12px;

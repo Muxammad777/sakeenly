@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useEffect, useMemo, useRef, useState } from "react";
+import { Fragment, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import {
@@ -83,6 +83,25 @@ function MushafReaderInner(props: MushafReaderProps) {
 
   const [activeAyah, setActiveAyah] = useState<number | null>(null);
   const [popover, setPopover] = useState<{ top: number; left: number; below: boolean } | null>(null);
+  const popoverRef = useRef<HTMLDivElement | null>(null);
+
+  // After the popover renders, measure it and nudge it horizontally so
+  // it stays inside the viewport regardless of where the user tapped or
+  // how wide the popover ended up (localized button labels can swing
+  // total width by 80px+). Uses CSS custom property so we never trigger
+  // a React re-render here.
+  useLayoutEffect(() => {
+    const el = popoverRef.current;
+    if (!popover || !el) return;
+    el.style.setProperty("--popover-shift", "0px");
+    const r = el.getBoundingClientRect();
+    const vw = window.innerWidth;
+    const SAFE = 8;
+    let shift = 0;
+    if (r.right > vw - SAFE) shift = vw - SAFE - r.right;
+    if (r.left < SAFE) shift = SAFE - r.left;
+    if (shift !== 0) el.style.setProperty("--popover-shift", shift + "px");
+  }, [popover]);
   // Real reciter — driven by the ?reciter URL param resolved on the server
   // and passed down as a prop. The sidebar <select> below navigates with
   // ?reciter=slug to actually change which audio URLs we render.
@@ -616,6 +635,7 @@ function MushafReaderInner(props: MushafReaderProps) {
       {/* ============ AYAH POPOVER ============ */}
       {popover && activeAyah && activeAyahData && (
         <div
+          ref={popoverRef}
           className={"ayah-popover" + (popover.below ? " below" : "")}
           style={{ top: popover.top, left: popover.left }}
           onClick={(e) => e.stopPropagation()}
@@ -784,39 +804,9 @@ function MushafReaderInner(props: MushafReaderProps) {
         </div>
       </SideTab>
 
-      {/* Right tab — reciter picker. Navigates with ?reciter=slug which
-          server-side resolves to the right audio URLs. */}
-      <SideTab side="right" label={t("side_reciter")} ariaLabel={t("side_pick_reciter")}>
-        <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-          {RECITERS.map((r) => (
-            <button
-              key={r.slug}
-              type="button"
-              onClick={() => setReciterSlug(r.slug)}
-              style={{
-                padding: "12px 14px",
-                borderRadius: 12,
-                textAlign: "left",
-                background: reciterSlug === r.slug ? "var(--accent-soft)" : "transparent",
-                color: reciterSlug === r.slug ? "oklch(var(--accent))" : "oklch(var(--text))",
-                fontFamily: "'Spectral', serif",
-                fontSize: 15,
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "baseline",
-                gap: 12,
-              }}
-            >
-              <span>{r.name}</span>
-              {r.style ? (
-                <span style={{ fontSize: 10, fontFamily: "monospace", letterSpacing: "0.1em", color: "oklch(var(--text-3))", textTransform: "uppercase" }}>
-                  {r.style}
-                </span>
-              ) : null}
-            </button>
-          ))}
-        </div>
-      </SideTab>
+      {/* Reciter picker is reachable via the bottom AudioPlayer's reciter
+          chip — no need for a second side-tab. Removed per user request
+          (it was overlapping the verse text on phones). */}
     </div>
   );
 }
