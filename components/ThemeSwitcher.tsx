@@ -1,14 +1,8 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { THEMES, useTheme, type Theme } from "@/components/ThemeProvider";
 import { cn } from "@/lib/utils";
-
-const TITLES: Record<Theme, string> = {
-  light:  "Светлая",
-  sepia:  "Сепия",
-  mushaf: "Мусхаф",
-  dark:   "Ночь",
-};
 
 function ThemeIcon({ theme }: { theme: Theme }) {
   const common = { width: 14, height: 14, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor" };
@@ -44,28 +38,29 @@ function ThemeIcon({ theme }: { theme: Theme }) {
 
 export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
+  const t = useTranslations("ts");
 
   return (
     <div
       role="group"
-      aria-label="Тема"
+      aria-label={t("label")}
       className="inline-flex items-center rounded-full border border-border bg-surface p-[3px]"
     >
-      {THEMES.map((t) => (
+      {THEMES.map((th) => (
         <button
-          key={t}
+          key={th}
           type="button"
-          title={TITLES[t]}
-          aria-pressed={theme === t}
-          onClick={() => setTheme(t)}
+          title={t(th)}
+          aria-pressed={theme === th}
+          onClick={() => setTheme(th)}
           className={cn(
             "grid h-7 w-7 place-items-center rounded-full transition-colors",
-            theme === t
+            theme === th
               ? "bg-bg text-accent shadow-[var(--shadow-1)]"
               : "text-fg-dim hover:text-fg",
           )}
         >
-          <ThemeIcon theme={t} />
+          <ThemeIcon theme={th} />
         </button>
       ))}
     </div>

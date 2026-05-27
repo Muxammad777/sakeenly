@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import {
   AudioPlayerProvider,
@@ -9,6 +9,7 @@ import {
 } from "@/components/reader/AudioPlayerProvider";
 import { AudioPlayer } from "@/components/reader/AudioPlayer";
 import { RECITERS, type ReciterMeta } from "@/lib/quran/constants";
+import { toLocaleDigits } from "@/lib/quran/format";
 
 interface ChapterSummary {
   id: number;
@@ -48,6 +49,9 @@ export function ListenScreen({ chapters }: ListenScreenProps) {
 function ListenScreenInner({ chapters }: ListenScreenProps) {
   const t = useTranslations("ls");
   const tRd = useTranslations("rd");
+  const tSn = useTranslations("sn");
+  const uiLocale = useLocale();
+  const fmt = (n: number | string) => toLocaleDigits(n, uiLocale);
   const router = useRouter();
   const [reciter, setReciter] = useState<ReciterMeta>(RECITERS[0]);
   const [query, setQuery] = useState("");
@@ -220,7 +224,7 @@ function ListenScreenInner({ chapters }: ListenScreenProps) {
             onClick={() => setShowAll((v) => !v)}
             style={{ color: "oklch(var(--accent))", fontSize: 14, background: "none", border: 0, padding: 0, cursor: "pointer" }}
           >
-            {showAll ? "Свернуть ↑" : t("all_114")}
+            {showAll ? t("collapse") : t("all_114")}
           </button>
         </div>
         <div className="strip-row">
@@ -233,8 +237,8 @@ function ListenScreenInner({ chapters }: ListenScreenProps) {
               type="button"
             >
               <div>
-                <div className="n">{c.id} · {c.versesCount} {tRd("ayat_count")}</div>
-                <div className="t">{c.nameSimple}</div>
+                <div className="n">{fmt(c.id)} · {fmt(c.versesCount)} {tRd("ayat_count")}</div>
+                <div className="t">{tSn(String(c.id))}</div>
                 <div className="meta">{c.revelationPlace === "makkah" ? tRd("place_makkah").toUpperCase() : tRd("place_madinah").toUpperCase()}</div>
               </div>
               <span className="play">
@@ -254,8 +258,8 @@ function ListenScreenInner({ chapters }: ListenScreenProps) {
       <section className="wrap surah-strip">
         <div className="strip-head">
           <div>
-            <span className="eyebrow">Все суры</span>
-            <h2 style={{ marginTop: 10, fontWeight: 300 }}>114 · {reciter.name}</h2>
+            <span className="eyebrow">{tRd("side_all_surahs")}</span>
+            <h2 style={{ marginTop: 10, fontWeight: 300 }}>{fmt(114)} · {reciter.name}</h2>
           </div>
         </div>
         <div className="strip-row" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))" }}>
@@ -270,8 +274,8 @@ function ListenScreenInner({ chapters }: ListenScreenProps) {
                 type="button"
               >
                 <div>
-                  <div className="n">{c.id} · {c.versesCount} {tRd("ayat_count")}</div>
-                  <div className="t">{c.nameSimple}</div>
+                  <div className="n">{fmt(c.id)} · {fmt(c.versesCount)} {tRd("ayat_count")}</div>
+                  <div className="t">{tSn(String(c.id))}</div>
                   <div className="meta arabic" dir="rtl">{c.nameArabic}</div>
                 </div>
                 <span className="play">

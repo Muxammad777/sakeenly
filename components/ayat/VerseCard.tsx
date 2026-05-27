@@ -3,6 +3,7 @@
 import { Link } from "@/i18n/navigation";
 import { ArrowRight, Headphones, Loader2, Pause } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 import { ArabicText } from "@/components/reader/ArabicText";
 
 interface VerseCardProps {
@@ -28,6 +29,9 @@ export function VerseCard({
   emphasis,
   surahName,
 }: VerseCardProps) {
+  const t = useTranslations("rd");
+  const tAem = useTranslations("aem");
+  const tSn = useTranslations("sn");
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [state, setState] = useState<"idle" | "loading" | "playing">("idle");
 
@@ -63,7 +67,7 @@ export function VerseCard({
     <article className="rounded-2xl border border-border bg-bg-elevated/30 p-6 sm:p-8">
       <header className="mb-3 flex items-center justify-between gap-2 text-xs text-fg-muted">
         <span className="font-mono">{verseKey}</span>
-        <span className="truncate">{surahName ?? `Сура ${surah}`}</span>
+        <span className="truncate">{surahName ?? `${t("surah_prefix")} ${tSn(String(surah))}`}</span>
       </header>
 
       {emphasis ? (
@@ -85,7 +89,7 @@ export function VerseCard({
           <button
             type="button"
             onClick={toggle}
-            aria-label={state === "playing" ? "Pause" : "Play"}
+            aria-label={state === "playing" ? t("pop_pause") : t("pop_listen")}
             className="inline-flex h-10 items-center gap-2 rounded-full border border-border bg-bg px-4 text-sm text-fg transition-colors hover:bg-bg-elevated"
           >
             {state === "loading" ? (
@@ -95,14 +99,14 @@ export function VerseCard({
             ) : (
               <Headphones className="h-4 w-4" />
             )}
-            {state === "playing" ? "Пауза" : "Слушать"}
+            {state === "playing" ? t("pop_pause") : t("pop_listen")}
           </button>
         ) : null}
         <Link
           href={`/reader/${surah}/${ayah}`}
           className="inline-flex h-10 items-center gap-2 rounded-full bg-accent px-4 text-sm font-medium text-accent-fg transition-opacity hover:opacity-90"
         >
-          Открыть в Sakeenly
+          {tAem("cta_btn_primary")}
           <ArrowRight className="h-4 w-4" />
         </Link>
       </footer>

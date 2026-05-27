@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 
 interface VerseAudioProps {
   url: string;
@@ -8,6 +9,7 @@ interface VerseAudioProps {
 
 /** Audio play button styled as `.btn .btn-soft .btn-sm` — matches design preview ayat-cards. */
 export function VerseAudio({ url }: VerseAudioProps) {
+  const t = useTranslations("rd");
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [playing, setPlaying] = useState(false);
 
@@ -36,7 +38,7 @@ export function VerseAudio({ url }: VerseAudioProps) {
       ) : (
         <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
       )}
-      {playing ? "Пауза" : "Слушать"}
+      {playing ? t("pop_pause") : t("pop_listen")}
     </button>
   );
 }

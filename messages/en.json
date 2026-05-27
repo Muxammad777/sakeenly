@@ -70,7 +70,10 @@
     "sugg2": "Tell me about the Prophet Yusuf ﷺ.",
     "sugg3": "How important is intention (niyyah)?",
     "sugg4": "What does \"sabr\" mean, and where does the Quran speak of it?",
-    "upgrade": "Remove the limit → Premium"
+    "upgrade": "Remove the limit → Premium",
+    "quota_live": "Free · {used} / {limit} questions today",
+    "searching": "Searching the Qur'an…",
+    "error_prefix": "Error"
   },
   "ay": {
     "all": "All",
@@ -541,7 +544,8 @@
     "qiraat_warsh": "Warsh",
     "search": "Search reciter...",
     "style_mujaw": "Mujawwad",
-    "style_muratt": "Murattal"
+    "style_muratt": "Murattal",
+    "collapse": "Collapse ↑"
   },
   "nav": {
     "ask": "Ask",
@@ -553,7 +557,9 @@
     "signin": "Sign in",
     "start": "Get started",
     "profile": "Profile",
-    "signout": "Sign out"
+    "signout": "Sign out",
+    "menu_open": "Open menu",
+    "menu_close": "Close menu"
   },
   "nf": {
     "btn_home": "Back home",
@@ -811,7 +817,9 @@
     "trans_title_show": "Show translation",
     "tt": {
       "label": "Translation"
-    }
+    },
+    "pop_pause": "Pause",
+    "play_surah": "Play the surah"
   },
   "sb": {
     "apply_btn": "Write to us",
@@ -1062,5 +1070,12 @@
     "dlya-mira-v-sem-e": "Ayat for peace at home",
     "dlya-rakhma": "Ayat on rahma (mercy)",
     "dlya-dovolstva-allahom": "Ayat on contentment with Allah"
+  },
+  "ts": {
+    "label": "Theme",
+    "light": "Light",
+    "sepia": "Sepia",
+    "mushaf": "Mushaf",
+    "dark": "Dark"
   }
 }

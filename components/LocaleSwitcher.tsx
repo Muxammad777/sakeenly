@@ -50,7 +50,7 @@ export function LocaleSwitcher() {
         <DropdownMenu.Content
           align="end"
           sideOffset={8}
-          className="z-50 min-w-[12rem] overflow-hidden rounded-xl border border-border-strong bg-surface p-1.5 shadow-lg"
+          className="z-[70] min-w-[12rem] overflow-hidden rounded-xl border border-border-strong bg-surface p-1.5 shadow-lg"
         >
           {routing.locales.map((lang) => (
             <DropdownMenu.Item

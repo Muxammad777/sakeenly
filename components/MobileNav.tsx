@@ -59,7 +59,7 @@ export function MobileNav() {
     <>
       <button
         type="button"
-        aria-label={open ? "Закрыть меню" : "Открыть меню"}
+        aria-label={open ? t("menu_close") : t("menu_open")}
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
         className="sk-mobile-only grid h-9 w-9 place-items-center rounded-full border border-border bg-surface text-fg-muted transition-colors hover:text-fg"
@@ -100,7 +100,7 @@ export function MobileNav() {
               <Logo />
               <button
                 type="button"
-                aria-label="Закрыть меню"
+                aria-label={t("menu_close")}
                 onClick={() => setOpen(false)}
                 className="grid h-9 w-9 place-items-center rounded-full border border-border bg-surface text-fg-muted transition-colors hover:text-fg"
               >

@@ -70,7 +70,10 @@
     "sugg2": "دربارهٔ یوسف ﷺ برایم بگو.",
     "sugg3": "اهمیت نیت چقدر است؟",
     "sugg4": "«صبر» یعنی چه و در قرآن کجاست؟",
-    "upgrade": "برداشتن محدودیت ← پریمیوم"
+    "upgrade": "برداشتن محدودیت ← پریمیوم",
+    "quota_live": "Free · {used} / {limit} پرسش امروز",
+    "searching": "در حال جست‌وجو در قرآن…",
+    "error_prefix": "خطا"
   },
   "ay": {
     "all": "همه",
@@ -541,7 +544,8 @@
     "qiraat_warsh": "ورش",
     "search": "جست‌وجوی قاری...",
     "style_mujaw": "مجود",
-    "style_muratt": "مرتل"
+    "style_muratt": "مرتل",
+    "collapse": "جمع کردن ↑"
   },
   "nav": {
     "ask": "پرسش",
@@ -553,7 +557,9 @@
     "signin": "ورود",
     "start": "شروع",
     "profile": "نمایه",
-    "signout": "خروج"
+    "signout": "خروج",
+    "menu_open": "باز کردن منو",
+    "menu_close": "بستن منو"
   },
   "nf": {
     "btn_home": "بازگشت به خانه",
@@ -811,7 +817,9 @@
     "trans_title_show": "نمایش ترجمه",
     "tt": {
       "label": "ترجمه"
-    }
+    },
+    "pop_pause": "توقف",
+    "play_surah": "پخش سوره"
   },
   "sb": {
     "apply_btn": "نوشتن",
@@ -1062,5 +1070,12 @@
     "dlya-mira-v-sem-e": "آیات آرامش خانواده",
     "dlya-rakhma": "آیات رحمت",
     "dlya-dovolstva-allahom": "آیات رضایت به الله"
+  },
+  "ts": {
+    "label": "پوسته",
+    "light": "روشن",
+    "sepia": "سپیا",
+    "mushaf": "مصحف",
+    "dark": "تاریک"
   }
 }

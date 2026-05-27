@@ -137,7 +137,7 @@ export function AskChat({ isAuthenticated }: AskChatProps) {
           <div className="quota">
             <span>
               {lastQuota && Number.isFinite(lastQuota.limit)
-                ? `Free · ${lastQuota.used} / ${lastQuota.limit} ${lastQuota.remaining === 1 ? "вопрос" : "вопросов"} сегодня`
+                ? t("quota_live", { used: lastQuota.used, limit: lastQuota.limit })
                 : t("quota")}
             </span>
             <Link href="/pricing" className="up">{t("upgrade")}</Link>
@@ -254,7 +254,7 @@ function TurnView({ turn }: { turn: Turn }) {
           </div>
           <div className="body">
             <div className="name">{t("label_a")}</div>
-            <div className="text" style={{ opacity: 0.7 }}>Ищу в Коране…</div>
+            <div className="text" style={{ opacity: 0.7 }}>{t("searching")}</div>
           </div>
         </div>
       )}
@@ -268,7 +268,7 @@ function TurnView({ turn }: { turn: Turn }) {
           </div>
           <div className="body">
             <div className="name">{t("label_a")}</div>
-            <div className="text" style={{ color: "oklch(var(--text-3))" }}>Ошибка: {turn.error}</div>
+            <div className="text" style={{ color: "oklch(var(--text-3))" }}>{t("error_prefix")}: {turn.error}</div>
           </div>
         </div>
       )}

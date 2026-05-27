@@ -74,8 +74,10 @@ export function MushafReader(props: MushafReaderProps) {
 function MushafReaderInner(props: MushafReaderProps) {
   const { surah, ayat, chapters, initialAyah, isAuthenticated, currentReciterSlug } = props;
   const t = useTranslations("rd");
+  const tSn = useTranslations("sn");
   const uiLocale = useLocale();
   const fmt = (n: number | string) => toLocaleDigits(n, uiLocale);
+  const surahName = tSn(String(surah.number));
   const [activeKey, setActiveKey] = useActiveTranslation();
   const player = useAudioPlayer();
 
@@ -311,7 +313,7 @@ function MushafReaderInner(props: MushafReaderProps) {
               >
                 <span className="surah-num">{fmt(c.id)}</span>
                 <span className="surah-name">
-                  <b>{c.nameSimple}</b>
+                  <b>{tSn(String(c.id))}</b>
                   <span className="ar arabic" dir="rtl">
                     {c.nameArabic}
                   </span>
@@ -333,7 +335,7 @@ function MushafReaderInner(props: MushafReaderProps) {
               }}
             />
             <div className="ar arabic">{surah.nameArabic}</div>
-            <h1>{surah.nameSimple}</h1>
+            <h1>{surahName}</h1>
             <div className="meta">
               {t("surah_prefix")} №{fmt(surah.number)} ·{" "}
               {surah.revelationPlace === "makkah" ? t("place_makkah") : t("place_madinah")} ·{" "}
@@ -506,19 +508,19 @@ function MushafReaderInner(props: MushafReaderProps) {
             <h4>{t("about_h")}</h4>
             <div className="info-row">
               <span>{t("about_name")}</span>
-              <span>{surah.nameSimple}</span>
+              <span>{surahName}</span>
             </div>
             <div className="info-row">
               <span>{t("about_rev")}</span>
-              <span>{surah.revelationPlace === "makkah" ? "Мекка" : "Медина"}</span>
+              <span>{surah.revelationPlace === "makkah" ? t("place_makkah") : t("place_madinah")}</span>
             </div>
             <div className="info-row">
               <span>{t("about_order")}</span>
-              <span>{surah.revelationOrder}</span>
+              <span>{fmt(surah.revelationOrder)}</span>
             </div>
             <div className="info-row">
               <span>{t("ayat_count")}</span>
-              <span>{surah.versesCount}</span>
+              <span>{fmt(surah.versesCount)}</span>
             </div>
           </div>
 
@@ -659,7 +661,7 @@ function MushafReaderInner(props: MushafReaderProps) {
             className="player-pp"
             onClick={() => player.toggle()}
             type="button"
-            aria-label={player.isPlaying ? "Пауза" : "Воспроизвести"}
+            aria-label={player.isPlaying ? t("pop_pause") : t("pop_listen")}
           >
             {player.isPlaying ? (
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">

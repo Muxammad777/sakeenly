@@ -70,7 +70,10 @@
     "sugg2": "Yusuf paygʻambar haqida hikoya qil.",
     "sugg3": "Niyatning ahamiyati qanday?",
     "sugg4": "«Sabr» nima maʼno beradi va Qurʼonda qayerda?",
-    "upgrade": "Limitni olib tashlash → Premium"
+    "upgrade": "Limitni olib tashlash → Premium",
+    "quota_live": "Free · {used} / {limit} savol bugun",
+    "searching": "Qur'ondan qidiryapman…",
+    "error_prefix": "Xatolik"
   },
   "ay": {
     "all": "Hammasi",
@@ -541,7 +544,8 @@
     "qiraat_warsh": "Varsh",
     "search": "Qori qidirish...",
     "style_mujaw": "Mujavvad",
-    "style_muratt": "Murattal"
+    "style_muratt": "Murattal",
+    "collapse": "Yigʼish ↑"
   },
   "nav": {
     "ask": "Soʻrash",
@@ -553,7 +557,9 @@
     "signin": "Kirish",
     "start": "Boshlash",
     "profile": "Profil",
-    "signout": "Chiqish"
+    "signout": "Chiqish",
+    "menu_open": "Menyuni ochish",
+    "menu_close": "Menyuni yopish"
   },
   "nf": {
     "btn_home": "Bosh sahifaga",
@@ -811,7 +817,9 @@
     "trans_title_show": "Tarjimani koʻrsatish",
     "tt": {
       "label": "Tarjima"
-    }
+    },
+    "pop_pause": "Pauza",
+    "play_surah": "Surani eshitish"
   },
   "sb": {
     "apply_btn": "Yozish",
@@ -1062,5 +1070,12 @@
     "dlya-mira-v-sem-e": "Oilada tinchlik uchun oyatlar",
     "dlya-rakhma": "Rahmat haqida oyatlar",
     "dlya-dovolstva-allahom": "Alloh roziligi uchun oyatlar"
+  },
+  "ts": {
+    "label": "Mavzu",
+    "light": "Yorugʼ",
+    "sepia": "Sepiya",
+    "mushaf": "Mushaf",
+    "dark": "Tun"
   }
 }
