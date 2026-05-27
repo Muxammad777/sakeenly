@@ -34,3 +34,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local Islamic knowledge corpus — 293 MB / 1,426 files of tafsir +
+# hadith pulled from public APIs. Lazy-loaded server-side only; we
+# keep them out of git. The small Quran subset (~4 MB, used by the
+# build-time search corpus) is force-included below.
+lib/knowledge/*
+!lib/knowledge/quran/
+!lib/knowledge/MANIFEST.md
+
