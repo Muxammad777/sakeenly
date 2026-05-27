@@ -327,6 +327,24 @@
     border-right: 1px solid oklch(var(--border-strong));
     border-bottom: 1px solid oklch(var(--border-strong));
   }
+  /* When the anchor is too close to the top (sticky header), the
+     popover is flipped to render below the tap point — arrow on top. */
+  .ayah-popover.below {
+    transform: translate(-50%, 14px);
+    margin-top: 0;
+    animation-name: popBelow;
+  }
+  .ayah-popover.below::after {
+    bottom: auto; top: -6px;
+    border-right: none;
+    border-bottom: none;
+    border-left: 1px solid oklch(var(--border-strong));
+    border-top: 1px solid oklch(var(--border-strong));
+  }
+  @keyframes popBelow {
+    from { opacity: 0; transform: translate(-50%, 4px) scale(0.95); }
+    to { opacity: 1; transform: translate(-50%, 14px) scale(1); }
+  }
   .pop-btn {
     padding: 8px 12px;
     border-radius: 8px;

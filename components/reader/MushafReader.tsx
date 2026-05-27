@@ -82,7 +82,7 @@ function MushafReaderInner(props: MushafReaderProps) {
   const player = useAudioPlayer();
 
   const [activeAyah, setActiveAyah] = useState<number | null>(null);
-  const [popover, setPopover] = useState<{ top: number; left: number } | null>(null);
+  const [popover, setPopover] = useState<{ top: number; left: number; below: boolean } | null>(null);
   // Real reciter — driven by the ?reciter URL param resolved on the server
   // and passed down as a prop. The sidebar <select> below navigates with
   // ?reciter=slug to actually change which audio URLs we render.
@@ -197,13 +197,27 @@ function MushafReaderInner(props: MushafReaderProps) {
     e.stopPropagation();
     const root = rootRef.current?.getBoundingClientRect();
     if (!root) return;
-    // Anchor the popover at the click point itself (transform in CSS moves it
-    // above the cursor via translate(-50%, -100%)). Using the bounding rect
-    // of the whole ayah card pinned the popover to the top of the card —
-    // far from where the user actually clicked when the card is tall.
+    // The popover is centered on the anchor point via translate(-50%, -100%)
+    // in CSS. On a narrow phone, tapping an ayah near either edge of the
+    // screen would push the popover off-viewport (3 action buttons clip
+    // out of sight). Clamp the anchor X so the centered popover always
+    // fits inside the viewport with a small safe-area on both sides.
+    const HALF_POPOVER = 140; // half of ≈280px (3 .pop-btn @ ~80–95px)
+    const SAFE = 10;
+    const vw = window.innerWidth;
+    const clampedClientX = Math.min(
+      Math.max(e.clientX, SAFE + HALF_POPOVER),
+      vw - SAFE - HALF_POPOVER,
+    );
+    // Vertical: if the tap is near the top (sticky header + popover height
+    // would overlap), flip the popover to render below the anchor.
+    const POPOVER_H = 56;
+    const HEADER = 70;
+    const flipBelow = e.clientY - POPOVER_H - 12 < HEADER;
     setPopover({
       top: e.clientY - root.top,
-      left: e.clientX - root.left,
+      left: clampedClientX - root.left,
+      below: flipBelow,
     });
     setActiveAyah(ayahNumber);
   }
@@ -602,7 +616,7 @@ function MushafReaderInner(props: MushafReaderProps) {
       {/* ============ AYAH POPOVER ============ */}
       {popover && activeAyah && activeAyahData && (
         <div
-          className="ayah-popover"
+          className={"ayah-popover" + (popover.below ? " below" : "")}
           style={{ top: popover.top, left: popover.left }}
           onClick={(e) => e.stopPropagation()}
         >
