@@ -117,7 +117,9 @@ function MushafReaderInner(props: MushafReaderProps) {
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
-  const [showTranslations, setShowTranslations] = useState(true);
+  // Default off — the reader opens on the pure mushaf text. Users
+  // who want a translation tap the toggle in the trans-bar.
+  const [showTranslations, setShowTranslations] = useState(false);
   // Mushaf-mode pagination: when on, the verse stream is sliced into
   // the same physical pages a printed Madani Mushaf uses (1..604).
   // pageIdx is an index into pagesInSurah; the displayed value is the
