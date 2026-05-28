@@ -723,7 +723,9 @@
     "fp_count": "{n} мувофиқат",
     "fp_count_zero": "Мувофиқат нест",
     "fp_close": "Бастан",
-    "fp_open_label": "Ҷустуҷӯ"
+    "fp_open_label": "Ҷустуҷӯ",
+    "tj_label": "Таҷвид",
+    "tj_toggle": "Ранг бар асоси қоидаҳои таҷвид"
   },
   "sb": {
     "apply_btn": "Нависед",

@@ -723,7 +723,9 @@
     "fp_count": "{n} mos",
     "fp_count_zero": "Mos kelmaydi",
     "fp_close": "Yopish",
-    "fp_open_label": "Qidirish"
+    "fp_open_label": "Qidirish",
+    "tj_label": "Tajvid",
+    "tj_toggle": "Tajvid qoidalariga koʻra rang"
   },
   "sb": {
     "apply_btn": "Yozish",

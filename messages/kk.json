@@ -723,7 +723,9 @@
     "fp_count": "{n} сәйкестік",
     "fp_count_zero": "Сәйкестік жоқ",
     "fp_close": "Жабу",
-    "fp_open_label": "Іздеу"
+    "fp_open_label": "Іздеу",
+    "tj_label": "Тәжуит",
+    "tj_toggle": "Тәжуит ережелері бойынша түс"
   },
   "sb": {
     "apply_btn": "Жазу",

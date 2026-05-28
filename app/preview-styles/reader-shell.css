@@ -1082,3 +1082,36 @@
   border-radius: 4px;
   font-weight: 600;
 }
+
+/* =================================================================
+   TAJWEED COLOR PALETTE
+   Based on the Dar al-Maarifah / KFGQPC convention used in printed
+   tajweed Mushafs. Rules come from cpfair/quran-tajweed (Public
+   Domain Tanzil annotations); class names mirror the rule keys.
+   ================================================================= */
+.tj { transition: color 200ms; }
+/* Madd — vowel elongation. Three lengths, three blues. */
+.tj-madd_2          { color: #537FFF; }          /* normal: 2 harakat */
+.tj-madd_246        { color: #4050FF; }          /* permissible: 4-6 harakat */
+.tj-madd_6          { color: #FF0000; }          /* necessary: 6 harakat */
+.tj-madd_munfasil   { color: #FF7E1E; }          /* separated obligatory */
+.tj-madd_muttasil   { color: #FF7E1E; }          /* connected obligatory */
+/* Qalqalah — echoed bounce of qutbujad letters with sukun. */
+.tj-qalqalah        { color: #DD0008; }
+/* Ghunnah — nasal resonance through the nose. */
+.tj-ghunnah         { color: #FF7E1E; }
+/* Ikhfa — partial concealment. */
+.tj-ikhfa           { color: #FF7E1E; }
+.tj-ikhfa_shafawi   { color: #FF7E1E; }
+/* Idghaam — assimilation into the next letter. */
+.tj-idghaam_ghunnah         { color: #169200; }
+.tj-idghaam_no_ghunnah      { color: #169200; }
+.tj-idghaam_shafawi         { color: #169200; }
+.tj-idghaam_mutajanisayn    { color: #A05900; }
+.tj-idghaam_mutaqaribayn    { color: #A05900; }
+/* Iqlab — flip of nun-sakinah/tanween into meem before ba. */
+.tj-iqlab           { color: #26BFFD; }
+/* Silent letters: pronounced lightly or not at all. */
+.tj-hamzat_wasl     { color: #AAAAAA; }
+.tj-lam_shamsiyyah  { color: #AAAAAA; }
+.tj-silent          { color: #AAAAAA; }

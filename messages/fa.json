@@ -723,7 +723,9 @@
     "fp_count": "{n} مورد",
     "fp_count_zero": "بدون نتیجه",
     "fp_close": "بستن",
-    "fp_open_label": "جست‌وجو"
+    "fp_open_label": "جست‌وجو",
+    "tj_label": "تجوید",
+    "tj_toggle": "رنگ‌آمیزی بر اساس قواعد تجوید"
   },
   "sb": {
     "apply_btn": "نوشتن",

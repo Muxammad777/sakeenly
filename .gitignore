@@ -42,6 +42,8 @@ next-env.d.ts
 lib/knowledge/*
 !lib/knowledge/quran/
 !lib/knowledge/MANIFEST.md
+# Tajweed corpus from cpfair/quran-tajweed (Public Domain Tanzil
+# annotations). ~5 MB JSON, used by the colored-tajweed reader mode.
 # Translations used by the search corpus — checked in selectively.
 !lib/knowledge/translations/
 lib/knowledge/translations/*

@@ -14,6 +14,7 @@ import { useActiveTranslation } from "./TranslationToggle";
 import { AudioPlayerProvider, useAudioPlayer } from "./AudioPlayerProvider";
 import { SideTab } from "./SideTab";
 import { getMushafPage, pagesOfSurah } from "@/lib/quran/mushaf-pages";
+import { getTajweedAnnotations, splitByTajweed } from "@/lib/quran/tajweed";
 
 export interface MushafAyah {
   ayahKey: string;
@@ -136,6 +137,10 @@ function MushafReaderInner(props: MushafReaderProps) {
   const [transPickerOpen, setTransPickerOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
 
+  // Tajweed mode — colors letters by recitation rules (Dar al-Maarifah
+  // palette). Off by default. Stacks under the trans-bar toggles.
+  const [tajweedMode, setTajweedMode] = useState(false);
+
   // In-page (this surah only) search. Live highlight + match counter.
   const [pageSearchOpen, setPageSearchOpen] = useState(false);
   const [pageQuery, setPageQuery] = useState("");
@@ -172,9 +177,20 @@ function MushafReaderInner(props: MushafReaderProps) {
     return n;
   }, [pageSearchRegex, ayat, activeKey]);
 
-  // Helper: split a plain string into [text, <mark>, text, …] React nodes.
-  // Used for arabic / plain text where we don't have HTML to worry about.
-  const renderWithMarks = (text: string): React.ReactNode => {
+  // Helper: render arabic text with optional tajweed coloring AND
+  // optional in-surah search highlight. Tajweed wins if both on;
+  // search highlight is skipped in tajweed mode to keep the color
+  // semantics clean (tajweed uses spans, search uses <mark>).
+  const renderArabic = (text: string, ayahNumber: number): React.ReactNode => {
+    if (tajweedMode) {
+      const ann = getTajweedAnnotations(surah.number, ayahNumber);
+      const segments = splitByTajweed(text, ann);
+      return segments.map((s, i) =>
+        s.rule
+          ? <span key={i} className={`tj tj-${s.rule}`}>{s.text}</span>
+          : s.text,
+      );
+    }
     if (!pageSearchRegex) return text;
     const parts = text.split(pageSearchRegex);
     return parts.map((p, i) =>
@@ -568,6 +584,25 @@ function MushafReaderInner(props: MushafReaderProps) {
               </svg>
               <span className="trans-toggle-label">{t("fp_open_label")}</span>
             </button>
+            {/* Tajweed mode toggle — colors arabic letters by recitation
+                rule (Dar al-Maarifah palette). Useful for tarteel
+                students; off by default. */}
+            <button
+              type="button"
+              className={"mode-toggle" + (tajweedMode ? " on" : "")}
+              onClick={() => setTajweedMode((v) => !v)}
+              aria-pressed={tajweedMode}
+              title={t("tj_toggle")}
+              aria-label={t("tj_toggle")}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M3 12a9 9 0 0 1 18 0" stroke="currentColor" />
+                <circle cx="8" cy="11" r="1.5" fill="currentColor" stroke="none" />
+                <circle cx="16" cy="11" r="1.5" fill="currentColor" stroke="none" />
+              </svg>
+              <span className="trans-toggle-label">{t("tj_label")}</span>
+            </button>
           </div>
           {showTranslations && (
             <div
@@ -651,7 +686,7 @@ function MushafReaderInner(props: MushafReaderProps) {
                       </div>
                     </header>
                     <div className="ayah-block-arabic arabic" dir="rtl">
-                      {renderWithMarks(a.textUthmani)}
+                      {renderArabic(a.textUthmani, a.verseNumber)}
                       <span className="ayah-mark" aria-hidden="true"> ﴿{toArabicNum(a.verseNumber)}﴾</span>
                     </div>
                     <p
@@ -686,7 +721,7 @@ function MushafReaderInner(props: MushafReaderProps) {
                         data-ayah={a.verseNumber}
                         onClick={(e) => openPopover(e, a.verseNumber)}
                       >
-                        {renderWithMarks(a.textUthmani)}
+                        {renderArabic(a.textUthmani, a.verseNumber)}
                       </span>
                       <span className="ayah-mark" aria-hidden="true">
                         ﴿{toArabicNum(a.verseNumber)}﴾

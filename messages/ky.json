@@ -723,7 +723,9 @@
     "fp_count": "{n} дал келүү",
     "fp_count_zero": "Дал келүү жок",
     "fp_close": "Жабуу",
-    "fp_open_label": "Издөө"
+    "fp_open_label": "Издөө",
+    "tj_label": "Тажвид",
+    "tj_toggle": "Тажвид эрежелери боюнча түс"
   },
   "sb": {
     "apply_btn": "Жазуу",

@@ -723,7 +723,9 @@
     "fp_count": "{n} matches",
     "fp_count_zero": "No matches",
     "fp_close": "Close search",
-    "fp_open_label": "Search"
+    "fp_open_label": "Search",
+    "tj_label": "Tajweed",
+    "tj_toggle": "Color by tajweed rules"
   },
   "sb": {
     "apply_btn": "Write to us",
