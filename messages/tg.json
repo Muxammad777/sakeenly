@@ -722,7 +722,8 @@
     "fp_placeholder": "Калима дар ин сура…",
     "fp_count": "{n} мувофиқат",
     "fp_count_zero": "Мувофиқат нест",
-    "fp_close": "Бастан"
+    "fp_close": "Бастан",
+    "fp_open_label": "Ҷустуҷӯ"
   },
   "sb": {
     "apply_btn": "Нависед",

@@ -722,7 +722,8 @@
     "fp_placeholder": "واژه‌ای در این سوره…",
     "fp_count": "{n} مورد",
     "fp_count_zero": "بدون نتیجه",
-    "fp_close": "بستن"
+    "fp_close": "بستن",
+    "fp_open_label": "جست‌وجو"
   },
   "sb": {
     "apply_btn": "نوشتن",

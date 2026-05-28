@@ -722,7 +722,8 @@
     "fp_placeholder": "Слово в этой суре…",
     "fp_count": "{n} совпадений",
     "fp_count_zero": "Нет совпадений",
-    "fp_close": "Закрыть поиск"
+    "fp_close": "Закрыть поиск",
+    "fp_open_label": "Поиск"
   },
   "sb": {
     "apply_btn": "Написать",

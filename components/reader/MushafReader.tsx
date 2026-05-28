@@ -13,6 +13,7 @@ import { toLocaleDigits } from "@/lib/quran/format";
 import { useActiveTranslation } from "./TranslationToggle";
 import { AudioPlayerProvider, useAudioPlayer } from "./AudioPlayerProvider";
 import { SideTab } from "./SideTab";
+import { getMushafPage, pagesOfSurah } from "@/lib/quran/mushaf-pages";
 
 export interface MushafAyah {
   ayahKey: string;
@@ -117,14 +118,20 @@ function MushafReaderInner(props: MushafReaderProps) {
   const [currentTime, setCurrentTime] = useState(0);
   const [showTranslations, setShowTranslations] = useState(true);
   // Mushaf-mode pagination: when on, the verse stream is sliced into
-  // book-like pages. Reset when the surah changes.
+  // the same physical pages a printed Madani Mushaf uses (1..604).
+  // pageIdx is an index into pagesInSurah; the displayed value is the
+  // real Mushaf page number.
   const [pageMode, setPageMode] = useState(false);
   const [pageIdx, setPageIdx] = useState(0);
-  const AYAHS_PER_PAGE = 8;
-  const pageCount = Math.max(1, Math.ceil(ayat.length / AYAHS_PER_PAGE));
+  const pagesInSurah = useMemo(
+    () => pagesOfSurah(surah.number, surah.versesCount),
+    [surah.number, surah.versesCount],
+  );
+  const pageCount = pagesInSurah.length;
+  const currentMushafPage = pagesInSurah[pageIdx] ?? pagesInSurah[0] ?? 1;
   useEffect(() => { setPageIdx(0); }, [surah.number]);
   const pageAyat = pageMode
-    ? ayat.slice(pageIdx * AYAHS_PER_PAGE, (pageIdx + 1) * AYAHS_PER_PAGE)
+    ? ayat.filter((a) => getMushafPage(surah.number, a.verseNumber) === currentMushafPage)
     : ayat;
   const [transPickerOpen, setTransPickerOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
@@ -523,8 +530,8 @@ function MushafReaderInner(props: MushafReaderProps) {
             )}
             {showTranslations && (
               <>
-                <span className="lbl">{t("lbl_translation")}</span>
-                {/* Current-translator button — visible only on mobile via CSS.
+                {/* Current-translator button (visible everywhere now —
+                    desktop too — to keep the trans-bar one compact row.
                     Tapping toggles the pill list below. */}
                 <button
                   type="button"
@@ -532,30 +539,50 @@ function MushafReaderInner(props: MushafReaderProps) {
                   onClick={() => setTransPickerOpen((v) => !v)}
                   aria-expanded={transPickerOpen}
                   aria-controls="trans-pills"
+                  title={t("lbl_translation")}
                 >
                   <span>{TRANSLATIONS.find((tr) => tr.key === activeKey)?.short ?? activeKey}</span>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M6 9l6 6 6-6" />
                   </svg>
                 </button>
-                <div
-                  id="trans-pills"
-                  className={"trans-pills" + (transPickerOpen ? " open" : "")}
-                >
-                  {TRANSLATIONS.map((tr) => (
-                    <button
-                      key={tr.key}
-                      className={"trans-pill" + (activeKey === tr.key ? " active" : "")}
-                      onClick={() => { setActiveKey(tr.key); setTransPickerOpen(false); }}
-                      type="button"
-                    >
-                      {tr.short}
-                    </button>
-                  ))}
-                </div>
               </>
             )}
+            {/* In-surah search trigger — inline with the other toggles
+                instead of a floating FAB, so all reader controls live on
+                one row. */}
+            <button
+              type="button"
+              className={"mode-toggle" + (pageSearchOpen ? " on" : "")}
+              onClick={() => setPageSearchOpen((v) => !v)}
+              aria-pressed={pageSearchOpen}
+              title={t("fp_open")}
+              aria-label={t("fp_open")}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+              </svg>
+              <span className="trans-toggle-label">{t("fp_open_label")}</span>
+            </button>
           </div>
+          {showTranslations && (
+            <div
+              id="trans-pills"
+              className={"trans-pills" + (transPickerOpen ? " open" : "")}
+              hidden={!transPickerOpen}
+            >
+              {TRANSLATIONS.map((tr) => (
+                <button
+                  key={tr.key}
+                  className={"trans-pill" + (activeKey === tr.key ? " active" : "")}
+                  onClick={() => { setActiveKey(tr.key); setTransPickerOpen(false); }}
+                  type="button"
+                >
+                  {tr.short}
+                </button>
+              ))}
+            </div>
+          )}
 
           {showTranslations ? (
             /* INTERLEAVED MODE — each ayah as a card: arabic on top, translation below */
@@ -678,7 +705,7 @@ function MushafReaderInner(props: MushafReaderProps) {
                     </svg>
                   </button>
                   <span className="pager-indicator">
-                    {t("page_of", { n: fmt(pageIdx + 1), total: fmt(pageCount) })}
+                    {t("page_of", { n: fmt(currentMushafPage), total: fmt(604) })}
                   </span>
                   <button
                     type="button"
@@ -925,21 +952,6 @@ function MushafReaderInner(props: MushafReaderProps) {
             </button>
           </div>
         </div>
-      )}
-
-      {/* In-surah search trigger (FAB) — hidden while the bar is open. */}
-      {!pageSearchOpen && (
-        <button
-          type="button"
-          onClick={() => setPageSearchOpen(true)}
-          className="page-search-fab"
-          aria-label={t("fp_open")}
-          title={t("fp_open")}
-        >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-          </svg>
-        </button>
       )}
 
       {/* ============ MOBILE-ONLY SIDE TABS ============ */}

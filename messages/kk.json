@@ -722,7 +722,8 @@
     "fp_placeholder": "Осы сүредегі сөз…",
     "fp_count": "{n} сәйкестік",
     "fp_count_zero": "Сәйкестік жоқ",
-    "fp_close": "Жабу"
+    "fp_close": "Жабу",
+    "fp_open_label": "Іздеу"
   },
   "sb": {
     "apply_btn": "Жазу",

@@ -271,32 +271,41 @@
     box-shadow: var(--shadow-1);
   }
 
-  /* Translator picker — collapsed-by-default on mobile. .trans-current is
-     the "current translator + chevron" button (visible only on mobile);
-     .trans-pills wraps the choice list. On desktop the wrapper is a
-     transparent passthrough so layout matches the old inline behaviour. */
-  .trans-current { display: none; }
-  .trans-pills { display: contents; } /* desktop: pills flow inside .trans-bar */
-  @media (max-width: 720px) {
-    .trans-current {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 7px 10px 7px 12px;
-      border-radius: 9px;
-      font-size: 13px;
-      color: oklch(var(--text));
-      background: oklch(var(--bg));
-      box-shadow: var(--shadow-1);
-    }
-    .trans-current svg { transition: transform 200ms; }
-    .trans-current.open svg { transform: rotate(180deg); }
-    .trans-pills {
-      display: none;
-      flex-basis: 100%;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 6px;
-    }
-    .trans-pills.open { display: flex; }
+  /* Translator picker — collapsed-by-default on EVERY viewport now.
+     .trans-current is the "current translator + chevron" trigger that
+     sits inline with the other toggles in .trans-bar; .trans-pills is
+     a separate row below that slides in only when transPickerOpen. */
+  .trans-current {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 10px 6px 12px;
+    border-radius: 999px;
+    border: 1px solid oklch(var(--border));
+    background: oklch(var(--surface));
+    color: oklch(var(--text-2));
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
+    cursor: pointer;
+    transition: border-color 140ms, color 140ms, background 140ms;
+  }
+  .trans-current:hover { border-color: oklch(var(--border-strong)); color: oklch(var(--text)); }
+  .trans-current.open {
+    background: var(--accent-soft);
+    border-color: color-mix(in oklab, oklch(var(--accent)) 40%, oklch(var(--border)));
+    color: oklch(var(--accent));
+  }
+  .trans-current svg { transition: transform 200ms; }
+  .trans-current.open svg { transform: rotate(180deg); }
+  .trans-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 8px 0 4px;
+    animation: transPillsIn 160ms ease-out;
+  }
+  .trans-pills[hidden] { display: none; }
+  @keyframes transPillsIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
   /* Ayah popover */
@@ -1002,31 +1011,8 @@
 }
 
 /* =================================================================
-   IN-SURAH SEARCH (FAB + inline bar + match highlight)
+   IN-SURAH SEARCH (inline trigger in trans-bar + sticky bar + highlight)
    ================================================================= */
-.page-search-fab {
-  position: fixed;
-  right: 22px;
-  bottom: 92px; /* sit clear of the bottom audio player */
-  z-index: 35;
-  display: grid;
-  place-items: center;
-  width: 46px; height: 46px;
-  border-radius: 999px;
-  background: oklch(var(--accent));
-  color: oklch(0.15 0.02 60);
-  border: 1px solid color-mix(in oklab, oklch(var(--accent)) 70%, oklch(var(--border)));
-  box-shadow: 0 10px 24px -8px oklch(0 0 0 / 0.45), 0 2px 6px -2px oklch(0 0 0 / 0.35);
-  cursor: pointer;
-  transition: transform 160ms, opacity 160ms;
-}
-.page-search-fab:hover { transform: translateY(-1px); opacity: 0.92; }
-[dir="rtl"] .page-search-fab { right: auto; left: 22px; }
-@media (max-width: 720px) {
-  .page-search-fab { right: 16px; bottom: 80px; width: 42px; height: 42px; }
-  [dir="rtl"] .page-search-fab { right: auto; left: 16px; }
-}
-
 .page-search-bar {
   position: sticky;
   top: 58px; /* under the sticky header */

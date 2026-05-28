@@ -722,7 +722,8 @@
     "fp_placeholder": "Word in this surah…",
     "fp_count": "{n} matches",
     "fp_count_zero": "No matches",
-    "fp_close": "Close search"
+    "fp_close": "Close search",
+    "fp_open_label": "Search"
   },
   "sb": {
     "apply_btn": "Write to us",

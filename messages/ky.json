@@ -722,7 +722,8 @@
     "fp_placeholder": "Бул сүрөдөгү сөз…",
     "fp_count": "{n} дал келүү",
     "fp_count_zero": "Дал келүү жок",
-    "fp_close": "Жабуу"
+    "fp_close": "Жабуу",
+    "fp_open_label": "Издөө"
   },
   "sb": {
     "apply_btn": "Жазуу",

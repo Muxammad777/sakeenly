@@ -722,7 +722,8 @@
     "fp_placeholder": "Bu surada soʻz…",
     "fp_count": "{n} mos",
     "fp_count_zero": "Mos kelmaydi",
-    "fp_close": "Yopish"
+    "fp_close": "Yopish",
+    "fp_open_label": "Qidirish"
   },
   "sb": {
     "apply_btn": "Yozish",
