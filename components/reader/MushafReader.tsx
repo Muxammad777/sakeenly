@@ -485,7 +485,11 @@ function MushafReaderInner(props: MushafReaderProps) {
             </div>
           )}
 
-          {/* TRANSLATION TOGGLE + STRIP */}
+          {/* TRANSLATION TOGGLE + STRIP — wrapped in a single sticky
+              container so the trigger row and the expanded translator
+              pills scroll together (they used to detach: bar stuck at
+              top, pills scrolled off above it). */}
+          <div className="trans-controls">
           <div className="trans-bar">
             <button
               type="button"
@@ -583,6 +587,7 @@ function MushafReaderInner(props: MushafReaderProps) {
               ))}
             </div>
           )}
+          </div>{/* /.trans-controls */}
 
           {showTranslations ? (
             /* INTERLEAVED MODE — each ayah as a card: arabic on top, translation below */

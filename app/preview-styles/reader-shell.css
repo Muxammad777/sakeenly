@@ -233,10 +233,19 @@
   .trans-text { font-family: 'Spectral', serif; font-size: 1.15rem; line-height: 1.6; }
   .trans-text em { color: oklch(var(--text-3)); font-style: italic; }
 
-  /* Translation toggle — sticky so it stays visible while scrolling the surah */
+  /* Sticky wrapper that pins BOTH the trans-bar (toggles row) and the
+     trans-pills (expanded translator picker) together. Previously only
+     .trans-bar was sticky, so when the user scrolled with the picker
+     open, the pills detached and disappeared above the viewport while
+     the bar stuck to the header. */
+  .trans-controls {
+    position: sticky;
+    top: 70px;
+    z-index: 20;
+    margin: 28px 0 10px;
+  }
   .trans-bar {
     display: flex; gap: 6px;
-    margin: 28px 0 10px;
     flex-wrap: wrap;
     align-items: center;
     padding: 6px;
@@ -245,11 +254,6 @@
     -webkit-backdrop-filter: blur(14px) saturate(140%);
     border: 1px solid oklch(var(--border));
     border-radius: 14px;
-    position: sticky;
-    /* Site header is sticky at top:0 with height 58px — anchor below it
-       so the trans-bar doesn't get hidden under the nav while scrolling. */
-    top: 70px;
-    z-index: 20;
   }
   .trans-bar .lbl {
     font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em;
@@ -299,7 +303,13 @@
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    margin: 8px 0 4px;
+    padding: 8px 10px 6px;
+    margin-top: 6px;
+    background: color-mix(in oklab, oklch(var(--surface)) 92%, transparent);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border: 1px solid oklch(var(--border));
+    border-radius: 14px;
     animation: transPillsIn 160ms ease-out;
   }
   .trans-pills[hidden] { display: none; }
