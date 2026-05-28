@@ -129,6 +129,62 @@ function MushafReaderInner(props: MushafReaderProps) {
   const [transPickerOpen, setTransPickerOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
 
+  // In-page (this surah only) search. Live highlight + match counter.
+  const [pageSearchOpen, setPageSearchOpen] = useState(false);
+  const [pageQuery, setPageQuery] = useState("");
+  useEffect(() => { setPageQuery(""); setPageSearchOpen(false); }, [surah.number]);
+  const pageQueryNorm = pageQuery.trim();
+  // Pre-compile a regex of query tokens, matching the SearchClient
+  // behavior: ≥2-char tokens, OR-joined, case-insensitive on Latin.
+  const pageSearchRegex = useMemo(() => {
+    if (pageQueryNorm.length < 2) return null;
+    const tokens = pageQueryNorm
+      .split(/[\s.,;:!?()«»"'\-—–]+/)
+      .filter((tok) => tok.length >= 2)
+      .map((tok) => tok.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+    if (tokens.length === 0) return null;
+    const isArabic = /[؀-ۿ]/.test(pageQueryNorm);
+    try { return new RegExp(`(${tokens.join("|")})`, isArabic ? "g" : "gi"); }
+    catch { return null; }
+  }, [pageQueryNorm]);
+
+  // Count matches across all currently-rendered ayat (arabic + active
+  // translation). Used for the live "N совпадений" counter.
+  const pageSearchMatchCount = useMemo(() => {
+    if (!pageSearchRegex) return 0;
+    let n = 0;
+    for (const a of ayat) {
+      n += (a.textUthmani.match(pageSearchRegex) ?? []).length;
+      const tr = a.translationsByKey[activeKey];
+      if (tr) {
+        // Strip HTML tags from the translation so we don't count <span> etc.
+        const plain = tr.replace(/<[^>]+>/g, "");
+        n += (plain.match(pageSearchRegex) ?? []).length;
+      }
+    }
+    return n;
+  }, [pageSearchRegex, ayat, activeKey]);
+
+  // Helper: split a plain string into [text, <mark>, text, …] React nodes.
+  // Used for arabic / plain text where we don't have HTML to worry about.
+  const renderWithMarks = (text: string): React.ReactNode => {
+    if (!pageSearchRegex) return text;
+    const parts = text.split(pageSearchRegex);
+    return parts.map((p, i) =>
+      i % 2 === 1
+        ? <mark key={i} className="page-search-hit">{p}</mark>
+        : p,
+    );
+  };
+
+  // Helper for translation text that's already HTML (citations, spans).
+  // Wraps matches in <mark> via regex.replace on the HTML string; safe
+  // because the matched tokens have regex special chars escaped above.
+  const highlightHtml = (html: string): string => {
+    if (!pageSearchRegex) return html;
+    return html.replace(pageSearchRegex, "<mark class=\"page-search-hit\">$1</mark>");
+  };
+
   const playableQueue = useMemo(
     () =>
       ayat
@@ -386,6 +442,42 @@ function MushafReaderInner(props: MushafReaderProps) {
             </div>
           </div>
 
+          {/* IN-SURAH SEARCH — collapsible bar that highlights live as
+              the user types. The trigger (FAB) lives outside .reader-main
+              so it's pinned to the viewport corner. */}
+          {pageSearchOpen && (
+            <div className="page-search-bar">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+              </svg>
+              <input
+                type="search"
+                value={pageQuery}
+                onChange={(e) => setPageQuery(e.target.value)}
+                placeholder={t("fp_placeholder")}
+                aria-label={t("fp_placeholder")}
+                autoFocus
+              />
+              <span className="page-search-count">
+                {pageQueryNorm.length < 2
+                  ? ""
+                  : pageSearchMatchCount > 0
+                    ? t("fp_count", { n: fmt(pageSearchMatchCount) })
+                    : t("fp_count_zero")}
+              </span>
+              <button
+                type="button"
+                onClick={() => { setPageQuery(""); setPageSearchOpen(false); }}
+                aria-label={t("fp_close")}
+                className="page-search-close"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                  <path d="M18 6 6 18M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
+          )}
+
           {/* TRANSLATION TOGGLE + STRIP */}
           <div className="trans-bar">
             <button
@@ -527,12 +619,12 @@ function MushafReaderInner(props: MushafReaderProps) {
                       </div>
                     </header>
                     <div className="ayah-block-arabic arabic" dir="rtl">
-                      {a.textUthmani}
+                      {renderWithMarks(a.textUthmani)}
                       <span className="ayah-mark" aria-hidden="true"> ﴿{toArabicNum(a.verseNumber)}﴾</span>
                     </div>
                     <p
                       className="ayah-block-trans"
-                      dangerouslySetInnerHTML={{ __html: text ?? "—" }}
+                      dangerouslySetInnerHTML={{ __html: text ? highlightHtml(text) : "—" }}
                     />
                   </article>
                 );
@@ -562,7 +654,7 @@ function MushafReaderInner(props: MushafReaderProps) {
                         data-ayah={a.verseNumber}
                         onClick={(e) => openPopover(e, a.verseNumber)}
                       >
-                        {a.textUthmani}
+                        {renderWithMarks(a.textUthmani)}
                       </span>
                       <span className="ayah-mark" aria-hidden="true">
                         ﴿{toArabicNum(a.verseNumber)}﴾
@@ -833,6 +925,21 @@ function MushafReaderInner(props: MushafReaderProps) {
             </button>
           </div>
         </div>
+      )}
+
+      {/* In-surah search trigger (FAB) — hidden while the bar is open. */}
+      {!pageSearchOpen && (
+        <button
+          type="button"
+          onClick={() => setPageSearchOpen(true)}
+          className="page-search-fab"
+          aria-label={t("fp_open")}
+          title={t("fp_open")}
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+        </button>
       )}
 
       {/* ============ MOBILE-ONLY SIDE TABS ============ */}

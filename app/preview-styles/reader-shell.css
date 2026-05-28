@@ -1000,3 +1000,89 @@
   .pop-btn { padding: 10px; }
   .pop-btn-label { display: none; }
 }
+
+/* =================================================================
+   IN-SURAH SEARCH (FAB + inline bar + match highlight)
+   ================================================================= */
+.page-search-fab {
+  position: fixed;
+  right: 22px;
+  bottom: 92px; /* sit clear of the bottom audio player */
+  z-index: 35;
+  display: grid;
+  place-items: center;
+  width: 46px; height: 46px;
+  border-radius: 999px;
+  background: oklch(var(--accent));
+  color: oklch(0.15 0.02 60);
+  border: 1px solid color-mix(in oklab, oklch(var(--accent)) 70%, oklch(var(--border)));
+  box-shadow: 0 10px 24px -8px oklch(0 0 0 / 0.45), 0 2px 6px -2px oklch(0 0 0 / 0.35);
+  cursor: pointer;
+  transition: transform 160ms, opacity 160ms;
+}
+.page-search-fab:hover { transform: translateY(-1px); opacity: 0.92; }
+[dir="rtl"] .page-search-fab { right: auto; left: 22px; }
+@media (max-width: 720px) {
+  .page-search-fab { right: 16px; bottom: 80px; width: 42px; height: 42px; }
+  [dir="rtl"] .page-search-fab { right: auto; left: 16px; }
+}
+
+.page-search-bar {
+  position: sticky;
+  top: 58px; /* under the sticky header */
+  z-index: 25;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px 8px 14px;
+  margin: 0 0 14px;
+  background: oklch(var(--surface));
+  border: 1px solid color-mix(in oklab, oklch(var(--accent)) 30%, oklch(var(--border)));
+  border-radius: 999px;
+  box-shadow: 0 6px 14px -8px oklch(0 0 0 / 0.4);
+  animation: pageSearchIn 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes pageSearchIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.page-search-bar > svg { color: oklch(var(--text-3)); flex: 0 0 auto; }
+.page-search-bar input {
+  flex: 1;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: oklch(var(--text));
+  font-family: inherit;
+  font-size: 14px;
+  padding: 6px 0;
+}
+.page-search-bar input::placeholder { color: oklch(var(--text-3)); }
+.page-search-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: oklch(var(--text-3));
+  white-space: nowrap;
+}
+.page-search-close {
+  display: grid;
+  place-items: center;
+  width: 28px; height: 28px;
+  border-radius: 999px;
+  background: transparent;
+  border: 0;
+  color: oklch(var(--text-2));
+  cursor: pointer;
+  transition: background 140ms, color 140ms;
+}
+.page-search-close:hover { background: oklch(var(--surface-2)); color: oklch(var(--text)); }
+
+/* Highlighted match inside the reader (both arabic and translation) */
+.page-search-hit {
+  background: color-mix(in oklab, oklch(var(--accent)) 70%, oklch(var(--bg)));
+  color: oklch(0.15 0.02 60);
+  padding: 0 3px;
+  border-radius: 4px;
+  font-weight: 600;
+}

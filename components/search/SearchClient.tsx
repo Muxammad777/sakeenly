@@ -53,7 +53,6 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   const [query, setQuery] = useState(initialQuery);
-  const [committedQuery, setCommittedQuery] = useState(initialQuery);
   const [results, setResults] = useState<SearchResult[] | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -62,37 +61,44 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
   const [surahFilter, setSurahFilter] = useState<number | "all">("all");
   const [shortOnly, setShortOnly] = useState(false);
 
+  // Live search: 300ms debounce + AbortController so each keystroke
+  // doesn't fan out 1 fetch and stale responses can't overwrite fresh
+  // results. URL ?q= is updated in the same effect to keep them in sync.
   useEffect(() => {
-    const q = committedQuery.trim();
+    const q = query.trim();
     if (q.length < 2) {
       setResults(null);
+      setError(null);
+      const url = new URL(window.location.href);
+      url.searchParams.delete("q");
+      window.history.replaceState(null, "", url.toString());
       return;
     }
-    let cancelled = false;
-    setLoading(true);
-    setError(null);
-    setSurahFilter("all");
-    setShortOnly(false);
-    fetch(`/api/search?q=${encodeURIComponent(q)}&locale=${locale}`)
-      .then((r) => r.json() as Promise<ApiResponse>)
-      .then((data) => {
-        if (cancelled) return;
-        setResults(data.results ?? []);
-      })
-      .catch((e) => {
-        if (cancelled) return;
-        setError(String(e?.message ?? e));
-      })
-      .finally(() => { if (!cancelled) setLoading(false); });
-    return () => { cancelled = true; };
-  }, [committedQuery, locale]);
-
-  useEffect(() => {
-    const url = new URL(window.location.href);
-    if (committedQuery.trim()) url.searchParams.set("q", committedQuery.trim());
-    else url.searchParams.delete("q");
-    window.history.replaceState(null, "", url.toString());
-  }, [committedQuery]);
+    const ac = new AbortController();
+    const handle = setTimeout(() => {
+      setLoading(true);
+      setError(null);
+      setSurahFilter("all");
+      setShortOnly(false);
+      fetch(`/api/search?q=${encodeURIComponent(q)}&locale=${locale}`, { signal: ac.signal })
+        .then((r) => r.json() as Promise<ApiResponse>)
+        .then((data) => {
+          setResults(data.results ?? []);
+          const url = new URL(window.location.href);
+          url.searchParams.set("q", q);
+          window.history.replaceState(null, "", url.toString());
+        })
+        .catch((e: unknown) => {
+          if (e instanceof Error && e.name === "AbortError") return;
+          setError(String(e instanceof Error ? e.message : e));
+        })
+        .finally(() => setLoading(false));
+    }, 300);
+    return () => {
+      clearTimeout(handle);
+      ac.abort();
+    };
+  }, [query, locale]);
 
   useEffect(() => { inputRef.current?.focus(); }, []);
 
@@ -126,14 +132,17 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
     return n;
   }, [visibleGrouped]);
 
+  // Form submit is a no-op: the debounced effect already fires on
+  // every keystroke. Keep it just to handle Enter without a full page
+  // reload (and to flush any pending debounce by re-setting state).
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setCommittedQuery(query);
+    setQuery((q) => q);
   };
 
-  const isArabicQuery = /[؀-ۿ]/.test(committedQuery);
-  const showEmpty = committedQuery.trim().length >= 2 && results !== null && results.length === 0 && !loading;
-  const showHint = committedQuery.trim().length < 2 && !loading;
+  const isArabicQuery = /[؀-ۿ]/.test(query);
+  const showEmpty = query.trim().length >= 2 && results !== null && results.length === 0 && !loading;
+  const showHint = query.trim().length < 2 && !loading;
 
   return (
     <div className="search-shell">
@@ -157,7 +166,7 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
       {loading && <div className="search-status">{t("loading")}</div>}
       {error && <div className="search-status search-status-error">{error}</div>}
       {showHint && <div className="search-status">{t("hint")}</div>}
-      {showEmpty && <div className="search-status">{t("no_results", { q: committedQuery })}</div>}
+      {showEmpty && <div className="search-status">{t("no_results", { q: query })}</div>}
 
       {results && results.length > 0 && (
         <>
@@ -192,8 +201,8 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
 
           <div className="search-meta">
             {visibleCount === results.length
-              ? t("found_count", { n: fmt(results.length), q: committedQuery })
-              : t("filtered_count", { n: fmt(visibleCount), total: fmt(results.length), q: committedQuery })}
+              ? t("found_count", { n: fmt(results.length), q: query })
+              : t("filtered_count", { n: fmt(visibleCount), total: fmt(results.length), q: query })}
           </div>
 
           {visibleCount === 0 ? (
@@ -220,13 +229,13 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
                           <div
                             className="search-result-arabic arabic"
                             dir="rtl"
-                            dangerouslySetInnerHTML={{ __html: highlight(r.arabic, committedQuery, true) }}
+                            dangerouslySetInnerHTML={{ __html: highlight(r.arabic, query, true) }}
                           />
                           {r.translation && (
                             <>
                               <div
                                 className="search-result-trans"
-                                dangerouslySetInnerHTML={{ __html: highlight(r.translation, committedQuery, isArabicQuery) }}
+                                dangerouslySetInnerHTML={{ __html: highlight(r.translation, query, isArabicQuery) }}
                               />
                               {r.translator && (
                                 <div className="search-result-tr-tag">

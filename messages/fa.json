@@ -717,7 +717,12 @@
     "mode_pages": "صفحه‌ای",
     "page_of": "صفحه {n} / {total}",
     "prev_page": "صفحه قبل",
-    "next_page": "صفحه بعد"
+    "next_page": "صفحه بعد",
+    "fp_open": "جست‌وجو در این سوره",
+    "fp_placeholder": "واژه‌ای در این سوره…",
+    "fp_count": "{n} مورد",
+    "fp_count_zero": "بدون نتیجه",
+    "fp_close": "بستن"
   },
   "sb": {
     "apply_btn": "نوشتن",

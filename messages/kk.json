@@ -717,7 +717,12 @@
     "mode_pages": "Беттік",
     "page_of": "Бет {n} / {total}",
     "prev_page": "Алдыңғы бет",
-    "next_page": "Келесі бет"
+    "next_page": "Келесі бет",
+    "fp_open": "Сүреден іздеу",
+    "fp_placeholder": "Осы сүредегі сөз…",
+    "fp_count": "{n} сәйкестік",
+    "fp_count_zero": "Сәйкестік жоқ",
+    "fp_close": "Жабу"
   },
   "sb": {
     "apply_btn": "Жазу",

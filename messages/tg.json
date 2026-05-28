@@ -717,7 +717,12 @@
     "mode_pages": "Саҳифагӣ",
     "page_of": "Саҳ. {n} / {total}",
     "prev_page": "Саҳифаи қаблӣ",
-    "next_page": "Саҳифаи баъдӣ"
+    "next_page": "Саҳифаи баъдӣ",
+    "fp_open": "Ҷустуҷӯ дар ин сура",
+    "fp_placeholder": "Калима дар ин сура…",
+    "fp_count": "{n} мувофиқат",
+    "fp_count_zero": "Мувофиқат нест",
+    "fp_close": "Бастан"
   },
   "sb": {
     "apply_btn": "Нависед",

@@ -717,7 +717,12 @@
     "mode_pages": "Pages",
     "page_of": "Page {n} / {total}",
     "prev_page": "Previous page",
-    "next_page": "Next page"
+    "next_page": "Next page",
+    "fp_open": "Search this surah",
+    "fp_placeholder": "Word in this surah…",
+    "fp_count": "{n} matches",
+    "fp_count_zero": "No matches",
+    "fp_close": "Close search"
   },
   "sb": {
     "apply_btn": "Write to us",

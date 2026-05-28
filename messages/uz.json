@@ -717,7 +717,12 @@
     "mode_pages": "Sahifa",
     "page_of": "Sah. {n} / {total}",
     "prev_page": "Oldingi sahifa",
-    "next_page": "Keyingi sahifa"
+    "next_page": "Keyingi sahifa",
+    "fp_open": "Surada qidirish",
+    "fp_placeholder": "Bu surada soʻz…",
+    "fp_count": "{n} mos",
+    "fp_count_zero": "Mos kelmaydi",
+    "fp_close": "Yopish"
   },
   "sb": {
     "apply_btn": "Yozish",

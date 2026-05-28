@@ -717,7 +717,12 @@
     "mode_pages": "Барактап",
     "page_of": "Барак {n} / {total}",
     "prev_page": "Мурунку барак",
-    "next_page": "Кийинки барак"
+    "next_page": "Кийинки барак",
+    "fp_open": "Сүрөдөн издөө",
+    "fp_placeholder": "Бул сүрөдөгү сөз…",
+    "fp_count": "{n} дал келүү",
+    "fp_count_zero": "Дал келүү жок",
+    "fp_close": "Жабуу"
   },
   "sb": {
     "apply_btn": "Жазуу",
