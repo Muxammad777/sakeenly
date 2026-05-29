@@ -15,8 +15,11 @@
     .reader-side, .reader-right { display: none; }
   }
   .reader-side {
-    position: sticky; top: 86px; align-self: start;
-    max-height: calc(100vh - 110px);
+    /* Align with .trans-controls (top:70px) so the sidebar's pinned
+       search bar sits on the same horizontal line as the reader's
+       translation/page-mode/search/tajweed toggles. */
+    position: sticky; top: 70px; align-self: start;
+    max-height: calc(100vh - 90px);
     overflow-y: auto;
   }
   /* Sidebar surah search — pinned to the top of the scrollable .reader-side
