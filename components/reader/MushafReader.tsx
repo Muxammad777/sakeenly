@@ -283,10 +283,14 @@ function MushafReaderInner(props: MushafReaderProps) {
     if (!sidebar) return;
     const active = sidebar.querySelector<HTMLAnchorElement>(".surah-item.active");
     if (!active) return;
+    // .side-search is sticky at the top of the sidebar — measure its
+    // real height so the active surah lands *below* it, not behind.
+    const search = sidebar.querySelector<HTMLElement>(".side-search");
+    const offset = (search?.offsetHeight ?? 0) + 8;
     const sidebarRect = sidebar.getBoundingClientRect();
     const activeRect = active.getBoundingClientRect();
     const delta = activeRect.top - sidebarRect.top + sidebar.scrollTop;
-    sidebar.scrollTo({ top: Math.max(0, delta - 8), behavior: "smooth" });
+    sidebar.scrollTo({ top: Math.max(0, delta - offset), behavior: "smooth" });
   }, [surah.number]);
 
   // Close popover on outside click.

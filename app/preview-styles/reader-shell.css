@@ -71,6 +71,10 @@
     color: oklch(var(--text-2));
     font-size: 14px;
     transition: background 140ms, color 140ms;
+    /* Offset so when the sidebar auto-scrolls to the active surah
+       (or the browser focuses one), it lands BELOW the sticky
+       .side-search bar instead of being hidden behind it. */
+    scroll-margin-top: 60px;
   }
   .surah-item:hover { background: oklch(var(--surface)); color: oklch(var(--text)); }
   .surah-item.active { background: var(--accent-soft); color: oklch(var(--accent)); }
