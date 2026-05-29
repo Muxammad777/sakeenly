@@ -19,6 +19,40 @@
     max-height: calc(100vh - 110px);
     overflow-y: auto;
   }
+  /* Sidebar surah search — pinned to the top of the scrollable .reader-side
+     so it doesn't disappear as the user scrolls the surah list. */
+  .side-search {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    margin: -2px -2px 14px;
+    padding: 6px 2px;
+    background: color-mix(in oklab, oklch(var(--bg)) 92%, transparent);
+    backdrop-filter: blur(10px) saturate(140%);
+    -webkit-backdrop-filter: blur(10px) saturate(140%);
+  }
+  .side-search input {
+    width: 100%;
+    padding: 9px 12px 9px 32px;
+    background: oklch(var(--surface));
+    border: 1px solid oklch(var(--border));
+    border-radius: 10px;
+    color: oklch(var(--text));
+    font-size: 13px; outline: none;
+    font-family: inherit;
+    box-sizing: border-box;
+  }
+  .side-search input:focus {
+    border-color: color-mix(in oklab, oklch(var(--accent)) 60%, oklch(var(--border)));
+  }
+  .side-search > svg {
+    position: absolute;
+    left: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: oklch(var(--text-3));
+    pointer-events: none;
+  }
   .side-label {
     font-family: 'JetBrains Mono', monospace; font-size: 11px;
     letter-spacing: 0.16em; text-transform: uppercase;

@@ -392,16 +392,29 @@ function MushafReaderInner(props: MushafReaderProps) {
     }
   }
 
+  // Precompute the localized surah name for each chapter so the
+  // sidebar filter actually matches the wording the user sees ("Юсуф"
+  // on RU, "هود" on FA). Without this, "юсуф" missed Yusuf because
+  // the API ships only the Latin transliteration ("name_simple").
+  const localizedSurahNames = useMemo(() => {
+    const m = new Map<number, string>();
+    for (const c of chapters) m.set(c.id, tSn(String(c.id)).toLowerCase());
+    return m;
+  }, [chapters, tSn]);
+
   const filteredChapters = useMemo(() => {
     const q = search.trim().toLowerCase();
     if (!q) return chapters;
-    return chapters.filter(
-      (c) =>
+    return chapters.filter((c) => {
+      const localized = localizedSurahNames.get(c.id) ?? "";
+      return (
+        localized.includes(q) ||
         c.nameSimple.toLowerCase().includes(q) ||
         String(c.id).includes(q) ||
-        c.nameArabic.includes(q),
-    );
-  }, [chapters, search]);
+        c.nameArabic.includes(q)
+      );
+    });
+  }, [chapters, search, localizedSurahNames]);
 
   const bookmarkedAyat = ayat.filter((a) => a.isBookmarked);
   const activeAyahData = activeAyah
@@ -419,23 +432,12 @@ function MushafReaderInner(props: MushafReaderProps) {
       <div className="reader-shell">
         {/* ============ SIDEBAR ============ */}
         <aside className="reader-side">
-          <div style={{ position: "relative", marginBottom: 18 }}>
+          <div className="side-search">
             <input
               type="search"
               placeholder={t("search_ph")}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              style={{
-                width: "100%",
-                padding: "9px 12px 9px 32px",
-                background: "var(--surface)",
-                border: "1px solid var(--border)",
-                borderRadius: 10,
-                color: "var(--text)",
-                fontSize: 13,
-                outline: "none",
-                fontFamily: "inherit",
-              }}
             />
             <svg
               width="13"
@@ -444,7 +446,7 @@ function MushafReaderInner(props: MushafReaderProps) {
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
-              style={{ position: "absolute", left: 11, top: 12, color: "var(--text-3)" }}
+              aria-hidden="true"
             >
               <circle cx="11" cy="11" r="8" />
               <path d="m21 21-4.35-4.35" />
