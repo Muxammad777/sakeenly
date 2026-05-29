@@ -179,6 +179,10 @@
     transition: background 160ms;
     border-radius: 6px;
     padding: 0 2px;
+    /* Offset for scrollIntoView so the anchor verse lands BELOW the
+       sticky header (58px) + sticky trans-controls (~52px) when we
+       jump there on a translation-toggle flip. */
+    scroll-margin-top: 140px;
   }
   .ayah-span:hover { background: var(--accent-soft); }
   .ayah-span.active {
@@ -728,6 +732,10 @@
     transition: border-color 160ms, background 160ms;
     position: relative;
     overflow: hidden;
+    /* Offset for scrollIntoView so the anchor verse lands BELOW the
+       sticky header + sticky trans-controls when the user flips the
+       translation toggle. */
+    scroll-margin-top: 140px;
   }
   .ayah-block:hover { border-color: color-mix(in oklab, oklch(var(--accent)) 35%, oklch(var(--border))); }
   .ayah-block.active {

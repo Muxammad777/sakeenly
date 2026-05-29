@@ -225,6 +225,30 @@ function MushafReaderInner(props: MushafReaderProps) {
     return n;
   }, [player.current, surah.number]);
 
+  // Anchor scroll: when the user flips the translation toggle, the
+  // currently-selected (or currently-playing) ayah should jump to the
+  // top of the viewport so they don't lose their reading position. The
+  // CSS `scroll-margin-top` on .ayah-block / .ayah-span carries the
+  // sticky-header offset so scrollIntoView lands them where expected.
+  const prevShowTranslations = useRef(showTranslations);
+  useEffect(() => {
+    if (prevShowTranslations.current === showTranslations) {
+      prevShowTranslations.current = showTranslations;
+      return;
+    }
+    prevShowTranslations.current = showTranslations;
+    const anchor = activeAyah ?? playingVerseNumber;
+    if (!anchor) return;
+    // Two rAFs — the first lets React commit the re-render, the second
+    // lets the browser apply layout for the freshly-shown ayah blocks.
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const el = document.getElementById(`ayah-${anchor}`);
+        el?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+  }, [showTranslations, activeAyah, playingVerseNumber]);
+
   // Sync progress bar with the global audio element via its label updates.
   useEffect(() => {
     const audio = document.querySelector("audio") as HTMLAudioElement | null;
@@ -646,6 +670,11 @@ function MushafReaderInner(props: MushafReaderProps) {
                       (activeAyah === a.verseNumber ? " active" : "") +
                       (playingVerseNumber === a.verseNumber ? " playing" : "")
                     }
+                    onClick={(e) => {
+                      // Ignore clicks that originated inside action buttons.
+                      if ((e.target as HTMLElement).closest("button, a")) return;
+                      setActiveAyah(a.verseNumber);
+                    }}
                   >
                     <header className="ayah-block-head">
                       <span className="ayah-block-num">{toArabicNum(a.verseNumber)} · {fmt(a.verseNumber)}</span>
