@@ -725,7 +725,19 @@
     "fp_close": "بستن",
     "fp_open_label": "جست‌وجو",
     "tj_label": "تجوید",
-    "tj_toggle": "رنگ‌آمیزی بر اساس قواعد تجوید"
+    "tj_toggle": "رنگ‌آمیزی بر اساس قواعد تجوید",
+    "tj_legend_h": "قواعد تجوید",
+    "tj_rule_madd_2": "مدّ طبیعی (۲ حرکت)",
+    "tj_rule_madd_246": "مدّ جایز (۴-۶ حرکت)",
+    "tj_rule_madd_6": "مدّ لازم (۶ حرکت)",
+    "tj_rule_madd_obligatory": "مدّ منفصل/متصل",
+    "tj_rule_qalqalah": "قلقله",
+    "tj_rule_ghunnah": "غُنّه",
+    "tj_rule_ikhfa": "اخفا",
+    "tj_rule_idghaam": "ادغام",
+    "tj_rule_idghaam_mut": "ادغام متجانسین/متقاربین",
+    "tj_rule_iqlab": "اقلاب",
+    "tj_rule_silent": "حروف ساکت"
   },
   "sb": {
     "apply_btn": "نوشتن",

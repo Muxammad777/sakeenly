@@ -13,6 +13,13 @@ interface AudioPlayerCtx {
   current: QueueItem | null;
   isPlaying: boolean;
   isLoading: boolean;
+  /** Seconds played on the active track. Driven by the active element's
+   *  `timeupdate` event; consumers don't need to touch DOM audio. */
+  currentTime: number;
+  /** Track length in seconds, or 0 until metadata loads. */
+  duration: number;
+  /** Seek to a given second on the active track. */
+  seek: (seconds: number) => void;
   playOne: (item: QueueItem) => void;
   playQueue: (items: QueueItem[], startIndex?: number) => void;
   toggle: () => void;
@@ -44,6 +51,8 @@ export function AudioPlayerProvider({ children }: { children: React.ReactNode })
   const [current, setCurrent] = useState<QueueItem | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
 
   const getActive = () => activeKey.current === "A" ? audioARef.current : audioBRef.current;
   const getStandby = () => activeKey.current === "A" ? audioBRef.current : audioARef.current;
@@ -80,6 +89,18 @@ export function AudioPlayerProvider({ children }: { children: React.ReactNode })
     const onCanPlay = (e: Event) => {
       if (e.currentTarget === getActive()) setIsLoading(false);
     };
+    // Time updates — only mirror them from the ACTIVE element so the
+    // standby track's buffering doesn't fight the progress UI.
+    const onTime = (e: Event) => {
+      if (e.currentTarget !== getActive()) return;
+      const el = e.currentTarget as HTMLAudioElement;
+      setCurrentTime(el.currentTime || 0);
+    };
+    const onMeta = (e: Event) => {
+      if (e.currentTarget !== getActive()) return;
+      const el = e.currentTarget as HTMLAudioElement;
+      setDuration(Number.isFinite(el.duration) ? el.duration : 0);
+    };
 
     // Gapless handoff: when the active element ends, the standby (if it
     // has the right next-item src) plays immediately, and we swap roles.
@@ -115,6 +136,9 @@ export function AudioPlayerProvider({ children }: { children: React.ReactNode })
       el.addEventListener("waiting", onWaiting);
       el.addEventListener("canplay", onCanPlay);
       el.addEventListener("ended", onEnded);
+      el.addEventListener("timeupdate", onTime);
+      el.addEventListener("loadedmetadata", onMeta);
+      el.addEventListener("durationchange", onMeta);
     }
 
     return () => {
@@ -125,10 +149,25 @@ export function AudioPlayerProvider({ children }: { children: React.ReactNode })
         el.removeEventListener("waiting", onWaiting);
         el.removeEventListener("canplay", onCanPlay);
         el.removeEventListener("ended", onEnded);
+        el.removeEventListener("timeupdate", onTime);
+        el.removeEventListener("loadedmetadata", onMeta);
+        el.removeEventListener("durationchange", onMeta);
       }
       audioARef.current = null;
       audioBRef.current = null;
     };
+  }, []);
+
+  // Reset progress display on track change.
+  useEffect(() => {
+    setCurrentTime(0);
+    setDuration(0);
+  }, [current?.url]);
+
+  const seek = useCallback((seconds: number) => {
+    const active = getActive();
+    if (!active) return;
+    try { active.currentTime = Math.max(0, Math.min(seconds, active.duration || seconds)); } catch {}
   }, []);
 
   function loadAndPlay(item: QueueItem, indexInQueue: number) {
@@ -178,7 +217,7 @@ export function AudioPlayerProvider({ children }: { children: React.ReactNode })
   }, []);
 
   return (
-    <Ctx.Provider value={{ current, isPlaying, isLoading, playOne, playQueue, toggle, stop }}>
+    <Ctx.Provider value={{ current, isPlaying, isLoading, currentTime, duration, seek, playOne, playQueue, toggle, stop }}>
       {children}
     </Ctx.Provider>
   );

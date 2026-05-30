@@ -114,9 +114,11 @@ function MushafReaderInner(props: MushafReaderProps) {
     window.location.assign(url.toString());
   }
   const [search, setSearch] = useState("");
-  const [progress, setProgress] = useState(0);
-  const [duration, setDuration] = useState(0);
-  const [currentTime, setCurrentTime] = useState(0);
+  // Progress is derived from currentTime/duration exposed by the
+  // AudioPlayerProvider context (the actual <audio> elements are
+  // detached, so DOM querySelector won't see them).
+  const { currentTime, duration, seek: seekAudio } = player;
+  const progress = duration > 0 ? currentTime / duration : 0;
   // Default off — the reader opens on the pure mushaf text. Users
   // who want a translation tap the toggle in the trans-bar.
   const [showTranslations, setShowTranslations] = useState(false);
@@ -249,22 +251,10 @@ function MushafReaderInner(props: MushafReaderProps) {
     });
   }, [showTranslations, activeAyah, playingVerseNumber]);
 
-  // Sync progress bar with the global audio element via its label updates.
-  useEffect(() => {
-    const audio = document.querySelector("audio") as HTMLAudioElement | null;
-    if (!audio) return;
-    const onTime = () => {
-      setCurrentTime(audio.currentTime || 0);
-      setDuration(audio.duration || 0);
-      setProgress(audio.duration ? audio.currentTime / audio.duration : 0);
-    };
-    audio.addEventListener("timeupdate", onTime);
-    audio.addEventListener("loadedmetadata", onTime);
-    return () => {
-      audio.removeEventListener("timeupdate", onTime);
-      audio.removeEventListener("loadedmetadata", onTime);
-    };
-  }, [player.current?.ayahKey]);
+  // (Progress sync used to live here via document.querySelector("audio").
+  // That never resolved — AudioPlayerProvider mounts its <audio> off-DOM.
+  // The provider now exposes currentTime/duration directly through the
+  // context, so we just read them above.)
 
   // Scroll the requested initial ayah into view on mount.
   useEffect(() => {
@@ -803,25 +793,37 @@ function MushafReaderInner(props: MushafReaderProps) {
 
         {/* ============ RIGHT PANE ============ */}
         <aside className="reader-right">
-          <div className="info-card">
-            <h4>{t("about_h")}</h4>
-            <div className="info-row">
-              <span>{t("about_name")}</span>
-              <span>{surahName}</span>
+          {/* "About this surah" card was removed — it duplicated the hero
+              block at the top of .reader-main. When tajweed is on, the
+              same slot is reused for a tajweed-rule color legend. */}
+          {tajweedMode && (
+            <div className="info-card tajweed-legend">
+              <h4>{t("tj_legend_h")}</h4>
+              {[
+                { rules: ["madd_2"],                            label: t("tj_rule_madd_2") },
+                { rules: ["madd_246"],                          label: t("tj_rule_madd_246") },
+                { rules: ["madd_6"],                            label: t("tj_rule_madd_6") },
+                { rules: ["madd_munfasil", "madd_muttasil"],    label: t("tj_rule_madd_obligatory") },
+                { rules: ["qalqalah"],                          label: t("tj_rule_qalqalah") },
+                { rules: ["ghunnah"],                           label: t("tj_rule_ghunnah") },
+                { rules: ["ikhfa", "ikhfa_shafawi"],            label: t("tj_rule_ikhfa") },
+                { rules: ["idghaam_ghunnah",
+                          "idghaam_no_ghunnah",
+                          "idghaam_shafawi"],                   label: t("tj_rule_idghaam") },
+                { rules: ["idghaam_mutajanisayn",
+                          "idghaam_mutaqaribayn"],              label: t("tj_rule_idghaam_mut") },
+                { rules: ["iqlab"],                             label: t("tj_rule_iqlab") },
+                { rules: ["hamzat_wasl",
+                          "lam_shamsiyyah",
+                          "silent"],                            label: t("tj_rule_silent") },
+              ].map((row, i) => (
+                <div key={i} className="tj-legend-row">
+                  <span className={`tj-legend-swatch tj-${row.rules[0]}`}>ن</span>
+                  <span className="tj-legend-label">{row.label}</span>
+                </div>
+              ))}
             </div>
-            <div className="info-row">
-              <span>{t("about_rev")}</span>
-              <span>{surah.revelationPlace === "makkah" ? t("place_makkah") : t("place_madinah")}</span>
-            </div>
-            <div className="info-row">
-              <span>{t("about_order")}</span>
-              <span>{fmt(surah.revelationOrder)}</span>
-            </div>
-            <div className="info-row">
-              <span>{t("ayat_count")}</span>
-              <span>{fmt(surah.versesCount)}</span>
-            </div>
-          </div>
+          )}
 
           <div className="info-card">
             <h4>{t("reciter_h")}</h4>
@@ -984,11 +986,10 @@ function MushafReaderInner(props: MushafReaderProps) {
             <div
               className="bar"
               onClick={(e) => {
-                const audio = document.querySelector("audio") as HTMLAudioElement | null;
-                if (!audio || !audio.duration) return;
+                if (!duration) return;
                 const rect = e.currentTarget.getBoundingClientRect();
                 const pct = (e.clientX - rect.left) / rect.width;
-                audio.currentTime = audio.duration * Math.max(0, Math.min(1, pct));
+                seekAudio(duration * Math.max(0, Math.min(1, pct)));
               }}
             >
               <div style={{ width: `${progress * 100}%` }} />

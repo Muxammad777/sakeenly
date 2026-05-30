@@ -725,7 +725,19 @@
     "fp_close": "Yopish",
     "fp_open_label": "Qidirish",
     "tj_label": "Tajvid",
-    "tj_toggle": "Tajvid qoidalariga koʻra rang"
+    "tj_toggle": "Tajvid qoidalariga koʻra rang",
+    "tj_legend_h": "Tajvid qoidalari",
+    "tj_rule_madd_2": "Madd (2 harakat)",
+    "tj_rule_madd_246": "Madd (4-6 harakat)",
+    "tj_rule_madd_6": "Madd lozim (6)",
+    "tj_rule_madd_obligatory": "Madd munfasil/muttasil",
+    "tj_rule_qalqalah": "Qalqala (aks-sado)",
+    "tj_rule_ghunnah": "Gʻunna (burun)",
+    "tj_rule_ikhfa": "Ixfa",
+    "tj_rule_idghaam": "Idgʻom",
+    "tj_rule_idghaam_mut": "Oʻxshash harflar idgʻomi",
+    "tj_rule_iqlab": "Iqlab",
+    "tj_rule_silent": "Talaffuz qilinmaydi"
   },
   "sb": {
     "apply_btn": "Yozish",

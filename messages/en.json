@@ -725,7 +725,19 @@
     "fp_close": "Close search",
     "fp_open_label": "Search",
     "tj_label": "Tajweed",
-    "tj_toggle": "Color by tajweed rules"
+    "tj_toggle": "Color by tajweed rules",
+    "tj_legend_h": "Tajweed rules",
+    "tj_rule_madd_2": "Madd (2 harakat)",
+    "tj_rule_madd_246": "Madd (4-6 harakat)",
+    "tj_rule_madd_6": "Madd laazim (6 harakat)",
+    "tj_rule_madd_obligatory": "Madd munfasil/muttasil",
+    "tj_rule_qalqalah": "Qalqalah (echo)",
+    "tj_rule_ghunnah": "Ghunnah (nasal)",
+    "tj_rule_ikhfa": "Ikhfa (concealment)",
+    "tj_rule_idghaam": "Idghaam (assimilation)",
+    "tj_rule_idghaam_mut": "Idghaam of similar letters",
+    "tj_rule_iqlab": "Iqlab",
+    "tj_rule_silent": "Silent"
   },
   "sb": {
     "apply_btn": "Write to us",

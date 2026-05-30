@@ -725,7 +725,19 @@
     "fp_close": "Жабуу",
     "fp_open_label": "Издөө",
     "tj_label": "Тажвид",
-    "tj_toggle": "Тажвид эрежелери боюнча түс"
+    "tj_toggle": "Тажвид эрежелери боюнча түс",
+    "tj_legend_h": "Тажвид эрежелери",
+    "tj_rule_madd_2": "Мадд (2 харакат)",
+    "tj_rule_madd_246": "Мадд (4-6 харакат)",
+    "tj_rule_madd_6": "Мадди лазим (6)",
+    "tj_rule_madd_obligatory": "Мадди мунфасил/муттасил",
+    "tj_rule_qalqalah": "Калкала",
+    "tj_rule_ghunnah": "Гунна",
+    "tj_rule_ikhfa": "Ихфа",
+    "tj_rule_idghaam": "Идгам",
+    "tj_rule_idghaam_mut": "Окшош тамгалардын идгамы",
+    "tj_rule_iqlab": "Иклаб",
+    "tj_rule_silent": "Айтылбайт"
   },
   "sb": {
     "apply_btn": "Жазуу",

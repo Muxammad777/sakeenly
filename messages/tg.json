@@ -725,7 +725,19 @@
     "fp_close": "Бастан",
     "fp_open_label": "Ҷустуҷӯ",
     "tj_label": "Таҷвид",
-    "tj_toggle": "Ранг бар асоси қоидаҳои таҷвид"
+    "tj_toggle": "Ранг бар асоси қоидаҳои таҷвид",
+    "tj_legend_h": "Қоидаҳои таҷвид",
+    "tj_rule_madd_2": "Мадд (2 ҳаракат)",
+    "tj_rule_madd_246": "Мадд (4-6 ҳаракат)",
+    "tj_rule_madd_6": "Мадди лозим (6)",
+    "tj_rule_madd_obligatory": "Мадди мунфасил/муттасил",
+    "tj_rule_qalqalah": "Қалқала",
+    "tj_rule_ghunnah": "Ғунна",
+    "tj_rule_ikhfa": "Ихфо",
+    "tj_rule_idghaam": "Идғом",
+    "tj_rule_idghaam_mut": "Идғоми ҳамхатҳо",
+    "tj_rule_iqlab": "Иқлоб",
+    "tj_rule_silent": "Талаффуз намешавад"
   },
   "sb": {
     "apply_btn": "Нависед",

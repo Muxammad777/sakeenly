@@ -725,7 +725,19 @@
     "fp_close": "Закрыть поиск",
     "fp_open_label": "Поиск",
     "tj_label": "Таджвид",
-    "tj_toggle": "Окраска по правилам таджвида"
+    "tj_toggle": "Окраска по правилам таджвида",
+    "tj_legend_h": "Правила таджвида",
+    "tj_rule_madd_2": "Мадд (2 харакат)",
+    "tj_rule_madd_246": "Мадд (4-6 харакат)",
+    "tj_rule_madd_6": "Мадд лазим (6 харакат)",
+    "tj_rule_madd_obligatory": "Мадд мунфасиль/муттасиль",
+    "tj_rule_qalqalah": "Калькаля (эхо)",
+    "tj_rule_ghunnah": "Гунна (носовой)",
+    "tj_rule_ikhfa": "Ихфа (сокрытие)",
+    "tj_rule_idghaam": "Идгам (ассимиляция)",
+    "tj_rule_idghaam_mut": "Идгам сходных букв",
+    "tj_rule_iqlab": "Иклаб",
+    "tj_rule_silent": "Не произносится"
   },
   "sb": {
     "apply_btn": "Написать",
