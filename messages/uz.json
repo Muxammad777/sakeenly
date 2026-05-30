@@ -205,7 +205,10 @@
     "h1": "Hayot qiyinlashgan joyda Kitobni och.",
     "lede": "Iliq koʻrsatkich: tashvish, qaygʻu, uyqudan oldin, imtihondan oldin, shukrda, yolgʻizlikda qaysi oyatlarni oʻqish kerak. Har bir toʻplam — 3-5 oyat tarjima va audio bilan.",
     "open": "Ochish →",
-    "aya_count": "{count} oyat"
+    "aya_count": "{count} oyat",
+    "cat_akhirah": "Oxirat",
+    "cat_aqida": "Aqida",
+    "cat_signs": "Belgilar"
   },
   "close": {
     "cite": "«Fath» surasi · 48:4",
@@ -986,7 +989,19 @@
     "v-noch-kadr": "Qadr kechasi oyatlari",
     "dlya-mira-v-sem-e": "Oilada tinchlik uchun oyatlar",
     "dlya-rakhma": "Rahmat haqida oyatlar",
-    "dlya-dovolstva-allahom": "Alloh roziligi uchun oyatlar"
+    "dlya-dovolstva-allahom": "Alloh roziligi uchun oyatlar",
+    "o-rayu": "Jannat haqida oyatlar",
+    "o-ade": "Jahannam haqida oyatlar",
+    "o-sudnom-dne": "Qiyomat haqida oyatlar",
+    "o-tavkhide": "Tavhid haqida oyatlar",
+    "o-poslannike": "Rasul ﷺ haqida oyatlar",
+    "o-prorokakh": "Payg'ambarlar haqida oyatlar",
+    "o-angelakh": "Farishtalar haqida oyatlar",
+    "o-tvorenii": "Yaratilish haqida oyatlar",
+    "o-korane": "Qur'on haqida oyatlar",
+    "o-nameze": "Namoz haqida oyatlar",
+    "o-zakate": "Zakot haqida oyatlar",
+    "o-khadje": "Haj haqida oyatlar"
   },
   "ts": {
     "label": "Mavzu",

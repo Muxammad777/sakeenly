@@ -205,7 +205,10 @@
     "h1": "Open the Book where life made it hard.",
     "lede": "A warm index: which ayat of the Quran to read when you're anxious, in grief, before sleep, before an exam, in gratitude, in loneliness. Each collection — 3 to 5 ayat with translation and audio.",
     "open": "Open →",
-    "aya_count": "{count, plural, one {# ayah} other {# ayat}}"
+    "aya_count": "{count, plural, one {# ayah} other {# ayat}}",
+    "cat_akhirah": "Afterlife",
+    "cat_aqida": "Core beliefs",
+    "cat_signs": "Signs"
   },
   "close": {
     "cite": "Surah Al-Fath · 48:4",
@@ -986,7 +989,19 @@
     "v-noch-kadr": "Ayat for Laylat al-Qadr",
     "dlya-mira-v-sem-e": "Ayat for peace at home",
     "dlya-rakhma": "Ayat on rahma (mercy)",
-    "dlya-dovolstva-allahom": "Ayat on contentment with Allah"
+    "dlya-dovolstva-allahom": "Ayat on contentment with Allah",
+    "o-rayu": "Verses on Paradise",
+    "o-ade": "Verses on Hellfire",
+    "o-sudnom-dne": "Verses on the Day of Judgement",
+    "o-tavkhide": "Verses on Tawhid",
+    "o-poslannike": "Verses on the Messenger ﷺ",
+    "o-prorokakh": "Verses on the Prophets",
+    "o-angelakh": "Verses on the Angels",
+    "o-tvorenii": "Verses on creation",
+    "o-korane": "Verses on the Quran",
+    "o-nameze": "Verses on prayer",
+    "o-zakate": "Verses on zakat",
+    "o-khadje": "Verses on hajj"
   },
   "ts": {
     "label": "Theme",
