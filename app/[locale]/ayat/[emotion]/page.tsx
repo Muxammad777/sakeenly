@@ -14,8 +14,35 @@ import mokhtasarKyMap  from "@/lib/quran/tanzil/mokhtasar-ky.json";
 import krachkovskyMap  from "@/lib/quran/tanzil/krachkovsky.json";
 import osmanovMap      from "@/lib/quran/tanzil/osmanov.json";
 import porokhovaMap    from "@/lib/quran/tanzil/porokhova.json";
+import fooladvandMap   from "@/lib/quran/tanzil/fooladvand.json";
+import kulievRaw       from "@/lib/knowledge/translations/ru_elmirkuliev.json";
+import sahihRaw        from "@/lib/knowledge/translations/en_sahih_international.json";
+
+// Quran.com's translation API occasionally returns Kuliev with footnote
+// <sup>n</sup> markup or otherwise looking truncated. Easier to ship the
+// whole text from the local corpora we already bundle for /search and
+// overlay it on top of the API-fetched arabic + audio.
+type VerseEntry = { chapter: number; verse: number; text: string };
+function buildMapFromVerseArray(data: { quran: VerseEntry[] }): Record<string, string> {
+  const m: Record<string, string> = {};
+  for (const v of data.quran) m[`${v.chapter}:${v.verse}`] = v.text;
+  return m;
+}
+function buildMapFromQuranComApi(
+  data: { data: { surahs: Array<{ number: number; ayahs: Array<{ numberInSurah: number; text: string }> }> } },
+): Record<string, string> {
+  const m: Record<string, string> = {};
+  for (const sura of data.data.surahs) {
+    for (const a of sura.ayahs) m[`${sura.number}:${a.numberInSurah}`] = a.text;
+  }
+  return m;
+}
+const kulievMap = buildMapFromVerseArray(kulievRaw as { quran: VerseEntry[] });
+const sahihMap  = buildMapFromQuranComApi(sahihRaw as Parameters<typeof buildMapFromQuranComApi>[0]);
 
 const TANZIL_MAPS: Record<string, Record<string, string>> = {
+  kuliev:         kulievMap,
+  "sahih-intl":   sahihMap,
   ayati:          ayatiMap        as Record<string, string>,
   sodik:          sodikMap        as Record<string, string>,
   altay:          altayMap        as Record<string, string>,
@@ -23,6 +50,7 @@ const TANZIL_MAPS: Record<string, Record<string, string>> = {
   krachkovsky:    krachkovskyMap  as Record<string, string>,
   osmanov:        osmanovMap      as Record<string, string>,
   porokhova:      porokhovaMap    as Record<string, string>,
+  fooladvand:     fooladvandMap   as Record<string, string>,
 };
 
 interface PageProps {
