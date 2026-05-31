@@ -1,49 +1,49 @@
 {
   "ab": {
-    "badge": "Sakeenly · since 2026",
-    "cta_btn1": "Scholar board",
-    "cta_btn2": "Privacy policy",
-    "cta_eyebrow": "Want to help?",
-    "cta_h": "Scholar board · contributors · feedback",
-    "cta_p": "If you're a scholar, an engineer, or you just want to flag a mistake — write to hello@sakeenly.com.",
-    "h1": "Stillness of the heart is not a feature — it's a ritual.",
-    "lede": "Sakina is the tranquillity Allah sends down upon the hearts of the believers. Modern apps are often the opposite of that. We're building the inverse: a product that leaves the heart lighter after using it.",
+    "badge": "Sakeenly · sejak 2026",
+    "cta_btn1": "Lembaga Ulama",
+    "cta_btn2": "Dasar privasi",
+    "cta_eyebrow": "Ingin membantu?",
+    "cta_h": "Lembaga ulama · penyumbang · maklum balas",
+    "cta_p": "Jika anda ulama, jurutera, atau hanya ingin melaporkan kesilapan — tulis ke hello@sakeenly.com.",
+    "h1": "Ketenangan hati bukan ciri — ia adalah ritual.",
+    "lede": "Sakinah ialah ketenangan yang Allah turunkan ke atas hati orang-orang beriman.",
     "p1": {
-      "d": "No ad networks. No affiliate links inside answers. No pop-ups.",
-      "n": "01 — Advertising",
-      "t": "No banners. Ever."
+      "d": "Tiada rangkaian iklan.",
+      "n": "01 — Pengiklanan",
+      "t": "Tiada sepanduk. Selamanya."
     },
     "p2": {
-      "d": "No Google Analytics. No Meta Pixel. No AppsFlyer. Only the product itself, server logs, and anonymous performance metrics.",
-      "n": "02 — Trackers",
-      "t": "Zero telemetry."
+      "d": "Tiada Google Analytics.",
+      "n": "02 — Penjejak",
+      "t": "Sifar telemetri."
     },
     "p3": {
-      "d": "Our AI answers only from authenticated sources and never issues fatwa. Personal legal questions are routed to qualified scholars.",
+      "d": "AI kami hanya menjawab dari sumber sahih.",
       "n": "03 — Fatwa",
-      "t": "That's a scholar's work."
+      "t": "Itu kerja ulama."
     },
     "p4": {
-      "d": "Illustrations are pure geometry. Prophet stories ﷺ ship as text and audio — never as depicted faces.",
+      "d": "Ilustrasi geometri tulen. Kisah nabi sebagai teks dan audio.",
       "n": "04 — Adab",
-      "t": "No images of people or the Ka'ba."
+      "t": "Tiada gambar manusia atau Ka'bah."
     },
     "p5": {
-      "d": "Encryption at rest. Full export on request. Deleting your account cascades through everything.",
-      "n": "05 — Encryption",
-      "t": "Your bookmarks belong to you."
+      "d": "Penyulitan disimpan.",
+      "n": "05 — Penyulitan",
+      "t": "Penanda anda milik anda."
     },
     "p6": {
-      "d": "Premium and Family exist for one reason — so we never have to sell you to advertisers.",
-      "n": "06 — Pricing",
-      "t": "Reading is always free."
+      "d": "Premium wujud supaya kami tidak perlu menjual anda kepada pengiklan.",
+      "n": "06 — Harga",
+      "t": "Membaca sentiasa percuma."
     },
-    "principles_eyebrow": "Six principles",
-    "principles_h": "What we promised ourselves.",
+    "principles_eyebrow": "Enam prinsip",
+    "principles_h": "Apa yang kami janji kepada diri sendiri.",
     "quote_cite": "Surah Al-Fath · 48:4 · Sahih International",
-    "quote_tr": "\"It is He who sent down tranquillity into the hearts of the believers.\"",
-    "sources_eyebrow": "What this is built on",
-    "sources_h": "Sources and fonts."
+    "quote_tr": "«Dialah yang menurunkan ketenangan ke dalam hati orang-orang beriman.»",
+    "sources_eyebrow": "Apa yang ini dibina atas",
+    "sources_h": "Sumber dan fon."
   },
   "ask": {
     "a1_html": "The Quran places sabr among the believer's defining qualities and promises the patient a reward without measure <span class=\"citation\">Quran 39:10</span>. When the heart contracts, He reminds us that He is with the patient <span class=\"citation\">Quran 2:153</span>, and that ease follows every hardship <span class=\"citation\">Quran 94:5</span>. The Prophet ﷺ was commanded to bear \"a beautiful patience\" <span class=\"citation\">Quran 70:5</span> — without complaint to creation.",
@@ -283,97 +283,97 @@
     "title_t": "Setiap hari."
   },
   "ix": {
-    "badge": "Design Preview · 17 screens",
-    "grp1_eyebrow": "Original design (7) · untouched",
-    "grp1_h": "From the «Quran» folder",
-    "grp2_eyebrow": "Added in the same style (10)",
-    "grp2_h": "Missing pages",
-    "h1": "Sakeenly · every screen on one page.",
+    "badge": "Pratonton Reka Bentuk · 17 skrin",
+    "grp1_eyebrow": "Reka bentuk asal (7) · tidak diubah",
+    "grp1_h": "Daripada folder «Quran»",
+    "grp2_eyebrow": "Ditambah dengan gaya yang sama (10)",
+    "grp2_h": "Halaman yang hilang",
+    "h1": "Sakeenly · setiap skrin pada satu halaman.",
     "k1": {
-      "d": "VOTD · streak · 3 rituals · emotions · open hero",
-      "t": "Home"
+      "d": "Ayat hari ini · streak · 3 ritual · emosi · hero",
+      "t": "Laman utama"
     },
     "k10": {
-      "d": "Mission · 6 principles · sources",
-      "t": "About"
+      "d": "Misi · 6 prinsip · sumber",
+      "t": "Tentang"
     },
     "k11": {
-      "d": "Pipeline review · scholar board",
-      "t": "Scholar board"
+      "d": "Tinjauan pipeline · lembaga ulama",
+      "t": "Lembaga Ulama"
     },
     "k12": {
-      "d": "Google / Apple / magic-link · quota aside",
-      "t": "Sign-in"
+      "d": "Google / Apple / magic-link · kuota",
+      "t": "Log masuk"
     },
     "k13": {
-      "d": "Streak · bookmarks · subscription · settings",
-      "t": "Profile"
+      "d": "Streak · penanda · langganan · tetapan",
+      "t": "Profil"
     },
     "k14": {
-      "d": "28 KFGQPC letters · 7-column grid",
-      "t": "Kids · Alphabet"
+      "d": "28 huruf KFGQPC · grid 7 lajur",
+      "t": "Kanak-kanak · Huruf"
     },
     "k15": {
-      "d": "Al-Fatihah + 5 short surahs · per-ayah progress",
-      "t": "Kids · First surahs"
+      "d": "Al-Fatihah + 5 surah pendek",
+      "t": "Kanak-kanak · Surah pertama"
     },
     "k16": {
-      "d": "9 prophets · no depictions of people",
-      "t": "Kids · Prophet stories"
+      "d": "9 nabi · tiada gambar manusia",
+      "t": "Kanak-kanak · Kisah nabi"
     },
     "k17": {
-      "d": "104 · quote 2:216 · return",
-      "t": "404 · Not Found"
+      "d": "104 · petikan 2:216 · kembali",
+      "t": "404 · Tidak Dijumpai"
     },
     "k2": {
-      "d": "3-column mushaf · KFGQPC · sticky player",
-      "t": "Reader"
+      "d": "Mushaf 3 lajur · KFGQPC · pemain melekat",
+      "t": "Pembaca"
     },
     "k3": {
-      "d": "Reciters · filter · now playing · sleep timer",
-      "t": "Listen"
+      "d": "Qari · penapis · sedang dimainkan · pemasa tidur",
+      "t": "Dengar"
     },
     "k4": {
-      "d": "Iqra · surahs with progress · stories",
-      "t": "Kids"
+      "d": "Iqra · surah dengan kemajuan · kisah",
+      "t": "Kanak-kanak"
     },
     "k5": {
-      "d": "Free / Premium / Family · comparison · FAQ",
-      "t": "Pricing"
+      "d": "Percuma / Premium / Keluarga · perbandingan · FAQ",
+      "t": "Harga"
     },
     "k6": {
-      "d": "What we collect · full transparency",
-      "t": "Privacy"
+      "d": "Apa yang kami kumpul · ketelusan penuh",
+      "t": "Privasi"
     },
     "k7": {
-      "d": "Sample SEO landing page",
-      "t": "Ayat for anxiety"
+      "d": "Halaman pendaratan SEO contoh",
+      "t": "Ayat untuk kebimbangan"
     },
     "k8": {
-      "d": "Chat · refusal policy · inline citations · sources",
-      "t": "Ask · AI Q&A"
+      "d": "Sembang · dasar penolakan · rujukan",
+      "t": "Tanya · AI"
     },
     "k9": {
-      "d": "Category filter + grid of cards",
-      "t": "Ayat · index of 30 collections"
+      "d": "Penapis kategori + grid kad",
+      "t": "Ayat · indeks"
     },
-    "lede": "On the left — 7 original design pages from the «Quran» folder, opened as-is. On the right — 10 pages added in the same style via shared.css and shared.js, without touching the originals.",
-    "more": "Open →"
+    "lede": "Kiri — 7 halaman reka bentuk asal. Kanan — 10 halaman ditambah.",
+    "more": "Buka →"
   },
   "ka": {
-    "badge": "Iqra · 4-10 years",
-    "h1": "Twenty-eight letters.",
+    "badge": "Iqra · 4-10 tahun",
+    "h1": "Dua puluh lapan huruf.",
     "l1": "Alif",
     "l10": "Ra",
     "l11": "Zay",
     "l12": "Sin",
-    "l13": "Shin",
+    "l13": "Syin",
     "l14": "Sad",
     "l15": "Dad",
-    "l16": "Ta (emphatic)",
-    "l17": "Za (emphatic)",
-    "l18": "'Ayn",
-    "l19": "Ghayn",
+    "l16": "Tha (tebal)",
+    "l17": "Zha (tebal)",
+    "l18": "'Ain",
+    "l19": "Ghain",
     "l2": "Ba",
     "l20": "Fa",
     "l21": "Qaf",
@@ -381,150 +381,150 @@
     "l23": "Lam",
     "l24": "Mim",
     "l25": "Nun",
-    "l26": "Ha (soft)",
+    "l26": "Ha (lembut)",
     "l27": "Waw",
     "l28": "Ya",
     "l3": "Ta",
-    "l4": "Tha",
+    "l4": "Tsa",
     "l5": "Jim",
-    "l6": "Ha (heavy)",
+    "l6": "Ha (tebal)",
     "l7": "Kha",
     "l8": "Dal",
-    "l9": "Dhal",
-    "lede": "Large KFGQPC type so the shape, dots and tails are easy to see. Tap a letter — hear its name.",
-    "tip": "Start with alif. Have your child repeat the audio aloud — that's half the memorisation.",
-    "tip_lab": "A note for parents:"
+    "l9": "Dzal",
+    "lede": "Tulisan KFGQPC besar supaya bentuk, titik dan ekor mudah dilihat.",
+    "tip": "Mulakan dengan alif. Suruh anak ulang audio dengan kuat.",
+    "tip_lab": "Nota untuk ibu bapa:"
   },
   "kid": {
-    "badge": "For kids · 4–10 years",
-    "cta1": "Learn the letters",
-    "cta2": "Memorise surahs",
-    "cta3": "Listen to stories",
-    "h1": "Iqra. The Book. The stories.",
-    "lede": "Sakeenly for kids: the alphabet you can hear, the first surahs that are easy to remember, and the stories of the prophets ﷺ.",
-    "sec1_h": "Iqra — all 28 letters.",
-    "sec1_p": "Tap a letter — hear its name. Large letters. No rush.",
+    "badge": "Untuk kanak-kanak · 4-10 tahun",
+    "cta1": "Belajar huruf",
+    "cta2": "Hafal surah",
+    "cta3": "Dengar kisah",
+    "h1": "Iqra. Kitab. Kisah.",
+    "lede": "Sakeenly untuk kanak-kanak: huruf yang boleh didengar, surah pertama yang mudah diingati, dan kisah para nabi ﷺ.",
+    "sec1_h": "Iqra — semua 28 huruf.",
+    "sec1_p": "Ketuk huruf — dengar namanya.",
     "sec1_pill": "12 / 28",
-    "progress": "Progress",
-    "sec2_h": "First surahs — for the heart.",
-    "sec2_p": "Short, beloved, important. They make falling asleep and waking easier.",
-    "sec2_pill": "4 SURAHS",
-    "sec2_listen": "Listen",
-    "sec2_learn": "Learn",
-    "sec3_h": "Stories of the prophets.",
-    "sec3_p": "Told simply. With the Book as the source. No invention.",
-    "sec3_pill": "9 STORIES",
-    "sec3_minutes": "{n} MIN READING",
-    "sec3_listen": "Listen →",
-    "sec3_story_n": "STORY №{n}",
-    "streak_alphabet": "Alphabet",
-    "streak_progress": "{done} of {total} letters learned",
-    "streak_days_lbl": "Streak · in a row",
-    "streak_days_title": "{n} days with the Book",
+    "progress": "Kemajuan",
+    "sec2_h": "Surah pertama — untuk hati.",
+    "sec2_p": "Pendek, dikasihi, penting.",
+    "sec2_pill": "4 SURAH",
+    "sec2_listen": "Dengar",
+    "sec2_learn": "Belajar",
+    "sec3_h": "Kisah nabi.",
+    "sec3_p": "Diceritakan secara sederhana.",
+    "sec3_pill": "9 KISAH",
+    "sec3_minutes": "{n} MIN BACAAN",
+    "sec3_listen": "Dengar →",
+    "sec3_story_n": "KISAH №{n}",
+    "streak_alphabet": "Huruf",
+    "streak_progress": "{done} daripada {total} huruf dipelajari",
+    "streak_days_lbl": "Streak · berturutan",
+    "streak_days_title": "{n} hari bersama Kitab",
     "surah1_ru": "Al-Fatihah",
-    "surah1_meta": "THE OPENING · 0:18",
+    "surah1_meta": "PEMBUKAAN · 0:18",
     "surah112_ru": "Al-Ikhlas",
-    "surah112_meta": "SINCERITY · 0:11",
+    "surah112_meta": "KEIKHLASAN · 0:11",
     "surah113_ru": "Al-Falaq",
-    "surah113_meta": "THE DAYBREAK · 0:14",
+    "surah113_meta": "FAJAR · 0:14",
     "surah114_ru": "An-Nas",
-    "surah114_meta": "MANKIND · 0:15",
-    "prophet1_name": "Nuh ﷺ and the ark",
+    "surah114_meta": "MANUSIA · 0:15",
+    "prophet1_name": "Nabi Nuh ﷺ dan bahtera",
     "prophet1_ar": "نوح عليه السلام",
-    "prophet1_summary": "When the people forgot Allah, Nuh ﷺ called them back to the Book for 950 years. Allah told him to build a great ship and to take with him every animal in pairs.",
-    "prophet2_name": "Yunus ﷺ and the whale",
+    "prophet1_summary": "Apabila kaumnya melupakan Allah, Nuh ﷺ menyeru mereka selama 950 tahun.",
+    "prophet2_name": "Nabi Yunus ﷺ dan ikan paus",
     "prophet2_ar": "يونس عليه السلام",
-    "prophet2_summary": "In the darkness of the sea, in the darkness of the night, in the darkness of the whale, Yunus ﷺ said: \"There is no god but You. I have wronged myself.\" And Allah answered.",
-    "prophet3_name": "Ibrahim ﷺ and the stars",
+    "prophet2_summary": "Dalam kegelapan laut, malam dan perut ikan, Yunus ﷺ berkata: «Tiada tuhan selain Engkau».",
+    "prophet3_name": "Nabi Ibrahim ﷺ dan bintang",
     "prophet3_ar": "إبراهيم عليه السلام",
-    "prophet3_summary": "Young Ibrahim ﷺ looked at the stars and thought, \"Is this my Lord?\" — but the stars went out. He was searching for the One who never sets.",
-    "prophet4_name": "Muhammad ﷺ in the cave",
+    "prophet3_summary": "Ibrahim ﷺ memandang bintang dan berfikir, «Inikah Tuhanku?» — tetapi bintang itu terbenam.",
+    "prophet4_name": "Nabi Muhammad ﷺ dalam gua",
     "prophet4_ar": "محمد ﷺ",
-    "prophet4_summary": "The enemy stood at the mouth of the cave. Abu Bakr ﷺ wept. The Prophet ﷺ said: \"Do not grieve — Allah is with us.\" And all was well.",
-    "prophet5_name": "Musa ﷺ and the sea",
+    "prophet4_summary": "Musuh berdiri di pintu gua. Nabi ﷺ berkata: «Jangan bersedih — Allah bersama kita».",
+    "prophet5_name": "Nabi Musa ﷺ dan laut",
     "prophet5_ar": "موسى عليه السلام",
-    "prophet5_summary": "The enemy was closing in. The sea was ahead. The people cried: \"They will catch us!\" Musa ﷺ said: \"No. Allah is with us — He will guide us.\" And the sea parted.",
-    "prophet6_name": "Maryam and the palm tree",
+    "prophet5_summary": "Musuh mendekat. Musa ﷺ berkata: «Tidak. Allah bersama kita». Lautan terbelah.",
+    "prophet6_name": "Maryam dan pohon kurma",
     "prophet6_ar": "مريم عليها السلام",
-    "prophet6_summary": "When it hurt and it was frightening, Allah told Maryam: \"Shake the palm towards yourself — fresh dates will fall.\" And everything became gentle."
+    "prophet6_summary": "Allah berkata kepada Maryam: «Goyangkan pohon itu — kurma segar akan gugur»."
   },
   "ks": {
-    "badge": "Memorisation · parent dashboard",
-    "h1": "The first surahs of any hifz journey.",
-    "lede": "Al-Fatihah, and the four short surahs at the end of the Book — what is traditionally learned first. Listen, repeat, track progress ayah by ayah.",
+    "badge": "Hafalan · papan pemuka ibu bapa",
+    "h1": "Surah pertama mana-mana perjalanan hifz.",
+    "lede": "Al-Fatihah dan empat surah pendek di akhir Kitab.",
     "s1": {
       "label": "5 / 7 ayat · 71%",
-      "meta": "THE OPENING · 7 ayat",
-      "note": "Recited in every rak'ah of salah. The seven oft-repeated."
+      "meta": "PEMBUKAAN · 7 ayat",
+      "note": "Dibaca dalam setiap rakaat."
     },
     "s2": {
       "label": "3 / 6 ayat · 50%",
-      "meta": "MANKIND · 6 ayat",
-      "note": "Taking refuge with the Lord of mankind — from the whispers of the shayatin."
+      "meta": "MANUSIA · 6 ayat",
+      "note": "Berlindung dengan Tuhan manusia."
     },
     "s3": {
       "label": "2 / 5 ayat · 40%",
-      "meta": "THE DAYBREAK · 5 ayat",
-      "note": "Taking refuge with the Lord of daybreak — from the evil of what He created."
+      "meta": "FAJAR · 5 ayat",
+      "note": "Berlindung dengan Tuhan fajar."
     },
     "s4": {
       "label": "4 / 4 ayat · 100% ✓",
-      "meta": "SINCERITY · 4 ayat",
-      "note": "A third of the Quran by meaning — tawhid in four ayat."
+      "meta": "KEIKHLASAN · 4 ayat",
+      "note": "Sepertiga al-Quran dari segi makna."
     },
     "s5": {
       "label": "3 / 3 ayat · 100% ✓",
-      "meta": "ABUNDANCE · 3 ayat",
-      "note": "The shortest surah of the Quran — three short ayat."
+      "meta": "KELIMPAHAN · 3 ayat",
+      "note": "Surah terpendek dalam al-Quran."
     },
     "s6": {
-      "label": "0 / 6 ayat · not started",
-      "meta": "THE DISBELIEVERS · 6 ayat",
-      "note": "\"For you is your religion, and for me is mine.\""
+      "label": "0 / 6 ayat · belum mula",
+      "meta": "ORANG KAFIR · 6 ayat",
+      "note": "«Bagimu agamamu, bagiku agamaku»."
     }
   },
   "kst": {
-    "adab": "No images of people or the Ka'ba · we follow adab",
-    "badge": "9 prophets · scripts for parents",
-    "cta": "Listen →",
-    "h1": "Stories of the prophets, peace be upon them.",
-    "lede": "Each story — a short script for the parent to read aloud, plus a calm 5–8 minute audio.",
-    "more": "+ 16 more prophets · Hud · Salih · Lut · Shu'ayb · Idris · Zakariyya · Yahya and others.",
+    "adab": "Tiada gambar manusia atau Ka'bah · kami menjaga adab",
+    "badge": "9 nabi · skrip untuk ibu bapa",
+    "cta": "Dengar →",
+    "h1": "Kisah para nabi 'alayhim as-salam.",
+    "lede": "Setiap kisah — skrip pendek untuk ibu bapa baca, dan audio 5-8 minit yang tenang.",
+    "more": "+ 16 nabi lagi · Hud · Salih · Lut · Syu'aib · Idris · Zakariyya · Yahya.",
     "p1": {
-      "meta": "7 MIN · THE FIRST HUMAN",
-      "name": "Prophet Adam ﷺ"
+      "meta": "7 MIN · MANUSIA PERTAMA",
+      "name": "Nabi Adam ﷺ"
     },
     "p2": {
-      "meta": "8 MIN · THE ARK",
-      "name": "Prophet Nuh ﷺ"
+      "meta": "8 MIN · BAHTERA",
+      "name": "Nabi Nuh ﷺ"
     },
     "p3": {
       "meta": "9 MIN · KHALIL ALLAH",
-      "name": "Prophet Ibrahim ﷺ"
+      "name": "Nabi Ibrahim ﷺ"
     },
     "p4": {
-      "meta": "12 MIN · THE DREAM OF STARS",
-      "name": "Prophet Yusuf ﷺ"
+      "meta": "12 MIN · MIMPI BINTANG",
+      "name": "Nabi Yusuf ﷺ"
     },
     "p5": {
-      "meta": "14 MIN · THE PARTING OF THE SEA",
-      "name": "Prophet Musa ﷺ"
+      "meta": "14 MIN · LAUT TERBELAH",
+      "name": "Nabi Musa ﷺ"
     },
     "p6": {
-      "meta": "7 MIN · PATIENCE",
-      "name": "Prophet Ayyub ﷺ"
+      "meta": "7 MIN · KESABARAN",
+      "name": "Nabi Ayyub ﷺ"
     },
     "p7": {
-      "meta": "8 MIN · THE WHALE",
-      "name": "Prophet Yunus ﷺ"
+      "meta": "8 MIN · IKAN PAUS",
+      "name": "Nabi Yunus ﷺ"
     },
     "p8": {
-      "meta": "11 MIN · THE KINGDOM OF THE WIND",
-      "name": "Prophet Sulayman ﷺ"
+      "meta": "11 MIN · KERAJAAN ANGIN",
+      "name": "Nabi Sulayman ﷺ"
     },
     "p9": {
-      "meta": "10 MIN · A WORD FROM ALLAH",
-      "name": "Prophet Isa ﷺ"
+      "meta": "10 MIN · KALIMAH DARIPADA ALLAH",
+      "name": "Nabi Isa ﷺ"
     }
   },
   "ls": {
@@ -567,98 +567,98 @@
   },
   "pf": {
     "actions": {
-      "export": "Export your data",
-      "signout": "Sign out"
+      "export": "Eksport data anda",
+      "signout": "Log keluar"
     },
-    "ago_1w": "a week ago",
-    "ago_2d": "2 days ago",
-    "ago_2w": "2 weeks ago",
-    "ago_3d": "3 days ago",
-    "bm1": "Ayat al-Kursi — the greatest ayah, recited before sleep per the sunnah",
-    "bm2": "\"In the remembrance of Allah do hearts find rest\" — for anxiety",
-    "bm3": "\"Indeed, with hardship comes ease\"",
-    "bm4": "\"Do not despair of the mercy of Allah\"",
-    "bm5": "Surah Al-Qadr in full — for Laylat al-Qadr",
-    "bm_all": "All 38 →",
-    "bm_eyebrow": "Recent bookmarks",
-    "bm_h": "What you keep coming back to.",
-    "eyebrow": "Profile",
-    "label_reciter": "Reciter",
-    "label_theme": "Theme",
-    "label_translation": "Translation",
+    "ago_1w": "seminggu lalu",
+    "ago_2d": "2 hari lalu",
+    "ago_2w": "2 minggu lalu",
+    "ago_3d": "3 hari lalu",
+    "bm1": "Ayat al-Kursi",
+    "bm2": "«Dengan zikir Allah hati menjadi tenang»",
+    "bm3": "«Sesungguhnya bersama kesusahan ada kemudahan»",
+    "bm4": "«Jangan putus asa daripada rahmat Allah»",
+    "bm5": "Surah Al-Qadr lengkap",
+    "bm_all": "Semua 38 →",
+    "bm_eyebrow": "Penanda terkini",
+    "bm_h": "Apa yang anda terus kembali kepada.",
+    "eyebrow": "Profil",
+    "label_reciter": "Qari",
+    "label_theme": "Tema",
+    "label_translation": "Terjemahan",
     "r": {
       "basit": "Abdul-Basit (mujawwad)",
-      "husary": "Mahmoud Khalil al-Husary",
+      "husary": "Mahmud al-Husari",
       "sudais": "Abdur-Rahman as-Sudais"
     },
-    "settings_eyebrow": "Settings",
-    "settings_h": "How you read.",
-    "stat_bookmarks": "Bookmarks",
-    "stat_bookmarks_d": "ayat saved · 12 with notes",
+    "settings_eyebrow": "Tetapan",
+    "settings_h": "Bagaimana anda membaca.",
+    "stat_bookmarks": "Penanda",
+    "stat_bookmarks_d": "ayat disimpan · 12 dengan nota",
     "stat_streak": "Streak",
-    "stat_streak_d": "consecutive days of reading · 21 best",
+    "stat_streak_d": "hari berturutan · 21 terbaik",
     "t": {
       "abu": "Abu Adel",
-      "awqaf": "Egyptian Ministry of Awqaf",
+      "awqaf": "Kementerian Awqaf Mesir",
       "kuliev": "Kuliev",
-      "pickthall": "M. M. Pickthall",
+      "pickthall": "Pickthall",
       "sahih": "Sahih International"
     },
     "th": {
-      "dark": "Night (default)",
-      "light": "Light",
+      "dark": "Malam (lalai)",
+      "light": "Cerah",
       "mushaf": "Mushaf",
       "sepia": "Sepia"
     }
   },
   "priv": {
-    "h1": "Privacy as a ritual.",
-    "lede": "We treat your data as an amanah — something entrusted to us for safekeeping. No ads, no trackers, no partners.",
-    "ch3_eyebrow": "Chapter 3 · encryption",
-    "ch3_h": "How a note ends up in the database.",
-    "ch3_p": "A four-step chain — at every step the data is unreadable to any outside service.",
-    "ch3_s1_lbl": "01 · Browser",
-    "ch3_s1_t": "You write the note",
-    "ch3_s1_m": "The text exists only in your browser. Nothing is sent yet.",
+    "h1": "Privasi sebagai ritual.",
+    "lede": "Kami menganggap data anda sebagai amanah. Tiada iklan, tiada penjejak, tiada rakan kongsi.",
+    "ch3_eyebrow": "Bab 3 · penyulitan",
+    "ch3_h": "Bagaimana nota berakhir dalam pangkalan data.",
+    "ch3_p": "Rangkaian empat langkah.",
+    "ch3_s1_lbl": "01 · Pelayar",
+    "ch3_s1_t": "Anda menulis nota",
+    "ch3_s1_m": "Teks hanya wujud di pelayar anda.",
     "ch3_s2_lbl": "02 · TLS",
-    "ch3_s2_t": "Transit over HTTPS",
-    "ch3_s2_m": "TLS 1.3 (Vercel Edge). Between you and the server — no one reads.",
-    "ch3_s3_lbl": "03 · Server",
-    "ch3_s3_t": "AES-256 encryption",
-    "ch3_s3_m": "The note text is encrypted with a key from envelope encryption. The key lives in Vercel KV, not in Supabase.",
+    "ch3_s2_t": "Transit melalui HTTPS",
+    "ch3_s2_m": "TLS 1.3 (Vercel Edge).",
+    "ch3_s3_lbl": "03 · Pelayan",
+    "ch3_s3_t": "Penyulitan AES-256",
+    "ch3_s3_m": "Teks nota disulitkan dengan kunci envelope.",
     "ch3_stat1_v": "AES-256-GCM",
-    "ch3_stat1_l": "Algorithm",
-    "ch3_stat1_s": "NIST standard. No broken modes.",
-    "ch3_stat2_v": "90 d",
-    "ch3_stat2_l": "Key rotation",
-    "ch3_stat2_s": "Every 90 days the primary key is re-issued. Old keys are retained to decrypt.",
-    "ch3_stat3_v": "2 services",
-    "ch3_stat3_l": "Separation",
-    "ch3_stat3_s": "Data in Supabase. Keys in Vercel KV. One service can't see the other.",
-    "ch3_stat4_v": "30 d",
-    "ch3_stat4_l": "Deletion",
-    "ch3_stat4_s": "When you delete your account, the data is wiped within 30 days. Backups within 90.",
-    "ch4_eyebrow": "Chapter 4 · government requests",
-    "ch4_h": "How many times we've been asked to hand over data.",
-    "ch4_p": "This log is updated every quarter. We publish every single request, within what the law allows.",
-    "ch4_th_period": "Period",
-    "ch4_th_source": "Request source",
-    "ch4_th_requests": "Requests",
-    "ch4_th_granted": "Granted",
-    "ch4_footer": "Sakeenly is registered in the EU. The Russian 152-FZ law does not directly apply, but we comply with GDPR. See the full policy for details.",
-    "ch5_eyebrow": "Chapter 5 · your rights",
-    "ch5_h": "What you can do with your data.",
-    "ch5_export_h": "Export everything",
-    "ch5_export_p": "A JSON file with all your bookmarks, notes, streak, and question history. One click in your profile.",
-    "ch5_export_btn": "Download archive",
-    "ch5_delete_h": "Delete your account",
-    "ch5_delete_p": "Full data wipe within 30 days. No questions, no retention, no win-back emails.",
-    "ch5_delete_btn": "Delete account",
-    "ch5_request_h": "Ask about something specific",
-    "ch5_request_p": "Want to know everything we hold about a specific email? Write to",
-    "ch5_request_btn": "Write to us",
-    "quote_eyebrow": "The principle Sakeenly is built on",
-    "quote_ru": "\"And do not spy [on one another]…\"",
+    "ch3_stat1_l": "Algoritma",
+    "ch3_stat1_s": "Piawaian NIST.",
+    "ch3_stat2_v": "90 hari",
+    "ch3_stat2_l": "Putaran kunci",
+    "ch3_stat2_s": "Setiap 90 hari kunci utama dikeluarkan semula.",
+    "ch3_stat3_v": "2 perkhidmatan",
+    "ch3_stat3_l": "Pemisahan",
+    "ch3_stat3_s": "Data dalam Supabase. Kunci dalam Vercel KV.",
+    "ch3_stat4_v": "30 hari",
+    "ch3_stat4_l": "Pemadaman",
+    "ch3_stat4_s": "Apabila anda padam akaun, data dipadam dalam 30 hari.",
+    "ch4_eyebrow": "Bab 4 · permintaan kerajaan",
+    "ch4_h": "Berapa kali kami diminta serahkan data.",
+    "ch4_p": "Log ini dikemaskini setiap suku.",
+    "ch4_th_period": "Tempoh",
+    "ch4_th_source": "Sumber permintaan",
+    "ch4_th_requests": "Permintaan",
+    "ch4_th_granted": "Diluluskan",
+    "ch4_footer": "Sakeenly didaftar di EU. Kami mematuhi GDPR.",
+    "ch5_eyebrow": "Bab 5 · hak anda",
+    "ch5_h": "Apa yang anda boleh lakukan dengan data anda.",
+    "ch5_export_h": "Eksport semuanya",
+    "ch5_export_p": "Satu fail JSON dengan semua penanda, nota, streak.",
+    "ch5_export_btn": "Muat turun arkib",
+    "ch5_delete_h": "Padam akaun anda",
+    "ch5_delete_p": "Pemadaman penuh dalam 30 hari.",
+    "ch5_delete_btn": "Padam akaun",
+    "ch5_request_h": "Tanya tentang sesuatu yang khusus",
+    "ch5_request_p": "Ingin tahu apa yang kami simpan tentang e-mel tertentu? Tulis kepada",
+    "ch5_request_btn": "Tulis kepada kami",
+    "quote_eyebrow": "Prinsip Sakeenly dibina atas",
+    "quote_ru": "«Dan jangan saling memata-matai…»",
     "quote_cite": "Surah Al-Hujurat · 49:12"
   },
   "rd": {
@@ -743,59 +743,59 @@
     "tj_rule_silent": "Huruf diam"
   },
   "sb": {
-    "apply_btn": "Write to us",
-    "apply_eyebrow": "Want to join?",
-    "apply_h": "We welcome imams, mu'allims, and Islamic scholars.",
-    "apply_p": "If you hold ijaza in the Islamic sciences, or you're a published researcher — write to scholars@sakeenly.com.",
-    "badge": "Quality control",
-    "board_eyebrow": "The board",
-    "board_h": "The scholars we trust to read first.",
-    "board_p": "Names and institutions will be added before public launch. Until then, every themed collection is flagged \"Awaiting approval\".",
-    "h1": "Scholar Board — who reads it before you do.",
-    "lede": "Anything a user sees — refusal messages, themed collections of ayat, contextual notes, AI prompts — passes through the scholar board before publication.",
-    "pending": "awaiting approval",
-    "pipe_eyebrow": "How review works",
-    "pipe_h": "Four steps before anything ships.",
+    "apply_btn": "Tulis kepada kami",
+    "apply_eyebrow": "Ingin sertai?",
+    "apply_h": "Kami mengalu-alukan imam, mu'allim, dan ulama Islam.",
+    "apply_p": "Jika anda mempunyai ijazah dalam ilmu Islam, tulis ke scholars@sakeenly.com.",
+    "badge": "Kawalan kualiti",
+    "board_eyebrow": "Lembaga",
+    "board_h": "Ulama yang kami percayai untuk membaca dahulu.",
+    "board_p": "Nama akan ditambah sebelum pelancaran umum.",
+    "h1": "Lembaga Ulama — siapa yang membaca sebelum anda.",
+    "lede": "Apa yang dilihat pengguna lulus melalui lembaga ulama dahulu.",
+    "pending": "menunggu kelulusan",
+    "pipe_eyebrow": "Bagaimana semakan berjalan",
+    "pipe_h": "Empat langkah sebelum apa-apa dihantar.",
     "s1": {
-      "d": "A collection of ayat or AI prompt text is opened as a pull request with sources.",
-      "n": "01 · Draft",
-      "t": "Product team"
+      "d": "Koleksi ayat dibuka sebagai pull request dengan sumber.",
+      "n": "01 · Draf",
+      "t": "Pasukan produk"
     },
     "s2": {
-      "d": "At least two scholars read it independently. Every comment is published.",
-      "n": "02 · Review",
-      "t": "Scholar board"
+      "d": "Sekurang-kurangnya dua ulama membaca secara berasingan.",
+      "n": "02 · Semakan",
+      "t": "Lembaga Ulama"
     },
     "s3": {
-      "d": "The team revises, cites the hadith corpus, sends it back for another reading.",
-      "n": "03 · Revise",
-      "t": "Iterate"
+      "d": "Pasukan menyemak semula, merujuk hadis.",
+      "n": "03 · Semak",
+      "t": "Ulang"
     },
     "s4": {
-      "d": "The scholar-vetted: true tag is set. Without that badge nothing gets indexed for SEO.",
-      "n": "04 · Approve",
-      "t": "Publish"
+      "d": "Tag 'disahkan ulama' ditetapkan.",
+      "n": "04 · Lulus",
+      "t": "Terbit"
     }
   },
   "si": {
     "aside_cite": "Surah Al-Fath · 48:4",
-    "aside_eyebrow": "Sakeenly · personal",
-    "aside_h": "Bookmarks. Streak. Notes. Everywhere.",
-    "aside_q": "\"…and He sent down sakina into the hearts of the believers, so that they would increase in faith…\"",
-    "btn_apple": "Sign in with Apple",
-    "btn_google": "Sign in with Google",
-    "btn_magic": "Send me a link",
-    "bull1": "Bookmarks and notes across every device",
-    "bull2": "Streak that forgives via wudu",
-    "bull3": "5 AI questions a day, free",
-    "bull4": "Zero trackers. Encryption at rest.",
-    "email_placeholder": "you@example.com",
-    "label_email": "Email",
-    "main_eyebrow": "Sign in / sign up",
-    "main_h": "Salam, and welcome.",
-    "main_lede": "Sign in with Google or a magic link to your inbox. No passwords — we don't like them either.",
-    "or": "or · magic link",
-    "terms_html": "By continuing you agree to the <a href=\"#\">terms</a> and the <a href=\"privacy.html\">privacy policy</a>."
+    "aside_eyebrow": "Sakeenly · peribadi",
+    "aside_h": "Penanda. Streak. Nota. Di mana-mana.",
+    "aside_q": "«…dan Dia menurunkan sakinah ke dalam hati orang-orang beriman…»",
+    "btn_apple": "Log masuk dengan Apple",
+    "btn_google": "Log masuk dengan Google",
+    "btn_magic": "Hantar pautan kepada saya",
+    "bull1": "Penanda dan nota merentas semua peranti",
+    "bull2": "Streak yang dimaafkan melalui wuduk",
+    "bull3": "5 soalan AI sehari, percuma",
+    "bull4": "Sifar penjejak. Penyulitan disimpan.",
+    "email_placeholder": "anda@example.com",
+    "label_email": "E-mel",
+    "main_eyebrow": "Log masuk / daftar",
+    "main_h": "Salam, dan selamat datang.",
+    "main_lede": "Log masuk dengan Google atau pautan ajaib ke peti masuk anda.",
+    "or": "atau · pautan ajaib",
+    "terms_html": "Dengan meneruskan anda bersetuju dengan <a href=\"#\">syarat</a> dan <a href=\"privacy.html\">dasar privasi</a>."
   },
   "sn": {
     "1": "Al-Fatihah",

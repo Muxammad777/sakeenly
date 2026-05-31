@@ -1,49 +1,49 @@
 {
   "ab": {
-    "badge": "Sakeenly · since 2026",
-    "cta_btn1": "Scholar board",
-    "cta_btn2": "Privacy policy",
-    "cta_eyebrow": "Want to help?",
-    "cta_h": "Scholar board · contributors · feedback",
-    "cta_p": "If you're a scholar, an engineer, or you just want to flag a mistake — write to hello@sakeenly.com.",
-    "h1": "Stillness of the heart is not a feature — it's a ritual.",
-    "lede": "Sakina is the tranquillity Allah sends down upon the hearts of the believers. Modern apps are often the opposite of that. We're building the inverse: a product that leaves the heart lighter after using it.",
+    "badge": "सकीनली · 2026 से",
+    "cta_btn1": "विद्वान बोर्ड",
+    "cta_btn2": "गोपनीयता नीति",
+    "cta_eyebrow": "मदद करना चाहते हैं?",
+    "cta_h": "विद्वान बोर्ड · योगदानकर्ता · प्रतिक्रिया",
+    "cta_p": "यदि आप विद्वान, इंजीनियर हैं — hello@sakeenly.com पर लिखें।",
+    "h1": "दिल का सुकून फ़ीचर नहीं है — यह एक रीति है।",
+    "lede": "सकीना वह शांति है जो अल्लाह मोमिनों के दिलों पर उतारता है।",
     "p1": {
-      "d": "No ad networks. No affiliate links inside answers. No pop-ups.",
-      "n": "01 — Advertising",
-      "t": "No banners. Ever."
+      "d": "कोई विज्ञापन नेटवर्क नहीं।",
+      "n": "01 — विज्ञापन",
+      "t": "कोई बैनर नहीं। कभी नहीं।"
     },
     "p2": {
-      "d": "No Google Analytics. No Meta Pixel. No AppsFlyer. Only the product itself, server logs, and anonymous performance metrics.",
-      "n": "02 — Trackers",
-      "t": "Zero telemetry."
+      "d": "कोई Google Analytics नहीं।",
+      "n": "02 — ट्रैकर",
+      "t": "शून्य टेलीमेट्री।"
     },
     "p3": {
-      "d": "Our AI answers only from authenticated sources and never issues fatwa. Personal legal questions are routed to qualified scholars.",
-      "n": "03 — Fatwa",
-      "t": "That's a scholar's work."
+      "d": "हमारा AI केवल प्रामाणिक स्रोतों से जवाब देता है।",
+      "n": "03 — फ़तवा",
+      "t": "यह विद्वान का काम है।"
     },
     "p4": {
-      "d": "Illustrations are pure geometry. Prophet stories ﷺ ship as text and audio — never as depicted faces.",
-      "n": "04 — Adab",
-      "t": "No images of people or the Ka'ba."
+      "d": "तस्वीरें शुद्ध ज्यामिति।",
+      "n": "04 — अदब",
+      "t": "इंसानों या काबे की कोई तस्वीर नहीं।"
     },
     "p5": {
-      "d": "Encryption at rest. Full export on request. Deleting your account cascades through everything.",
-      "n": "05 — Encryption",
-      "t": "Your bookmarks belong to you."
+      "d": "सुरक्षित एन्क्रिप्शन।",
+      "n": "05 — एन्क्रिप्शन",
+      "t": "आपके बुकमार्क आपके हैं।"
     },
     "p6": {
-      "d": "Premium and Family exist for one reason — so we never have to sell you to advertisers.",
-      "n": "06 — Pricing",
-      "t": "Reading is always free."
+      "d": "प्रीमियम इसलिए मौजूद है कि हमें विज्ञापनदाताओं को न बेचना पड़े।",
+      "n": "06 — मूल्य",
+      "t": "पढ़ना हमेशा मुफ़्त है।"
     },
-    "principles_eyebrow": "Six principles",
-    "principles_h": "What we promised ourselves.",
-    "quote_cite": "Surah Al-Fath · 48:4 · Sahih International",
-    "quote_tr": "\"It is He who sent down tranquillity into the hearts of the believers.\"",
-    "sources_eyebrow": "What this is built on",
-    "sources_h": "Sources and fonts."
+    "principles_eyebrow": "छह सिद्धांत",
+    "principles_h": "हमने ख़ुद से क्या वादा किया।",
+    "quote_cite": "सूरह अल-फ़त्ह · 48:4 · सहीह इंटरनेशनल",
+    "quote_tr": "«वही है जिसने मोमिनों के दिलों में शांति उतारी।»",
+    "sources_eyebrow": "यह किस पर बना है",
+    "sources_h": "स्रोत और फ़ॉन्ट।"
   },
   "ask": {
     "a1_html": "The Quran places sabr among the believer's defining qualities and promises the patient a reward without measure <span class=\"citation\">Quran 39:10</span>. When the heart contracts, He reminds us that He is with the patient <span class=\"citation\">Quran 2:153</span>, and that ease follows every hardship <span class=\"citation\">Quran 94:5</span>. The Prophet ﷺ was commanded to bear \"a beautiful patience\" <span class=\"citation\">Quran 70:5</span> — without complaint to creation.",
@@ -283,248 +283,248 @@
     "title_t": "हर दिन।"
   },
   "ix": {
-    "badge": "Design Preview · 17 screens",
-    "grp1_eyebrow": "Original design (7) · untouched",
-    "grp1_h": "From the «Quran» folder",
-    "grp2_eyebrow": "Added in the same style (10)",
-    "grp2_h": "Missing pages",
-    "h1": "Sakeenly · every screen on one page.",
+    "badge": "डिज़ाइन पूर्वावलोकन · 17 स्क्रीन",
+    "grp1_eyebrow": "मूल डिज़ाइन (7) · अछूता",
+    "grp1_h": "«क़ुरान» फ़ोल्डर से",
+    "grp2_eyebrow": "उसी शैली में जोड़ा (10)",
+    "grp2_h": "लुप्त पृष्ठ",
+    "h1": "सकीनली · हर स्क्रीन एक पृष्ठ पर।",
     "k1": {
-      "d": "VOTD · streak · 3 rituals · emotions · open hero",
-      "t": "Home"
+      "d": "आज की आयत · लगातार · 3 रीतियाँ · भावनाएँ",
+      "t": "होम"
     },
     "k10": {
-      "d": "Mission · 6 principles · sources",
-      "t": "About"
+      "d": "मिशन · 6 सिद्धांत · स्रोत",
+      "t": "हमारे बारे में"
     },
     "k11": {
-      "d": "Pipeline review · scholar board",
-      "t": "Scholar board"
+      "d": "पाइपलाइन समीक्षा · विद्वान बोर्ड",
+      "t": "विद्वान बोर्ड"
     },
     "k12": {
-      "d": "Google / Apple / magic-link · quota aside",
-      "t": "Sign-in"
+      "d": "Google / Apple / मैजिक लिंक · कोटा",
+      "t": "साइन इन"
     },
     "k13": {
-      "d": "Streak · bookmarks · subscription · settings",
-      "t": "Profile"
+      "d": "लगातार · बुकमार्क · सब्सक्रिप्शन",
+      "t": "प्रोफ़ाइल"
     },
     "k14": {
-      "d": "28 KFGQPC letters · 7-column grid",
-      "t": "Kids · Alphabet"
+      "d": "28 KFGQPC अक्षर · 7-स्तंभ ग्रिड",
+      "t": "बच्चे · अक्षर"
     },
     "k15": {
-      "d": "Al-Fatihah + 5 short surahs · per-ayah progress",
-      "t": "Kids · First surahs"
+      "d": "अल-फ़ातिहा + 5 छोटी सूरतें",
+      "t": "बच्चे · पहली सूरतें"
     },
     "k16": {
-      "d": "9 prophets · no depictions of people",
-      "t": "Kids · Prophet stories"
+      "d": "9 पैगंबर · इंसानों की कोई तस्वीर नहीं",
+      "t": "बच्चे · पैगंबरों की कहानियाँ"
     },
     "k17": {
-      "d": "104 · quote 2:216 · return",
-      "t": "404 · Not Found"
+      "d": "104 · उद्धरण 2:216 · वापस",
+      "t": "404 · नहीं मिला"
     },
     "k2": {
-      "d": "3-column mushaf · KFGQPC · sticky player",
-      "t": "Reader"
+      "d": "3-स्तंभ मुसहफ़ · KFGQPC · चिपका प्लेयर",
+      "t": "रीडर"
     },
     "k3": {
-      "d": "Reciters · filter · now playing · sleep timer",
-      "t": "Listen"
+      "d": "क़ारी · फ़िल्टर · अभी चल रहा · स्लीप टाइमर",
+      "t": "सुनें"
     },
     "k4": {
-      "d": "Iqra · surahs with progress · stories",
-      "t": "Kids"
+      "d": "इक़रा · प्रगति के साथ सूरतें · कहानियाँ",
+      "t": "बच्चे"
     },
     "k5": {
-      "d": "Free / Premium / Family · comparison · FAQ",
-      "t": "Pricing"
+      "d": "मुफ़्त / प्रीमियम / परिवार · तुलना · FAQ",
+      "t": "मूल्य"
     },
     "k6": {
-      "d": "What we collect · full transparency",
-      "t": "Privacy"
+      "d": "हम क्या एकत्र करते हैं · पूरी पारदर्शिता",
+      "t": "गोपनीयता"
     },
     "k7": {
-      "d": "Sample SEO landing page",
-      "t": "Ayat for anxiety"
+      "d": "नमूना SEO लैंडिंग पृष्ठ",
+      "t": "चिंता के लिए आयतें"
     },
     "k8": {
-      "d": "Chat · refusal policy · inline citations · sources",
-      "t": "Ask · AI Q&A"
+      "d": "चैट · अस्वीकरण नीति · इनलाइन हवाले",
+      "t": "पूछें · AI"
     },
     "k9": {
-      "d": "Category filter + grid of cards",
-      "t": "Ayat · index of 30 collections"
+      "d": "श्रेणी फ़िल्टर + कार्ड का ग्रिड",
+      "t": "आयतें · सूचकांक"
     },
-    "lede": "On the left — 7 original design pages from the «Quran» folder, opened as-is. On the right — 10 pages added in the same style via shared.css and shared.js, without touching the originals.",
-    "more": "Open →"
+    "lede": "बाएँ — 7 मूल डिज़ाइन पृष्ठ। दाएँ — 10 जोड़े गए पृष्ठ।",
+    "more": "खोलें →"
   },
   "ka": {
-    "badge": "Iqra · 4-10 years",
-    "h1": "Twenty-eight letters.",
-    "l1": "Alif",
-    "l10": "Ra",
-    "l11": "Zay",
-    "l12": "Sin",
-    "l13": "Shin",
-    "l14": "Sad",
-    "l15": "Dad",
-    "l16": "Ta (emphatic)",
-    "l17": "Za (emphatic)",
-    "l18": "'Ayn",
-    "l19": "Ghayn",
-    "l2": "Ba",
-    "l20": "Fa",
-    "l21": "Qaf",
-    "l22": "Kaf",
-    "l23": "Lam",
-    "l24": "Mim",
-    "l25": "Nun",
-    "l26": "Ha (soft)",
-    "l27": "Waw",
-    "l28": "Ya",
-    "l3": "Ta",
-    "l4": "Tha",
-    "l5": "Jim",
-    "l6": "Ha (heavy)",
-    "l7": "Kha",
-    "l8": "Dal",
-    "l9": "Dhal",
-    "lede": "Large KFGQPC type so the shape, dots and tails are easy to see. Tap a letter — hear its name.",
-    "tip": "Start with alif. Have your child repeat the audio aloud — that's half the memorisation.",
-    "tip_lab": "A note for parents:"
+    "badge": "इक़रा · 4-10 वर्ष",
+    "h1": "अट्ठाईस अक्षर।",
+    "l1": "अलिफ़",
+    "l10": "रा",
+    "l11": "ज़ा",
+    "l12": "सीन",
+    "l13": "शीन",
+    "l14": "साद",
+    "l15": "ज़ाद",
+    "l16": "ता (भारी)",
+    "l17": "ज़ा (भारी)",
+    "l18": "ऐन",
+    "l19": "ग़ैन",
+    "l2": "बा",
+    "l20": "फ़ा",
+    "l21": "क़ाफ़",
+    "l22": "काफ़",
+    "l23": "लाम",
+    "l24": "मीम",
+    "l25": "नून",
+    "l26": "हा (नरम)",
+    "l27": "वाव",
+    "l28": "या",
+    "l3": "ता",
+    "l4": "सा",
+    "l5": "जीम",
+    "l6": "हा (भारी)",
+    "l7": "ख़ा",
+    "l8": "दाल",
+    "l9": "ज़ाल",
+    "lede": "बड़े KFGQPC अक्षर ताकि आकार, बिंदु और पूंछ आसानी से दिखें।",
+    "tip": "अलिफ़ से शुरू करें। बच्चे से ऑडियो दोहराने को कहें।",
+    "tip_lab": "माता-पिता के लिए नोट:"
   },
   "kid": {
-    "badge": "For kids · 4–10 years",
-    "cta1": "Learn the letters",
-    "cta2": "Memorise surahs",
-    "cta3": "Listen to stories",
-    "h1": "Iqra. The Book. The stories.",
-    "lede": "Sakeenly for kids: the alphabet you can hear, the first surahs that are easy to remember, and the stories of the prophets ﷺ.",
-    "sec1_h": "Iqra — all 28 letters.",
-    "sec1_p": "Tap a letter — hear its name. Large letters. No rush.",
+    "badge": "बच्चों के लिए · 4-10 वर्ष",
+    "cta1": "अक्षर सीखें",
+    "cta2": "सूरतें याद करें",
+    "cta3": "कहानियाँ सुनें",
+    "h1": "इक़रा। किताब। कहानियाँ।",
+    "lede": "बच्चों के लिए सकीनली: सुनने योग्य वर्णमाला, पहली सूरतें जो याद करना आसान हैं, और पैगंबरों ﷺ की कहानियाँ।",
+    "sec1_h": "इक़रा — सभी 28 अक्षर।",
+    "sec1_p": "अक्षर पर टैप करें — उसका नाम सुनें।",
     "sec1_pill": "12 / 28",
-    "progress": "Progress",
-    "sec2_h": "First surahs — for the heart.",
-    "sec2_p": "Short, beloved, important. They make falling asleep and waking easier.",
-    "sec2_pill": "4 SURAHS",
-    "sec2_listen": "Listen",
-    "sec2_learn": "Learn",
-    "sec3_h": "Stories of the prophets.",
-    "sec3_p": "Told simply. With the Book as the source. No invention.",
-    "sec3_pill": "9 STORIES",
-    "sec3_minutes": "{n} MIN READING",
-    "sec3_listen": "Listen →",
-    "sec3_story_n": "STORY №{n}",
-    "streak_alphabet": "Alphabet",
-    "streak_progress": "{done} of {total} letters learned",
-    "streak_days_lbl": "Streak · in a row",
-    "streak_days_title": "{n} days with the Book",
-    "surah1_ru": "Al-Fatihah",
-    "surah1_meta": "THE OPENING · 0:18",
-    "surah112_ru": "Al-Ikhlas",
-    "surah112_meta": "SINCERITY · 0:11",
-    "surah113_ru": "Al-Falaq",
-    "surah113_meta": "THE DAYBREAK · 0:14",
-    "surah114_ru": "An-Nas",
-    "surah114_meta": "MANKIND · 0:15",
-    "prophet1_name": "Nuh ﷺ and the ark",
+    "progress": "प्रगति",
+    "sec2_h": "पहली सूरतें — दिल के लिए।",
+    "sec2_p": "छोटी, प्रिय, महत्वपूर्ण।",
+    "sec2_pill": "4 सूरतें",
+    "sec2_listen": "सुनें",
+    "sec2_learn": "सीखें",
+    "sec3_h": "पैगंबरों की कहानियाँ।",
+    "sec3_p": "सरल रूप में बताई गई।",
+    "sec3_pill": "9 कहानियाँ",
+    "sec3_minutes": "{n} मिनट का पठन",
+    "sec3_listen": "सुनें →",
+    "sec3_story_n": "कहानी №{n}",
+    "streak_alphabet": "वर्णमाला",
+    "streak_progress": "{done} / {total} अक्षर सीखे",
+    "streak_days_lbl": "लगातार · निरंतर",
+    "streak_days_title": "{n} दिन किताब के साथ",
+    "surah1_ru": "अल-फ़ातिहा",
+    "surah1_meta": "उद्घाटन · 0:18",
+    "surah112_ru": "अल-इख़्लास",
+    "surah112_meta": "एकनिष्ठा · 0:11",
+    "surah113_ru": "अल-फ़लक़",
+    "surah113_meta": "तड़का · 0:14",
+    "surah114_ru": "अन-नास",
+    "surah114_meta": "मानव जाति · 0:15",
+    "prophet1_name": "नूह ﷺ और जहाज़",
     "prophet1_ar": "نوح عليه السلام",
-    "prophet1_summary": "When the people forgot Allah, Nuh ﷺ called them back to the Book for 950 years. Allah told him to build a great ship and to take with him every animal in pairs.",
-    "prophet2_name": "Yunus ﷺ and the whale",
+    "prophet1_summary": "जब लोग अल्लाह को भूल गए, नूह ﷺ ने उन्हें 950 साल किताब की ओर बुलाया।",
+    "prophet2_name": "यूनुस ﷺ और मछली",
     "prophet2_ar": "يونس عليه السلام",
-    "prophet2_summary": "In the darkness of the sea, in the darkness of the night, in the darkness of the whale, Yunus ﷺ said: \"There is no god but You. I have wronged myself.\" And Allah answered.",
-    "prophet3_name": "Ibrahim ﷺ and the stars",
+    "prophet2_summary": "समुद्र, रात और मछली के अंधेरे में, यूनुस ﷺ ने कहा: «तेरे सिवा कोई पूज्य नहीं»।",
+    "prophet3_name": "इब्राहीम ﷺ और सितारे",
     "prophet3_ar": "إبراهيم عليه السلام",
-    "prophet3_summary": "Young Ibrahim ﷺ looked at the stars and thought, \"Is this my Lord?\" — but the stars went out. He was searching for the One who never sets.",
-    "prophet4_name": "Muhammad ﷺ in the cave",
+    "prophet3_summary": "युवा इब्राहीम ﷺ ने सितारों को देखकर सोचा, «क्या यह मेरा रब है?» — लेकिन सितारे डूब गए।",
+    "prophet4_name": "मुहम्मद ﷺ गुफ़ा में",
     "prophet4_ar": "محمد ﷺ",
-    "prophet4_summary": "The enemy stood at the mouth of the cave. Abu Bakr ﷺ wept. The Prophet ﷺ said: \"Do not grieve — Allah is with us.\" And all was well.",
-    "prophet5_name": "Musa ﷺ and the sea",
+    "prophet4_summary": "दुश्मन गुफ़ा के मुहाने पर खड़ा था। नबी ﷺ ने कहा: «दुखी न हो — अल्लाह हमारे साथ है»।",
+    "prophet5_name": "मूसा ﷺ और समुद्र",
     "prophet5_ar": "موسى عليه السلام",
-    "prophet5_summary": "The enemy was closing in. The sea was ahead. The people cried: \"They will catch us!\" Musa ﷺ said: \"No. Allah is with us — He will guide us.\" And the sea parted.",
-    "prophet6_name": "Maryam and the palm tree",
+    "prophet5_summary": "दुश्मन क़रीब आ रहा था। मूसा ﷺ ने कहा: «नहीं। अल्लाह हमारे साथ है»। और समुद्र दो भागों में बँट गया।",
+    "prophet6_name": "मरयम और खजूर का पेड़",
     "prophet6_ar": "مريم عليها السلام",
-    "prophet6_summary": "When it hurt and it was frightening, Allah told Maryam: \"Shake the palm towards yourself — fresh dates will fall.\" And everything became gentle."
+    "prophet6_summary": "अल्लाह ने मरयम से कहा: «पेड़ अपनी ओर हिलाओ — ताज़ी खजूरें गिरेंगी»।"
   },
   "ks": {
-    "badge": "Memorisation · parent dashboard",
-    "h1": "The first surahs of any hifz journey.",
-    "lede": "Al-Fatihah, and the four short surahs at the end of the Book — what is traditionally learned first. Listen, repeat, track progress ayah by ayah.",
+    "badge": "हिफ़्ज़ · अभिभावक डैशबोर्ड",
+    "h1": "किसी भी हिफ़्ज़ यात्रा की पहली सूरतें।",
+    "lede": "अल-फ़ातिहा और किताब के अंत की चार छोटी सूरतें।",
     "s1": {
-      "label": "5 / 7 ayat · 71%",
-      "meta": "THE OPENING · 7 ayat",
-      "note": "Recited in every rak'ah of salah. The seven oft-repeated."
+      "label": "5 / 7 आयतें · 71%",
+      "meta": "उद्घाटन · 7 आयतें",
+      "note": "हर रकात में पढ़ी जाती है।"
     },
     "s2": {
-      "label": "3 / 6 ayat · 50%",
-      "meta": "MANKIND · 6 ayat",
-      "note": "Taking refuge with the Lord of mankind — from the whispers of the shayatin."
+      "label": "3 / 6 आयतें · 50%",
+      "meta": "मानव जाति · 6 आयतें",
+      "note": "लोगों के रब से शरण।"
     },
     "s3": {
-      "label": "2 / 5 ayat · 40%",
-      "meta": "THE DAYBREAK · 5 ayat",
-      "note": "Taking refuge with the Lord of daybreak — from the evil of what He created."
+      "label": "2 / 5 आयतें · 40%",
+      "meta": "तड़का · 5 आयतें",
+      "note": "तड़के के रब से शरण।"
     },
     "s4": {
-      "label": "4 / 4 ayat · 100% ✓",
-      "meta": "SINCERITY · 4 ayat",
-      "note": "A third of the Quran by meaning — tawhid in four ayat."
+      "label": "4 / 4 आयतें · 100% ✓",
+      "meta": "एकनिष्ठा · 4 आयतें",
+      "note": "अर्थ की दृष्टि से क़ुरान का तिहाई।"
     },
     "s5": {
-      "label": "3 / 3 ayat · 100% ✓",
-      "meta": "ABUNDANCE · 3 ayat",
-      "note": "The shortest surah of the Quran — three short ayat."
+      "label": "3 / 3 आयतें · 100% ✓",
+      "meta": "प्रचुरता · 3 आयतें",
+      "note": "क़ुरान की सबसे छोटी सूरत।"
     },
     "s6": {
-      "label": "0 / 6 ayat · not started",
-      "meta": "THE DISBELIEVERS · 6 ayat",
-      "note": "\"For you is your religion, and for me is mine.\""
+      "label": "0 / 6 आयतें · शुरू नहीं",
+      "meta": "अविश्वासी · 6 आयतें",
+      "note": "«तुम्हारे लिए तुम्हारा दीन»।"
     }
   },
   "kst": {
-    "adab": "No images of people or the Ka'ba · we follow adab",
-    "badge": "9 prophets · scripts for parents",
-    "cta": "Listen →",
-    "h1": "Stories of the prophets, peace be upon them.",
-    "lede": "Each story — a short script for the parent to read aloud, plus a calm 5–8 minute audio.",
-    "more": "+ 16 more prophets · Hud · Salih · Lut · Shu'ayb · Idris · Zakariyya · Yahya and others.",
+    "adab": "इंसानों या काबे की कोई तस्वीर नहीं · हम अदब का पालन करते हैं",
+    "badge": "9 पैगंबर · अभिभावकों के लिए स्क्रिप्ट",
+    "cta": "सुनें →",
+    "h1": "पैगंबरों 'अलैहिमुस-सलाम की कहानियाँ।",
+    "lede": "हर कहानी — अभिभावक के ज़ोर से पढ़ने के लिए छोटी स्क्रिप्ट, और 5-8 मिनट का शांत ऑडियो।",
+    "more": "+ 16 और पैगंबर · हूद · सालिह · लूत · शुऐब · इदरीस · ज़करिया · यह्या।",
     "p1": {
-      "meta": "7 MIN · THE FIRST HUMAN",
-      "name": "Prophet Adam ﷺ"
+      "meta": "7 मिनट · पहला मानव",
+      "name": "हज़रत आदम ﷺ"
     },
     "p2": {
-      "meta": "8 MIN · THE ARK",
-      "name": "Prophet Nuh ﷺ"
+      "meta": "8 मिनट · जहाज़",
+      "name": "हज़रत नूह ﷺ"
     },
     "p3": {
-      "meta": "9 MIN · KHALIL ALLAH",
-      "name": "Prophet Ibrahim ﷺ"
+      "meta": "9 मिनट · ख़लील अल्लाह",
+      "name": "हज़रत इब्राहीम ﷺ"
     },
     "p4": {
-      "meta": "12 MIN · THE DREAM OF STARS",
-      "name": "Prophet Yusuf ﷺ"
+      "meta": "12 मिनट · सितारों का सपना",
+      "name": "हज़रत यूसुफ़ ﷺ"
     },
     "p5": {
-      "meta": "14 MIN · THE PARTING OF THE SEA",
-      "name": "Prophet Musa ﷺ"
+      "meta": "14 मिनट · समुद्र का बँटना",
+      "name": "हज़रत मूसा ﷺ"
     },
     "p6": {
-      "meta": "7 MIN · PATIENCE",
-      "name": "Prophet Ayyub ﷺ"
+      "meta": "7 मिनट · सब्र",
+      "name": "हज़रत अय्यूब ﷺ"
     },
     "p7": {
-      "meta": "8 MIN · THE WHALE",
-      "name": "Prophet Yunus ﷺ"
+      "meta": "8 मिनट · मछली",
+      "name": "हज़रत यूनुस ﷺ"
     },
     "p8": {
-      "meta": "11 MIN · THE KINGDOM OF THE WIND",
-      "name": "Prophet Sulayman ﷺ"
+      "meta": "11 मिनट · हवा का राज्य",
+      "name": "हज़रत सुलैमान ﷺ"
     },
     "p9": {
-      "meta": "10 MIN · A WORD FROM ALLAH",
-      "name": "Prophet Isa ﷺ"
+      "meta": "10 मिनट · अल्लाह का एक कलिमा",
+      "name": "हज़रत ईसा ﷺ"
     }
   },
   "ls": {
@@ -567,99 +567,99 @@
   },
   "pf": {
     "actions": {
-      "export": "Export your data",
-      "signout": "Sign out"
+      "export": "अपना डेटा निर्यात करें",
+      "signout": "साइन आउट"
     },
-    "ago_1w": "a week ago",
-    "ago_2d": "2 days ago",
-    "ago_2w": "2 weeks ago",
-    "ago_3d": "3 days ago",
-    "bm1": "Ayat al-Kursi — the greatest ayah, recited before sleep per the sunnah",
-    "bm2": "\"In the remembrance of Allah do hearts find rest\" — for anxiety",
-    "bm3": "\"Indeed, with hardship comes ease\"",
-    "bm4": "\"Do not despair of the mercy of Allah\"",
-    "bm5": "Surah Al-Qadr in full — for Laylat al-Qadr",
-    "bm_all": "All 38 →",
-    "bm_eyebrow": "Recent bookmarks",
-    "bm_h": "What you keep coming back to.",
-    "eyebrow": "Profile",
-    "label_reciter": "Reciter",
-    "label_theme": "Theme",
-    "label_translation": "Translation",
+    "ago_1w": "एक हफ़्ता पहले",
+    "ago_2d": "2 दिन पहले",
+    "ago_2w": "2 हफ़्ते पहले",
+    "ago_3d": "3 दिन पहले",
+    "bm1": "आयत अल-कुर्सी",
+    "bm2": "«अल्लाह के ज़िक्र से दिल को सुकून मिलता है»",
+    "bm3": "«बेशक तंगी के साथ आसानी है»",
+    "bm4": "«अल्लाह की रहमत से निराश न हो»",
+    "bm5": "सूरह अल-क़द्र पूरी",
+    "bm_all": "सभी 38 →",
+    "bm_eyebrow": "हाल के बुकमार्क",
+    "bm_h": "आप जिसकी ओर बार-बार लौटते हैं।",
+    "eyebrow": "प्रोफ़ाइल",
+    "label_reciter": "क़ारी",
+    "label_theme": "थीम",
+    "label_translation": "अनुवाद",
     "r": {
-      "basit": "Abdul-Basit (mujawwad)",
-      "husary": "Mahmoud Khalil al-Husary",
-      "sudais": "Abdur-Rahman as-Sudais"
+      "basit": "अब्दुल-बासित (मुजव्वद)",
+      "husary": "महमूद अल-हुसरी",
+      "sudais": "अब्दुर-रहमान अस-सुदैस"
     },
-    "settings_eyebrow": "Settings",
-    "settings_h": "How you read.",
-    "stat_bookmarks": "Bookmarks",
-    "stat_bookmarks_d": "ayat saved · 12 with notes",
-    "stat_streak": "Streak",
-    "stat_streak_d": "consecutive days of reading · 21 best",
+    "settings_eyebrow": "सेटिंग्स",
+    "settings_h": "आप कैसे पढ़ते हैं।",
+    "stat_bookmarks": "बुकमार्क",
+    "stat_bookmarks_d": "आयतें सहेजी · 12 नोट्स के साथ",
+    "stat_streak": "लगातार",
+    "stat_streak_d": "लगातार दिन · सर्वश्रेष्ठ 21",
     "t": {
-      "abu": "Abu Adel",
-      "awqaf": "Egyptian Ministry of Awqaf",
-      "kuliev": "Kuliev",
-      "pickthall": "M. M. Pickthall",
-      "sahih": "Sahih International"
+      "abu": "अबू आदेल",
+      "awqaf": "मिस्र मंत्रालय औक़ाफ़",
+      "kuliev": "कुलिएव",
+      "pickthall": "पिकथल",
+      "sahih": "सहीह इंटरनेशनल"
     },
     "th": {
-      "dark": "Night (default)",
-      "light": "Light",
-      "mushaf": "Mushaf",
-      "sepia": "Sepia"
+      "dark": "रात (डिफ़ॉल्ट)",
+      "light": "उजला",
+      "mushaf": "मुसहफ़",
+      "sepia": "सेपिया"
     }
   },
   "priv": {
-    "h1": "Privacy as a ritual.",
-    "lede": "We treat your data as an amanah — something entrusted to us for safekeeping. No ads, no trackers, no partners.",
-    "ch3_eyebrow": "Chapter 3 · encryption",
-    "ch3_h": "How a note ends up in the database.",
-    "ch3_p": "A four-step chain — at every step the data is unreadable to any outside service.",
-    "ch3_s1_lbl": "01 · Browser",
-    "ch3_s1_t": "You write the note",
-    "ch3_s1_m": "The text exists only in your browser. Nothing is sent yet.",
+    "h1": "गोपनीयता एक रीति के रूप में।",
+    "lede": "हम आपके डेटा को अमानत मानते हैं।",
+    "ch3_eyebrow": "अध्याय 3 · एन्क्रिप्शन",
+    "ch3_h": "एक नोट डेटाबेस तक कैसे पहुँचता है।",
+    "ch3_p": "चार चरण की श्रृंखला।",
+    "ch3_s1_lbl": "01 · ब्राउज़र",
+    "ch3_s1_t": "आप नोट लिखते हैं",
+    "ch3_s1_m": "टेक्स्ट केवल आपके ब्राउज़र में मौजूद।",
     "ch3_s2_lbl": "02 · TLS",
-    "ch3_s2_t": "Transit over HTTPS",
-    "ch3_s2_m": "TLS 1.3 (Vercel Edge). Between you and the server — no one reads.",
-    "ch3_s3_lbl": "03 · Server",
-    "ch3_s3_t": "AES-256 encryption",
-    "ch3_s3_m": "The note text is encrypted with a key from envelope encryption. The key lives in Vercel KV, not in Supabase.",
+    "ch3_s2_t": "HTTPS पर पारगमन",
+    "ch3_s2_m": "TLS 1.3 (Vercel Edge)।",
+    "ch3_s3_lbl": "03 · सर्वर",
+    "ch3_s3_t": "AES-256 एन्क्रिप्शन",
+    "ch3_s3_m": "नोट टेक्स्ट envelope encryption से एन्क्रिप्ट।",
     "ch3_stat1_v": "AES-256-GCM",
-    "ch3_stat1_l": "Algorithm",
-    "ch3_stat1_s": "NIST standard. No broken modes.",
-    "ch3_stat2_v": "90 d",
-    "ch3_stat2_l": "Key rotation",
-    "ch3_stat2_s": "Every 90 days the primary key is re-issued. Old keys are retained to decrypt.",
-    "ch3_stat3_v": "2 services",
-    "ch3_stat3_l": "Separation",
-    "ch3_stat3_s": "Data in Supabase. Keys in Vercel KV. One service can't see the other.",
-    "ch3_stat4_v": "30 d",
-    "ch3_stat4_l": "Deletion",
-    "ch3_stat4_s": "When you delete your account, the data is wiped within 30 days. Backups within 90.",
-    "ch4_eyebrow": "Chapter 4 · government requests",
-    "ch4_h": "How many times we've been asked to hand over data.",
-    "ch4_p": "This log is updated every quarter. We publish every single request, within what the law allows.",
-    "ch4_th_period": "Period",
-    "ch4_th_source": "Request source",
-    "ch4_th_requests": "Requests",
-    "ch4_th_granted": "Granted",
-    "ch4_footer": "Sakeenly is registered in the EU. The Russian 152-FZ law does not directly apply, but we comply with GDPR. See the full policy for details.",
-    "ch5_eyebrow": "Chapter 5 · your rights",
-    "ch5_h": "What you can do with your data.",
-    "ch5_export_h": "Export everything",
-    "ch5_export_p": "A JSON file with all your bookmarks, notes, streak, and question history. One click in your profile.",
-    "ch5_export_btn": "Download archive",
-    "ch5_delete_h": "Delete your account",
-    "ch5_delete_p": "Full data wipe within 30 days. No questions, no retention, no win-back emails.",
-    "ch5_delete_btn": "Delete account",
-    "ch5_request_h": "Ask about something specific",
-    "ch5_request_p": "Want to know everything we hold about a specific email? Write to",
-    "ch5_request_btn": "Write to us",
-    "quote_eyebrow": "The principle Sakeenly is built on",
-    "quote_ru": "\"And do not spy [on one another]…\"",
-    "quote_cite": "Surah Al-Hujurat · 49:12"
+    "ch3_stat1_l": "एल्गोरिथम",
+    "ch3_stat1_s": "NIST मानक।",
+    "ch3_stat2_v": "90 दिन",
+    "ch3_stat2_l": "की रोटेशन",
+    "ch3_stat2_s": "हर 90 दिन में प्राथमिक कुंजी फिर से जारी।",
+    "ch3_stat3_v": "2 सेवाएँ",
+    "ch3_stat3_l": "पृथक्करण",
+    "ch3_stat3_s": "डेटा Supabase में। कुंजियाँ Vercel KV में।",
+    "ch3_stat4_v": "30 दिन",
+    "ch3_stat4_l": "विलोपन",
+    "ch3_stat4_s": "खाता हटाने पर डेटा 30 दिनों में मिटा।",
+    "ch4_eyebrow": "अध्याय 4 · सरकारी अनुरोध",
+    "ch4_h": "हमसे कितनी बार डेटा सौंपने को कहा गया।",
+    "ch4_p": "यह लॉग हर तिमाही अपडेट होता है।",
+    "ch4_th_period": "अवधि",
+    "ch4_th_source": "अनुरोध स्रोत",
+    "ch4_th_requests": "अनुरोध",
+    "ch4_th_granted": "मंज़ूर",
+    "ch4_footer": "सकीनली EU में पंजीकृत। हम GDPR का पालन करते हैं।",
+    "ch5_eyebrow": "अध्याय 5 · आपके अधिकार",
+    "ch5_h": "आप अपने डेटा के साथ क्या कर सकते हैं।",
+    "ch5_export_h": "सब कुछ निर्यात करें",
+    "ch5_export_p": "एक JSON फ़ाइल जिसमें आपके सभी बुकमार्क, नोट्स, लगातार।",
+    "ch5_export_btn": "संग्रह डाउनलोड",
+    "ch5_delete_h": "अपना खाता हटाएँ",
+    "ch5_delete_p": "30 दिनों में पूर्ण डेटा सफ़ाई।",
+    "ch5_delete_btn": "खाता हटाएँ",
+    "ch5_request_h": "किसी विशिष्ट चीज़ के बारे में पूछें",
+    "ch5_request_p": "किसी विशेष ईमेल के बारे में जानना चाहते हैं? लिखें",
+    "ch5_request_btn": "हमें लिखें",
+    "quote_eyebrow": "वह सिद्धांत जिस पर सकीनली बना है",
+    "quote_ru": "«और एक-दूसरे की जासूसी न करो…»",
+    "quote_cite": "सूरह अल-हुजुरात · 49:12"
   },
   "rd": {
     "about_h": "About this surah",
@@ -743,59 +743,59 @@
     "tj_rule_silent": "मौन अक्षर"
   },
   "sb": {
-    "apply_btn": "Write to us",
-    "apply_eyebrow": "Want to join?",
-    "apply_h": "We welcome imams, mu'allims, and Islamic scholars.",
-    "apply_p": "If you hold ijaza in the Islamic sciences, or you're a published researcher — write to scholars@sakeenly.com.",
-    "badge": "Quality control",
-    "board_eyebrow": "The board",
-    "board_h": "The scholars we trust to read first.",
-    "board_p": "Names and institutions will be added before public launch. Until then, every themed collection is flagged \"Awaiting approval\".",
-    "h1": "Scholar Board — who reads it before you do.",
-    "lede": "Anything a user sees — refusal messages, themed collections of ayat, contextual notes, AI prompts — passes through the scholar board before publication.",
-    "pending": "awaiting approval",
-    "pipe_eyebrow": "How review works",
-    "pipe_h": "Four steps before anything ships.",
+    "apply_btn": "हमें लिखें",
+    "apply_eyebrow": "जुड़ना चाहते हैं?",
+    "apply_h": "हम इमामों, मुअल्लिमों और इस्लामी विद्वानों का स्वागत करते हैं।",
+    "apply_p": "scholars@sakeenly.com पर लिखें।",
+    "badge": "गुणवत्ता नियंत्रण",
+    "board_eyebrow": "बोर्ड",
+    "board_h": "वे विद्वान जिन पर हम पहले पढ़ने के लिए भरोसा करते हैं।",
+    "board_p": "नाम सार्वजनिक लॉन्च से पहले जोड़े जाएँगे।",
+    "h1": "विद्वान बोर्ड — जो आपसे पहले पढ़ते हैं।",
+    "lede": "उपयोगकर्ता जो देखता है, वह पहले विद्वान बोर्ड से गुज़रता है।",
+    "pending": "स्वीकृति की प्रतीक्षा",
+    "pipe_eyebrow": "समीक्षा कैसे काम करती है",
+    "pipe_h": "किसी भी चीज़ के जारी होने से पहले चार चरण।",
     "s1": {
-      "d": "A collection of ayat or AI prompt text is opened as a pull request with sources.",
-      "n": "01 · Draft",
-      "t": "Product team"
+      "d": "आयतों का संग्रह सूत्रों के साथ pull request में खोला जाता है।",
+      "n": "01 · मसौदा",
+      "t": "उत्पाद टीम"
     },
     "s2": {
-      "d": "At least two scholars read it independently. Every comment is published.",
-      "n": "02 · Review",
-      "t": "Scholar board"
+      "d": "कम से कम दो विद्वान स्वतंत्र रूप से पढ़ते हैं।",
+      "n": "02 · समीक्षा",
+      "t": "विद्वान बोर्ड"
     },
     "s3": {
-      "d": "The team revises, cites the hadith corpus, sends it back for another reading.",
-      "n": "03 · Revise",
-      "t": "Iterate"
+      "d": "टीम संशोधन करती है।",
+      "n": "03 · संशोधन",
+      "t": "दोहराव"
     },
     "s4": {
-      "d": "The scholar-vetted: true tag is set. Without that badge nothing gets indexed for SEO.",
-      "n": "04 · Approve",
-      "t": "Publish"
+      "d": "विद्वान-समीक्षित: true टैग सेट होता है।",
+      "n": "04 · स्वीकृति",
+      "t": "प्रकाशित"
     }
   },
   "si": {
-    "aside_cite": "Surah Al-Fath · 48:4",
-    "aside_eyebrow": "Sakeenly · personal",
-    "aside_h": "Bookmarks. Streak. Notes. Everywhere.",
-    "aside_q": "\"…and He sent down sakina into the hearts of the believers, so that they would increase in faith…\"",
-    "btn_apple": "Sign in with Apple",
-    "btn_google": "Sign in with Google",
-    "btn_magic": "Send me a link",
-    "bull1": "Bookmarks and notes across every device",
-    "bull2": "Streak that forgives via wudu",
-    "bull3": "5 AI questions a day, free",
-    "bull4": "Zero trackers. Encryption at rest.",
+    "aside_cite": "सूरह अल-फ़त्ह · 48:4",
+    "aside_eyebrow": "सकीनली · व्यक्तिगत",
+    "aside_h": "बुकमार्क। लगातार। नोट्स। हर जगह।",
+    "aside_q": "«…और उसने मोमिनों के दिलों में सकीना उतारी…»",
+    "btn_apple": "Apple से साइन इन",
+    "btn_google": "Google से साइन इन",
+    "btn_magic": "मुझे लिंक भेजें",
+    "bull1": "हर डिवाइस पर बुकमार्क और नोट्स",
+    "bull2": "लगातार जो वुज़ू से माफ़ होती है",
+    "bull3": "5 AI सवाल प्रति दिन, मुफ़्त",
+    "bull4": "शून्य ट्रैकर। सुरक्षित एन्क्रिप्शन।",
     "email_placeholder": "you@example.com",
-    "label_email": "Email",
-    "main_eyebrow": "Sign in / sign up",
-    "main_h": "Salam, and welcome.",
-    "main_lede": "Sign in with Google or a magic link to your inbox. No passwords — we don't like them either.",
-    "or": "or · magic link",
-    "terms_html": "By continuing you agree to the <a href=\"#\">terms</a> and the <a href=\"privacy.html\">privacy policy</a>."
+    "label_email": "ईमेल",
+    "main_eyebrow": "साइन इन / साइन अप",
+    "main_h": "सलाम, और स्वागत है।",
+    "main_lede": "Google से या ईमेल पर मैजिक लिंक से साइन इन करें।",
+    "or": "या · मैजिक लिंक",
+    "terms_html": "जारी रखकर आप <a href=\"#\">शर्तों</a> और <a href=\"privacy.html\">गोपनीयता नीति</a> से सहमत हैं।"
   },
   "sn": {
     "1": "Al-Fatihah",
