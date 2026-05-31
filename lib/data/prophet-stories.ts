@@ -1533,6 +1533,82 @@ export const PROPHET_STORIES: ProphetStory[] = [
           "Ибн Касир, «Кисас аль-Анбия», глава «Хабар об Айюбе»",
         ],
       },
+      ur: {
+        name: "ایوب",
+        theme: "صبر",
+        paragraphs: [
+          "حضرت ایوب علیہ السلام نیک انسان تھے۔ اللہ نے انہیں بہت کچھ دیا تھا: بڑا گھرانہ، بہت سے بچے، زرخیز زمین، مویشی، گھر۔ ایوب کبھی نہ بھولے کہ یہ سب کس کا عطا ہے۔ ہر دن اللہ کا شکر ادا کرتے اور حاجت مندوں کی مدد کرتے۔",
+          "پھر اللہ نے ایوب کو ایک بڑی آزمائش بھیجی۔ ایوب نے تقریباً سب کچھ کھو دیا — مال بھی، صحت بھی۔ سخت بیماری ان پر آئی اور برسوں دور نہ ہوئی۔ ایوب سالوں بستر پر رہے۔ کام نہ کر سکتے تھے۔ وہ سب کچھ نہیں کر سکتے تھے جو پہلے کرتے تھے۔ صرف ان کی بیوی ساتھ رہی اور ان کی خدمت کرتی رہی۔",
+          "لیکن ایوب نے شکایت نہ کی۔ اللہ پر ناراض نہ ہوئے۔ کبھی نہ کہا: «یہ میرے ساتھ کیوں؟» ایوب جانتے تھے: جو اللہ نے دیا — وہ واپس بھی لے سکتا ہے۔ اور صبر کیا۔ خاموش صبر، بغیر اونچی آواز کے۔ بس اپنا ایمان جاری رکھا۔",
+          "اور جب آزمائش بہت بھاری ہو گئی، ایوب نے اللہ سے ایک مختصر دعا کی۔ کہا: «اے رب! مجھے تکلیف پہنچی ہے، اور تو ارحم الراحمین ہے»۔ نہیں کہا: «اے رب، یہ بلا ابھی اتار دے»۔ ضد نہ کی۔ بس اللہ کو اس کی رحمت یاد دلائی — اور بھروسہ کیا۔",
+          "اور اللہ نے ایوب کو جواب دیا۔ قرآن میں اللہ فرماتا ہے: «ہم نے اس کی دعا قبول کی اور اس سے تکلیف دور کر دی»۔ اللہ نے ایوب کو حکم دیا: «اپنا پاؤں زمین پر مار»۔ ایوب نے مارا — اور زمین سے ٹھنڈا، صاف چشمہ پھوٹا۔ اللہ نے فرمایا: «یہ نہانے اور پینے کے لیے ہے»۔ ایوب نے اس پانی سے غسل کیا، پیا — اور بیماری چلی گئی۔ اللہ نے انہیں صحت لوٹا دی، گھرانہ لوٹایا، اور پہلے سے بھی زیادہ عطا کیا۔",
+          "اور اللہ نے قرآن میں ایوب کے بارے میں بہت خوبصورت کلمات فرمائے: «بے شک ہم نے اسے صابر پایا۔ کیا ہی بہترین بندہ!» یہ سب سے اعلیٰ کلمات ہیں جو کسی انسان کے بارے میں کہے جا سکتے ہیں۔ جب لوگ مصیبت میں ایوب کو یاد کرتے ہیں — ان کا بوجھ ہلکا ہو جاتا ہے۔ کیونکہ ایوب نے دکھا دیا: سب سے بڑا درد بھی کبھی نہ کبھی ختم ہوتا ہے، اگر تو اللہ کے ساتھ رہے۔",
+        ],
+        lesson:
+          "سبق: صبر یہ نہیں کہ شکوہ دل میں رکھ کر چپ بیٹھو، بلکہ مشکل میں اللہ پر بھروسہ کرنا ہے۔ ایوب نے ضد نہیں کی — نرم دعا کی۔ اور اللہ نے جواب دیا۔",
+        sources: [
+          "قرآن 21:83-84 (ایوب کی دعا اور اللہ کا جواب)",
+          "قرآن 38:41-44 (چشمہ، شفاء، اللہ کی تعریف)",
+          "ابن کثیر، قصص الانبیاء، باب ایوب علیہ السلام",
+        ],
+      },
+      ms: {
+        name: "Ayyub",
+        theme: "kesabaran",
+        paragraphs: [
+          "Nabi Ayyub 'alayhis-salam adalah seorang lelaki yang soleh. Allah telah memberinya banyak: keluarga yang besar, ramai anak, tanah subur, ternakan, dan rumah. Ayyub tidak pernah lupa dari siapa semua itu datang. Setiap hari beliau bersyukur kepada Allah dan membantu yang memerlukan.",
+          "Kemudian Allah menghantarkan ujian besar kepada Ayyub. Ayyub kehilangan hampir semuanya — harta dan juga kesihatan. Penyakit berat menimpanya dan tidak pergi selama bertahun-tahun. Ayyub terlantar bertahun-tahun di tempat tidur. Beliau tidak dapat bekerja. Tidak dapat melakukan apa yang dulu dilakukan. Hanya isterinya yang setia menemani dan menjaganya.",
+          "Tetapi Ayyub tidak mengeluh. Beliau tidak marah kepada Allah. Tidak berkata: «Mengapa aku?» Ayyub tahu: apa yang Allah berikan — Allah berhak mengambilnya semula. Maka beliau bersabar. Bersabar dengan senyap, tanpa kata-kata yang kuat. Hanya meneruskan iman.",
+          "Apabila ujian menjadi terlalu berat, Ayyub berpaling kepada Tuhannya dengan satu doa pendek. Beliau berkata: «Wahai Tuhanku, sesungguhnya aku telah ditimpa kesusahan, dan Engkau Maha Penyayang dari segala yang penyayang». Beliau tidak berkata: «Wahai Tuhanku, hilangkan musibah ini sekarang juga». Tidak mendesak. Hanya mengingatkan tentang kasih sayang Allah — dan bertawakal.",
+          "Allah menjawab Ayyub. Dalam Al-Quran Allah berfirman: «Kami kabulkan doanya dan Kami hilangkan apa yang menimpanya dari kesusahan». Allah memerintahkan Ayyub: «Hentakkanlah kakimu ke bumi». Ayyub menghentakkan — dan dari bumi memancar mata air yang sejuk dan jernih. Allah berfirman: «Inilah untuk mandi dan minum». Ayyub mandi dengan air itu, meminumnya — dan penyakit pun hilang. Allah mengembalikan kesihatannya, mengembalikan keluarganya, dan mengurniakan lebih banyak daripada sebelumnya.",
+          "Dalam Al-Quran Allah berfirman tentang Ayyub dengan kata-kata yang sangat indah: «Sesungguhnya Kami mendapati dia seorang yang sabar. Dialah sebaik-baik hamba». Inilah kata-kata tertinggi yang dapat diucapkan tentang seorang manusia. Apabila orang mengingati Ayyub dalam kesulitan — beban mereka menjadi ringan. Kerana Ayyub menunjukkan: kesakitan paling besar pun akan berakhir suatu hari, jika engkau tetap bersama Allah.",
+        ],
+        lesson:
+          "Pengajaran: kesabaran bukan berdiam diri dengan dendam, melainkan bertawakal kepada Allah ketika susah. Ayyub tidak mendesak — beliau berdoa dengan lembut. Dan Allah menjawab.",
+        sources: [
+          "Al-Quran 21:83-84 (doa Ayyub dan jawapan Allah)",
+          "Al-Quran 38:41-44 (mata air, penyembuhan, pujian Allah)",
+          "Ibn Kathir, Qisas al-Anbiya, bab Ayyub 'alayhis-salam",
+        ],
+      },
+      hi: {
+        name: "अय्यूब",
+        theme: "सब्र",
+        paragraphs: [
+          "हज़रत अय्यूब 'अलैहिस्सलाम नेक इंसान थे। अल्लाह ने उन्हें बहुत कुछ दिया था: बड़ा घराना, बहुत से बच्चे, ज़रख़ेज़ ज़मीन, मवेशी, घर। अय्यूब कभी न भूले कि यह सब किसकी देन है। हर दिन अल्लाह का शुक्र अदा करते और ज़रूरतमंदों की मदद करते।",
+          "फिर अल्लाह ने अय्यूब पर एक बड़ी आज़माइश भेजी। अय्यूब ने तक़रीबन सब कुछ खो दिया — माल भी, सेहत भी। सख़्त बीमारी उन पर आई और बरसों दूर न हुई। अय्यूब सालों बिस्तर पर रहे। काम न कर सकते थे। वह सब कुछ नहीं कर सकते थे जो पहले करते थे। सिर्फ़ उनकी बीवी साथ रही और उनकी ख़िदमत करती रही।",
+          "लेकिन अय्यूब ने शिकायत न की। अल्लाह पर नाराज़ न हुए। कभी न कहा: «यह मेरे साथ क्यों?» अय्यूब जानते थे: जो अल्लाह ने दिया — वह वापस भी ले सकता है। और सब्र किया। ख़ामोश सब्र, बिना ऊँची आवाज़ के। बस अपना ईमान जारी रखा।",
+          "और जब आज़माइश बहुत भारी हो गई, अय्यूब ने अल्लाह से एक मुख़्तसर दुआ की। कहा: «ऐ रब! मुझे तकलीफ़ पहुँची है, और तू अरहम-अर-राहिमीन है»। नहीं कहा: «ऐ रब, यह बला अभी हटा दे»। ज़िद नहीं की। बस अल्लाह को उसकी रहमत याद दिलाई — और भरोसा किया।",
+          "और अल्लाह ने अय्यूब को जवाब दिया। क़ुरान में अल्लाह फ़रमाता है: «हमने उसकी दुआ क़बूल की और उससे तकलीफ़ दूर कर दी»। अल्लाह ने अय्यूब को हुक्म दिया: «अपना पाँव ज़मीन पर मार»। अय्यूब ने मारा — और ज़मीन से ठंडा, साफ़ चश्मा फूटा। अल्लाह ने फ़रमाया: «यह नहाने और पीने के लिए है»। अय्यूब ने इस पानी से ग़ुस्ल किया, पिया — और बीमारी चली गई। अल्लाह ने उन्हें सेहत लौटा दी, घराना लौटाया, और पहले से भी ज़्यादा अता किया।",
+          "और अल्लाह ने क़ुरान में अय्यूब के बारे में बहुत ख़ूबसूरत कलिमात फ़रमाए: «बेशक हमने उसे साबिर पाया। कितना बेहतरीन बंदा!» यह सबसे आला कलिमात हैं जो किसी इंसान के बारे में कहे जा सकते हैं। जब लोग मुसीबत में अय्यूब को याद करते हैं — उनका बोझ हल्का हो जाता है। क्योंकि अय्यूब ने दिखा दिया: सबसे बड़ा दर्द भी कभी न कभी ख़त्म होता है, अगर तू अल्लाह के साथ रहे।",
+        ],
+        lesson:
+          "सबक़: सब्र यह नहीं कि शिकवा दिल में रखकर चुप बैठो, बल्कि मुश्किल में अल्लाह पर भरोसा करना है। अय्यूब ने ज़िद नहीं की — नर्म दुआ की। और अल्लाह ने जवाब दिया।",
+        sources: [
+          "क़ुरान 21:83-84 (अय्यूब की दुआ और अल्लाह का जवाब)",
+          "क़ुरान 38:41-44 (चश्मा, शिफ़ा, अल्लाह की तारीफ़)",
+          "इब्न कसीर, क़िसस अल-अंबिया, बाब अय्यूब 'अलैहिस्सलाम",
+        ],
+      },
+      id: {
+        name: "Ayyub",
+        theme: "kesabaran",
+        paragraphs: [
+          "Nabi Ayyub 'alaihissalam adalah seorang yang saleh. Allah telah memberinya banyak: keluarga besar, banyak anak, tanah subur, ternak, dan rumah. Ayyub tidak pernah lupa dari siapa semua itu datang. Setiap hari beliau bersyukur kepada Allah dan membantu orang-orang yang membutuhkan.",
+          "Kemudian Allah mengirimkan ujian besar kepada Ayyub. Ayyub kehilangan hampir segalanya — harta benda maupun kesehatan. Penyakit berat menimpanya dan tidak pergi selama bertahun-tahun. Ayyub terbaring bertahun-tahun di tempat tidur. Beliau tidak bisa bekerja. Tidak bisa melakukan apa yang dulu bisa beliau lakukan. Hanya istrinya yang setia menemani dan merawatnya.",
+          "Tetapi Ayyub tidak mengeluh. Beliau tidak marah kepada Allah. Tidak berkata: «Mengapa aku?» Ayyub tahu: apa yang Allah berikan — Allah berhak mengambilnya kembali. Maka beliau bersabar. Bersabar dalam diam, tanpa kata-kata keras. Hanya melanjutkan imannya.",
+          "Ketika ujian menjadi sangat berat, Ayyub berpaling kepada Tuhannya dengan satu doa singkat. Beliau berkata: «Ya Tuhanku, sesungguhnya aku ditimpa kesusahan, dan Engkau adalah Yang Paling Penyayang dari para penyayang». Beliau tidak berkata: «Ya Tuhanku, angkatlah musibah ini sekarang juga». Tidak memaksa. Hanya mengingatkan tentang rahmat Allah — dan bertawakal.",
+          "Allah menjawab Ayyub. Dalam Al-Quran Allah berfirman: «Kami kabulkan doanya dan Kami lenyapkan penyakit yang menimpanya». Allah memerintahkan Ayyub: «Hentakkanlah kakimu ke bumi». Ayyub menghentakkan — dan dari bumi memancar mata air yang sejuk dan jernih. Allah berfirman: «Inilah untuk mandi dan minum». Ayyub mandi dengan air itu, meminumnya — dan penyakit pun hilang. Allah mengembalikan kesehatannya, mengembalikan keluarganya, dan menganugerahkan lebih banyak dari sebelumnya.",
+          "Dalam Al-Quran Allah berfirman tentang Ayyub dengan kata-kata yang sangat indah: «Sesungguhnya Kami mendapatinya seorang yang sabar. Dialah sebaik-baik hamba». Itu adalah kata-kata tertinggi yang dapat diucapkan tentang seorang manusia. Ketika orang-orang mengingat Ayyub dalam kesulitan — beban mereka terasa lebih ringan. Karena Ayyub menunjukkan: kesakitan paling besar pun akan berakhir suatu hari, jika engkau tetap bersama Allah.",
+        ],
+        lesson:
+          "Pelajaran: kesabaran bukan diam dengan dendam, melainkan bertawakal kepada Allah saat sulit. Ayyub tidak memaksa — beliau berdoa dengan lembut. Dan Allah menjawab.",
+        sources: [
+          "Al-Quran 21:83-84 (doa Ayyub dan jawaban Allah)",
+          "Al-Quran 38:41-44 (mata air, kesembuhan, pujian Allah)",
+          "Ibn Kathir, Qisas al-Anbiya, bab Ayyub 'alaihissalam",
+        ],
+      },
     },
   },
 
