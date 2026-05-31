@@ -2007,6 +2007,90 @@ export const PROPHET_STORIES: ProphetStory[] = [
           "Ибн Касир, «Кисас аль-Анбия», главы о Дауде и Сулеймане",
         ],
       },
+      ur: {
+        name: "سلیمان",
+        theme: "ہوا کی سلطنت",
+        paragraphs: [
+          "حضرت سلیمان علیہ السلام، حضرت داؤد علیہ السلام کے بیٹے تھے۔ اللہ نے انہیں ایسی نعمتیں عطا کیں جو کسی اور کو نہ دیں۔ سلیمان نبی بھی تھے اور بادشاہ بھی۔ اللہ نے انہیں عظیم بادشاہت، حکمت اور تین حیرت انگیز صلاحیتیں دیں: ہوا ان کی خادم تھی، جن ان کے لیے کام کرتے تھے، اور وہ جانوروں اور پرندوں کی زبان سمجھتے تھے۔",
+          "جب سلیمان کسی دور مقام پر جانا چاہتے، انہیں کشتیوں یا اونٹوں کی ضرورت نہ ہوتی۔ ہوا ان کا تخت اٹھا کر ایک دن میں وہاں پہنچا دیتی جہاں عام آدمی پورے مہینے میں پہنچتا۔ اور جن ان کے لیے بلند عمارتیں بناتے، سمندر کی تہہ سے موتی نکالتے، وہ کام کرتے جو عام لوگ نہیں کر سکتے۔",
+          "ایک دن سلیمان اپنے لشکر کے ساتھ چیونٹیوں کی وادی سے گزر رہے تھے۔ اچانک ایک چیونٹی نے اپنی ساتھیوں کو پکارا: «اے چیونٹیو! اپنے بلوں میں چلی جاؤ، کہیں سلیمان اور ان کا لشکر تمہیں روند نہ دیں اور انہیں خبر بھی نہ ہو!» سلیمان نے یہ سنا — کیونکہ اللہ نے انہیں جانوروں کی زبان سمجھنے کی صلاحیت دی تھی۔ وہ اس کی بات پر مسکرائے اور کہا: «اے رب! مجھے توفیق دے کہ تیری اس نعمت کا شکر ادا کروں جو تو نے مجھ پر اور میرے والدین پر کی»۔",
+          "ایک بار سلیمان نے اپنے تمام پرندوں کو جمع کیا، مگر ہدہد دکھائی نہ دیا۔ پوچھا: «ہدہد کہاں ہے؟ اگر یہ معقول عذر کے بغیر واپس نہ آیا تو میں اسے سزا دوں گا»۔ کچھ دیر بعد ہدہد آیا اور بولا: «میں نے وہ جانا جو آپ نہیں جانتے تھے۔ میں سبا سے آیا ہوں۔ وہاں بلقیس نامی ملکہ حکمران ہے۔ اس کا عظیم تخت ہے۔ مگر وہ اور اس کی قوم اللہ کے بجائے سورج کی پرستش کرتے ہیں»۔",
+          "سلیمان نے حملہ نہ کیا۔ بلقیس کو خط لکھا اور حق کی دعوت دی۔ بلقیس نے لمبا غور کیا — اور خود سلیمان کے پاس آئی۔ جب اس نے ان کی سلطنت، حکمت اور مہربانی دیکھی — جان گئی کہ سلیمان کوئی عام بادشاہ نہیں۔ اور جب اس نے دیکھا کہ سلیمان صرف اللہ کی عبادت کرتے ہیں اور اپنی بادشاہت پر غرور نہیں کرتے — تو اس کا دل پھر گیا۔ کہا: «میں سلیمان کے ساتھ اللہ، رب العالمین کی فرماں بردار ہو گئی»۔",
+          "سلیمان جانتے تھے کہ ساری بادشاہت اللہ کی طرف سے ہے۔ نہ کہا: «یہ میری ہے»۔ کہا: «یہ میرے رب کا فضل ہے جو مجھے آزمانے کے لیے دیا گیا — کیا میں شکر کرتا ہوں یا نہیں»۔ یہ بہت مشکل ہے: اتنا کچھ ہو اور غرور نہ ہو۔ سلیمان اس میں کامیاب رہے کیونکہ ان کا دل چیزوں سے نہیں، اللہ سے بھرا تھا۔",
+          "زندگی کے آخر میں سلیمان اپنے عصا پر ٹیک لگائے ہوئے فوت ہوئے، اور اتنی دیر تک یوں ہی کھڑے رہے کہ نیچے کام کرنے والے جن ان کی موت کو محسوس نہ کر سکے۔ وہ کام کرتے رہے، یہ سمجھ کر کہ بادشاہ انہیں دیکھ رہے ہیں۔ صرف جب عصا ٹوٹا — سلیمان گرے، اور جنوں کو خبر ہوئی۔ یہ ہمارے لیے ایک نشانی ہے: انسانوں میں سب سے بڑا بھی فانی ہے۔ صرف وہی باقی رہے گا جو ہم نے اللہ کے لیے کیا۔",
+        ],
+        lesson:
+          "سبق: زیادہ ہونا اتنی ہی بڑی آزمائش ہے جتنی کم ہونا۔ سلیمان کے پاس سب کچھ تھا — اور ہر نعمت میں اللہ کو یاد رکھا۔ یہی اصل دولت ہے۔",
+        sources: [
+          "قرآن 27:15-44 (سلیمان کی حکمت، چیونٹیاں، ہدہد، بلقیس)",
+          "قرآن 38:30-40 (سلطنت، ہوا، سلیمان کا شکر)",
+          "قرآن 34:12-14 (جنوں کی خدمت اور سلیمان کی موت)",
+          "ابن کثیر، قصص الانبیاء، باب داؤد اور سلیمان علیہما السلام",
+        ],
+      },
+      ms: {
+        name: "Sulaiman",
+        theme: "kerajaan angin",
+        paragraphs: [
+          "Nabi Sulaiman 'alayhis-salam adalah putera Nabi Dawud 'alayhis-salam. Allah memberinya kurniaan yang tidak diberikan kepada sesiapa pun. Sulaiman adalah seorang nabi sekaligus seorang raja. Allah mengurniakannya kerajaan yang besar, kebijaksanaan, dan tiga keupayaan yang menakjubkan: angin tunduk kepadanya, jin bekerja untuknya, dan dia memahami bahasa haiwan dan burung.",
+          "Apabila Sulaiman ingin pergi ke tempat yang jauh, dia tidak memerlukan kapal atau unta. Angin mengangkat singgahsananya dan membawanya dalam satu hari ke tempat yang biasanya ditempuh orang biasa dalam sebulan. Dan jin membina untuknya bangunan-bangunan tinggi, mengeluarkan mutiara dari dasar laut, dan melakukan perkara-perkara yang tidak dapat dilakukan manusia biasa.",
+          "Suatu hari Sulaiman bersama tenteranya melalui sebuah lembah semut. Tiba-tiba seekor semut menjerit kepada kawan-kawannya: «Wahai semut-semut! Masuklah ke sarang-sarang kamu, supaya Sulaiman dan tenteranya tidak memijak kamu tanpa mereka sedari!» Sulaiman mendengarnya — kerana Allah memberinya kebolehan memahami bahasa haiwan. Dia tersenyum atas kata-kata semut itu dan berkata: «Wahai Tuhanku, berilah aku ilham untuk bersyukur atas nikmat-Mu yang telah Engkau anugerahkan kepadaku dan kepada kedua ibu bapaku».",
+          "Pada hari yang lain Sulaiman mengumpulkan semua burungnya, tetapi dia tidak melihat hud-hud. Dia bertanya: «Di mana hud-hud? Jika dia tidak pulang dengan alasan yang sah, aku akan menghukumnya». Selepas seketika hud-hud datang dan berkata: «Aku telah mengetahui apa yang engkau tidak ketahui. Aku datang dari Saba'. Di sana memerintah seorang wanita bernama Bilqis. Dia mempunyai singgahsana yang agung. Tetapi dia dan kaumnya menyembah matahari, bukan Allah».",
+          "Sulaiman tidak menyerang. Dia menulis surat kepada Bilqis dan mengajaknya kepada kebenaran. Bilqis berfikir lama — dan akhirnya datang sendiri kepada Sulaiman. Apabila dia melihat kerajaannya, kebijaksanaannya, dan kebaikannya — dia faham bahawa Sulaiman bukan raja biasa. Dan apabila dia melihat bagaimana Sulaiman hanya menyembah Allah dan tidak berbangga dengan kerajaannya — hatinya berpaling. Dia berkata: «Aku berserah diri bersama Sulaiman kepada Allah, Tuhan sekalian alam».",
+          "Sulaiman tahu bahawa seluruh kerajaannya datang dari Allah. Dia tidak berkata: «Ini milikku». Dia berkata: «Ini adalah kurniaan Tuhanku untuk mengujiku — adakah aku bersyukur ataupun tidak». Itulah yang amat sukar: memiliki begitu banyak tanpa berbangga. Sulaiman mampu kerana hatinya dipenuhi Allah, bukan harta benda.",
+          "Pada akhir hayatnya Sulaiman meninggal dunia sambil bersandar pada tongkatnya, dan kekal berdiri begitu lama sehingga jin yang bekerja di bawah tidak menyedari kematiannya. Mereka terus bekerja, menyangka raja masih memerhati. Hanya apabila tongkat itu patah — Sulaiman jatuh, dan jin menyedarinya. Itu adalah tanda untuk kita semua: manusia paling agung pun fana. Yang tinggal hanyalah apa yang kita lakukan kerana Allah.",
+        ],
+        lesson:
+          "Pengajaran: memiliki banyak adalah ujian yang sama besarnya dengan tidak memiliki apa-apa. Sulaiman memiliki segalanya — dan tetap mengingati Allah dalam setiap kurniaan. Itulah kekayaan yang sebenar.",
+        sources: [
+          "Al-Quran 27:15-44 (kebijaksanaan Sulaiman, semut, hud-hud, Bilqis)",
+          "Al-Quran 38:30-40 (kerajaan, angin, kesyukuran Sulaiman)",
+          "Al-Quran 34:12-14 (khidmat jin dan kematian Sulaiman)",
+          "Ibn Kathir, Qisas al-Anbiya, bab Dawud dan Sulaiman 'alayhima as-salam",
+        ],
+      },
+      hi: {
+        name: "सुलैमान",
+        theme: "हवा की सल्तनत",
+        paragraphs: [
+          "हज़रत सुलैमान 'अलैहिस्सलाम हज़रत दाऊद 'अलैहिस्सलाम के बेटे थे। अल्लाह ने उन्हें ऐसी नेमतें अता कीं जो किसी और को न दीं। सुलैमान नबी भी थे और बादशाह भी। अल्लाह ने उन्हें अज़ीम सल्तनत, हिक्मत और तीन हैरतअंगेज़ सलाहियतें दीं: हवा उनकी ख़ादिम थी, जिन्न उनके लिए काम करते थे, और वे जानवरों और परिंदों की ज़बान समझते थे।",
+          "जब सुलैमान किसी दूर के मक़ाम पर जाना चाहते, उन्हें कश्तियों या ऊँटों की ज़रूरत न होती। हवा उनका तख़्त उठाकर एक दिन में वहाँ पहुँचा देती जहाँ आम आदमी पूरे महीने में पहुँचता। और जिन्न उनके लिए बुलंद इमारतें बनाते, समुद्र की तह से मोती निकालते, वह काम करते जो आम लोग नहीं कर सकते।",
+          "एक दिन सुलैमान अपने लश्कर के साथ चींटियों की वादी से गुज़र रहे थे। अचानक एक चींटी ने अपनी साथिनों को पुकारा: «ऐ चींटियो! अपने बिलों में चली जाओ, कहीं सुलैमान और उनका लश्कर तुम्हें कुचल न दें और उन्हें ख़बर भी न हो!» सुलैमान ने यह सुना — क्योंकि अल्लाह ने उन्हें जानवरों की ज़बान समझने की सलाहियत दी थी। वह उसकी बात पर मुस्कराए और कहा: «ऐ रब! मुझे तौफ़ीक़ दे कि तेरी इस नेमत का शुक्र अदा करूँ जो तूने मुझ पर और मेरे वालिदैन पर की»।",
+          "एक बार सुलैमान ने अपने तमाम परिंदों को जमा किया, मगर हुदहुद दिखाई न दिया। पूछा: «हुदहुद कहाँ है? अगर यह माक़ूल उज़्र के बिना वापस न आया तो मैं उसे सज़ा दूँगा»। कुछ देर बाद हुदहुद आया और बोला: «मैंने वह जाना जो आप नहीं जानते थे। मैं सबा से आया हूँ। वहाँ बिल्क़ीस नामी मलिका हुक्मरान है। उसका अज़ीम तख़्त है। मगर वह और उसकी क़ौम अल्लाह के बजाय सूरज की पूजा करते हैं»।",
+          "सुलैमान ने हमला न किया। बिल्क़ीस को ख़त लिखा और हक़ की दावत दी। बिल्क़ीस ने लंबा ग़ौर किया — और ख़ुद सुलैमान के पास आई। जब उसने उनकी सल्तनत, हिक्मत और मेहरबानी देखी — जान गई कि सुलैमान कोई आम बादशाह नहीं। और जब उसने देखा कि सुलैमान सिर्फ़ अल्लाह की इबादत करते हैं और अपनी बादशाहत पर ग़ुरूर नहीं करते — तो उसका दिल फिर गया। कहा: «मैं सुलैमान के साथ अल्लाह, रब-उल-आलमीन की फ़रमाँबरदार हो गई»।",
+          "सुलैमान जानते थे कि सारी सल्तनत अल्लाह की तरफ़ से है। नहीं कहा: «यह मेरी है»। कहा: «यह मेरे रब का फ़ज़्ल है जो मुझे आज़माने के लिए दिया गया — क्या मैं शुक्र करता हूँ या नहीं»। यह बहुत मुश्किल है: इतना कुछ हो और ग़ुरूर न हो। सुलैमान इसमें कामयाब रहे क्योंकि उनका दिल चीज़ों से नहीं, अल्लाह से भरा था।",
+          "ज़िंदगी के आख़िर में सुलैमान अपने असा पर टेक लगाए हुए फ़ौत हुए, और इतनी देर तक यूँ ही खड़े रहे कि नीचे काम करने वाले जिन्न उनकी मौत को महसूस न कर सके। वे काम करते रहे, यह समझकर कि बादशाह उन्हें देख रहे हैं। सिर्फ़ जब असा टूटा — सुलैमान गिरे, और जिन्नों को ख़बर हुई। यह हमारे लिए एक निशानी है: इंसानों में सबसे बड़ा भी फ़ानी है। सिर्फ़ वही बाक़ी रहेगा जो हमने अल्लाह के लिए किया।",
+        ],
+        lesson:
+          "सबक़: ज़्यादा होना उतनी ही बड़ी आज़माइश है जितनी कम होना। सुलैमान के पास सब कुछ था — और हर नेमत में अल्लाह को याद रखा। यही असली दौलत है।",
+        sources: [
+          "क़ुरान 27:15-44 (सुलैमान की हिक्मत, चींटियाँ, हुदहुद, बिल्क़ीस)",
+          "क़ुरान 38:30-40 (सल्तनत, हवा, सुलैमान का शुक्र)",
+          "क़ुरान 34:12-14 (जिन्नों की ख़िदमत और सुलैमान की मौत)",
+          "इब्न कसीर, क़िसस अल-अंबिया, बाब दाऊद और सुलैमान 'अलैहिमास्सलाम",
+        ],
+      },
+      id: {
+        name: "Sulaiman",
+        theme: "kerajaan angin",
+        paragraphs: [
+          "Nabi Sulaiman 'alaihissalam adalah putra Nabi Dawud 'alaihissalam. Allah memberinya karunia yang tidak diberikan kepada siapa pun. Sulaiman adalah seorang nabi sekaligus seorang raja. Allah menganugerahinya kerajaan yang besar, hikmah, dan tiga kemampuan yang menakjubkan: angin tunduk kepadanya, jin bekerja untuknya, dan beliau memahami bahasa hewan dan burung.",
+          "Ketika Sulaiman ingin pergi ke tempat yang jauh, beliau tidak memerlukan kapal atau unta. Angin mengangkat singgasananya dan membawanya dalam sehari ke tempat yang biasa ditempuh orang dalam sebulan. Dan jin membangun untuknya bangunan-bangunan tinggi, mengambil mutiara dari dasar laut, dan melakukan hal-hal yang tidak bisa dilakukan manusia biasa.",
+          "Suatu hari Sulaiman bersama pasukannya melewati lembah semut. Tiba-tiba seekor semut berseru kepada teman-temannya: «Wahai semut-semut! Masuklah ke sarang-sarang kalian, agar Sulaiman dan pasukannya tidak menginjak kalian tanpa mereka sadari!» Sulaiman mendengarnya — karena Allah memberinya kemampuan memahami bahasa hewan. Beliau tersenyum atas kata-kata semut itu dan berkata: «Ya Tuhanku, berilah aku ilham untuk bersyukur atas nikmat-Mu yang telah Engkau anugerahkan kepadaku dan kepada kedua orang tuaku».",
+          "Pada hari lain Sulaiman mengumpulkan semua burungnya, tetapi tidak melihat burung hud-hud. Beliau bertanya: «Di mana hud-hud? Jika ia tidak kembali dengan alasan yang sah, aku akan menghukumnya». Beberapa saat kemudian hud-hud datang dan berkata: «Aku telah mengetahui sesuatu yang engkau tidak ketahui. Aku datang dari Saba'. Di sana memerintah seorang perempuan bernama Bilqis. Ia memiliki singgasana yang agung. Tetapi ia dan kaumnya menyembah matahari, bukan Allah».",
+          "Sulaiman tidak menyerang. Beliau menulis surat kepada Bilqis dan mengajaknya kepada kebenaran. Bilqis berpikir lama — dan akhirnya datang sendiri kepada Sulaiman. Ketika ia melihat kerajaannya, hikmahnya, dan kebaikannya — ia paham bahwa Sulaiman bukan raja biasa. Dan ketika ia melihat bagaimana Sulaiman hanya menyembah Allah dan tidak menyombongkan kerajaannya — hatinya berbalik. Ia berkata: «Aku berserah diri bersama Sulaiman kepada Allah, Tuhan semesta alam».",
+          "Sulaiman tahu bahwa seluruh kerajaannya berasal dari Allah. Beliau tidak berkata: «Ini milikku». Beliau berkata: «Ini adalah karunia Tuhanku untuk mengujiku — apakah aku bersyukur atau tidak». Itulah yang sangat sulit: memiliki begitu banyak tanpa menjadi sombong. Sulaiman mampu karena hatinya dipenuhi Allah, bukan benda-benda.",
+          "Di akhir hidupnya Sulaiman wafat sambil bersandar pada tongkatnya, dan tetap berdiri begitu lama sehingga jin yang bekerja di bawah tidak menyadari kematiannya. Mereka terus bekerja, mengira raja masih memperhatikan. Hanya ketika tongkat itu patah — Sulaiman jatuh, dan para jin menyadarinya. Itu adalah tanda bagi kita semua: manusia paling agung pun fana. Yang tersisa hanyalah apa yang kita lakukan karena Allah.",
+        ],
+        lesson:
+          "Pelajaran: memiliki banyak adalah ujian yang sama besarnya dengan tidak memiliki apa-apa. Sulaiman memiliki segalanya — dan tetap mengingat Allah dalam setiap karunia. Itulah kekayaan yang sesungguhnya.",
+        sources: [
+          "Al-Quran 27:15-44 (hikmah Sulaiman, semut, hud-hud, Bilqis)",
+          "Al-Quran 38:30-40 (kerajaan, angin, syukur Sulaiman)",
+          "Al-Quran 34:12-14 (pengabdian jin dan wafatnya Sulaiman)",
+          "Ibn Kathir, Qisas al-Anbiya, bab Dawud dan Sulaiman 'alaihimassalam",
+        ],
+      },
     },
   },
 
