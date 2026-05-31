@@ -162,6 +162,62 @@ const LABELS: Record<Locale, {
     nextNamePrefix: "Пайгамбар",
     allLbl: "Бардык 9 пайгамбар",
   },
+  ur: {
+    crumbs: { home: "سکینلی", kids: "بچوں کے لیے", stories: "کہانیاں" },
+    h1Prefix: "حضرت",
+    minWord: "منٹ",
+    adab: "انسانوں کی تصویر کے بغیر · قرآن اور صحیح حدیث پر مبنی",
+    lessonLbl: "سبق",
+    sourcesH: "ماخذ",
+    disclaimerLbl: "ادب۔",
+    disclaimerBody:
+      "یہ کہانی قرآن، صحیح احادیث اور کلاسیکی تفاسیر سے ماخوذ ہے۔ ہم مکالمے اور مناظر گھڑتے نہیں اور انبیاء علیہم السلام کی شکل و صورت بیان نہیں کرتے۔ اگر آپ کو غلطی نظر آئے تو ہمیں لکھیں۔",
+    nextLbl: "اگلا پیغمبر",
+    nextNamePrefix: "حضرت",
+    allLbl: "تمام 9 پیغمبر",
+  },
+  ms: {
+    crumbs: { home: "Sakeenly", kids: "Untuk Kanak-kanak", stories: "Kisah" },
+    h1Prefix: "Nabi",
+    minWord: "min",
+    adab: "Tanpa gambar manusia · berdasarkan al-Quran dan hadis sahih",
+    lessonLbl: "Pengajaran",
+    sourcesH: "Sumber",
+    disclaimerLbl: "Adab.",
+    disclaimerBody:
+      "Kisah ini disusun daripada al-Quran, hadis sahih, dan tafsir klasik. Kami tidak mencipta dialog atau adegan, dan tidak menggambarkan rupa para nabi 'alayhim as-salam. Jika anda menemui kesilapan, sila tulis kepada kami.",
+    nextLbl: "Nabi seterusnya",
+    nextNamePrefix: "Nabi",
+    allLbl: "Semua 9 nabi",
+  },
+  hi: {
+    crumbs: { home: "सकीनली", kids: "बच्चों के लिए", stories: "कहानियाँ" },
+    h1Prefix: "हज़रत",
+    minWord: "मिनट",
+    adab: "इंसानों की तस्वीरों के बिना · क़ुरान और सहीह हदीस पर आधारित",
+    lessonLbl: "सबक़",
+    sourcesH: "स्रोत",
+    disclaimerLbl: "अदब।",
+    disclaimerBody:
+      "यह कहानी क़ुरान, सहीह हदीसों और शास्त्रीय तफ़सीरों से ली गई है। हम संवाद या दृश्य गढ़ते नहीं और पैगंबरों 'अलैहिमुस-सलाम के स्वरूप का वर्णन नहीं करते। यदि आपको कोई त्रुटि दिखे, हमें लिखें।",
+    nextLbl: "अगला पैगंबर",
+    nextNamePrefix: "हज़रत",
+    allLbl: "सभी 9 पैगंबर",
+  },
+  id: {
+    crumbs: { home: "Sakeenly", kids: "Untuk Anak", stories: "Kisah" },
+    h1Prefix: "Nabi",
+    minWord: "mnt",
+    adab: "Tanpa gambar manusia · berdasarkan Al-Quran dan hadis sahih",
+    lessonLbl: "Pelajaran",
+    sourcesH: "Sumber",
+    disclaimerLbl: "Adab.",
+    disclaimerBody:
+      "Kisah ini disusun dari Al-Quran, hadis sahih, dan tafsir klasik. Kami tidak mengarang dialog atau adegan, dan tidak menggambarkan rupa para nabi 'alaihimus-salam. Jika Anda menemukan kesalahan, mohon tulis kepada kami.",
+    nextLbl: "Nabi berikutnya",
+    nextNamePrefix: "Nabi",
+    allLbl: "Semua 9 nabi",
+  },
 };
 
 export default async function ProphetStoryPage({ params }: PageProps) {

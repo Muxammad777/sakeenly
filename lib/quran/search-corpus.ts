@@ -94,6 +94,15 @@ const TRANSLATORS_BY_LOCALE: Record<Locale, string[]> = {
   uz: ["sodik"],
   kk: ["altay"],
   ky: ["mokhtasar-ky"],
+  // Newly-added locales — local Tanzil translations not bundled yet.
+  // Search still works (Arabic-only matching) until we add per-locale
+  // canonical translators (Maududi UR, Wahiduddin HI, Yusuf Ali BM,
+  // Kemenag ID). Falls back to EN for now so substring matches at least
+  // hit English-cognate words.
+  ur: ["sahih-intl", "khattab"],
+  ms: ["sahih-intl", "khattab"],
+  hi: ["sahih-intl", "khattab"],
+  id: ["sahih-intl", "khattab"],
 };
 
 // Arabic normalization — strip ALL Quranic tashkeel + tatweel and fold

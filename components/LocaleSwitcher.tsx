@@ -16,6 +16,10 @@ const LANG_META: Record<Locale, { native: string; short: string }> = {
   uz: { native: "Oʻzbek", short: "UZB" },
   kk: { native: "Қазақ", short: "ҚАЗ" },
   ky: { native: "Кыргыз", short: "КЫР" },
+  ur: { native: "اردو", short: "UR" },
+  ms: { native: "Melayu", short: "MS" },
+  hi: { native: "हिन्दी", short: "HI" },
+  id: { native: "Indonesia", short: "ID" },
 };
 
 export function LocaleSwitcher() {

@@ -14,6 +14,10 @@ const PROPHET_PREFIX: Record<Locale, string> = {
   uz: "Payg'ambar",
   kk: "Пайғамбар",
   ky: "Пайгамбар",
+  ur: "حضرت",
+  ms: "Nabi",
+  hi: "हज़रत",
+  id: "Nabi",
 };
 
 const MIN_WORD: Record<Locale, string> = {
@@ -24,6 +28,10 @@ const MIN_WORD: Record<Locale, string> = {
   uz: "DAQ",
   kk: "МИН",
   ky: "МҮН",
+  ur: "منٹ",
+  ms: "MIN",
+  hi: "मिनट",
+  id: "MIN",
 };
 
 interface PageProps { params: Promise<{ locale: Locale }>; }
