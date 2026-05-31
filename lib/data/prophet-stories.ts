@@ -1766,6 +1766,90 @@ export const PROPHET_STORIES: ProphetStory[] = [
           "Ибн Касир, «Кисас аль-Анбия», глава «Хабар о Юнусе»",
         ],
       },
+      ur: {
+        name: "یونس",
+        theme: "مچھلی",
+        paragraphs: [
+          "اللہ نے حضرت یونس علیہ السلام کو اس قوم کی طرف بھیجا جو نینوا شہر میں رہتی تھی۔ یہ لوگ اللہ کو بھول کر بتوں کی پرستش کرتے تھے۔ یونس نے کئی دن انہیں حق کی طرف بلایا، مگر لوگ نہ سنتے۔ وہ ان پر ہنستے، منہ پھیر لیتے اور اپنے ہاتھوں سے بنائی چیزوں کی پوجا جاری رکھتے۔",
+          "یونس تھک گئے اور رنجیدہ ہو گئے۔ اور اللہ کی اجازت کے بغیر شہر چھوڑ گئے۔ ایک کشتی پر سوار ہو کر سمندر میں اس قوم سے دور نکل گئے۔ مگر یونس نے یہ اللہ سے پوچھے بغیر کیا۔ جبکہ انبیاء کو رب کے حکم کا انتظار کرنا چاہیے۔",
+          "سمندر میں شدید طوفان آیا۔ کشتی ڈولنے لگی، ہوا چیخی، موجیں کشتی کو اوپر نیچے پٹختی رہیں۔ ملاح ڈر گئے — کشتی ڈوب سکتی تھی۔ اس زمانے کے رواج کے مطابق انہوں نے قرعہ ڈالا کہ کسے سمندر میں پھینکیں تاکہ بوجھ ہلکا ہو۔ قرعہ تین بار یونس پر پڑا۔ تب یونس سمجھ گئے: یہ اللہ کی طرف سے آزمائش ہے۔ خود سمندر میں چھلانگ لگا دی۔",
+          "سمندر میں ایک بڑی مچھلی نے انہیں نگل لیا۔ اللہ کے حکم سے مچھلی نے یونس کا کچھ نہ بگاڑا۔ یونس اندھیرے میں ڈوب گئے — سمندر کے اندھیرے میں، رات کے اندھیرے میں، مچھلی کے پیٹ کے اندھیرے میں۔ تین اندھیرے ان کے گرد۔ اور وہاں، مکمل تاریکی میں، یونس نے اپنی غلطی کو پہچانا — اللہ کا حکم سنے بغیر اپنی قوم چھوڑ آئے۔",
+          "اور پھر یونس نے اس تاریکی سے وہ کلمات کہے جو اللہ نے قیامت تک کے لوگوں کے لیے قرآن میں محفوظ کر دیے: «لا الٰہ الا انت سبحانک انی کنت من الظالمین» — «تیرے سوا کوئی معبود نہیں! تو پاک ہے! بے شک میں ظالموں میں سے تھا»۔ بہانے نہ بنائے۔ نہ کہا: «قوم بری تھی»۔ تسلیم کیا: «میں نے غلطی کی»۔",
+          "اور اللہ نے انہیں جواب دیا۔ اللہ نے مچھلی کو حکم دیا، اور مچھلی نے یونس کو ساحل پر اگل دیا۔ یونس بہت کمزور تھے۔ اللہ نے ان کے پاس ایک بیل اگائی جس کے پتوں نے انہیں دھوپ سے بچایا اور غذا دی۔ یونس کو طاقت ملی اور وہ اپنی قوم کے پاس واپس گئے۔ اور اس مدت میں ان کی قوم — سب کے سب — اللہ پر ایمان لے آئے تھے۔ اللہ نے انہیں معاف فرمایا۔",
+        ],
+        lesson:
+          "سبق: جب ہم سے غلطی ہو، دوسروں کو مورد الزام نہ ٹھہراؤ۔ یونس کی طرح کہو: «میں ظالم تھا»۔ اور اللہ گہرے اندھیرے سے بھی سن لیتا ہے۔",
+        sources: [
+          "قرآن 21:87-88 (یونس کی تاریکی سے دعا اور اللہ کا جواب)",
+          "قرآن 37:139-148 (کشتی، مچھلی اور نجات کی کہانی)",
+          "قرآن 10:98 (یونس کی قوم پوری ایمان لائی)",
+          "ترمذی 3505 (یونس کی دعا، حدیث حسن)",
+          "ابن کثیر، قصص الانبیاء، باب یونس علیہ السلام",
+        ],
+      },
+      ms: {
+        name: "Yunus",
+        theme: "ikan paus",
+        paragraphs: [
+          "Allah mengutus Nabi Yunus 'alayhis-salam kepada kaum yang tinggal di kota Niniwa. Kaum itu telah lupa kepada Allah dan menyembah berhala. Yunus berhari-hari menyeru mereka kepada kebenaran, tetapi mereka tidak mahu mendengar. Mereka mentertawakannya, berpaling, dan terus menyembah apa yang dibuat tangan mereka sendiri.",
+          "Yunus letih dan kecewa. Beliau meninggalkan kota itu tanpa menunggu izin Allah. Beliau menaiki sebuah kapal dan belayar ke laut — jauh dari kaum itu. Tetapi Yunus melakukannya tanpa bertanya kepada Allah. Sedangkan para nabi mesti menunggu perintah Tuhan.",
+          "Di lautan timbul ribut yang dahsyat. Kapal terumbang-ambing, angin meraung, ombak melambung kapal ke atas dan ke bawah. Para pelaut takut — kapal mungkin tenggelam. Mengikut adat zaman itu, mereka membuat undian untuk memutuskan siapa yang akan dilemparkan ke laut bagi meringankan muatan. Undian jatuh tiga kali pada Yunus. Maka Yunus faham: ini ujian dari Allah. Beliau sendiri melompat ke laut.",
+          "Di laut beliau ditelan oleh seekor ikan paus besar. Dengan kehendak Allah ikan itu tidak membahayakan Yunus. Yunus berada dalam kegelapan — kegelapan laut, kegelapan malam, kegelapan perut ikan. Tiga kegelapan mengelilinginya. Dan di sana, dalam kegelapan yang sempurna, Yunus menyedari kesilapannya — beliau meninggalkan kaumnya tanpa menunggu Allah.",
+          "Dan dari kegelapan itu Yunus mengucapkan kata-kata yang kemudian Allah simpan dalam Al-Quran untuk semua manusia sampai Hari Kiamat: «Tiada tuhan selain Engkau! Maha Suci Engkau! Sesungguhnya aku termasuk orang-orang yang zalim». Beliau tidak berdalih. Tidak berkata: «Kaum itu jahat». Beliau mengaku: «Akulah yang bersalah».",
+          "Allah menjawabnya. Allah memerintahkan ikan itu, dan ikan itu memuntahkan Yunus ke pantai. Yunus sangat lemah. Allah menumbuhkan di sebelahnya pohon yang daunnya melindunginya dari panas matahari dan memberinya makanan. Yunus pulih kembali dan kembali kepada kaumnya. Dan kaumnya pada masa itu — semuanya, tanpa kecuali — telah beriman kepada Allah. Allah mengampuni mereka.",
+        ],
+        lesson:
+          "Pengajaran: apabila kita bersalah, janganlah menyalahkan orang lain. Katakanlah seperti Yunus: «Akulah yang zalim». Allah mendengar walaupun dari kegelapan yang paling dalam.",
+        sources: [
+          "Al-Quran 21:87-88 (doa Yunus dari kegelapan dan jawapan Allah)",
+          "Al-Quran 37:139-148 (kisah kapal, ikan paus, dan penyelamatan)",
+          "Al-Quran 10:98 (kaum Yunus beriman seluruhnya)",
+          "At-Tirmizi 3505 (hadis doa Yunus, hasan)",
+          "Ibn Kathir, Qisas al-Anbiya, bab Yunus 'alayhis-salam",
+        ],
+      },
+      hi: {
+        name: "यूनुस",
+        theme: "मछली",
+        paragraphs: [
+          "अल्लाह ने हज़रत यूनुस 'अलैहिस्सलाम को उस क़ौम के पास भेजा जो नीनवा शहर में रहती थी। यह लोग अल्लाह को भूलकर बुतों की पूजा करते थे। यूनुस ने कई दिन उन्हें हक़ की तरफ़ बुलाया, मगर लोग न सुनते। वे उन पर हँसते, मुँह फेर लेते और अपने हाथों से बनाई चीज़ों की इबादत जारी रखते।",
+          "यूनुस थक गए और रंजीदा हो गए। और अल्लाह की इजाज़त के बग़ैर शहर छोड़ गए। एक कश्ती पर सवार होकर समुद्र में उस क़ौम से दूर निकल गए। मगर यूनुस ने यह अल्लाह से पूछे बिना किया। जबकि अंबिया को रब के हुक्म का इंतज़ार करना चाहिए।",
+          "समुद्र में सख़्त तूफ़ान आया। कश्ती डोलने लगी, हवा चीख़ी, लहरें कश्ती को ऊपर-नीचे पटकती रहीं। मल्लाह डर गए — कश्ती डूब सकती थी। उस ज़माने के रिवाज के मुताबिक़ उन्होंने पासा डाला कि किसे समुद्र में फेंकें ताकि बोझ हल्का हो। पासा तीन बार यूनुस पर पड़ा। तब यूनुस समझ गए: यह अल्लाह की तरफ़ से आज़माइश है। ख़ुद समुद्र में छलाँग लगा दी।",
+          "समुद्र में एक बड़ी मछली ने उन्हें निगल लिया। अल्लाह के हुक्म से मछली ने यूनुस का कुछ न बिगाड़ा। यूनुस अंधेरे में डूब गए — समुद्र के अंधेरे में, रात के अंधेरे में, मछली के पेट के अंधेरे में। तीन अंधेरे उनके इर्द-गिर्द। और वहाँ, मुकम्मल तारीकी में, यूनुस ने अपनी ग़लती को पहचाना — अल्लाह का हुक्म सुने बिना अपनी क़ौम छोड़ आए।",
+          "और फिर यूनुस ने उस तारीकी से वे कलिमात कहे जिन्हें अल्लाह ने क़यामत तक के लोगों के लिए क़ुरान में महफ़ूज़ कर दिया: «तेरे सिवा कोई माबूद नहीं! तू पाक है! बेशक मैं ज़ालिमों में से था»। बहाने न बनाए। न कहा: «क़ौम बुरी थी»। तस्लीम किया: «मैंने ग़लती की»।",
+          "और अल्लाह ने उन्हें जवाब दिया। अल्लाह ने मछली को हुक्म दिया, और मछली ने यूनुस को साहिल पर उगल दिया। यूनुस बहुत कमज़ोर थे। अल्लाह ने उनके पास एक बेल उगाई जिसके पत्तों ने उन्हें धूप से बचाया और ख़ुराक दी। यूनुस को ताक़त मिली और वे अपनी क़ौम के पास वापस गए। और इस मुद्दत में उनकी क़ौम — सब के सब — अल्लाह पर ईमान ले आए थे। अल्लाह ने उन्हें माफ़ फ़रमाया।",
+        ],
+        lesson:
+          "सबक़: जब हमसे ग़लती हो, दूसरों पर इल्ज़ाम न लगाओ। यूनुस की तरह कहो: «मैं ज़ालिम था»। और अल्लाह गहरे अंधेरे से भी सुन लेता है।",
+        sources: [
+          "क़ुरान 21:87-88 (यूनुस की तारीकी से दुआ और अल्लाह का जवाब)",
+          "क़ुरान 37:139-148 (कश्ती, मछली और नजात की कहानी)",
+          "क़ुरान 10:98 (यूनुस की क़ौम पूरी ईमान लाई)",
+          "तिर्मिज़ी 3505 (यूनुस की दुआ, हदीस हसन)",
+          "इब्न कसीर, क़िसस अल-अंबिया, बाब यूनुस 'अलैहिस्सलाम",
+        ],
+      },
+      id: {
+        name: "Yunus",
+        theme: "ikan paus",
+        paragraphs: [
+          "Allah mengutus Nabi Yunus 'alaihissalam kepada kaum yang tinggal di kota Ninawa. Kaum itu telah melupakan Allah dan menyembah berhala. Yunus berhari-hari menyeru mereka kepada kebenaran, tetapi orang-orang tidak mau mendengar. Mereka menertawakannya, berpaling, dan terus menyembah apa yang dibuat oleh tangan mereka sendiri.",
+          "Yunus lelah dan sedih. Beliau meninggalkan kota itu tanpa menunggu izin Allah. Beliau menaiki sebuah kapal dan berlayar ke lautan — jauh dari kaum itu. Tetapi Yunus melakukannya tanpa bertanya kepada Allah. Padahal para nabi harus menunggu perintah Tuhan.",
+          "Di lautan timbul badai yang dahsyat. Kapal terombang-ambing, angin meraung, ombak melambungkan kapal ke atas dan ke bawah. Para pelaut ketakutan — kapal bisa tenggelam. Menurut adat zaman itu, mereka mengundi untuk menentukan siapa yang akan dilemparkan ke laut agar muatan menjadi ringan. Undian jatuh tiga kali pada Yunus. Maka Yunus paham: ini ujian dari Allah. Beliau sendiri melompat ke laut.",
+          "Di laut beliau ditelan oleh seekor ikan paus besar. Dengan kehendak Allah ikan itu tidak menyakiti Yunus. Yunus berada dalam kegelapan — kegelapan laut, kegelapan malam, kegelapan perut ikan. Tiga kegelapan mengelilinginya. Dan di sana, dalam kegelapan yang sempurna, Yunus menyadari kesalahannya — beliau meninggalkan kaumnya tanpa menunggu Allah.",
+          "Lalu dari kegelapan itu Yunus mengucapkan kata-kata yang kemudian Allah simpan dalam Al-Quran untuk semua manusia hingga Hari Kiamat: «Tiada Tuhan selain Engkau! Maha Suci Engkau! Sesungguhnya aku termasuk orang-orang yang zalim». Beliau tidak berdalih. Tidak berkata: «Kaum itu jahat». Beliau mengakui: «Akulah yang bersalah».",
+          "Allah menjawabnya. Allah memerintahkan ikan itu, dan ikan itu memuntahkan Yunus ke pantai. Yunus sangat lemah. Allah menumbuhkan di dekatnya sebatang pohon yang daunnya melindunginya dari terik matahari dan memberinya makanan. Yunus pulih dan kembali kepada kaumnya. Dan dalam masa itu kaumnya — semuanya, tanpa terkecuali — telah beriman kepada Allah. Allah mengampuni mereka.",
+        ],
+        lesson:
+          "Pelajaran: ketika kita bersalah, jangan menyalahkan orang lain. Katakanlah seperti Yunus: «Akulah yang zalim». Allah mendengar bahkan dari kegelapan yang paling dalam.",
+        sources: [
+          "Al-Quran 21:87-88 (doa Yunus dari kegelapan dan jawaban Allah)",
+          "Al-Quran 37:139-148 (kisah kapal, ikan paus, dan penyelamatan)",
+          "Al-Quran 10:98 (kaum Yunus beriman seluruhnya)",
+          "At-Tirmizi 3505 (hadis doa Yunus, hasan)",
+          "Ibn Kathir, Qisas al-Anbiya, bab Yunus 'alaihissalam",
+        ],
+      },
     },
   },
 
