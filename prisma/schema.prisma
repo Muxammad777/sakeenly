@@ -95,6 +95,9 @@ model User {
   bookmarks    Bookmark[]
   streak       Streak?
   askHistory   AskHistory[]
+  hifzProgress HifzProgress[]
+  hifzSessions HifzSession[]
+  hifzSettings HifzSettings?
 }
 
 model Subscription {
@@ -153,4 +156,111 @@ model AskHistory {
   createdAt DateTime @default(now())
 
   @@index([userId, createdAt])
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Hifz (memorization)
+//
+// Modeled after the classical madrasa system: every ayah a user is
+// learning sits in one of three stages — Sabaq (new, just learned),
+// Sabqi (revising recent), Manzil (revising old). Status transitions
+// up the chain as the user successfully recalls the ayah, and an
+// SM-2-derived spaced-repetition score schedules the next review.
+// ─────────────────────────────────────────────────────────────────────────────
+
+enum HifzStage {
+  new // queued, not started yet
+  sabaq // freshly memorized today/yesterday
+  sabqi // recent revision queue (~7-day window)
+  manzil // long-term revision (juz cycles)
+  mastered // fluent — appears only in manzil cycle, never in daily review
+}
+
+enum HifzGrade {
+  forgot // could not recall — drop back a stage, reset SRS
+  hard // recalled with effort — keep stage, shorter interval
+  good // recalled correctly — advance, standard interval
+  easy // perfect — advance, double interval
+}
+
+model HifzProgress {
+  id     String @id @default(cuid())
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  ayahKey String // "2:255"
+  surah   Int
+  ayah    Int
+  stage   HifzStage @default(new)
+
+  // SM-2 spaced-repetition state
+  srsInterval Int   @default(0) // days until next due
+  srsEase     Float @default(2.5) // ease factor, 1.3 – 3.0
+  srsLapses   Int   @default(0) // total forgets — for "leech" detection
+  srsReps     Int   @default(0) // successful reps in a row
+
+  firstLearnedAt DateTime?
+  lastReviewedAt DateTime?
+  dueAt          DateTime? // next-review timestamp
+  consecutiveOk  Int       @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, ayahKey])
+  @@index([userId, dueAt])
+  @@index([userId, stage])
+  @@index([userId, surah, ayah])
+}
+
+model HifzSession {
+  id     String @id @default(cuid())
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  startedAt   DateTime  @default(now())
+  endedAt     DateTime?
+  newCount    Int       @default(0) // ayat freshly memorized this session
+  reviewCount Int       @default(0) // ayat reviewed this session
+  forgotCount Int       @default(0) // ayat regressed to a lower stage
+  // Snapshot of which juz/page the user was working on, for stats.
+  juzz        Int?
+  page        Int?
+  surah       Int?
+
+  @@index([userId, startedAt])
+}
+
+model HifzSettings {
+  userId String @id
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Daily target — how much new material per day.
+  // 1 = full page (Madani Mushaf), 2 = half page, 4 = quarter page, 8 = eighth.
+  dailyTargetDenom Int @default(2) // default to half a page
+
+  // Preferred reciter slug for hifz audio loop.
+  hifzReciter String @default("husary")
+  // Audio loop count per ayah before auto-advance (0 = manual).
+  loopCount   Int    @default(7)
+  // Playback speed for hifz audio (0.5–1.0, stored ×100).
+  speedX100   Int    @default(85) // 0.85× — slightly slow for memorization
+
+  // Default starting point for a brand-new hifz journey — most students
+  // begin with Juz 30 (An-Naba'  An-Nas, the short suras).
+  startFromSurah Int @default(78) // An-Naba'
+  startFromAyah  Int @default(1)
+
+  // Display preferences
+  showTajweed         Boolean @default(true)
+  showTranslation     Boolean @default(true)
+  showTransliteration Boolean @default(false)
+  defaultHideStage    Int     @default(0) // 0=full text, 1=last word, 2=first letter, 3=blind
+
+  // Streak-equivalent for hifz: consecutive days with at least one sabaq.
+  hifzStreakCurrent Int       @default(0)
+  hifzStreakLongest Int       @default(0)
+  lastHifzDate      DateTime?
+
+  updatedAt DateTime @updatedAt
 }

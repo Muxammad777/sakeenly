@@ -14,6 +14,7 @@ export function Header() {
     { href: "/listen",     key: "listen" as const },
     { href: "/ask",        key: "ask" as const },
     { href: "/ayat",       key: "ayat" as const },
+    { href: "/hifz",       key: "hifz" as const },
     { href: "/kids",       key: "kids" as const },
   ];
 
