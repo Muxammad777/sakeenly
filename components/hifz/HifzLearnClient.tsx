@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
-import { useLocale, useTranslations } from "next-intl";
+import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
 export interface HifzLearnAyah {
@@ -56,13 +56,13 @@ function renderHidden(text: string, stage: HideStage): React.ReactNode {
 
 export function HifzLearnClient({ ayat, surahName, surahNameArabic }: Props) {
   const t = useTranslations("hf");
-  const locale = useLocale();
-  void locale;
   const [stage, setStage] = useState<HideStage>(0);
   const [current, setCurrent] = useState(0);     // index into ayat[]
   const [playing, setPlaying] = useState(false);
   const [loopCount, setLoopCount] = useState(7); // default 7 reps per ayah
-  const [loopsDone, setLoopsDone] = useState(0);
+  // Counter is mutated via the functional setter only — destructure
+  // without the read slot so eslint's no-unused-vars doesn't fire.
+  const [, setLoopsDone] = useState(0);
   const [speed, setSpeed] = useState(0.85);
   const [revealed, setRevealed] = useState<Set<number>>(new Set());
   const [marked, setMarked] = useState(false);
@@ -134,9 +134,6 @@ export function HifzLearnClient({ ayat, surahName, surahNameArabic }: Props) {
       setMarking(false);
     }
   };
-
-  const playingClass = useMemo(() => (playing ? " is-playing" : ""), [playing]);
-  void playingClass;
 
   return (
     <section className="hifz-learn-wrap">
