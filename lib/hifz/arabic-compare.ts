@@ -33,6 +33,14 @@ export interface CompareResult {
   /** normalized form per expected token — for tooltips/debug */
   expectedNorm: string[];
   actualTokens: string[];
+  /**
+   * Same length as actualTokens. For each ASR token, the prettified
+   * form for display: when the token matched an expected word, this
+   * is the corresponding Uthmani word *with harakat* (so the "what I
+   * heard" panel reads like real Quran). Unmatched tokens fall back
+   * to the raw ASR string.
+   */
+  actualDisplay: string[];
 }
 
 /**
@@ -57,9 +65,15 @@ export function compareRecitation(expected: string, actual: string): CompareResu
 
   const actualTokens = tokens(actual);
   const matched = new Array(expectedTokens.length).fill(false);
+  // Start with raw ASR; we'll overwrite matched slots with the Uthmani
+  // (with-harakat) version below.
+  const actualDisplay = [...actualTokens];
 
   if (expectedTokens.length === 0) {
-    return { similarity: 0, matched, expectedTokens, expectedNorm: normTokens, actualTokens };
+    return {
+      similarity: 0, matched, expectedTokens,
+      expectedNorm: normTokens, actualTokens, actualDisplay,
+    };
   }
 
   let actualCursor = 0;
@@ -70,6 +84,10 @@ export function compareRecitation(expected: string, actual: string): CompareResu
       const act = actualTokens[j];
       if (act === exp || editDistance(act, exp) <= Math.min(2, Math.floor(exp.length / 3))) {
         matched[i] = true;
+        // Show the expected Uthmani word for the matched ASR slot —
+        // restores diacritics the user actually pronounced but ASR
+        // dropped.
+        actualDisplay[j] = expectedTokens[i];
         actualCursor = j + 1;
         break;
       }
@@ -78,7 +96,10 @@ export function compareRecitation(expected: string, actual: string): CompareResu
 
   const hits = matched.filter(Boolean).length;
   const similarity = hits / expectedTokens.length;
-  return { similarity, matched, expectedTokens, expectedNorm: normTokens, actualTokens };
+  return {
+    similarity, matched, expectedTokens,
+    expectedNorm: normTokens, actualTokens, actualDisplay,
+  };
 }
 
 // Standard Levenshtein, capped at length difference so we exit early.

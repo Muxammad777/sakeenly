@@ -283,14 +283,20 @@ export function ListenAndRecite({ ayahKey, textUthmani, audioUrl }: Props) {
         </div>
       )}
       {/* What we actually heard — surface it whenever ASR produced any
-          text, so the user can see why their score came out the way
-          it did. Stays visible alongside the word diff. */}
-      {transcript && (
+          text. Matched ASR tokens are rendered as their Uthmani
+          counterparts (with harakat) so the panel reads like real
+          Qur'an text. Unmatched words fall back to raw ASR. */}
+      {(result?.actualDisplay.length ?? 0) > 0 ? (
+        <div className="hifz-lr-tx">
+          <span className="hifz-lr-tx-label">услышал:</span>{" "}
+          <span dir="rtl">{result!.actualDisplay.join(" ")}</span>
+        </div>
+      ) : transcript ? (
         <div className="hifz-lr-tx">
           <span className="hifz-lr-tx-label">услышал:</span>{" "}
           <span dir="rtl">{transcript}</span>
         </div>
-      )}
+      ) : null}
     </div>
   );
 }
