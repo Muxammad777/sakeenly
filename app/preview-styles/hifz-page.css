@@ -180,7 +180,7 @@
 .hifz-stage-chip {
   border: 0; background: transparent;
   color: oklch(var(--text-2));
-  cursor: pointer;
+  cursor: var(--cur-pointer, pointer);
   padding: 6px 14px;
   border-radius: 999px;
   font-family: 'Spectral', serif;
@@ -240,7 +240,7 @@
   border: 1px solid oklch(var(--border));
   background: transparent;
   color: oklch(var(--text-3));
-  cursor: pointer;
+  cursor: var(--cur-pointer, pointer);
   transition: color 120ms, border-color 120ms;
 }
 .hifz-wbw-toggle:hover { color: oklch(var(--text)); border-color: oklch(var(--text-3)); }
@@ -349,12 +349,24 @@
 }
 .hifz-lr-tx {
   margin-top: 10px;
-  padding: 8px 12px;
+  padding: 10px 14px;
   border-radius: 10px;
   background: color-mix(in oklab, oklch(var(--surface)) 70%, transparent);
+  border: 1px solid oklch(var(--border));
   font-family: 'Scheherazade New', serif;
   font-size: 18px;
+  line-height: 1.7;
   color: oklch(var(--text-2));
+}
+.hifz-lr-tx-label {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: oklch(var(--text-3));
+  margin-right: 6px;
+  vertical-align: 2px;
 }
 .hifz-lr-unsupported {
   margin-top: 10px;
@@ -419,7 +431,7 @@
   background: oklch(var(--surface));
   border: 1px solid oklch(var(--border));
   color: oklch(var(--text-2));
-  cursor: pointer;
+  cursor: var(--cur-pointer, pointer);
   font-family: 'Spectral', serif;
   font-size: 13px;
 }
@@ -446,7 +458,7 @@
   border-radius: 14px;
   border: 1px solid oklch(var(--border));
   background: oklch(var(--surface));
-  cursor: pointer;
+  cursor: var(--cur-pointer, pointer);
   font-family: 'Spectral', serif;
   font-size: 14px;
   color: oklch(var(--text));

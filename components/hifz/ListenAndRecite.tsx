@@ -268,7 +268,10 @@ export function ListenAndRecite({ ayahKey, textUthmani, audioUrl }: Props) {
       {errorMessage && (
         <div className="hifz-lr-error">{errorMessage}</div>
       )}
-      {result && result.actualTokens.length > 0 && (
+      {/* Word-by-word diff — always render when we have a result, even
+          on 0%, so the user sees which words were expected. Each token
+          carries its normalized form as a tooltip for debugging. */}
+      {result && (
         <div className="hifz-lr-words" dir="rtl">
           {result.expectedTokens.map((tok, i) => (
             <span
@@ -279,8 +282,14 @@ export function ListenAndRecite({ ayahKey, textUthmani, audioUrl }: Props) {
           ))}
         </div>
       )}
-      {transcript && !result && (
-        <div className="hifz-lr-tx" dir="rtl">{normalizeArabic(transcript)}</div>
+      {/* What we actually heard — surface it whenever ASR produced any
+          text, so the user can see why their score came out the way
+          it did. Stays visible alongside the word diff. */}
+      {transcript && (
+        <div className="hifz-lr-tx">
+          <span className="hifz-lr-tx-label">услышал:</span>{" "}
+          <span dir="rtl">{transcript}</span>
+        </div>
       )}
     </div>
   );
