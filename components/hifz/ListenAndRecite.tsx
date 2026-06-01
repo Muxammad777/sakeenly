@@ -99,10 +99,18 @@ export function ListenAndRecite({ ayahKey, textUthmani, audioUrl }: Props) {
   };
 
   const start = async () => {
-    if (!supported || phase !== "idle") return;
+    if (!supported) return;
+    // Allow restart from 'done' (the "↻ ещё раз" path). Block only when
+    // we're actively in the middle of audio playback or live ASR.
+    if (phase === "listening_to_audio" || phase === "listening_for_voice") return;
     setResult(null);
     setTranscript("");
     setErrorKind(null);
+    // Make sure any prior recognition is fully released before we
+    // construct a new one — Chrome occasionally rejects rec.start()
+    // with InvalidStateError when an old instance is still tearing down.
+    try { recognitionRef.current?.abort(); } catch {}
+    recognitionRef.current = null;
 
     // If we already know the user denied, skip the audio playback —
     // the ASR step would just fail again. Surface the CTA immediately.
