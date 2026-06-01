@@ -121,6 +121,10 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
   const [surahsCollapsed, setSurahsCollapsed] = useState(true);
   const [visibleCount, setVisibleCountState] = useState(PAGE_SIZE);
 
+  // Fetch the full unfiltered result set ONCE per (query, locale). The
+  // exactMode toggle is then applied client-side — that way both
+  // counters ("Все совпадения N" and "Только точное M") are always
+  // known together without a second round-trip.
   useEffect(() => {
     const q = query.trim();
     if (q.length < 2) {
@@ -138,8 +142,7 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
       setSurahFilter("all");
       setShortOnly(false);
       setVisibleCountState(PAGE_SIZE);
-      const exactParam = exactMode ? "&exact=1" : "";
-      fetch(`/api/search?q=${encodeURIComponent(q)}&locale=${locale}${exactParam}`, { signal: ac.signal, cache: "no-store" })
+      fetch(`/api/search?q=${encodeURIComponent(q)}&locale=${locale}&limit=2000`, { signal: ac.signal, cache: "no-store" })
         .then((r) => r.json() as Promise<ApiResponse>)
         .then((data) => {
           setResults(data.results ?? []);
@@ -157,32 +160,12 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
       clearTimeout(handle);
       ac.abort();
     };
-  }, [query, locale, exactMode]);
+  }, [query, locale]);
 
   useEffect(() => { inputRef.current?.focus(); }, []);
 
-  // Per-surah counts on the FULL result set (independent of active filter)
-  // — this drives the chip list with totals.
-  const perSurahCounts = useMemo(() => {
-    const map = new Map<number, number>();
-    for (const r of results ?? []) {
-      map.set(r.surah, (map.get(r.surah) ?? 0) + 1);
-    }
-    return map;
-  }, [results]);
-
-  // Apply filters → ordered result list (results come pre-sorted from API:
-  // exact_phrase first, then tokens, then stem).
-  const filtered = useMemo(() => {
-    if (!results) return [] as SearchResult[];
-    return results.filter((r) => {
-      if (surahFilter !== "all" && surahFilter !== r.surah) return false;
-      if (shortOnly && !isShortSurah(r.surah)) return false;
-      return true;
-    });
-  }, [results, surahFilter, shortOnly]);
-
-  // Counts by matchKind to drive the "точное / однокоренные" badge row.
+  // Counts by matchKind on the UNFILTERED result set — drive the mode
+  // chips ("Все N" / "Только точное M") and the inline stems badge.
   const kindCounts = useMemo(() => {
     let exact = 0, tokens = 0, stem = 0;
     for (const r of results ?? []) {
@@ -193,10 +176,36 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
     return { exact, tokens, stem };
   }, [results]);
 
+  // Apply exactMode FIRST (drop stem bucket if user picked "точное"),
+  // then everything downstream sees only relevant results.
+  const visibleResults = useMemo(() => {
+    if (!results) return [] as SearchResult[];
+    return exactMode ? results.filter((r) => r.matchKind !== "stem") : results;
+  }, [results, exactMode]);
+
+  // Per-surah counts respect exactMode — when user is in exact mode,
+  // chip counts reflect only the verses they'll actually see.
+  const perSurahCounts = useMemo(() => {
+    const map = new Map<number, number>();
+    for (const r of visibleResults) {
+      map.set(r.surah, (map.get(r.surah) ?? 0) + 1);
+    }
+    return map;
+  }, [visibleResults]);
+
+  // Apply surah + short filters on top of exactMode-filtered set.
+  const filtered = useMemo(() => {
+    return visibleResults.filter((r) => {
+      if (surahFilter !== "all" && surahFilter !== r.surah) return false;
+      if (shortOnly && !isShortSurah(r.surah)) return false;
+      return true;
+    });
+  }, [visibleResults, surahFilter, shortOnly]);
+
   // Reset visible count when filter changes.
   useEffect(() => {
     setVisibleCountState(PAGE_SIZE);
-  }, [surahFilter, shortOnly]);
+  }, [surahFilter, shortOnly, exactMode]);
 
   const visibleSlice = useMemo(() => filtered.slice(0, visibleCount), [filtered, visibleCount]);
 
@@ -270,6 +279,7 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
             onClick={() => setExactMode(false)}
           >
             {t("mode_all")}
+            {results && <span className="search-mode-n">{fmt(results.length)}</span>}
           </button>
           <button
             type="button"
@@ -279,9 +289,10 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
             onClick={() => setExactMode(true)}
           >
             {t("mode_exact")}
+            {results && <span className="search-mode-n">{fmt(kindCounts.exact + kindCounts.tokens)}</span>}
           </button>
         </div>
-        {!exactMode && results && kindCounts.stem > 0 && (
+        {results && kindCounts.stem > 0 && (
           <span className="search-kind search-kind-stem">
             {t("kind_stem")} <b>{fmt(kindCounts.stem)}</b>
           </span>
@@ -316,7 +327,7 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
               className={"search-chip" + (surahFilter === "all" ? " active" : "")}
               onClick={() => setSurahFilter("all")}
             >
-              {t("filter_all")} <span className="search-chip-n">{fmt(results.length)}</span>
+              {t("filter_all")} <span className="search-chip-n">{fmt(visibleResults.length)}</span>
             </button>
             {surahChipsCollapsedSlice.map(({ id, n }) => (
               <button
@@ -339,9 +350,9 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
           </div>
 
           <div className="search-meta">
-            {filtered.length === results.length
-              ? t("found_count", { n: fmt(results.length), q: query })
-              : t("filtered_count", { n: fmt(filtered.length), total: fmt(results.length), q: query })}
+            {filtered.length === visibleResults.length
+              ? t("found_count", { n: fmt(visibleResults.length), q: query })
+              : t("filtered_count", { n: fmt(filtered.length), total: fmt(visibleResults.length), q: query })}
             {filtered.length > 0 && (
               <> · {t("showing", { shown: fmt(Math.min(visibleCount, filtered.length)), total: fmt(filtered.length) })}</>
             )}

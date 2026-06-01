@@ -266,6 +266,9 @@
   border-radius: 999px;
 }
 .search-mode-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   border: 0;
   background: transparent;
   color: oklch(var(--text-2));
@@ -280,6 +283,19 @@
 .search-mode-chip.active {
   background: var(--accent-soft);
   color: oklch(var(--accent));
+}
+.search-mode-n {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  color: oklch(var(--text-3));
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: color-mix(in oklab, oklch(var(--surface)) 60%, transparent);
+}
+.search-mode-chip.active .search-mode-n {
+  color: oklch(var(--accent));
+  background: color-mix(in oklab, oklch(var(--accent)) 12%, transparent);
 }
 .search-kind {
   font-family: 'JetBrains Mono', monospace;

@@ -11,7 +11,7 @@ export async function GET(req: Request) {
   const locale = (routing.locales as readonly string[]).includes(rawLocale)
     ? (rawLocale as Locale)
     : routing.defaultLocale;
-  const limit = Math.min(500, Number(url.searchParams.get("limit") ?? 200));
+  const limit = Math.min(3000, Number(url.searchParams.get("limit") ?? 2000));
   const exactOnly = url.searchParams.get("exact") === "1";
 
   if (q.length < 2) {
