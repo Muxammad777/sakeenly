@@ -72,16 +72,24 @@ function escapeHtml(s: string): string {
     .replace(/>/g, "&gt;");
 }
 
-function highlight(text: string, query: string, isArabic: boolean): string {
+function highlight(text: string, query: string, isArabic: boolean, matchKind: MatchKind): string {
   if (!text || !query) return text;
   const tokens = query
     .split(/[\s.,;:!?()«»"'\-—–]+/)
     .filter((t) => t.length >= 2)
     .map((t) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
   if (tokens.length === 0) return escapeHtml(text);
+  // For exact/tokens hits, wrap each token with unicode word-boundary
+  // lookarounds so "мир" doesn't light up inside "мире". Stem hits ARE
+  // substring matches by definition, so we keep the looser regex there.
+  const wholeWord = matchKind !== "stem";
+  const inner = tokens.join("|");
+  const pattern = wholeWord
+    ? `(?<![\\p{L}\\p{N}])(${inner})(?![\\p{L}\\p{N}])`
+    : `(${inner})`;
   let re: RegExp;
   try {
-    re = new RegExp(`(${tokens.join("|")})`, isArabic ? "g" : "gi");
+    re = new RegExp(pattern, isArabic ? "gu" : "giu");
   } catch {
     return escapeHtml(text);
   }
@@ -381,13 +389,13 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
                             <div
                               className="search-result-arabic arabic"
                               dir="rtl"
-                              dangerouslySetInnerHTML={{ __html: highlight(r.arabic, query, true) }}
+                              dangerouslySetInnerHTML={{ __html: highlight(r.arabic, query, true, r.matchKind) }}
                             />
                             {r.translation && (
                               <>
                                 <div
                                   className="search-result-trans"
-                                  dangerouslySetInnerHTML={{ __html: highlight(r.translation, query, isArabicQuery) }}
+                                  dangerouslySetInnerHTML={{ __html: highlight(r.translation, query, isArabicQuery, r.matchKind) }}
                                 />
                                 {r.translator && (
                                   <div className="search-result-tr-tag">
