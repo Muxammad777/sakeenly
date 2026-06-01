@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { quranApi } from "@/lib/api/quran";
-import { getCurrentUser } from "@/lib/auth-helpers";
 import { HifzLearnClient, type HifzLearnAyah } from "@/components/hifz/HifzLearnClient";
 import type { Locale } from "@/i18n/routing";
 
@@ -29,9 +28,8 @@ export default async function HifzLearnPage({ params, searchParams }: PageProps)
   const { to } = await searchParams;
   setRequestLocale(locale);
 
-  const user = await getCurrentUser();
-  if (!user) redirect(`/${locale}/signin?callbackUrl=/${locale}/hifz/learn/${surah}/${ayah}`);
-
+  // Guest-friendly: learn mode is fully usable without login. The
+  // "Save to hifz" button surfaces the sign-in CTA on 401 instead.
   const startS = Number(surah), startA = Number(ayah);
   if (!Number.isInteger(startS) || !Number.isInteger(startA) || startS < 1 || startS > 114 || startA < 1) notFound();
   const end = parseTo(to);

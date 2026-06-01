@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { quranApi } from "@/lib/api/quran";
 import { getCurrentUser } from "@/lib/auth-helpers";
@@ -24,18 +23,23 @@ export default async function HifzReviewPage({ params, searchParams }: PageProps
   const { mode } = await searchParams;
   setRequestLocale(locale);
 
+  // Guests get an empty queue — review needs prior progress and that
+  // lives behind auth. The empty-state UI already shows a friendly
+  // "done for today" panel, which doubles as a guest message.
   const user = await getCurrentUser();
-  if (!user) redirect(`/${locale}/signin?callbackUrl=/${locale}/hifz/review`);
-
   const [progress, settings, chapters] = await Promise.all([
-    db.hifzProgress.findMany({
-      where: { userId: user.id },
-      select: {
-        ayahKey: true, surah: true, ayah: true, stage: true,
-        dueAt: true, lastReviewedAt: true, firstLearnedAt: true,
-      },
-    }),
-    db.hifzSettings.findUnique({ where: { userId: user.id } }),
+    user
+      ? db.hifzProgress.findMany({
+          where: { userId: user.id },
+          select: {
+            ayahKey: true, surah: true, ayah: true, stage: true,
+            dueAt: true, lastReviewedAt: true, firstLearnedAt: true,
+          },
+        })
+      : Promise.resolve([] as ProgressRow[]),
+    user
+      ? db.hifzSettings.findUnique({ where: { userId: user.id } })
+      : Promise.resolve(null),
     quranApi.chapters(),
   ]);
 

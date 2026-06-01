@@ -79,6 +79,7 @@ export function HifzLearnClient({ ayat, surahName, surahNameArabic }: Props) {
   const [revealed, setRevealed] = useState<Set<number>>(new Set());
   const [marked, setMarked] = useState(false);
   const [marking, setMarking] = useState(false);
+  const [needsAuth, setNeedsAuth] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   // Word-by-word panel — lazily fetched per ayah on first reveal.
@@ -162,6 +163,7 @@ export function HifzLearnClient({ ayat, surahName, surahNameArabic }: Props) {
   const markDone = async () => {
     if (marking) return;
     setMarking(true);
+    setNeedsAuth(false);
     try {
       const res = await fetch("/api/hifz/mark", {
         method: "POST",
@@ -169,6 +171,7 @@ export function HifzLearnClient({ ayat, surahName, surahNameArabic }: Props) {
         body: JSON.stringify({ ayahKeys: ayat.map((a) => a.ayahKey) }),
       });
       if (res.ok) setMarked(true);
+      else if (res.status === 401) setNeedsAuth(true);
     } finally {
       setMarking(false);
     }
@@ -311,14 +314,23 @@ export function HifzLearnClient({ ayat, surahName, surahNameArabic }: Props) {
           onClick={() => setCurrent((c) => Math.min(c + 1, ayat.length - 1))}
           disabled={current >= ayat.length - 1}
         >{t("learn_next")} →</button>
-        <button
-          type="button"
-          className="hifz-control-btn hifz-control-primary"
-          onClick={markDone}
-          disabled={marking || marked}
-        >
-          {marked ? "✓ " + t("learn_marked") : t("learn_mark_done")}
-        </button>
+        {needsAuth ? (
+          <Link
+            href={`/signin?callbackUrl=${typeof window !== "undefined" ? encodeURIComponent(window.location.pathname) : ""}`}
+            className="hifz-control-btn hifz-control-primary"
+          >
+            {t("auth_required")}
+          </Link>
+        ) : (
+          <button
+            type="button"
+            className="hifz-control-btn hifz-control-primary"
+            onClick={markDone}
+            disabled={marking || marked}
+          >
+            {marked ? "✓ " + t("learn_marked") : t("learn_mark_done")}
+          </button>
+        )}
       </div>
     </section>
   );

@@ -18,6 +18,20 @@
   margin: 0 auto;
 }
 
+.hifz-guest-banner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 0 auto 20px;
+  max-width: 900px;
+  padding: 14px 22px;
+  border-radius: 16px;
+  background: color-mix(in oklab, oklch(var(--accent)) 8%, oklch(var(--surface)));
+  border: 1px dashed color-mix(in oklab, oklch(var(--accent)) 50%, oklch(var(--border)));
+  color: oklch(var(--text-2));
+  font-size: 14px;
+}
+
 .hifz-stats-row {
   display: flex;
   flex-wrap: wrap;

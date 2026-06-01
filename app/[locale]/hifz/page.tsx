@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
-import { redirect } from "next/navigation";
 import { Link } from "@/i18n/navigation";
 import { getCurrentUser } from "@/lib/auth-helpers";
 import { db } from "@/lib/db";
@@ -22,21 +21,24 @@ export default async function HifzDashboard({ params }: PageProps) {
   const t = await getTranslations({ locale, namespace: "hf" });
   const tSn = await getTranslations({ locale, namespace: "sn" });
 
+  // Guest-mode: dashboard renders even without auth, with empty progress
+  // and default settings. Saving a sabaq requires login; the learn page
+  // surfaces that gate at the moment of action, not on page entry.
   const user = await getCurrentUser();
-  if (!user) {
-    // Send them through sign-in; the post-auth redirect can come back here.
-    redirect(`/${locale}/signin?callbackUrl=/${locale}/hifz`);
-  }
 
   const [progressRaw, settings, chapters] = await Promise.all([
-    db.hifzProgress.findMany({
-      where: { userId: user.id },
-      select: {
-        ayahKey: true, surah: true, ayah: true, stage: true,
-        dueAt: true, lastReviewedAt: true, firstLearnedAt: true,
-      },
-    }),
-    db.hifzSettings.findUnique({ where: { userId: user.id } }),
+    user
+      ? db.hifzProgress.findMany({
+          where: { userId: user.id },
+          select: {
+            ayahKey: true, surah: true, ayah: true, stage: true,
+            dueAt: true, lastReviewedAt: true, firstLearnedAt: true,
+          },
+        })
+      : Promise.resolve([] as ProgressRow[]),
+    user
+      ? db.hifzSettings.findUnique({ where: { userId: user.id } })
+      : Promise.resolve(null),
     quranApi.chapters(),
   ]);
 
@@ -67,6 +69,17 @@ export default async function HifzDashboard({ params }: PageProps) {
         <h1>{t("hero_h1")}</h1>
         <p>{t("hero_sub")}</p>
       </section>
+
+      {!user && (
+        <section className="wrap" style={{ paddingTop: 0 }}>
+          <div className="hifz-guest-banner">
+            <span>{t("auth_required")}</span>
+            <Link href={`/${locale}/signin?callbackUrl=/${locale}/hifz`} className="hifz-card-cta">
+              {t("begin_sabaq")} →
+            </Link>
+          </div>
+        </section>
+      )}
 
       <section className="wrap hifz-stats-row">
         <div className="hifz-streak">
