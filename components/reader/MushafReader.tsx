@@ -15,6 +15,13 @@ import { AudioPlayerProvider, useAudioPlayer } from "./AudioPlayerProvider";
 import { SideTab } from "./SideTab";
 import { getMushafPage, pagesOfSurah } from "@/lib/quran/mushaf-pages";
 import { getTajweedAnnotations, splitByTajweed } from "@/lib/quran/tajweed";
+import {
+  buildHighlightRegex,
+  countHtmlMatchesIgnoreBrackets,
+  countMatchesIgnoreBrackets,
+  highlightHtmlString,
+  splitByBrackets,
+} from "@/lib/quran/search-highlight";
 
 export interface MushafAyah {
   ayahKey: string;
@@ -146,45 +153,37 @@ function MushafReaderInner(props: MushafReaderProps) {
   const [tajweedMode, setTajweedMode] = useState(false);
 
   // In-page (this surah only) search. Live highlight + match counter.
+  // Mirrors the global /search page: bracket-aware (translator commentary
+  // in (), [], [[]], {} is ignored for both highlight and count), and the
+  // exact-toggle wraps matches with unicode word-boundary lookarounds so
+  // "мир" doesn't light up inside "мире" / "смиренно".
   const [pageSearchOpen, setPageSearchOpen] = useState(false);
   const [pageQuery, setPageQuery] = useState("");
+  const [pageExact, setPageExact] = useState(false);
   useEffect(() => { setPageQuery(""); setPageSearchOpen(false); }, [surah.number]);
   const pageQueryNorm = pageQuery.trim();
-  // Pre-compile a regex of query tokens, matching the SearchClient
-  // behavior: ≥2-char tokens, OR-joined, case-insensitive on Latin.
-  const pageSearchRegex = useMemo(() => {
-    if (pageQueryNorm.length < 2) return null;
-    const tokens = pageQueryNorm
-      .split(/[\s.,;:!?()«»"'\-—–]+/)
-      .filter((tok) => tok.length >= 2)
-      .map((tok) => tok.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
-    if (tokens.length === 0) return null;
-    const isArabic = /[؀-ۿ]/.test(pageQueryNorm);
-    try { return new RegExp(`(${tokens.join("|")})`, isArabic ? "g" : "gi"); }
-    catch { return null; }
-  }, [pageQueryNorm]);
+  const pageSearchRegex = useMemo(
+    () => buildHighlightRegex(pageQueryNorm, pageExact),
+    [pageQueryNorm, pageExact],
+  );
 
-  // Count matches across all currently-rendered ayat (arabic + active
-  // translation). Used for the live "N совпадений" counter.
+  // Live "N совпадений" — counts in arabic + active translation,
+  // ignoring translator brackets so commentary like "(мир ему!)" never
+  // inflates the number.
   const pageSearchMatchCount = useMemo(() => {
     if (!pageSearchRegex) return 0;
     let n = 0;
     for (const a of ayat) {
-      n += (a.textUthmani.match(pageSearchRegex) ?? []).length;
+      n += countMatchesIgnoreBrackets(a.textUthmani, pageSearchRegex);
       const tr = a.translationsByKey[activeKey];
-      if (tr) {
-        // Strip HTML tags from the translation so we don't count <span> etc.
-        const plain = tr.replace(/<[^>]+>/g, "");
-        n += (plain.match(pageSearchRegex) ?? []).length;
-      }
+      if (tr) n += countHtmlMatchesIgnoreBrackets(tr, pageSearchRegex);
     }
     return n;
   }, [pageSearchRegex, ayat, activeKey]);
 
-  // Helper: render arabic text with optional tajweed coloring AND
-  // optional in-surah search highlight. Tajweed wins if both on;
-  // search highlight is skipped in tajweed mode to keep the color
-  // semantics clean (tajweed uses spans, search uses <mark>).
+  // Render arabic text with optional tajweed coloring AND optional
+  // in-surah search highlight. Tajweed wins if both on; search highlight
+  // is skipped in tajweed mode to keep color semantics clean.
   const renderArabic = (text: string, ayahNumber: number): React.ReactNode => {
     if (tajweedMode) {
       const ann = getTajweedAnnotations(surah.number, ayahNumber);
@@ -196,21 +195,26 @@ function MushafReaderInner(props: MushafReaderProps) {
       );
     }
     if (!pageSearchRegex) return text;
-    const parts = text.split(pageSearchRegex);
-    return parts.map((p, i) =>
-      i % 2 === 1
-        ? <mark key={i} className="page-search-hit">{p}</mark>
-        : p,
-    );
+    // Walk bracket segments — only highlight outside translator inserts.
+    const re = pageSearchRegex;
+    const nodes: React.ReactNode[] = [];
+    let key = 0;
+    for (const seg of splitByBrackets(text)) {
+      if (seg.inside) { nodes.push(seg.text); continue; }
+      const parts = seg.text.split(re);
+      for (let i = 0; i < parts.length; i++) {
+        nodes.push(i % 2 === 1
+          ? <mark key={key++} className="page-search-hit">{parts[i]}</mark>
+          : parts[i]);
+      }
+    }
+    return nodes;
   };
 
-  // Helper for translation text that's already HTML (citations, spans).
-  // Wraps matches in <mark> via regex.replace on the HTML string; safe
-  // because the matched tokens have regex special chars escaped above.
-  const highlightHtml = (html: string): string => {
-    if (!pageSearchRegex) return html;
-    return html.replace(pageSearchRegex, "<mark class=\"page-search-hit\">$1</mark>");
-  };
+  // Translation may include simple inline HTML (citations etc.) — we
+  // mark up the bracket-aware outside portions while preserving tags.
+  const highlightHtml = (html: string): string =>
+    highlightHtmlString(html, pageSearchRegex, "page-search-hit");
 
   const playableQueue = useMemo(
     () =>
@@ -503,6 +507,15 @@ function MushafReaderInner(props: MushafReaderProps) {
                 aria-label={t("fp_placeholder")}
                 autoFocus
               />
+              <button
+                type="button"
+                onClick={() => setPageExact((v) => !v)}
+                className={"page-search-exact" + (pageExact ? " active" : "")}
+                aria-pressed={pageExact}
+                title={pageExact ? t("fp_exact_on") : t("fp_exact_off")}
+              >
+                {t("fp_exact_label")}
+              </button>
               <span className="page-search-count">
                 {pageQueryNorm.length < 2
                   ? ""

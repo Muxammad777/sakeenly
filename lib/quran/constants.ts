@@ -20,11 +20,20 @@ export type TranslationKey =
   | "ayati"
   | "sodik"
   | "altay"
-  | "mokhtasar-ky";
+  | "mokhtasar-ky"
+  | "ur-maududi"
+  | "ur-jalandhry"
+  | "ur-junagarhi"
+  | "ms-basmeih"
+  | "hi-suhel"
+  | "hi-farooq"
+  | "id-kemenag"
+  | "id-muntakhab"
+  | "id-jalalayn";
 
 export type TranslationSource = "quran.com" | "tanzil";
 
-export type TranslationLanguage = "ru" | "en" | "fa" | "tg" | "uz" | "kk" | "ky";
+export type TranslationLanguage = "ru" | "en" | "fa" | "tg" | "uz" | "kk" | "ky" | "ur" | "ms" | "hi" | "id";
 
 export interface TranslationMeta {
   key: TranslationKey;
@@ -53,6 +62,19 @@ export const TRANSLATIONS: readonly TranslationMeta[] = [
   { key: "taji",         id: 29,  short: "تاجی",        label: "Hussein Taji Kal Dari",    language: "fa", author: "حسین تاجی گله‌داری",          source: "quran.com" },
   { key: "islamhouse-fa",id: 135, short: "اسلام‌هاوس",  label: "IslamHouse · فارسی",       language: "fa", author: "IslamHouse.com",              source: "quran.com" },
   { key: "fooladvand",   id: 0,   short: "فولادوند",    label: "محمدمهدی فولادوند",        language: "fa", author: "محمدمهدی فولادوند · 1373",   source: "tanzil"   },
+  // ─── Urdu (Pakistan / South Asia) ───
+  { key: "ur-maududi",   id: 0,   short: "مودودی",      label: "ابوالاعلیٰ مودودی · تفہیم القرآن", language: "ur", author: "Sayyid Abul A'la Maududi · 1972", source: "tanzil" },
+  { key: "ur-jalandhry", id: 0,   short: "جالندھری",    label: "فتح محمد جالندھری",                language: "ur", author: "Fateh Muhammad Jalandhry · 1899", source: "tanzil" },
+  { key: "ur-junagarhi", id: 0,   short: "جوناگڑھی",    label: "محمد جوناگڑھی",                    language: "ur", author: "Muhammad Junagarhi",            source: "tanzil" },
+  // ─── Malay (JAKIM canonical) ───
+  { key: "ms-basmeih",   id: 0,   short: "Basmeih",     label: "Abdullah Muhammad Basmeih",        language: "ms", author: "Abdullah Muhammad Basmeih · JAKIM", source: "tanzil" },
+  // ─── Hindi ───
+  { key: "hi-suhel",     id: 0,   short: "सुहेल फ़ारूक़", label: "सुहेल फ़ारूक़ ख़ान & सैफ़ुर्रहमान नदवी", language: "hi", author: "Suhel Farooq Khan & Saifur Rahman Nadwi", source: "tanzil" },
+  { key: "hi-farooq",    id: 0,   short: "मुहम्मद फ़ारूक़", label: "मुहम्मद फ़ारूक़ ख़ान & मुहम्मद अहमद",     language: "hi", author: "Muhammad Farooq Khan & Muhammad Ahmed",  source: "tanzil" },
+  // ─── Indonesian (Kemenag / Quraish Shihab / Jalalayn) ───
+  { key: "id-kemenag",   id: 0,   short: "Kemenag",     label: "Kementerian Agama RI",             language: "id", author: "Kementerian Agama Republik Indonesia", source: "tanzil" },
+  { key: "id-muntakhab", id: 0,   short: "Muntakhab",   label: "M. Quraish Shihab · Muntakhab",    language: "id", author: "Muhammad Quraish Shihab",       source: "tanzil" },
+  { key: "id-jalalayn",  id: 0,   short: "Jalalayn",    label: "Tafsir Jalalayn (ID)",             language: "id", author: "Tafsir Jalalayn — Indonesian",   source: "tanzil" },
 ] as const;
 
 /** Locale → default translation key. Used to preselect the right pill per UI language. */
@@ -66,6 +88,11 @@ export const DEFAULT_TRANSLATION_BY_LOCALE: Record<string, TranslationKey> = {
   uz: "sodik",
   kk: "altay",
   ky: "mokhtasar-ky",
+  // Indo-Pak/SE-Asia defaults — pick the most authoritative per region.
+  ur: "ur-maududi",      // Maududi's Tafhim is the most-read Urdu work
+  ms: "ms-basmeih",      // JAKIM-canonical, no alternative in open corpora
+  hi: "hi-suhel",        // Suhel Farooq & Nadwi (Sahih Hindi) — Madani-aligned
+  id: "id-kemenag",      // Kementerian Agama RI, official state edition
 };
 
 export const DEFAULT_TRANSLATION_KEY: TranslationKey = "kuliev";

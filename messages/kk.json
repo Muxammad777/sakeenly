@@ -740,7 +740,10 @@
     "tj_rule_idghaam": "Идгам",
     "tj_rule_idghaam_mut": "Ұқсас әріптер идгамы",
     "tj_rule_iqlab": "Иқлаб",
-    "tj_rule_silent": "Айтылмайды"
+    "tj_rule_silent": "Айтылмайды",
+    "fp_exact_label": "Дәл",
+    "fp_exact_off": "Тек бүтін сөздер",
+    "fp_exact_on": "Барлық формалар"
   },
   "sb": {
     "apply_btn": "Жазу",

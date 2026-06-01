@@ -740,7 +740,10 @@
     "tj_rule_idghaam": "Идғом",
     "tj_rule_idghaam_mut": "Идғоми ҳамхатҳо",
     "tj_rule_iqlab": "Иқлоб",
-    "tj_rule_silent": "Талаффуз намешавад"
+    "tj_rule_silent": "Талаффуз намешавад",
+    "fp_exact_label": "Дақиқ",
+    "fp_exact_off": "Танҳо калимаҳои пурра",
+    "fp_exact_on": "Ҳамаи шаклҳо"
   },
   "sb": {
     "apply_btn": "Нависед",

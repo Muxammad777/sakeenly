@@ -740,7 +740,10 @@
     "tj_rule_idghaam": "Idgʻom",
     "tj_rule_idghaam_mut": "Oʻxshash harflar idgʻomi",
     "tj_rule_iqlab": "Iqlab",
-    "tj_rule_silent": "Talaffuz qilinmaydi"
+    "tj_rule_silent": "Talaffuz qilinmaydi",
+    "fp_exact_label": "Aniq",
+    "fp_exact_off": "Faqat butun so'zlar",
+    "fp_exact_on": "Hamma shakllar"
   },
   "sb": {
     "apply_btn": "Yozish",

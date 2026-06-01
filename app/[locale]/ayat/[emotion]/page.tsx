@@ -15,6 +15,16 @@ import krachkovskyMap  from "@/lib/quran/tanzil/krachkovsky.json";
 import osmanovMap      from "@/lib/quran/tanzil/osmanov.json";
 import porokhovaMap    from "@/lib/quran/tanzil/porokhova.json";
 import fooladvandMap   from "@/lib/quran/tanzil/fooladvand.json";
+import urMaududiRaw    from "@/lib/knowledge/translations/ur_abulaalamaududi.json";
+import msBasmeihRaw    from "@/lib/knowledge/translations/ms_abdullahmuhamma.json";
+import hiSuhelRaw      from "@/lib/knowledge/translations/hi_suhelfarooqkhan.json";
+import idKemenagRaw    from "@/lib/knowledge/translations/id_indonesianislam.json";
+
+function arrToMap(data: { quran: Array<{ chapter: number; verse: number; text: string }> }): Record<string, string> {
+  const m: Record<string, string> = {};
+  for (const v of data.quran) m[`${v.chapter}:${v.verse}`] = v.text;
+  return m;
+}
 import kulievRaw       from "@/lib/knowledge/translations/ru_elmirkuliev.json";
 import sahihRaw        from "@/lib/knowledge/translations/en_sahih_international.json";
 
@@ -51,6 +61,14 @@ const TANZIL_MAPS: Record<string, Record<string, string>> = {
   osmanov:        osmanovMap      as Record<string, string>,
   porokhova:      porokhovaMap    as Record<string, string>,
   fooladvand:     fooladvandMap   as Record<string, string>,
+  // Defaults for the 2026-06 locales (UR/MS/HI/ID). The emotion-curated
+  // /ayat page falls back to whichever map matches the locale's
+  // DEFAULT_TRANSLATION_BY_LOCALE key — so each locale needs at least
+  // one map under that exact key.
+  "ur-maududi": arrToMap(urMaududiRaw),
+  "ms-basmeih": arrToMap(msBasmeihRaw),
+  "hi-suhel":   arrToMap(hiSuhelRaw),
+  "id-kemenag": arrToMap(idKemenagRaw),
 };
 
 interface PageProps {

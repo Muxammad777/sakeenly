@@ -1122,6 +1122,26 @@
   transition: background 140ms, color 140ms;
 }
 .page-search-close:hover { background: oklch(var(--surface-2)); color: oklch(var(--text)); }
+.page-search-exact {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid oklch(var(--border));
+  color: oklch(var(--text-3));
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 140ms, color 140ms, border-color 140ms;
+}
+.page-search-exact:hover { color: oklch(var(--text-2)); border-color: oklch(var(--text-3)); }
+.page-search-exact.active {
+  background: var(--accent-soft);
+  border-color: color-mix(in oklab, oklch(var(--accent)) 60%, oklch(var(--border)));
+  color: oklch(var(--accent));
+}
 
 /* Highlighted match inside the reader (both arabic and translation) */
 .page-search-hit {

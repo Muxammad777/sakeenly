@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { toLocaleDigits } from "@/lib/quran/format";
 import { isShortSurah, getNameArabic } from "@/lib/quran/chapter-meta";
+import { buildHighlightRegex, highlightToHtml, looksArabic } from "@/lib/quran/search-highlight";
 
 type MatchKind = "exact_phrase" | "tokens" | "stem";
 
@@ -33,73 +34,10 @@ interface SearchClientProps {
 
 const PAGE_SIZE = 20;
 
-// Split text into bracket-aware segments so we can highlight matches
-// OUTSIDE translator-commentary regions only. Translators wrap their
-// inserts in (), [], [[]], or {} — those are not Qur'an text.
-function splitByBrackets(text: string): Array<{ inside: boolean; text: string }> {
-  const segs: Array<{ inside: boolean; text: string }> = [];
-  let depth = 0;
-  let buf = "";
-  for (let i = 0; i < text.length; i++) {
-    const c = text[i];
-    if (c === "(" || c === "[" || c === "{") {
-      if (depth === 0 && buf) {
-        segs.push({ inside: false, text: buf });
-        buf = "";
-      }
-      buf += c;
-      depth++;
-    } else if (c === ")" || c === "]" || c === "}") {
-      buf += c;
-      depth--;
-      if (depth <= 0) {
-        depth = 0;
-        segs.push({ inside: true, text: buf });
-        buf = "";
-      }
-    } else {
-      buf += c;
-    }
-  }
-  if (buf) segs.push({ inside: depth > 0, text: buf });
-  return segs;
-}
-
-function escapeHtml(s: string): string {
-  return s
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
-}
-
-function highlight(text: string, query: string, isArabic: boolean, matchKind: MatchKind): string {
-  if (!text || !query) return text;
-  const tokens = query
-    .split(/[\s.,;:!?()«»"'\-—–]+/)
-    .filter((t) => t.length >= 2)
-    .map((t) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
-  if (tokens.length === 0) return escapeHtml(text);
-  // For exact/tokens hits, wrap each token with unicode word-boundary
-  // lookarounds so "мир" doesn't light up inside "мире". Stem hits ARE
-  // substring matches by definition, so we keep the looser regex there.
+function highlight(text: string, query: string, _isArabic: boolean, matchKind: MatchKind): string {
   const wholeWord = matchKind !== "stem";
-  const inner = tokens.join("|");
-  const pattern = wholeWord
-    ? `(?<![\\p{L}\\p{N}])(${inner})(?![\\p{L}\\p{N}])`
-    : `(${inner})`;
-  let re: RegExp;
-  try {
-    re = new RegExp(pattern, isArabic ? "gu" : "giu");
-  } catch {
-    return escapeHtml(text);
-  }
-  return splitByBrackets(text)
-    .map((seg) =>
-      seg.inside
-        ? escapeHtml(seg.text)
-        : escapeHtml(seg.text).replace(re, "<mark>$1</mark>"),
-    )
-    .join("");
+  const re = buildHighlightRegex(query, wholeWord);
+  return highlightToHtml(text, re);
 }
 
 export function SearchClient({ initialQuery }: SearchClientProps) {
@@ -226,7 +164,7 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
     setQuery((q) => q);
   };
 
-  const isArabicQuery = /[؀-ۿ]/.test(query);
+  const isArabicQuery = looksArabic(query);
   const showEmpty = query.trim().length >= 2 && results !== null && results.length === 0 && !loading;
   const showHint = query.trim().length < 2 && !loading;
 

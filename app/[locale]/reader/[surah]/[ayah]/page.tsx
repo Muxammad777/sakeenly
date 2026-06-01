@@ -16,6 +16,34 @@ import sodikMap from "@/lib/quran/tanzil/sodik.json";
 import altayMap from "@/lib/quran/tanzil/altay.json";
 import mokhtasarKyMap from "@/lib/quran/tanzil/mokhtasar-ky.json";
 import fooladvandMap from "@/lib/quran/tanzil/fooladvand.json";
+// New locales (2026-06): Tanzil + alquran.cloud, stored as
+// {quran: [{chapter, verse, text}]} arrays. We pre-flatten to the
+// verse-key→text shape that the tanzilByKey map below expects.
+import urMaududiRaw   from "@/lib/knowledge/translations/ur_abulaalamaududi.json";
+import urJalandhryRaw from "@/lib/knowledge/translations/ur_fatehmuhammadja.json";
+import urJunagarhiRaw from "@/lib/knowledge/translations/ur_junagarhi.json";
+import msBasmeihRaw   from "@/lib/knowledge/translations/ms_abdullahmuhamma.json";
+import hiSuhelRaw     from "@/lib/knowledge/translations/hi_suhelfarooqkhan.json";
+import hiFarooqRaw    from "@/lib/knowledge/translations/hi_farooq.json";
+import idKemenagRaw   from "@/lib/knowledge/translations/id_indonesianislam.json";
+import idMuntakhabRaw from "@/lib/knowledge/translations/id_muntakhab.json";
+import idJalalaynRaw  from "@/lib/knowledge/translations/id_jalalayn.json";
+
+function arrToMap(data: { quran: Array<{ chapter: number; verse: number; text: string }> }): Record<string, string> {
+  const m: Record<string, string> = {};
+  for (const v of data.quran) m[`${v.chapter}:${v.verse}`] = v.text;
+  return m;
+}
+// Module-level — flatten once per worker, not per request.
+const urMaududiMap   = arrToMap(urMaududiRaw);
+const urJalandhryMap = arrToMap(urJalandhryRaw);
+const urJunagarhiMap = arrToMap(urJunagarhiRaw);
+const msBasmeihMap   = arrToMap(msBasmeihRaw);
+const hiSuhelMap     = arrToMap(hiSuhelRaw);
+const hiFarooqMap    = arrToMap(hiFarooqRaw);
+const idKemenagMap   = arrToMap(idKemenagRaw);
+const idMuntakhabMap = arrToMap(idMuntakhabRaw);
+const idJalalaynMap  = arrToMap(idJalalaynRaw);
 import { MushafReader, type MushafAyah, type ChapterListItem } from "@/components/reader/MushafReader";
 import { getCurrentUser } from "@/lib/auth-helpers";
 import { db } from "@/lib/db";
@@ -98,6 +126,15 @@ export default async function ReaderPage({ params, searchParams }: PageProps) {
     altay:          altayMap        as Record<string, string>,
     "mokhtasar-ky": mokhtasarKyMap  as Record<string, string>,
     fooladvand:     fooladvandMap   as Record<string, string>,
+    "ur-maududi":   urMaududiMap,
+    "ur-jalandhry": urJalandhryMap,
+    "ur-junagarhi": urJunagarhiMap,
+    "ms-basmeih":   msBasmeihMap,
+    "hi-suhel":     hiSuhelMap,
+    "hi-farooq":    hiFarooqMap,
+    "id-kemenag":   idKemenagMap,
+    "id-muntakhab": idMuntakhabMap,
+    "id-jalalayn":  idJalalaynMap,
   };
 
   if (parsed.ayah > chapter.verses_count) notFound();

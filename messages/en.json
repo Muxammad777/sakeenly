@@ -740,7 +740,10 @@
     "tj_rule_idghaam": "Idghaam (assimilation)",
     "tj_rule_idghaam_mut": "Idghaam of similar letters",
     "tj_rule_iqlab": "Iqlab",
-    "tj_rule_silent": "Silent"
+    "tj_rule_silent": "Silent",
+    "fp_exact_label": "Exact",
+    "fp_exact_off": "Whole words only",
+    "fp_exact_on": "Show all forms"
   },
   "sb": {
     "apply_btn": "Write to us",

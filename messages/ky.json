@@ -740,7 +740,10 @@
     "tj_rule_idghaam": "Идгам",
     "tj_rule_idghaam_mut": "Окшош тамгалардын идгамы",
     "tj_rule_iqlab": "Иклаб",
-    "tj_rule_silent": "Айтылбайт"
+    "tj_rule_silent": "Айтылбайт",
+    "fp_exact_label": "Так",
+    "fp_exact_off": "Бүтүн сөздөр гана",
+    "fp_exact_on": "Бардык формалар"
   },
   "sb": {
     "apply_btn": "Жазуу",

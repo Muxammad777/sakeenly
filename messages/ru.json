@@ -740,7 +740,10 @@
     "tj_rule_idghaam": "Идгам (ассимиляция)",
     "tj_rule_idghaam_mut": "Идгам сходных букв",
     "tj_rule_iqlab": "Иклаб",
-    "tj_rule_silent": "Не произносится"
+    "tj_rule_silent": "Не произносится",
+    "fp_exact_label": "Точное",
+    "fp_exact_off": "Только полные слова",
+    "fp_exact_on": "Все формы"
   },
   "sb": {
     "apply_btn": "Написать",

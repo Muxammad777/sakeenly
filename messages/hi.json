@@ -740,7 +740,10 @@
     "tj_rule_idghaam": "इदग़ाम",
     "tj_rule_idghaam_mut": "समान अक्षरों का इदग़ाम",
     "tj_rule_iqlab": "इक़्लाब",
-    "tj_rule_silent": "मौन अक्षर"
+    "tj_rule_silent": "मौन अक्षर",
+    "fp_exact_label": "सटीक",
+    "fp_exact_off": "केवल पूरे शब्द",
+    "fp_exact_on": "सभी रूप"
   },
   "sb": {
     "apply_btn": "हमें लिखें",

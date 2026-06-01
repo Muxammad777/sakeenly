@@ -740,7 +740,10 @@
     "tj_rule_idghaam": "Idghaam",
     "tj_rule_idghaam_mut": "Idghaam huruf serupa",
     "tj_rule_iqlab": "Iqlab",
-    "tj_rule_silent": "Huruf diam"
+    "tj_rule_silent": "Huruf diam",
+    "fp_exact_label": "Persis",
+    "fp_exact_off": "Hanya kata utuh",
+    "fp_exact_on": "Semua bentuk"
   },
   "sb": {
     "apply_btn": "Tulis kepada kami",
