@@ -24,6 +24,13 @@ interface Props {
 }
 
 type Phase = "idle" | "listening_to_audio" | "listening_for_voice" | "done";
+type ErrorKind =
+  | null
+  | "not-allowed"    // user denied or never granted mic permission
+  | "no-speech"      // ASR finished without picking up anything
+  | "audio-capture"  // no mic / mic broken
+  | "network"        // ASR cloud unreachable
+  | "other";
 
 // Minimal subset of the Web Speech API surface we use. The full DOM
 // types aren't shipped in lib.dom yet for SpeechRecognition.
@@ -58,20 +65,44 @@ export function ListenAndRecite({ ayahKey, textUthmani, audioUrl }: Props) {
   const [transcript, setTranscript] = useState("");
   const [result, setResult] = useState<CompareResult | null>(null);
   const [supported, setSupported] = useState<boolean>(true);
+  const [errorKind, setErrorKind] = useState<ErrorKind>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
 
   useEffect(() => { setSupported(getRecognitionCtor() !== null); }, []);
-  useEffect(() => { setResult(null); setTranscript(""); setPhase("idle"); }, [ayahKey]);
+  useEffect(() => {
+    setResult(null); setTranscript(""); setPhase("idle"); setErrorKind(null);
+  }, [ayahKey]);
   useEffect(() => () => {
     audioRef.current?.pause();
     try { recognitionRef.current?.abort(); } catch {}
   }, []);
 
-  const start = () => {
+  // Pre-flight mic permission probe — quick non-blocking check so we
+  // can render a helpful CTA before the user even hits Play if they've
+  // previously denied. Permissions API: present in Chrome/Edge; Safari
+  // throws on the 'microphone' name, so swallow.
+  const probeMicrophone = async (): Promise<"granted" | "prompt" | "denied" | "unknown"> => {
+    if (typeof navigator === "undefined" || !navigator.permissions) return "unknown";
+    try {
+      const res = await navigator.permissions.query({ name: "microphone" as PermissionName });
+      return res.state as "granted" | "prompt" | "denied";
+    } catch {
+      return "unknown";
+    }
+  };
+
+  const start = async () => {
     if (!supported || phase !== "idle") return;
     setResult(null);
     setTranscript("");
+    setErrorKind(null);
+
+    // If we already know the user denied, skip the audio playback —
+    // the ASR step would just fail again. Surface the CTA immediately.
+    const perm = await probeMicrophone();
+    if (perm === "denied") { setErrorKind("not-allowed"); setPhase("done"); return; }
+
     if (audioUrl) {
       const url = audioUrl.startsWith("//") ? `https:${audioUrl}` : audioUrl;
       const audio = new Audio(url);
@@ -100,15 +131,34 @@ export function ListenAndRecite({ ayahKey, textUthmani, audioUrl }: Props) {
       }
       setTranscript(captured.trim());
     };
-    rec.onerror = () => { setPhase("done"); };
+    rec.onerror = (e: { error?: string }) => {
+      // Standard error codes: not-allowed (mic denied), no-speech,
+      // audio-capture (no mic), network. Surface each as its own CTA.
+      switch (e.error) {
+        case "not-allowed":
+        case "service-not-allowed":
+          setErrorKind("not-allowed"); break;
+        case "no-speech":
+          setErrorKind("no-speech"); break;
+        case "audio-capture":
+          setErrorKind("audio-capture"); break;
+        case "network":
+          setErrorKind("network"); break;
+        default:
+          setErrorKind("other");
+      }
+    };
     rec.onend = () => {
       setPhase("done");
-      const cmp = compareRecitation(textUthmani, captured.trim());
-      setResult(cmp);
+      if (captured.trim()) {
+        const cmp = compareRecitation(textUthmani, captured.trim());
+        setResult(cmp);
+      }
     };
     recognitionRef.current = rec;
     setPhase("listening_for_voice");
-    try { rec.start(); } catch { setPhase("done"); }
+    try { rec.start(); }
+    catch { setErrorKind("other"); setPhase("done"); }
   };
 
   const stopListening = () => {
@@ -118,24 +168,41 @@ export function ListenAndRecite({ ayahKey, textUthmani, audioUrl }: Props) {
   if (!supported) {
     return (
       <div className="hifz-lr-unsupported">
-        {t("learn_listen_recite")}: browser ASR unsupported (try Chrome).
+        {t("learn_listen_recite")}: браузер не поддерживает распознавание речи. Попробуй Chrome или Edge.
       </div>
     );
   }
+
+  const errorMessage = (() => {
+    switch (errorKind) {
+      case "not-allowed":
+        return "🎙 Микрофон выключен. Разреши доступ в иконке слева от адреса браузера, потом попробуй снова.";
+      case "audio-capture":
+        return "🎙 Микрофон не найден. Проверь подключение.";
+      case "no-speech":
+        return "Я ничего не услышал — попробуй снова, говори громче.";
+      case "network":
+        return "Сеть недоступна — распознавание речи требует интернета.";
+      case "other":
+        return "Что-то пошло не так. Попробуй ещё раз.";
+      default:
+        return null;
+    }
+  })();
 
   return (
     <div className="hifz-lr">
       <div className="hifz-lr-bar">
         <button
           type="button"
-          className="hifz-control-btn hifz-control-primary"
-          onClick={phase === "listening_for_voice" ? stopListening : start}
+          className={"hifz-control-btn hifz-control-primary" + (phase === "listening_for_voice" ? " is-recording" : "")}
+          onClick={phase === "listening_for_voice" ? stopListening : () => void start()}
           disabled={phase === "listening_to_audio"}
         >
-          {phase === "idle" ? t("learn_listen_recite") :
-           phase === "listening_to_audio" ? "♪" :
-           phase === "listening_for_voice" ? "● stop" :
-           "↻"}
+          {phase === "idle" && t("learn_listen_recite")}
+          {phase === "listening_to_audio" && <>♪ <span className="hifz-lr-hint">чтец читает…</span></>}
+          {phase === "listening_for_voice" && <><span className="hifz-lr-rec-dot" /> говори · нажми чтобы остановить</>}
+          {phase === "done" && "↻ ещё раз"}
         </button>
         {result && (
           <span className="hifz-lr-score" data-good={result.similarity >= 0.8}>
@@ -143,6 +210,9 @@ export function ListenAndRecite({ ayahKey, textUthmani, audioUrl }: Props) {
           </span>
         )}
       </div>
+      {errorMessage && (
+        <div className="hifz-lr-error">{errorMessage}</div>
+      )}
       {result && (
         <div className="hifz-lr-words" dir="rtl">
           {result.expectedTokens.map((tok, i) => (
