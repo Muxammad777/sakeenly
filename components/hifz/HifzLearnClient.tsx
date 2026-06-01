@@ -1,8 +1,19 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { ListenAndRecite } from "./ListenAndRecite";
+
+interface WbwWord {
+  position: number;
+  type: string;
+  arabic: string;
+  imlaei: string | null;
+  translation: string | null;
+  transliteration: string | null;
+}
+interface WbwData { verseKey: string; words: WbwWord[]; }
 
 export interface HifzLearnAyah {
   ayahKey: string;
@@ -56,6 +67,7 @@ function renderHidden(text: string, stage: HideStage): React.ReactNode {
 
 export function HifzLearnClient({ ayat, surahName, surahNameArabic }: Props) {
   const t = useTranslations("hf");
+  const locale = useLocale();
   const [stage, setStage] = useState<HideStage>(0);
   const [current, setCurrent] = useState(0);     // index into ayat[]
   const [playing, setPlaying] = useState(false);
@@ -68,6 +80,33 @@ export function HifzLearnClient({ ayat, surahName, surahNameArabic }: Props) {
   const [marked, setMarked] = useState(false);
   const [marking, setMarking] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  // Word-by-word panel — lazily fetched per ayah on first reveal.
+  const [wbwOpen, setWbwOpen] = useState<Set<string>>(new Set());
+  const [wbwData, setWbwData] = useState<Record<string, WbwData>>({});
+  const [wbwLoading, setWbwLoading] = useState<Set<string>>(new Set());
+
+  const toggleWbw = async (ayahKey: string) => {
+    setWbwOpen((prev) => {
+      const next = new Set(prev);
+      if (next.has(ayahKey)) next.delete(ayahKey); else next.add(ayahKey);
+      return next;
+    });
+    if (wbwData[ayahKey] || wbwLoading.has(ayahKey)) return;
+    setWbwLoading((s) => new Set(s).add(ayahKey));
+    const [su, ay] = ayahKey.split(":");
+    try {
+      const res = await fetch(`/api/quran/wbw/${su}/${ay}?lang=${locale}`);
+      if (res.ok) {
+        const data = (await res.json()) as WbwData;
+        setWbwData((d) => ({ ...d, [ayahKey]: data }));
+      }
+    } finally {
+      setWbwLoading((s) => {
+        const n = new Set(s); n.delete(ayahKey); return n;
+      });
+    }
+  };
 
   // Initialize/replace audio element when current ayah changes.
   useEffect(() => {
@@ -167,6 +206,9 @@ export function HifzLearnClient({ ayat, surahName, surahNameArabic }: Props) {
         {ayat.map((a, i) => {
           const isCurrent = i === current;
           const isRevealed = revealed.has(i);
+          const wbwIsOpen = wbwOpen.has(a.ayahKey);
+          const wbw = wbwData[a.ayahKey];
+          const wbwIsLoading = wbwLoading.has(a.ayahKey);
           return (
             <article
               key={a.ayahKey}
@@ -174,7 +216,17 @@ export function HifzLearnClient({ ayat, surahName, surahNameArabic }: Props) {
               onClick={() => { if (i !== current) setCurrent(i); }}
               style={{ cursor: i === current ? "default" : "pointer" }}
             >
-              <div className="hifz-ayah-key">{a.ayahKey}</div>
+              <div className="hifz-ayah-key">
+                {a.ayahKey}
+                <button
+                  type="button"
+                  onClick={(e) => { e.stopPropagation(); toggleWbw(a.ayahKey); }}
+                  className="hifz-wbw-toggle"
+                  aria-expanded={wbwIsOpen}
+                >
+                  {wbwIsOpen ? "✕ слова" : "слова"}
+                </button>
+              </div>
               <div
                 className="hifz-ayah-ar"
                 onClick={(e) => { e.stopPropagation(); toggleReveal(i); }}
@@ -183,6 +235,35 @@ export function HifzLearnClient({ ayat, surahName, surahNameArabic }: Props) {
               >
                 {isRevealed ? a.textUthmani : renderHidden(a.textUthmani, stage)}
               </div>
+              {wbwIsOpen && (
+                <div className="hifz-wbw">
+                  {wbwIsLoading && <div className="hifz-wbw-loading">…</div>}
+                  {wbw && (
+                    <div className="hifz-wbw-grid" dir="rtl">
+                      {wbw.words.filter((w) => w.type === "word").map((w) => (
+                        <div key={w.position} className="hifz-wbw-cell">
+                          <div className="hifz-wbw-ar">{w.arabic}</div>
+                          {w.transliteration && (
+                            <div className="hifz-wbw-translit" dir="ltr">{w.transliteration}</div>
+                          )}
+                          {w.translation && (
+                            <div className="hifz-wbw-tr" dir="ltr">{w.translation}</div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+              {isCurrent && (
+                <div onClick={(e) => e.stopPropagation()}>
+                  <ListenAndRecite
+                    ayahKey={a.ayahKey}
+                    textUthmani={a.textUthmani}
+                    audioUrl={a.audioUrl}
+                  />
+                </div>
+              )}
             </article>
           );
         })}
