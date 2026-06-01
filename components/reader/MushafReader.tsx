@@ -166,6 +166,12 @@ function MushafReaderInner(props: MushafReaderProps) {
     () => buildHighlightRegex(pageQueryNorm, pageExact),
     [pageQueryNorm, pageExact],
   );
+  // Most queries are typed in the UI language (e.g. "о те которые
+  // уверовали"), which matches in the translation but not in arabic.
+  // If the user is searching while "только арабский" is on, the count
+  // would be non-zero but every highlight would render into hidden DOM
+  // — looks like "поиск не работает". Auto-flip the translation on as
+  // soon as a query is typed; the user can still turn it off manually.
 
   // Live "N совпадений" — counts in arabic + active translation,
   // ignoring translator brackets so commentary like "(мир ему!)" never
@@ -215,6 +221,14 @@ function MushafReaderInner(props: MushafReaderProps) {
   // mark up the bracket-aware outside portions while preserving tags.
   const highlightHtml = (html: string): string =>
     highlightHtmlString(html, pageSearchRegex, "page-search-hit");
+
+  // Auto-show translation when there's an active query — otherwise the
+  // counter shows matches whose highlights live in hidden DOM.
+  useEffect(() => {
+    if (pageSearchOpen && pageQueryNorm.length >= 2 && !showTranslations) {
+      setShowTranslations(true);
+    }
+  }, [pageSearchOpen, pageQueryNorm, showTranslations]);
 
   const playableQueue = useMemo(
     () =>
