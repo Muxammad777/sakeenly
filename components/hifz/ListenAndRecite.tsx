@@ -15,7 +15,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import { compareRecitation, normalizeArabic, type CompareResult } from "@/lib/hifz/arabic-compare";
+import { compareRecitation, type CompareResult } from "@/lib/hifz/arabic-compare";
 
 interface Props {
   ayahKey: string;
