@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { quranApi } from "@/lib/api/quran";
+import { findReciter } from "@/lib/quran/constants";
 import { HifzLearnClient, type HifzLearnAyah } from "@/components/hifz/HifzLearnClient";
 import type { Locale } from "@/i18n/routing";
 
@@ -39,9 +40,13 @@ export default async function HifzLearnPage({ params, searchParams }: PageProps)
   const endA = end && end.surah === startS ? Math.min(end.ayah, chapter.verses_count) : startA;
   if (startA > chapter.verses_count) notFound();
 
+  // Husary (id 6) — clean Madani Murattal, default reciter for hifz
+  // across Indo-Pak madrasas. Without passing reciter the Quran.com API
+  // returns no audio at all, so this isn't optional.
+  const reciter = findReciter("husary");
   const ayat: HifzLearnAyah[] = [];
   for (let a = startA; a <= endA; a++) {
-    const v = await quranApi.verseByKey(`${startS}:${a}`, { language: locale });
+    const v = await quranApi.verseByKey(`${startS}:${a}`, { language: locale, reciter });
     ayat.push({
       ayahKey: v.verse_key,
       surah: startS,

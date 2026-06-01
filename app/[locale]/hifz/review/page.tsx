@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { quranApi } from "@/lib/api/quran";
+import { findReciter } from "@/lib/quran/constants";
 import { getCurrentUser } from "@/lib/auth-helpers";
 import { db } from "@/lib/db";
 import { buildDailyPlan, type ProgressRow } from "@/lib/hifz/scheduler";
@@ -63,9 +64,10 @@ export default async function HifzReviewPage({ params, searchParams }: PageProps
   // external API per-call — for the review queue we batch by surah where
   // possible. For now keep it sequential — review queues are tens of
   // ayat per day, not thousands.
+  const reciter = findReciter("husary");
   const items: HifzReviewItem[] = [];
   for (const row of queue.slice(0, 50)) {
-    const v = await quranApi.verseByKey(`${row.surah}:${row.ayah}`, { language: locale });
+    const v = await quranApi.verseByKey(`${row.surah}:${row.ayah}`, { language: locale, reciter });
     items.push({
       ayahKey: row.ayahKey,
       surah: row.surah,
