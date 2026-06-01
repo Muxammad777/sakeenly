@@ -192,9 +192,14 @@ export function ListenAndRecite({ ayahKey, textUthmani, audioUrl }: Props) {
     };
     rec.onend = () => {
       setPhase("done");
-      if (captured.trim()) {
-        const cmp = compareRecitation(textUthmani, captured.trim());
+      const finalText = captured.trim();
+      if (finalText) {
+        const cmp = compareRecitation(textUthmani, finalText);
         setResult(cmp);
+      } else if (!errorKind) {
+        // Recognition ended cleanly but heard nothing — show the same
+        // "no speech" hint we'd show on the explicit error code.
+        setErrorKind("no-speech");
       }
     };
     recognitionRef.current = rec;
@@ -263,12 +268,13 @@ export function ListenAndRecite({ ayahKey, textUthmani, audioUrl }: Props) {
       {errorMessage && (
         <div className="hifz-lr-error">{errorMessage}</div>
       )}
-      {result && (
+      {result && result.actualTokens.length > 0 && (
         <div className="hifz-lr-words" dir="rtl">
           {result.expectedTokens.map((tok, i) => (
             <span
               key={i}
               className={"hifz-lr-tok " + (result.matched[i] ? "is-hit" : "is-miss")}
+              title={result.expectedNorm[i]}
             >{tok}</span>
           ))}
         </div>

@@ -26,33 +26,45 @@ function tokens(s: string): string[] {
 export interface CompareResult {
   /** 0–1; 1.0 = identical after normalization */
   similarity: number;
-  /** parallel arrays — same length as expected tokens */
+  /** parallel arrays — same length as expectedTokens */
   matched: boolean[];
+  /** display-ready expected tokens (original Uthmani with harakat) */
   expectedTokens: string[];
+  /** normalized form per expected token — for tooltips/debug */
+  expectedNorm: string[];
   actualTokens: string[];
 }
 
 /**
- * Levenshtein-aligned token diff. We align the user's transcript
- * against the expected ayah and mark which expected words landed
- * (within an edit-distance window). Resulting `matched[i]` flags
- * whether expected[i] was recognized in roughly the right spot.
+ * Levenshtein-aligned token diff. expectedTokens preserves the original
+ * Uthmani word forms (with diacritics) so the UI can render real Quran
+ * text; matching is done on the normalized projection.
  */
 export function compareRecitation(expected: string, actual: string): CompareResult {
-  const expectedTokens = tokens(expected);
+  // Preserve original word boundaries — split on whitespace BEFORE
+  // normalization so we can show users the real Uthmani words rather
+  // than the stripped-down skeletons.
+  const expectedRaw = expected.split(/\s+/).filter(Boolean);
+  const expectedNorm = expectedRaw.map((w) => normalizeArabic(w));
+  // Drop any words that normalize to empty (rare but possible — pure
+  // diacritic clusters, end-of-verse markers etc).
+  const keep: number[] = [];
+  for (let i = 0; i < expectedRaw.length; i++) {
+    if (expectedNorm[i].length > 0) keep.push(i);
+  }
+  const expectedTokens = keep.map((i) => expectedRaw[i]);
+  const normTokens = keep.map((i) => expectedNorm[i]);
+
   const actualTokens = tokens(actual);
   const matched = new Array(expectedTokens.length).fill(false);
 
   if (expectedTokens.length === 0) {
-    return { similarity: 0, matched, expectedTokens, actualTokens };
+    return { similarity: 0, matched, expectedTokens, expectedNorm: normTokens, actualTokens };
   }
 
-  // Walk expected tokens left→right. For each, scan a small window
-  // of actual tokens around the same index — if any matches (exact
-  // or 1-edit) within ±3 positions, mark it found and advance.
   let actualCursor = 0;
   for (let i = 0; i < expectedTokens.length; i++) {
-    const exp = expectedTokens[i];
+    const exp = normTokens[i];
     const windowEnd = Math.min(actualCursor + 4, actualTokens.length);
     for (let j = actualCursor; j < windowEnd; j++) {
       const act = actualTokens[j];
@@ -66,7 +78,7 @@ export function compareRecitation(expected: string, actual: string): CompareResu
 
   const hits = matched.filter(Boolean).length;
   const similarity = hits / expectedTokens.length;
-  return { similarity, matched, expectedTokens, actualTokens };
+  return { similarity, matched, expectedTokens, expectedNorm: normTokens, actualTokens };
 }
 
 // Standard Levenshtein, capped at length difference so we exit early.
