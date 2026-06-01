@@ -25,7 +25,7 @@ export default async function HifzDashboard({ params }: PageProps) {
   const user = await getCurrentUser();
   if (!user) {
     // Send them through sign-in; the post-auth redirect can come back here.
-    redirect(`/login?next=${encodeURIComponent(`/${locale}/hifz`)}`);
+    redirect(`/${locale}/signin?callbackUrl=/${locale}/hifz`);
   }
 
   const [progressRaw, settings, chapters] = await Promise.all([

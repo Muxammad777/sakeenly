@@ -25,7 +25,7 @@ export default async function HifzReviewPage({ params, searchParams }: PageProps
   setRequestLocale(locale);
 
   const user = await getCurrentUser();
-  if (!user) redirect(`/login?next=${encodeURIComponent(`/${locale}/hifz/review`)}`);
+  if (!user) redirect(`/${locale}/signin?callbackUrl=/${locale}/hifz/review`);
 
   const [progress, settings, chapters] = await Promise.all([
     db.hifzProgress.findMany({

@@ -30,7 +30,7 @@ export default async function HifzLearnPage({ params, searchParams }: PageProps)
   setRequestLocale(locale);
 
   const user = await getCurrentUser();
-  if (!user) redirect(`/login?next=${encodeURIComponent(`/${locale}/hifz/learn/${surah}/${ayah}`)}`);
+  if (!user) redirect(`/${locale}/signin?callbackUrl=/${locale}/hifz/learn/${surah}/${ayah}`);
 
   const startS = Number(surah), startA = Number(ayah);
   if (!Number.isInteger(startS) || !Number.isInteger(startA) || startS < 1 || startS > 114 || startA < 1) notFound();
