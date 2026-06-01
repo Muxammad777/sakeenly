@@ -33,19 +33,65 @@ interface SearchClientProps {
 
 const PAGE_SIZE = 20;
 
+// Split text into bracket-aware segments so we can highlight matches
+// OUTSIDE translator-commentary regions only. Translators wrap their
+// inserts in (), [], [[]], or {} — those are not Qur'an text.
+function splitByBrackets(text: string): Array<{ inside: boolean; text: string }> {
+  const segs: Array<{ inside: boolean; text: string }> = [];
+  let depth = 0;
+  let buf = "";
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (c === "(" || c === "[" || c === "{") {
+      if (depth === 0 && buf) {
+        segs.push({ inside: false, text: buf });
+        buf = "";
+      }
+      buf += c;
+      depth++;
+    } else if (c === ")" || c === "]" || c === "}") {
+      buf += c;
+      depth--;
+      if (depth <= 0) {
+        depth = 0;
+        segs.push({ inside: true, text: buf });
+        buf = "";
+      }
+    } else {
+      buf += c;
+    }
+  }
+  if (buf) segs.push({ inside: depth > 0, text: buf });
+  return segs;
+}
+
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
 function highlight(text: string, query: string, isArabic: boolean): string {
   if (!text || !query) return text;
   const tokens = query
     .split(/[\s.,;:!?()«»"'\-—–]+/)
     .filter((t) => t.length >= 2)
     .map((t) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
-  if (tokens.length === 0) return text;
+  if (tokens.length === 0) return escapeHtml(text);
+  let re: RegExp;
   try {
-    const re = new RegExp(`(${tokens.join("|")})`, isArabic ? "g" : "gi");
-    return text.replace(re, "<mark>$1</mark>");
+    re = new RegExp(`(${tokens.join("|")})`, isArabic ? "g" : "gi");
   } catch {
-    return text;
+    return escapeHtml(text);
   }
+  return splitByBrackets(text)
+    .map((seg) =>
+      seg.inside
+        ? escapeHtml(seg.text)
+        : escapeHtml(seg.text).replace(re, "<mark>$1</mark>"),
+    )
+    .join("");
 }
 
 export function SearchClient({ initialQuery }: SearchClientProps) {

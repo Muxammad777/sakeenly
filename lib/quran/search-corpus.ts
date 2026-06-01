@@ -131,8 +131,29 @@ function normalizeArabic(s: string): string {
     .trim();
 }
 
+// Strip translator interjections — text wrapped in (), [], [[]], {}.
+// Translators add explanatory inserts: "(мир ему!)", "[[Йуша` бин Нун
+// (Иисус Навин)…]]", "(yaitu) jalan". The user is searching the Qur'an
+// text, NOT the translator's commentary, so we drop those before
+// matching. Replace with a space to preserve word boundaries.
+//
+// Iterative — handles arbitrary nesting like [[outer (inner)]] in two
+// passes (inner first, then the outer once it becomes a leaf).
+function stripParentheticals(s: string): string {
+  let prev: string;
+  let cur = s;
+  do {
+    prev = cur;
+    cur = cur
+      .replace(/\([^()]*\)/g, " ")
+      .replace(/\[[^[\]]*\]/g, " ")
+      .replace(/\{[^{}]*\}/g, " ");
+  } while (cur !== prev);
+  return cur;
+}
+
 function normalizeText(s: string): string {
-  return s
+  return stripParentheticals(s)
     .normalize("NFKD")
     .replace(/[̀-ͯ]/g, "")
     .toLowerCase()
