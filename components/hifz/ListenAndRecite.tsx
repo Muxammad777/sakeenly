@@ -26,11 +26,17 @@ interface Props {
 type Phase = "idle" | "listening_to_audio" | "listening_for_voice" | "done";
 type ErrorKind =
   | null
-  | "not-allowed"    // user denied or never granted mic permission
-  | "no-speech"      // ASR finished without picking up anything
-  | "audio-capture"  // no mic / mic broken
-  | "network"        // ASR cloud unreachable
+  | "not-allowed"            // user denied or never granted mic permission
+  | "no-speech"              // ASR finished without picking up anything
+  | "audio-capture"          // no mic / mic broken
+  | "network"                // ASR cloud unreachable
+  | "language-not-supported" // browser can't ASR Arabic
+  | "audio-load"             // reciter mp3 wouldn't play (CORS / 404)
   | "other";
+
+// Fallback chain for Arabic locale codes — different browsers/OS
+// accept different ones. Try the most specific first.
+const ARABIC_LANGS = ["ar-SA", "ar-EG", "ar-AE", "ar"];
 
 // Minimal subset of the Web Speech API surface we use. The full DOM
 // types aren't shipped in lib.dom yet for SpeechRecognition.
@@ -109,17 +115,33 @@ export function ListenAndRecite({ ayahKey, textUthmani, audioUrl }: Props) {
       audioRef.current = audio;
       setPhase("listening_to_audio");
       audio.addEventListener("ended", () => beginListening(), { once: true });
-      void audio.play();
+      // Surface audio errors instead of hanging forever in 'listening_to_audio'.
+      audio.addEventListener("error", () => {
+        console.error("[hifz] audio failed to play:", url, audio.error);
+        setErrorKind("audio-load");
+        setPhase("done");
+      }, { once: true });
+      try {
+        await audio.play();
+      } catch (err) {
+        console.error("[hifz] audio.play() rejected:", err);
+        // Most likely autoplay-blocked or CORS. Skip straight to ASR
+        // — the user can still recite without hearing first.
+        beginListening();
+      }
     } else {
       beginListening();
     }
   };
 
-  const beginListening = () => {
+  // langIndex lets us retry with a different Arabic locale code if the
+  // browser rejected the first one (some Chrome installs don't ship
+  // ar-SA but accept plain 'ar').
+  const beginListening = (langIndex = 0) => {
     const Ctor = getRecognitionCtor();
     if (!Ctor) return;
     const rec = new Ctor();
-    rec.lang = "ar-SA";
+    rec.lang = ARABIC_LANGS[langIndex] ?? "ar";
     rec.interimResults = false;
     rec.maxAlternatives = 1;
     rec.continuous = false;
@@ -132,8 +154,8 @@ export function ListenAndRecite({ ayahKey, textUthmani, audioUrl }: Props) {
       setTranscript(captured.trim());
     };
     rec.onerror = (e: { error?: string }) => {
-      // Standard error codes: not-allowed (mic denied), no-speech,
-      // audio-capture (no mic), network. Surface each as its own CTA.
+      // Log everything so we can debug from a user's console.
+      console.error("[hifz] speech-recognition error:", e.error, "lang=", rec.lang);
       switch (e.error) {
         case "not-allowed":
         case "service-not-allowed":
@@ -144,6 +166,18 @@ export function ListenAndRecite({ ayahKey, textUthmani, audioUrl }: Props) {
           setErrorKind("audio-capture"); break;
         case "network":
           setErrorKind("network"); break;
+        case "language-not-supported":
+        case "bad-grammar":
+          // Try the next fallback Arabic code if any remain.
+          if (langIndex + 1 < ARABIC_LANGS.length) {
+            setTimeout(() => beginListening(langIndex + 1), 0);
+            return;
+          }
+          setErrorKind("language-not-supported");
+          break;
+        case "aborted":
+          // User stopped manually — leave error null.
+          break;
         default:
           setErrorKind("other");
       }
@@ -158,7 +192,11 @@ export function ListenAndRecite({ ayahKey, textUthmani, audioUrl }: Props) {
     recognitionRef.current = rec;
     setPhase("listening_for_voice");
     try { rec.start(); }
-    catch { setErrorKind("other"); setPhase("done"); }
+    catch (err) {
+      console.error("[hifz] rec.start() threw:", err);
+      setErrorKind("other");
+      setPhase("done");
+    }
   };
 
   const stopListening = () => {
@@ -183,8 +221,12 @@ export function ListenAndRecite({ ayahKey, textUthmani, audioUrl }: Props) {
         return "Я ничего не услышал — попробуй снова, говори громче.";
       case "network":
         return "Сеть недоступна — распознавание речи требует интернета.";
+      case "language-not-supported":
+        return "Этот браузер не умеет распознавать арабский. Попробуй Chrome последней версии на macOS/Windows или Android Chrome.";
+      case "audio-load":
+        return "Не удалось загрузить аудио чтеца. Пропусти проигрывание — нажми ещё раз, я сразу начну слушать.";
       case "other":
-        return "Что-то пошло не так. Попробуй ещё раз.";
+        return "Не удалось запустить распознавание. Открой консоль (F12) — там увидишь, что именно браузер вернул, и пришли мне.";
       default:
         return null;
     }
