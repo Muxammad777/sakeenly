@@ -85,7 +85,7 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
       setShortOnly(false);
       setVisibleCountState(PAGE_SIZE);
       const exactParam = exactMode ? "&exact=1" : "";
-      fetch(`/api/search?q=${encodeURIComponent(q)}&locale=${locale}${exactParam}`, { signal: ac.signal })
+      fetch(`/api/search?q=${encodeURIComponent(q)}&locale=${locale}${exactParam}`, { signal: ac.signal, cache: "no-store" })
         .then((r) => r.json() as Promise<ApiResponse>)
         .then((data) => {
           setResults(data.results ?? []);

@@ -311,11 +311,14 @@ export function searchQuran(
     const normAr = arPhrase ? normalizeArabic(arabicText) : "";
 
     // ── ARABIC matching ────────────────────────────────────────────
+    // exact_phrase = whole-phrase WORD-BOUNDARY match (so "мир" doesn't
+    // collide with "смиренно"). tokens = each token whole-word but the
+    // full phrase is broken up. stem = substring fallback.
     let arKind: MatchKind | null = null;
     if (arPhrase) {
-      if (normAr.includes(arPhrase)) {
+      if (findWholeWord(normAr, arPhrase)) {
         arKind = "exact_phrase";
-      } else if (allTokensWholeWord(normAr, arTokens)) {
+      } else if (arTokens.length > 1 && allTokensWholeWord(normAr, arTokens)) {
         arKind = "tokens";
       } else if (!exactOnly && allTokensSubstring(normAr, arTokens)) {
         arKind = "stem";
@@ -327,17 +330,15 @@ export function searchQuran(
     let matchedTranslator: string | null = null;
     let matchedText: string | null = null;
     if (txTokenGroups.length > 0) {
-      // Prefer better matchKind across translators: exact_phrase wins
-      // over tokens which wins over stem. Iterate all entries, keep the
-      // best hit.
       const rank = { exact_phrase: 3, tokens: 2, stem: 1 } as const;
+      const isMultiToken = txTokens.length > 1;
       for (const [key, map] of trEntries) {
         const txt = map.get(verseKey);
         if (!txt) continue;
         const norm = normalizeText(txt);
         let kind: MatchKind | null = null;
-        if (norm.includes(txPhrase)) kind = "exact_phrase";
-        else if (allGroupsWholeWord(norm, txTokenGroups)) kind = "tokens";
+        if (findWholeWord(norm, txPhrase)) kind = "exact_phrase";
+        else if (isMultiToken && allGroupsWholeWord(norm, txTokenGroups)) kind = "tokens";
         else if (!exactOnly && allGroupsSubstring(norm, txTokenGroups)) kind = "stem";
         if (kind && (!txKind || rank[kind] > rank[txKind])) {
           txKind = kind;
