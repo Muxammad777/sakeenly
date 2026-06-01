@@ -248,3 +248,130 @@
   border: 1px solid oklch(var(--border));
   border-radius: 999px;
 }
+
+/* ---- MODE TOGGLE (exact / all) ---- */
+.search-mode-row {
+  display: flex;
+  gap: 6px;
+  margin: 10px 0 6px;
+  padding: 4px;
+  background: color-mix(in oklab, oklch(var(--surface)) 60%, transparent);
+  border: 1px solid oklch(var(--border));
+  border-radius: 999px;
+  width: fit-content;
+}
+.search-mode-chip {
+  border: 0;
+  background: transparent;
+  color: oklch(var(--text-2));
+  cursor: pointer;
+  font-family: 'Spectral', serif;
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  transition: background 140ms, color 140ms;
+}
+.search-mode-chip:hover { color: oklch(var(--text)); }
+.search-mode-chip.active {
+  background: var(--accent-soft);
+  color: oklch(var(--accent));
+}
+
+/* ---- MATCH KIND SUMMARY ---- */
+.search-kinds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 6px;
+}
+.search-kind {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid oklch(var(--border));
+  color: oklch(var(--text-3));
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.search-kind b { color: oklch(var(--text)); font-weight: 600; }
+.search-kind-exact {
+  border-color: color-mix(in oklab, oklch(var(--accent)) 50%, oklch(var(--border)));
+  color: oklch(var(--accent));
+}
+.search-kind-exact b { color: oklch(var(--accent)); }
+
+/* ---- FILTERS HEAD (title + collapse toggle) ---- */
+.search-filters-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 14px 0 8px;
+  gap: 12px;
+}
+.search-filters-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: oklch(var(--text-3));
+}
+.search-filters-toggle {
+  border: 0;
+  background: transparent;
+  color: oklch(var(--accent));
+  cursor: pointer;
+  font-family: 'Spectral', serif;
+  font-size: 13px;
+  text-decoration: underline dotted;
+  text-underline-offset: 4px;
+  padding: 0;
+}
+.search-filters-toggle:hover { color: oklch(var(--text)); }
+
+/* ---- PER-RESULT KIND TAG (small inline pill) ---- */
+.search-result-kind {
+  margin-left: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 1px 7px;
+  border-radius: 999px;
+  border: 1px solid oklch(var(--border));
+  color: oklch(var(--text-3));
+  vertical-align: 2px;
+}
+.search-result-kind-exact_phrase {
+  border-color: color-mix(in oklab, oklch(var(--accent)) 60%, oklch(var(--border)));
+  color: oklch(var(--accent));
+}
+.search-result-kind-tokens {
+  border-color: color-mix(in oklab, oklch(var(--accent)) 30%, oklch(var(--border)));
+}
+
+/* ---- LOAD-MORE button ---- */
+.search-load-more-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 32px 0 8px;
+}
+.search-load-more {
+  font-family: 'Spectral', serif;
+  font-size: 14px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  border: 1px solid color-mix(in oklab, oklch(var(--accent)) 40%, oklch(var(--border)));
+  color: oklch(var(--accent));
+  cursor: pointer;
+  transition: background 160ms, border-color 160ms, transform 160ms;
+}
+.search-load-more:hover {
+  background: color-mix(in oklab, oklch(var(--accent)) 18%, oklch(var(--surface)));
+  border-color: oklch(var(--accent));
+  transform: translateY(-1px);
+}

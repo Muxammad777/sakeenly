@@ -51,4 +51,13 @@ lib/knowledge/translations/*
 !lib/knowledge/translations/ru_abuadel.json
 !lib/knowledge/translations/en_sahih_international.json
 !lib/knowledge/translations/en_mustafakhattabg.json
+!lib/knowledge/translations/ur_abulaalamaududi.json
+!lib/knowledge/translations/ur_fatehmuhammadja.json
+!lib/knowledge/translations/ur_junagarhi.json
+!lib/knowledge/translations/ms_abdullahmuhamma.json
+!lib/knowledge/translations/hi_suhelfarooqkhan.json
+!lib/knowledge/translations/hi_farooq.json
+!lib/knowledge/translations/id_indonesianislam.json
+!lib/knowledge/translations/id_muntakhab.json
+!lib/knowledge/translations/id_jalalayn.json
 

@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { searchQuran } from "@/lib/quran/search-corpus";
 import { routing, type Locale } from "@/i18n/routing";
 
-export const runtime = "nodejs"; // we read JSON from disk via require()
+export const runtime = "nodejs";
 
 export async function GET(req: Request) {
   const url = new URL(req.url);
@@ -11,16 +11,18 @@ export async function GET(req: Request) {
   const locale = (routing.locales as readonly string[]).includes(rawLocale)
     ? (rawLocale as Locale)
     : routing.defaultLocale;
-  const limit = Math.min(80, Number(url.searchParams.get("limit") ?? 40));
+  const limit = Math.min(500, Number(url.searchParams.get("limit") ?? 200));
+  const exactOnly = url.searchParams.get("exact") === "1";
 
   if (q.length < 2) {
     return NextResponse.json({ results: [], note: "min_length" }, { status: 200 });
   }
 
-  const results = searchQuran(q, locale, limit);
+  const results = searchQuran(q, locale, { limit, exactOnly });
   return NextResponse.json({
     query: q,
     locale,
+    exactOnly,
     count: results.length,
     results,
   });

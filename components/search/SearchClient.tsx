@@ -6,6 +6,8 @@ import { Link } from "@/i18n/navigation";
 import { toLocaleDigits } from "@/lib/quran/format";
 import { isShortSurah, getNameArabic } from "@/lib/quran/chapter-meta";
 
+type MatchKind = "exact_phrase" | "tokens" | "stem";
+
 interface SearchResult {
   verseKey: string;
   surah: number;
@@ -14,6 +16,8 @@ interface SearchResult {
   translation: string | null;
   translator: string | null;
   matched: "arabic" | "translation" | "both";
+  matchKind: MatchKind;
+  score: number;
 }
 
 interface ApiResponse {
@@ -27,9 +31,8 @@ interface SearchClientProps {
   initialQuery: string;
 }
 
-// Wrap query tokens (each >=2 chars) in <mark>. The server-side matcher
-// is AND-over-tokens, so the highlight has to mirror that and not insist
-// on the whole phrase being a contiguous substring.
+const PAGE_SIZE = 20;
+
 function highlight(text: string, query: string, isArabic: boolean): string {
   if (!text || !query) return text;
   const tokens = query
@@ -57,13 +60,13 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Client-side filters applied on top of the API response.
+  // Filters
   const [surahFilter, setSurahFilter] = useState<number | "all">("all");
   const [shortOnly, setShortOnly] = useState(false);
+  const [exactMode, setExactMode] = useState(false);     // true = drop stem bucket
+  const [surahsCollapsed, setSurahsCollapsed] = useState(true);
+  const [visibleCount, setVisibleCountState] = useState(PAGE_SIZE);
 
-  // Live search: 300ms debounce + AbortController so each keystroke
-  // doesn't fan out 1 fetch and stale responses can't overwrite fresh
-  // results. URL ?q= is updated in the same effect to keep them in sync.
   useEffect(() => {
     const q = query.trim();
     if (q.length < 2) {
@@ -80,7 +83,9 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
       setError(null);
       setSurahFilter("all");
       setShortOnly(false);
-      fetch(`/api/search?q=${encodeURIComponent(q)}&locale=${locale}`, { signal: ac.signal })
+      setVisibleCountState(PAGE_SIZE);
+      const exactParam = exactMode ? "&exact=1" : "";
+      fetch(`/api/search?q=${encodeURIComponent(q)}&locale=${locale}${exactParam}`, { signal: ac.signal })
         .then((r) => r.json() as Promise<ApiResponse>)
         .then((data) => {
           setResults(data.results ?? []);
@@ -98,43 +103,61 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
       clearTimeout(handle);
       ac.abort();
     };
-  }, [query, locale]);
+  }, [query, locale, exactMode]);
 
   useEffect(() => { inputRef.current?.focus(); }, []);
 
-  // Bucket results per surah and keep insertion order (= original
-  // verse order from the API, which sorts by surah:ayah).
-  const grouped = useMemo(() => {
-    const map = new Map<number, SearchResult[]>();
+  // Per-surah counts on the FULL result set (independent of active filter)
+  // — this drives the chip list with totals.
+  const perSurahCounts = useMemo(() => {
+    const map = new Map<number, number>();
     for (const r of results ?? []) {
+      map.set(r.surah, (map.get(r.surah) ?? 0) + 1);
+    }
+    return map;
+  }, [results]);
+
+  // Apply filters → ordered result list (results come pre-sorted from API:
+  // exact_phrase first, then tokens, then stem).
+  const filtered = useMemo(() => {
+    if (!results) return [] as SearchResult[];
+    return results.filter((r) => {
+      if (surahFilter !== "all" && surahFilter !== r.surah) return false;
+      if (shortOnly && !isShortSurah(r.surah)) return false;
+      return true;
+    });
+  }, [results, surahFilter, shortOnly]);
+
+  // Counts by matchKind to drive the "точное / однокоренные" badge row.
+  const kindCounts = useMemo(() => {
+    let exact = 0, tokens = 0, stem = 0;
+    for (const r of results ?? []) {
+      if (r.matchKind === "exact_phrase") exact++;
+      else if (r.matchKind === "tokens") tokens++;
+      else stem++;
+    }
+    return { exact, tokens, stem };
+  }, [results]);
+
+  // Reset visible count when filter changes.
+  useEffect(() => {
+    setVisibleCountState(PAGE_SIZE);
+  }, [surahFilter, shortOnly]);
+
+  const visibleSlice = useMemo(() => filtered.slice(0, visibleCount), [filtered, visibleCount]);
+
+  // Group the *visible* slice by surah, preserving the API's ranked order
+  // — so the topmost exact-phrase hits cluster at the top.
+  const groupedVisible = useMemo(() => {
+    const map = new Map<number, SearchResult[]>();
+    for (const r of visibleSlice) {
       let bucket = map.get(r.surah);
       if (!bucket) { bucket = []; map.set(r.surah, bucket); }
       bucket.push(r);
     }
     return map;
-  }, [results]);
+  }, [visibleSlice]);
 
-  // Active filter set after surah + short-only checks.
-  const visibleGrouped = useMemo(() => {
-    if (!results) return new Map<number, SearchResult[]>();
-    const out = new Map<number, SearchResult[]>();
-    for (const [surahId, items] of grouped) {
-      if (surahFilter !== "all" && surahFilter !== surahId) continue;
-      if (shortOnly && !isShortSurah(surahId)) continue;
-      out.set(surahId, items);
-    }
-    return out;
-  }, [grouped, surahFilter, shortOnly]);
-
-  const visibleCount = useMemo(() => {
-    let n = 0;
-    for (const items of visibleGrouped.values()) n += items.length;
-    return n;
-  }, [visibleGrouped]);
-
-  // Form submit is a no-op: the debounced effect already fires on
-  // every keystroke. Keep it just to handle Enter without a full page
-  // reload (and to flush any pending debounce by re-setting state).
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setQuery((q) => q);
@@ -143,6 +166,20 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
   const isArabicQuery = /[؀-ۿ]/.test(query);
   const showEmpty = query.trim().length >= 2 && results !== null && results.length === 0 && !loading;
   const showHint = query.trim().length < 2 && !loading;
+
+  // Ordered list of (surahId, totalCount) for the chip palette — sorted
+  // by mushaf number for a predictable layout. Collapsed view shows only
+  // the top 8 chips by count; "show all" expands the rest.
+  const surahChips = useMemo(() => {
+    const arr = Array.from(perSurahCounts.entries())
+      .map(([id, n]) => ({ id, n }))
+      .sort((a, b) => a.id - b.id);
+    return arr;
+  }, [perSurahCounts]);
+  const surahChipsCollapsedSlice = useMemo(() => {
+    if (!surahsCollapsed) return surahChips;
+    return [...surahChips].sort((a, b) => b.n - a.n).slice(0, 8).sort((a, b) => a.id - b.id);
+  }, [surahChips, surahsCollapsed]);
 
   return (
     <div className="search-shell">
@@ -163,6 +200,30 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
         </button>
       </form>
 
+      {/* Mode toggle row — sits directly under the search bar, always visible.
+          Lets the user constrain results to whole-word matches (exact /
+          tokens) and drop the stem (substring) bucket entirely. */}
+      <div className="search-mode-row" role="radiogroup" aria-label={t("mode_aria")}>
+        <button
+          type="button"
+          role="radio"
+          aria-checked={!exactMode}
+          className={"search-mode-chip" + (!exactMode ? " active" : "")}
+          onClick={() => setExactMode(false)}
+        >
+          {t("mode_all")}
+        </button>
+        <button
+          type="button"
+          role="radio"
+          aria-checked={exactMode}
+          className={"search-mode-chip" + (exactMode ? " active" : "")}
+          onClick={() => setExactMode(true)}
+        >
+          {t("mode_exact")}
+        </button>
+      </div>
+
       {loading && <div className="search-status">{t("loading")}</div>}
       {error && <div className="search-status search-status-error">{error}</div>}
       {showHint && <div className="search-status">{t("hint")}</div>}
@@ -170,7 +231,41 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
 
       {results && results.length > 0 && (
         <>
-          {/* FILTERS — surah chips with per-surah counts, plus short-only toggle */}
+          {/* Match-kind summary — quick at-a-glance counts of the three
+              ranking buckets so the user sees what we have. */}
+          <div className="search-kinds">
+            {kindCounts.exact > 0 && (
+              <span className="search-kind search-kind-exact">
+                {t("kind_exact")} <b>{fmt(kindCounts.exact)}</b>
+              </span>
+            )}
+            {kindCounts.tokens > 0 && (
+              <span className="search-kind search-kind-tokens">
+                {t("kind_tokens")} <b>{fmt(kindCounts.tokens)}</b>
+              </span>
+            )}
+            {kindCounts.stem > 0 && !exactMode && (
+              <span className="search-kind search-kind-stem">
+                {t("kind_stem")} <b>{fmt(kindCounts.stem)}</b>
+              </span>
+            )}
+          </div>
+
+          {/* FILTERS — surah chips (with per-surah counts) + short toggle.
+              The full list of 50+ surahs collapses by default. */}
+          <div className="search-filters-head">
+            <span className="search-filters-title">{t("filters_title")}</span>
+            <button
+              type="button"
+              className="search-filters-toggle"
+              onClick={() => setSurahsCollapsed((v) => !v)}
+              aria-expanded={!surahsCollapsed}
+            >
+              {surahsCollapsed
+                ? t("filters_show", { n: fmt(surahChips.length) })
+                : t("filters_hide")}
+            </button>
+          </div>
           <div className="search-filters" role="toolbar" aria-label={t("filters_aria")}>
             <button
               type="button"
@@ -179,14 +274,14 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
             >
               {t("filter_all")} <span className="search-chip-n">{fmt(results.length)}</span>
             </button>
-            {Array.from(grouped.entries()).map(([surahId, items]) => (
+            {surahChipsCollapsedSlice.map(({ id, n }) => (
               <button
-                key={surahId}
+                key={id}
                 type="button"
-                className={"search-chip" + (surahFilter === surahId ? " active" : "")}
-                onClick={() => setSurahFilter((cur) => cur === surahId ? "all" : surahId)}
+                className={"search-chip" + (surahFilter === id ? " active" : "")}
+                onClick={() => setSurahFilter((cur) => cur === id ? "all" : id)}
               >
-                {tSn(String(surahId))} <span className="search-chip-n">{fmt(items.length)}</span>
+                {tSn(String(id))} <span className="search-chip-n">{fmt(n)}</span>
               </button>
             ))}
             <button
@@ -200,57 +295,84 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
           </div>
 
           <div className="search-meta">
-            {visibleCount === results.length
+            {filtered.length === results.length
               ? t("found_count", { n: fmt(results.length), q: query })
-              : t("filtered_count", { n: fmt(visibleCount), total: fmt(results.length), q: query })}
+              : t("filtered_count", { n: fmt(filtered.length), total: fmt(results.length), q: query })}
+            {filtered.length > 0 && (
+              <> · {t("showing", { shown: fmt(Math.min(visibleCount, filtered.length)), total: fmt(filtered.length) })}</>
+            )}
           </div>
 
-          {visibleCount === 0 ? (
+          {filtered.length === 0 ? (
             <div className="search-status">{t("filter_empty")}</div>
           ) : (
-            <div className="search-groups">
-              {Array.from(visibleGrouped.entries()).map(([surahId, items]) => (
-                <section key={surahId} className="search-group">
-                  <header className="search-group-head">
-                    <Link href={`/reader/${surahId}/1`} className="search-group-title">
-                      <span className="search-group-num">{fmt(surahId)}</span>
-                      <span>{tSn(String(surahId))}</span>
-                      <span className="search-group-ar arabic" dir="rtl">{getNameArabic(surahId)}</span>
-                    </Link>
-                    <span className="search-group-count">{fmt(items.length)}</span>
-                  </header>
-                  <ol className="search-results">
-                    {items.map((r) => (
-                      <li key={r.verseKey} className="search-result">
-                        <Link href={`/reader/${r.surah}/${r.ayah}`} className="search-result-link">
-                          <div className="search-result-key">
-                            {fmt(r.surah)}:{fmt(r.ayah)}
-                          </div>
-                          <div
-                            className="search-result-arabic arabic"
-                            dir="rtl"
-                            dangerouslySetInnerHTML={{ __html: highlight(r.arabic, query, true) }}
-                          />
-                          {r.translation && (
-                            <>
-                              <div
-                                className="search-result-trans"
-                                dangerouslySetInnerHTML={{ __html: highlight(r.translation, query, isArabicQuery) }}
-                              />
-                              {r.translator && (
-                                <div className="search-result-tr-tag">
-                                  {t("translator_label")}: {t(`tr_${r.translator}` as Parameters<typeof t>[0])}
-                                </div>
-                              )}
-                            </>
-                          )}
-                        </Link>
-                      </li>
-                    ))}
-                  </ol>
-                </section>
-              ))}
-            </div>
+            <>
+              <div className="search-groups">
+                {Array.from(groupedVisible.entries()).map(([surahId, items]) => (
+                  <section key={surahId} className="search-group">
+                    <header className="search-group-head">
+                      <Link href={`/reader/${surahId}/1`} className="search-group-title">
+                        <span className="search-group-num">{fmt(surahId)}</span>
+                        <span>{tSn(String(surahId))}</span>
+                        <span className="search-group-ar arabic" dir="rtl">{getNameArabic(surahId)}</span>
+                      </Link>
+                      <span className="search-group-count">{fmt(items.length)}</span>
+                    </header>
+                    <ol className="search-results">
+                      {items.map((r) => (
+                        <li key={r.verseKey} className="search-result">
+                          <Link href={`/reader/${r.surah}/${r.ayah}`} className="search-result-link">
+                            <div className="search-result-key">
+                              {fmt(r.surah)}:{fmt(r.ayah)}
+                              <span className={"search-result-kind search-result-kind-" + r.matchKind}>
+                                {r.matchKind === "exact_phrase"
+                                  ? t("kind_exact_tag")
+                                  : r.matchKind === "tokens"
+                                  ? t("kind_tokens_tag")
+                                  : t("kind_stem_tag")}
+                              </span>
+                            </div>
+                            <div
+                              className="search-result-arabic arabic"
+                              dir="rtl"
+                              dangerouslySetInnerHTML={{ __html: highlight(r.arabic, query, true) }}
+                            />
+                            {r.translation && (
+                              <>
+                                <div
+                                  className="search-result-trans"
+                                  dangerouslySetInnerHTML={{ __html: highlight(r.translation, query, isArabicQuery) }}
+                                />
+                                {r.translator && (
+                                  <div className="search-result-tr-tag">
+                                    {t("translator_label")}: {t(`tr_${r.translator}` as Parameters<typeof t>[0])}
+                                  </div>
+                                )}
+                              </>
+                            )}
+                          </Link>
+                        </li>
+                      ))}
+                    </ol>
+                  </section>
+                ))}
+              </div>
+
+              {visibleCount < filtered.length && (
+                <div className="search-load-more-wrap">
+                  <button
+                    type="button"
+                    className="search-load-more"
+                    onClick={() => setVisibleCountState((n) => n + PAGE_SIZE)}
+                  >
+                    {t("load_more", {
+                      n: fmt(Math.min(PAGE_SIZE, filtered.length - visibleCount)),
+                      remaining: fmt(filtered.length - visibleCount),
+                    })}
+                  </button>
+                </div>
+              )}
+            </>
           )}
         </>
       )}
