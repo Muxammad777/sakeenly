@@ -249,16 +249,21 @@
   border-radius: 999px;
 }
 
-/* ---- MODE TOGGLE (exact / all) ---- */
+/* ---- MODE TOGGLE (exact / all) + inline stem counter ---- */
 .search-mode-row {
   display: flex;
-  gap: 6px;
+  align-items: center;
+  gap: 12px;
   margin: 10px 0 6px;
+  flex-wrap: wrap;
+}
+.search-mode-group {
+  display: flex;
+  gap: 6px;
   padding: 4px;
   background: color-mix(in oklab, oklch(var(--surface)) 60%, transparent);
   border: 1px solid oklch(var(--border));
   border-radius: 999px;
-  width: fit-content;
 }
 .search-mode-chip {
   border: 0;
@@ -276,14 +281,6 @@
   background: var(--accent-soft);
   color: oklch(var(--accent));
 }
-
-/* ---- MATCH KIND SUMMARY ---- */
-.search-kinds {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 12px 0 6px;
-}
 .search-kind {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10.5px;
@@ -298,11 +295,6 @@
   gap: 6px;
 }
 .search-kind b { color: oklch(var(--text)); font-weight: 600; }
-.search-kind-exact {
-  border-color: color-mix(in oklab, oklch(var(--accent)) 50%, oklch(var(--border)));
-  color: oklch(var(--accent));
-}
-.search-kind-exact b { color: oklch(var(--accent)); }
 
 /* ---- FILTERS HEAD (title + collapse toggle) ---- */
 .search-filters-head {

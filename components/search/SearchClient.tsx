@@ -256,26 +256,36 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
 
       {/* Mode toggle row — sits directly under the search bar, always visible.
           Lets the user constrain results to whole-word matches (exact /
-          tokens) and drop the stem (substring) bucket entirely. */}
+          tokens) and drop the stem (substring) bucket entirely. The
+          "однокоренные N" pill on the right is informational: it shows
+          how many stem hits exist in the unfiltered set — disappears in
+          exact mode (server drops the stem bucket then). */}
       <div className="search-mode-row" role="radiogroup" aria-label={t("mode_aria")}>
-        <button
-          type="button"
-          role="radio"
-          aria-checked={!exactMode}
-          className={"search-mode-chip" + (!exactMode ? " active" : "")}
-          onClick={() => setExactMode(false)}
-        >
-          {t("mode_all")}
-        </button>
-        <button
-          type="button"
-          role="radio"
-          aria-checked={exactMode}
-          className={"search-mode-chip" + (exactMode ? " active" : "")}
-          onClick={() => setExactMode(true)}
-        >
-          {t("mode_exact")}
-        </button>
+        <div className="search-mode-group">
+          <button
+            type="button"
+            role="radio"
+            aria-checked={!exactMode}
+            className={"search-mode-chip" + (!exactMode ? " active" : "")}
+            onClick={() => setExactMode(false)}
+          >
+            {t("mode_all")}
+          </button>
+          <button
+            type="button"
+            role="radio"
+            aria-checked={exactMode}
+            className={"search-mode-chip" + (exactMode ? " active" : "")}
+            onClick={() => setExactMode(true)}
+          >
+            {t("mode_exact")}
+          </button>
+        </div>
+        {!exactMode && results && kindCounts.stem > 0 && (
+          <span className="search-kind search-kind-stem">
+            {t("kind_stem")} <b>{fmt(kindCounts.stem)}</b>
+          </span>
+        )}
       </div>
 
       {loading && <div className="search-status">{t("loading")}</div>}
@@ -285,26 +295,6 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
 
       {results && results.length > 0 && (
         <>
-          {/* Match-kind summary — quick at-a-glance counts of the three
-              ranking buckets so the user sees what we have. */}
-          <div className="search-kinds">
-            {kindCounts.exact > 0 && (
-              <span className="search-kind search-kind-exact">
-                {t("kind_exact")} <b>{fmt(kindCounts.exact)}</b>
-              </span>
-            )}
-            {kindCounts.tokens > 0 && (
-              <span className="search-kind search-kind-tokens">
-                {t("kind_tokens")} <b>{fmt(kindCounts.tokens)}</b>
-              </span>
-            )}
-            {kindCounts.stem > 0 && !exactMode && (
-              <span className="search-kind search-kind-stem">
-                {t("kind_stem")} <b>{fmt(kindCounts.stem)}</b>
-              </span>
-            )}
-          </div>
-
           {/* FILTERS — surah chips (with per-surah counts) + short toggle.
               The full list of 50+ surahs collapses by default. */}
           <div className="search-filters-head">
