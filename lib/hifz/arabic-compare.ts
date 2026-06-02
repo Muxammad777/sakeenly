@@ -5,16 +5,30 @@
 // normalize aggressively: strip ALL diacritics, fold alef/ya/ta variants,
 // drop tatweel, collapse whitespace.
 
-const HARAKAT = /[ؐ-ًؚ-ٰٟۖ-ۭـ]/g;
+// Unicode property escapes — robust against any copy-paste mangling
+// of the source. Mn = Nonspacing Mark, Me = Enclosing Mark. Together
+// they cover every Arabic harakat (fatha/damma/kasra/sukun/shadda/
+// tanwins/madda/quranic marks). Tatweel is a separate base char.
+const COMBINING_MARKS = /\p{M}/gu;
+const TATWEEL = /ـ/g;
+// Alef variants: ٱ (U+0671 wasla) آ (U+0622 madda) أ (U+0623 hamza-above)
+// إ (U+0625 hamza-below). After NFKD these decompose to bare alef +
+// combining mark; we collapse the precomposed forms here so both
+// pre- and post-NFKD paths converge on ا (U+0627).
 const ALEF_VARIANTS = /[ٱآأإ]/g;
+// Hamza-bearing forms — ASR often drops or substitutes the seat.
+const HAMZA_FORMS = /[ؤئء]/g; // ؤ ئ ء
 
 export function normalizeArabic(s: string): string {
   return s
-    .normalize("NFKD")
-    .replace(HARAKAT, "")
+    .normalize("NFKC")          // recompose first so ALEF_VARIANTS hits
     .replace(ALEF_VARIANTS, "ا")
-    .replace(/ى/g, "ي")
-    .replace(/ة/g, "ه")
+    .normalize("NFKD")          // then decompose harakat off bases
+    .replace(COMBINING_MARKS, "")
+    .replace(TATWEEL, "")
+    .replace(HAMZA_FORMS, "ء")
+    .replace(/ى/g, "ي") // alef maksura → ya
+    .replace(/ة/g, "ه") // ta marbuta → ha
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -79,10 +93,14 @@ export function compareRecitation(expected: string, actual: string): CompareResu
   let actualCursor = 0;
   for (let i = 0; i < expectedTokens.length; i++) {
     const exp = normTokens[i];
+    // Allow ≥1 edit even for 2-letter words (ASR loves to append a
+    // tail vowel like 'عم' → 'عما'). Cap at 2 for short words and
+    // scale up by ~1/3 length for longer ones.
+    const threshold = Math.max(1, Math.min(3, Math.floor(exp.length / 3) + 1));
     const windowEnd = Math.min(actualCursor + 4, actualTokens.length);
     for (let j = actualCursor; j < windowEnd; j++) {
       const act = actualTokens[j];
-      if (act === exp || editDistance(act, exp) <= Math.min(2, Math.floor(exp.length / 3))) {
+      if (act === exp || editDistance(act, exp) <= threshold) {
         matched[i] = true;
         // Show the expected Uthmani word for the matched ASR slot —
         // restores diacritics the user actually pronounced but ASR
@@ -102,12 +120,14 @@ export function compareRecitation(expected: string, actual: string): CompareResu
   };
 }
 
-// Standard Levenshtein, capped at length difference so we exit early.
+// Standard Levenshtein. We used to bail out when |Δlen| > 4 as a
+// micro-opt, but it caused false misses for long words paired with
+// partially-recognized ASR. Keep the algorithm honest — Quran words
+// rarely exceed 12 chars after normalization so cost stays trivial.
 function editDistance(a: string, b: string): number {
   if (a === b) return 0;
   if (!a.length) return b.length;
   if (!b.length) return a.length;
-  if (Math.abs(a.length - b.length) > 4) return 99;
   const prev = new Array(b.length + 1);
   const cur = new Array(b.length + 1);
   for (let j = 0; j <= b.length; j++) prev[j] = j;
