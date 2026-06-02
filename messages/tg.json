@@ -1123,6 +1123,23 @@
     "settings_loop": "Шумораи такрор",
     "settings_speed": "Суръат",
     "settings_start": "Аз кадом оят сар кардан",
-    "settings_save": "Нигоҳ доштан"
+    "settings_save": "Нигоҳ доштан",
+    "progress_eyebrow": "ТАМОМИ ҚУРЪОН",
+    "progress_h": "Пешрафти ҳифзи Қуръон",
+    "progress_sub": "{n} аз {total} оят дар роҳи хатм.",
+    "progress_overall": "тамом",
+    "progress_juz_done": "аз {n} ҷузъ",
+    "progress_sura_done": "аз {n} сура",
+    "progress_juz_path": "Роҳи ҷузъҳо",
+    "stats_reviewed": "Оятҳои такрорӣ",
+    "stats_achievements": "Дастовардҳо",
+    "stats_surahs_done": "Сураҳои тамомшуда",
+    "stats_best": "беҳтарин · {n}",
+    "status_new": "нав",
+    "status_pending": "дар ҷараён",
+    "status_done": "тамом",
+    "status_empty": "холӣ",
+    "min_short": "дақ",
+    "ayat_count_n": "{n} оят"
   }
 }

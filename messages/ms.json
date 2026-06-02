@@ -1123,6 +1123,23 @@
     "settings_loop": "Bilangan ulangan",
     "settings_speed": "Kelajuan",
     "settings_start": "Mula dari ayat",
-    "settings_save": "Simpan"
+    "settings_save": "Simpan",
+    "progress_eyebrow": "SELURUH AL-QURAN",
+    "progress_h": "Kemajuan hafalan Al-Quran",
+    "progress_sub": "{n} daripada {total} ayat menuju khatam.",
+    "progress_overall": "siap",
+    "progress_juz_done": "daripada {n} juzuk",
+    "progress_sura_done": "daripada {n} surah",
+    "progress_juz_path": "Laluan juzuk",
+    "stats_reviewed": "Ayat diulang",
+    "stats_achievements": "Pencapaian",
+    "stats_surahs_done": "Surah selesai",
+    "stats_best": "terbaik · {n}",
+    "status_new": "baharu",
+    "status_pending": "berjalan",
+    "status_done": "siap",
+    "status_empty": "kosong",
+    "min_short": "min",
+    "ayat_count_n": "{n} ayat"
   }
 }

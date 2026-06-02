@@ -1123,6 +1123,23 @@
     "settings_loop": "दोहराव",
     "settings_speed": "गति",
     "settings_start": "किस आयत से शुरू करें",
-    "settings_save": "सेव करें"
+    "settings_save": "सेव करें",
+    "progress_eyebrow": "पूरा क़ुरान",
+    "progress_h": "क़ुरान याद करने की प्रगति",
+    "progress_sub": "ख़त्म की राह पर {total} में से {n} आयतें।",
+    "progress_overall": "पूर्ण",
+    "progress_juz_done": "{n} पारों में से",
+    "progress_sura_done": "{n} सूरतों में से",
+    "progress_juz_path": "पारों का मार्ग",
+    "stats_reviewed": "दोहराई गई आयतें",
+    "stats_achievements": "उपलब्धियाँ",
+    "stats_surahs_done": "पूरी की गई सूरतें",
+    "stats_best": "सर्वश्रेष्ठ · {n}",
+    "status_new": "नया",
+    "status_pending": "जारी",
+    "status_done": "हो गया",
+    "status_empty": "खाली",
+    "min_short": "मिन",
+    "ayat_count_n": "{n} आयतें"
   }
 }

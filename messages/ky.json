@@ -1123,6 +1123,23 @@
     "settings_loop": "Кайталоо саны",
     "settings_speed": "Ылдамдык",
     "settings_start": "Кайсы аяттан баштоо",
-    "settings_save": "Сактоо"
+    "settings_save": "Сактоо",
+    "progress_eyebrow": "БҮТҮН КУРАН",
+    "progress_h": "Куран жаттоо процесси",
+    "progress_sub": "Хатмга жолдо {total} аяттан {n}.",
+    "progress_overall": "аяктады",
+    "progress_juz_done": "{n} жүздөн",
+    "progress_sura_done": "{n} сүрөөдөн",
+    "progress_juz_path": "Жүздөр жолу",
+    "stats_reviewed": "Кайталанган аяттар",
+    "stats_achievements": "Жетишкендиктер",
+    "stats_surahs_done": "Аяктаган сүрөөлөр",
+    "stats_best": "эң мыкты · {n}",
+    "status_new": "жаңы",
+    "status_pending": "процессте",
+    "status_done": "даяр",
+    "status_empty": "бош",
+    "min_short": "мин",
+    "ayat_count_n": "{n} аят"
   }
 }

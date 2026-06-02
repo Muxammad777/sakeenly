@@ -1123,6 +1123,23 @@
     "settings_loop": "Повторений на аят",
     "settings_speed": "Скорость",
     "settings_start": "С какого аята начать",
-    "settings_save": "Сохранить"
+    "settings_save": "Сохранить",
+    "progress_eyebrow": "ВЕСЬ КОРАН",
+    "progress_h": "Прогресс изучения Корана",
+    "progress_sub": "{n} из {total} аятов на пути к хатму.",
+    "progress_overall": "завершено",
+    "progress_juz_done": "из {n} джузов",
+    "progress_sura_done": "из {n} сур",
+    "progress_juz_path": "Путь по джузам",
+    "stats_reviewed": "Повторено аятов",
+    "stats_achievements": "Достижений",
+    "stats_surahs_done": "Завершено сур",
+    "stats_best": "лучшая · {n}",
+    "status_new": "новое",
+    "status_pending": "в процессе",
+    "status_done": "готово",
+    "status_empty": "пусто",
+    "min_short": "мин",
+    "ayat_count_n": "{n} аятов"
   }
 }

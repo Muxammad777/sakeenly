@@ -1123,6 +1123,23 @@
     "settings_loop": "Қайталау саны",
     "settings_speed": "Жылдамдық",
     "settings_start": "Қай аяттан бастау",
-    "settings_save": "Сақтау"
+    "settings_save": "Сақтау",
+    "progress_eyebrow": "БҮКІЛ ҚҰРАН",
+    "progress_h": "Құран жаттау үрдісі",
+    "progress_sub": "Хатмға жолда {total} аяттан {n}.",
+    "progress_overall": "аяқталды",
+    "progress_juz_done": "{n} жүзден",
+    "progress_sura_done": "{n} сүреден",
+    "progress_juz_path": "Жүздер жолы",
+    "stats_reviewed": "Қайталанған аяттар",
+    "stats_achievements": "Жетістіктер",
+    "stats_surahs_done": "Аяқталған сүрелер",
+    "stats_best": "ең үздік · {n}",
+    "status_new": "жаңа",
+    "status_pending": "үрдісте",
+    "status_done": "дайын",
+    "status_empty": "бос",
+    "min_short": "мин",
+    "ayat_count_n": "{n} аят"
   }
 }

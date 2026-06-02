@@ -1123,6 +1123,23 @@
     "settings_loop": "تعداد تکرار",
     "settings_speed": "سرعت",
     "settings_start": "شروع از آیه",
-    "settings_save": "ذخیره"
+    "settings_save": "ذخیره",
+    "progress_eyebrow": "تمام قرآن",
+    "progress_h": "پیشرفت حفظ قرآن",
+    "progress_sub": "{n} از {total} آیه در راه ختم.",
+    "progress_overall": "تکمیل",
+    "progress_juz_done": "از {n} جزء",
+    "progress_sura_done": "از {n} سوره",
+    "progress_juz_path": "مسیر جزءها",
+    "stats_reviewed": "آیات مرور شده",
+    "stats_achievements": "دستاوردها",
+    "stats_surahs_done": "سوره‌های تمام‌شده",
+    "stats_best": "بهترین · {n}",
+    "status_new": "جدید",
+    "status_pending": "در حال انجام",
+    "status_done": "تمام",
+    "status_empty": "خالی",
+    "min_short": "دق",
+    "ayat_count_n": "{n} آیه"
   }
 }

@@ -1123,6 +1123,23 @@
     "settings_loop": "Loops per ayah",
     "settings_speed": "Speed",
     "settings_start": "Start from ayah",
-    "settings_save": "Save"
+    "settings_save": "Save",
+    "progress_eyebrow": "WHOLE QUR'AN",
+    "progress_h": "Qur'an memorization progress",
+    "progress_sub": "{n} of {total} ayat on the path to khatm.",
+    "progress_overall": "complete",
+    "progress_juz_done": "of {n} juz",
+    "progress_sura_done": "of {n} surahs",
+    "progress_juz_path": "Juz path",
+    "stats_reviewed": "Ayat reviewed",
+    "stats_achievements": "Achievements",
+    "stats_surahs_done": "Surahs completed",
+    "stats_best": "best · {n}",
+    "status_new": "new",
+    "status_pending": "in progress",
+    "status_done": "done",
+    "status_empty": "empty",
+    "min_short": "min",
+    "ayat_count_n": "{n} ayat"
   }
 }

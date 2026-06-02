@@ -1123,6 +1123,23 @@
     "settings_loop": "تکرار",
     "settings_speed": "رفتار",
     "settings_start": "کس آیت سے شروع کریں",
-    "settings_save": "محفوظ کریں"
+    "settings_save": "محفوظ کریں",
+    "progress_eyebrow": "پورا قرآن",
+    "progress_h": "حفظِ قرآن کی پیش رفت",
+    "progress_sub": "ختم کے راستے پر {total} میں سے {n} آیات۔",
+    "progress_overall": "مکمل",
+    "progress_juz_done": "{n} پاروں میں سے",
+    "progress_sura_done": "{n} سورتوں میں سے",
+    "progress_juz_path": "پاروں کا راستہ",
+    "stats_reviewed": "دہرائی گئی آیات",
+    "stats_achievements": "کامیابیاں",
+    "stats_surahs_done": "مکمل سورتیں",
+    "stats_best": "بہترین · {n}",
+    "status_new": "نیا",
+    "status_pending": "جاری",
+    "status_done": "مکمل",
+    "status_empty": "خالی",
+    "min_short": "منٹ",
+    "ayat_count_n": "{n} آیات"
   }
 }

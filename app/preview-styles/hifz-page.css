@@ -1,21 +1,90 @@
 /* Hifz dashboard + learn + review */
 
+/* ─────────────────────── HERO ─────────────────────── */
 .hifz-hero {
-  text-align: center;
-  padding: 80px 24px 40px;
   position: relative;
+  text-align: center;
+  padding: 100px 24px 60px;
+  overflow: hidden;
+  isolation: isolate;
+}
+/* Subtle 8-point-star tile pattern behind the hero. SVG-as-data-uri,
+   no extra HTTP request, opacity 5% so it reads as texture rather
+   than ornament. */
+.hifz-hero-pattern {
+  position: absolute;
+  inset: -10% -10% 0;
+  z-index: -2;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'><g fill='none' stroke='%23E0B66A' stroke-width='0.6' stroke-opacity='0.55'><path d='M40 4 L43 35 L74 38 L43 41 L40 72 L37 41 L6 38 L37 35 Z'/><circle cx='40' cy='38' r='2.2'/><path d='M0 38 L8 38 M72 38 L80 38 M40 0 L40 8 M40 68 L40 80'/></g></svg>");
+  background-size: 80px 80px;
+  opacity: 0.06;
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 30%, black 30%, transparent 75%);
+  pointer-events: none;
+}
+/* Soft golden radial glow centered behind the headline. */
+.hifz-hero-glow {
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  width: min(720px, 90vw);
+  aspect-ratio: 1.6;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  background: radial-gradient(
+    ellipse at center,
+    color-mix(in oklab, oklch(var(--accent)) 28%, transparent) 0%,
+    color-mix(in oklab, oklch(var(--accent)) 8%, transparent) 35%,
+    transparent 70%
+  );
+  filter: blur(30px);
+  pointer-events: none;
 }
 .hifz-hero h1 {
   font-family: 'Spectral', serif;
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 500;
+  font-size: clamp(2rem, 4.6vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
   color: oklch(var(--text));
-  margin: 18px 0 10px;
+  margin: 22px auto 14px;
+  max-width: 760px;
+  text-wrap: balance;
 }
 .hifz-hero p {
   color: oklch(var(--text-2));
-  font-size: 15px;
-  max-width: 560px;
+  font-family: 'Spectral', serif;
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.65;
+  max-width: 620px;
   margin: 0 auto;
+}
+
+/* ─────────────────────── DIVIDER ─────────────────────── */
+.hifz-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 28px auto;
+  max-width: 760px;
+  padding: 0 24px;
+}
+.hifz-divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    color-mix(in oklab, oklch(var(--accent)) 45%, transparent),
+    transparent
+  );
+}
+.hifz-divider-star {
+  width: 18px;
+  height: 18px;
+  fill: oklch(var(--accent));
+  opacity: 0.7;
+  filter: drop-shadow(0 0 6px color-mix(in oklab, oklch(var(--accent)) 40%, transparent));
 }
 
 .hifz-guest-banner {
@@ -32,126 +101,436 @@
   font-size: 14px;
 }
 
-.hifz-stats-row {
+/* ─────────────────────── GLOBAL PROGRESS BAND ─────────────────────── */
+.hifz-progress-band {
+  padding: 8px 24px 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.hifz-progress-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: center;
+  padding: 36px 40px;
+  border-radius: 24px;
+  background: linear-gradient(
+    140deg,
+    color-mix(in oklab, oklch(var(--accent)) 6%, oklch(var(--surface))) 0%,
+    oklch(var(--surface)) 60%
+  );
+  border: 1px solid color-mix(in oklab, oklch(var(--accent)) 22%, oklch(var(--border)));
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.hifz-progress-card::after {
+  /* a faint angular sheen across the top edge */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 35%,
+    color-mix(in oklab, oklch(var(--accent)) 6%, transparent) 55%,
+    transparent 75%
+  );
+  z-index: -1;
+  pointer-events: none;
+}
+.hifz-progress-left { min-width: 0; }
+.hifz-progress-h {
+  font-family: 'Spectral', serif;
+  font-weight: 500;
+  font-size: clamp(1.4rem, 2.6vw, 1.85rem);
+  color: oklch(var(--text));
+  margin: 8px 0 8px;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+}
+.hifz-progress-sub {
+  color: oklch(var(--text-2));
+  font-size: 14.5px;
+  line-height: 1.55;
+  margin: 0 0 22px;
+}
+.hifz-progress-stats {
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  padding: 14px 24px;
-  justify-content: center;
+  gap: 22px;
 }
-.hifz-streak {
-  display: flex; flex-direction: column; align-items: center;
-  padding: 18px 26px;
-  border-radius: 18px;
-  background: var(--accent-soft);
-  border: 1px solid color-mix(in oklab, oklch(var(--accent)) 40%, oklch(var(--border)));
+.hifz-progress-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 18px 12px;
+  border-left: 2px solid color-mix(in oklab, oklch(var(--accent)) 35%, oklch(var(--border)));
 }
-.hifz-streak-num {
+.hifz-progress-stat-n {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 28px;
-  color: oklch(var(--accent));
-  font-weight: 600;
+  font-size: 24px;
+  color: oklch(var(--text));
+  font-weight: 500;
 }
-.hifz-streak-lbl {
+.hifz-progress-stat-l {
   font-size: 11px;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: oklch(var(--text-3));
 }
-.hifz-stat {
-  display: flex; flex-direction: column; align-items: center;
-  padding: 18px 22px;
+.hifz-progress-right { display: flex; justify-content: center; }
+.hifz-ring-wrap {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  filter: drop-shadow(0 0 24px color-mix(in oklab, oklch(var(--accent)) 22%, transparent));
+}
+.hifz-ring { width: 100%; height: 100%; transform: rotate(0deg); }
+.hifz-ring-track {
+  fill: none;
+  stroke: color-mix(in oklab, oklch(var(--accent)) 12%, oklch(var(--border)));
+  stroke-width: 10;
+}
+.hifz-ring-fill {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 800ms ease;
+}
+.hifz-ring-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.hifz-ring-pct {
+  font-family: 'Spectral', serif;
+  font-size: 30px;
+  font-weight: 500;
+  color: oklch(var(--text));
+  line-height: 1;
+}
+.hifz-ring-lbl {
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: oklch(var(--text-3));
+  margin-top: 4px;
+}
+
+/* 30-juz path bar */
+.hifz-juz-row {
+  display: grid;
+  grid-template-columns: repeat(30, minmax(0, 1fr));
+  gap: 4px;
+  margin-top: 24px;
+  padding: 14px;
+  background: color-mix(in oklab, oklch(var(--surface)) 60%, transparent);
+  border: 1px solid oklch(var(--border));
+  border-radius: 14px;
+}
+.hifz-juz-cell {
+  --fill: 0;
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 6px;
+  background: color-mix(in oklab, oklch(var(--border)) 40%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 140ms, background 140ms;
+}
+.hifz-juz-cell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: color-mix(in oklab, oklch(var(--accent)) 75%, transparent);
+  opacity: calc(var(--fill) * 0.85);
+}
+.hifz-juz-cell.is-full {
+  background: color-mix(in oklab, oklch(var(--accent)) 35%, oklch(var(--surface)));
+  box-shadow: inset 0 0 0 1px oklch(var(--accent));
+}
+.hifz-juz-cell:hover { transform: scale(1.08); }
+.hifz-juz-cell-n {
+  position: relative;
+  z-index: 1;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: oklch(var(--text-3));
+  pointer-events: none;
+}
+.hifz-juz-cell.is-full .hifz-juz-cell-n,
+.hifz-juz-cell.is-partial .hifz-juz-cell-n { color: oklch(var(--text)); }
+
+@media (max-width: 720px) {
+  .hifz-progress-card { grid-template-columns: 1fr; gap: 20px; padding: 28px 24px; text-align: center; }
+  .hifz-progress-stats { justify-content: center; }
+  .hifz-progress-stat { border-left: 0; border-top: 2px solid color-mix(in oklab, oklch(var(--accent)) 35%, oklch(var(--border))); padding: 10px 14px; }
+  .hifz-juz-row { grid-template-columns: repeat(15, minmax(0, 1fr)); }
+}
+
+/* ─────────────────────── STAT CARDS ─────────────────────── */
+.hifz-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+  padding: 0 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.hifz-stat-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 20px 22px 18px;
   border-radius: 18px;
   background: oklch(var(--surface));
   border: 1px solid oklch(var(--border));
-  min-width: 96px;
+  overflow: hidden;
+  transition: border-color 200ms, transform 200ms, box-shadow 200ms;
 }
-.hifz-stat-n {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 22px;
+.hifz-stat-card:hover {
+  border-color: color-mix(in oklab, oklch(var(--accent)) 40%, oklch(var(--border)));
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px -16px color-mix(in oklab, oklch(var(--accent)) 50%, transparent);
+}
+.hifz-stat-card::after {
+  /* faint top-left corner shimmer */
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100px; height: 60px;
+  background: radial-gradient(
+    ellipse at top left,
+    color-mix(in oklab, oklch(var(--accent)) 14%, transparent),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+.hifz-stat-icon {
+  width: 28px;
+  height: 28px;
+  color: oklch(var(--accent));
+  margin-bottom: 6px;
+}
+.hifz-stat-icon svg { width: 100%; height: 100%; }
+.hifz-stat-card .hifz-stat-n {
+  font-family: 'Spectral', serif;
+  font-size: 30px;
+  font-weight: 500;
   color: oklch(var(--text));
+  line-height: 1;
 }
-.hifz-stat-l {
+.hifz-stat-card .hifz-stat-l {
   font-size: 11px;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: oklch(var(--text-3));
-  margin-top: 2px;
+  margin-top: 4px;
 }
+.hifz-stat-foot {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed color-mix(in oklab, oklch(var(--border)) 80%, transparent);
+  width: 100%;
+  font-size: 11px;
+  color: oklch(var(--text-3));
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.04em;
+}
+.hifz-stat-card-streak {
+  background: linear-gradient(
+    140deg,
+    color-mix(in oklab, oklch(var(--accent)) 10%, oklch(var(--surface))) 0%,
+    oklch(var(--surface)) 70%
+  );
+  border-color: color-mix(in oklab, oklch(var(--accent)) 35%, oklch(var(--border)));
+}
+.hifz-stat-card-streak .hifz-stat-icon { color: oklch(var(--accent)); }
+.hifz-stat-card-streak .hifz-stat-n { color: oklch(var(--accent)); }
 
-.hifz-today { padding: 28px 24px; }
+/* ─────────────────────── TODAY CARDS ─────────────────────── */
+.hifz-today { padding: 16px 24px 56px; }
 .hifz-today-h {
   font-family: 'Spectral', serif;
-  font-size: 22px;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 2.2vw, 1.85rem);
   color: oklch(var(--text));
-  margin: 0 0 18px;
+  margin: 0 0 26px;
   text-align: center;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.01em;
 }
 .hifz-cards {
   display: grid;
-  gap: 18px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   max-width: 1100px;
   margin: 0 auto;
 }
 .hifz-card {
-  padding: 24px;
-  border-radius: 20px;
-  background: oklch(var(--surface));
+  position: relative;
+  padding: 28px 26px 24px;
+  border-radius: 22px;
+  background: linear-gradient(
+    155deg,
+    oklch(var(--surface)) 0%,
+    color-mix(in oklab, oklch(var(--surface)) 92%, oklch(var(--bg)) 8%) 100%
+  );
   border: 1px solid oklch(var(--border));
-  display: flex; flex-direction: column; gap: 14px;
-  transition: border-color 160ms, transform 160ms;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
+  isolation: isolate;
+  transition: border-color 240ms ease, transform 240ms ease, box-shadow 240ms ease;
 }
-.hifz-card:hover { border-color: color-mix(in oklab, oklch(var(--accent)) 40%, oklch(var(--border))); transform: translateY(-2px); }
-.hifz-card-sabaq { border-top: 3px solid oklch(var(--accent)); }
-.hifz-card-sabqi { border-top: 3px solid oklch(0.7 0.12 200); }
-.hifz-card-manzil { border-top: 3px solid oklch(0.65 0.1 160); }
+.hifz-card::before {
+  /* gradient top stripe — color depends on card variant */
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--card-accent), transparent);
+  opacity: 0.85;
+}
+.hifz-card::after {
+  /* premium hover glow */
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 0%,
+    color-mix(in oklab, var(--card-accent) 14%, transparent),
+    transparent 70%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 280ms ease;
+  z-index: -1;
+}
+.hifz-card:hover {
+  border-color: color-mix(in oklab, var(--card-accent) 50%, oklch(var(--border)));
+  transform: translateY(-4px);
+  box-shadow:
+    0 18px 50px -22px color-mix(in oklab, var(--card-accent) 60%, transparent),
+    0 0 0 1px color-mix(in oklab, var(--card-accent) 14%, transparent);
+}
+.hifz-card:hover::after { opacity: 1; }
+.hifz-card-sabaq { --card-accent: oklch(var(--accent)); }
+.hifz-card-sabqi { --card-accent: oklch(0.7 0.12 200); }
+.hifz-card-manzil { --card-accent: oklch(0.65 0.1 160); }
+
+/* Decorative SVG in top-right corner */
+.hifz-card-deco {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 64px;
+  height: 64px;
+  opacity: 0.08;
+  pointer-events: none;
+  transition: opacity 240ms ease, transform 240ms ease;
+}
+.hifz-card-deco svg {
+  width: 100%; height: 100%;
+  fill: none;
+  stroke: var(--card-accent);
+  stroke-width: 1.2;
+}
+.hifz-card:hover .hifz-card-deco { opacity: 0.18; transform: rotate(6deg) scale(1.06); }
+
 .hifz-card-eyebrow {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10.5px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: oklch(var(--text-3));
 }
 .hifz-card h3 {
   margin: 0;
   font-family: 'Spectral', serif;
-  font-size: 18px;
+  font-weight: 500;
+  font-size: 19px;
   color: oklch(var(--text));
+  letter-spacing: -0.005em;
 }
 .hifz-card-detail {
-  display: flex; flex-direction: column; gap: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   color: oklch(var(--text-2));
-  font-size: 14px;
+  font-size: 14.5px;
+  line-height: 1.5;
 }
 .hifz-surah-name { color: oklch(var(--text)); font-weight: 500; }
 .hifz-range {
   font-family: 'JetBrains Mono', monospace;
   font-size: 12px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   color: oklch(var(--text-3));
 }
 .hifz-empty {
   color: oklch(var(--text-3));
   font-style: italic;
-  font-size: 13px;
+  font-size: 13.5px;
 }
+
+/* Progress sliver + ETA */
+.hifz-card-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+.hifz-card-progress-track {
+  flex: 1;
+  height: 5px;
+  border-radius: 999px;
+  background: color-mix(in oklab, oklch(var(--border)) 60%, transparent);
+  overflow: hidden;
+}
+.hifz-card-progress-fill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--card-accent),
+    color-mix(in oklab, var(--card-accent) 70%, white 15%)
+  );
+  border-radius: inherit;
+  transition: width 480ms ease;
+}
+.hifz-card-eta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: oklch(var(--text-3));
+  white-space: nowrap;
+}
+
 .hifz-card-cta {
   margin-top: auto;
   align-self: flex-start;
-  padding: 9px 18px;
+  padding: 10px 20px;
   border-radius: 999px;
-  background: var(--accent-soft);
-  color: oklch(var(--accent));
-  border: 1px solid color-mix(in oklab, oklch(var(--accent)) 40%, oklch(var(--border)));
+  background: color-mix(in oklab, var(--card-accent, oklch(var(--accent))) 14%, oklch(var(--surface)));
+  color: var(--card-accent, oklch(var(--accent)));
+  border: 1px solid color-mix(in oklab, var(--card-accent, oklch(var(--accent))) 42%, oklch(var(--border)));
   font-family: 'Spectral', serif;
   font-size: 14px;
   text-decoration: none;
-  transition: background 140ms, border-color 140ms;
+  transition: background 180ms, border-color 180ms, transform 180ms;
 }
 .hifz-card-cta:hover {
-  background: color-mix(in oklab, oklch(var(--accent)) 18%, oklch(var(--surface)));
-  border-color: oklch(var(--accent));
+  background: color-mix(in oklab, var(--card-accent, oklch(var(--accent))) 26%, oklch(var(--surface)));
+  border-color: var(--card-accent, oklch(var(--accent)));
+  transform: translateY(-1px);
 }
 
 /* Learn mode */

@@ -1123,6 +1123,23 @@
     "settings_loop": "Takrorlar soni",
     "settings_speed": "Tezlik",
     "settings_start": "Boshlang'ich oyat",
-    "settings_save": "Saqlash"
+    "settings_save": "Saqlash",
+    "progress_eyebrow": "BUTUN QUR'ON",
+    "progress_h": "Qur'on yodlash jarayoni",
+    "progress_sub": "Xatmga yo'lda {total} dan {n} oyat.",
+    "progress_overall": "tugadi",
+    "progress_juz_done": "{n} juzdan",
+    "progress_sura_done": "{n} suradan",
+    "progress_juz_path": "Juzlar yo'li",
+    "stats_reviewed": "Takrorlangan oyatlar",
+    "stats_achievements": "Yutuqlar",
+    "stats_surahs_done": "Tugatilgan suralar",
+    "stats_best": "eng yaxshi · {n}",
+    "status_new": "yangi",
+    "status_pending": "jarayonda",
+    "status_done": "tayyor",
+    "status_empty": "bo'sh",
+    "min_short": "daq",
+    "ayat_count_n": "{n} oyat"
   }
 }
