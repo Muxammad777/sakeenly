@@ -179,15 +179,26 @@ export function HifzLearnClient({ ayat, surahName, surahNameArabic }: Props) {
 
   return (
     <section className="hifz-learn-wrap">
+      <div className="hifz-learn-bg" aria-hidden="true" />
       <header className="hifz-learn-head">
         <Link href="/hifz" className="hifz-learn-back">← {t("learn_back")}</Link>
         <div className="hifz-learn-title">
-          {surahName} <span style={{ color: "var(--text-3)", fontFamily: "'Scheherazade New', serif" }} dir="rtl">{surahNameArabic}</span>
+          {surahName} <span className="hifz-learn-title-ar" dir="rtl">{surahNameArabic}</span>
         </div>
-        <div style={{ fontFamily: "JetBrains Mono", fontSize: 11, color: "var(--text-3)" }}>
-          {ayat[current]?.ayahKey ?? ""}
+        <div className="hifz-learn-counter">
+          <span className="hifz-learn-counter-cur">{current + 1}</span>
+          <span className="hifz-learn-counter-sep">/</span>
+          <span className="hifz-learn-counter-tot">{ayat.length}</span>
         </div>
       </header>
+
+      <div className="hifz-learn-divider" aria-hidden="true">
+        <span className="hifz-divider-line" />
+        <svg className="hifz-divider-star" viewBox="0 0 24 24">
+          <path d="M12 2 L13.6 10.4 L22 12 L13.6 13.6 L12 22 L10.4 13.6 L2 12 L10.4 10.4 Z" />
+        </svg>
+        <span className="hifz-divider-line" />
+      </div>
 
       <div className="hifz-stage-row" role="radiogroup">
         {([0, 1, 2, 3] as HideStage[]).map((st) => {

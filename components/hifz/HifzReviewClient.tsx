@@ -65,39 +65,60 @@ export function HifzReviewClient({ items }: { items: HifzReviewItem[] }) {
     );
   }
 
+  const progressPct = items.length > 0 ? ((idx) / items.length) * 100 : 0;
+
   return (
     <section className="hifz-review-wrap">
+      <div className="hifz-learn-bg" aria-hidden="true" />
       <header className="hifz-learn-head">
         <Link href="/hifz" className="hifz-learn-back">← {t("learn_back")}</Link>
-        <div style={{ fontFamily: "JetBrains Mono", fontSize: 11, color: "var(--text-3)" }}>
-          {idx + 1} / {items.length}
+        <div className="hifz-review-progress">
+          <div className="hifz-review-progress-track">
+            <div className="hifz-review-progress-fill" style={{ width: progressPct + "%" }} />
+          </div>
+          <div className="hifz-learn-counter">
+            <span className="hifz-learn-counter-cur">{idx + 1}</span>
+            <span className="hifz-learn-counter-sep">/</span>
+            <span className="hifz-learn-counter-tot">{items.length}</span>
+          </div>
         </div>
       </header>
 
-      <article className="hifz-ayah is-current">
-        <div className="hifz-ayah-key">{current.ayahKey} · {current.stage}</div>
+      <div className="hifz-learn-divider" aria-hidden="true">
+        <span className="hifz-divider-line" />
+        <svg className="hifz-divider-star" viewBox="0 0 24 24">
+          <path d="M12 2 L13.6 10.4 L22 12 L13.6 13.6 L12 22 L10.4 13.6 L2 12 L10.4 10.4 Z" />
+        </svg>
+        <span className="hifz-divider-line" />
+      </div>
+
+      <article className="hifz-ayah is-current hifz-review-ayah">
+        <div className="hifz-ayah-key">
+          {current.ayahKey}
+          <span className={"hifz-review-stage hifz-review-stage-" + current.stage}>{current.stage}</span>
+        </div>
         <div className="hifz-ayah-ar">
           {revealed
             ? current.textUthmani
             : <span className="hifz-ayah-blind">{current.textUthmani}</span>}
         </div>
-        <div style={{ display: "flex", gap: 8, marginTop: 14 }}>
+        <div className="hifz-review-actions">
           <button
             type="button"
             className="hifz-control-btn"
             onClick={() => audioRef.current?.play()}
             disabled={!current.audioUrl}
-          >{t("learn_play")}</button>
+          >▶ {t("learn_play")}</button>
           <button
             type="button"
             className="hifz-control-btn hifz-control-primary"
             onClick={() => setRevealed(true)}
             disabled={revealed}
-          >{revealed ? "✓" : "Show"}</button>
+          >{revealed ? "✓ открыт" : "показать"}</button>
         </div>
       </article>
 
-      <div style={{ textAlign: "center", marginTop: 28, color: "var(--text-3)", fontSize: 13 }}>
+      <div className="hifz-review-grade-q">
         {t("review_grade_q")}
       </div>
       <div className="hifz-grade-row">
