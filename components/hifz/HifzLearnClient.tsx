@@ -131,8 +131,14 @@ export function HifzLearnClient({ ayat, surahName, surahNameArabic }: Props) {
   useEffect(() => {
     if (audioRef.current) { audioRef.current.pause(); audioRef.current = null; }
     const url = ayat[current]?.audioUrl;
-    if (!url) return;
-    const audio = new Audio(url.startsWith("//") ? `https:${url}` : url);
+    if (!url) {
+      // Surfaced once per missing-audio click attempt; helps diagnose
+      // server-side fetch issues (e.g. quranApi reciter param dropped).
+      console.warn("[hifz] no audio for", ayat[current]?.ayahKey);
+      return;
+    }
+    const fullUrl = url.startsWith("//") ? `https:${url}` : url;
+    const audio = new Audio(fullUrl);
     audio.playbackRate = speed;
     audioRef.current = audio;
     setLoopsDone(0);
@@ -141,7 +147,7 @@ export function HifzLearnClient({ ayat, surahName, surahNameArabic }: Props) {
         const next = prev + 1;
         if (loopCount === 0 || next < loopCount) {
           audio.currentTime = 0;
-          void audio.play();
+          void audio.play().catch((err) => console.error("[hifz] loop replay failed", err));
           return next;
         }
         // Move to next ayah automatically.
@@ -154,10 +160,23 @@ export function HifzLearnClient({ ayat, surahName, surahNameArabic }: Props) {
       });
     };
     audio.addEventListener("ended", onEnded);
+    audio.addEventListener("error", () => {
+      console.error("[hifz] audio failed to load", fullUrl, audio.error);
+    });
+    // Carry the playing state through to the freshly-created audio
+    // element — otherwise switching ayah/loopCount/speed while playing
+    // leaves a paused element and the user hears nothing.
+    if (playing) {
+      void audio.play().catch((err) => console.error("[hifz] auto-resume failed", err));
+    }
     return () => {
       audio.removeEventListener("ended", onEnded);
       audio.pause();
     };
+    // playing intentionally excluded from deps — handled by the
+    // dedicated [playing] effect below; we only re-init audio when
+    // the source url, loop policy, or playback rate changes.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [current, ayat, loopCount, speed]);
 
   // Sync play/pause with state.
