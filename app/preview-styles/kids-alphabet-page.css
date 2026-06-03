@@ -1,6 +1,6 @@
 /* Page-specific styles extracted from kids-alphabet.html */
 
-.kid-hero { padding: 56px 0 20px; position: relative; overflow: hidden; text-align: center; }
+.kid-hero { padding: 56px 0 20px; position: relative; text-align: center; }
   .kid-hero .geo-stars-fade { z-index: -1; }
   .kid-hero h1 { font-weight: 300; max-width: 18ch; margin: 14px auto 0; }
   .kid-hero p { color: oklch(var(--text-2)); max-width: 50ch; margin: 14px auto 0; }

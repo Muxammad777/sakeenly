@@ -1,6 +1,6 @@
 /* Page-specific styles extracted from ayat.html */
 
-.ay-hero { padding: 64px 0 24px; position: relative; overflow: hidden; }
+.ay-hero { padding: 64px 0 24px; position: relative; }
   .ay-hero .geo-stars-fade { z-index: -1; }
   .ay-hero h1 { font-weight: 300; max-width: 22ch; margin-top: 14px; }
   .ay-hero p { color: oklch(var(--text-2)); max-width: 58ch; margin-top: 18px; font-size: 1.1rem; }

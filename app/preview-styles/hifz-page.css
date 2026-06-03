@@ -5,11 +5,10 @@
   position: relative;
   text-align: center;
   padding: 56px 24px 28px;
-  overflow: hidden;
+  /* `overflow: hidden` would clip the full-bleed ::before pattern back
+     to .wrap's max-width (1240px). Page-level horizontal scroll is
+     already prevented by `overflow-x: clip` on html/body in shared.css. */
   isolation: isolate;
-  /* Pin height to content only — block descendants like
-     .hifz-hero-glow (aspect-ratio 1.6 → ~450px tall) from inflating
-     the section's intrinsic block size. */
   contain: layout;
   min-height: 0;
 }

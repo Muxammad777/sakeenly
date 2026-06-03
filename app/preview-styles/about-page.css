@@ -1,7 +1,7 @@
 /* Page-specific styles extracted from about.html */
 
 .about-hero {
-    padding: 80px 0 40px; position: relative; overflow: hidden;
+    padding: 80px 0 40px; position: relative;
     text-align: center;
   }
   .about-hero .geo-stars-fade { z-index: -1; }
