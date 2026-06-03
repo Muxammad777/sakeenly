@@ -4,7 +4,7 @@
 .hifz-hero {
   position: relative;
   text-align: center;
-  padding: 100px 24px 60px;
+  padding: 56px 24px 28px;
   overflow: hidden;
   isolation: isolate;
 }
@@ -42,12 +42,12 @@
 .hifz-hero h1 {
   font-family: 'Spectral', serif;
   font-weight: 500;
-  font-size: clamp(2rem, 4.6vw, 3rem);
-  line-height: 1.15;
+  font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+  line-height: 1.18;
   letter-spacing: -0.01em;
   color: oklch(var(--text));
-  margin: 22px auto 14px;
-  max-width: 760px;
+  margin: 18px auto 10px;
+  max-width: 620px;
   text-wrap: balance;
 }
 .hifz-hero p {

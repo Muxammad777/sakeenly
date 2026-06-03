@@ -62,21 +62,9 @@ function IconStack() {
   );
 }
 
-// Decorative inter-section ornament — matches the site-wide .geo-divider
-// ornament (wide gold lines + 8-point star with inner echo + center dot).
-function OrnamentDivider() {
-  return (
-    <div className="hifz-divider" aria-hidden="true">
-      <span className="hifz-divider-line" />
-      <svg className="hifz-divider-star" viewBox="0 0 40 40" aria-hidden="true">
-        <path d="M20 3 L24 17 L38 20 L24 23 L20 37 L16 23 L2 20 L16 17 Z" />
-        <path d="M20 9 L22 18 L31 20 L22 22 L20 31 L18 22 L9 20 L18 18 Z" opacity="0.6" />
-        <circle cx="20" cy="20" r="1.5" fill="oklch(var(--accent))" stroke="none" />
-      </svg>
-      <span className="hifz-divider-line" />
-    </div>
-  );
-}
+// (OrnamentDivider removed — shared.css auto-injects an ornament
+// between adjacent <section> siblings, so explicit dividers between
+// sections are now redundant.)
 
 export default async function HifzDashboard({ params }: PageProps) {
   const { locale } = await params;
@@ -217,7 +205,6 @@ export default async function HifzDashboard({ params }: PageProps) {
         <span className="tag"><span className="tag-dot"></span><span>{t("nav")}</span></span>
         <h1>{t("hero_h1")}</h1>
         <p>{t("hero_sub")}</p>
-        <OrnamentDivider />
       </section>
 
       {!user && (
@@ -294,8 +281,6 @@ export default async function HifzDashboard({ params }: PageProps) {
         </div>
       </section>
 
-      <OrnamentDivider />
-
       {/* ╭───────────────────── STAT CARDS ─────────────────────╮ */}
       <section className="wrap hifz-stats-row">
         <article className="hifz-stat-card hifz-stat-card-streak">
@@ -327,8 +312,6 @@ export default async function HifzDashboard({ params }: PageProps) {
           <div className="hifz-stat-l">{t("stats_surahs_done")}</div>
         </article>
       </section>
-
-      <OrnamentDivider />
 
       {/* ╭───────────────────── TODAY CARDS ─────────────────────╮ */}
       <section className="wrap hifz-today">

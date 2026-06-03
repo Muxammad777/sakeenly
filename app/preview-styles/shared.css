@@ -308,6 +308,12 @@ section + .wrap:not(.no-auto-divider)::before,
 .hero + section::before,
 .hero + .wrap::before { content: none; }
 
+/* Search results group every match by surah inside <section.search-group>
+   blocks. Putting an ornamental divider between every pair just adds
+   visual noise to a list. Suppress it. */
+.search-group::before { content: none !important; }
+.search-group + .search-group::before { content: none !important; }
+
 /* ─── GLOBAL HERO BACKGROUND PATTERN ───────────────────────────────
    Match every page's hero (about-hero / ask-hero / kid-hero /
    listen-hero / hifz-hero / scholars-hero / etc.) with the same
