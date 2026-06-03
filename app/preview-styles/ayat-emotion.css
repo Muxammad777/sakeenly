@@ -4,14 +4,9 @@
   .seo-hero {
     padding: 80px 0 32px;
     position: relative;
-    overflow: hidden;
   }
-  .seo-hero::before {
-    content: ""; position: absolute; inset: 0;
-    background:
-      radial-gradient(50% 60% at 20% 30%, var(--accent-soft) 0, transparent 60%),
-      oklch(var(--bg));
-  }
+  /* (.seo-hero::before removed — site-wide [class*="-hero"]::before
+     pattern + accent glow from shared.css applies here too.) */
   .seo-hero > * { position: relative; }
   .seo-hero .crumbs {
     font-family: 'JetBrains Mono', monospace;
