@@ -320,6 +320,18 @@ section + .wrap:not(.no-auto-divider)::before,
 [class*="-hero"]:not(.hero):not(.about-hero-inline) {
   position: relative;
   isolation: isolate;
+  text-align: center;
+}
+/* Force centered text content in every page-level hero. Per-page CSS
+   like ayat-index sometimes shipped h1 without margin auto, so the
+   headline drifted left. Override here. */
+[class*="-hero"] > h1,
+[class*="-hero"] > h2,
+[class*="-hero"] > p,
+[class*="-hero"] > .lede,
+[class*="-hero"] > .sub {
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 [class*="-hero"]:not(.hero):not(.about-hero-inline)::before {
   content: "";

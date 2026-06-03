@@ -48,17 +48,23 @@ export default async function HifzLearnPage({ params, searchParams }: PageProps)
   // across Indo-Pak madrasas. Without passing reciter the Quran.com API
   // returns no audio at all, so this isn't optional.
   const reciter = findReciter("husary");
-  const ayat: HifzLearnAyah[] = [];
-  for (let a = startA; a <= endA; a++) {
-    const v = await quranApi.verseByKey(`${startS}:${a}`, { language: locale, reciter });
-    ayat.push({
+  // ONE batched call covers the whole surah — way faster than the per-
+  // ayah loop we used to do (286 requests for Al-Baqarah → ~30s).
+  const allVerses = await quranApi.versesByChapter({
+    chapter: startS,
+    translations: [],
+    reciter,
+    language: locale,
+  });
+  const ayat: HifzLearnAyah[] = allVerses
+    .filter((v) => v.verse_number >= startA && v.verse_number <= endA)
+    .map((v) => ({
       ayahKey: v.verse_key,
       surah: startS,
-      ayah: a,
+      ayah: v.verse_number,
       textUthmani: v.text_uthmani,
       audioUrl: v.audio?.url ?? null,
-    });
-  }
+    }));
 
   return (
     <HifzLearnClient
