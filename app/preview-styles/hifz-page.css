@@ -736,6 +736,11 @@
   position: relative;
   padding: 26px 28px;
   border-radius: 20px;
+  /* When scrollIntoView lands on this ayah (e.g. from reader's
+     "В хифз" deep link with #aN hash), leave room for the sticky
+     58px header + a bit of breathing space so the card isn't tucked
+     under the topbar. */
+  scroll-margin-top: 80px;
   background: linear-gradient(
     155deg,
     oklch(var(--surface)) 0%,
