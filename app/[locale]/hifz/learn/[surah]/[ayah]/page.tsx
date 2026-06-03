@@ -34,10 +34,14 @@ export default async function HifzLearnPage({ params, searchParams }: PageProps)
   const startS = Number(surah), startA = Number(ayah);
   if (!Number.isInteger(startS) || !Number.isInteger(startA) || startS < 1 || startS > 114 || startA < 1) notFound();
   const end = parseTo(to);
-  // Walk the requested range — for now keep it single-surah and clamp
-  // to the surah length. The dashboard's scheduler guarantees this.
+  // Without an explicit ?to=... we now default to the whole surah from
+  // startA onward — picking a surah from the dashboard or jumping in
+  // from the reader's "В хифз" button should open the full chapter,
+  // not a single ayah.
   const chapter = await quranApi.chapter(startS);
-  const endA = end && end.surah === startS ? Math.min(end.ayah, chapter.verses_count) : startA;
+  const endA = end && end.surah === startS
+    ? Math.min(end.ayah, chapter.verses_count)
+    : chapter.verses_count;
   if (startA > chapter.verses_count) notFound();
 
   // Husary (id 6) — clean Madani Murattal, default reciter for hifz

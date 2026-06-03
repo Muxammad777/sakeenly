@@ -308,6 +308,47 @@ section + .wrap:not(.no-auto-divider)::before,
 .hero + section::before,
 .hero + .wrap::before { content: none; }
 
+/* ─── GLOBAL HERO BACKGROUND PATTERN ───────────────────────────────
+   Match every page's hero (about-hero / ask-hero / kid-hero /
+   listen-hero / hifz-hero / scholars-hero / etc.) with the same
+   8-point-star tile that lives behind the homepage hero. Renders via
+   ::before so existing JSX/markup doesn't need touching, and is
+   z-index: -1 so all real hero content stays on top.
+
+   Existing .hero-bg on the homepage still wins for the homepage hero
+   (it's a real DOM element with the same mask). */
+[class*="-hero"]:not(.hero):not(.about-hero-inline) {
+  position: relative;
+  isolation: isolate;
+}
+[class*="-hero"]:not(.hero):not(.about-hero-inline)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: oklch(var(--accent));
+  -webkit-mask:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'><g fill='none' stroke='black' stroke-width='0.9'><path d='M42 4 L48 36 L80 42 L48 48 L42 80 L36 48 L4 42 L36 36 Z'/><path d='M42 18 L46 38 L66 42 L46 46 L42 66 L38 46 L18 42 L38 38 Z' opacity='0.6'/><circle cx='42' cy='42' r='3' fill='black' stroke='none'/></g></svg>") repeat;
+          mask:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'><g fill='none' stroke='black' stroke-width='0.9'><path d='M42 4 L48 36 L80 42 L48 48 L42 80 L36 48 L4 42 L36 36 Z'/><path d='M42 18 L46 38 L66 42 L46 46 L42 66 L38 46 L18 42 L38 38 Z' opacity='0.6'/><circle cx='42' cy='42' r='3' fill='black' stroke='none'/></g></svg>") repeat;
+  -webkit-mask-size: 84px 84px;
+          mask-size: 84px 84px;
+  opacity: 0.16;
+  pointer-events: none;
+}
+[class*="-hero"]:not(.hero):not(.about-hero-inline)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(
+    ellipse 60% 70% at 50% 30%,
+    color-mix(in oklab, oklch(var(--accent)) 18%, transparent) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
 /* ─── PREMIUM CARD HOVER UTILITY ───────────────────────────────────
    Drop the class `.premium-hover` on any card-like element and it
    will pick up the gold-tinted lift+glow used on /hifz. Safe to apply
