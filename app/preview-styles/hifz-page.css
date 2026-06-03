@@ -18,7 +18,13 @@
    than ornament. */
 .hifz-hero-pattern {
   position: absolute;
-  inset: -10% -10% 0;
+  /* Full-bleed: escape .wrap's 1240px max-width so the texture spans
+     the whole viewport. Centered via 50% + translateX(-50%). */
+  left: 50%;
+  width: 100vw;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-50%);
   z-index: -2;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'><g fill='none' stroke='%23E0B66A' stroke-width='0.6' stroke-opacity='0.55'><path d='M40 4 L43 35 L74 38 L43 41 L40 72 L37 41 L6 38 L37 35 Z'/><circle cx='40' cy='38' r='2.2'/><path d='M0 38 L8 38 M72 38 L80 38 M40 0 L40 8 M40 68 L40 80'/></g></svg>");
   background-size: 80px 80px;

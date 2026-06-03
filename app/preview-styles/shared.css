@@ -354,7 +354,12 @@ section + .wrap:not(.no-auto-divider)::before,
 [class*="-hero"]:not(.hero):not(.about-hero-inline)::before {
   content: "";
   position: absolute;
-  inset: 0;
+  /* Full-bleed across the viewport — the hero's .wrap caps at 1240px
+     and the texture should still reach the edges. */
+  left: 50%;
+  width: 100vw;
+  top: 0; bottom: 0;
+  transform: translateX(-50%);
   z-index: -1;
   background-color: oklch(var(--accent));
   -webkit-mask:
@@ -369,7 +374,10 @@ section + .wrap:not(.no-auto-divider)::before,
 [class*="-hero"]:not(.hero):not(.about-hero-inline)::after {
   content: "";
   position: absolute;
-  inset: 0;
+  left: 50%;
+  width: 100vw;
+  top: 0; bottom: 0;
+  transform: translateX(-50%);
   z-index: -1;
   background: radial-gradient(
     ellipse 60% 70% at 50% 30%,
