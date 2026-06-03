@@ -43,7 +43,7 @@ function Content() {
           {SURAHS.map((s, i) => {
             const n = i + 1;
             return (
-              <Link key={s.n} className="ks" href={`/reader/${s.n}/1`}>
+              <Link key={s.n} className="ks" href={`/hifz/learn/${s.n}/1`}>
                 <div className="ks-head">
                   <div className="ks-num">{s.n}</div>
                   <div className="ks-title">

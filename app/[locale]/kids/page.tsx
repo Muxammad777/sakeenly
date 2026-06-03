@@ -230,7 +230,7 @@ function Content() {
 
         <div className="surah-cards">
           {KID_SURAHS.map((s) => (
-            <Link key={s.num} className="surah-card" href={`/reader/${s.num}/1`}>
+            <Link key={s.num} className="surah-card" href={`/hifz/learn/${s.num}/1`}>
               <span className="num">№{s.num} · {s.ayat}</span>
               <span className="ru">{t(`${s.tKey}_ru`)}</span>
               <div className="ar arabic" dir="rtl">{s.ar}</div>
