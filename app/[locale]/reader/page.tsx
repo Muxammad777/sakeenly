@@ -27,7 +27,7 @@ export default async function ReaderIndex({ params }: PageProps) {
   const chapters = await quranApi.chapters("en");
 
   return (
-    <section className="wrap reader-index">
+    <section className="wrap reader-index reader-hero">
       <div className="reader-index-head">
         <span className="tag"><span className="tag-dot" /><span>{t("surahs_eyebrow")}</span></span>
         <h1>{t("surahs_h")}</h1>

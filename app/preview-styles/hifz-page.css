@@ -4,7 +4,7 @@
 .hifz-hero {
   position: relative;
   text-align: center;
-  padding: 56px 24px 28px;
+  padding: 96px 24px 56px;
   /* `overflow: hidden` would clip the full-bleed ::before pattern back
      to .wrap's max-width (1240px). Page-level horizontal scroll is
      already prevented by `overflow-x: clip` on html/body in shared.css. */
