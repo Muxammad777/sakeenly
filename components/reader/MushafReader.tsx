@@ -970,10 +970,11 @@ function MushafReaderInner(props: MushafReaderProps) {
           </button>
           {/* Send the user into the hifz learn flow for the WHOLE surah
               this ayah belongs to — that's the usual unit of hifz work
-              and avoids the "single ayah only" trap. */}
+              and avoids the "single ayah only" trap. The #a<ayah> hash
+              tells HifzLearnClient to scroll the picked ayah to the top. */}
           <Link
             className="pop-btn"
-            href={`/hifz/learn/${activeAyahData.ayahKey.split(":")[0]}/1`}
+            href={`/hifz/learn/${activeAyahData.ayahKey.split(":")[0]}/1#a${activeAyahData.ayahKey.split(":")[1]}`}
             onClick={() => { setPopover(null); setActiveAyah(null); }}
             aria-label={t("pop_hifz")}
           >

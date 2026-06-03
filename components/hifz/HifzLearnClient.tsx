@@ -80,6 +80,24 @@ export function HifzLearnClient({ ayat, surahName, surahNameArabic }: Props) {
   const [marked, setMarked] = useState(false);
   const [marking, setMarking] = useState(false);
   const [needsAuth, setNeedsAuth] = useState(false);
+
+  // If the URL has a `#aN` hash (set by the reader's "В хифз" button),
+  // scroll the matching ayah to the top of the viewport on mount and
+  // also focus it as the current ayah. Otherwise leaves the natural
+  // top-of-page scroll alone.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const m = /^#a(\d+)$/.exec(window.location.hash);
+    if (!m) return;
+    const targetAyah = Number(m[1]);
+    const idx = ayat.findIndex((a) => a.ayah === targetAyah);
+    if (idx < 0) return;
+    setCurrent(idx);
+    const el = document.getElementById(`a${targetAyah}`);
+    if (el) {
+      requestAnimationFrame(() => el.scrollIntoView({ block: "start", behavior: "smooth" }));
+    }
+  }, [ayat]);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   // Word-by-word panel — lazily fetched per ayah on first reveal.
@@ -228,6 +246,7 @@ export function HifzLearnClient({ ayat, surahName, surahNameArabic }: Props) {
           return (
             <article
               key={a.ayahKey}
+              id={`a${a.ayah}`}
               className={"hifz-ayah" + (isCurrent ? " is-current" : "")}
               onClick={() => { if (i !== current) setCurrent(i); }}
               style={{ cursor: i === current ? "default" : "pointer" }}
