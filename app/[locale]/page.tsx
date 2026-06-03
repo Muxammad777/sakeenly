@@ -222,16 +222,6 @@ function HomeContent() {
         </div>
       </Reveal>
 
-      <div className="wrap">
-        <div className="geo-divider" aria-hidden="true">
-          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="0.9">
-            <path d="M20 3 L24 17 L38 20 L24 23 L20 37 L16 23 L2 20 L16 17 Z" />
-            <path d="M20 9 L22 18 L31 20 L22 22 L20 31 L18 22 L9 20 L18 18 Z" opacity="0.6" />
-            <circle cx="20" cy="20" r="1.5" fill="currentColor" />
-          </svg>
-        </div>
-      </div>
-
       {/* TRUST */}
       <Reveal as="section" className="wrap">
         <div className="trust">
