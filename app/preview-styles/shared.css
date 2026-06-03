@@ -218,78 +218,66 @@ section.wrap-tight h3 {
 .geo-frame > .corner.br { bottom: 14px; right: 14px; transform: scale(-1, -1); }
 
 /* ─── SECTION ORNAMENT DIVIDER (global) ───────────────────────────────
-   Thin gradient gold line with an 8-point star at the center. Use
-   between major sections on any page:
-     <div class="section-divider" aria-hidden="true">
-       <span class="section-divider-line"></span>
-       <svg class="section-divider-star" viewBox="0 0 24 24"><path d="M12 2 L13.6 10.4 L22 12 L13.6 13.6 L12 22 L10.4 13.6 L2 12 L10.4 10.4 Z"/></svg>
-       <span class="section-divider-line"></span>
-     </div>
-   For brevity a single-element variant `<div class="section-divider-mini" />`
-   produces the same look without children. */
-.section-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  margin: 28px auto;
-  max-width: 760px;
-  padding: 0 24px;
-}
-.section-divider-line {
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    color-mix(in oklab, oklch(var(--accent)) 45%, transparent),
-    transparent
-  );
-}
-.section-divider-star {
-  width: 18px;
-  height: 18px;
-  fill: oklch(var(--accent));
-  opacity: 0.7;
-  filter: drop-shadow(0 0 6px color-mix(in oklab, oklch(var(--accent)) 40%, transparent));
-}
-/* CSS-only variant — no child elements required. The star is the
-   ::before pseudo, lines come from the parent's gradient background. */
+   Matches the .geo-divider ornament used on home — wide gold gradient
+   lines on each side of a centered 32px 8-point star. Two flavors:
+     <div class="section-divider" aria-hidden="true"></div>      (CSS-only)
+     <div class="section-divider-mini" aria-hidden="true"></div> (alias) */
+.section-divider,
 .section-divider-mini {
   position: relative;
-  height: 1px;
-  margin: 26px auto;
-  max-width: 720px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    color-mix(in oklab, oklch(var(--accent)) 45%, transparent),
-    transparent
-  );
+  height: 32px;
+  margin: 56px auto;
+  max-width: 520px;
+  padding: 0 28px;
+  color: oklch(var(--accent));
+  /* Two linear-gradient lines: left half + right half, with a 60px
+     central gap so the star sits cleanly between them. Drawn as a 1px
+     vertical strip centered on the divider's own vertical center. */
+  background-image:
+    linear-gradient(90deg,
+      transparent 0%,
+      currentColor 30%,
+      currentColor 95%,
+      transparent 100%),
+    linear-gradient(90deg,
+      transparent 0%,
+      currentColor 5%,
+      currentColor 70%,
+      transparent 100%);
+  background-size:
+    calc(50% - 30px) 1px,
+    calc(50% - 30px) 1px;
+  background-position:
+    left center,
+    right center;
+  background-repeat: no-repeat;
 }
+.section-divider::before,
 .section-divider-mini::before {
   content: "";
   position: absolute;
   left: 50%; top: 50%;
-  width: 16px; height: 16px;
+  width: 32px;
+  height: 32px;
   transform: translate(-50%, -50%);
-  background: oklch(var(--bg));
-  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2 L13.6 10.4 L22 12 L13.6 13.6 L12 22 L10.4 13.6 L2 12 L10.4 10.4 Z'/></svg>") center / contain no-repeat;
-          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2 L13.6 10.4 L22 12 L13.6 13.6 L12 22 L10.4 13.6 L2 12 L10.4 10.4 Z'/></svg>") center / contain no-repeat;
-  box-shadow: 0 0 0 4px oklch(var(--bg));
-}
-.section-divider-mini::after {
-  content: "";
-  position: absolute;
-  left: 50%; top: 50%;
-  width: 12px; height: 12px;
-  transform: translate(-50%, -50%);
-  background: oklch(var(--accent));
-  filter: drop-shadow(0 0 6px color-mix(in oklab, oklch(var(--accent)) 40%, transparent));
-  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2 L13.6 10.4 L22 12 L13.6 13.6 L12 22 L10.4 13.6 L2 12 L10.4 10.4 Z'/></svg>") center / contain no-repeat;
-          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2 L13.6 10.4 L22 12 L13.6 13.6 L12 22 L10.4 13.6 L2 12 L10.4 10.4 Z'/></svg>") center / contain no-repeat;
+  /* 8-point star with inner echo + center dot, drawn via a mask so it
+     picks up `color` (and thus the gold accent). */
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><g fill='black' stroke='black' stroke-width='0.9'><path d='M20 3 L24 17 L38 20 L24 23 L20 37 L16 23 L2 20 L16 17 Z'/><path d='M20 9 L22 18 L31 20 L22 22 L20 31 L18 22 L9 20 L18 18 Z' opacity='0.55'/><circle cx='20' cy='20' r='1.5'/></g></svg>") center / contain no-repeat;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><g fill='black' stroke='black' stroke-width='0.9'><path d='M20 3 L24 17 L38 20 L24 23 L20 37 L16 23 L2 20 L16 17 Z'/><path d='M20 9 L22 18 L31 20 L22 22 L20 31 L18 22 L9 20 L18 18 Z' opacity='0.55'/><circle cx='20' cy='20' r='1.5'/></g></svg>") center / contain no-repeat;
   opacity: 0.85;
+  filter: drop-shadow(0 0 6px color-mix(in oklab, oklch(var(--accent)) 35%, transparent));
 }
+/* Line opacity damping — match the geo-divider's softer feel. */
+.section-divider,
+.section-divider-mini {
+  /* tint the line color a bit lower than the star */
+  opacity: 1;
+}
+/* Legacy markup form support — hide the original line/star children
+   so they don't double-up on top of the new background. */
+.section-divider > .section-divider-line,
+.section-divider > .section-divider-star { display: none; }
 
 /* ─── PREMIUM CARD HOVER UTILITY ───────────────────────────────────
    Drop the class `.premium-hover` on any card-like element and it
