@@ -6,6 +6,11 @@
    the original boilerplate are intentionally NOT redeclared here. */
 
 /* ─── LAYOUT WRAPPERS ─── */
+/* Kill page-level horizontal scroll caused by absolutely-positioned
+   hero pattern/glow elements that extend beyond their parent's width
+   (e.g. .hifz-hero-pattern uses `inset: -10% -10% 0`). The clipped
+   visual is intentional; the scrollbar is not. */
+html, body { overflow-x: clip; }
 .wrap        { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
 .wrap-tight  { max-width: 880px;  margin: 0 auto; padding: 0 28px; }
 /* On ultra-narrow viewports (<380px — folded phones, old Androids) 28px
