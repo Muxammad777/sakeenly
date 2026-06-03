@@ -39,18 +39,15 @@
   filter: blur(30px);
   pointer-events: none;
 }
-/* Selector specificity boosted to outrank shared.css's
-   `section.wrap h1 { font-size: clamp(2.4rem, 4.6vw, 4.2rem) }`, which
-   otherwise made the hifz hero balloon up to 4.2rem multi-line. */
 section.wrap.hifz-hero h1 {
   font-family: 'Spectral', serif;
   font-weight: 500;
-  font-size: clamp(1.8rem, 3.4vw, 2.4rem);
-  line-height: 1.18;
+  font-size: clamp(2rem, 4.6vw, 3rem);
+  line-height: 1.15;
   letter-spacing: -0.01em;
   color: oklch(var(--text));
-  margin: 18px auto 10px;
-  max-width: 620px;
+  margin: 22px auto 14px;
+  max-width: 760px;
   text-wrap: balance;
 }
 .hifz-hero p {

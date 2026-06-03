@@ -292,6 +292,13 @@ section + .wrap:not(.no-auto-divider)::before,
   width: 100%;
   max-width: 520px;
   margin: 28px auto;
+  /* If the section is a flex or grid container, the ::before would
+     become a flex/grid item and squeeze in beside the real children.
+     Force it to span the full row and shrink to a block on the cross
+     axis. */
+  grid-column: 1 / -1;
+  flex-basis: 100%;
+  align-self: center;
   background-image:
     url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><g fill='none' stroke='%23E0B66A' stroke-width='0.9' opacity='0.95'><path d='M20 3 L24 17 L38 20 L24 23 L20 37 L16 23 L2 20 L16 17 Z'/><path d='M20 9 L22 18 L31 20 L22 22 L20 31 L18 22 L9 20 L18 18 Z' opacity='0.6'/><circle cx='20' cy='20' r='1.5' fill='%23E0B66A'/></g></svg>"),
     linear-gradient(90deg, transparent 0%, color-mix(in oklab, oklch(var(--accent)) 45%, transparent) 30%, color-mix(in oklab, oklch(var(--accent)) 45%, transparent) 70%, transparent 100%),
