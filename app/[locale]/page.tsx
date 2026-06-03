@@ -75,6 +75,8 @@ function HomeContent() {
         <SearchClient initialQuery="" />
       </Reveal>
 
+      <div className="wrap"><div className="section-divider-mini" aria-hidden="true" /></div>
+
       {/* VOTD + Streak */}
       <Reveal as="section" className="votd-section">
         <div className="wrap-tight">
@@ -199,6 +201,8 @@ function HomeContent() {
           </Link>
         </div>
       </Reveal>
+
+      <div className="wrap"><div className="section-divider-mini" aria-hidden="true" /></div>
 
       {/* EMOTIONS */}
       <Reveal as="section" className="wrap emotions">

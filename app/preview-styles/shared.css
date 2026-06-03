@@ -216,3 +216,188 @@ section.wrap-tight h3 {
 .geo-frame > .corner.tr { top: 14px;    right: 14px; transform: scaleX(-1); }
 .geo-frame > .corner.bl { bottom: 14px; left: 14px;  transform: scaleY(-1); }
 .geo-frame > .corner.br { bottom: 14px; right: 14px; transform: scale(-1, -1); }
+
+/* ─── SECTION ORNAMENT DIVIDER (global) ───────────────────────────────
+   Thin gradient gold line with an 8-point star at the center. Use
+   between major sections on any page:
+     <div class="section-divider" aria-hidden="true">
+       <span class="section-divider-line"></span>
+       <svg class="section-divider-star" viewBox="0 0 24 24"><path d="M12 2 L13.6 10.4 L22 12 L13.6 13.6 L12 22 L10.4 13.6 L2 12 L10.4 10.4 Z"/></svg>
+       <span class="section-divider-line"></span>
+     </div>
+   For brevity a single-element variant `<div class="section-divider-mini" />`
+   produces the same look without children. */
+.section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 28px auto;
+  max-width: 760px;
+  padding: 0 24px;
+}
+.section-divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    color-mix(in oklab, oklch(var(--accent)) 45%, transparent),
+    transparent
+  );
+}
+.section-divider-star {
+  width: 18px;
+  height: 18px;
+  fill: oklch(var(--accent));
+  opacity: 0.7;
+  filter: drop-shadow(0 0 6px color-mix(in oklab, oklch(var(--accent)) 40%, transparent));
+}
+/* CSS-only variant — no child elements required. The star is the
+   ::before pseudo, lines come from the parent's gradient background. */
+.section-divider-mini {
+  position: relative;
+  height: 1px;
+  margin: 26px auto;
+  max-width: 720px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    color-mix(in oklab, oklch(var(--accent)) 45%, transparent),
+    transparent
+  );
+}
+.section-divider-mini::before {
+  content: "";
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 16px; height: 16px;
+  transform: translate(-50%, -50%);
+  background: oklch(var(--bg));
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2 L13.6 10.4 L22 12 L13.6 13.6 L12 22 L10.4 13.6 L2 12 L10.4 10.4 Z'/></svg>") center / contain no-repeat;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2 L13.6 10.4 L22 12 L13.6 13.6 L12 22 L10.4 13.6 L2 12 L10.4 10.4 Z'/></svg>") center / contain no-repeat;
+  box-shadow: 0 0 0 4px oklch(var(--bg));
+}
+.section-divider-mini::after {
+  content: "";
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 12px; height: 12px;
+  transform: translate(-50%, -50%);
+  background: oklch(var(--accent));
+  filter: drop-shadow(0 0 6px color-mix(in oklab, oklch(var(--accent)) 40%, transparent));
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2 L13.6 10.4 L22 12 L13.6 13.6 L12 22 L10.4 13.6 L2 12 L10.4 10.4 Z'/></svg>") center / contain no-repeat;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2 L13.6 10.4 L22 12 L13.6 13.6 L12 22 L10.4 13.6 L2 12 L10.4 10.4 Z'/></svg>") center / contain no-repeat;
+  opacity: 0.85;
+}
+
+/* ─── PREMIUM CARD HOVER UTILITY ───────────────────────────────────
+   Drop the class `.premium-hover` on any card-like element and it
+   will pick up the gold-tinted lift+glow used on /hifz. Safe to apply
+   alongside existing card styles — only animates on :hover so resting
+   state is unchanged. Uses --card-accent (defaults to --accent) so
+   variants can be color-keyed. */
+.premium-hover {
+  --card-accent: oklch(var(--accent));
+  position: relative;
+  isolation: isolate;
+  transition: border-color 240ms ease, transform 240ms ease, box-shadow 240ms ease;
+}
+.premium-hover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 0%,
+    color-mix(in oklab, var(--card-accent) 14%, transparent),
+    transparent 70%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 280ms ease;
+  z-index: -1;
+}
+.premium-hover:hover {
+  border-color: color-mix(in oklab, var(--card-accent) 50%, currentColor);
+  transform: translateY(-3px);
+  box-shadow:
+    0 16px 44px -22px color-mix(in oklab, var(--card-accent) 60%, transparent),
+    0 0 0 1px color-mix(in oklab, var(--card-accent) 14%, transparent);
+}
+.premium-hover:hover::after { opacity: 1; }
+
+/* Auto-apply the same hover to the site's pre-existing card classes,
+   so pages don't need to be touched one by one. These selectors are
+   additive — base styles in each page's CSS keep winning at rest. */
+.feature,
+.emotion,
+.story,
+.ayah-span,
+.scholar-card,
+.reciter-card,
+.reciter-row,
+.kid-card,
+.search-result-link,
+.story-card,
+.alphabet-card,
+.surah-card {
+  position: relative;
+  isolation: isolate;
+  transition: border-color 240ms ease, transform 240ms ease, box-shadow 240ms ease;
+}
+.feature::after,
+.emotion::after,
+.story::after,
+.ayah-span::after,
+.scholar-card::after,
+.reciter-card::after,
+.reciter-row::after,
+.kid-card::after,
+.search-result-link::after,
+.story-card::after,
+.alphabet-card::after,
+.surah-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 0%,
+    color-mix(in oklab, oklch(var(--accent)) 12%, transparent),
+    transparent 70%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 280ms ease;
+  z-index: -1;
+}
+.feature:hover,
+.emotion:hover,
+.story:hover,
+.ayah-span:hover,
+.scholar-card:hover,
+.reciter-card:hover,
+.reciter-row:hover,
+.kid-card:hover,
+.search-result-link:hover,
+.story-card:hover,
+.alphabet-card:hover,
+.surah-card:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 16px 44px -22px color-mix(in oklab, oklch(var(--accent)) 55%, transparent),
+    0 0 0 1px color-mix(in oklab, oklch(var(--accent)) 14%, transparent);
+}
+.feature:hover::after,
+.emotion:hover::after,
+.story:hover::after,
+.ayah-span:hover::after,
+.scholar-card:hover::after,
+.reciter-card:hover::after,
+.reciter-row:hover::after,
+.kid-card:hover::after,
+.search-result-link:hover::after,
+.story-card:hover::after,
+.alphabet-card:hover::after,
+.surah-card:hover::after { opacity: 1; }
