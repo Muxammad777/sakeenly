@@ -194,8 +194,10 @@ export function HifzLearnClient({ ayat, surahName, surahNameArabic }: Props) {
 
       <div className="hifz-learn-divider" aria-hidden="true">
         <span className="hifz-divider-line" />
-        <svg className="hifz-divider-star" viewBox="0 0 24 24">
-          <path d="M12 2 L13.6 10.4 L22 12 L13.6 13.6 L12 22 L10.4 13.6 L2 12 L10.4 10.4 Z" />
+        <svg className="hifz-divider-star" viewBox="0 0 40 40">
+          <path d="M20 3 L24 17 L38 20 L24 23 L20 37 L16 23 L2 20 L16 17 Z" />
+          <path d="M20 9 L22 18 L31 20 L22 22 L20 31 L18 22 L9 20 L18 18 Z" opacity="0.6" />
+          <circle cx="20" cy="20" r="1.5" fill="oklch(var(--accent))" stroke="none" />
         </svg>
         <span className="hifz-divider-line" />
       </div>

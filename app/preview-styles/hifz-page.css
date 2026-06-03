@@ -707,14 +707,40 @@
 .hifz-learn-counter-sep { color: oklch(var(--text-3)); margin: 0 1px; }
 .hifz-learn-counter-tot { color: oklch(var(--text-3)); }
 
+/* Match the site-wide ornament — wide gradient lines + 32px 8-point
+   star with inner echo. The JSX already renders 3 children (line, svg,
+   line), so we just upsize. */
 .hifz-learn-divider {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin: 6px 0 22px;
+  justify-content: center;
+  gap: 20px;
+  margin: 28px auto 32px;
+  max-width: 520px;
+  padding: 0 28px;
+  color: oklch(var(--accent));
 }
-.hifz-learn-divider .hifz-divider-line { flex: 1; height: 1px; background: linear-gradient(to right, transparent, color-mix(in oklab, oklch(var(--accent)) 35%, transparent), transparent); }
-.hifz-learn-divider .hifz-divider-star { width: 14px; height: 14px; fill: oklch(var(--accent)); opacity: 0.6; filter: drop-shadow(0 0 5px color-mix(in oklab, oklch(var(--accent)) 35%, transparent)); }
+.hifz-learn-divider .hifz-divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, oklch(var(--accent)) 45%, transparent) 30%,
+    color-mix(in oklab, oklch(var(--accent)) 45%, transparent) 70%,
+    transparent
+  );
+}
+.hifz-learn-divider .hifz-divider-star {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: oklch(var(--accent));
+  stroke-width: 0.9;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 6px color-mix(in oklab, oklch(var(--accent)) 35%, transparent));
+}
 
 .hifz-stage-row {
   display: flex; gap: 4px; padding: 5px;
