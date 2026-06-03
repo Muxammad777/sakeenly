@@ -32,7 +32,7 @@ export function Footer() {
           </h4>
           <ul className="space-y-1">
             <li><Link href="/about"   className="block py-1 text-fg-muted transition-colors hover:text-fg">{t("about")}</Link></li>
-            <li><Link href="/about"   className="block py-1 text-fg-muted transition-colors hover:text-fg">{t("scholars")}</Link></li>
+            <li><Link href="/scholars" className="block py-1 text-fg-muted transition-colors hover:text-fg">{t("scholars")}</Link></li>
             <li><Link href="/privacy" className="block py-1 text-fg-muted transition-colors hover:text-fg">{t("privacy")}</Link></li>
             <li><Link href="#"        className="block py-1 text-fg-muted transition-colors hover:text-fg">{t("terms")}</Link></li>
           </ul>

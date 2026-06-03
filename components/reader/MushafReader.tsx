@@ -377,7 +377,7 @@ function MushafReaderInner(props: MushafReaderProps) {
 
   async function toggleBookmark(ayahKey: string) {
     if (!isAuthenticated) {
-      window.location.href = `/signin?callbackUrl=${encodeURIComponent(window.location.pathname)}`;
+      window.location.href = `/${uiLocale}/signin?callbackUrl=${encodeURIComponent(window.location.pathname)}`;
       return;
     }
     const target = ayat.find((a) => a.ayahKey === ayahKey);

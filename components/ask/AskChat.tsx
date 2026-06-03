@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { renderCitationsHtml, type Citation } from "@/lib/ai/citations";
 
@@ -30,6 +30,7 @@ interface AskChatProps { isAuthenticated: boolean; }
 
 export function AskChat({ isAuthenticated }: AskChatProps) {
   const t = useTranslations("ask");
+  const locale = useLocale();
   const [turns, setTurns] = useState<Turn[]>([]);
   const [input, setInput] = useState("");
   const [pending, setPending] = useState(false);
@@ -43,7 +44,7 @@ export function AskChat({ isAuthenticated }: AskChatProps) {
     const question = raw.trim();
     if (!question || pending) return;
     if (!isAuthenticated) {
-      window.location.href = `/signin?callbackUrl=${encodeURIComponent("/ask")}`;
+      window.location.href = `/${locale}/signin?callbackUrl=${encodeURIComponent(`/${locale}/ask`)}`;
       return;
     }
     const id = crypto.randomUUID();

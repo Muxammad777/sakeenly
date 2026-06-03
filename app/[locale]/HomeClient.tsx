@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useLocale } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 
 // Aят дня is hard-wired here for now: 2:286 — "Аллах не возлагает на душу
@@ -13,6 +14,7 @@ const VOTD_AUDIO_URL =
 /** VOTD play/bookmark + extra controls — interactive bits at the bottom of the VOTD card. */
 export function HomeVotd() {
   const router = useRouter();
+  const locale = useLocale();
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [playing, setPlaying] = useState(false);
   const [bookmarked, setBookmarked] = useState(false);
@@ -57,7 +59,7 @@ export function HomeVotd() {
       if (bookmarked) {
         const r = await fetch(`/api/bookmarks?ayahKey=${encodeURIComponent(ayahKey)}`, { method: "DELETE" });
         if (r.ok || r.status === 404) setBookmarked(false);
-        else if (r.status === 401) window.location.href = `/signin?callbackUrl=${encodeURIComponent(window.location.pathname)}`;
+        else if (r.status === 401) window.location.href = `/${locale}/signin?callbackUrl=${encodeURIComponent(window.location.pathname)}`;
       } else {
         const r = await fetch(`/api/bookmarks`, {
           method: "POST",
@@ -65,7 +67,7 @@ export function HomeVotd() {
           body: JSON.stringify({ ayahKey }),
         });
         if (r.ok) setBookmarked(true);
-        else if (r.status === 401) window.location.href = `/signin?callbackUrl=${encodeURIComponent(window.location.pathname)}`;
+        else if (r.status === 401) window.location.href = `/${locale}/signin?callbackUrl=${encodeURIComponent(window.location.pathname)}`;
       }
     } finally {
       setBookmarkBusy(false);
