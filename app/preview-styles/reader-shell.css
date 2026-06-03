@@ -96,8 +96,9 @@
   }
 
   /* ─── /reader index page (mobile-first sura picker) ─── */
-  .reader-index { padding: 56px 0 96px; }
-  .reader-index-head { text-align: center; max-width: 60ch; margin: 0 auto 40px; }
+  .reader-hero { padding: 96px 24px 56px; position: relative; text-align: center; }
+  .reader-index { padding: 24px 0 96px; }
+  .reader-index-head { text-align: center; max-width: 60ch; margin: 0 auto; }
   .reader-index-head h1 {
     font-family: var(--font-display), 'Spectral', serif;
     font-weight: 400; letter-spacing: -0.015em;

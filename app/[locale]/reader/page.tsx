@@ -27,14 +27,17 @@ export default async function ReaderIndex({ params }: PageProps) {
   const chapters = await quranApi.chapters("en");
 
   return (
-    <section className="wrap reader-index reader-hero">
-      <div className="reader-index-head">
-        <span className="tag"><span className="tag-dot" /><span>{t("surahs_eyebrow")}</span></span>
-        <h1>{t("surahs_h")}</h1>
-        <p>{t("surahs_lede")}</p>
-      </div>
+    <>
+      <section className="wrap reader-hero">
+        <div className="reader-index-head">
+          <span className="tag"><span className="tag-dot" /><span>{t("surahs_eyebrow")}</span></span>
+          <h1>{t("surahs_h")}</h1>
+          <p>{t("surahs_lede")}</p>
+        </div>
+      </section>
 
-      <ul className="surah-list surah-list-grid" aria-label={t("surahs_h")}>
+      <section className="wrap reader-index">
+        <ul className="surah-list surah-list-grid" aria-label={t("surahs_h")}>
         {chapters.map((c) => (
           <li key={c.id}>
             <Link className="surah-item surah-item-card" href={`/reader/${c.id}/1`}>
@@ -50,6 +53,7 @@ export default async function ReaderIndex({ params }: PageProps) {
           </li>
         ))}
       </ul>
-    </section>
+      </section>
+    </>
   );
 }
