@@ -7,6 +7,11 @@
   padding: 56px 24px 28px;
   overflow: hidden;
   isolation: isolate;
+  /* Pin height to content only — block descendants like
+     .hifz-hero-glow (aspect-ratio 1.6 → ~450px tall) from inflating
+     the section's intrinsic block size. */
+  contain: layout;
+  min-height: 0;
 }
 /* Subtle 8-point-star tile pattern behind the hero. SVG-as-data-uri,
    no extra HTTP request, opacity 5% so it reads as texture rather
