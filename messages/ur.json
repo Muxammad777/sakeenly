@@ -744,7 +744,8 @@
     "tj_rule_silent": "خاموش حروف",
     "fp_exact_label": "بالکل",
     "fp_exact_off": "صرف مکمل الفاظ",
-    "fp_exact_on": "تمام شکلیں"
+    "fp_exact_on": "تمام شکلیں",
+    "pop_hifz": "حفظ میں"
   },
   "sb": {
     "apply_btn": "ہمیں لکھیں",
@@ -1140,6 +1141,9 @@
     "status_done": "مکمل",
     "status_empty": "خالی",
     "min_short": "منٹ",
-    "ayat_count_n": "{n} آیات"
+    "ayat_count_n": "{n} آیات",
+    "pick_eyebrow": "کہیں سے بھی شروع کریں",
+    "pick_h": "حفظ کے لیے سورت منتخب کریں",
+    "pick_sub": "ابھی یاد کرنا شروع کرنے کے لیے کسی بھی سورت پر ٹیپ کریں۔"
   }
 }

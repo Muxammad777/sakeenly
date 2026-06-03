@@ -744,7 +744,8 @@
     "tj_rule_silent": "Silent",
     "fp_exact_label": "Exact",
     "fp_exact_off": "Whole words only",
-    "fp_exact_on": "Show all forms"
+    "fp_exact_on": "Show all forms",
+    "pop_hifz": "To hifz"
   },
   "sb": {
     "apply_btn": "Write to us",
@@ -1140,6 +1141,9 @@
     "status_done": "done",
     "status_empty": "empty",
     "min_short": "min",
-    "ayat_count_n": "{n} ayat"
+    "ayat_count_n": "{n} ayat",
+    "pick_eyebrow": "START ANYWHERE",
+    "pick_h": "Pick a surah to memorize",
+    "pick_sub": "Tap any surah to begin memorizing it right now."
   }
 }

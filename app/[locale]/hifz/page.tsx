@@ -403,6 +403,32 @@ export default async function HifzDashboard({ params }: PageProps) {
           </article>
         </div>
       </section>
+
+      {/* ╭───────────────────── SURAH PICKER ─────────────────────╮
+          Lets the user jump into hifz from any surah without going
+          through the scheduler. Especially useful before they've
+          configured a daily target. */}
+      <section className="wrap hifz-pick">
+        <div className="hifz-pick-head">
+          <span className="hifz-card-eyebrow">{t("pick_eyebrow")}</span>
+          <h2 className="hifz-pick-h">{t("pick_h")}</h2>
+          <p className="hifz-pick-sub">{t("pick_sub")}</p>
+        </div>
+        <div className="hifz-pick-grid">
+          {chapters.map((c) => (
+            <Link
+              key={c.id}
+              href={`/hifz/learn/${c.id}/1`}
+              className="hifz-pick-cell"
+            >
+              <span className="hifz-pick-num">{c.id}</span>
+              <span className="hifz-pick-name">{tSn(String(c.id))}</span>
+              <span className="hifz-pick-ar" dir="rtl">{c.name_arabic}</span>
+              <span className="hifz-pick-meta">{t("ayat_count_n", { n: c.verses_count ?? 0 })}</span>
+            </Link>
+          ))}
+        </div>
+      </section>
     </>
   );
 }

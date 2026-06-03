@@ -744,7 +744,8 @@
     "tj_rule_silent": "Huruf diam",
     "fp_exact_label": "Tepat",
     "fp_exact_off": "Hanya perkataan penuh",
-    "fp_exact_on": "Semua bentuk"
+    "fp_exact_on": "Semua bentuk",
+    "pop_hifz": "Ke hifz"
   },
   "sb": {
     "apply_btn": "Tulis kepada kami",
@@ -1140,6 +1141,9 @@
     "status_done": "siap",
     "status_empty": "kosong",
     "min_short": "min",
-    "ayat_count_n": "{n} ayat"
+    "ayat_count_n": "{n} ayat",
+    "pick_eyebrow": "MULA DARI MANA-MANA",
+    "pick_h": "Pilih surah untuk dihafal",
+    "pick_sub": "Ketik mana-mana surah untuk mula menghafalnya sekarang."
   }
 }

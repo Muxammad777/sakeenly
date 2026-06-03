@@ -345,36 +345,37 @@ section + .wrap:not(.no-auto-divider)::before,
 .premium-hover:hover::after { opacity: 1; }
 
 /* Auto-apply the same hover to the site's pre-existing card classes,
-   so pages don't need to be touched one by one. These selectors are
-   additive — base styles in each page's CSS keep winning at rest. */
-.feature,
-.emotion,
-.story,
-.ayah-span,
-.scholar-card,
-.reciter-card,
-.reciter-row,
-.kid-card,
-.search-result-link,
-.story-card,
-.alphabet-card,
-.surah-card {
+   so pages don't need to be touched one by one. Selectors use the
+   doubled-class hack (`.story.story`) to outrank per-page overrides
+   that define their own simpler `.story:hover`. */
+.feature.feature,
+.emotion.emotion,
+.story.story,
+.ayah-span.ayah-span,
+.scholar-card.scholar-card,
+.reciter-card.reciter-card,
+.reciter-row.reciter-row,
+.kid-card.kid-card,
+.search-result-link.search-result-link,
+.story-card.story-card,
+.alphabet-card.alphabet-card,
+.surah-card.surah-card {
   position: relative;
   isolation: isolate;
   transition: border-color 240ms ease, transform 240ms ease, box-shadow 240ms ease;
 }
-.feature::after,
-.emotion::after,
-.story::after,
-.ayah-span::after,
-.scholar-card::after,
-.reciter-card::after,
-.reciter-row::after,
-.kid-card::after,
-.search-result-link::after,
-.story-card::after,
-.alphabet-card::after,
-.surah-card::after {
+.feature.feature::after,
+.emotion.emotion::after,
+.story.story::after,
+.ayah-span.ayah-span::after,
+.scholar-card.scholar-card::after,
+.reciter-card.reciter-card::after,
+.reciter-row.reciter-row::after,
+.kid-card.kid-card::after,
+.search-result-link.search-result-link::after,
+.story-card.story-card::after,
+.alphabet-card.alphabet-card::after,
+.surah-card.surah-card::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -389,32 +390,32 @@ section + .wrap:not(.no-auto-divider)::before,
   transition: opacity 280ms ease;
   z-index: -1;
 }
-.feature:hover,
-.emotion:hover,
-.story:hover,
-.ayah-span:hover,
-.scholar-card:hover,
-.reciter-card:hover,
-.reciter-row:hover,
-.kid-card:hover,
-.search-result-link:hover,
-.story-card:hover,
-.alphabet-card:hover,
-.surah-card:hover {
+.feature.feature:hover,
+.emotion.emotion:hover,
+.story.story:hover,
+.ayah-span.ayah-span:hover,
+.scholar-card.scholar-card:hover,
+.reciter-card.reciter-card:hover,
+.reciter-row.reciter-row:hover,
+.kid-card.kid-card:hover,
+.search-result-link.search-result-link:hover,
+.story-card.story-card:hover,
+.alphabet-card.alphabet-card:hover,
+.surah-card.surah-card:hover {
   transform: translateY(-3px);
   box-shadow:
     0 16px 44px -22px color-mix(in oklab, oklch(var(--accent)) 55%, transparent),
     0 0 0 1px color-mix(in oklab, oklch(var(--accent)) 14%, transparent);
 }
-.feature:hover::after,
-.emotion:hover::after,
-.story:hover::after,
-.ayah-span:hover::after,
-.scholar-card:hover::after,
-.reciter-card:hover::after,
-.reciter-row:hover::after,
-.kid-card:hover::after,
-.search-result-link:hover::after,
-.story-card:hover::after,
-.alphabet-card:hover::after,
-.surah-card:hover::after { opacity: 1; }
+.feature.feature:hover::after,
+.emotion.emotion:hover::after,
+.story.story:hover::after,
+.ayah-span.ayah-span:hover::after,
+.scholar-card.scholar-card:hover::after,
+.reciter-card.reciter-card:hover::after,
+.reciter-row.reciter-row:hover::after,
+.kid-card.kid-card:hover::after,
+.search-result-link.search-result-link:hover::after,
+.story-card.story-card:hover::after,
+.alphabet-card.alphabet-card:hover::after,
+.surah-card.surah-card:hover::after { opacity: 1; }

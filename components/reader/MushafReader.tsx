@@ -968,6 +968,19 @@ function MushafReaderInner(props: MushafReaderProps) {
             </svg>
             <span className="pop-btn-label">{t("pop_share")}</span>
           </button>
+          {/* Send the verse straight into the hifz learn flow — handy
+              when the user finds an ayah they want to memorize. */}
+          <Link
+            className="pop-btn"
+            href={`/hifz/learn/${activeAyahData.ayahKey.split(":")[0]}/${activeAyahData.ayahKey.split(":")[1]}`}
+            onClick={() => { setPopover(null); setActiveAyah(null); }}
+            aria-label={t("pop_hifz")}
+          >
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round">
+              <path d="M12 2 L13.6 10.4 L22 12 L13.6 13.6 L12 22 L10.4 13.6 L2 12 L10.4 10.4 Z" />
+            </svg>
+            <span className="pop-btn-label">{t("pop_hifz")}</span>
+          </Link>
           <span style={{ width: 1, background: "var(--border)", margin: "4px 4px" }} />
           <button
             className="pop-btn"

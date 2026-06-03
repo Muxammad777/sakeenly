@@ -744,7 +744,8 @@
     "tj_rule_silent": "Talaffuz qilinmaydi",
     "fp_exact_label": "Aniq",
     "fp_exact_off": "Faqat butun so'zlar",
-    "fp_exact_on": "Hamma shakllar"
+    "fp_exact_on": "Hamma shakllar",
+    "pop_hifz": "Hifzga"
   },
   "sb": {
     "apply_btn": "Yozish",
@@ -1140,6 +1141,9 @@
     "status_done": "tayyor",
     "status_empty": "bo'sh",
     "min_short": "daq",
-    "ayat_count_n": "{n} oyat"
+    "ayat_count_n": "{n} oyat",
+    "pick_eyebrow": "ISTALGAN JOYDAN",
+    "pick_h": "Hifz uchun sura tanlang",
+    "pick_sub": "Hozir yodlashni boshlash uchun istalgan suraga bosing."
   }
 }

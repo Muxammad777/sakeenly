@@ -744,7 +744,8 @@
     "tj_rule_silent": "حروف ساکت",
     "fp_exact_label": "دقیق",
     "fp_exact_off": "فقط کلمات کامل",
-    "fp_exact_on": "همه شکل‌ها"
+    "fp_exact_on": "همه شکل‌ها",
+    "pop_hifz": "به حفظ"
   },
   "sb": {
     "apply_btn": "نوشتن",
@@ -1140,6 +1141,9 @@
     "status_done": "تمام",
     "status_empty": "خالی",
     "min_short": "دق",
-    "ayat_count_n": "{n} آیه"
+    "ayat_count_n": "{n} آیه",
+    "pick_eyebrow": "از هر کجا شروع کن",
+    "pick_h": "سوره‌ای را برای حفظ انتخاب کن",
+    "pick_sub": "روی هر سوره ضربه بزن تا فوراً شروع به حفظ آن کنی."
   }
 }

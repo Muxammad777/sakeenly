@@ -744,7 +744,8 @@
     "tj_rule_silent": "मौन अक्षर",
     "fp_exact_label": "सटीक",
     "fp_exact_off": "केवल पूरे शब्द",
-    "fp_exact_on": "सभी रूप"
+    "fp_exact_on": "सभी रूप",
+    "pop_hifz": "हिफ़्ज़ में"
   },
   "sb": {
     "apply_btn": "हमें लिखें",
@@ -1140,6 +1141,9 @@
     "status_done": "हो गया",
     "status_empty": "खाली",
     "min_short": "मिन",
-    "ayat_count_n": "{n} आयतें"
+    "ayat_count_n": "{n} आयतें",
+    "pick_eyebrow": "कहीं से भी शुरू करें",
+    "pick_h": "हिफ़्ज़ के लिए सूरत चुनें",
+    "pick_sub": "अभी याद करना शुरू करने के लिए किसी भी सूरत पर टैप करें।"
   }
 }

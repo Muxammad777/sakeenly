@@ -744,7 +744,8 @@
     "tj_rule_silent": "Айтылбайт",
     "fp_exact_label": "Так",
     "fp_exact_off": "Бүтүн сөздөр гана",
-    "fp_exact_on": "Бардык формалар"
+    "fp_exact_on": "Бардык формалар",
+    "pop_hifz": "Хифзге"
   },
   "sb": {
     "apply_btn": "Жазуу",
@@ -1140,6 +1141,9 @@
     "status_done": "даяр",
     "status_empty": "бош",
     "min_short": "мин",
-    "ayat_count_n": "{n} аят"
+    "ayat_count_n": "{n} аят",
+    "pick_eyebrow": "КААЛАГАН ЖЕРДЕН",
+    "pick_h": "Хифз үчүн сүрө танда",
+    "pick_sub": "Азыр жаттоону баштоо үчүн каалаган сүрөгө бас."
   }
 }
