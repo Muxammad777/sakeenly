@@ -200,8 +200,6 @@ export default async function HifzDashboard({ params }: PageProps) {
     <>
       {/* ╭───────────────────────── HERO ─────────────────────────╮ */}
       <section className="wrap hifz-hero">
-        <div className="hifz-hero-pattern" aria-hidden="true" />
-        <div className="hifz-hero-glow" aria-hidden="true" />
         <span className="tag"><span className="tag-dot"></span><span>{t("nav")}</span></span>
         <h1>{t("hero_h1")}</h1>
         <p>{t("hero_sub")}</p>

@@ -13,43 +13,10 @@
   contain: layout;
   min-height: 0;
 }
-/* Subtle 8-point-star tile pattern behind the hero. SVG-as-data-uri,
-   no extra HTTP request, opacity 5% so it reads as texture rather
-   than ornament. */
-.hifz-hero-pattern {
-  position: absolute;
-  /* Full-bleed: escape .wrap's 1240px max-width so the texture spans
-     the whole viewport. Centered via 50% + translateX(-50%). */
-  left: 50%;
-  width: 100vw;
-  top: 0;
-  bottom: 0;
-  transform: translateX(-50%);
-  z-index: -2;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'><g fill='none' stroke='%23E0B66A' stroke-width='0.6' stroke-opacity='0.55'><path d='M40 4 L43 35 L74 38 L43 41 L40 72 L37 41 L6 38 L37 35 Z'/><circle cx='40' cy='38' r='2.2'/><path d='M0 38 L8 38 M72 38 L80 38 M40 0 L40 8 M40 68 L40 80'/></g></svg>");
-  background-size: 80px 80px;
-  opacity: 0.06;
-  mask-image: radial-gradient(ellipse 90% 80% at 50% 30%, black 30%, transparent 75%);
-  pointer-events: none;
-}
-/* Soft golden radial glow centered behind the headline. */
-.hifz-hero-glow {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: min(640px, 90vw);
-  height: 240px;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-  background: radial-gradient(
-    ellipse at center,
-    color-mix(in oklab, oklch(var(--accent)) 28%, transparent) 0%,
-    color-mix(in oklab, oklch(var(--accent)) 8%, transparent) 35%,
-    transparent 70%
-  );
-  filter: blur(30px);
-  pointer-events: none;
-}
+/* (.hifz-hero-pattern / .hifz-hero-glow removed — the global
+   [class*="-hero"]::before/::after rule in shared.css now provides
+   the same 84-px star pattern + accent radial glow used on the
+   homepage hero, so per-hero pseudos here would just double-up.) */
 
 /* ─────────────────────── DIVIDER ─────────────────────── */
 /* OrnamentDivider component (renders 3 children: line, star, line)
