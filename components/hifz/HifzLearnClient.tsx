@@ -283,7 +283,11 @@ export function HifzLearnClient({ ayat, surahName, surahNameArabic }: Props) {
               </div>
               <div
                 className="hifz-ayah-ar"
-                onClick={(e) => { e.stopPropagation(); toggleReveal(i); }}
+                onClick={() => {
+                  // Don't stopPropagation — let the click bubble up so
+                  // the parent article also marks this ayah current.
+                  toggleReveal(i);
+                }}
                 title="нажми, чтобы открыть/скрыть"
                 style={isRevealed ? { filter: "none" } : undefined}
               >
