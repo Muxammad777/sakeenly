@@ -72,7 +72,11 @@
     "sugg4": "«Сабыр» нені білдіреді және Құранда қайда?",
     "quota_live": "Free · {used} / {limit} сұрақ бүгін",
     "searching": "Құраннан іздеп жатырмын…",
-    "error_prefix": "Қате"
+    "error_prefix": "Қате",
+    "new_chat": "Жаңа әңгіме",
+    "tool_search_quran": "Аят іздеу: «{q}»",
+    "tool_get_ayah": "{v} ашу",
+    "tool_search_hadith": "Хадис іздеу: «{q}»"
   },
   "ay": {
     "all": "Барлығы",

@@ -89,15 +89,16 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  accounts     Account[]
-  sessions     Session[]
-  subscription Subscription?
-  bookmarks    Bookmark[]
-  streak       Streak?
-  askHistory   AskHistory[]
-  hifzProgress HifzProgress[]
-  hifzSessions HifzSession[]
-  hifzSettings HifzSettings?
+  accounts      Account[]
+  sessions      Session[]
+  subscription  Subscription?
+  bookmarks     Bookmark[]
+  streak        Streak?
+  askHistory    AskHistory[]
+  conversations Conversation[]
+  hifzProgress  HifzProgress[]
+  hifzSessions  HifzSession[]
+  hifzSettings  HifzSettings?
 }
 
 model Subscription {
@@ -156,6 +157,82 @@ model AskHistory {
   createdAt DateTime @default(now())
 
   @@index([userId, createdAt])
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Conversations — multi-turn AI assistant on /ask
+//
+// Each Conversation is a thread of Messages between the user and the
+// Sakeenly assistant. Messages can be: a user prompt, an assistant
+// reply (possibly streaming), or a tool result (search_quran /
+// get_ayah / search_hadith). The assistant's outputs are persisted
+// AFTER streaming completes; partial streams are not saved.
+// ─────────────────────────────────────────────────────────────────────────────
+
+enum MessageRole {
+  user
+  assistant
+  tool
+}
+
+model Conversation {
+  id     String @id @default(cuid())
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Auto-generated from the first user message (~40 chars).
+  title    String  @default("Новая беседа") @db.VarChar(120)
+  language String  @default("ru")
+  archived Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  messages Message[]
+
+  @@index([userId, updatedAt(sort: Desc)])
+}
+
+model Message {
+  id             String       @id @default(cuid())
+  conversationId String
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+
+  role    MessageRole
+  /**
+   * Plain text content. For tool messages this is a short summary
+   * (the structured payload lives in toolResult).
+   */
+  content String      @db.Text
+
+  // Tool-use bookkeeping. Only populated when role=assistant (toolCalls)
+  // or role=tool (toolName + toolResult).
+  toolName   String?
+  toolInput  Json?
+  toolResult Json?
+  /**
+   * Aggregated assistant tool calls in a single turn — array of
+   * {id, name, input}. Stored on assistant messages that triggered
+   * tools so the UI can render them as inline pills.
+   */
+  toolCalls  Json?
+  /**
+   * Parsed citations the assistant produced, e.g. [{type:"quran",
+   * ref:"2:255"}, {type:"hadith", collection:"bukhari", number:"6502"}].
+   */
+  citations  Json?
+  /**
+   * Was this an assistant refusal (fatwa-shaped question)?
+   */
+  wasRefused Boolean @default(false)
+
+  inputTokens  Int?
+  outputTokens Int?
+  model        String?
+
+  createdAt DateTime @default(now())
+
+  @@index([conversationId, createdAt])
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

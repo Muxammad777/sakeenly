@@ -72,7 +72,11 @@
     "sugg4": "Что значит «сабр» и где об этом в Коране?",
     "quota_live": "Free · {used} / {limit} вопр. сегодня",
     "searching": "Ищу в Коране…",
-    "error_prefix": "Ошибка"
+    "error_prefix": "Ошибка",
+    "new_chat": "Новая беседа",
+    "tool_search_quran": "Ищу аяты: «{q}»",
+    "tool_get_ayah": "Открываю {v}",
+    "tool_search_hadith": "Ищу хадис: «{q}»"
   },
   "ay": {
     "all": "Все",

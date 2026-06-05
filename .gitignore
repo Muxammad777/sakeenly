@@ -60,4 +60,10 @@ lib/knowledge/translations/*
 !lib/knowledge/translations/id_indonesianislam.json
 !lib/knowledge/translations/id_muntakhab.json
 !lib/knowledge/translations/id_jalalayn.json
+# Hadith corpus — Sahih Bukhari + Muslim (~10MB combined, Public Domain
+# from AhmedBaset/hadith-json). Used by the /ask agent's search_hadith
+# tool.
+!lib/knowledge/hadith/
+!lib/knowledge/hadith/bukhari.json
+!lib/knowledge/hadith/muslim.json
 
