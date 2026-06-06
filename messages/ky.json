@@ -72,11 +72,7 @@
     "sugg4": "«Сабыр» эмне жана Куранда кайсы жерде?",
     "quota_live": "Free · {used} / {limit} суроо бүгүн",
     "searching": "Курандан издеп жатам…",
-    "error_prefix": "Ката",
-    "new_chat": "Жаңы маек",
-    "tool_search_quran": "Аят издөө: «{q}»",
-    "tool_get_ayah": "{v} ачуу",
-    "tool_search_hadith": "Хадис издөө: «{q}»"
+    "error_prefix": "Ката"
   },
   "ay": {
     "all": "Бардыгы",

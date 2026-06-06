@@ -72,11 +72,7 @@
     "sugg4": "«Сабр» чӣ маъно дорад ва дар Қуръон куҷост?",
     "quota_live": "Free · {used} / {limit} саволи имрӯза",
     "searching": "Дар Қуръон ҷустуҷӯ мекунам…",
-    "error_prefix": "Хато",
-    "new_chat": "Сӯҳбати нав",
-    "tool_search_quran": "Ҷустуҷӯи оятҳо: «{q}»",
-    "tool_get_ayah": "Кушодани {v}",
-    "tool_search_hadith": "Ҷустуҷӯи ҳадис: «{q}»"
+    "error_prefix": "Хато"
   },
   "ay": {
     "all": "Ҳама",

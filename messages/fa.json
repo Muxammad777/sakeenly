@@ -72,11 +72,7 @@
     "sugg4": "«صبر» یعنی چه و در قرآن کجاست؟",
     "quota_live": "Free · {used} / {limit} پرسش امروز",
     "searching": "در حال جست‌وجو در قرآن…",
-    "error_prefix": "خطا",
-    "new_chat": "گفتگوی جدید",
-    "tool_search_quran": "جستجوی آیات: «{q}»",
-    "tool_get_ayah": "بارگیری {v}",
-    "tool_search_hadith": "جستجوی حدیث: «{q}»"
+    "error_prefix": "خطا"
   },
   "ay": {
     "all": "همه",

@@ -72,11 +72,7 @@
     "sugg4": "What does \"sabr\" mean, and where does the Quran speak of it?",
     "quota_live": "Free · {used} / {limit} questions today",
     "searching": "Mencari dalam al-Quran…",
-    "error_prefix": "Ralat",
-    "new_chat": "Sembang baharu",
-    "tool_search_quran": "Mencari ayat: «{q}»",
-    "tool_get_ayah": "Memuat {v}",
-    "tool_search_hadith": "Mencari hadis: «{q}»"
+    "error_prefix": "Ralat"
   },
   "ay": {
     "all": "Semua",

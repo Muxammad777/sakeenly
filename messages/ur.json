@@ -72,11 +72,7 @@
     "sugg4": "What does \"sabr\" mean, and where does the Quran speak of it?",
     "quota_live": "Free · {used} / {limit} questions today",
     "searching": "قرآن میں تلاش کر رہا ہے…",
-    "error_prefix": "خرابی",
-    "new_chat": "نئی گفتگو",
-    "tool_search_quran": "آیات تلاش: «{q}»",
-    "tool_get_ayah": "{v} لوڈ ہو رہا ہے",
-    "tool_search_hadith": "حدیث تلاش: «{q}»"
+    "error_prefix": "خرابی"
   },
   "ay": {
     "all": "تمام",

@@ -72,11 +72,7 @@
     "sugg4": "«Sabr» nima maʼno beradi va Qurʼonda qayerda?",
     "quota_live": "Free · {used} / {limit} savol bugun",
     "searching": "Qur'ondan qidiryapman…",
-    "error_prefix": "Xatolik",
-    "new_chat": "Yangi suhbat",
-    "tool_search_quran": "Oyat qidirilmoqda: «{q}»",
-    "tool_get_ayah": "Yuklash {v}",
-    "tool_search_hadith": "Hadis qidirilmoqda: «{q}»"
+    "error_prefix": "Xatolik"
   },
   "ay": {
     "all": "Hammasi",
