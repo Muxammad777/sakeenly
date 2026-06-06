@@ -1,0 +1,467 @@
+/* Styles for the new interactive kids surfaces:
+   - real-progress chrome (stat-bar, learned/started letter states)
+   - letter tracing modal
+   - daily challenge widget
+   - badge wall + toast
+   - per-surah listen-and-repeat layout
+   - "I read this story" button
+*/
+
+/* ───── Generic kid action chrome ─────────────────────────────────────── */
+
+.kid-stat-bar {
+  border: 1px solid oklch(var(--border-1));
+  background: oklch(var(--surface-1));
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin: 0 0 22px;
+}
+.kid-stat-bar-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.kid-stat-bar-label {
+  font-size: 13px;
+  color: oklch(var(--text-2));
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.kid-stat-bar-val {
+  font-family: 'Spectral', serif;
+  font-size: 18px;
+  color: oklch(var(--text-1));
+}
+.kid-stat-bar-track {
+  height: 8px;
+  border-radius: 4px;
+  background: oklch(var(--surface-2));
+  overflow: hidden;
+}
+.kid-stat-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, oklch(var(--accent-1)), oklch(var(--accent-2)));
+  transition: width 360ms ease;
+}
+
+.kid-section-title {
+  font-family: 'Spectral', serif;
+  font-size: 22px;
+  margin: 6px 0 14px;
+}
+
+.kid-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 24px 0 8px;
+  flex-wrap: wrap;
+}
+.kid-cta-hint {
+  font-size: 13px;
+  color: oklch(var(--text-3));
+}
+
+.kid-btn {
+  appearance: none;
+  border: 1px solid oklch(var(--border-1));
+  background: oklch(var(--surface-1));
+  color: oklch(var(--text-1));
+  padding: 12px 18px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 120ms ease, background 200ms ease, opacity 200ms;
+}
+.kid-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.kid-btn:hover:not(:disabled) { transform: translateY(-1px); }
+.kid-btn-primary {
+  background: linear-gradient(180deg, oklch(var(--accent-1)), oklch(var(--accent-2)));
+  border-color: transparent;
+  color: white;
+}
+.kid-btn-ghost { background: transparent; }
+
+/* ───── Letter card states (live progress) ────────────────────────────── */
+
+.iqra-grid .letter { position: relative; }
+.iqra-grid .letter.active {
+  outline: 2px solid oklch(var(--accent-1));
+  outline-offset: 2px;
+}
+.iqra-grid .letter.learned {
+  background: linear-gradient(180deg,
+    oklch(var(--surface-1)),
+    oklch(0.97 0.04 145 / 1));
+  border-color: oklch(0.78 0.13 145 / 0.6);
+}
+.iqra-grid .letter.started {
+  border-style: dashed;
+}
+.letter-check {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  color: oklch(0.55 0.16 145);
+  background: oklch(1 0 0);
+  border-radius: 50%;
+  padding: 2px;
+}
+
+/* ───── Tracing modal ─────────────────────────────────────────────────── */
+
+.kid-modal {
+  position: fixed;
+  inset: 0;
+  background: oklch(0 0 0 / 0.55);
+  display: grid;
+  place-items: center;
+  z-index: 60;
+  padding: 24px;
+  animation: kid-modal-fade 160ms ease;
+}
+@keyframes kid-modal-fade { from { opacity: 0 } to { opacity: 1 } }
+.kid-modal-card {
+  background: oklch(var(--surface-1));
+  border: 1px solid oklch(var(--border-1));
+  border-radius: 18px;
+  padding: 22px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 20px 60px oklch(0 0 0 / 0.25);
+}
+.kid-modal-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.kid-modal-eyebrow {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: oklch(var(--text-3));
+}
+.kid-modal-title {
+  font-family: 'Spectral', serif;
+  font-size: 22px;
+  margin: 4px 0 0;
+}
+.kid-modal-ar {
+  font-family: 'Amiri Quran', serif;
+  margin-left: 8px;
+  font-size: 32px;
+}
+.kid-modal-close {
+  appearance: none;
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  line-height: 1;
+  color: oklch(var(--text-2));
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.kid-trace-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border: 1px dashed oklch(var(--border-1));
+  border-radius: 14px;
+  background: oklch(var(--surface-2));
+  overflow: hidden;
+}
+.kid-trace-mask,
+.kid-trace-ink {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+.kid-trace-mask { opacity: 0.16; pointer-events: none; }
+.kid-trace-ink { cursor: crosshair; }
+
+.kid-modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.kid-trace-feedback {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+.kid-trace-feedback.ok {
+  background: oklch(0.96 0.05 145 / 0.7);
+  color: oklch(0.42 0.14 145);
+  border: 1px solid oklch(0.78 0.13 145 / 0.5);
+}
+.kid-trace-feedback.retry {
+  background: oklch(0.97 0.03 30 / 0.7);
+  color: oklch(0.42 0.14 30);
+  border: 1px solid oklch(0.78 0.13 30 / 0.5);
+}
+
+/* ───── Daily challenge ──────────────────────────────────────────────── */
+
+.kid-daily {
+  border: 1px solid oklch(var(--border-1));
+  background: oklch(var(--surface-1));
+  border-radius: 16px;
+  padding: 22px 22px 16px;
+  margin: 22px 0 0;
+}
+.kid-daily-skeleton { opacity: 0.6; }
+.kid-daily-done .kid-daily-title { color: oklch(0.42 0.14 145); }
+.kid-daily-head { margin-bottom: 14px; }
+.kid-daily-eyebrow {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: oklch(var(--text-3));
+}
+.kid-daily-title {
+  font-family: 'Spectral', serif;
+  font-size: 22px;
+  margin: 4px 0 0;
+}
+.kid-daily-sub {
+  margin-top: 4px;
+  color: oklch(var(--text-2));
+  font-size: 13px;
+}
+.kid-daily-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+.kid-daily-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 12px;
+  border: 1px solid oklch(var(--border-1));
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 120ms ease, background 200ms;
+}
+.kid-daily-link:hover { transform: translateX(4px); background: oklch(var(--surface-2)); }
+.kid-daily-ar {
+  font-family: 'Amiri Quran', serif;
+  font-size: 26px;
+  width: 44px;
+  text-align: center;
+  color: oklch(var(--text-1));
+}
+.kid-daily-text { flex: 1; display: flex; flex-direction: column; }
+.kid-daily-label { font-size: 15px; }
+.kid-daily-mode {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: oklch(var(--text-3));
+}
+.kid-daily-item.review .kid-daily-mode { color: oklch(0.5 0.12 60); }
+.kid-daily-arrow { color: oklch(var(--text-3)); flex-shrink: 0; }
+
+/* ───── Badge wall + toast ───────────────────────────────────────────── */
+
+.kid-badge-wall { margin-top: 36px; }
+.kid-badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+.kid-badge {
+  border: 1px solid oklch(var(--border-1));
+  border-radius: 14px;
+  padding: 14px 12px;
+  text-align: center;
+  background: oklch(var(--surface-1));
+  transition: opacity 200ms;
+}
+.kid-badge.locked { opacity: 0.4; }
+.kid-badge.earned {
+  background: linear-gradient(180deg,
+    oklch(var(--surface-1)),
+    oklch(0.97 0.04 80 / 1));
+  border-color: oklch(0.78 0.13 80 / 0.5);
+}
+.kid-badge-icon {
+  width: 38px;
+  height: 38px;
+  margin: 0 auto 8px;
+  color: oklch(var(--text-1));
+}
+.kid-badge-icon svg { width: 100%; height: 100%; }
+.kid-badge-title {
+  font-family: 'Spectral', serif;
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+.kid-badge-hint {
+  font-size: 11px;
+  color: oklch(var(--text-3));
+  line-height: 1.35;
+}
+
+.kid-badge-toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 80;
+  display: grid;
+  gap: 10px;
+  animation: kid-toast-in 240ms ease;
+}
+@keyframes kid-toast-in {
+  from { transform: translateY(20px); opacity: 0 }
+  to { transform: translateY(0); opacity: 1 }
+}
+.kid-badge-toast-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: oklch(var(--surface-1));
+  border: 1px solid oklch(0.78 0.13 80 / 0.5);
+  padding: 12px 16px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px oklch(0 0 0 / 0.2);
+  min-width: 240px;
+}
+.kid-badge-toast-icon { width: 28px; height: 28px; color: oklch(0.6 0.16 80); }
+.kid-badge-toast-icon svg { width: 100%; height: 100%; }
+.kid-badge-toast-eyebrow {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: oklch(var(--text-3));
+}
+.kid-badge-toast-title { font-family: 'Spectral', serif; font-size: 17px; }
+
+/* ───── Surah learn page ─────────────────────────────────────────────── */
+
+.kid-surah-h1 {
+  font-family: 'Amiri Quran', serif !important;
+  font-size: clamp(48px, 8vw, 96px) !important;
+  line-height: 1.2 !important;
+}
+
+.kid-surah-list {
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 0;
+  display: grid;
+  gap: 12px;
+}
+.kid-surah-row {
+  border: 1px solid oklch(var(--border-1));
+  border-radius: 16px;
+  background: oklch(var(--surface-1));
+  overflow: hidden;
+  transition: border-color 200ms;
+}
+.kid-surah-row.active { border-color: oklch(var(--accent-1)); }
+.kid-surah-row.passed {
+  background: linear-gradient(180deg,
+    oklch(var(--surface-1)),
+    oklch(0.97 0.04 145 / 0.6));
+}
+.kid-surah-row-head {
+  appearance: none;
+  border: none;
+  background: transparent;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  cursor: pointer;
+  text-align: right;
+}
+.kid-ayah-num {
+  font-family: 'Spectral', serif;
+  font-size: 18px;
+  color: oklch(var(--text-3));
+  flex-shrink: 0;
+  min-width: 28px;
+  text-align: center;
+}
+.kid-ayah-ar {
+  flex: 1;
+  font-family: 'Amiri Quran', serif;
+  font-size: clamp(24px, 3.4vw, 40px);
+  line-height: 1.9;
+  color: oklch(var(--text-1));
+}
+.kid-ayah-check { color: oklch(0.5 0.16 145); flex-shrink: 0; }
+.kid-surah-row-body {
+  padding: 0 20px 20px;
+  border-top: 1px dashed oklch(var(--border-1));
+}
+
+.kid-surah-done {
+  margin-top: 28px;
+  padding: 28px;
+  border-radius: 18px;
+  text-align: center;
+  background: linear-gradient(180deg,
+    oklch(0.97 0.04 145 / 1),
+    oklch(var(--surface-1)));
+  border: 1px solid oklch(0.78 0.13 145 / 0.6);
+}
+.kid-surah-done-eyebrow {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: oklch(0.45 0.14 145);
+}
+.kid-surah-done-title {
+  font-family: 'Spectral', serif;
+  font-size: 28px;
+  margin: 6px 0 10px;
+}
+.kid-surah-done p { color: oklch(var(--text-2)); margin-bottom: 18px; }
+
+/* ───── Surah card "learned" state on /kids/surahs index ─────────────── */
+
+.ks.ks-learned { border-color: oklch(0.78 0.13 145 / 0.6); }
+
+/* ───── "I read this story" button on prophet pages ──────────────────── */
+
+.kst-read { margin-top: 26px; display: flex; }
+.kid-story-read {
+  appearance: none;
+  border: 1px solid oklch(var(--border-1));
+  background: oklch(var(--surface-1));
+  color: oklch(var(--text-1));
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 200ms, transform 120ms;
+}
+.kid-story-read:hover:not(:disabled) { transform: translateY(-1px); }
+.kid-story-read.done {
+  background: oklch(0.96 0.05 145 / 0.7);
+  border-color: oklch(0.78 0.13 145 / 0.6);
+  color: oklch(0.4 0.14 145);
+  cursor: default;
+}

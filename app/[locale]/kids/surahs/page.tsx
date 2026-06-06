@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { setRequestLocale, getTranslations } from "next-intl/server";
-import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
+import { KidsProvider } from "@/components/kids/KidsProvider";
+import { SurahsIndex } from "@/components/kids/SurahsIndex";
 
 interface PageProps { params: Promise<{ locale: Locale }>; }
 
 const SURAHS = [
-  { n: 1,   ru: "Аль-Фатиха",  ar: "الفاتحة",  verses: 7, prog: 5 },
-  { n: 114, ru: "Ан-Нас",      ar: "الناس",    verses: 6, prog: 3 },
-  { n: 113, ru: "Аль-Фаляк",   ar: "الفلق",    verses: 5, prog: 2 },
-  { n: 112, ru: "Аль-Ихляс",   ar: "الإخلاص",  verses: 4, prog: 4 },
-  { n: 108, ru: "Аль-Каусар",  ar: "الكوثر",   verses: 3, prog: 3 },
-  { n: 109, ru: "Аль-Кафирун", ar: "الكافرون", verses: 6, prog: 0 },
+  { n: 1,   ru: "Аль-Фатиха",  ar: "الفاتحة",  verses: 7 },
+  { n: 114, ru: "Ан-Нас",      ar: "الناس",    verses: 6 },
+  { n: 113, ru: "Аль-Фаляк",   ar: "الفلق",    verses: 5 },
+  { n: 112, ru: "Аль-Ихляс",   ar: "الإخلاص",  verses: 4 },
+  { n: 108, ru: "Аль-Каусар",  ar: "الكوثر",   verses: 3 },
+  { n: 109, ru: "Аль-Кафирун", ar: "الكافرون", verses: 6 },
 ];
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -24,11 +25,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function SurahsPage({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <Content />;
+  return (
+    <KidsProvider>
+      <Content />
+    </KidsProvider>
+  );
 }
 
 function Content() {
   const t = useTranslations("ks");
+  const surahs = SURAHS.map((s, i) => {
+    const n = i + 1;
+    return {
+      ...s,
+      meta: t(`s${n}.meta` as `s1.meta`),
+      note: t(`s${n}.note` as `s1.note`),
+      label: t(`s${n}.label` as `s1.label`),
+    };
+  });
   return (
     <>
       <section className="wrap kid-hero">
@@ -39,35 +53,7 @@ function Content() {
       </section>
 
       <section className="wrap">
-        <div className="ks-grid">
-          {SURAHS.map((s, i) => {
-            const n = i + 1;
-            return (
-              <Link key={s.n} className="ks" href={`/hifz/learn/${s.n}/1`}>
-                <div className="ks-head">
-                  <div className="ks-num">{s.n}</div>
-                  <div className="ks-title">
-                    <div className="name">{s.ru}</div>
-                    <div className="meta">{t(`s${n}.meta` as `s1.meta`)}</div>
-                  </div>
-                  <div className="ks-ar" dir="rtl">{s.ar}</div>
-                </div>
-                <div className="ks-note">{t(`s${n}.note` as `s1.note`)}</div>
-                <div className="ks-progress">
-                  {Array.from({ length: s.verses }).map((_, j) => (
-                    <div key={j} className={`b ${j < s.prog ? "done" : ""}`}></div>
-                  ))}
-                </div>
-                <div className="ks-foot">
-                  <span className="label">{t(`s${n}.label` as `s1.label`)}</span>
-                  <button className="ks-play">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                  </button>
-                </div>
-              </Link>
-            );
-          })}
-        </div>
+        <SurahsIndex surahs={surahs} />
       </section>
     </>
   );

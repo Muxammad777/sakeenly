@@ -3,6 +3,12 @@ import { useTranslations } from "next-intl";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
+import { KidsProvider } from "@/components/kids/KidsProvider";
+import { KidStreakBlock } from "@/components/kids/KidStreakBlock";
+import { KidAlphabetPreview } from "@/components/kids/KidAlphabetPreview";
+import { KidSurahPreview } from "@/components/kids/KidSurahPreview";
+import { KidDailyChallenge } from "@/components/kids/KidDailyChallenge";
+import { KidBadgeWall } from "@/components/kids/KidBadgeWall";
 
 interface PageProps { params: Promise<{ locale: Locale }>; }
 
@@ -15,34 +21,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function KidsPage({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <Content />;
+  return (
+    <KidsProvider>
+      <Content />
+    </KidsProvider>
+  );
 }
-
-const IQRA_LETTERS = [
-  { ar: "ا", name: "Алиф", done: true },
-  { ar: "ب", name: "Ба", done: true },
-  { ar: "ت", name: "Та", done: true },
-  { ar: "ث", name: "Са", done: true },
-  { ar: "ج", name: "Джим", done: true },
-  { ar: "ح", name: "Ха", done: true },
-  { ar: "خ", name: "Ха", done: true },
-  { ar: "د", name: "Даль", done: true },
-  { ar: "ذ", name: "Заль", done: true },
-  { ar: "ر", name: "Ра", done: true },
-  { ar: "ز", name: "Зайн", done: true },
-  { ar: "س", name: "Син", done: true },
-  { ar: "ش", name: "Шин", done: false },
-  { ar: "ص", name: "Сад", done: false },
-  { ar: "ض", name: "Дад", done: false },
-  { ar: "ط", name: "Та", done: false },
-];
-
-const KID_SURAHS = [
-  { num: 1,   ar: "الفاتحة", ayat: 7, progress: 85, tKey: "surah1" },
-  { num: 112, ar: "الإخلاص",  ayat: 4, progress: 55, tKey: "surah112" },
-  { num: 113, ar: "الفلق",    ayat: 5, progress: 30, tKey: "surah113" },
-  { num: 114, ar: "الناس",   ayat: 6, progress: 12, tKey: "surah114" },
-];
 
 const PROPHET_STORIES = [
   {
@@ -129,7 +113,6 @@ const PROPHET_STORIES = [
 
 function Content() {
   const t = useTranslations("kid");
-  const tKa = useTranslations("ka");
 
   return (
     <>
@@ -162,32 +145,14 @@ function Content() {
         </div>
       </section>
 
+      {/* DAILY CHALLENGE */}
+      <section className="wrap">
+        <KidDailyChallenge />
+      </section>
+
       {/* STREAK */}
       <section className="wrap">
-        <div className="kid-streak">
-          <div className="kid-streak-card">
-            <div className="kid-streak-num">12</div>
-            <div className="kid-streak-info">
-              <span className="lbl">{t("streak_alphabet")}</span>
-              <span className="title">{t("streak_progress", { done: 12, total: 28 })}</span>
-              <div className="memo-progress" style={{ marginTop: 8, width: 200 }}>
-                <div style={{ width: "43%" }} />
-              </div>
-            </div>
-          </div>
-          <div className="kid-streak-card">
-            <div className="kid-streak-num">4</div>
-            <div className="kid-streak-info">
-              <span className="lbl">{t("streak_days_lbl")}</span>
-              <span className="title">{t("streak_days_title", { n: 4 })}</span>
-              <div style={{ display: "flex", gap: 6, marginTop: 8 }}>
-                {["П", "В", "С"].map((d) => <div key={d} className="streak-dot done">{d}</div>)}
-                <div className="streak-dot today">Ч</div>
-                {["П", "С", "В"].map((d, i) => <div key={i + 100} className="streak-dot">{d}</div>)}
-              </div>
-            </div>
-          </div>
-        </div>
+        <KidStreakBlock />
       </section>
 
       {/* IQRA */}
@@ -201,20 +166,7 @@ function Content() {
           <span className="kid-pill">{t("sec1_pill")}</span>
         </div>
 
-        <div className="iqra-grid">
-          {IQRA_LETTERS.map((l, i) => (
-            <Link key={l.ar} href="/kids/alphabet" className={`iqra-letter ${l.done ? "done" : ""}`}>
-              <span className="ar arabic" dir="rtl">{l.ar}</span>
-              <span className="name">{tKa(`l${i + 1}` as `l1`)}</span>
-            </Link>
-          ))}
-        </div>
-
-        <div className="iqra-progress">
-          <span>{t("progress")}</span>
-          <div className="bar"><div style={{ width: "43%" }} /></div>
-          <span>43%</span>
-        </div>
+        <KidAlphabetPreview />
       </section>
 
       {/* FIRST SURAHS */}
@@ -228,29 +180,7 @@ function Content() {
           <span className="kid-pill">{t("sec2_pill")}</span>
         </div>
 
-        <div className="surah-cards">
-          {KID_SURAHS.map((s) => (
-            <Link key={s.num} className="surah-card" href={`/hifz/learn/${s.num}/1`}>
-              <span className="num">№{s.num} · {s.ayat}</span>
-              <span className="ru">{t(`${s.tKey}_ru`)}</span>
-              <div className="ar arabic" dir="rtl">{s.ar}</div>
-              <div className="meta">{t(`${s.tKey}_meta`)}</div>
-              <div className="memo-progress" style={{ marginTop: 6 }}>
-                <div style={{ width: `${s.progress}%` }} />
-              </div>
-              <div className="surah-card-cta">
-                <button type="button">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                  {t("sec2_listen")}
-                </button>
-                <button type="button">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
-                  {t("sec2_learn")}
-                </button>
-              </div>
-            </Link>
-          ))}
-        </div>
+        <KidSurahPreview />
       </section>
 
       {/* PROPHET STORIES */}
@@ -285,6 +215,11 @@ function Content() {
             </Link>
           ))}
         </div>
+      </section>
+
+      {/* BADGES */}
+      <section className="wrap">
+        <KidBadgeWall />
       </section>
 
     </>

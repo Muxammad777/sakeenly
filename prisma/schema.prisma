@@ -98,6 +98,7 @@ model User {
   hifzProgress HifzProgress[]
   hifzSessions HifzSession[]
   hifzSettings HifzSettings?
+  kidProfiles  KidProfile[]
 }
 
 model Subscription {
@@ -263,4 +264,71 @@ model HifzSettings {
   lastHifzDate      DateTime?
 
   updatedAt DateTime @updatedAt
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Kids — child profiles + per-letter / per-surah / per-story progress + badges
+// Designed for "family plan": multiple kids under one user account.
+// ─────────────────────────────────────────────────────────────────────────────
+
+enum KidProgressType {
+  letter // Arabic alphabet letter, key = "alif" | "ba" | …
+  surah // memorized short surah, key = surah number ("1","112",…)
+  story // prophet story read, key = story slug
+}
+
+enum KidProgressStatus {
+  in_progress // tapped/started but not finished
+  learned // mastered — green checkmark
+}
+
+model KidProfile {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name      String   @default("")
+  ageBand   String   @default("4-6") // "4-6" | "6-8" | "8-10"
+  avatarSlug String  @default("star") // visual avatar token
+
+  streakCurrent  Int       @default(0)
+  streakLongest  Int       @default(0)
+  lastActiveDate DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  progress KidProgress[]
+  badges   KidBadge[]
+
+  @@index([userId])
+}
+
+model KidProgress {
+  id        String          @id @default(cuid())
+  profileId String
+  profile   KidProfile      @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  type      KidProgressType
+  key       String // "alif" | "112" | "musa"
+  status    KidProgressStatus @default(in_progress)
+  traceScore Int             @default(0) // 0–100 last tracing accuracy (letters only)
+  reciteScore Int            @default(0) // 0–100 last recitation accuracy (surahs only)
+  attempts  Int             @default(0)
+  masteredAt DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([profileId, type, key])
+  @@index([profileId, type])
+}
+
+model KidBadge {
+  id        String     @id @default(cuid())
+  profileId String
+  profile   KidProfile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  slug      String // "first_letter" | "letters_10" | "first_surah" | "streak_3" | …
+  awardedAt DateTime   @default(now())
+
+  @@unique([profileId, slug])
+  @@index([profileId])
 }

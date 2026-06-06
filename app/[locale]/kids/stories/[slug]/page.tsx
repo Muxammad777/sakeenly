@@ -10,6 +10,21 @@ import {
   nextProphetStory,
   prophetStorySlugs,
 } from "@/lib/data/prophet-stories";
+import { KidStoryRead } from "@/components/kids/KidStoryRead";
+
+const READ_LABELS: Record<Locale, { btn: string; done: string }> = {
+  ru: { btn: "Я прочитал эту историю",        done: "Прочитано" },
+  en: { btn: "I read this story",             done: "Read" },
+  fa: { btn: "این داستان را خواندم",          done: "خوانده شد" },
+  tg: { btn: "Ин қиссаро хондам",             done: "Хонда шуд" },
+  uz: { btn: "Bu qissani o'qib chiqdim",      done: "O'qildi" },
+  kk: { btn: "Бұл қиссаны оқыдым",            done: "Оқылды" },
+  ky: { btn: "Бул аңгемени окудум",           done: "Окулду" },
+  ur: { btn: "میں نے یہ کہانی پڑھ لی",        done: "پڑھ لیا" },
+  ms: { btn: "Saya sudah baca kisah ini",     done: "Sudah baca" },
+  hi: { btn: "मैंने यह कहानी पढ़ ली",        done: "पढ़ ली" },
+  id: { btn: "Saya sudah baca kisah ini",     done: "Sudah baca" },
+};
 
 interface PageProps {
   params: Promise<{ locale: Locale; slug: string }>;
@@ -271,6 +286,11 @@ export default async function ProphetStoryPage({ params }: PageProps) {
           <div className="kst-lesson">
             <span className="kst-lesson-lbl">{L.lessonLbl}</span>
             <p>{c.lesson}</p>
+          </div>
+
+          {/* Mark-as-read */}
+          <div className="kst-read">
+            <KidStoryRead slug={story.slug} label={READ_LABELS[locale].btn} labelDone={READ_LABELS[locale].done} />
           </div>
 
           {/* Sources */}
