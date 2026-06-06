@@ -48,12 +48,12 @@
   }
   .letter-glyph {
     font-family: 'Scheherazade New', serif;
-    font-size: 2.6rem; line-height: 1;
+    font-size: 4rem; line-height: 1;
     color: oklch(var(--text));
   }
   .letter:hover:not(:disabled) .letter-glyph { color: oklch(var(--accent)); }
-  .letter-name { font-family: 'Spectral', serif; font-size: 0.95rem; color: oklch(var(--text-2)); }
-  .letter-tr { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: oklch(var(--text-3)); letter-spacing: 0.1em; }
+  .letter-name { font-family: 'Spectral', serif; font-size: 1.2rem; color: oklch(var(--text-2)); }
+  .letter-tr { font-family: 'JetBrains Mono', monospace; font-size: 14px; color: oklch(var(--text-3)); letter-spacing: 0.12em; font-weight: 500; }
 
   .legend {
     margin-top: 36px; padding: 22px 26px;

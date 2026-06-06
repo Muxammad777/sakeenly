@@ -16,24 +16,29 @@ export interface ArabicLetter {
   order: number;
 }
 
+// Transliteration follows DIN 31635 — the canonical scholarly standard used in
+// Arabist/Islamic-studies publishing (Brill EI, German/Russian academic tradition).
+// Russian names for the emphatic letters ص ض ط ظ use the classical Madrasa form
+// (Сод/Дод/Тоʼ/Зоʼ) to prevent collisions with their non-emphatic siblings
+// ت / د / ز so a child never confuses ط and ت by name alone.
 export const ARABIC_LETTERS: ArabicLetter[] = [
-  { slug: "alif",     ar: "ا", name: "Алиф", tr: "a",  audio: "01-alif",    order: 1 },
+  { slug: "alif",     ar: "ا", name: "Алиф", tr: "ʾ",  audio: "01-alif",    order: 1 },
   { slug: "ba",       ar: "ب", name: "Ба",   tr: "b",  audio: "02-ba",      order: 2 },
   { slug: "ta",       ar: "ت", name: "Та",   tr: "t",  audio: "03-ta",      order: 3 },
   { slug: "tha",      ar: "ث", name: "Са",   tr: "ṯ",  audio: "04-tha",     order: 4 },
-  { slug: "jim",      ar: "ج", name: "Джим", tr: "j",  audio: "05-jim",     order: 5 },
+  { slug: "jim",      ar: "ج", name: "Джим", tr: "ǧ",  audio: "05-jim",     order: 5 },
   { slug: "ha",       ar: "ح", name: "Ха",   tr: "ḥ",  audio: "06-ha",      order: 6 },
-  { slug: "kha",      ar: "خ", name: "Ха̄",  tr: "ḫ",  audio: "07-kha",     order: 7 },
+  { slug: "kha",      ar: "خ", name: "Ха",   tr: "ḫ",  audio: "07-kha",     order: 7 },
   { slug: "dal",      ar: "د", name: "Даль", tr: "d",  audio: "08-dal",     order: 8 },
   { slug: "dhal",     ar: "ذ", name: "Заль", tr: "ḏ",  audio: "09-dhal",    order: 9 },
   { slug: "ra",       ar: "ر", name: "Ра",   tr: "r",  audio: "10-ra",      order: 10 },
   { slug: "zay",      ar: "ز", name: "Зай",  tr: "z",  audio: "11-zay",     order: 11 },
   { slug: "sin",      ar: "س", name: "Син",  tr: "s",  audio: "12-sin",     order: 12 },
   { slug: "shin",     ar: "ش", name: "Шин",  tr: "š",  audio: "13-shin",    order: 13 },
-  { slug: "sad",      ar: "ص", name: "Сад",  tr: "ṣ",  audio: "14-sad",     order: 14 },
-  { slug: "dad",      ar: "ض", name: "Дад",  tr: "ḍ",  audio: "15-dad",     order: 15 },
-  { slug: "ta_emp",   ar: "ط", name: "Та",   tr: "ṭ",  audio: "16-ta-emp",  order: 16 },
-  { slug: "za_emp",   ar: "ظ", name: "За",   tr: "ẓ",  audio: "17-za-emp",  order: 17 },
+  { slug: "sad",      ar: "ص", name: "Сод",  tr: "ṣ",  audio: "14-sad",     order: 14 },
+  { slug: "dad",      ar: "ض", name: "Дод",  tr: "ḍ",  audio: "15-dad",     order: 15 },
+  { slug: "ta_emp",   ar: "ط", name: "Тоʼ",  tr: "ṭ",  audio: "16-ta-emp",  order: 16 },
+  { slug: "za_emp",   ar: "ظ", name: "Зоʼ",  tr: "ẓ",  audio: "17-za-emp",  order: 17 },
   { slug: "ayn",      ar: "ع", name: "Айн",  tr: "ʿ",  audio: "18-ayn",     order: 18 },
   { slug: "ghayn",    ar: "غ", name: "Гайн", tr: "ġ",  audio: "19-ghayn",   order: 19 },
   { slug: "fa",       ar: "ف", name: "Фа",   tr: "f",  audio: "20-fa",      order: 20 },
@@ -42,7 +47,7 @@ export const ARABIC_LETTERS: ArabicLetter[] = [
   { slug: "lam",      ar: "ل", name: "Лям",  tr: "l",  audio: "23-lam",     order: 23 },
   { slug: "mim",      ar: "م", name: "Мим",  tr: "m",  audio: "24-mim",     order: 24 },
   { slug: "nun",      ar: "ن", name: "Нун",  tr: "n",  audio: "25-nun",     order: 25 },
-  { slug: "ha_soft",  ar: "ه", name: "Хә̄",  tr: "h",  audio: "26-ha-soft", order: 26 },
+  { slug: "ha_soft",  ar: "ه", name: "Хаʼ",  tr: "h",  audio: "26-ha-soft", order: 26 },
   { slug: "waw",      ar: "و", name: "Уау",  tr: "w",  audio: "27-waw",     order: 27 },
   { slug: "ya",       ar: "ي", name: "Йа",   tr: "y",  audio: "28-ya",      order: 28 },
 ];
