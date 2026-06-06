@@ -67,7 +67,7 @@ export function LetterTrace({ letter, onClose }: Props) {
     const rect = c.getBoundingClientRect();
     const x = (e.clientX - rect.left) * (c.width / rect.width);
     const y = (e.clientY - rect.top) * (c.height / rect.height);
-    ctx.lineWidth = 22;
+    ctx.lineWidth = 15;
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
     ctx.strokeStyle = "rgba(244, 122, 91, 0.92)";
