@@ -13,13 +13,16 @@
   .hero-mihrab {
     position: absolute;
     left: 50%;
-    top: 18%;
+    top: 10%;
     transform: translateX(-50%);
-    width: clamp(220px, 32vw, 360px);
+    width: clamp(280px, 38vw, 460px);
     height: auto;
-    color: oklch(var(--accent) / 0.42);
+    color: oklch(var(--accent) / 0.70);
     pointer-events: none;
-    z-index: 0;
+    z-index: 1;
+    /* Visible by default — animation only changes stroke-dashoffset,
+       so without animation support the path is still drawn. */
+    filter: drop-shadow(0 0 18px oklch(var(--accent) / 0.18));
   }
   .hero-mihrab-arch {
     stroke-dasharray: 800;
@@ -47,44 +50,38 @@
     pointer-events: none;
     color: oklch(var(--accent));
     overflow: hidden;
+    z-index: 1;
   }
   .hero-drift-star {
     position: absolute;
-    opacity: 0;
+    opacity: 0.55; /* visible by default; keyframes only modulate it */
     animation-duration: 18s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
+    filter: drop-shadow(0 0 6px oklch(var(--accent) / 0.4));
   }
-  .hero-drift-star.d1 { top:  18%; left:  8%; width: 28px; height: 28px; animation-name: hero-drift-1; animation-duration: 22s; }
-  .hero-drift-star.d2 { top:  62%; left: 14%; width: 22px; height: 22px; animation-name: hero-drift-2; animation-duration: 28s; }
-  .hero-drift-star.d3 { top:  28%; right: 12%; width: 26px; height: 26px; animation-name: hero-drift-3; animation-duration: 24s; }
-  .hero-drift-star.d4 { top:  72%; right:  6%; width: 32px; height: 32px; animation-name: hero-drift-4; animation-duration: 30s; }
+  .hero-drift-star.d1 { top:  18%; left:  8%; width: 42px; height: 42px; animation-name: hero-drift-1; animation-duration: 22s; }
+  .hero-drift-star.d2 { top:  62%; left: 14%; width: 34px; height: 34px; animation-name: hero-drift-2; animation-duration: 28s; }
+  .hero-drift-star.d3 { top:  28%; right: 12%; width: 38px; height: 38px; animation-name: hero-drift-3; animation-duration: 24s; }
+  .hero-drift-star.d4 { top:  72%; right:  6%; width: 46px; height: 46px; animation-name: hero-drift-4; animation-duration: 30s; }
   @keyframes hero-drift-1 {
-    0%, 100% { opacity: 0;   transform: translate(0, 0) }
-    20%      { opacity: 0.45 }
-    50%      { opacity: 0.35; transform: translate(18px, -10px) }
-    80%      { opacity: 0.40 }
+    0%, 100% { opacity: 0.30; transform: translate(0, 0) }
+    50%      { opacity: 0.75; transform: translate(18px, -10px) }
   }
   @keyframes hero-drift-2 {
-    0%, 100% { opacity: 0;   transform: translate(0, 0) rotate(0deg) }
-    25%      { opacity: 0.30 }
-    50%      { opacity: 0.28; transform: translate(-14px, 8px) rotate(8deg) }
-    75%      { opacity: 0.30 }
+    0%, 100% { opacity: 0.25; transform: translate(0, 0) rotate(0deg) }
+    50%      { opacity: 0.65; transform: translate(-14px, 8px) rotate(10deg) }
   }
   @keyframes hero-drift-3 {
-    0%, 100% { opacity: 0;   transform: translate(0, 0) }
-    30%      { opacity: 0.42 }
-    55%      { opacity: 0.36; transform: translate(-22px, 14px) }
-    80%      { opacity: 0.38 }
+    0%, 100% { opacity: 0.30; transform: translate(0, 0) }
+    50%      { opacity: 0.70; transform: translate(-22px, 14px) }
   }
   @keyframes hero-drift-4 {
-    0%, 100% { opacity: 0;   transform: translate(0, 0) rotate(0deg) }
-    25%      { opacity: 0.28 }
-    50%      { opacity: 0.30; transform: translate(12px, -16px) rotate(-6deg) }
-    75%      { opacity: 0.26 }
+    0%, 100% { opacity: 0.22; transform: translate(0, 0) rotate(0deg) }
+    50%      { opacity: 0.60; transform: translate(12px, -16px) rotate(-8deg) }
   }
   @media (prefers-reduced-motion: reduce) {
-    .hero-drift-star { animation: none; opacity: 0.25; }
+    .hero-drift-star { animation: none; opacity: 0.45; }
   }
   .hero-bg {
     position: absolute; inset: 0;
@@ -107,7 +104,7 @@
     background: radial-gradient(ellipse 60% 70% at 50% 30%, var(--accent-soft) 0, transparent 70%);
     opacity: 0.7;
   }
-  .hero-inner { position: relative; text-align: center; }
+  .hero-inner { position: relative; text-align: center; z-index: 2; }
   .hero h1 {
     font-weight: 300;
     font-size: clamp(2.6rem, 5.2vw, 4.6rem);

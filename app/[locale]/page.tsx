@@ -54,7 +54,7 @@ function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
           viewBox="0 0 280 200"
           fill="none"
           stroke="currentColor"
-          strokeWidth="0.6"
+          strokeWidth="1.3"
           strokeLinecap="round"
         >
           <path
