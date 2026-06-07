@@ -118,22 +118,11 @@
   @media (prefers-reduced-motion: reduce) {
     .hero-bg { animation: none; }
   }
-  .hero-bg::after {
-    content: ""; position: absolute; inset: 0;
-    background-color: oklch(var(--accent));
-    -webkit-mask:
-      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'><g fill='none' stroke='black' stroke-width='0.9'><path d='M42 4 L48 36 L80 42 L48 48 L42 80 L36 48 L4 42 L36 36 Z'/><path d='M42 18 L46 38 L66 42 L46 46 L42 66 L38 46 L18 42 L38 38 Z' opacity='0.6'/><circle cx='42' cy='42' r='3' fill='black' stroke='none'/></g></svg>") repeat;
-    mask:
-      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'><g fill='none' stroke='black' stroke-width='0.9'><path d='M42 4 L48 36 L80 42 L48 48 L42 80 L36 48 L4 42 L36 36 Z'/><path d='M42 18 L46 38 L66 42 L46 46 L42 66 L38 46 L18 42 L38 38 Z' opacity='0.6'/><circle cx='42' cy='42' r='3' fill='black' stroke='none'/></g></svg>") repeat;
-    -webkit-mask-size: 84px 84px;
-    mask-size: 84px 84px;
-    opacity: 0.16;
-  }
-  .hero-bg::before {
-    content: ""; position: absolute; inset: 0;
-    background: radial-gradient(ellipse 60% 70% at 50% 30%, var(--accent-soft) 0, transparent 70%);
-    opacity: 0.7;
-  }
+  /* The old .hero-bg::after gold star mask and ::before radial glow
+     were designed for the pre-photo glow background. They printed a
+     repeating pattern over the mosque image; removed so the photo
+     reads cleanly. The dark gradient overlay inside .hero-bg itself
+     already handles text contrast. */
   .hero-inner {
     position: relative;
     text-align: center;
