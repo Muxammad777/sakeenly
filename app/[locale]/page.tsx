@@ -86,12 +86,14 @@ function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
             labels={{
               streakLabel: tStreak("label"),
               streakEmpty: tStreak("title_empty"),
-              streakTitle: (n) => tStreak("title_n", { n }),
+              // Raw templates with literal {n}/{a}/{t} — interpolated client-side.
+              // (Server functions can't cross the RSC boundary.)
+              streakTitleTpl: tStreak.raw("title_n"),
               contLabel: tCont("label"),
               contStart: tCont("start_empty"),
               contBtn: tCont("btn"),
               contSurahPrefix: tCont("surah_prefix"),
-              contAyahOf: (a, total) => tCont("ayah_of_n", { a, t: total }),
+              contAyahOfTpl: tCont.raw("ayah_of_n"),
               signinCta: tCont("signin_cta"),
             }}
           />

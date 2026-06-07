@@ -416,17 +416,24 @@ const WEEKDAY_RU = ["П", "В", "С", "Ч", "П", "С", "В"];
  *   - signed-in, with data       → real Streak + the latest bookmark
  *     becomes the continue target.
  */
+function applyTemplate(tpl: string, vars: Record<string, string | number>): string {
+  return tpl.replace(/\{(\w+)\}/g, (_, k) => String(vars[k] ?? `{${k}}`));
+}
+
 export function HomeStreakBand({ isAuthenticated, labels }: {
   isAuthenticated: boolean;
+  // All strings — never functions — so the props serialize cleanly across
+  // the server/client boundary. Templates like "{n} days" / "{a} of {t}"
+  // are interpolated client-side via applyTemplate.
   labels: {
     streakLabel: string;
     streakEmpty: string;
-    streakTitle: (n: number) => string;
+    streakTitleTpl: string;
     contLabel: string;
     contStart: string;
     contBtn: string;
-    contSurahPrefix: string;          // "Сура" / "Surah" / "سوره"
-    contAyahOf: (a: number, total: number) => string;
+    contSurahPrefix: string;
+    contAyahOfTpl: string;
     signinCta: string;
   };
 }) {
@@ -457,7 +464,9 @@ export function HomeStreakBand({ isAuthenticated, labels }: {
       : `/reader/1/1`;
   const contMonoTag = lastRead ? lastRead.ayahKey : "";
   const contSurahName = lastRead ? `${labels.contSurahPrefix} №${lastRead.surah}` : labels.contStart;
-  const contAyahOf = lastRead ? labels.contAyahOf(lastRead.ayah, lastRead.totalAyahs) : "";
+  const contAyahOf = lastRead
+    ? applyTemplate(labels.contAyahOfTpl, { a: lastRead.ayah, t: lastRead.totalAyahs })
+    : "";
   const progressPct = lastRead && lastRead.totalAyahs > 0
     ? Math.round((lastRead.ayah / lastRead.totalAyahs) * 100)
     : 0;
@@ -469,7 +478,9 @@ export function HomeStreakBand({ isAuthenticated, labels }: {
         <div className="streak-meta">
           <span className="lbl">{labels.streakLabel}</span>
           <span className="title">
-            {streakCurrent > 0 ? labels.streakTitle(streakCurrent) : labels.streakEmpty}
+            {streakCurrent > 0
+              ? applyTemplate(labels.streakTitleTpl, { n: streakCurrent })
+              : labels.streakEmpty}
           </span>
         </div>
         <div className="streak-week" aria-label="Неделя">
