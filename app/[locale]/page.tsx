@@ -7,7 +7,6 @@ import { Reveal } from "@/components/Reveal";
 import { AnimatedNumber } from "@/components/AnimatedNumber";
 import { RevealStagger } from "@/components/RevealStagger";
 import { ActivityTicker } from "@/components/ActivityTicker";
-import { QuranBookAnimation } from "@/components/QuranBookAnimation";
 import { SearchClient } from "@/components/search/SearchClient";
 import type { Locale } from "@/i18n/routing";
 
@@ -112,10 +111,6 @@ function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
             <span>{t("meta3")}</span>
           </div>
         </div>
-        {/* Live Qur'an book — real KFGQPC Hafs Ayat al-Kursi + the verses
-            either side; pages flip on a CSS keyframes loop. Sits over the
-            mosque background image and below the headline. */}
-        <QuranBookAnimation label="Ayat al-Kursi" />
         {/* Marquee ticker pinned to the bottom of the hero — first-fold
             activity proof, scrolls right-to-left in a continuous loop. */}
         <ActivityTicker labels={{
