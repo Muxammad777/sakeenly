@@ -100,7 +100,13 @@ export function SearchClient({ initialQuery }: SearchClientProps) {
     };
   }, [query, locale]);
 
-  useEffect(() => { inputRef.current?.focus(); }, []);
+  useEffect(() => {
+    // {preventScroll: true} stops the browser from auto-scrolling the
+    // page to the input when SearchClient mounts. On the home page the
+    // search lives below the hero, so without this the visitor would
+    // land halfway down the page instead of seeing the headline.
+    inputRef.current?.focus({ preventScroll: true });
+  }, []);
 
   // Counts by matchKind on the UNFILTERED result set — drive the mode
   // chips ("Все N" / "Только точное M") and the inline stems badge.
