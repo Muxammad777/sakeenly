@@ -7,6 +7,7 @@ import { Providers } from "@/app/providers";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ScrollProgress } from "@/components/ScrollProgress";
+import { ViewTransitionsRoot } from "@/components/ViewTransitionsRoot";
 import { LocaleDirSync } from "@/components/LocaleDirSync";
 import { isRtlLocale } from "@/lib/quran/format";
 import "@/app/preview-styles/index.css";
@@ -52,6 +53,7 @@ export default async function LocaleLayout({
             ships ltr placeholders; this corrects them for fa/ar etc. */}
         <LocaleDirSync locale={locale} dir={dir} />
         <ScrollProgress />
+        <ViewTransitionsRoot />
         <div className="flex min-h-screen flex-col" data-locale={locale} data-dir={dir}>
           <Header />
           <main className="flex-1">{children}</main>

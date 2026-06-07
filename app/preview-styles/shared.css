@@ -165,6 +165,16 @@ section.wrap-tight h3 {
   color: oklch(var(--text-2));
 }
 
+/* ─── VIEW TRANSITIONS (Chromium / Safari 18+) ─── */
+/* Defaults are fine — the browser cross-fades old → new. We just nudge
+   durations a touch faster than the 250ms UA default so navs don't feel
+   slow. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 320ms;
+  animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
 /* ─── SCROLL PROGRESS BAR (top of viewport, fills as you scroll) ─── */
 .scroll-progress {
   position: fixed;
