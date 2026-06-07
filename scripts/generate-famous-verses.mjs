@@ -6,10 +6,12 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 
 // 6 verses chosen for the home carousel — short, well-known, hopeful.
+// 13:28 leads the rotation: it sets the emotional tone we want first-time
+// visitors to land on (hearts at rest in the remembrance of Allah).
 const VERSES = [
+  { surah: 13, ayah: 28  }, // поминанием Аллаха покой сердца — ОТКРЫВАЕТ
   { surah: 2,  ayah: 286 }, // не возлагает на душу
   { surah: 94, ayah: 5   }, // с тягостью — облегчение
-  { surah: 13, ayah: 28  }, // поминанием Аллаха покой сердца
   { surah: 2,  ayah: 152 }, // поминайте Меня
   { surah: 65, ayah: 3   }, // кто уповает — тому достаточно
   { surah: 39, ayah: 53  }, // не отчаивайтесь в милости
