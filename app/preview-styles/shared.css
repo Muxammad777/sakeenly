@@ -186,7 +186,22 @@ section.wrap-tight h3 {
     currentColor 70%,
     transparent
   );
+  /* On first paint the side lines "draw" outward from the centre SVG
+     (1.1s ease-out). Pure CSS — runs once per page-load, no observer.
+     Honours prefers-reduced-motion. */
+  transform: scaleX(0);
+  transform-origin: center;
+  animation: geo-divider-draw 1100ms ease-out forwards;
   opacity: 0.45;
+}
+/* Draw outward from the centre — origin is set per-side so they grow
+   in opposite directions toward the page edges. */
+.geo-divider::before { transform-origin: right; }
+.geo-divider::after  { transform-origin: left; }
+@keyframes geo-divider-draw { to { transform: scaleX(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .geo-divider::before,
+  .geo-divider::after { animation: none; transform: scaleX(1); }
 }
 .geo-divider svg {
   width: 22px;
