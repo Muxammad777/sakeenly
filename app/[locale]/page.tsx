@@ -40,6 +40,22 @@ function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
           <circle cx="50" cy="50" r="46" />
           <path d="M50 12 L60 50 L88 50 L60 50 L50 88 L40 50 L12 50 L40 50 Z" />
         </svg>
+        {/* Slow drifting Ottoman stars — purely decorative, behind content. */}
+        <div className="hero-drift" aria-hidden="true">
+          <svg className="hero-drift-star d1" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.6">
+            <path d="M50 8 L57 42 L92 50 L57 58 L50 92 L43 58 L8 50 L43 42 Z" />
+          </svg>
+          <svg className="hero-drift-star d2" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.8">
+            <circle cx="50" cy="50" r="42" />
+            <circle cx="50" cy="50" r="3" fill="currentColor" stroke="none" />
+          </svg>
+          <svg className="hero-drift-star d3" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.6">
+            <path d="M50 16 L60 50 L84 50 L60 50 L50 84 L40 50 L16 50 L40 50 Z" />
+          </svg>
+          <svg className="hero-drift-star d4" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.5">
+            <path d="M50 4 L52 48 L96 50 L52 52 L50 96 L48 52 L4 50 L48 48 Z" opacity="0.5" />
+          </svg>
+        </div>
 
         <div className="wrap hero-inner">
           <span className="tag">
