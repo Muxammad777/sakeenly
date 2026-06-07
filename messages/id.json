@@ -931,9 +931,19 @@
   },
   "votd": {
     "cite": "Sahih International · 2:286",
-    "label": "Ayat hari ini · 18 Mei",
+    "label": "AYAT HARI INI",
     "surah_tag": "Surah Al-Baqarah · 2:286",
-    "translation": "«Allah tidak membebani seseorang melainkan sesuai dengan kesanggupannya.»"
+    "translation": "«Allah tidak membebani seseorang melainkan sesuai dengan kesanggupannya.»",
+    "surah_word": "SURAH",
+    "play": "Dengarkan",
+    "bookmark": "Simpan",
+    "bookmarked": "Tersimpan",
+    "translate": "Buka dengan terjemahan",
+    "share": "Bagikan",
+    "copied": "Tersalin",
+    "open_reader": "Buka di pembaca",
+    "prev": "Ayat sebelumnya",
+    "next": "Ayat berikutnya"
   },
   "aem": {
     "crumbs_root": "Sakeenly",

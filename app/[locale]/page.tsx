@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { HomeVotd, HomeStreak } from "./HomeClient";
+import { HomeVotdCarousel, HomeStreak } from "./HomeClient";
 import { Reveal } from "@/components/Reveal";
 import { SearchClient } from "@/components/search/SearchClient";
 import type { Locale } from "@/i18n/routing";
@@ -16,7 +16,6 @@ export default async function HomePage({ params }: PageProps) {
 
 function HomeContent() {
   const t = useTranslations("hero");
-  const tVotd = useTranslations("votd");
   const tStreak = useTranslations("streak");
   const tCont = useTranslations("cont");
   const tFeat = useTranslations("feat");
@@ -78,31 +77,7 @@ function HomeContent() {
       {/* VOTD + Streak */}
       <Reveal as="section" className="votd-section">
         <div className="wrap-tight">
-          <div className="votd geo-frame">
-            {(["tl", "tr", "bl", "br"] as const).map((p) => (
-              <span key={p} className={`corner ${p}`}>
-                <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="0.9">
-                  <path d="M2 18 Q2 2 18 2" />
-                  <path d="M8 2 Q8 8 2 8" opacity="0.7" />
-                  <circle cx="18" cy="18" r="3" />
-                  <path d="M18 14 L19 17 L22 18 L19 19 L18 22 L17 19 L14 18 L17 17 Z" fill="currentColor" opacity="0.8" stroke="none" />
-                </svg>
-              </span>
-            ))}
-            <div className="votd-top">
-              <span className="eyebrow">{tVotd("label")}</span>
-              <span className="tag">
-                <span className="tag-dot"></span>
-                <span>{tVotd("surah_tag")}</span>
-              </span>
-            </div>
-            <div className="arabic votd-arabic" lang="ar" dir="rtl">
-              لَا يُكَلِّفُ ٱللَّهُ نَفْسًا إِلَّا وُسْعَهَا
-            </div>
-            <p className="votd-translation">{tVotd("translation")}</p>
-            <p className="votd-cite">{tVotd("cite")}</p>
-            <HomeVotd />
-          </div>
+          <HomeVotdCarousel />
 
           <div className="streak-band">
             <div className="streak-card">

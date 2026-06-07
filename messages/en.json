@@ -931,9 +931,19 @@
   },
   "votd": {
     "cite": "Sahih International · 2:286",
-    "label": "Ayah of the day · 18 May",
+    "label": "VERSE OF THE DAY",
     "surah_tag": "Surah Al-Baqarah · 2:286",
-    "translation": "\"Allah does not burden a soul beyond that it can bear.\""
+    "translation": "\"Allah does not burden a soul beyond that it can bear.\"",
+    "surah_word": "SURAH",
+    "play": "Listen",
+    "bookmark": "Save",
+    "bookmarked": "Saved",
+    "translate": "Open with translation",
+    "share": "Share",
+    "copied": "Copied",
+    "open_reader": "Open in reader",
+    "prev": "Previous verse",
+    "next": "Next verse"
   },
   "aem": {
     "crumbs_root": "Sakeenly",

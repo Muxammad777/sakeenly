@@ -931,9 +931,19 @@
   },
   "votd": {
     "cite": "Alouddin Mansur tarjimasi · 2:286",
-    "label": "Kun oyati · 18 may",
+    "label": "KUNNING OYATI",
     "surah_tag": "«Baqara» surasi · 2:286",
-    "translation": "«Alloh hech bir jonga toqatidan ortigʻini yuklamaydi.»"
+    "translation": "«Alloh hech bir jonga toqatidan ortigʻini yuklamaydi.»",
+    "surah_word": "SURA",
+    "play": "Tinglash",
+    "bookmark": "Saqlash",
+    "bookmarked": "Saqlangan",
+    "translate": "Tarjima bilan ochish",
+    "share": "Ulashish",
+    "copied": "Nusxalandi",
+    "open_reader": "O‘qigichda ochish",
+    "prev": "Oldingi oyat",
+    "next": "Keyingi oyat"
   },
   "aem": {
     "crumbs_root": "Sakeenly",

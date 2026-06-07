@@ -132,6 +132,40 @@
   .ic-btn:hover { background: oklch(var(--surface-2)); color: oklch(var(--text)); }
   .ic-btn.active { color: oklch(var(--accent)); border-color: color-mix(in oklab, oklch(var(--accent)) 50%, oklch(var(--border))); background: var(--accent-soft); }
 
+  /* Carousel — prev/next arrows + dot strip below the controls. */
+  .votd-carousel {
+    display: flex; align-items: center; justify-content: center;
+    gap: 16px;
+    margin-top: 20px;
+  }
+  .votd-carousel-arrow {
+    width: 32px; height: 32px;
+    display: inline-grid; place-items: center;
+    border-radius: 999px;
+    background: transparent;
+    color: oklch(var(--text-3));
+    border: 1px solid oklch(var(--border));
+    cursor: pointer;
+    transition: background 160ms, color 160ms, border-color 160ms;
+  }
+  .votd-carousel-arrow:hover { background: oklch(var(--surface-2)); color: oklch(var(--text)); border-color: color-mix(in oklab, oklch(var(--accent)) 30%, oklch(var(--border))); }
+  .votd-dots {
+    display: inline-flex; gap: 8px; align-items: center;
+  }
+  .votd-dot {
+    width: 7px; height: 7px; padding: 0;
+    border-radius: 999px;
+    background: oklch(var(--border));
+    border: none;
+    cursor: pointer;
+    transition: background 200ms, transform 200ms, width 200ms;
+  }
+  .votd-dot:hover { background: oklch(var(--text-3)); }
+  .votd-dot.active {
+    background: oklch(var(--accent));
+    width: 22px;
+  }
+
   /* Streak band */
   .streak-band {
     margin-top: 40px;
