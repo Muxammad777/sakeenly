@@ -250,7 +250,12 @@
     align-items: center;
     white-space: nowrap;
     will-change: transform;
-    animation: activity-marquee 32s linear infinite;
+    position: relative;
+    /* The animation drives translateX from 0 to exactly one copy
+       (-100% / --ticker-copies). When the loop resets to 0, the next
+       copy has slid into the previous copy's spot — visually identical,
+       so the seam is invisible. */
+    animation: activity-marquee var(--ticker-duration, 32s) linear infinite;
   }
   .activity-ticker:hover .activity-track-inner { animation-play-state: paused; }
   /* Each "set" = the three live messages. Two sets render back-to-back
@@ -275,15 +280,20 @@
     display: inline-block;
     transform: translateY(-1px);
   }
+  /* Shift by exactly one copy of the messages. With --ticker-copies = N,
+     -100% / N is one Nth of the track-inner width = the width of one
+     copy. When the loop wraps from this position back to 0, the next
+     copy is exactly where the previous copy was — the visitor sees a
+     continuous, gap-free strip. */
   @keyframes activity-marquee {
     from { transform: translate3d(0, 0, 0); }
-    to   { transform: translate3d(-50%, 0, 0); }
+    to   { transform: translate3d(calc(-100% / var(--ticker-copies, 4)), 0, 0); }
   }
   @media (max-width: 760px) {
     .activity-ticker { height: 42px; font-size: 11.5px; }
     .activity-dot { margin: 0 14px 0 16px; }
     .activity-text { padding: 0 18px; }
-    .activity-track-inner { animation-duration: 26s; }
+    .activity-track-inner { --ticker-duration: 26s; }
   }
   @media (prefers-reduced-motion: reduce) {
     .activity-track-inner {
@@ -291,9 +301,8 @@
       width: 100%;
       justify-content: center;
     }
-    /* Hide the second (duplicate) set when not animating */
-    .activity-set + .activity-set,
-    .activity-set + .activity-set + .activity-sep { display: none; }
+    /* Hide every duplicate set (only the first copy remains, centred). */
+    .activity-set ~ .activity-set { display: none; }
     .activity-dot { animation: none; }
   }
   @keyframes activity-pulse {
