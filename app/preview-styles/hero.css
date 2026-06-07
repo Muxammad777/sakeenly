@@ -214,6 +214,18 @@
     background: oklch(var(--accent));
     width: 22px;
   }
+  /* Verse swap animation: fade in + slight slide from the right.
+     Keyed remount via React makes this fire on every carousel step. */
+  .votd-slide-in {
+    animation: votd-slide-in 360ms ease-out both;
+  }
+  @keyframes votd-slide-in {
+    from { opacity: 0; transform: translateX(14px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .votd-slide-in { animation: none; }
+  }
 
   /* Streak band */
   .streak-band {

@@ -143,17 +143,22 @@ export function HomeVotdCarousel() {
         </span>
       ))}
 
-      <div className="votd-top">
-        <span className="eyebrow">{tVotd("label")}</span>
-        <span className="tag">
-          <span className="tag-dot"></span>
-          <span>{tVotd("surah_word")} «{content.surah}» · {ayahKey}</span>
-        </span>
-      </div>
+      {/* Wrapping the verse-specific bits in a keyed container makes React
+          remount the subtree on every carousel step. The .votd-slide-in CSS
+          keyframes then play a quick fade + slide for the new verse. */}
+      <div className="votd-slide-in" key={`${verse.surah}:${verse.ayah}`}>
+        <div className="votd-top">
+          <span className="eyebrow">{tVotd("label")}</span>
+          <span className="tag">
+            <span className="tag-dot"></span>
+            <span>{tVotd("surah_word")} «{content.surah}» · {ayahKey}</span>
+          </span>
+        </div>
 
-      <div className="arabic votd-arabic" lang="ar" dir="rtl">{verse.arabic}</div>
-      <p className="votd-translation">«{content.translation}»</p>
-      <p className="votd-cite">{content.cite} · {ayahKey}</p>
+        <div className="arabic votd-arabic" lang="ar" dir="rtl">{verse.arabic}</div>
+        <p className="votd-translation">«{content.translation}»</p>
+        <p className="votd-cite">{content.cite} · {ayahKey}</p>
+      </div>
 
       <div className="votd-controls">
         <button
