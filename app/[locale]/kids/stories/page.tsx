@@ -38,6 +38,7 @@ interface PageProps { params: Promise<{ locale: Locale }>; }
 
 // Per-slug decorative SVGs (no images of prophets — only abstract geometry).
 const PROPHET_SVG: Record<string, React.ReactNode> = {
+  // 9 original (kept as authored).
   adam:     <path d="M12 2 L14.2 9.8 L22 12 L14.2 14.2 L12 22 L9.8 14.2 L2 12 L9.8 9.8 Z"/>,
   nuh:      <><path d="M3 12c4-4 14-4 18 0v6H3z"/><path d="M7 18v3M17 18v3"/></>,
   ibrahim:  <path d="M12 2 L20 8 L20 16 L12 22 L4 16 L4 8 Z"/>,
@@ -47,6 +48,23 @@ const PROPHET_SVG: Record<string, React.ReactNode> = {
   yunus:    <><path d="M5 10 L19 10 L17 18 L7 18 Z"/><path d="M9 10 L11 4 M13 4 L15 10"/></>,
   sulayman: <path d="M6 10 L12 4 L18 10 L18 20 L6 20 Z"/>,
   isa:      <><circle cx="12" cy="9" r="5"/><path d="M5 22c0-5 3-8 7-8s7 3 7 8"/></>,
+  // 16 added — abstract geometry only, never figurative.
+  idris:    <><path d="M12 2 L12 22 M5 7 L19 7 M5 17 L19 17"/><circle cx="12" cy="12" r="2"/></>,
+  hud:      <><path d="M3 14 Q12 4 21 14"/><path d="M3 18 Q12 10 21 18" strokeOpacity="0.5"/></>,
+  salih:    <><path d="M4 18 L8 10 L12 14 L16 8 L20 18 Z"/><circle cx="12" cy="6" r="1.5"/></>,
+  lut:      <><path d="M5 21 L12 4 L19 21 Z"/><path d="M8 16 L16 16" strokeOpacity="0.5"/></>,
+  ismail:   <><circle cx="12" cy="12" r="8"/><path d="M12 4 L12 20 M4 12 L20 12"/></>,
+  ishaq:    <><path d="M12 3 L21 12 L12 21 L3 12 Z"/><circle cx="12" cy="12" r="3"/></>,
+  yaqub:    <><path d="M4 6 L12 12 L20 6"/><path d="M4 18 L12 12 L20 18"/></>,
+  shuayb:   <><path d="M5 12 L19 12"/><path d="M9 6 L9 18 M15 6 L15 18"/><circle cx="12" cy="12" r="1.5"/></>,
+  harun:    <><path d="M6 4 L6 20 M18 4 L18 20"/><path d="M6 12 L18 12" strokeOpacity="0.7"/></>,
+  dhulkifl: <><path d="M4 20 L12 4 L20 20"/><path d="M8 14 L16 14" strokeOpacity="0.5"/></>,
+  dawud:    <><path d="M12 2 L20 12 L12 22 L4 12 Z"/><path d="M12 6 L16 12 L12 18 L8 12 Z" strokeOpacity="0.5"/></>,
+  ilyas:    <><path d="M4 6 L8 10 L4 14 L8 18"/><path d="M20 6 L16 10 L20 14 L16 18"/><path d="M8 12 L16 12" strokeOpacity="0.5"/></>,
+  alyasa:   <><circle cx="12" cy="12" r="9" strokeOpacity="0.4"/><circle cx="12" cy="12" r="5"/></>,
+  zakariya: <><path d="M12 4 L12 20"/><path d="M6 8 Q12 14 18 8" strokeOpacity="0.6"/><path d="M6 16 Q12 10 18 16" strokeOpacity="0.6"/></>,
+  yahya:    <><circle cx="12" cy="8" r="3"/><path d="M9 11 L9 20 M15 11 L15 20" strokeOpacity="0.6"/></>,
+  muhammad: <><path d="M12 2 L14 9 L21 10 L15.5 14.5 L17 21 L12 17.5 L7 21 L8.5 14.5 L3 10 L10 9 Z"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></>,
 };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
