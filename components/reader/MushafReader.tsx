@@ -135,6 +135,15 @@ function MushafReaderInner(props: MushafReaderProps) {
   // real Mushaf page number.
   const [pageMode, setPageMode] = useState(false);
   const [pageIdx, setPageIdx] = useState(0);
+  // Tracks the direction of the last page change so the book-flip CSS
+  // animation can play the leaf coming in from the correct side. RTL
+  // arabic reading flips right-to-left: next page slides in from the
+  // left edge, previous from the right.
+  const prevPageIdxRef = useRef(0);
+  const flipDir: "next" | "prev" | "same" =
+    pageIdx > prevPageIdxRef.current ? "next" :
+    pageIdx < prevPageIdxRef.current ? "prev" : "same";
+  useEffect(() => { prevPageIdxRef.current = pageIdx; }, [pageIdx]);
   const pagesInSurah = useMemo(
     () => pagesOfSurah(surah.number, surah.versesCount),
     [surah.number, surah.versesCount],
@@ -755,7 +764,13 @@ function MushafReaderInner(props: MushafReaderProps) {
             /* MUSHAF MODE — flowing arabic block, no translations.
                If pageMode is on, slice to one book-like page at a time. */
             <>
-              <div className="mushaf mushaf-ornament">
+              <div
+                className={
+                  "mushaf mushaf-ornament" +
+                  (pageMode ? ` mushaf-flip mushaf-flip-${flipDir}` : "")
+                }
+                key={pageMode ? `pg-${currentMushafPage}` : "scroll"}
+              >
                 {/* Basmala only on page 1 in pageMode, or always in continuous mode */}
                 {surah.number !== 1 && surah.number !== 9 && (!pageMode || pageIdx === 0) && (
                   <div className="basmala arabic" dir="rtl">

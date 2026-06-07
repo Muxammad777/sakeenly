@@ -11,16 +11,14 @@
 
 import { useEffect } from "react";
 
-declare global {
-  interface Document {
-    startViewTransition?: (cb: () => void) => { finished: Promise<void> };
-  }
-}
+// `Document.startViewTransition` exists in lib.dom on TS 5.4+; we just
+// re-grab it as `any` to stay compatible with the Next 14 TS bundle.
 
 export function ViewTransitionsRoot() {
   useEffect(() => {
     if (typeof document === "undefined") return;
-    if (!document.startViewTransition) return;
+    const startVT = (document as unknown as { startViewTransition?: (cb: () => void) => unknown }).startViewTransition;
+    if (typeof startVT !== "function") return;
     const reduced = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
     if (reduced) return;
 
@@ -30,7 +28,7 @@ export function ViewTransitionsRoot() {
     history.pushState = function (...args) {
       const apply = () => origPush(...args);
       try {
-        document.startViewTransition!(() => { apply(); });
+        startVT(() => { apply(); });
       } catch {
         apply();
       }
@@ -39,7 +37,7 @@ export function ViewTransitionsRoot() {
     history.replaceState = function (...args) {
       const apply = () => origReplace(...args);
       try {
-        document.startViewTransition!(() => { apply(); });
+        startVT(() => { apply(); });
       } catch {
         apply();
       }
