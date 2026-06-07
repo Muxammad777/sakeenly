@@ -370,6 +370,17 @@ section + .wrap:not(.no-auto-divider)::before,
           mask-size: 84px 84px;
   opacity: 0.16;
   pointer-events: none;
+  /* Subtle breathing: opacity drifts 0.12 ↔ 0.20 and the mask shifts 4px
+     over 9 seconds — adds "the room has air in it" without ever pulling
+     focus from the content. Honour prefers-reduced-motion below. */
+  animation: hero-mask-breathe 9s ease-in-out infinite alternate;
+}
+@keyframes hero-mask-breathe {
+  0%   { opacity: 0.12; -webkit-mask-position: 0 0;     mask-position: 0 0; }
+  100% { opacity: 0.20; -webkit-mask-position: 4px 4px; mask-position: 4px 4px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [class*="-hero"]:not(.hero):not(.about-hero-inline)::before { animation: none; opacity: 0.16; }
 }
 [class*="-hero"]:not(.hero):not(.about-hero-inline)::after {
   content: "";
