@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { useRouter } from "@/i18n/navigation";
+import { useRouter, Link } from "@/i18n/navigation";
 import { FAMOUS_VERSES } from "@/lib/data/famous-verses";
 import type { Locale } from "@/i18n/routing";
 
@@ -375,11 +375,11 @@ export function HomeVotd() {
   );
 }
 
-/** Animated streak number — counts up from 0 to 17 on mount. */
-export function HomeStreak() {
-  const target = 17;
+/** Animated streak number — counts up from 0 to `target` on mount. */
+function StreakNumber({ target }: { target: number }) {
   const [n, setN] = useState(0);
   useEffect(() => {
+    if (target <= 0) { setN(0); return; }
     const step = Math.max(1, Math.round(target / 24));
     const id = setInterval(() => {
       setN((cur) => {
@@ -389,6 +389,116 @@ export function HomeStreak() {
       });
     }, 32);
     return () => clearInterval(id);
-  }, []);
+  }, [target]);
   return <div className="streak-num">{n}</div>;
+}
+
+/** Back-compat shim — older imports still reference HomeStreak. */
+export function HomeStreak() {
+  return <StreakNumber target={0} />;
+}
+
+interface HomeState {
+  streak: { current: number; longest: number; lastActiveDate: string | null; daysThisWeek: boolean[] };
+  lastRead: { surah: number; ayah: number; ayahKey: string; totalAyahs: number } | null;
+}
+
+const WEEKDAY_RU = ["П", "В", "С", "Ч", "П", "С", "В"];
+
+/**
+ * Streak + "continue reading" band shown under the verse carousel.
+ *
+ * Visual contract: ALWAYS rendered, never hidden. State branches:
+ *   - guest (!isAuthenticated)   → cards visible, but numbers blanked
+ *     ("0" / "—"), week dots dim, CTAs point to /signin. Honest empty
+ *     state instead of the previous hardcoded "17 days / 2:255→2:286".
+ *   - signed-in, no data yet     → "0" / "Начни читать", reader CTA.
+ *   - signed-in, with data       → real Streak + the latest bookmark
+ *     becomes the continue target.
+ */
+export function HomeStreakBand({ isAuthenticated, labels }: {
+  isAuthenticated: boolean;
+  labels: {
+    streakLabel: string;
+    streakEmpty: string;
+    streakTitle: (n: number) => string;
+    contLabel: string;
+    contStart: string;
+    contBtn: string;
+    contSurahPrefix: string;          // "Сура" / "Surah" / "سوره"
+    contAyahOf: (a: number, total: number) => string;
+    signinCta: string;
+  };
+}) {
+  const locale = useLocale();
+  const [state, setState] = useState<HomeState | null>(null);
+  const [ready, setReady] = useState(!isAuthenticated);
+
+  useEffect(() => {
+    if (!isAuthenticated) return;
+    let cancelled = false;
+    fetch("/api/home/state", { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j: HomeState | null) => { if (!cancelled && j) setState(j); })
+      .catch(() => {})
+      .finally(() => { if (!cancelled) setReady(true); });
+    return () => { cancelled = true; };
+  }, [isAuthenticated]);
+
+  const streakCurrent = state?.streak.current ?? 0;
+  const daysThisWeek = state?.streak.daysThisWeek ?? [false, false, false, false, false, false, false];
+  const today = (new Date().getDay() + 6) % 7;
+
+  const lastRead = state?.lastRead ?? null;
+  const continueHref = !isAuthenticated
+    ? `/${locale}/signin?callbackUrl=${encodeURIComponent(`/${locale}/reader/1/1`)}`
+    : lastRead
+      ? `/reader/${lastRead.surah}/${lastRead.ayah}`
+      : `/reader/1/1`;
+  const contMonoTag = lastRead ? lastRead.ayahKey : "";
+  const contSurahName = lastRead ? `${labels.contSurahPrefix} №${lastRead.surah}` : labels.contStart;
+  const contAyahOf = lastRead ? labels.contAyahOf(lastRead.ayah, lastRead.totalAyahs) : "";
+  const progressPct = lastRead && lastRead.totalAyahs > 0
+    ? Math.round((lastRead.ayah / lastRead.totalAyahs) * 100)
+    : 0;
+
+  return (
+    <div className="streak-band">
+      <div className={`streak-card ${ready ? "" : "is-loading"}`}>
+        <StreakNumber target={streakCurrent} />
+        <div className="streak-meta">
+          <span className="lbl">{labels.streakLabel}</span>
+          <span className="title">
+            {streakCurrent > 0 ? labels.streakTitle(streakCurrent) : labels.streakEmpty}
+          </span>
+        </div>
+        <div className="streak-week" aria-label="Неделя">
+          {WEEKDAY_RU.map((d, i) => {
+            const cls = daysThisWeek[i] ? "streak-dot done" : (i === today && isAuthenticated ? "streak-dot today" : "streak-dot");
+            return <div key={i} className={cls}>{d}</div>;
+          })}
+        </div>
+      </div>
+
+      <div className={`next-card ${ready ? "" : "is-loading"}`}>
+        <div className="row">
+          <span className="eyebrow">{labels.contLabel}</span>
+          {contMonoTag && (
+            <span className="mono" style={{ fontSize: 11, color: "var(--text-3)" }}>{contMonoTag}</span>
+          )}
+        </div>
+        <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 12 }}>
+          <span className="serif" style={{ fontSize: "1.25rem" }}>{contSurahName}</span>
+          {contAyahOf && (
+            <span className="mono" style={{ fontSize: 12, color: "var(--text-2)" }}>{contAyahOf}</span>
+          )}
+        </div>
+        <div className="progress-bar"><div style={{ width: `${progressPct}%` }}></div></div>
+        <Link className="btn btn-soft btn-sm" href={continueHref} style={{ alignSelf: "flex-start", marginTop: 4 }}>
+          <span>{isAuthenticated ? labels.contBtn : labels.signinCta}</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+        </Link>
+      </div>
+    </div>
+  );
 }

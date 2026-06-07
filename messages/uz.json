@@ -221,7 +221,11 @@
     "ayah_of": "31-oyat / 286",
     "btn": "Oʻqishni davom ettirish",
     "label": "Davom etish",
-    "surah": "Baqara"
+    "surah": "Baqara",
+    "start_empty": "Fotihadan boshla",
+    "surah_prefix": "Sura",
+    "ayah_of_n": "{t} oyatdan {a}-si",
+    "signin_cta": "Davom etish uchun kiring"
   },
   "emo": {
     "all": "Barcha mavzular →",
@@ -920,7 +924,9 @@
   },
   "streak": {
     "label": "Ketma-ketlik",
-    "title": "17 kun Qurʼon bilan"
+    "title": "17 kun Qurʼon bilan",
+    "title_empty": "Yo‘lingni boshla",
+    "title_n": "Qur’on bilan {n} kun"
   },
   "trust": {
     "ayat": "Oyat",

@@ -221,7 +221,11 @@
     "ayah_of": "ayat 31 dari 286",
     "btn": "Lanjut membaca",
     "label": "Lanjutkan",
-    "surah": "Al-Baqarah"
+    "surah": "Al-Baqarah",
+    "start_empty": "Mulai dengan Al-Fatihah",
+    "surah_prefix": "Surah",
+    "ayah_of_n": "ayat {a} dari {t}",
+    "signin_cta": "Masuk untuk melanjutkan"
   },
   "emo": {
     "all": "Semua tema →",
@@ -920,7 +924,9 @@
   },
   "streak": {
     "label": "Berurutan · berturut-turut",
-    "title": "17 hari bersama Al-Quran"
+    "title": "17 hari bersama Al-Quran",
+    "title_empty": "Mulai perjalananmu",
+    "title_n": "{n} hari bersama Al-Qur’an"
   },
   "trust": {
     "ayat": "Ayat",

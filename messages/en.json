@@ -221,7 +221,11 @@
     "ayah_of": "ayah 31 of 286",
     "btn": "Continue reading",
     "label": "Continue",
-    "surah": "Al-Baqarah"
+    "surah": "Al-Baqarah",
+    "start_empty": "Begin with Al-Fatiha",
+    "surah_prefix": "Surah",
+    "ayah_of_n": "ayah {a} of {t}",
+    "signin_cta": "Sign in to continue"
   },
   "emo": {
     "all": "All themes →",
@@ -920,7 +924,9 @@
   },
   "streak": {
     "label": "Streak · in a row",
-    "title": "17 days with the Quran"
+    "title": "17 days with the Quran",
+    "title_empty": "Start your journey",
+    "title_n": "{n} days with the Qur’an"
   },
   "trust": {
     "ayat": "Ayat",

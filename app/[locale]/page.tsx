@@ -1,7 +1,8 @@
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { HomeVotdCarousel, HomeStreak } from "./HomeClient";
+import { HomeVotdCarousel, HomeStreakBand } from "./HomeClient";
+import { getCurrentUser } from "@/lib/auth-helpers";
 import { Reveal } from "@/components/Reveal";
 import { SearchClient } from "@/components/search/SearchClient";
 import type { Locale } from "@/i18n/routing";
@@ -11,10 +12,11 @@ interface PageProps { params: Promise<{ locale: Locale }>; }
 export default async function HomePage({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <HomeContent />;
+  const user = await getCurrentUser();
+  return <HomeContent isAuthenticated={Boolean(user)} />;
 }
 
-function HomeContent() {
+function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
   const t = useTranslations("hero");
   const tStreak = useTranslations("streak");
   const tCont = useTranslations("cont");
@@ -79,35 +81,20 @@ function HomeContent() {
         <div className="wrap-tight">
           <HomeVotdCarousel />
 
-          <div className="streak-band">
-            <div className="streak-card">
-              <HomeStreak />
-              <div className="streak-meta">
-                <span className="lbl">{tStreak("label")}</span>
-                <span className="title">{tStreak("title")}</span>
-              </div>
-              <div className="streak-week" aria-label="Неделя">
-                {["П", "В", "С", "Ч", "П"].map((d, i) => <div key={i} className="streak-dot done">{d}</div>)}
-                <div className="streak-dot today">С</div>
-                <div className="streak-dot">В</div>
-              </div>
-            </div>
-            <div className="next-card">
-              <div className="row">
-                <span className="eyebrow">{tCont("label")}</span>
-                <span className="mono" style={{ fontSize: 11, color: "var(--text-3)" }}>2:255 → 2:286</span>
-              </div>
-              <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 12 }}>
-                <span className="serif" style={{ fontSize: "1.25rem" }}>{tCont("surah")}</span>
-                <span className="mono" style={{ fontSize: 12, color: "var(--text-2)" }}>{tCont("ayah_of")}</span>
-              </div>
-              <div className="progress-bar"><div style={{ width: "11%" }}></div></div>
-              <Link className="btn btn-soft btn-sm" href="/reader/1/1" style={{ alignSelf: "flex-start", marginTop: 4 }}>
-                <span>{tCont("btn")}</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-              </Link>
-            </div>
-          </div>
+          <HomeStreakBand
+            isAuthenticated={isAuthenticated}
+            labels={{
+              streakLabel: tStreak("label"),
+              streakEmpty: tStreak("title_empty"),
+              streakTitle: (n) => tStreak("title_n", { n }),
+              contLabel: tCont("label"),
+              contStart: tCont("start_empty"),
+              contBtn: tCont("btn"),
+              contSurahPrefix: tCont("surah_prefix"),
+              contAyahOf: (a, total) => tCont("ayah_of_n", { a, t: total }),
+              signinCta: tCont("signin_cta"),
+            }}
+          />
         </div>
       </Reveal>
 
