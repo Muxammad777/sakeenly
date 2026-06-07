@@ -46,9 +46,6 @@ export function SurahsIndex({ surahs }: Props) {
             </div>
             <div className="ks-foot">
               <span className="label">{learned ? "Выучена" : recite > 0 ? `Лучший: ${recite}%` : s.label}</span>
-              <button className="ks-play" type="button" aria-label="Слушать">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-              </button>
             </div>
           </Link>
         );
