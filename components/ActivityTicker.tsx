@@ -1,11 +1,11 @@
 "use client";
 
-// ActivityTicker — narrow strip under the hero showing live platform
-// activity: number of readers, ayat memorised, saved verses. Pulls from
-// /api/stats which is cached server-side for 60s.
-//
-// Three labels rotate one at a time, fading between every 4s.
-// Honours prefers-reduced-motion (just shows the first one statically).
+// ActivityTicker — a marquee strip pinned to the bottom of the hero
+// section that scrolls a single continuous string of live platform
+// metrics right-to-left, forever. Pulls from /api/stats which is
+// cached server-side for 60s. Pauses on hover so a reader can finish
+// the line they're looking at. Honours prefers-reduced-motion (renders
+// the messages stacked, no animation).
 
 import { useEffect, useState } from "react";
 
@@ -19,9 +19,9 @@ interface Stats {
 interface Props {
   /** Localised label templates with {n} placeholder. */
   labels: {
-    readers: string;     // "Сейчас читают: {n} человек"
-    hifz: string;        // "Выучено аятов: {n}"
-    bookmarks: string;   // "Сохранённых аятов: {n}"
+    readers: string;
+    hifz: string;
+    bookmarks: string;
   };
 }
 
@@ -31,7 +31,6 @@ function applyTpl(tpl: string, n: number, locale?: string) {
 
 export function ActivityTicker({ labels }: Props) {
   const [stats, setStats] = useState<Stats | null>(null);
-  const [idx, setIdx] = useState(0);
 
   useEffect(() => {
     let cancelled = false;
@@ -42,13 +41,6 @@ export function ActivityTicker({ labels }: Props) {
     return () => { cancelled = true; };
   }, []);
 
-  useEffect(() => {
-    const reduced = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) return;
-    const id = setInterval(() => setIdx((i) => (i + 1) % 3), 4000);
-    return () => clearInterval(id);
-  }, []);
-
   if (!stats) return null;
 
   const messages = [
@@ -57,10 +49,24 @@ export function ActivityTicker({ labels }: Props) {
     applyTpl(labels.bookmarks, stats.bookmarks),
   ];
 
+  // Duplicate the message list so the marquee loop is seamless: as the
+  // first copy translates off the left edge, the second copy is already
+  // in view filling the space.
+  const items = [...messages, ...messages];
+
   return (
-    <div className="activity-ticker" aria-live="polite">
+    <div className="activity-ticker" aria-live="polite" aria-label="Sakeenly activity">
       <span className="activity-dot" aria-hidden="true" />
-      <span key={idx} className="activity-text">{messages[idx]}</span>
+      <div className="activity-track">
+        <div className="activity-track-inner">
+          {items.map((m, i) => (
+            <span key={i} className="activity-item">
+              <span>{m}</span>
+              <span className="activity-sep" aria-hidden="true">✦</span>
+            </span>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

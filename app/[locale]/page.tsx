@@ -111,16 +111,14 @@ function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
             <span>{t("meta3")}</span>
           </div>
         </div>
-      </section>
-
-      {/* ACTIVITY TICKER — live platform metrics, sits between hero and search */}
-      <div className="wrap">
+        {/* Marquee ticker pinned to the bottom of the hero — first-fold
+            activity proof, scrolls right-to-left in a continuous loop. */}
         <ActivityTicker labels={{
           readers: tAct.raw("readers"),
           hifz: tAct.raw("hifz"),
           bookmarks: tAct.raw("bookmarks"),
         }} />
-      </div>
+      </section>
 
       {/* SEARCH — full-text over Quran, drops users straight into the reader */}
       <Reveal as="section" className="wrap home-search">

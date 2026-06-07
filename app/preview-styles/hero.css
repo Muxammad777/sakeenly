@@ -3,8 +3,18 @@
 /* page-specific */
   .hero {
     position: relative;
-    padding: 96px 0 64px;
+    /* Full first-fold experience: hero is at least the viewport height
+       minus the header (76px), so a fresh visitor sees the headline,
+       CTAs, and the activity ticker without scrolling. */
+    min-height: calc(100svh - 76px);
+    padding: 96px 0 0;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  @media (max-width: 760px) {
+    .hero { min-height: calc(100svh - 60px); padding-top: 64px; }
   }
 
   /* Mihrab — mosque-niche silhouette drawn once at page load. Centered
@@ -242,39 +252,71 @@
     background: oklch(var(--accent));
     width: 22px;
   }
-  /* Activity ticker — narrow strip between hero and search */
+  /* Activity ticker — marquee strip pinned to the bottom of the hero
+     section. Scrolls right-to-left in a continuous loop. The message
+     list is duplicated in markup so the second copy fills the gap as
+     the first scrolls off, making the loop seamless. */
   .activity-ticker {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin: 6px auto 14px;
-    padding: 8px 18px;
+    position: relative;
+    margin-top: auto;        /* pushes itself to the bottom of the flex hero */
+    margin-bottom: 0;
+    padding: 14px 0;
+    border-top: 1px solid oklch(var(--border));
+    background: color-mix(in oklab, oklch(var(--surface)) 88%, transparent);
+    overflow: hidden;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
+    font-size: 13px;
     letter-spacing: 0.04em;
     color: oklch(var(--text-2));
-    border: 1px solid oklch(var(--border));
-    border-radius: 999px;
-    background: color-mix(in oklab, oklch(var(--surface)) 92%, transparent);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    z-index: 3;
   }
   .activity-dot {
-    width: 6px; height: 6px; border-radius: 999px;
+    width: 7px; height: 7px; border-radius: 999px;
     background: oklch(var(--accent));
+    margin-left: 22px;
+    flex-shrink: 0;
     box-shadow: 0 0 0 0 color-mix(in oklab, oklch(var(--accent)) 60%, transparent);
     animation: activity-pulse 1800ms ease-out infinite;
   }
-  .activity-text { animation: activity-fade 360ms ease-out; }
+  .activity-track {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+  }
+  .activity-track-inner {
+    display: inline-flex;
+    gap: 32px;
+    white-space: nowrap;
+    animation: activity-marquee 36s linear infinite;
+    padding-left: 32px;
+  }
+  .activity-ticker:hover .activity-track-inner { animation-play-state: paused; }
+  .activity-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .activity-sep {
+    color: oklch(var(--accent));
+    font-size: 11px;
+  }
+  @keyframes activity-marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
   @keyframes activity-pulse {
     0%   { box-shadow: 0 0 0 0    color-mix(in oklab, oklch(var(--accent)) 65%, transparent); }
     70%  { box-shadow: 0 0 0 10px color-mix(in oklab, oklch(var(--accent)) 0%,  transparent); }
     100% { box-shadow: 0 0 0 0    color-mix(in oklab, oklch(var(--accent)) 0%,  transparent); }
   }
-  @keyframes activity-fade {
-    from { opacity: 0; transform: translateY(4px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
   @media (prefers-reduced-motion: reduce) {
-    .activity-dot, .activity-text { animation: none; }
+    .activity-dot { animation: none; }
+    .activity-track-inner { animation: none; padding-left: 32px; }
   }
 
   /* Verse swap animation: fade in + slight slide from the right.
