@@ -36,30 +36,6 @@ function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
       {/* HERO */}
       <section className="hero">
         <div className="hero-bg"></div>
-        <svg className="star-decor tl" width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="var(--accent)" strokeWidth="0.6">
-          <path d="M50 4 L58 38 L92 46 L58 54 L50 96 L42 54 L8 46 L42 38 Z" />
-          <path d="M50 18 L55 42 L78 50 L55 58 L50 84 L45 58 L22 50 L45 42 Z" opacity="0.5" />
-        </svg>
-        <svg className="star-decor tr" width="60" height="60" viewBox="0 0 100 100" fill="none" stroke="var(--accent)" strokeWidth="0.8">
-          <circle cx="50" cy="50" r="46" />
-          <path d="M50 12 L60 50 L88 50 L60 50 L50 88 L40 50 L12 50 L40 50 Z" />
-        </svg>
-        {/* Slow drifting Ottoman stars — purely decorative, behind content. */}
-        <div className="hero-drift" aria-hidden="true">
-          <svg className="hero-drift-star d1" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.6">
-            <path d="M50 8 L57 42 L92 50 L57 58 L50 92 L43 58 L8 50 L43 42 Z" />
-          </svg>
-          <svg className="hero-drift-star d2" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.8">
-            <circle cx="50" cy="50" r="42" />
-            <circle cx="50" cy="50" r="3" fill="currentColor" stroke="none" />
-          </svg>
-          <svg className="hero-drift-star d3" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.6">
-            <path d="M50 16 L60 50 L84 50 L60 50 L50 84 L40 50 L16 50 L40 50 Z" />
-          </svg>
-          <svg className="hero-drift-star d4" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.5">
-            <path d="M50 4 L52 48 L96 50 L52 52 L50 96 L48 52 L4 50 L48 48 Z" opacity="0.5" />
-          </svg>
-        </div>
 
         <div className="wrap hero-inner">
           <span className="tag">

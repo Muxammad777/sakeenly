@@ -17,48 +17,6 @@
     .hero { min-height: calc(100svh - 60px); padding-top: 64px; }
   }
 
-  /* Drifting stars layer — 4 SVG sigils that slowly translate around the
-     hero, each with its own keyframes so they never line up. Sits behind
-     content (z-index: 0 in the hero stack) and is fully decorative. */
-  .hero-drift {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    color: oklch(var(--accent));
-    overflow: hidden;
-    z-index: 1;
-  }
-  .hero-drift-star {
-    position: absolute;
-    opacity: 0.55; /* visible by default; keyframes only modulate it */
-    animation-duration: 18s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    filter: drop-shadow(0 0 6px oklch(var(--accent) / 0.4));
-  }
-  .hero-drift-star.d1 { top:  18%; left:  8%; width: 42px; height: 42px; animation-name: hero-drift-1; animation-duration: 22s; }
-  .hero-drift-star.d2 { top:  62%; left: 14%; width: 34px; height: 34px; animation-name: hero-drift-2; animation-duration: 28s; }
-  .hero-drift-star.d3 { top:  28%; right: 12%; width: 38px; height: 38px; animation-name: hero-drift-3; animation-duration: 24s; }
-  .hero-drift-star.d4 { top:  72%; right:  6%; width: 46px; height: 46px; animation-name: hero-drift-4; animation-duration: 30s; }
-  @keyframes hero-drift-1 {
-    0%, 100% { opacity: 0.30; transform: translate(0, 0) }
-    50%      { opacity: 0.75; transform: translate(18px, -10px) }
-  }
-  @keyframes hero-drift-2 {
-    0%, 100% { opacity: 0.25; transform: translate(0, 0) rotate(0deg) }
-    50%      { opacity: 0.65; transform: translate(-14px, 8px) rotate(10deg) }
-  }
-  @keyframes hero-drift-3 {
-    0%, 100% { opacity: 0.30; transform: translate(0, 0) }
-    50%      { opacity: 0.70; transform: translate(-22px, 14px) }
-  }
-  @keyframes hero-drift-4 {
-    0%, 100% { opacity: 0.22; transform: translate(0, 0) rotate(0deg) }
-    50%      { opacity: 0.60; transform: translate(12px, -16px) rotate(-8deg) }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .hero-drift-star { animation: none; opacity: 0.45; }
-  }
   .hero-bg {
     position: absolute; inset: 0;
     /* Mosque photo (public/hero-mosque.jpg) is the hero backdrop.
@@ -136,15 +94,6 @@
   }
   .hero .meta-row span::before { content: "—  "; opacity: 0.5; }
   .hero .meta-row span:first-child::before { content: ""; }
-
-  /* Decorative star */
-  .star-decor {
-    position: absolute; pointer-events: none;
-    opacity: 0.5;
-  }
-  .star-decor.tl { top: 60px; left: 8%; }
-  .star-decor.tr { top: 140px; right: 10%; }
-  .star-decor.bl { bottom: -40px; left: 14%; }
 
   /* VOTD */
   .votd-section { padding: 16px 0 8px; }
