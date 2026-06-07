@@ -42,6 +42,32 @@ function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
           <circle cx="50" cy="50" r="46" />
           <path d="M50 12 L60 50 L88 50 L60 50 L50 88 L40 50 L12 50 L40 50 Z" />
         </svg>
+        {/* Mihrab silhouette drawn behind the hero text on first paint —
+            a stylised mosque-niche arch built from a single stroked path.
+            stroke-dasharray + dashoffset animate it from blank to full
+            over 2.6s on page load. Purely decorative. */}
+        <svg
+          className="hero-mihrab"
+          aria-hidden="true"
+          viewBox="0 0 280 200"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="0.6"
+          strokeLinecap="round"
+        >
+          <path
+            className="hero-mihrab-arch"
+            d="M40 200 L40 80 Q40 18 140 18 Q240 18 240 80 L240 200"
+          />
+          <path
+            className="hero-mihrab-arch hero-mihrab-arch-inner"
+            d="M58 200 L58 88 Q58 32 140 32 Q222 32 222 88 L222 200"
+          />
+          <path className="hero-mihrab-arch" d="M140 18 L140 6" />
+          <path className="hero-mihrab-arch" d="M134 6 L146 6" />
+          <circle className="hero-mihrab-orb" cx="140" cy="62" r="3" fill="currentColor" stroke="none" />
+        </svg>
+
         {/* Slow drifting Ottoman stars — purely decorative, behind content. */}
         <div className="hero-drift" aria-hidden="true">
           <svg className="hero-drift-star d1" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.6">

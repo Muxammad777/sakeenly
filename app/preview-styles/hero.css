@@ -7,6 +7,37 @@
     overflow: hidden;
   }
 
+  /* Mihrab — mosque-niche silhouette drawn once at page load. Centered
+     under the hero text, narrow viewport-relative width, faint gold.
+     Each path animates via stroke-dasharray / dashoffset. */
+  .hero-mihrab {
+    position: absolute;
+    left: 50%;
+    top: 18%;
+    transform: translateX(-50%);
+    width: clamp(220px, 32vw, 360px);
+    height: auto;
+    color: oklch(var(--accent) / 0.42);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .hero-mihrab-arch {
+    stroke-dasharray: 800;
+    stroke-dashoffset: 800;
+    animation: hero-mihrab-draw 2600ms ease-out forwards;
+  }
+  .hero-mihrab-arch-inner { animation-delay: 400ms; }
+  .hero-mihrab-orb {
+    opacity: 0;
+    animation: hero-mihrab-orb-fade 800ms ease-out 2200ms forwards;
+  }
+  @keyframes hero-mihrab-draw { to { stroke-dashoffset: 0; } }
+  @keyframes hero-mihrab-orb-fade { to { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-mihrab-arch { animation: none; stroke-dashoffset: 0; }
+    .hero-mihrab-orb { animation: none; opacity: 1; }
+  }
+
   /* Drifting stars layer — 4 SVG sigils that slowly translate around the
      hero, each with its own keyframes so they never line up. Sits behind
      content (z-index: 0 in the hero stack) and is fully decorative. */
