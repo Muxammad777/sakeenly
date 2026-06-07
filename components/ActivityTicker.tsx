@@ -39,7 +39,13 @@ export function ActivityTicker({ labels }: Props) {
     return () => { cancelled = true; };
   }, []);
 
-  if (!stats) return null;
+  if (!stats) {
+    // Render an empty placeholder of the same height while stats load.
+    // Without this, the ticker appears AFTER the fetch resolves and the
+    // hero's flex justify-content recalculates — the headline visibly
+    // jumps up by ~23px. Returning null on first paint caused that.
+    return <div className="activity-ticker activity-ticker-skeleton" aria-hidden="true" />;
+  }
 
   // Exactly the three messages requested — no extras, no fillers.
   const messages = [
