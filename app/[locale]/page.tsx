@@ -6,6 +6,7 @@ import { getCurrentUser } from "@/lib/auth-helpers";
 import { Reveal } from "@/components/Reveal";
 import { AnimatedNumber } from "@/components/AnimatedNumber";
 import { RevealStagger } from "@/components/RevealStagger";
+import { ActivityTicker } from "@/components/ActivityTicker";
 import { SearchClient } from "@/components/search/SearchClient";
 import type { Locale } from "@/i18n/routing";
 
@@ -23,6 +24,7 @@ function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
   const tStreak = useTranslations("streak");
   const tCont = useTranslations("cont");
   const tFeat = useTranslations("feat");
+  const tAct = useTranslations("activity");
   const tEmo = useTranslations("emo");
   const tEmo30 = useTranslations("emo30");
   const tTrust = useTranslations("trust");
@@ -110,6 +112,15 @@ function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
           </div>
         </div>
       </section>
+
+      {/* ACTIVITY TICKER — live platform metrics, sits between hero and search */}
+      <div className="wrap">
+        <ActivityTicker labels={{
+          readers: tAct.raw("readers"),
+          hifz: tAct.raw("hifz"),
+          bookmarks: tAct.raw("bookmarks"),
+        }} />
+      </div>
 
       {/* SEARCH — full-text over Quran, drops users straight into the reader */}
       <Reveal as="section" className="wrap home-search">

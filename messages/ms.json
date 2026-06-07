@@ -1161,5 +1161,10 @@
     "pick_eyebrow": "MULA DARI MANA-MANA",
     "pick_h": "Pilih surah untuk dihafal",
     "pick_sub": "Ketik mana-mana surah untuk mula menghafalnya sekarang."
+  },
+  "activity": {
+    "readers": "Sekarang di Sakeenly: {n} pembaca",
+    "hifz": "Dihafal bersama: {n} ayat",
+    "bookmarks": "Disimpan: {n} ayat"
   }
 }

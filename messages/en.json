@@ -1161,5 +1161,10 @@
     "pick_eyebrow": "START ANYWHERE",
     "pick_h": "Pick a surah to memorize",
     "pick_sub": "Tap any surah to begin memorizing it right now."
+  },
+  "activity": {
+    "readers": "Now in Sakeenly: {n} readers",
+    "hifz": "Memorised together: {n} ayat",
+    "bookmarks": "Saved: {n} bookmarked verses"
   }
 }

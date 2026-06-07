@@ -1161,5 +1161,10 @@
     "pick_eyebrow": "ISTALGAN JOYDAN",
     "pick_h": "Hifz uchun sura tanlang",
     "pick_sub": "Hozir yodlashni boshlash uchun istalgan suraga bosing."
+  },
+  "activity": {
+    "readers": "Hozir Sakeenly’da: {n} oʻquvchi",
+    "hifz": "Birga yodlandi: {n} oyat",
+    "bookmarks": "Saqlangan: {n} oyat"
   }
 }

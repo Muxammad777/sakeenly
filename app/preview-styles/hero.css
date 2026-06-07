@@ -245,6 +245,41 @@
     background: oklch(var(--accent));
     width: 22px;
   }
+  /* Activity ticker — narrow strip between hero and search */
+  .activity-ticker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 6px auto 14px;
+    padding: 8px 18px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: oklch(var(--text-2));
+    border: 1px solid oklch(var(--border));
+    border-radius: 999px;
+    background: color-mix(in oklab, oklch(var(--surface)) 92%, transparent);
+  }
+  .activity-dot {
+    width: 6px; height: 6px; border-radius: 999px;
+    background: oklch(var(--accent));
+    box-shadow: 0 0 0 0 color-mix(in oklab, oklch(var(--accent)) 60%, transparent);
+    animation: activity-pulse 1800ms ease-out infinite;
+  }
+  .activity-text { animation: activity-fade 360ms ease-out; }
+  @keyframes activity-pulse {
+    0%   { box-shadow: 0 0 0 0    color-mix(in oklab, oklch(var(--accent)) 65%, transparent); }
+    70%  { box-shadow: 0 0 0 10px color-mix(in oklab, oklch(var(--accent)) 0%,  transparent); }
+    100% { box-shadow: 0 0 0 0    color-mix(in oklab, oklch(var(--accent)) 0%,  transparent); }
+  }
+  @keyframes activity-fade {
+    from { opacity: 0; transform: translateY(4px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .activity-dot, .activity-text { animation: none; }
+  }
+
   /* Verse swap animation: fade in + slight slide from the right.
      Keyed remount via React makes this fire on every carousel step. */
   .votd-slide-in {
