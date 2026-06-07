@@ -1,11 +1,10 @@
 "use client";
 
-// ActivityTicker — a marquee strip pinned to the bottom of the hero
-// section that scrolls a single continuous string of live platform
-// metrics right-to-left, forever. Pulls from /api/stats which is
-// cached server-side for 60s. Pauses on hover so a reader can finish
-// the line they're looking at. Honours prefers-reduced-motion (renders
-// the messages stacked, no animation).
+// ActivityTicker — premium marquee strip pinned to the bottom of the
+// hero. Pulls 3 live metrics from /api/stats (cached 60s) and scrolls
+// them right-to-left in one seamless loop. Pauses on hover so a reader
+// can finish the line. Honours prefers-reduced-motion (renders the
+// three messages as a static centred row, no animation).
 
 import { useEffect, useState } from "react";
 
@@ -17,7 +16,6 @@ interface Stats {
 }
 
 interface Props {
-  /** Localised label templates with {n} placeholder. */
   labels: {
     readers: string;
     hifz: string;
@@ -43,27 +41,37 @@ export function ActivityTicker({ labels }: Props) {
 
   if (!stats) return null;
 
+  // Exactly the three messages requested — no extras, no fillers.
   const messages = [
     applyTpl(labels.readers, Math.max(1, stats.readers)),
     applyTpl(labels.hifz, stats.hifzMastered),
     applyTpl(labels.bookmarks, stats.bookmarks),
   ];
 
-  // Duplicate the message list so the marquee loop is seamless: as the
-  // first copy translates off the left edge, the second copy is already
-  // in view filling the space.
-  const items = [...messages, ...messages];
+  // The marquee track has to render TWO copies of the message list back-
+  // to-back so the translateX(-50%) loop is seamless (when the first copy
+  // has scrolled fully off-screen the second copy is exactly in the spot
+  // the first copy started). The user perceives a single continuous strip
+  // because the loop point is mid-message, never at a visible "reset".
+  const copies = [messages, messages];
 
   return (
     <div className="activity-ticker" aria-live="polite" aria-label="Sakeenly activity">
       <span className="activity-dot" aria-hidden="true" />
       <div className="activity-track">
         <div className="activity-track-inner">
-          {items.map((m, i) => (
-            <span key={i} className="activity-item">
-              <span>{m}</span>
+          {copies.map((set, copyIdx) => (
+            <div className="activity-set" key={copyIdx} aria-hidden={copyIdx === 1 ? "true" : undefined}>
+              {set.map((m, i) => (
+                <span key={i} className="activity-item">
+                  <span className="activity-text">{m}</span>
+                  {i < set.length - 1 && <span className="activity-sep" aria-hidden="true">✦</span>}
+                </span>
+              ))}
+              {/* trailing separator joins this set to the next copy so the
+                  pattern never breaks at the loop boundary */}
               <span className="activity-sep" aria-hidden="true">✦</span>
-            </span>
+            </div>
           ))}
         </div>
       </div>
