@@ -165,6 +165,32 @@ section.wrap-tight h3 {
   color: oklch(var(--text-2));
 }
 
+/* ─── SCROLL PROGRESS BAR (top of viewport, fills as you scroll) ─── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 100;
+  pointer-events: none;
+  background: transparent;
+}
+.scroll-progress-fill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    oklch(var(--accent)),
+    color-mix(in oklab, oklch(var(--accent)) 80%, white) 60%,
+    oklch(var(--accent))
+  );
+  transform: scaleX(0);
+  transform-origin: left center;
+  /* No transition — we drive it from rAF for smoothness. */
+}
+
 /* ─── ORNAMENTAL DIVIDER (geo-divider used between home sections) ─── */
 .geo-divider {
   display: flex;

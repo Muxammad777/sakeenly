@@ -6,6 +6,7 @@ import { routing } from "@/i18n/routing";
 import { Providers } from "@/app/providers";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import { LocaleDirSync } from "@/components/LocaleDirSync";
 import { isRtlLocale } from "@/lib/quran/format";
 import "@/app/preview-styles/index.css";
@@ -50,6 +51,7 @@ export default async function LocaleLayout({
         {/* Push lang+dir onto <html> from the resolved locale. RootLayout
             ships ltr placeholders; this corrects them for fa/ar etc. */}
         <LocaleDirSync locale={locale} dir={dir} />
+        <ScrollProgress />
         <div className="flex min-h-screen flex-col" data-locale={locale} data-dir={dir}>
           <Header />
           <main className="flex-1">{children}</main>
