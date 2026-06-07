@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { HomeVotdCarousel, HomeStreakBand } from "./HomeClient";
 import { getCurrentUser } from "@/lib/auth-helpers";
 import { Reveal } from "@/components/Reveal";
+import { AnimatedNumber } from "@/components/AnimatedNumber";
 import { SearchClient } from "@/components/search/SearchClient";
 import type { Locale } from "@/i18n/routing";
 
@@ -205,11 +206,11 @@ function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
       {/* TRUST */}
       <Reveal as="section" className="wrap">
         <div className="trust">
-          <div><div className="n">114</div><div className="l">{tTrust("suras")}</div></div>
-          <div><div className="n">6,236</div><div className="l">{tTrust("ayat")}</div></div>
-          <div><div className="n">5</div><div className="l">{tTrust("translations")}</div></div>
-          <div><div className="n">30</div><div className="l">{tTrust("reciters")}</div></div>
-          <div><div className="n">0</div><div className="l">{tTrust("trackers")}</div></div>
+          <div><div className="n"><AnimatedNumber to={114} /></div><div className="l">{tTrust("suras")}</div></div>
+          <div><div className="n"><AnimatedNumber to={6236} duration={1800} /></div><div className="l">{tTrust("ayat")}</div></div>
+          <div><div className="n"><AnimatedNumber to={24} /></div><div className="l">{tTrust("translations")}</div></div>
+          <div><div className="n"><AnimatedNumber to={30} /></div><div className="l">{tTrust("reciters")}</div></div>
+          <div><div className="n"><AnimatedNumber to={0} /></div><div className="l">{tTrust("trackers")}</div></div>
         </div>
       </Reveal>
 
