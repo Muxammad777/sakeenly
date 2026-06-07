@@ -2571,7 +2571,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
     readingMin: 6,
     byLocale: {
       ru: {
-        name: "Пророк Худ",
+        name: "Худ",
         theme: "Гордость уходит, остаётся только то, что построено с Аллахом",
         paragraphs: [
           "Давным-давно, после потопа пророка Нуха, на земле появился народ. Их называли Ад. Они жили в местности Аль-Ахкаф — это были песчаные холмы и долины на юге Аравии. Аллах дал этому народу очень много: высокий рост, сильные тела, плодородные земли, сады и стада. Они строили большие красивые сооружения на возвышенностях и считались самым могущественным народом своего времени.",
@@ -2591,7 +2591,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       en: {
-        name: "Prophet Hud",
+        name: "Hud",
         theme: "Pride fades away; only what is built with Allah remains",
         paragraphs: [
           "Long, long ago, after the flood of Prophet Nuh, peace be upon him, a new people appeared on the earth. They were called Ad. They lived in a land called Al-Ahqaf — sandy hills and valleys in the south of Arabia. Allah gave this people very much: tall stature, strong bodies, fertile lands, gardens and herds. They built large, beautiful structures on the high places and were known as the most powerful people of their time.",
@@ -2611,7 +2611,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       fa: {
-        name: "حضرت هود علیه السلام",
+        name: "هود علیه السلام",
         theme: "غرور می‌رود و فقط آنچه با الله ساخته شده باقی می‌ماند",
         paragraphs: [
           "خیلی وقت پیش، بعد از طوفان حضرت نوح علیه السلام، روی زمین قومی پدید آمد. آن‌ها را قوم عاد می‌نامیدند. آن‌ها در سرزمینی به نام اَلْاَحْقاف زندگی می‌کردند ـ تپه‌ها و دره‌های شنی در جنوب شبه‌جزیره عربستان. الله به این قوم چیزهای بسیاری بخشیده بود: قدّ بلند، بدن‌های قوی، زمین‌های حاصلخیز، باغ‌ها و گله‌ها. آن‌ها روی بلندی‌ها بناهای بزرگ و زیبا می‌ساختند و قدرتمندترین قومِ زمانِ خود به شمار می‌رفتند.",
@@ -2631,7 +2631,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       tg: {
-        name: "Паёмбар Ҳуд",
+        name: "Ҳуд",
         theme: "Ғурур мегузарад, танҳо он чизе мемонад, ки бо Аллоҳ сохта шудааст",
         paragraphs: [
           "Кайҳо пеш, баъд аз тӯфони паёмбар Нӯҳ алайҳиссалом, дар замин қавме пайдо шуд. Онҳоро Од меномиданд. Онҳо дар сарзамини Ал-Аҳқоф зиндагӣ мекарданд — ин теппаҳои регӣ ва водиҳои ҷануби Арабистон буданд. Аллоҳ ба ин қавм бисёр чизҳо ато карда буд: қомати баланд, ҷисмҳои қавӣ, заминҳои ҳосилхез, боғҳо ва рамаҳо. Онҳо дар баландиҳо иморатҳои бузургу зебо месохтанд ва пурқудраттарин қавми замони худ ҳисоб мешуданд.",
@@ -2651,7 +2651,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       uz: {
-        name: "Hud payg'ambar",
+        name: "Hud",
         theme: "Kibr o'tib ketadi, faqat Alloh bilan qurilgan narsa qoladi",
         paragraphs: [
           "Juda qadim zamonda, Nuh alayhissalom to'fonidan keyin, yer yuzida bir qavm paydo bo'ldi. Ularni Od qavmi deb atashardi. Ular Al-Ahqof yurtida yashashardi — bu Arabistonning janubidagi qumli tepaliklar va vodiylar edi. Alloh bu qavmga juda ko'p ne'matlar bergan edi: baland bo'y, kuchli tanalar, hosildor yerlar, bog'lar va mol-podalar. Ular baland joylarda katta va chiroyli inshootlar qurishardi va o'z zamonasining eng qudratli qavmi hisoblanishardi.",
@@ -2671,7 +2671,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       kk: {
-        name: "Һұд пайғамбар",
+        name: "Һұд",
         theme: "Тәкаппарлық кетеді, тек Аллаһпен бірге салынған нәрсе ғана қалады",
         paragraphs: [
           "Көп уақыт бұрын, Нұх пайғамбардың топан су оқиғасынан кейін, жер бетінде бір халық пайда болды. Оларды Ад деп атаған. Олар Әл-Ахқаф деген жерде өмір сүрді — бұл Арабияның оңтүстігіндегі құмды төбелер мен аңғарлар еді. Аллаһ бұл халыққа өте көп нәрсе берді: биік бойды, күшті денені, құнарлы жерлерді, бау-бақшалар мен мал басын. Олар биік жерлерге үлкен әрі әдемі ғимараттар салып, өз заманының ең құдіретті халқы саналды.",
@@ -2691,7 +2691,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       ky: {
-        name: "Худ пайгамбар",
+        name: "Худ",
         theme: "Текеберчилик жоголот, Аллах менен курулган нерсе гана калат",
         paragraphs: [
           "Илгери-илгери, Нух пайгамбардын топон суусунан кийин, жер бетинде бир эл пайда болду. Аларды Аад эли деп аташчу. Алар Аль-Ахкаф деген жерде жашашчу — бул Арабия жарым аралынын түштүгүндөгү кумдуу дөбөлөр жана өрөөндөр эле. Аллах бул элге өтө көп нерсе берди: бийик бой, күчтүү дене, түшүмдүү жерлер, бактар жана малдар. Алар бийик жерлерге чоң, кооз курулуштарды салышчу жана өз заманындагы эң күчтүү эл деп эсептелишчү.",
@@ -2711,7 +2711,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       ur: {
-        name: "حضرت ہود علیہ السلام",
+        name: "ہود علیہ السلام",
         theme: "غرور مٹ جاتا ہے، صرف وہی باقی رہتا ہے جو اللہ کے ساتھ بنایا جائے",
         paragraphs: [
           "بہت پرانے زمانے کی بات ہے، حضرت نوح علیہ السلام کے طوفان کے بعد زمین پر ایک قوم آباد ہوئی۔ ان کو قومِ عاد کہا جاتا تھا۔ وہ الاحقاف کے علاقے میں رہتے تھے — یہ جنوبی عرب کے ریتیلے ٹیلے اور وادیاں تھیں۔ اللہ نے اِس قوم کو بہت کچھ عطا کیا تھا: لمبا قد، مضبوط جسم، زرخیز زمینیں، باغ اور مال مویشی۔ وہ اونچی جگہوں پر بڑی بڑی خوبصورت عمارتیں بناتے تھے اور اپنے زمانے کی سب سے طاقتور قوم سمجھے جاتے تھے۔",
@@ -2731,7 +2731,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       ms: {
-        name: "Nabi Hud",
+        name: "Hud",
         theme: "Keangkuhan akan lenyap, yang tinggal hanyalah apa yang dibina bersama Allah",
         paragraphs: [
           "Pada zaman dahulu, selepas banjir besar pada zaman Nabi Nuh alaihissalam, muncul satu kaum di muka bumi. Mereka dikenali sebagai kaum Ad. Mereka tinggal di kawasan Al-Ahqaf — iaitu bukit-bukau pasir dan lembah di selatan Tanah Arab. Allah telah mengurniakan kepada kaum ini banyak sekali nikmat: tubuh yang tinggi dan kuat, tanah yang subur, kebun-kebun dan ternakan. Mereka membina bangunan-bangunan yang besar dan indah di tempat-tempat tinggi, dan dianggap sebagai kaum yang paling berkuasa pada zaman mereka.",
@@ -2771,7 +2771,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       id: {
-        name: "Nabi Hud",
+        name: "Hud",
         theme: "Kesombongan akan hilang, yang tersisa hanyalah apa yang dibangun bersama Allah",
         paragraphs: [
           "Dahulu kala, setelah banjir besar di zaman Nabi Nuh alaihissalam, muncullah sebuah kaum di muka bumi. Mereka disebut kaum Ad. Mereka tinggal di daerah Al-Ahqaf — yaitu bukit-bukit pasir dan lembah-lembah di selatan Jazirah Arab. Allah memberi kaum ini sangat banyak nikmat: tubuh yang tinggi, badan yang kuat, tanah yang subur, kebun-kebun, dan ternak yang banyak. Mereka membangun bangunan-bangunan besar nan indah di tempat-tempat yang tinggi, dan mereka dikenal sebagai kaum yang paling perkasa pada zamannya.",
@@ -2800,7 +2800,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
     readingMin: 6,
     byLocale: {
       ru: {
-        name: "Пророк Салих",
+        name: "Салих",
         theme: "Знамение Аллаха и терпение пророка перед народом, который не услышал",
         paragraphs: [
           "Давным-давно жил народ, который назывался самуд. Они жили среди скал и высекали себе дома прямо в горах. Аллах дал им силу, достаток и плодородную землю. Но они забыли, кто им всё это подарил, и стали поклоняться идолам — каменным фигурам, которые сами же и делали. И тогда Аллах послал к ним из их же народа пророка по имени Салих. Он сказал им простые слова: о народ мой, поклоняйтесь Аллаху, нет у вас никакого другого бога, кроме Него.",
@@ -2820,7 +2820,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       en: {
-        name: "Prophet Salih",
+        name: "Salih",
         theme: "A sign from Allah and the patience of a prophet before a people who would not listen",
         paragraphs: [
           "Long ago there lived a people called Thamud. They lived among the cliffs and carved their houses straight into the mountains. Allah gave them strength, plenty, and fertile land. But they forgot Who had given them all of this, and they began to worship idols, stone figures that they shaped with their own hands. So Allah sent to them, from among their own people, a prophet named Salih, peace be upon him. He spoke to them with simple words: O my people, worship Allah, you have no god other than Him.",
@@ -2860,7 +2860,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       tg: {
-        name: "Паёмбар Солеҳ",
+        name: "Солеҳ",
         theme: "Нишонаи Аллоҳ ва сабри паёмбар дар назди мардуме, ки нашуниданд",
         paragraphs: [
           "Хеле вақт пеш мардуме зиндагӣ мекард, ки самуд номида мешуд. Онҳо дар миёни сангу кӯҳҳо зиндагӣ мекарданд ва барои худ хонаҳоро рост дар кӯҳҳо метарошиданд. Аллоҳ ба онҳо қувват, фаровонӣ ва замини ҳосилхез ато карда буд. Аммо онҳо фаромӯш карданд, ки ҳамаи ин аз кист, ва ба бутҳо — пайкарҳои сангине ки худашон месохтанд — парастиш карданро оғоз карданд. Ва он гоҳ Аллоҳ аз миёни худи онҳо паёмбареро бо номи Солеҳ алайҳиссалом фиристод. Ӯ ба онҳо суханҳои сода гуфт: эй қавми ман, Аллоҳро парастиш кунед, барои шумо ҳеҷ маъбуди дигаре ҷуз Ӯ нест.",
@@ -2880,7 +2880,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       uz: {
-        name: "Solih payg'ambar",
+        name: "Solih",
         theme: "Allohning belgisi va eshitmagan qavm oldida payg'ambarning sabri",
         paragraphs: [
           "Juda qadim zamonlarda Samud deb atalgan bir qavm yashagan. Ular qoyalar orasida yashab, o'zlariga uylarni to'g'ridan-to'g'ri tog'larga o'yib qurganlar. Alloh ularga kuch, to'kinlik va serhosil yer bergan edi. Lekin ular bularning hammasini kim hadya qilganini unutib, butlarga — o'zlari yasagan tosh haykallarga sig'inadigan bo'lib qoldilar. Shunda Alloh ularning o'zlaridan Solih ismli payg'ambarni yubordi. U ularga oddiy so'zlarni aytdi: ey qavmim, Allohga ibodat qilinglar, sizlar uchun Undan boshqa hech qanday iloh yo'q.",
@@ -2900,7 +2900,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       kk: {
-        name: "Салих пайғамбар",
+        name: "Салих",
         theme: "Аллаһтың белгісі және өз сөзін естімеген халық алдындағы пайғамбардың сабыры",
         paragraphs: [
           "Баяғыда самуд деп аталатын халық өмір сүрген. Олар жартастардың арасында тұрып, өздеріне үйлерді тікелей таулардың ішінен қашап жасайтын. Аллаһ оларға күш, байлық және құнарлы жер берді. Бірақ олар осының бәрін кім сыйлағанын ұмытып, өз қолдарымен жасаған тас мүсіндерге — пұттарға табына бастады. Сонда Аллаһ оларға өз халқының ішінен Салих есімді пайғамбарды жіберді. Ол оларға қарапайым сөздер айтты: уа, халқым, Аллаһқа құлшылық етіңдер, Одан басқа ешбір құдайларың жоқ.",
@@ -2920,7 +2920,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       ky: {
-        name: "Салих пайгамбар",
+        name: "Салих",
         theme: "Аллахтын белгиси жана уккусу келбеген элдин алдындагы пайгамбардын сабыры",
         paragraphs: [
           "Илгери-илгери Самуд деген эл жашаган экен. Алар аскалардын арасында жашап, тоолордун ичине түз эле үйлөрдү оюп жасашчу. Аллах аларга күч, мол ырыскы жана түшүмдүү жер берген. Бирок алар бул баарын ким тартуулаганын унутуп, өздөрү жасап алган таш бутканаларга — буркандарга сыйына башташты. Ошондо Аллах аларга өз элинин ичинен Салих аттуу пайгамбарды жиберди. Ал аларга жөнөкөй сөздөрдү айтты: о, менин элим, Аллахка сыйынгыла, Андан башка силер үчүн эч кандай кудай жок.",
@@ -2940,7 +2940,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       ur: {
-        name: "حضرت صالح علیہ السلام",
+        name: "صالح علیہ السلام",
         theme: "اللہ کی نشانی اور اُس قوم کے سامنے نبی کا صبر جس نے بات نہ سنی",
         paragraphs: [
           "بہت پرانے زمانے میں ایک قوم رہتی تھی جسے ثمود کہا جاتا تھا۔ وہ پہاڑوں کے درمیان رہتے تھے اور اپنے گھر سیدھے چٹانوں میں تراش کر بناتے تھے۔ اللہ نے اُنہیں طاقت، خوشحالی اور زرخیز زمین عطا کی تھی۔ لیکن وہ بھول گئے کہ یہ سب اُنہیں کس نے دیا ہے، اور وہ بتوں کی پوجا کرنے لگے یعنی اُن پتھر کی مورتیوں کی جنہیں وہ خود اپنے ہاتھوں سے بناتے تھے۔ پھر اللہ نے اُن کے پاس اُنہی میں سے ایک نبی بھیجا جن کا نام صالح علیہ السلام تھا۔ اُنہوں نے اُن سے بہت سادہ سی بات کہی: اے میری قوم، صرف اللہ کی عبادت کرو، اُس کے سوا تمہارا کوئی معبود نہیں۔",
@@ -2960,7 +2960,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       ms: {
-        name: "Nabi Salih alaihissalam",
+        name: "Salih",
         theme: "Tanda kekuasaan Allah dan kesabaran seorang nabi di hadapan kaum yang enggan mendengar",
         paragraphs: [
           "Pada zaman dahulu kala, hiduplah satu kaum yang dipanggil Tsamud. Mereka tinggal di kawasan berbatu dan memahat rumah mereka terus ke dalam gunung. Allah telah mengurniakan mereka kekuatan, kemewahan dan tanah yang subur. Namun mereka lupa siapa yang memberikan semua itu, lalu mereka mula menyembah berhala, iaitu patung batu yang mereka sendiri buat. Maka Allah pun mengutuskan kepada mereka seorang nabi dari kalangan mereka sendiri, yang bernama Salih alaihissalam. Beliau berkata kepada mereka dengan kata-kata yang ringkas: wahai kaumku, sembahlah Allah, tiada tuhan bagi kamu selain Dia.",
@@ -3000,7 +3000,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       id: {
-        name: "Nabi Saleh alaihissalam",
+        name: "Saleh",
         theme: "Tanda dari Allah dan kesabaran seorang nabi di hadapan kaum yang tidak mau mendengar",
         paragraphs: [
           "Dahulu kala hiduplah sebuah kaum yang bernama Tsamud. Mereka tinggal di antara batu-batu cadas dan memahat rumah-rumah mereka langsung di dalam gunung. Allah memberi mereka kekuatan, kemakmuran, dan tanah yang subur. Tetapi mereka melupakan siapa yang telah memberikan semua itu kepada mereka, lalu mereka mulai menyembah berhala — patung-patung batu yang mereka buat sendiri. Maka Allah mengutus kepada mereka seorang nabi dari kalangan mereka sendiri yang bernama Saleh alaihissalam. Ia mengatakan kepada mereka kata-kata yang sederhana: wahai kaumku, sembahlah Allah, tidak ada bagi kalian tuhan selain Dia.",
@@ -3029,7 +3029,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
     readingMin: 6,
     byLocale: {
       ru: {
-        name: "Пророк Лут",
+        name: "Лут",
         theme: "Стойкость в правде, когда вокруг все живут неправильно",
         paragraphs: [
           "Давным-давно жил пророк по имени Лут, мир ему. Он был родственником пророка Ибрахима, мир ему, и поверил в Единого Аллаха ещё с молодости. Аллах послал его к народу, который жил в городах, лежавших на торговой дороге между странами. Люди этих городов знали о Луте, видели его жизнь и слышали его слова, но в их сердцах было много упрямства.",
@@ -3051,7 +3051,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       en: {
-        name: "Prophet Lut",
+        name: "Lut",
         theme: "Standing firm in truth when everyone around lives the wrong way",
         paragraphs: [
           "Long ago there lived a prophet named Lut, peace be upon him. He was a relative of Prophet Ibrahim, peace be upon him, and he believed in the One Allah from the time he was young. Allah sent him to a people who lived in cities that lay along a trade road between countries. The people of these cities knew about Lut, they saw how he lived and heard what he said, but their hearts were full of stubbornness.",
@@ -3073,7 +3073,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       fa: {
-        name: "حضرت لوط علیه السلام",
+        name: "لوط علیه السلام",
         theme: "ایستادگی بر حق، وقتی همه‌ی اطرافیان به راه نادرست می‌روند",
         paragraphs: [
           "خیلی وقت پیش، پیامبری بود به نام لوط، علیه السلام. او از خویشاوندان حضرت ابراهیم علیه السلام بود و از همان جوانی به الله یگانه ایمان آورده بود. الله او را به سوی قومی فرستاد که در شهرهایی زندگی می‌کردند بر سر راه تجاری میان سرزمین‌ها. مردم آن شهرها لوط را می‌شناختند، زندگی‌اش را می‌دیدند و سخنانش را می‌شنیدند، اما در دل‌هایشان لجاجت بسیار بود.",
@@ -3095,7 +3095,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       tg: {
-        name: "Паёмбар Лут",
+        name: "Лут",
         theme: "Устуворӣ дар ҳақ, вақте ки атрофиён ҳама нодуруст зиндагӣ мекунанд",
         paragraphs: [
           "Кайҳо пеш паёмбаре бо номи Лут алайҳиссалом зиндагӣ мекард. Ӯ хеши паёмбар Иброҳим алайҳиссалом буд ва ҳанӯз аз ҷавонӣ ба Аллоҳи Ягона имон оварда буд. Аллоҳ ӯро ба қавме фиристод, ки дар шаҳрҳое мезистанд, ки бар роҳи савдо миёни кишварҳо ҷой дошт. Мардуми ин шаҳрҳо Лутро мешинохтанд, зиндагии ӯро медиданд ва суханонашро мешуниданд, аммо дар дилҳояшон саркашии бисёр буд.",
@@ -3117,7 +3117,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       uz: {
-        name: "Lut payg'ambar",
+        name: "Lut",
         theme: "Atrofdagilar hammasi noto'g'ri yashayotgan bo'lsa ham haqiqat tomonida sobit turish",
         paragraphs: [
           "Juda qadim zamonda Lut alayhissalom ismli payg'ambar yashagan. U Ibrohim alayhissalomning qarindoshi edi va yoshligidanoq Yagona Allohga iymon keltirgan edi. Alloh uni mamlakatlar orasidagi savdo yo'lida joylashgan shaharlarda yashovchi qavmga payg'ambar qilib yubordi. Bu shaharlarning odamlari Lut haqida bilishardi, uning hayotini ko'rishardi va so'zlarini eshitishardi, lekin yuraklarida ko'p qaysarlik bor edi.",
@@ -3139,7 +3139,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       kk: {
-        name: "Лұт пайғамбар",
+        name: "Лұт",
         theme: "Айнала бәрі дұрыс өмір сүрмесе де, ақиқатта берік тұру",
         paragraphs: [
           "Баяғы заманда Лұт есімді бір пайғамбар өмір сүрген, оған сәлем болсын. Ол Ибраһим пайғамбардың, оған сәлем болсын, туысы еді және жастайынан Жалғыз Аллаһқа сенген. Аллаһ оны елдер арасындағы сауда жолының бойында жатқан қалаларда тұрған халыққа жіберді. Бұл қалалардың адамдары Лұтты білетін, оның өмірін көріп, сөздерін естіп отыратын, бірақ жүректерінде үлкен қыңырлық бар еді.",
@@ -3161,7 +3161,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       ky: {
-        name: "Лут пайгамбар",
+        name: "Лут",
         theme: "Айланада баары туура эмес жашаганда да чындыкта бекем туруу",
         paragraphs: [
           "Илгери-илгери Лут аттуу пайгамбар жашаган, ага аллейхи салам. Ал Ибрахим пайгамбардын, ага аллейхи салам, тууганы эле жана жаш чагынан эле Жалгыз Аллахка ишенген. Аллах аны өлкөлөрдүн ортосундагы соода жолунун боюнда жайгашкан шаарларда жашаган элге жиберди. Ал шаарлардын адамдары Лут жөнүндө билишчү, анын жашоосун көрүшүп, сөздөрүн угушчу, бирок жүрөктөрүндө катуу өжөрлүк бар эле.",
@@ -3183,7 +3183,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       ur: {
-        name: "حضرت لوط علیہ السلام",
+        name: "لوط علیہ السلام",
         theme: "جب چاروں طرف لوگ غلط راستے پر ہوں، تب بھی حق پر ثابت قدم رہنا",
         paragraphs: [
           "بہت پرانے زمانے کی بات ہے، ایک نبی تھے جن کا نام لوط علیہ السلام تھا۔ وہ حضرت ابراہیم علیہ السلام کے رشتہ دار تھے، اور انہوں نے جوانی ہی سے ایک اللہ پر ایمان لے آیا تھا۔ اللہ نے انہیں ایسی قوم کی طرف بھیجا جو ان شہروں میں رہتی تھی جو ملکوں کے درمیان تجارتی راستے پر واقع تھے۔ ان شہروں کے لوگ لوط علیہ السلام کو جانتے تھے، ان کی زندگی دیکھتے تھے اور ان کی باتیں سنتے تھے، لیکن ان کے دلوں میں بہت ضد بھری ہوئی تھی۔",
@@ -3205,7 +3205,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       ms: {
-        name: "Nabi Lut alaihissalam",
+        name: "Lut",
         theme: "Berpegang teguh pada kebenaran walaupun semua orang di sekeliling hidup dengan cara yang salah",
         paragraphs: [
           "Pada zaman dahulu, hiduplah seorang nabi bernama Lut, alaihissalam. Beliau adalah saudara mara Nabi Ibrahim alaihissalam, dan beliau telah beriman kepada Allah Yang Esa sejak usia muda lagi. Allah mengutuskan beliau kepada satu kaum yang tinggal di beberapa buah bandar yang terletak di laluan perdagangan antara negeri-negeri. Penduduk bandar-bandar itu mengenali Lut, melihat kehidupannya dan mendengar kata-katanya, tetapi hati mereka penuh dengan kedegilan.",
@@ -3249,7 +3249,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       id: {
-        name: "Nabi Luth alaihissalam",
+        name: "Luth",
         theme: "Teguh di pihak kebenaran ketika semua orang di sekitar hidup dalam kesalahan",
         paragraphs: [
           "Dahulu kala hiduplah seorang nabi bernama Luth, alaihissalam. Beliau adalah kerabat Nabi Ibrahim alaihissalam, dan beliau telah beriman kepada Allah Yang Maha Esa sejak masa mudanya. Allah mengutus beliau kepada suatu kaum yang tinggal di kota-kota yang terletak di jalur perdagangan antarnegeri. Penduduk kota-kota itu mengenal Luth, melihat kehidupan beliau dan mendengar perkataan beliau, tetapi di dalam hati mereka ada banyak kekerasan dan keras kepala.",
@@ -3280,7 +3280,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
     readingMin: 5,
     byLocale: {
       ru: {
-        name: "Пророк Исмаил, мир ему",
+        name: "Исмаил",
         theme: "Доверие Аллаху и готовность следовать Его велению",
         paragraphs: [
           "Давным-давно у пророка Ибрахима родился долгожданный сын. Его назвали Исмаил. Его мама Хаджар очень любила его. Семья жила в краях, где люди поклонялись Одному Аллаху, как учил их Ибрахим, мир ему.",
@@ -3301,7 +3301,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       en: {
-        name: "Prophet Ismail, peace be upon him",
+        name: "Ismail",
         theme: "Trust in Allah and readiness to follow His command",
         paragraphs: [
           "Long ago, a son was born to Prophet Ibrahim, peace be upon him, after a long wait. He was named Ismail. His mother Hajar loved him very much. The family lived in lands where people worshipped the One Allah, as Ibrahim, peace be upon him, taught them.",
@@ -3322,7 +3322,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       fa: {
-        name: "حضرت اسماعیل علیه السلام",
+        name: "اسماعیل علیه السلام",
         theme: "اعتماد به خداوند و آمادگی برای پیروی از فرمان او",
         paragraphs: [
           "سال‌ها پیش، حضرت ابراهیم علیه السلام صاحب پسری شد که مدت‌ها در انتظارش بود. نام او را اسماعیل گذاشتند. مادرش هاجر او را بسیار دوست می‌داشت. این خانواده در سرزمینی زندگی می‌کرد که مردم آن، همان‌گونه که ابراهیم علیه السلام به آنان آموخته بود، تنها خدای یگانه، اللّه، را می‌پرستیدند.",
@@ -3343,7 +3343,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       tg: {
-        name: "Паёмбар Исмоил, алайҳиссалом",
+        name: "Исмоил",
         theme: "Эътимод ба Аллоҳ ва омодагӣ ба пайравӣ аз амри Ӯ",
         paragraphs: [
           "Хеле кайҳо пеш ба паёмбар Иброҳим писаре, ки кайҳо интизораш буд, таваллуд шуд. Ӯро Исмоил ном гузоштанд. Модараш Ҳоҷар ӯро бисёр дӯст медошт. Оила дар сарзамине зиндагӣ мекард, ки одамон ба Аллоҳи Ягона ибодат мекарданд, чунон ки Иброҳим, алайҳиссалом, онҳоро таълим медод.",
@@ -3364,7 +3364,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       uz: {
-        name: "Ismoil payg'ambar, alayhissalom",
+        name: "Ismoil",
         theme: "Allohga ishonish va Uning amriga bo'ysunishga tayyorlik",
         paragraphs: [
           "Qadim zamonda Ibrohim payg'ambarning uzoq kutgan o'g'li tug'ildi. Unga Ismoil deb ism qo'yishdi. Onasi Hojar uni juda yaxshi ko'rardi. Oila Ibrohim alayhissalom o'rgatganidek, odamlar Yagona Allohga ibodat qiladigan yerlarda yashardi.",
@@ -3385,7 +3385,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       kk: {
-        name: "Ысмайыл пайғамбар, оған сәлем болсын",
+        name: "Ысмайыл",
         theme: "Аллаһқа сену және Оның әміріне мойынсұнуға дайын болу",
         paragraphs: [
           "Баяғыда Ибраһим пайғамбардың көптен күткен ұлы дүниеге келді. Оған Ысмайыл деген есім берілді. Анасы Һажар оны қатты жақсы көретін. Отбасы Ибраһим, оған сәлем болсын, үйреткендей, адамдар Жалғыз Аллаһқа табынатын жерде өмір сүрді.",
@@ -3406,7 +3406,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       ky: {
-        name: "Пайгамбар Исмаил, ага салам",
+        name: "Исмаил, ага салам",
         theme: "Аллахка ишеним жана Анын буйругун аткарууга даярдык",
         paragraphs: [
           "Илгери-илгери пайгамбар Ибрахимдин көптөн күткөн уулу төрөлдү. Анын аты Исмаил коюлду. Апасы Хажар аны абдан жакшы көрчү. Үй-бүлө Ибрахим, ага салам, үйрөткөндөй, элдер Жалгыз Аллахка сыйынган жерлерде жашачу.",
@@ -3427,7 +3427,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       ur: {
-        name: "حضرت اسماعیل علیہ السلام",
+        name: "اسماعیل علیہ السلام",
         theme: "اللہ پر بھروسہ اور اُس کے حکم کی تعمیل کے لیے تیار رہنا",
         paragraphs: [
           "بہت پرانے زمانے کی بات ہے، حضرت ابراہیم علیہ السلام کے ہاں ایک بہت ہی منتظر بیٹا پیدا ہوا۔ اُن کا نام اسماعیل رکھا گیا۔ اُن کی والدہ ہاجرہ اُن سے بے حد محبت کرتی تھیں۔ یہ خاندان ایسی سرزمین میں رہتا تھا جہاں لوگ صرف ایک اللہ کی عبادت کرتے تھے، جیسا کہ ابراہیم علیہ السلام نے اُنہیں سکھایا تھا۔",
@@ -3448,7 +3448,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       ms: {
-        name: "Nabi Ismail alaihissalam",
+        name: "Ismail",
         theme: "Tawakal kepada Allah dan kesediaan menurut perintah-Nya",
         paragraphs: [
           "Pada zaman dahulu, Nabi Ibrahim alaihissalam dikurniakan seorang anak lelaki yang telah lama dinanti-nantikan. Anak itu dinamakan Ismail. Ibunya, Hajar, sangat menyayanginya. Keluarga ini tinggal di tempat orang ramai menyembah Allah Yang Maha Esa, sebagaimana yang diajarkan oleh Ibrahim alaihissalam.",
@@ -3490,7 +3490,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       id: {
-        name: "Nabi Ismail alaihissalam",
+        name: "Ismail",
         theme: "Percaya kepada Allah dan siap mengikuti perintah-Nya",
         paragraphs: [
           "Dahulu kala, Nabi Ibrahim alaihissalam dikaruniai seorang putra yang sudah lama dinanti-nantikan. Putra itu diberi nama Ismail. Ibunya, Hajar, sangat menyayanginya. Keluarga ini tinggal di tempat yang penduduknya menyembah hanya kepada Allah Yang Maha Esa, sebagaimana yang diajarkan oleh Nabi Ibrahim alaihissalam.",
@@ -3520,7 +3520,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
     readingMin: 4,
     byLocale: {
       ru: {
-        name: "Пророк Исхак, мир ему",
+        name: "Исхак",
         theme: "Радостная весть от Аллаха и благословение в потомстве праведников",
         paragraphs: [
           "Жил на земле великий пророк Ибрахим, мир ему, и жена его Сара. Они любили Аллаха больше всего на свете и всю жизнь служили Ему. Но было у них одно тихое желание, которое они носили в сердце много-много лет. Они хотели ребёнка. Время шло, годы проходили, и Ибрахим с Сарой становились всё старше и старше. По людским меркам у них уже совсем не оставалось надежды стать родителями. Но они продолжали верить Аллаху и не переставали молиться.",
@@ -3539,7 +3539,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       en: {
-        name: "Prophet Ishaq, peace be upon him",
+        name: "Ishaq",
         theme: "Glad tidings from Allah and the blessing in the offspring of the righteous",
         paragraphs: [
           "There lived on this earth a great prophet, Ibrahim, peace be upon him, and his wife Sarah. They loved Allah more than anything in the world, and all their lives they served Him. But there was one quiet wish that they carried in their hearts for many, many years. They wanted a child. Time passed, the years went by, and Ibrahim and Sarah were growing older and older. By human reckoning, there was almost no hope left for them to become parents. But they kept on believing Allah, and they never stopped praying.",
@@ -3558,7 +3558,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       fa: {
-        name: "حضرت اسحاق علیه السلام",
+        name: "اسحاق علیه السلام",
         theme: "مژده‌ای از سوی الله و برکت در نسل بندگان صالح",
         paragraphs: [
           "در روی زمین پیامبر بزرگی به نام ابراهیم علیه السلام زندگی می‌کرد و همسرش ساره. آن‌ها الله را بیش از هر چیز در دنیا دوست داشتند و تمام عمر خود را در خدمت او گذراندند. اما در دل‌شان یک آرزوی آرام داشتند که سال‌های سال آن را با خود حمل می‌کردند. آن‌ها یک فرزند می‌خواستند. زمان می‌گذشت، سال‌ها سپری می‌شد و ابراهیم و ساره پیر و پیرتر می‌شدند. به اندازه‌گیری مردم، دیگر هیچ امیدی برای پدر و مادر شدن برای‌شان باقی نمانده بود. اما آن‌ها همچنان به الله ایمان داشتند و از دعا کردن دست برنمی‌داشتند.",
@@ -3577,7 +3577,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       tg: {
-        name: "Паёмбар Исҳоқ, алайҳиссалом",
+        name: "Исҳоқ",
         theme: "Муждаи шодмонӣ аз Аллоҳ ва баракат дар насли солеҳон",
         paragraphs: [
           "Дар замин паёмбари бузурге зиндагӣ мекард — Иброҳим, алайҳиссалом, ва ҳамсари ӯ Соро. Онҳо Аллоҳро аз ҳама чизи дунё бештар дӯст медоштанд ва тамоми умри худро ба хидмати Ӯ бахшида буданд. Аммо як орзуи ороме доштанд, ки солҳои дароз дар дил нигоҳ медоштанд. Онҳо фарзанд мехостанд. Вақт мегузашт, солҳо паси сар мешуданд, ва Иброҳиму Соро рӯз ба рӯз пиртар мешуданд. Бо ҳисоби одамӣ дигар умеде барои падару модар шуданашон намонда буд. Лекин онҳо ҳамчунон ба Аллоҳ имон доштанд ва аз дуо кардан даст намекашиданд.",
@@ -3596,7 +3596,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       uz: {
-        name: "Is'hoq payg'ambar, alayhissalom",
+        name: "Is'hoq",
         theme: "Allohdan kelgan quvonchli xabar va solih bandalar zurriyotidagi baraka",
         paragraphs: [
           "Yer yuzida ulug' payg'ambar Ibrohim alayhissalom va uning xotini Soro yashar edi. Ular Allohni dunyodagi har qanday narsadan ko'proq sevardilar va butun umrlari davomida Unga ibodat qildilar. Lekin ularning yuraklarida ko'p-ko'p yillar davomida saqlab yurgan bitta jimgina orzulari bor edi. Ular farzand ko'rishni xohlar edilar. Vaqt o'tib, yillar o'tib, Ibrohim bilan Soro tobora keksayib borardilar. Odamlarning o'lchovi bilan aytganda, ularda ota-ona bo'lish umidi butunlay qolmagan edi. Lekin ular Allohga ishonishda davom etdilar va duo qilishdan to'xtamadilar.",
@@ -3615,7 +3615,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       kk: {
-        name: "Исхақ пайғамбар, оған сәлем болсын",
+        name: "Исхақ",
         theme: "Аллаһтың қуанышты хабары және әділ адамдардың ұрпағындағы береке",
         paragraphs: [
           "Жер бетінде ұлы пайғамбар Ибраһим, оған сәлем болсын, және оның жұбайы Сара өмір сүрді. Олар Аллаһты дүниедегі ең қымбат нәрседен артық сүйді және өмір бойы Оған қызмет етті. Бірақ олардың жүректерінде көп-көп жылдар бойы сақтап жүрген бір тыныш арманы бар еді. Олар бала көргісі келді. Уақыт өтті, жылдар жылжыды, Ибраһим мен Сара барған сайын қартая берді. Адами өлшеммен алғанда, олардың ата-ана болуға енді еш үміті қалмаған еді. Бірақ олар Аллаһқа сенуін тоқтатпады және дұға етуін де үзбеді.",
@@ -3634,7 +3634,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       ky: {
-        name: "Ыскак пайгамбар, ага салам болсун",
+        name: "Ыскак",
         theme: "Аллахтан кубанычтуу кабар жана такыба адамдардын урпактарына берилген береке",
         paragraphs: [
           "Жер бетинде Ибрахим аллейхи салам деген улуу пайгамбар жана анын жубайы Сара жашаган. Алар Аллахты дүйнөдөгү баардык нерседен ашык сүйүшүп, өмүр бою Ага кызмат кылып келишкен. Бирок алардын жүрөгүндө көп-көп жылдар бою сактап жүргөн бир тымызын тилеги бар эле. Алар бала каалашкан. Убакыт өтүп, жылдар учуп, Ибрахим менен Сара барган сайын улгайып бара жатышты. Адамдардын ченеми менен алганда, ата-эне болууга алардын эч кандай үмүтү калбай калган эле. Бирок алар Аллахка ишенүүнү токтотушкан жок жана дуба кылууну да токтотушкан жок.",
@@ -3653,7 +3653,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       ur: {
-        name: "حضرت اسحاق علیہ السلام",
+        name: "اسحاق علیہ السلام",
         theme: "اللہ کی طرف سے خوشخبری اور نیک بندوں کی اولاد میں برکت",
         paragraphs: [
           "زمین پر ایک عظیم نبی حضرت ابراہیم علیہ السلام رہتے تھے، اور اُن کی بیوی سارہ تھیں۔ وہ دونوں اللہ سے سب سے زیادہ محبت کرتے تھے اور ساری زندگی اُسی کی عبادت میں گزارتے رہے۔ مگر ایک خاموش سی خواہش تھی جو اُنہوں نے بہت بہت سالوں سے اپنے دل میں رکھی ہوئی تھی۔ وہ ایک بچہ چاہتے تھے۔ وقت گزرتا رہا، سال بیتتے رہے، اور ابراہیم علیہ السلام اور سارہ دونوں بوڑھے ہوتے چلے گئے۔ انسانی پیمانے سے دیکھا جائے تو اب اُن کے ماں باپ بننے کی کوئی امید باقی نہیں رہی تھی۔ لیکن وہ پھر بھی اللہ پر یقین رکھتے رہے اور دعا کرنا کبھی نہیں چھوڑا۔",
@@ -3672,7 +3672,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       ms: {
-        name: "Nabi Ishaq alaihissalam",
+        name: "Ishaq",
         theme: "Berita gembira daripada Allah dan keberkatan dalam zuriat orang-orang yang soleh",
         paragraphs: [
           "Hiduplah di bumi ini seorang nabi yang agung, iaitu Nabi Ibrahim alaihissalam, bersama isterinya Sarah. Mereka mencintai Allah lebih daripada segala-galanya di dunia ini dan sepanjang hayat mereka mengabdikan diri kepada-Nya. Tetapi ada satu hajat yang tenang yang mereka simpan di dalam hati selama bertahun-tahun lamanya. Mereka mahukan seorang anak. Masa berlalu, tahun demi tahun berganti, dan Ibrahim bersama Sarah semakin tua. Pada pandangan manusia, sudah tiada lagi harapan untuk mereka menjadi ibu bapa. Namun mereka terus beriman kepada Allah dan tidak pernah berhenti berdoa.",
@@ -3710,7 +3710,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       id: {
-        name: "Nabi Ishaq alaihissalam",
+        name: "Ishaq",
         theme: "Kabar gembira dari Allah dan keberkahan keturunan orang-orang saleh",
         paragraphs: [
           "Dahulu kala hiduplah di bumi seorang nabi yang agung, Nabi Ibrahim alaihissalam, bersama istrinya Sarah. Mereka mencintai Allah lebih dari segala sesuatu di dunia dan sepanjang hidup mereka beribadah kepada-Nya. Namun ada satu keinginan kecil yang mereka simpan di dalam hati selama bertahun-tahun lamanya. Mereka ingin memiliki seorang anak. Waktu terus berjalan, tahun demi tahun berlalu, dan Ibrahim bersama Sarah semakin tua dan semakin tua. Menurut ukuran manusia, harapan mereka untuk menjadi orang tua sudah hampir tidak ada lagi. Namun mereka tetap percaya kepada Allah dan tidak pernah berhenti berdoa.",
@@ -3978,7 +3978,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
     readingMin: 5,
     byLocale: {
       ru: {
-        name: "Пророк Шуайб, мир ему",
+        name: "Шуайб",
         theme: "Честность в торговле и страх перед Аллахом — важнее быстрой выгоды",
         paragraphs: [
           "Давным-давно был город под названием Мадьян. Он стоял на торговом пути, и через него проходили караваны с товарами. Люди в Мадьяне умели торговать, и базар у них был большой и шумный. Там пахло хлебом, финиками, специями, маслом. Каждый день продавцы взвешивали зерно, отмеряли масло, отсчитывали монеты. Казалось бы, обычная жизнь. Но в этом красивом городе завелась плохая привычка: люди стали обманывать друг друга на весах. Кому-то недосыпали зерна. Кому-то недоливали масла. А себе брали чуть-чуть больше, чем положено. Они думали, что это мелочь и никто не заметит. Но Аллах видит всё, даже самое маленькое движение руки на весах.",
@@ -3997,7 +3997,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       en: {
-        name: "Prophet Shu'ayb, peace be upon him",
+        name: "Shu'ayb",
         theme: "Honesty in trade and fear of Allah matter more than quick profit",
         paragraphs: [
           "Long ago there was a city called Madyan. It stood on a trade road, and caravans loaded with goods passed through it. The people of Madyan knew how to do business, and their marketplace was large and lively. It smelled of bread, dates, spices and oil. Every day sellers weighed grain, measured out oil, and counted coins. It looked like ordinary life. But in this beautiful city a bad habit took root: people began to cheat one another on the scales. Some were given less grain than they paid for. Some were poured less oil. And the sellers took for themselves a little more than was fair. They thought it was a small thing and nobody would notice. But Allah sees everything, even the tiniest movement of a hand on the scales.",
@@ -4016,7 +4016,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       fa: {
-        name: "حضرت شعیب علیه السلام",
+        name: "شعیب علیه السلام",
         theme: "صداقت در داد و ستد و ترس از خدا، مهم‌تر از سود زودگذر",
         paragraphs: [
           "خیلی وقت پیش شهری بود به نام مَدیَن. این شهر بر سر یک راه تجاری قرار داشت و کاروان‌هایی پر از کالا از آن می‌گذشتند. مردم مَدیَن خوب بلد بودند تجارت کنند و بازارشان بزرگ و پُر سر و صدا بود. آنجا بوی نان، خرما، ادویه و روغن می‌آمد. هر روز فروشنده‌ها گندم را وزن می‌کردند، روغن را پیمانه می‌کردند و سکه‌ها را می‌شمردند. به ظاهر یک زندگی معمولی بود. اما در این شهر زیبا یک عادت بد رخنه کرده بود: مردم در ترازو شروع کرده بودند به فریب دادن یکدیگر. به یکی کمتر گندم می‌دادند. به دیگری کمتر روغن می‌ریختند. و برای خودشان کمی بیشتر از حقشان برمی‌داشتند. خیال می‌کردند این چیز کوچکی است و کسی متوجه نمی‌شود. اما الله همه چیز را می‌بیند، حتی کوچک‌ترین حرکت دست بر روی ترازو را.",
@@ -4035,7 +4035,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       tg: {
-        name: "Паёмбар Шуайб, алайҳиссалом",
+        name: "Шуайб",
         theme: "Ростқавлӣ дар савдо ва тарс аз Аллоҳ — муҳимтар аз фоидаи зуд",
         paragraphs: [
           "Хеле кайҳо шаҳре буд бо номи Мадян. Он дар роҳи савдо ҷой дошт ва аз он корвонҳо бо молҳои гуногун мегузаштанд. Мардуми Мадян савдо карданро медонистанд ва бозори онҳо калону пурғавғо буд. Дар он ҷо бӯйи нон, хурмо, ҳанутҳо ва равған меомад. Ҳар рӯз фурӯшандагон ғалларо баркаш мекарданд, равғанро чен мекарданд, тангаҳоро мешумурданд. Зоҳиран ҳаёти муқаррарӣ. Аммо дар ин шаҳри зебо одати баде пайдо шуд: мардум якдигарро дар тарозу фиреб дода сар карданд. Ба касе ғалларо кам мекашиданд. Ба касе равғанро кам мерехтанд. Ба худашон бошад, аз он чи мебоист, каме зиёдтар мегирифтанд. Онҳо фикр мекарданд, ки ин чизи хурд аст ва касе пай намебарад. Лекин Аллоҳ ҳамаро мебинад, ҳатто хурдтарин ҳаракати дастро дар тарозу.",
@@ -4054,7 +4054,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       uz: {
-        name: "Shuayb alayhissalom",
+        name: "Shuayb",
         theme: "Savdoda halollik va Allohdan qo'rqish — tez foydadan muhimroq",
         paragraphs: [
           "Juda qadim zamonda Madyan degan shahar bo'lgan. U savdo yo'li ustida joylashgan edi, undan tovar ortilgan karvonlar o'tib turardi. Madyan aholisi savdo qilishni bilardi, ularning bozori katta va sershovqin edi. U yerda non, xurmo, ziravor va yog' hidi anqirdi. Har kuni sotuvchilar don tortishar, yog' o'lchashar, tangalarni sanashardi. Ko'rinishidan oddiy hayot edi. Lekin bu chiroyli shaharda yomon odat paydo bo'lgandi: odamlar tarozida bir-birini alday boshlashdi. Birovga donni kam tortishar. Birovga yog'ni kam quyishardi. O'zlariga esa belgilangan miqdordan ozgina ko'proq olishardi. Ular buni mayda gap deb o'ylardi, hech kim sezmaydi deyishardi. Lekin Alloh hamma narsani ko'radi, hatto tarozi ustidagi qo'lning eng kichik harakatini ham.",
@@ -4073,7 +4073,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       kk: {
-        name: "Шұғайыб пайғамбар, оған сәлем болсын",
+        name: "Шұғайыб",
         theme: "Саудадағы адалдық және Аллаһтан қорқу — тез табыстан маңыздырақ",
         paragraphs: [
           "Баяғыда Мадиян деген қала болыпты. Ол сауда жолының бойында тұрған, оның үстінен тауар тиелген керуендер өтетін. Мадияндықтар сауда жасауды жақсы білетін, базары да үлкен әрі шулы еді. Онда нан, құрма, дәмдеуіштер мен майдың иісі аңқып тұратын. Күн сайын саудагерлер дән өлшейтін, май құйып беретін, теңгелерді санайтын. Әдеттегі тірлік сияқты көрінер еді. Бірақ осы әдемі қалада жаман әдет пайда болды: адамдар бір-бірін таразыда алдай бастады. Біреулерге дәнді кем салатын. Біреулерге майды толтырмай беретін. Ал өздеріне тиістіден сәл артық алатын. Олар бұл болмашы нәрсе, ешкім байқамайды деп ойлайтын. Бірақ Аллаһ бәрін көреді, тіпті таразыдағы қолдың ең кішкентай қозғалысын да.",
@@ -4092,7 +4092,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       ky: {
-        name: "Шуайб пайгамбар, ага салам болсун",
+        name: "Шуайб",
         theme: "Соодадагы адалдык жана Аллахтан коркуу — тез пайдадан маанилүү",
         paragraphs: [
           "Илгери-илгери Мадьян деген шаар бар эле. Ал соода жолунун үстүндө турчу, аркылуу товар жүктөгөн кербендер өтчү. Мадьяндын эли соода кылганды жакшы билчү, базары чоң жана ызы-чуулуу болчу. Ал жерден нандын, курманын, татымалдардын, майдын жыты келчү. Күн сайын сатуучулар дан тартчу, май өлчөчү, тыйын саначу. Жөнөкөй жашоо сыяктуу көрүнчү. Бирок бул кооз шаарда жаман адат пайда болду: эл бири-бирин таразада алдай баштады. Кимдир бирөөгө данды толтурбай берчү. Кимдир бирөөгө майды куюп бербей койчу. Ал эми өздөрүнө тийиштүүдөн бир аз көбүрөөк алчу. Алар муну майда нерсе деп, эч ким байкабайт деп ойлошчу. Бирок Аллах баарын көрөт, таразадагы колдун эң кичинекей кыймылын да.",
@@ -4111,7 +4111,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       ur: {
-        name: "حضرت شعیب علیہ السلام",
+        name: "شعیب علیہ السلام",
         theme: "تجارت میں دیانت داری اور اللہ کا خوف — جلدی نفع سے زیادہ اہم",
         paragraphs: [
           "بہت پرانے زمانے کی بات ہے، ایک شہر تھا جس کا نام مدین تھا۔ یہ شہر تجارتی راستے پر واقع تھا، اور اس میں سے سامان لے کر قافلے گزرا کرتے تھے۔ مدین کے لوگ تجارت کرنا جانتے تھے، اور اُن کا بازار بڑا اور رونق والا تھا۔ وہاں روٹی، کھجوروں، مسالوں اور تیل کی خوشبو پھیلی رہتی تھی۔ ہر دن دکاندار اناج تولتے، تیل ماپتے اور سکّے گنتے تھے۔ بظاہر یہ ایک عام سی زندگی لگتی تھی۔ لیکن اِس خوبصورت شہر میں ایک بُری عادت پیدا ہو گئی تھی: لوگ تول میں ایک دوسرے کو دھوکا دینے لگے تھے۔ کسی کو اناج کم تولتے، کسی کو تیل کم دیتے، اور اپنے لیے مقررہ مقدار سے تھوڑا زیادہ رکھ لیتے۔ وہ سمجھتے تھے کہ یہ ایک معمولی سی بات ہے اور کوئی نہیں دیکھے گا۔ مگر اللہ ہر چیز کو دیکھتا ہے، یہاں تک کہ ترازو پر ہاتھ کی سب سے چھوٹی حرکت کو بھی۔",
@@ -4130,7 +4130,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       ms: {
-        name: "Nabi Syu'aib alaihissalam",
+        name: "Syu'aib",
         theme: "Kejujuran dalam perniagaan dan rasa takut kepada Allah lebih penting daripada keuntungan segera",
         paragraphs: [
           "Pada zaman dahulu, terdapat sebuah kota bernama Madyan. Kota ini terletak di laluan perdagangan, dan kafilah-kafilah yang membawa barang dagangan melalui kota itu. Penduduk Madyan pandai berniaga, dan pasar mereka besar lagi meriah. Di sana tercium bau roti, kurma, rempah ratus dan minyak. Setiap hari para peniaga menimbang bijirin, menyukat minyak dan mengira wang syiling. Kelihatannya seperti kehidupan biasa sahaja. Tetapi di kota yang indah ini telah timbul satu tabiat yang buruk: penduduknya mula menipu sesama sendiri pada timbangan. Ada yang dikurangi bijirinnya. Ada yang dikurangi minyaknya. Sementara untuk diri sendiri, mereka mengambil lebih sedikit daripada yang sepatutnya. Mereka menyangka itu perkara kecil dan tiada siapa yang akan perasan. Tetapi Allah melihat segala-galanya, bahkan gerakan tangan yang paling halus di atas neraca.",
@@ -4168,7 +4168,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       id: {
-        name: "Nabi Syuaib alaihissalam",
+        name: "Syuaib",
         theme: "Kejujuran dalam berdagang dan rasa takut kepada Allah lebih penting daripada keuntungan yang cepat",
         paragraphs: [
           "Dahulu kala ada sebuah kota bernama Madyan. Kota itu berdiri di jalur perdagangan, dan kafilah-kafilah yang membawa barang dagangan melewatinya. Penduduk Madyan pandai berdagang, dan pasar mereka besar serta ramai. Di sana tercium harum roti, kurma, rempah-rempah, dan minyak. Setiap hari para pedagang menimbang biji-bijian, menakar minyak, dan menghitung uang. Sepertinya kehidupan yang biasa saja. Tetapi di kota yang indah ini muncul kebiasaan buruk: orang-orang mulai saling menipu pada timbangan. Ada yang dikurangi takaran biji-bijiannya. Ada yang dikurangi takaran minyaknya. Sedangkan untuk diri sendiri mereka mengambil sedikit lebih banyak dari yang seharusnya. Mereka mengira itu hal kecil dan tidak ada yang memperhatikan. Tetapi Allah melihat segalanya, bahkan gerakan tangan yang paling kecil di atas timbangan.",
@@ -4196,7 +4196,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
     readingMin: 5,
     byLocale: {
       ru: {
-        name: "Харун, мир ему",
+        name: "Харун",
         theme: "Помощь брату на пути Аллаха и стойкость, когда вокруг ошибаются",
         paragraphs: [
           "Жил пророк по имени Харун, мир ему. Он был старшим братом пророка Мусы, мир ему. Они выросли среди народа Бану Исраиль, в те времена, когда правил тяжёлый и несправедливый Фараон. Аллах любил этих двух братьев и выбрал их, чтобы они вместе несли людям свет веры. Это история о том, как один брат стал помощником другому ради Аллаха.",
@@ -4217,7 +4217,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       en: {
-        name: "Harun, peace be upon him",
+        name: "Harun",
         theme: "Helping your brother on the path of Allah, and staying firm when those around you go astray",
         paragraphs: [
           "There once lived a prophet named Harun, peace be upon him. He was the elder brother of Prophet Musa, peace be upon him. They grew up among the people of Bani Israil, in a time when a harsh and unjust Pharaoh ruled the land. Allah loved these two brothers and chose them to carry the light of faith to the people together. This is the story of how one brother became a helper to the other for the sake of Allah.",
@@ -4259,7 +4259,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       tg: {
-        name: "Ҳорун, алайҳиссалом",
+        name: "Ҳорун",
         theme: "Кӯмак ба бародар дар роҳи Аллоҳ ва устуворӣ, вақте ки атрофиён хато мекунанд",
         paragraphs: [
           "Пайғамбаре буд бо номи Ҳорун, алайҳиссалом. Ӯ бародари калонии пайғамбар Мӯсо, алайҳиссалом, буд. Онҳо дар миёни қавми Бани Исроил калон шуданд, дар замоне ки Фиръавни сахтгир ва беадолат ҳукмронӣ мекард. Аллоҳ ин ду бародарро дӯст медошт ва онҳоро интихоб кард, то якҷоя ба мардум нури имонро расонанд. Ин қиссаест дар бораи он ки чӣ гуна як бародар ба хотири Аллоҳ ёвари дигаре шуд.",
@@ -4280,7 +4280,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       uz: {
-        name: "Horun alayhissalom",
+        name: "Horun",
         theme: "Alloh yo'lida ukasiga yordam berish va atrofdagilar adashganda ham haqda mustahkam turish",
         paragraphs: [
           "Horun alayhissalom degan bir payg'ambar yashagan edi. U Muso alayhissalomning katta akasi edi. Ular Banu Isroil xalqi orasida, og'ir va zolim Fir'avn hukmronlik qilgan zamonda voyaga yetgan edilar. Alloh bu ikki akani sevdi va ularni birgalikda odamlarga iymon nurini olib borish uchun tanladi. Bu — bir aka Alloh uchun ikkinchisining yordamchisi bo'lgani haqidagi qissa.",
@@ -4301,7 +4301,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       kk: {
-        name: "Һарун, оған сәлем болсын",
+        name: "Һарун",
         theme: "Аллаһ жолында бауырыңа жәрдем беру және айналаң қателескенде хақиқатта берік тұру",
         paragraphs: [
           "Бір кездері Һарун есімді пайғамбар өмір сүрді, оған сәлем болсын. Ол Мұса пайғамбардың үлкен ағасы еді, оған сәлем болсын. Олар Бану Исраил халқының арасында, ауыр да әділетсіз Перғауын билеген заманда өсті. Аллаһ осы екі бауырды жақсы көрді және оларды бірге адамдарға иман нұрын жеткізу үшін таңдады. Бұл бір бауырдың Аллаһ үшін екіншісіне жәрдемші болғаны жайлы әңгіме.",
@@ -4322,7 +4322,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       ky: {
-        name: "Харун, аллейхи салам",
+        name: "Харун",
         theme: "Аллахтын жолунда бир тууганга жардам берүү жана айланадагылар жаңылышканда бекем туруу",
         paragraphs: [
           "Харун, аллейхи салам, аттуу пайгамбар жашаган. Ал пайгамбар Мусанын, аллейхи салам, улуу агасы эле. Алар Бану Исраил элинин арасында, оор жана адилетсиз Фараон бийлик жүргүзгөн заманда чоңойгон. Аллах бул эки бир туугандарды сүйүп, ыймандын нурун адамдарга чогуу алып барууга тандап алды. Бул бир бир туугандын экинчисине Аллахтын ыраазылыгы үчүн жардамчы болгону жөнүндө кеп.",
@@ -4364,7 +4364,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       ms: {
-        name: "Harun, alaihissalam",
+        name: "Harun",
         theme: "Membantu saudara di jalan Allah dan tetap teguh apabila orang sekeliling tersilap",
         paragraphs: [
           "Hiduplah seorang nabi bernama Harun, alaihissalam. Beliau ialah abang kepada Nabi Musa, alaihissalam. Mereka berdua membesar dalam kalangan Bani Israil, pada zaman pemerintahan Firaun yang kejam dan zalim. Allah mengasihi kedua-dua beradik ini dan memilih mereka supaya bersama-sama membawa cahaya iman kepada manusia. Ini ialah kisah tentang bagaimana seorang abang menjadi pembantu kepada adiknya kerana Allah.",
@@ -4406,7 +4406,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       id: {
-        name: "Harun alaihissalam",
+        name: "Harun",
         theme: "Menolong saudara di jalan Allah dan tetap teguh ketika orang-orang di sekitar tersesat",
         paragraphs: [
           "Dahulu hidup seorang nabi bernama Harun alaihissalam. Beliau adalah kakak dari Nabi Musa alaihissalam. Mereka tumbuh di tengah Bani Israil, pada masa ketika Firaun yang kejam dan zalim sedang berkuasa. Allah mencintai kedua bersaudara ini dan memilih mereka untuk bersama-sama membawa cahaya iman kepada manusia. Ini adalah kisah tentang bagaimana seorang kakak menjadi penolong bagi adiknya karena Allah.",
@@ -5253,7 +5253,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
     readingMin: 4,
     byLocale: {
       ru: {
-        name: "Пророк Закария",
+        name: "Закария",
         theme: "Молитва, терпение и надежда на Аллаха",
         paragraphs: [
           "Жил-был пророк по имени Закария, мир ему. Он был праведным рабом Аллаха и звал людей поклоняться только Ему. Закария уже состарился: его голова, как сказано в Коране, вспыхнула сединой, а кости ослабли. Но сердце у него оставалось крепко привязано к Аллаху, и он не уставал обращаться к своему Господу.",
@@ -5272,7 +5272,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       en: {
-        name: "Prophet Zakariyya, peace be upon him",
+        name: "Zakariyya",
         theme: "Prayer, patience, and hope in Allah",
         paragraphs: [
           "There once lived a prophet named Zakariyya, peace be upon him. He was a righteous servant of Allah and called people to worship Him alone. Zakariyya had already grown old: his head, as the Qur'an describes, had blazed with white hair, and his bones had become weak. Yet his heart remained firmly attached to Allah, and he never tired of turning to his Lord.",
@@ -5310,7 +5310,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       tg: {
-        name: "Паёмбар Закариё",
+        name: "Закариё",
         theme: "Дуо, сабр ва умед ба Аллоҳ",
         paragraphs: [
           "Замоне паёмбаре буд бо номи Закариё, алайҳиссалом. Ӯ бандаи солеҳи Аллоҳ буд ва мардумро ба ибодати танҳо Ӯ даъват мекард. Закариё аллакай пир шуда буд: сараш, чунон ки дар Қуръон гуфта шудааст, аз сафедии мӯйҳо дурахшид ва устухонҳояш суст шуданд. Аммо дилаш ҳамоно мустаҳкам ба Аллоҳ баста монда буд, ва ӯ аз дуо хондан ба Парвардигори худ хаста намешуд.",
@@ -5329,7 +5329,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       uz: {
-        name: "Payg'ambar Zakariyo",
+        name: "Zakariyo",
         theme: "Duo, sabr va Allohga umid",
         paragraphs: [
           "Bir zamonlarda Zakariyo alayhissalom degan payg'ambar yashagan ekan. U Allohning solih bandasi bo'lib, odamlarni faqat Yagona Allohga ibodat qilishga chaqirardi. Zakariyo allaqachon keksayib qolgan edi: Qur'onda aytilganidek, uning boshi oqarib ketgan, suyaklari esa kuchsizlanib qolgandi. Lekin uning yuragi hamon Allohga mahkam bog'liq edi, va u o'z Rabbiga duo qilishdan hech charchamasdi.",
@@ -5348,7 +5348,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       kk: {
-        name: "Закария пайғамбар",
+        name: "Закария",
         theme: "Дұға, сабырлық және Аллаһқа деген үміт",
         paragraphs: [
           "Бір заманда Закария есімді пайғамбар болыпты, оған сәлем болсын. Ол Аллаһтың ізгі құлы еді және адамдарды тек Оған ғана құлшылық етуге шақырды. Закария қартайып үлгерген болатын: Құранда айтылғандай, басы ақ шашпен жайнап, сүйектері әлсіреді. Алайда жүрегі Аллаһқа берік байланулы күйінде қалды, ол өзінің Раббысына жалбарынудан еш шаршаған емес.",
@@ -5367,7 +5367,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       ky: {
-        name: "Закария пайгамбар",
+        name: "Закария",
         theme: "Дуба, сабыр жана Аллахка болгон үмүт",
         paragraphs: [
           "Илгери Закария аттуу пайгамбар жашаган, ага аллейхи салам болсун. Ал Аллахтын такыба пендеси эле жана адамдарды жалгыз Аллахка гана сыйынууга чакырчу. Закария мурунтан эле картайып калган: Куранда айтылгандай, анын башы ак чачтан жалбырттап күйгөн, сөөктөрү алсыраган эле. Бирок жүрөгү Аллахка бек байланышкан бойдон калып, ал өзүнүн Раббисине дуба кылуудан эч качан чарчачу эмес.",
@@ -5386,7 +5386,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       ur: {
-        name: "حضرت زکریا علیہ السلام",
+        name: "زکریا علیہ السلام",
         theme: "دعا، صبر اور اللہ پر امید",
         paragraphs: [
           "ایک نبی تھے جن کا نام زکریا علیہ السلام تھا۔ وہ اللہ کے نیک بندے تھے اور لوگوں کو صرف اسی کی عبادت کی طرف بلاتے تھے۔ زکریا علیہ السلام بوڑھے ہو چکے تھے: ان کا سر، جیسا کہ قرآن میں بیان ہوا ہے، بڑھاپے سے سفید ہو چکا تھا اور ہڈیاں کمزور پڑ گئی تھیں۔ لیکن ان کا دل اللہ کے ساتھ مضبوطی سے جڑا ہوا تھا، اور وہ اپنے رب کو پکارتے ہوئے کبھی نہیں تھکتے تھے۔",
@@ -5405,7 +5405,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       ms: {
-        name: "Nabi Zakaria alaihissalam",
+        name: "Zakaria",
         theme: "Doa, kesabaran dan harapan kepada Allah",
         paragraphs: [
           "Pada suatu masa dahulu, hiduplah seorang nabi bernama Zakaria alaihissalam. Beliau adalah hamba Allah yang soleh dan menyeru manusia supaya menyembah Allah sahaja. Nabi Zakaria sudah pun lanjut usia: kepalanya, seperti yang disebut di dalam Al-Quran, telah dipenuhi uban, dan tulang-tulangnya pun lemah. Namun hatinya tetap terikat kuat kepada Allah, dan beliau tidak pernah jemu berdoa kepada Tuhannya.",
@@ -5443,7 +5443,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       id: {
-        name: "Nabi Zakaria alaihissalam",
+        name: "Zakaria",
         theme: "Doa, kesabaran, dan harapan kepada Allah",
         paragraphs: [
           "Dahulu hiduplah seorang nabi bernama Zakaria alaihissalam. Beliau adalah hamba Allah yang saleh dan mengajak manusia untuk hanya menyembah Allah saja. Nabi Zakaria sudah tua: kepalanya, sebagaimana disebut dalam Al-Qur'an, telah dipenuhi uban, dan tulang-tulangnya pun melemah. Namun hatinya tetap kokoh terikat kepada Allah, dan beliau tidak pernah lelah memohon kepada Tuhannya.",
@@ -5865,7 +5865,7 @@ export const PROPHET_STORIES: ProphetStory[] = [
         ],
       },
       ur: {
-        name: "محمد ﷺ",
+        name: "محمد",
         theme: "آخری نبی، تمام جہانوں کے لیے رحمت بنا کر بھیجے گئے",
         paragraphs: [
           "بہت پرانے زمانے کی بات ہے، گرم مکہ میں، پتھریلی وادی اور ریت کے درمیان، ایک بچہ پیدا ہوا۔ یہ وہ زمانہ تھا جب لوگ اللہ کو بھول چکے تھے، پتھر اور لکڑی کے بتوں کی پوجا کرتے تھے اور انہیں اُس قدیم گھر کے گرد رکھتے تھے جسے نبی ابراہیم علیہ السلام نے بنایا تھا۔ بچے کا نام محمد رکھا گیا۔ اُن کے والد اُن کی پیدائش سے پہلے ہی فوت ہو گئے تھے، اور والدہ اُس وقت اللہ کے پاس چلی گئیں جب وہ صرف چند سال کے تھے۔ وہ یتیم رہ گئے، اور اُن کے دادا نے اُنہیں اپنی نگہداشت میں لیا، اور بعد میں اُن کے چچا ابو طالب نے۔ اللہ نے شروع ہی سے اِس بچے کو خاص نظر سے دیکھا اور اُنہیں ایک بڑے کام کے لیے تیار کیا۔",

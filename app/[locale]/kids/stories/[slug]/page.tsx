@@ -30,7 +30,7 @@ interface PageProps {
   params: Promise<{ locale: Locale; slug: string }>;
 }
 
-// Build all 9 prophets × N locales static pages.
+// Build all 25 prophets × N locales static pages.
 export function generateStaticParams() {
   const slugs = prophetStorySlugs();
   return routing.locales.flatMap((locale) =>
@@ -91,7 +91,7 @@ const LABELS: Record<Locale, {
       "Эта история подготовлена по Корану, сахих-хадисам и классическим тафсирам. Мы не выдумываем диалогов и сцен и не описываем внешность пророков, мир им. Если вы заметили ошибку — напишите нам.",
     nextLbl: "Следующий пророк",
     nextNamePrefix: "Пророк",
-    allLbl: "Все 9 пророков",
+    allLbl: "Все 25 пророков",
   },
   en: {
     crumbs: { home: "Sakeenly", kids: "Kids", stories: "Stories" },
@@ -105,7 +105,7 @@ const LABELS: Record<Locale, {
       "This story is drawn from the Qur'an, authentic hadith, and classical tafsir. We do not invent dialogue or scenes, and we do not describe the appearance of the Prophets, peace be upon them. If you notice an error, please write to us.",
     nextLbl: "Next prophet",
     nextNamePrefix: "Prophet",
-    allLbl: "All 9 prophets",
+    allLbl: "All 25 prophets",
   },
   fa: {
     crumbs: { home: "سکینلی", kids: "کودکان", stories: "داستان‌ها" },
@@ -119,7 +119,7 @@ const LABELS: Record<Locale, {
       "این داستان از قرآن، احادیث صحیح و تفاسیر کلاسیک گرفته شده است. ما گفتگو یا صحنه‌ای را از خود نمی‌سازیم و ظاهر پیامبران علیهم‌السلام را توصیف نمی‌کنیم. اگر اشتباهی دیدید، به ما بنویسید.",
     nextLbl: "پیامبر بعدی",
     nextNamePrefix: "حضرت",
-    allLbl: "هر ۹ پیامبر",
+    allLbl: "هر ۲۵ پیامبر",
   },
   tg: {
     crumbs: { home: "Sakeenly", kids: "Кӯдакон", stories: "Қиссаҳо" },
@@ -133,7 +133,7 @@ const LABELS: Record<Locale, {
       "Ин қисса аз рӯи Қуръон, ҳадисҳои саҳеҳ ва тафсирҳои классикӣ омода шудааст. Мо муколама ва саҳнаҳоро аз худ намебарорем ва зоҳири пайғамбарон алайҳим-ус-салом-ро тавсиф намекунем. Агар хатое дидед, ба мо нависед.",
     nextLbl: "Пайғамбари баъдӣ",
     nextNamePrefix: "Пайғамбар",
-    allLbl: "Ҳамаи 9 пайғамбар",
+    allLbl: "Ҳамаи 25 пайғамбар",
   },
   uz: {
     crumbs: { home: "Sakeenly", kids: "Bolalar", stories: "Qissalar" },
@@ -147,7 +147,7 @@ const LABELS: Record<Locale, {
       "Bu qissa Qur'on, sahih hadislar va klassik tafsirlarga asosan tayyorlangan. Biz dialog yoki sahnalarni o'zimizdan to'qib chiqarmaymiz va payg'ambarlar alayhimus-salomning tashqi ko'rinishini tasvirlamaymiz. Agar xatolik sezsangiz, bizga yozing.",
     nextLbl: "Keyingi payg'ambar",
     nextNamePrefix: "Payg'ambar",
-    allLbl: "Barcha 9 payg'ambar",
+    allLbl: "Barcha 25 payg'ambar",
   },
   kk: {
     crumbs: { home: "Sakeenly", kids: "Балалар", stories: "Қиссалар" },
@@ -161,7 +161,7 @@ const LABELS: Record<Locale, {
       "Бұл қисса Құран, сахих хадистер және классикалық тәпсірлер негізінде дайындалған. Біз диалог пен оқиғаларды өзімізден ойлап шығармаймыз және пайғамбарлардың, оларға салауат болсын, бет-әлпетін сипаттамаймыз. Қате байқасаңыз, бізге жазыңыз.",
     nextLbl: "Келесі пайғамбар",
     nextNamePrefix: "Пайғамбар",
-    allLbl: "Барлық 9 пайғамбар",
+    allLbl: "Барлық 25 пайғамбар",
   },
   ky: {
     crumbs: { home: "Sakeenly", kids: "Балдар", stories: "Аңгемелер" },
@@ -175,7 +175,7 @@ const LABELS: Record<Locale, {
       "Бул аңгеме Куран, сахих хадистер жана классикалык тафсирлердин негизинде даярдалган. Биз диалогдорду жана көрүнүштөрдү ойлоп таппайбыз жана пайгамбарлардын, аларга салам болсун, сырткы келбетин сүрөттөбөйбүз. Эгер ката байкасаңыз, бизге жазыңыз.",
     nextLbl: "Кийинки пайгамбар",
     nextNamePrefix: "Пайгамбар",
-    allLbl: "Бардык 9 пайгамбар",
+    allLbl: "Бардык 25 пайгамбар",
   },
   ur: {
     crumbs: { home: "سکینلی", kids: "بچوں کے لیے", stories: "کہانیاں" },
@@ -189,7 +189,7 @@ const LABELS: Record<Locale, {
       "یہ کہانی قرآن، صحیح احادیث اور کلاسیکی تفاسیر سے ماخوذ ہے۔ ہم مکالمے اور مناظر گھڑتے نہیں اور انبیاء علیہم السلام کی شکل و صورت بیان نہیں کرتے۔ اگر آپ کو غلطی نظر آئے تو ہمیں لکھیں۔",
     nextLbl: "اگلا پیغمبر",
     nextNamePrefix: "حضرت",
-    allLbl: "تمام 9 پیغمبر",
+    allLbl: "تمام 25 پیغمبر",
   },
   ms: {
     crumbs: { home: "Sakeenly", kids: "Untuk Kanak-kanak", stories: "Kisah" },
@@ -203,7 +203,7 @@ const LABELS: Record<Locale, {
       "Kisah ini disusun daripada al-Quran, hadis sahih, dan tafsir klasik. Kami tidak mencipta dialog atau adegan, dan tidak menggambarkan rupa para nabi 'alayhim as-salam. Jika anda menemui kesilapan, sila tulis kepada kami.",
     nextLbl: "Nabi seterusnya",
     nextNamePrefix: "Nabi",
-    allLbl: "Semua 9 nabi",
+    allLbl: "Semua 25 nabi",
   },
   hi: {
     crumbs: { home: "सकीनली", kids: "बच्चों के लिए", stories: "कहानियाँ" },
@@ -217,7 +217,7 @@ const LABELS: Record<Locale, {
       "यह कहानी क़ुरान, सहीह हदीसों और शास्त्रीय तफ़सीरों से ली गई है। हम संवाद या दृश्य गढ़ते नहीं और पैगंबरों 'अलैहिमुस-सलाम के स्वरूप का वर्णन नहीं करते। यदि आपको कोई त्रुटि दिखे, हमें लिखें।",
     nextLbl: "अगला पैगंबर",
     nextNamePrefix: "हज़रत",
-    allLbl: "सभी 9 पैगंबर",
+    allLbl: "सभी 25 पैगंबर",
   },
   id: {
     crumbs: { home: "Sakeenly", kids: "Untuk Anak", stories: "Kisah" },
@@ -231,7 +231,7 @@ const LABELS: Record<Locale, {
       "Kisah ini disusun dari Al-Quran, hadis sahih, dan tafsir klasik. Kami tidak mengarang dialog atau adegan, dan tidak menggambarkan rupa para nabi 'alaihimus-salam. Jika Anda menemukan kesalahan, mohon tulis kepada kami.",
     nextLbl: "Nabi berikutnya",
     nextNamePrefix: "Nabi",
-    allLbl: "Semua 9 nabi",
+    allLbl: "Semua 25 nabi",
   },
 };
 
