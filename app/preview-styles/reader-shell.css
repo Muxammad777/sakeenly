@@ -153,10 +153,33 @@
     text-align: center;
     padding: 40px 0 36px;
     position: relative;
+    isolation: isolate;
     /* overflow: hidden contains the .geo-stars-fade overlay inside the
        header — without it the radial mask bleeds into the trans-bar. */
     overflow: hidden;
   }
+  /* Same site-wide hero pattern that [class*="-hero"]::before paints —
+     replicated here because .surah-header doesn't match that selector
+     (no "-hero" in the class name). overflow:hidden on the parent above
+     means we stay within the header bounds rather than going full-bleed. */
+  .surah-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: oklch(var(--accent));
+    -webkit-mask:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'><g fill='none' stroke='black' stroke-width='0.9'><path d='M42 4 L48 36 L80 42 L48 48 L42 80 L36 48 L4 42 L36 36 Z'/><path d='M42 18 L46 38 L66 42 L46 46 L42 66 L38 46 L18 42 L38 38 Z' opacity='0.6'/><circle cx='42' cy='42' r='3' fill='black' stroke='none'/></g></svg>") repeat;
+            mask:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'><g fill='none' stroke='black' stroke-width='0.9'><path d='M42 4 L48 36 L80 42 L48 48 L42 80 L36 48 L4 42 L36 36 Z'/><path d='M42 18 L46 38 L66 42 L46 46 L42 66 L38 46 L18 42 L38 38 Z' opacity='0.6'/><circle cx='42' cy='42' r='3' fill='black' stroke='none'/></g></svg>") repeat;
+    -webkit-mask-size: 84px 84px;
+            mask-size: 84px 84px;
+    opacity: 0.16;
+    pointer-events: none;
+  }
+  /* Existing decorative divider (small star with dashed wings) at the
+     bottom of the header — kept as-is, just renumbered to a distinct
+     element so it doesn't collide with ::before above. */
   .surah-header::after {
     content: "";
     position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
