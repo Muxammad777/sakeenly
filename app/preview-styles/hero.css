@@ -95,8 +95,30 @@
   }
   .hero-bg {
     position: absolute; inset: 0;
-    background: var(--glow);
+    /* Mosque photo at /public/hero-mosque.jpg if you save one;
+       falls back to the original radial glow gradient. The url() with
+       a missing image gracefully cascades down. The dark overlay on
+       top guarantees the headline stays readable on any image. */
+    background:
+      linear-gradient(180deg,
+        color-mix(in oklab, oklch(var(--bg)) 75%, transparent) 0%,
+        color-mix(in oklab, oklch(var(--bg)) 35%, transparent) 32%,
+        color-mix(in oklab, oklch(var(--bg)) 30%, transparent) 70%,
+        color-mix(in oklab, oklch(var(--bg)) 90%, transparent) 100%
+      ),
+      url("/hero-mosque.jpg") center/cover no-repeat,
+      var(--glow);
     pointer-events: none;
+    /* Slow ambient breathing — like candlelight in the scene. */
+    animation: hero-bg-breathe 9s ease-in-out infinite alternate;
+  }
+  @keyframes hero-bg-breathe {
+    0%   { filter: brightness(1)    saturate(1);    }
+    50%  { filter: brightness(1.06) saturate(1.08); }
+    100% { filter: brightness(0.97) saturate(0.96); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-bg { animation: none; }
   }
   .hero-bg::after {
     content: ""; position: absolute; inset: 0;
@@ -834,3 +856,136 @@
   letter-spacing: 0.08em; color: oklch(var(--text-3));
 }
 .lang-menu button[aria-pressed="true"] .code { color: oklch(var(--accent)); }
+
+/* ──────────────────────────────────────────────────────────────────
+   QURAN BOOK — animated 3D book between the headline and the marquee.
+   Real KFGQPC Hafs ayat from sura al-Baqara including 2:255 (Ayat
+   al-Kursi). Each page sits absolutely positioned, all stacked on top
+   of each other; CSS keyframes flip the topmost page on a 18s loop
+   (4.5s per page × 4 pages) so visitors actually see a book being
+   read. Honours prefers-reduced-motion (stack stays still on the
+   Ayat al-Kursi page).
+   ────────────────────────────────────────────────────────────────── */
+.quran-book {
+  position: relative;
+  margin: 28px auto 0;
+  width: clamp(320px, 48vw, 560px);
+  perspective: 1800px;
+  perspective-origin: center 60%;
+  z-index: 2;
+  pointer-events: none;
+}
+.quran-book-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5 / 3;
+  transform-style: preserve-3d;
+}
+.quran-book-cover {
+  position: absolute;
+  inset: 6px 0 0 0;
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg,
+      oklch(0.26 0.05 35) 0%,
+      oklch(0.18 0.05 35) 40%,
+      oklch(0.14 0.04 35) 100%);
+  box-shadow:
+    0 28px 60px oklch(0 0 0 / 0.55),
+    inset 0 0 0 1px oklch(var(--accent) / 0.18);
+}
+.quran-book-cover-frame {
+  position: absolute;
+  inset: 14px;
+  border: 1px solid oklch(var(--accent) / 0.35);
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+}
+.quran-book-cover-mark {
+  font-family: 'Amiri Quran', 'Scheherazade New', serif;
+  font-size: clamp(28px, 4vw, 44px);
+  color: oklch(var(--accent) / 0.6);
+}
+
+.quran-book-page {
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  /* Aged paper look — readable but with the warm tone of a real Mushaf. */
+  background:
+    linear-gradient(180deg,
+      oklch(0.96 0.02 80) 0%,
+      oklch(0.94 0.03 82) 50%,
+      oklch(0.92 0.04 84) 100%);
+  color: oklch(0.18 0.03 35);
+  padding: clamp(18px, 2.6vw, 30px) clamp(20px, 3vw, 36px);
+  display: flex;
+  flex-direction: column;
+  transform-origin: left center;
+  /* All pages stacked; one flips at a time. */
+  animation: quran-page-flip 18s ease-in-out infinite;
+  backface-visibility: hidden;
+  box-shadow:
+    0 0 0 1px oklch(0 0 0 / 0.06),
+    0 24px 40px -20px oklch(0 0 0 / 0.45);
+}
+.quran-book-page-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+  border-bottom: 1px solid oklch(0.55 0.06 80 / 0.4);
+  padding-bottom: 8px;
+}
+.quran-book-page-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: oklch(0.42 0.06 60);
+}
+.quran-book-page-arabic {
+  font-family: 'Amiri Quran', 'Scheherazade New', serif;
+  font-size: clamp(18px, 2.2vw, 24px);
+  color: oklch(0.35 0.08 35);
+}
+.quran-book-page-body {
+  flex: 1;
+  font-family: 'Amiri Quran', 'Scheherazade New', serif;
+  font-size: clamp(15px, 1.6vw, 20px);
+  line-height: 2.2;
+  text-align: justify;
+  white-space: pre-line;
+  color: oklch(0.18 0.03 35);
+  overflow: hidden;
+}
+.quran-book-page-foot {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.quran-book-page-num {
+  font-family: 'Amiri Quran', serif;
+  font-size: 14px;
+  color: oklch(var(--accent) / 0.9);
+}
+
+/* Each .quran-book-page receives the same keyframes but a different
+   animation-delay (set inline). The keyframes are 18s long for a
+   4-page book: each page is "active" (visible flat) for ~3.5s, then
+   flips left over ~1s, and stays out of view until its next turn. */
+@keyframes quran-page-flip {
+  0%   { transform: rotateY(0deg);    box-shadow: 0 0 0 1px oklch(0 0 0 / 0.06), 0 24px 40px -20px oklch(0 0 0 / 0.45); }
+  20%  { transform: rotateY(0deg); }
+  28%  { transform: rotateY(-170deg); box-shadow: 0 0 0 1px oklch(0 0 0 / 0.06), -12px 24px 36px -20px oklch(0 0 0 / 0.55); }
+  29%, 100% { transform: rotateY(-170deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .quran-book-page { animation: none; }
+  .quran-book-page:not(:nth-child(3)) { display: none; }
+}
+
+@media (max-width: 760px) {
+  .quran-book { display: none; }
+}
