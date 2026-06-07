@@ -5,6 +5,7 @@ import { HomeVotdCarousel, HomeStreakBand } from "./HomeClient";
 import { getCurrentUser } from "@/lib/auth-helpers";
 import { Reveal } from "@/components/Reveal";
 import { AnimatedNumber } from "@/components/AnimatedNumber";
+import { RevealStagger } from "@/components/RevealStagger";
 import { SearchClient } from "@/components/search/SearchClient";
 import type { Locale } from "@/i18n/routing";
 
@@ -125,7 +126,7 @@ function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
           <p>{tFeat("lede")}</p>
         </div>
 
-        <div className="feature-grid">
+        <RevealStagger className="feature-grid">
           <Link className="feature" href="/reader/1/1">
             <span className="feature-num">{tFeat("f1_l")}</span>
             <h3>{tFeat("f1_t")}</h3>
@@ -168,7 +169,7 @@ function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
               </div>
             </div>
           </Link>
-        </div>
+        </RevealStagger>
       </Reveal>
 
       {/* EMOTIONS */}
@@ -177,7 +178,7 @@ function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
           <h2 style={{ fontWeight: 300 }}>{tEmo("heading")}</h2>
           <Link href="/ayat">{tEmo("all")}</Link>
         </div>
-        <div className="emotion-grid">
+        <RevealStagger className="emotion-grid" delayStep={50}>
           {[
             { slug: "dlya-trevogi",        ar: "القلق",         n: 5, kind: "audio" as const, href: "/ayat/dlya-trevogi" },
             { slug: "dlya-sabra",          ar: "الصبر",         n: 6, kind: "audio" as const, href: "/ayat/dlya-sabra" },
@@ -200,18 +201,18 @@ function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
               </Link>
             );
           })}
-        </div>
+        </RevealStagger>
       </Reveal>
 
       {/* TRUST */}
       <Reveal as="section" className="wrap">
-        <div className="trust">
+        <RevealStagger className="trust" delayStep={90}>
           <div><div className="n"><AnimatedNumber to={114} /></div><div className="l">{tTrust("suras")}</div></div>
           <div><div className="n"><AnimatedNumber to={6236} duration={1800} /></div><div className="l">{tTrust("ayat")}</div></div>
           <div><div className="n"><AnimatedNumber to={24} /></div><div className="l">{tTrust("translations")}</div></div>
           <div><div className="n"><AnimatedNumber to={30} /></div><div className="l">{tTrust("reciters")}</div></div>
           <div><div className="n"><AnimatedNumber to={0} /></div><div className="l">{tTrust("trackers")}</div></div>
-        </div>
+        </RevealStagger>
       </Reveal>
 
       {/* CLOSING */}
