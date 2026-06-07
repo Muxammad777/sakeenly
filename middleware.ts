@@ -9,6 +9,10 @@ export const config = {
   //   - static assets (fonts, favicon, sitemap, robots)
   //   - /admin/* — back-office is intentionally NOT localized
   matcher: [
-    "/((?!api|_next|_vercel|admin|fonts|audio|favicon\\.ico|sitemap\\.xml|robots\\.txt).*)",
+    // Skip i18n routing for any file with a typical static-asset extension
+    // (.jpg / .png / .svg / .webp / .mp4 …). Without this the next-intl
+    // middleware tries to route /hero-mosque.jpg as a localized page and
+    // returns a 404 even though the file exists in /public.
+    "/((?!api|_next|_vercel|admin|fonts|audio|favicon\\.ico|sitemap\\.xml|robots\\.txt|.*\\.(?:jpg|jpeg|png|gif|webp|svg|ico|mp4|mp3|webm|woff2?|ttf)).*)",
   ],
 };
