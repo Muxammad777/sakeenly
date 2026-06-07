@@ -95,8 +95,28 @@
   }
   .hero-bg {
     position: absolute; inset: 0;
-    background: var(--glow);
+    /* Mosque photo (public/hero-mosque.jpg) is the hero backdrop.
+       A dark gradient overlay above it guarantees the headline reads
+       on any image. Slow ambient brightness/saturation drift gives
+       a sense of candlelight in the scene. */
+    background:
+      linear-gradient(180deg,
+        color-mix(in oklab, oklch(var(--bg)) 72%, transparent) 0%,
+        color-mix(in oklab, oklch(var(--bg)) 38%, transparent) 35%,
+        color-mix(in oklab, oklch(var(--bg)) 34%, transparent) 65%,
+        color-mix(in oklab, oklch(var(--bg)) 88%, transparent) 100%
+      ),
+      url("/hero-mosque.jpg") center/cover no-repeat;
     pointer-events: none;
+    animation: hero-bg-breathe 9s ease-in-out infinite alternate;
+  }
+  @keyframes hero-bg-breathe {
+    0%   { filter: brightness(1)    saturate(1);    }
+    50%  { filter: brightness(1.05) saturate(1.06); }
+    100% { filter: brightness(0.97) saturate(0.96); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-bg { animation: none; }
   }
   .hero-bg::after {
     content: ""; position: absolute; inset: 0;
