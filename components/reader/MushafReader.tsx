@@ -765,8 +765,11 @@ function MushafReaderInner(props: MushafReaderProps) {
           )}
           </div>{/* /.trans-controls */}
 
-          {showTranslations ? (
-            /* INTERLEAVED MODE — each ayah as a card: arabic on top, translation below */
+          {(showTranslations || showTafsir) ? (
+            /* INTERLEAVED MODE — each ayah as a card: arabic on top,
+               then (optionally) translation, then (optionally) tafsir.
+               Triggered by EITHER toggle being on so the user can read
+               commentary on the bare arabic too. */
             <div className="ayah-stack">
               {surah.number !== 1 && surah.number !== 9 && (
                 <div className="basmala arabic" dir="rtl">
@@ -835,10 +838,12 @@ function MushafReaderInner(props: MushafReaderProps) {
                       {renderArabic(a.textUthmani, a.verseNumber)}
                       <span className="ayah-mark" aria-hidden="true"> ﴿{toArabicNum(a.verseNumber)}﴾</span>
                     </div>
-                    <p
-                      className="ayah-block-trans"
-                      dangerouslySetInnerHTML={{ __html: text ? highlightHtml(text) : "—" }}
-                    />
+                    {showTranslations && (
+                      <p
+                        className="ayah-block-trans"
+                        dangerouslySetInnerHTML={{ __html: text ? highlightHtml(text) : "—" }}
+                      />
+                    )}
                     {showTafsir && (() => {
                       const tf = tafsirByAyah[a.verseNumber];
                       if (!tf) {
