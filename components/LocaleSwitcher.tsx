@@ -1,7 +1,6 @@
 "use client";
 
 import { useLocale } from "next-intl";
-import { useState } from "react";
 import { Globe, ChevronDown } from "lucide-react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { usePathname } from "@/i18n/navigation";
@@ -9,9 +8,8 @@ import { routing, type Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
 // Build the URL for a target locale ourselves instead of relying on the
-// next-intl router. The router-based version was throwing in some RTL
-// browser-renders when switching out of /ar — a hard <a href> nav has
-// none of those moving parts and always works.
+// next-intl router. A plain <a> nav has none of the moving parts that
+// were breaking in RTL renders.
 const DEFAULT_LOCALE = routing.defaultLocale;
 function buildLocaleHref(targetLocale: Locale, currentPath: string): string {
   // usePathname() from @/i18n/navigation strips the locale prefix, so
@@ -40,10 +38,22 @@ const LANG_META: Record<Locale, { native: string; short: string }> = {
 export function LocaleSwitcher() {
   const locale = useLocale() as Locale;
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
+
+  // Pin the dropdown direction to LTR. When the html root is dir="rtl"
+  // (ar / fa / ur), Radix tries to mirror the menu and frequently lands
+  // off-screen to the left; locking it to LTR keeps anchoring stable.
+  // Belt-and-braces: every item is an <a href>, AND we wire an onClick
+  // that hard-navigates via location.assign so even if Radix swallows
+  // the default <a> click, navigation still happens.
+  const hardNav = (href: string) => (e: React.MouseEvent) => {
+    // Let cmd/ctrl-click open in a new tab as the user expects.
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    window.location.assign(href);
+  };
 
   return (
-    <DropdownMenu.Root open={open} onOpenChange={setOpen}>
+    <DropdownMenu.Root dir="ltr">
       <DropdownMenu.Trigger asChild>
         <button
           type="button"
@@ -59,30 +69,35 @@ export function LocaleSwitcher() {
         <DropdownMenu.Content
           align="end"
           sideOffset={8}
+          collisionPadding={12}
           className="z-[70] min-w-[12rem] overflow-hidden rounded-xl border border-border-strong bg-surface p-1.5 shadow-lg"
         >
-          {routing.locales.map((lang) => (
-            <DropdownMenu.Item asChild key={lang}>
-              <a
-                href={buildLocaleHref(lang, pathname)}
-                className={cn(
-                  "flex cursor-pointer select-none items-center justify-between gap-3 rounded-lg px-3 py-2 text-sm outline-none transition-colors no-underline",
-                  "data-[highlighted]:bg-surface-2",
-                  lang === locale ? "bg-accent/14 text-accent" : "text-fg",
-                )}
-              >
-                <span>{LANG_META[lang].native}</span>
-                <span
+          {routing.locales.map((lang) => {
+            const href = buildLocaleHref(lang, pathname);
+            return (
+              <DropdownMenu.Item asChild key={lang}>
+                <a
+                  href={href}
+                  onClick={hardNav(href)}
                   className={cn(
-                    "font-mono text-[10px] tracking-[0.08em]",
-                    lang === locale ? "text-accent" : "text-fg-dim",
+                    "flex cursor-pointer select-none items-center justify-between gap-3 rounded-lg px-3 py-2 text-sm outline-none transition-colors no-underline",
+                    "data-[highlighted]:bg-surface-2",
+                    lang === locale ? "bg-accent/14 text-accent" : "text-fg",
                   )}
                 >
-                  {LANG_META[lang].short}
-                </span>
-              </a>
-            </DropdownMenu.Item>
-          ))}
+                  <span>{LANG_META[lang].native}</span>
+                  <span
+                    className={cn(
+                      "font-mono text-[10px] tracking-[0.08em]",
+                      lang === locale ? "text-accent" : "text-fg-dim",
+                    )}
+                  >
+                    {LANG_META[lang].short}
+                  </span>
+                </a>
+              </DropdownMenu.Item>
+            );
+          })}
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
     </DropdownMenu.Root>
