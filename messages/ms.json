@@ -1166,5 +1166,20 @@
     "readers": "Sekarang di Sakeenly: {n} pembaca",
     "hifz": "Dihafal bersama: {n} ayat",
     "bookmarks": "Disimpan: {n} ayat"
+  },
+  "why": {
+    "eyebrow": "Mengapa Sakeenly",
+    "heading": "Mengapa Sakeenly, sedangkan Quran.com sudah ada?",
+    "lede": "Lima perkara yang membezakan kami daripada pembaca al-Qur’an biasa.",
+    "p1_t": "AI memahami soalan anda",
+    "p1_b": "Tanya dalam bahasa biasa — kami jawab berdasarkan makna, bukan kata kunci.",
+    "p2_t": "Jawapan dari al-Qur’an dahulu",
+    "p2_b": "Al-Qur’an dahulu, kemudian hadis sahih, kemudian tafsir. Dalam susunan itu. Sentiasa.",
+    "p3_t": "Rujukan dipercayai",
+    "p3_b": "Setiap kenyataan disertai rujukan kepada surah:ayat atau nombor hadis.",
+    "p4_t": "Pengalaman yang tenang",
+    "p4_b": "Tanpa sepanduk, tanpa suapan tak berkesudahan, tanpa pemberitahuan push merah.",
+    "p5_t": "Tiada penjejak",
+    "p5_b": "Kami tidak mengikuti anda dan tidak menjual data anda. Hanya teks, suara, kesunyian."
   }
 }

@@ -25,6 +25,7 @@ function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
   const tCont = useTranslations("cont");
   const tFeat = useTranslations("feat");
   const tAct = useTranslations("activity");
+  const tWhy = useTranslations("why");
   const tEmo = useTranslations("emo");
   const tEmo30 = useTranslations("emo30");
   const tTrust = useTranslations("trust");
@@ -101,6 +102,77 @@ function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
             }}
           />
         </div>
+      </Reveal>
+
+      {/* WHY SAKEENLY — value props that separate us from Quran.com etc. */}
+      <Reveal as="section" className="wrap why">
+        <div className="why-head">
+          <span className="eyebrow">{tWhy("eyebrow")}</span>
+          <h2>{tWhy("heading")}</h2>
+          <p>{tWhy("lede")}</p>
+        </div>
+        <RevealStagger className="why-grid" delayStep={70}>
+          <article className="why-card">
+            <div className="why-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 11.5a8.5 8.5 0 1 1-3.32-6.74"/>
+                <path d="M21 4v4h-4"/>
+                <circle cx="9" cy="11" r="1" fill="currentColor"/>
+                <circle cx="13" cy="11" r="1" fill="currentColor"/>
+                <path d="M8 14.5c1 1 2.5 1.5 4 1.5s3-.5 4-1.5"/>
+              </svg>
+            </div>
+            <h3>{tWhy("p1_t")}</h3>
+            <p>{tWhy("p1_b")}</p>
+          </article>
+
+          <article className="why-card">
+            <div className="why-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2V5z"/>
+                <path d="M4 17h14"/>
+                <path d="M9 8h6M9 11h6"/>
+              </svg>
+            </div>
+            <h3>{tWhy("p2_t")}</h3>
+            <p>{tWhy("p2_b")}</p>
+          </article>
+
+          <article className="why-card">
+            <div className="why-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2 4 5v7c0 4.5 3.5 8.5 8 10 4.5-1.5 8-5.5 8-10V5l-8-3z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </div>
+            <h3>{tWhy("p3_t")}</h3>
+            <p>{tWhy("p3_b")}</p>
+          </article>
+
+          <article className="why-card">
+            <div className="why-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 12c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/>
+                <path d="M3 17c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/>
+              </svg>
+            </div>
+            <h3>{tWhy("p4_t")}</h3>
+            <p>{tWhy("p4_b")}</p>
+          </article>
+
+          <article className="why-card">
+            <div className="why-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 3l18 18"/>
+                <path d="M10.7 5.3A10 10 0 0 1 22 12s-1 1.8-3 3.7"/>
+                <path d="M6.5 6.5C3.5 8.5 2 12 2 12s3 6 10 6c1.7 0 3.2-.3 4.5-.9"/>
+                <path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/>
+              </svg>
+            </div>
+            <h3>{tWhy("p5_t")}</h3>
+            <p>{tWhy("p5_b")}</p>
+          </article>
+        </RevealStagger>
       </Reveal>
 
       {/* FEATURES */}

@@ -1166,5 +1166,20 @@
     "readers": "Now in Sakeenly: {n} readers",
     "hifz": "Memorised together: {n} ayat",
     "bookmarks": "Saved: {n} bookmarked verses"
+  },
+  "why": {
+    "eyebrow": "Why Sakeenly",
+    "heading": "Why Sakeenly, when Quran.com exists?",
+    "lede": "Five things that set us apart from a standard Qur’an reader.",
+    "p1_t": "AI understands your questions",
+    "p1_b": "Ask in plain language — we answer by meaning, not by keyword.",
+    "p2_t": "Qur’an-first answers",
+    "p2_b": "Qur’an first, then sahih hadith, then tafsir. In that order. Always.",
+    "p3_t": "Trusted references",
+    "p3_b": "Every statement carries a citation to a verse or a hadith number.",
+    "p4_t": "A calm experience",
+    "p4_b": "No banners, no infinite feed, no red push notifications.",
+    "p5_t": "No trackers",
+    "p5_b": "We don’t follow you and we don’t sell your data. Just text, voice, silence."
   }
 }

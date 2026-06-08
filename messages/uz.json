@@ -1166,5 +1166,20 @@
     "readers": "Hozir Sakeenly’da: {n} oʻquvchi",
     "hifz": "Birga yodlandi: {n} oyat",
     "bookmarks": "Saqlangan: {n} oyat"
+  },
+  "why": {
+    "eyebrow": "Nima uchun Sakeenly",
+    "heading": "Quran.com bor bo‘la turib, nega Sakeenly?",
+    "lede": "Bizni oddiy Qur’on o‘qish ilovasidan ajratib turadigan beshta narsa.",
+    "p1_t": "AI savollaringni tushunadi",
+    "p1_b": "Oddiy tilda so‘ra — biz ma’no bo‘yicha javob beramiz, kalit so‘z bo‘yicha emas.",
+    "p2_t": "Avval Qur’ondan javob",
+    "p2_b": "Avval Qur’on, keyin sahih hadis, keyin tafsir. Aynan shu tartibda. Doim.",
+    "p3_t": "Ishonchli manbalar",
+    "p3_b": "Har bir gap sura:oyat yoki hadis raqamiga havola bilan keladi.",
+    "p4_t": "Tinch tajriba",
+    "p4_b": "Bannerlarsiz, cheksiz tasmasiz, qizil push-bildirishnomalarsiz.",
+    "p5_t": "Hech qanday kuzatuvchi yo‘q",
+    "p5_b": "Sizni kuzatmaymiz va ma’lumotingizni sotmaymiz. Faqat matn, ovoz, sukunat."
   }
 }
