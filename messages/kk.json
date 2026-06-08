@@ -755,7 +755,9 @@
     "tafsir_ibn_kathir": "Ибн Кәсір",
     "tafsir_saddi": "Сағди",
     "tafsir_loading": "Тәпсір жүктелуде…",
-    "tafsir_unavailable": "Бұл аят үшін тәпсір қолжетімсіз."
+    "tafsir_unavailable": "Бұл аят үшін тәпсір қолжетімсіз.",
+    "tafsir_jalalayn": "Әл-Жалалайн",
+    "tafsir_muyassar": "Әл-Муяссар"
   },
   "sb": {
     "apply_btn": "Жазу",

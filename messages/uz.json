@@ -755,7 +755,9 @@
     "tafsir_ibn_kathir": "Ibn Kasir",
     "tafsir_saddi": "Sa'diy",
     "tafsir_loading": "Tafsir yuklanmoqda…",
-    "tafsir_unavailable": "Bu oyat uchun tafsir mavjud emas."
+    "tafsir_unavailable": "Bu oyat uchun tafsir mavjud emas.",
+    "tafsir_jalalayn": "Al-Jalolayn",
+    "tafsir_muyassar": "Al-Muyassar"
   },
   "sb": {
     "apply_btn": "Yozish",

@@ -755,7 +755,9 @@
     "tafsir_ibn_kathir": "Ибн Касир",
     "tafsir_saddi": "Ас-Саади",
     "tafsir_loading": "Загрузка тафсира…",
-    "tafsir_unavailable": "Тафсир для этого аята недоступен."
+    "tafsir_unavailable": "Тафсир для этого аята недоступен.",
+    "tafsir_jalalayn": "Аль-Джалалейн",
+    "tafsir_muyassar": "Аль-Муяссар"
   },
   "sb": {
     "apply_btn": "Написать",

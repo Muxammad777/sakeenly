@@ -755,7 +755,9 @@
     "tafsir_ibn_kathir": "Ibn Kathir",
     "tafsir_saddi": "As-Saadi",
     "tafsir_loading": "Loading tafsir…",
-    "tafsir_unavailable": "No tafsir available for this verse."
+    "tafsir_unavailable": "No tafsir available for this verse.",
+    "tafsir_jalalayn": "Al-Jalalayn",
+    "tafsir_muyassar": "Al-Muyassar"
   },
   "sb": {
     "apply_btn": "Write to us",

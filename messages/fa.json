@@ -755,7 +755,9 @@
     "tafsir_ibn_kathir": "ابن کثیر",
     "tafsir_saddi": "السعدی",
     "tafsir_loading": "در حال بارگیری تفسیر…",
-    "tafsir_unavailable": "تفسیری برای این آیه در دسترس نیست."
+    "tafsir_unavailable": "تفسیری برای این آیه در دسترس نیست.",
+    "tafsir_jalalayn": "الجلالین",
+    "tafsir_muyassar": "المیسر"
   },
   "sb": {
     "apply_btn": "نوشتن",

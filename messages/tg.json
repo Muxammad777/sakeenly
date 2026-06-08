@@ -755,7 +755,9 @@
     "tafsir_ibn_kathir": "Ибни Касир",
     "tafsir_saddi": "Ас-Саадӣ",
     "tafsir_loading": "Боргузории тафсир…",
-    "tafsir_unavailable": "Тафсир барои ин оят дастрас нест."
+    "tafsir_unavailable": "Тафсир барои ин оят дастрас нест.",
+    "tafsir_jalalayn": "Ал-Ҷалолайн",
+    "tafsir_muyassar": "Ал-Муяссар"
   },
   "sb": {
     "apply_btn": "Нависед",

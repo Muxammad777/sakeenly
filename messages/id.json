@@ -755,7 +755,9 @@
     "tafsir_ibn_kathir": "Ibn Katsir",
     "tafsir_saddi": "As-Sa'di",
     "tafsir_loading": "Memuat tafsir…",
-    "tafsir_unavailable": "Tafsir untuk ayat ini tidak tersedia."
+    "tafsir_unavailable": "Tafsir untuk ayat ini tidak tersedia.",
+    "tafsir_jalalayn": "Al-Jalalain",
+    "tafsir_muyassar": "Al-Muyassar"
   },
   "sb": {
     "apply_btn": "Tulis kepada kami",

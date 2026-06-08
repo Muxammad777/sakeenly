@@ -10,7 +10,7 @@ import { getTafsirRange, type TafsirAuthor } from "@/lib/knowledge/tafsir";
 
 export const runtime = "nodejs";
 
-const ALLOWED_AUTHORS = new Set<TafsirAuthor>(["ibn-kathir", "saddi"]);
+const ALLOWED_AUTHORS = new Set<TafsirAuthor>(["ibn-kathir", "saddi", "jalalayn", "muyassar"]);
 
 export async function GET(
   req: Request,

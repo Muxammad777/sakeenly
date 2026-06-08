@@ -755,7 +755,9 @@
     "tafsir_ibn_kathir": "इब्न कसीर",
     "tafsir_saddi": "अस-सादी",
     "tafsir_loading": "तफ़सीर लोड हो रही है…",
-    "tafsir_unavailable": "इस आयत के लिए तफ़सीर उपलब्ध नहीं है।"
+    "tafsir_unavailable": "इस आयत के लिए तफ़सीर उपलब्ध नहीं है।",
+    "tafsir_jalalayn": "अल-जलालैन",
+    "tafsir_muyassar": "अल-मुयस्सर"
   },
   "sb": {
     "apply_btn": "हमें लिखें",

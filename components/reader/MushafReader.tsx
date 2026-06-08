@@ -132,7 +132,7 @@ function MushafReaderInner(props: MushafReaderProps) {
   // Tafsir toggle + selected author. Renders below the translation in
   // ayah cards when both are on.
   const [showTafsir, setShowTafsir] = useState(false);
-  const [tafsirAuthor, setTafsirAuthor] = useState<"ibn-kathir" | "saddi">("ibn-kathir");
+  const [tafsirAuthor, setTafsirAuthor] = useState<"ibn-kathir" | "saddi" | "jalalayn" | "muyassar">("ibn-kathir");
   const [tafsirPickerOpen, setTafsirPickerOpen] = useState(false);
   const [tafsirByAyah, setTafsirByAyah] = useState<Record<number, { text: string; lang: string } | null>>({});
   const [tafsirLoading, setTafsirLoading] = useState(false);
@@ -684,7 +684,10 @@ function MushafReaderInner(props: MushafReaderProps) {
                 title={t("tafsir_title")}
               >
                 <span>
-                  {tafsirAuthor === "ibn-kathir" ? t("tafsir_ibn_kathir") : t("tafsir_saddi")}
+                  {tafsirAuthor === "ibn-kathir" ? t("tafsir_ibn_kathir")
+                    : tafsirAuthor === "saddi" ? t("tafsir_saddi")
+                    : tafsirAuthor === "jalalayn" ? t("tafsir_jalalayn")
+                    : t("tafsir_muyassar")}
                 </span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M6 9l6 6 6-6" />
@@ -751,14 +754,17 @@ function MushafReaderInner(props: MushafReaderProps) {
               className={"trans-pills" + (tafsirPickerOpen ? " open" : "")}
               hidden={!tafsirPickerOpen}
             >
-              {(["ibn-kathir", "saddi"] as const).map((key) => (
+              {(["ibn-kathir", "saddi", "jalalayn", "muyassar"] as const).map((key) => (
                 <button
                   key={key}
                   type="button"
                   className={"trans-pill" + (tafsirAuthor === key ? " active" : "")}
                   onClick={() => { setTafsirAuthor(key); setTafsirPickerOpen(false); }}
                 >
-                  {key === "ibn-kathir" ? t("tafsir_ibn_kathir") : t("tafsir_saddi")}
+                  {key === "ibn-kathir" ? t("tafsir_ibn_kathir")
+                    : key === "saddi" ? t("tafsir_saddi")
+                    : key === "jalalayn" ? t("tafsir_jalalayn")
+                    : t("tafsir_muyassar")}
                 </button>
               ))}
             </div>
@@ -850,7 +856,10 @@ function MushafReaderInner(props: MushafReaderProps) {
                         return (
                           <div className="ayah-block-tafsir is-empty">
                             <span className="ayah-block-tafsir-head">
-                              {tafsirAuthor === "ibn-kathir" ? t("tafsir_ibn_kathir") : t("tafsir_saddi")}
+                              {tafsirAuthor === "ibn-kathir" ? t("tafsir_ibn_kathir")
+                                : tafsirAuthor === "saddi" ? t("tafsir_saddi")
+                                : tafsirAuthor === "jalalayn" ? t("tafsir_jalalayn")
+                                : t("tafsir_muyassar")}
                             </span>
                             <p className="ayah-block-tafsir-body">
                               {tafsirLoading ? t("tafsir_loading") : t("tafsir_unavailable")}
