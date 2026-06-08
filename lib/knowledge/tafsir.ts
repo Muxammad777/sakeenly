@@ -14,18 +14,19 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 
 export type TafsirAuthor = "ibn-kathir" | "saddi" | "jalalayn" | "muyassar";
-export type TafsirLang = "ar" | "en" | "ru" | "ur" | "id";
+export type TafsirLang = "ar" | "en" | "ru" | "ur" | "id" | "fa";
 
 const FOLDER: Partial<Record<`${TafsirAuthor}:${TafsirLang}`, string>> = {
   // Ibn Kathir — classical, 8th c. AR + EN + UR are full-length.
   "ibn-kathir:ar": "ar-tafsir-ibn-kathir",
   "ibn-kathir:en": "en-tafisr-ibn-kathir", // (yes — typo is the folder name on disk)
   "ibn-kathir:ur": "ur-tafseer-ibn-e-kaseer",
-  // As-Saadi — modern, 20th c. AR + RU + UR + ID.
+  // As-Saadi — modern, 20th c. AR + RU + UR + ID + FA.
   "saddi:ar":      "ar-tafseer-al-saddi",
   "saddi:ru":      "ru-tafseer-al-saddi",
   "saddi:ur":      "ur-tafseer-al-saddi",
   "saddi:id":      "id-tafseer-al-saddi",
+  "saddi:fa":      "fa-tafseer-al-saddi",
   // Al-Jalalayn — most-cited concise classical tafsir. AR + EN.
   "jalalayn:ar":   "ar-tafsir-al-jalalayn",
   "jalalayn:en":   "en-al-jalalayn",
@@ -37,7 +38,7 @@ const NATIVE_PREFERENCE: Record<string, TafsirLang[]> = {
   ru: ["ru", "en", "ar"],
   en: ["en", "ar", "ur"],
   ar: ["ar", "en"],
-  fa: ["ar", "en"],
+  fa: ["fa", "ar", "en"],
   tg: ["ru", "ar"],
   uz: ["ru", "ar"],
   kk: ["ru", "ar"],

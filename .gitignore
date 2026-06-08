@@ -71,6 +71,7 @@ lib/knowledge/tafsir/*
 !lib/knowledge/tafsir/ru-tafseer-al-saddi/
 !lib/knowledge/tafsir/ur-tafseer-al-saddi/
 !lib/knowledge/tafsir/id-tafseer-al-saddi/
+!lib/knowledge/tafsir/fa-tafseer-al-saddi/
 !lib/knowledge/tafsir/ar-tafsir-al-jalalayn/
 !lib/knowledge/tafsir/en-al-jalalayn/
 !lib/knowledge/tafsir/ar-tafsir-muyassar/
