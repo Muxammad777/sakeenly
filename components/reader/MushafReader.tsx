@@ -15,7 +15,7 @@ import { AudioPlayerProvider, useAudioPlayer } from "./AudioPlayerProvider";
 import { SideTab } from "./SideTab";
 import { getMushafPage, pagesOfSurah } from "@/lib/quran/mushaf-pages";
 import { getTajweedAnnotations, splitByTajweed } from "@/lib/quran/tajweed";
-import { pickDefaultAuthor } from "@/lib/knowledge/tafsir";
+import { pickDefaultAuthor } from "@/lib/knowledge/tafsir-meta";
 import {
   buildHighlightRegex,
   countHtmlMatchesIgnoreBrackets,

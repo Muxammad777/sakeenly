@@ -79,4 +79,5 @@ lib/knowledge/tafsir/*
 # be built on Railway. The lib/knowledge/* glob above ate it on the
 # previous commit; explicitly allowlist.
 !lib/knowledge/tafsir.ts
+!lib/knowledge/tafsir-meta.ts
 
