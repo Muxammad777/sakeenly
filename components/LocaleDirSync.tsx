@@ -20,29 +20,38 @@ export function LocaleDirSync({ locale, dir }: { locale: string; dir: "ltr" | "r
     if (html.getAttribute("dir") !== dir) html.setAttribute("dir", dir);
 
     // Radix's react-remove-scroll occasionally leaves data-scroll-locked
-    // and pointer-events:none on <body> after the menu has already been
-    // removed from the DOM (known issue with hard nav / RTL). Detect it
-    // and clean up automatically. Runs on mount AND watches body for
-    // future stale-lock states.
+    // and inline lock styles on <body> after every popper has been
+    // removed from the DOM (known issue with hard nav / RTL). Triple
+    // defence:
+    //   1. Unconditional unlock on mount — if a menu IS actually open,
+    //      Radix will reapply on its next paint; a moment of "no lock"
+    //      is harmless. Hard navigation cases always benefit.
+    //   2. MutationObserver — re-checks after each future body mutation
+    //      and clears the lock if no popper/menu/dialog is actually open.
+    //   3. Polling fallback (1.5s interval) — same check, used as a last
+    //      line of defence if a mutation slipped past the observer.
     const body = document.body;
-    const unlock = () => {
-      const hasOpenRadixPopper = !!document.querySelector(
-        "[data-radix-popper-content-wrapper], [data-state='open'][role='menu'], [data-state='open'][role='dialog']",
-      );
-      if (hasOpenRadixPopper) return;
-      if (body.hasAttribute("data-scroll-locked")) {
-        body.removeAttribute("data-scroll-locked");
-      }
-      if (body.style.pointerEvents === "none") body.style.removeProperty("pointer-events");
-      if (body.style.overflow === "hidden") body.style.removeProperty("overflow");
-      if (body.style.position === "relative") body.style.removeProperty("position");
+    const hardClear = () => {
+      body.removeAttribute("data-scroll-locked");
+      body.style.removeProperty("pointer-events");
+      body.style.removeProperty("overflow");
+      body.style.removeProperty("position");
       body.style.removeProperty("padding-right");
     };
-    unlock();
-
-    const obs = new MutationObserver(unlock);
+    const conditionalClear = () => {
+      const hasOpen = !!document.querySelector(
+        "[data-radix-popper-content-wrapper]," +
+        "[data-state='open'][role='menu']," +
+        "[data-state='open'][role='dialog']," +
+        "[data-state='open'][role='listbox']",
+      );
+      if (!hasOpen) hardClear();
+    };
+    hardClear();
+    const obs = new MutationObserver(conditionalClear);
     obs.observe(body, { attributes: true, attributeFilter: ["data-scroll-locked", "style"] });
-    return () => obs.disconnect();
+    const id = window.setInterval(conditionalClear, 1500);
+    return () => { obs.disconnect(); window.clearInterval(id); };
   }, [locale, dir]);
   return null;
 }
