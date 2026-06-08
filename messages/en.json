@@ -749,7 +749,13 @@
     "fp_exact_label": "Exact",
     "fp_exact_off": "Whole words only",
     "fp_exact_on": "Show all forms",
-    "pop_hifz": "To hifz"
+    "pop_hifz": "To hifz",
+    "tafsir_label": "Tafsir",
+    "tafsir_title": "Verse commentary",
+    "tafsir_ibn_kathir": "Ibn Kathir",
+    "tafsir_saddi": "As-Saadi",
+    "tafsir_loading": "Loading tafsir…",
+    "tafsir_unavailable": "No tafsir available for this verse."
   },
   "sb": {
     "apply_btn": "Write to us",

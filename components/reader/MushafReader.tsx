@@ -129,6 +129,38 @@ function MushafReaderInner(props: MushafReaderProps) {
   // Default off — the reader opens on the pure mushaf text. Users
   // who want a translation tap the toggle in the trans-bar.
   const [showTranslations, setShowTranslations] = useState(false);
+  // Tafsir toggle + selected author. Renders below the translation in
+  // ayah cards when both are on.
+  const [showTafsir, setShowTafsir] = useState(false);
+  const [tafsirAuthor, setTafsirAuthor] = useState<"ibn-kathir" | "saddi">("ibn-kathir");
+  const [tafsirPickerOpen, setTafsirPickerOpen] = useState(false);
+  const [tafsirByAyah, setTafsirByAyah] = useState<Record<number, { text: string; lang: string } | null>>({});
+  const [tafsirLoading, setTafsirLoading] = useState(false);
+
+  // Fetch tafsir for every loaded verse when the toggle is on or the
+  // author changes. One request per (surah, author, locale) — the API
+  // returns all verses at once so we don't fire hundreds of GETs.
+  useEffect(() => {
+    if (!showTafsir) return;
+    let cancelled = false;
+    setTafsirLoading(true);
+    const ayahKeys = ayat.map((a) => a.verseNumber).filter((n) => Number.isInteger(n));
+    if (!ayahKeys.length) { setTafsirLoading(false); return; }
+    const url = `/api/tafsir/${surah.number}?author=${tafsirAuthor}&locale=${uiLocale}&ayahs=${ayahKeys.join(",")}`;
+    fetch(url, { cache: "force-cache" })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data: { items?: Array<{ ayah: number; text: string | null; lang: string | null }> } | null) => {
+        if (cancelled || !data?.items) return;
+        const next: Record<number, { text: string; lang: string } | null> = {};
+        for (const it of data.items) {
+          next[it.ayah] = it.text && it.lang ? { text: it.text, lang: it.lang } : null;
+        }
+        setTafsirByAyah(next);
+      })
+      .catch(() => {})
+      .finally(() => { if (!cancelled) setTafsirLoading(false); });
+    return () => { cancelled = true; };
+  }, [showTafsir, tafsirAuthor, surah.number, uiLocale, ayat]);
   // Mushaf-mode pagination: when on, the verse stream is sliced into
   // the same physical pages a printed Madani Mushaf uses (1..604).
   // pageIdx is an index into pagesInSurah; the displayed value is the
@@ -626,6 +658,39 @@ function MushafReaderInner(props: MushafReaderProps) {
                 </button>
               </>
             )}
+            {/* Tafsir toggle — placed right after the translation switch
+                so users see the option as soon as the trans-bar appears.
+                Only meaningful when translations (or arabic) are on; we
+                render commentary cards below the translation per ayah. */}
+            <button
+              type="button"
+              className={"trans-toggle trans-toggle-tafsir" + (showTafsir ? " on" : "")}
+              onClick={() => setShowTafsir((v) => !v)}
+              aria-pressed={showTafsir}
+              title={t("tafsir_title")}
+            >
+              <span className="trans-toggle-track">
+                <span className="trans-toggle-thumb" />
+              </span>
+              <span className="trans-toggle-label">{t("tafsir_label")}</span>
+            </button>
+            {showTafsir && (
+              <button
+                type="button"
+                className={"trans-current" + (tafsirPickerOpen ? " open" : "")}
+                onClick={() => setTafsirPickerOpen((v) => !v)}
+                aria-expanded={tafsirPickerOpen}
+                aria-controls="tafsir-pills"
+                title={t("tafsir_title")}
+              >
+                <span>
+                  {tafsirAuthor === "ibn-kathir" ? t("tafsir_ibn_kathir") : t("tafsir_saddi")}
+                </span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </button>
+            )}
             {/* In-surah search trigger — inline with the other toggles
                 instead of a floating FAB, so all reader controls live on
                 one row. */}
@@ -676,6 +741,24 @@ function MushafReaderInner(props: MushafReaderProps) {
                   type="button"
                 >
                   {tr.short}
+                </button>
+              ))}
+            </div>
+          )}
+          {showTafsir && (
+            <div
+              id="tafsir-pills"
+              className={"trans-pills" + (tafsirPickerOpen ? " open" : "")}
+              hidden={!tafsirPickerOpen}
+            >
+              {(["ibn-kathir", "saddi"] as const).map((key) => (
+                <button
+                  key={key}
+                  type="button"
+                  className={"trans-pill" + (tafsirAuthor === key ? " active" : "")}
+                  onClick={() => { setTafsirAuthor(key); setTafsirPickerOpen(false); }}
+                >
+                  {key === "ibn-kathir" ? t("tafsir_ibn_kathir") : t("tafsir_saddi")}
                 </button>
               ))}
             </div>
@@ -756,6 +839,40 @@ function MushafReaderInner(props: MushafReaderProps) {
                       className="ayah-block-trans"
                       dangerouslySetInnerHTML={{ __html: text ? highlightHtml(text) : "—" }}
                     />
+                    {showTafsir && (() => {
+                      const tf = tafsirByAyah[a.verseNumber];
+                      if (!tf) {
+                        return (
+                          <div className="ayah-block-tafsir is-empty">
+                            <span className="ayah-block-tafsir-head">
+                              {tafsirAuthor === "ibn-kathir" ? t("tafsir_ibn_kathir") : t("tafsir_saddi")}
+                            </span>
+                            <p className="ayah-block-tafsir-body">
+                              {tafsirLoading ? t("tafsir_loading") : t("tafsir_unavailable")}
+                            </p>
+                          </div>
+                        );
+                      }
+                      const isFallback = uiLocale !== tf.lang && !(uiLocale === "ar" && tf.lang === "ar");
+                      const isArabic = tf.lang === "ar";
+                      return (
+                        <div className={"ayah-block-tafsir" + (isArabic ? " is-arabic" : "")}>
+                          <span className="ayah-block-tafsir-head">
+                            {tafsirAuthor === "ibn-kathir" ? t("tafsir_ibn_kathir") : t("tafsir_saddi")}
+                            {isFallback && (
+                              <span className="ayah-block-tafsir-lang">· {tf.lang.toUpperCase()}</span>
+                            )}
+                          </span>
+                          <p
+                            className="ayah-block-tafsir-body"
+                            dir={isArabic ? "rtl" : undefined}
+                            lang={tf.lang}
+                          >
+                            {tf.text}
+                          </p>
+                        </div>
+                      );
+                    })()}
                   </article>
                 );
               })}

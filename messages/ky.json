@@ -749,7 +749,13 @@
     "fp_exact_label": "Так",
     "fp_exact_off": "Бүтүн сөздөр гана",
     "fp_exact_on": "Бардык формалар",
-    "pop_hifz": "Хифзге"
+    "pop_hifz": "Хифзге",
+    "tafsir_label": "Тафсир",
+    "tafsir_title": "Аят тафсири",
+    "tafsir_ibn_kathir": "Ибн Касир",
+    "tafsir_saddi": "Сагди",
+    "tafsir_loading": "Тафсир жүктөлүүдө…",
+    "tafsir_unavailable": "Бул аят үчүн тафсир жок."
   },
   "sb": {
     "apply_btn": "Жазуу",

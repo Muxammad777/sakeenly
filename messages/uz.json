@@ -749,7 +749,13 @@
     "fp_exact_label": "Aniq",
     "fp_exact_off": "Faqat butun so'zlar",
     "fp_exact_on": "Hamma shakllar",
-    "pop_hifz": "Hifzga"
+    "pop_hifz": "Hifzga",
+    "tafsir_label": "Tafsir",
+    "tafsir_title": "Oyat tafsiri",
+    "tafsir_ibn_kathir": "Ibn Kasir",
+    "tafsir_saddi": "Sa'diy",
+    "tafsir_loading": "Tafsir yuklanmoqda…",
+    "tafsir_unavailable": "Bu oyat uchun tafsir mavjud emas."
   },
   "sb": {
     "apply_btn": "Yozish",

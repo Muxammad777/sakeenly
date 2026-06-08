@@ -749,7 +749,13 @@
     "fp_exact_label": "Точное",
     "fp_exact_off": "Только полные слова",
     "fp_exact_on": "Все формы",
-    "pop_hifz": "В хифз"
+    "pop_hifz": "В хифз",
+    "tafsir_label": "Тафсир",
+    "tafsir_title": "Толкование аята",
+    "tafsir_ibn_kathir": "Ибн Касир",
+    "tafsir_saddi": "Ас-Саади",
+    "tafsir_loading": "Загрузка тафсира…",
+    "tafsir_unavailable": "Тафсир для этого аята недоступен."
   },
   "sb": {
     "apply_btn": "Написать",

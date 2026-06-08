@@ -60,4 +60,12 @@ lib/knowledge/translations/*
 !lib/knowledge/translations/id_indonesianislam.json
 !lib/knowledge/translations/id_muntakhab.json
 !lib/knowledge/translations/id_jalalayn.json
+# Tafsir corpora needed by the reader's Tafsir toggle. Two most-cited
+# authors (Ibn Kathir + As-Saadi) in the languages we serve. ~73MB total.
+!lib/knowledge/tafsir/
+lib/knowledge/tafsir/*
+!lib/knowledge/tafsir/ar-tafsir-ibn-kathir/
+!lib/knowledge/tafsir/en-tafisr-ibn-kathir/
+!lib/knowledge/tafsir/ar-tafseer-al-saddi/
+!lib/knowledge/tafsir/ru-tafseer-al-saddi/
 

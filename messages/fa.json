@@ -749,7 +749,13 @@
     "fp_exact_label": "دقیق",
     "fp_exact_off": "فقط کلمات کامل",
     "fp_exact_on": "همه شکل‌ها",
-    "pop_hifz": "به حفظ"
+    "pop_hifz": "به حفظ",
+    "tafsir_label": "تفسیر",
+    "tafsir_title": "تفسیر آیه",
+    "tafsir_ibn_kathir": "ابن کثیر",
+    "tafsir_saddi": "السعدی",
+    "tafsir_loading": "در حال بارگیری تفسیر…",
+    "tafsir_unavailable": "تفسیری برای این آیه در دسترس نیست."
   },
   "sb": {
     "apply_btn": "نوشتن",

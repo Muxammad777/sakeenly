@@ -749,7 +749,13 @@
     "fp_exact_label": "Дақиқ",
     "fp_exact_off": "Танҳо калимаҳои пурра",
     "fp_exact_on": "Ҳамаи шаклҳо",
-    "pop_hifz": "Ба ҳифз"
+    "pop_hifz": "Ба ҳифз",
+    "tafsir_label": "Тафсир",
+    "tafsir_title": "Тафсири оят",
+    "tafsir_ibn_kathir": "Ибни Касир",
+    "tafsir_saddi": "Ас-Саадӣ",
+    "tafsir_loading": "Боргузории тафсир…",
+    "tafsir_unavailable": "Тафсир барои ин оят дастрас нест."
   },
   "sb": {
     "apply_btn": "Нависед",

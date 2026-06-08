@@ -749,7 +749,13 @@
     "fp_exact_label": "सटीक",
     "fp_exact_off": "केवल पूरे शब्द",
     "fp_exact_on": "सभी रूप",
-    "pop_hifz": "हिफ़्ज़ में"
+    "pop_hifz": "हिफ़्ज़ में",
+    "tafsir_label": "तफ़सीर",
+    "tafsir_title": "आयत की तफ़सीर",
+    "tafsir_ibn_kathir": "इब्न कसीर",
+    "tafsir_saddi": "अस-सादी",
+    "tafsir_loading": "तफ़सीर लोड हो रही है…",
+    "tafsir_unavailable": "इस आयत के लिए तफ़सीर उपलब्ध नहीं है।"
   },
   "sb": {
     "apply_btn": "हमें लिखें",

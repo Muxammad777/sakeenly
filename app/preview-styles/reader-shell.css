@@ -902,6 +902,55 @@
     margin: 0;
   }
 
+  /* Tafsir block — appears below the translation when the Tafsir toggle
+     is on. Indented + gold-tinted left border so it reads as commentary
+     rather than primary text. */
+  .ayah-block-tafsir {
+    margin-top: 14px;
+    padding: 12px 16px;
+    border-left: 2px solid color-mix(in oklab, oklch(var(--accent)) 60%, transparent);
+    background: color-mix(in oklab, oklch(var(--accent)) 5%, transparent);
+    border-radius: 0 8px 8px 0;
+  }
+  .ayah-block-tafsir.is-empty {
+    opacity: 0.7;
+  }
+  .ayah-block-tafsir-head {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: oklch(var(--accent));
+    margin-bottom: 6px;
+  }
+  .ayah-block-tafsir-lang {
+    color: oklch(var(--text-3));
+    font-size: 9.5px;
+  }
+  .ayah-block-tafsir-body {
+    margin: 0;
+    color: oklch(var(--text-2));
+    font-family: 'Spectral', Georgia, serif;
+    font-size: 0.97rem;
+    line-height: 1.65;
+    white-space: pre-line;
+  }
+  .ayah-block-tafsir.is-arabic .ayah-block-tafsir-body {
+    font-family: 'Scheherazade New', 'Amiri Quran', serif;
+    font-size: 1.25rem;
+    line-height: 2;
+    text-align: right;
+  }
+
+  /* Distinct gold dot on the Tafsir toggle so it's visually grouped
+     with — but not identical to — the translation switch. */
+  .trans-toggle.trans-toggle-tafsir.on .trans-toggle-track {
+    background: color-mix(in oklab, oklch(var(--accent)) 65%, oklch(0.6 0.18 35) 35%);
+  }
+
   /* ============ TRANSLATION TOGGLE ============ */
   .trans-toggle {
     display: inline-flex; align-items: center; gap: 10px;

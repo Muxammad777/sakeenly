@@ -749,7 +749,13 @@
     "fp_exact_label": "Tepat",
     "fp_exact_off": "Hanya perkataan penuh",
     "fp_exact_on": "Semua bentuk",
-    "pop_hifz": "Ke hifz"
+    "pop_hifz": "Ke hifz",
+    "tafsir_label": "Tafsir",
+    "tafsir_title": "Tafsir ayat",
+    "tafsir_ibn_kathir": "Ibn Kathir",
+    "tafsir_saddi": "As-Sa'di",
+    "tafsir_loading": "Memuatkan tafsir…",
+    "tafsir_unavailable": "Tafsir tidak tersedia untuk ayat ini."
   },
   "sb": {
     "apply_btn": "Tulis kepada kami",
