@@ -15,6 +15,7 @@ import { AudioPlayerProvider, useAudioPlayer } from "./AudioPlayerProvider";
 import { SideTab } from "./SideTab";
 import { getMushafPage, pagesOfSurah } from "@/lib/quran/mushaf-pages";
 import { getTajweedAnnotations, splitByTajweed } from "@/lib/quran/tajweed";
+import { pickDefaultAuthor } from "@/lib/knowledge/tafsir";
 import {
   buildHighlightRegex,
   countHtmlMatchesIgnoreBrackets,
@@ -132,7 +133,12 @@ function MushafReaderInner(props: MushafReaderProps) {
   // Tafsir toggle + selected author. Renders below the translation in
   // ayah cards when both are on.
   const [showTafsir, setShowTafsir] = useState(false);
-  const [tafsirAuthor, setTafsirAuthor] = useState<"ibn-kathir" | "saddi" | "jalalayn" | "muyassar">("ibn-kathir");
+  // Default author = whichever one has a native translation for the
+  // UI locale (e.g. RU → As-Saadi, ID → As-Saadi, UR → Ibn Kathir).
+  // Stays a state value so the user can still pick another author.
+  const [tafsirAuthor, setTafsirAuthor] = useState<"ibn-kathir" | "saddi" | "jalalayn" | "muyassar">(
+    () => pickDefaultAuthor(uiLocale),
+  );
   const [tafsirPickerOpen, setTafsirPickerOpen] = useState(false);
   const [tafsirByAyah, setTafsirByAyah] = useState<Record<number, { text: string; lang: string } | null>>({});
   const [tafsirLoading, setTafsirLoading] = useState(false);

@@ -126,6 +126,31 @@ export async function getTafsirRange(
   });
 }
 
+/**
+ * Pick the best author for the visitor's UI locale: the first author
+ * (in the canonical picker order) whose top-priority language for that
+ * locale isn't a fallback. In practice this means a RU user opens
+ * As-Saadi (RU is native for Saadi) instead of Ibn Kathir (which would
+ * fall back to EN), an ID user opens As-Saadi (native ID), an Urdu
+ * user opens Ibn Kathir (native UR), etc.
+ *
+ * Used as the initial value for the Tafsir-toggle author state.
+ */
+export function pickDefaultAuthor(locale: string): TafsirAuthor {
+  const order = NATIVE_PREFERENCE[locale] ?? [];
+  const topLang = order[0];
+  if (topLang) {
+    // Walk the canonical author list; return the first one that has the
+    // visitor's primary language natively.
+    for (const author of ["saddi", "ibn-kathir", "jalalayn", "muyassar"] as const) {
+      if (FOLDER[`${author}:${topLang}` as keyof typeof FOLDER]) return author;
+    }
+  }
+  // Nothing matched — Ibn Kathir is the safest fallback (most-cited
+  // tafsir, available in AR + EN + UR).
+  return "ibn-kathir";
+}
+
 export const TAFSIR_AUTHORS: { key: TafsirAuthor; nameRu: string; nameEn: string; nameAr: string }[] = [
   { key: "ibn-kathir", nameRu: "Ибн Касир",     nameEn: "Ibn Kathir",   nameAr: "ابن كثير" },
   { key: "saddi",      nameRu: "Ас-Саади",      nameEn: "As-Saadi",     nameAr: "السعدي" },
