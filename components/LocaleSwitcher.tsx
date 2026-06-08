@@ -49,6 +49,18 @@ export function LocaleSwitcher() {
     // Let cmd/ctrl-click open in a new tab as the user expects.
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     e.preventDefault();
+    // Radix wraps DropdownMenu in react-remove-scroll. On hard nav the
+    // menu never gets a chance to close cleanly, and the next page
+    // inherits the lock: <body data-scroll-locked="1" style="overflow:
+    // hidden !important; pointer-events: none">. That made the header
+    // unreachable on /ar after switching languages. Snap it off before
+    // we navigate.
+    const body = document.body;
+    body.removeAttribute("data-scroll-locked");
+    body.style.removeProperty("pointer-events");
+    body.style.removeProperty("overflow");
+    body.style.removeProperty("position");
+    body.style.removeProperty("padding-right");
     window.location.assign(href);
   };
 
