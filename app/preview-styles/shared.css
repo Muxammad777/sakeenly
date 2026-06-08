@@ -11,6 +11,16 @@
    (e.g. .hifz-hero-pattern uses `inset: -10% -10% 0`). The clipped
    visual is intentional; the scrollbar is not. */
 html, body { overflow-x: clip; }
+/* Reserve space for the scrollbar permanently. Stops the whole layout
+   from shifting ~10px to the left whenever Radix opens a dropdown and
+   temporarily removes the scrollbar. */
+html { scrollbar-gutter: stable; }
+/* Belt-and-braces: even if Radix's react-remove-scroll injects its
+   own padding/margin while a menu is open, neutralise it. */
+body[data-scroll-locked] {
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
 .wrap        { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
 .wrap-tight  { max-width: 880px;  margin: 0 auto; padding: 0 28px; }
 /* On ultra-narrow viewports (<380px — folded phones, old Androids) 28px

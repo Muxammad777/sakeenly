@@ -54,7 +54,12 @@ export function LocaleSwitcher() {
   };
 
   return (
-    <DropdownMenu.Root dir="ltr">
+    // modal={false} stops Radix from injecting scroll-lock onto <body>
+    // when the dropdown opens. Without it Radix removes the scroll-bar
+    // and pushes the page ~10px to the left (the width of the gutter)
+    // every time the language menu opens — visible as the whole site
+    // jumping sideways on click.
+    <DropdownMenu.Root dir="ltr" modal={false}>
       <DropdownMenu.Trigger asChild>
         <button
           type="button"

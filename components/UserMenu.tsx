@@ -29,7 +29,8 @@ export function UserMenu() {
   const initial = (session.user.name ?? session.user.email ?? "S").charAt(0).toUpperCase();
 
   return (
-    <DropdownMenu.Root>
+    // modal={false} — see LocaleSwitcher.tsx for the rationale.
+    <DropdownMenu.Root modal={false}>
       <DropdownMenu.Trigger asChild>
         <button
           type="button"
