@@ -68,4 +68,8 @@ lib/knowledge/tafsir/*
 !lib/knowledge/tafsir/en-tafisr-ibn-kathir/
 !lib/knowledge/tafsir/ar-tafseer-al-saddi/
 !lib/knowledge/tafsir/ru-tafseer-al-saddi/
+# Loader module — must be checked in or the /api/tafsir endpoint can't
+# be built on Railway. The lib/knowledge/* glob above ate it on the
+# previous commit; explicitly allowlist.
+!lib/knowledge/tafsir.ts
 
