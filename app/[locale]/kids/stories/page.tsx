@@ -9,6 +9,7 @@ import { PROPHET_STORIES, getStoryContent } from "@/lib/data/prophet-stories";
 const PROPHET_PREFIX: Record<Locale, string> = {
   ru: "Пророк",
   en: "Prophet",
+  ar: "النبي",
   fa: "حضرت",
   tg: "Пайғамбар",
   uz: "Payg'ambar",
@@ -23,6 +24,7 @@ const PROPHET_PREFIX: Record<Locale, string> = {
 const MIN_WORD: Record<Locale, string> = {
   ru: "МИН",
   en: "MIN",
+  ar: "د",
   fa: "دقیقه",
   tg: "ДАҚ",
   uz: "DAQ",

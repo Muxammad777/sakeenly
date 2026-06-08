@@ -15,6 +15,7 @@ import { KidStoryRead } from "@/components/kids/KidStoryRead";
 const READ_LABELS: Record<Locale, { btn: string; done: string }> = {
   ru: { btn: "Я прочитал эту историю",        done: "Прочитано" },
   en: { btn: "I read this story",             done: "Read" },
+  ar: { btn: "قرأتُ هذه القصة",                done: "قُرئت" },
   fa: { btn: "این داستان را خواندم",          done: "خوانده شد" },
   tg: { btn: "Ин қиссаро хондам",             done: "Хонда шуд" },
   uz: { btn: "Bu qissani o'qib chiqdim",      done: "O'qildi" },
@@ -79,6 +80,20 @@ const LABELS: Record<Locale, {
   nextNamePrefix: string;
   allLbl: string;
 }> = {
+  ar: {
+    crumbs: { home: "Sakeenly", kids: "للأطفال", stories: "القصص" },
+    h1Prefix: "النبي",
+    minWord: "د",
+    adab: "بدون صور للبشر · مستندة إلى القرآن والسنة الصحيحة",
+    lessonLbl: "الدرس",
+    sourcesH: "المصادر",
+    disclaimerLbl: "أدب.",
+    disclaimerBody:
+      "هذه القصة مأخوذة من القرآن الكريم والأحاديث الصحيحة والتفاسير الكلاسيكية. لا نختلق حواراً ولا مشاهد، ولا نصف هيئة الأنبياء عليهم السلام. إن لاحظت خطأً فاكتب إلينا.",
+    nextLbl: "النبي التالي",
+    nextNamePrefix: "النبي",
+    allLbl: "كل الأنبياء الـ25",
+  },
   ru: {
     crumbs: { home: "Sakeenly", kids: "Детям", stories: "Истории" },
     h1Prefix: "Пророк",

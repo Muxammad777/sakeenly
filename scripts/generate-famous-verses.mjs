@@ -19,17 +19,21 @@ const VERSES = [
 
 // Surah names per locale. Hard-coded for the 5 surahs we touch.
 const SURAH_NAMES = {
-  2:  { ru: 'Корова',     en: 'The Cow',     fa: 'بقره',  tg: 'Бақара',  uz: 'Baqara',  kk: 'Бақара',  ky: 'Бакара', ur: 'البقرة',   ms: 'Al-Baqarah', hi: 'अल-बक़रह',  id: 'Al-Baqarah'  },
-  94: { ru: 'Раскрытие',  en: 'The Relief',  fa: 'شرح',   tg: 'Шарҳ',    uz: 'Sharh',   kk: 'Шарх',    ky: 'Шарх',   ur: 'الشرح',    ms: 'Asy-Syarh',  hi: 'अश-शरह',    id: 'Asy-Syarh'   },
-  13: { ru: 'Гром',       en: 'The Thunder', fa: 'رعد',   tg: 'Раъд',    uz: 'Raʼd',    kk: 'Раъд',    ky: 'Рад',    ur: 'الرعد',    ms: 'Ar-Ra’d',    hi: 'अर-रअद',    id: 'Ar-Ra’d'     },
-  65: { ru: 'Развод',     en: 'Divorce',     fa: 'طلاق',  tg: 'Талоқ',   uz: 'Taloq',   kk: 'Талаq',   ky: 'Талак',  ur: 'الطلاق',   ms: 'At-Talaq',   hi: 'अत-तलाक़',  id: 'At-Talaq'    },
-  39: { ru: 'Толпы',      en: 'The Throngs', fa: 'زمر',   tg: 'Зумар',   uz: 'Zumar',   kk: 'Зумар',   ky: 'Зумар',  ur: 'الزمر',    ms: 'Az-Zumar',   hi: 'अज़-ज़ुमर', id: 'Az-Zumar'    },
+  2:  { ru: 'Корова',     en: 'The Cow',     ar: 'البقرة',  fa: 'بقره',  tg: 'Бақара',  uz: 'Baqara',  kk: 'Бақара',  ky: 'Бакара', ur: 'البقرة',   ms: 'Al-Baqarah', hi: 'अल-बक़रह',  id: 'Al-Baqarah'  },
+  94: { ru: 'Раскрытие',  en: 'The Relief',  ar: 'الشرح',   fa: 'شرح',   tg: 'Шарҳ',    uz: 'Sharh',   kk: 'Шарх',    ky: 'Шарх',   ur: 'الشرح',    ms: 'Asy-Syarh',  hi: 'अश-शरह',    id: 'Asy-Syarh'   },
+  13: { ru: 'Гром',       en: 'The Thunder', ar: 'الرعد',   fa: 'رعد',   tg: 'Раъд',    uz: 'Raʼd',    kk: 'Раъд',    ky: 'Рад',    ur: 'الرعد',    ms: 'Ar-Ra’d',    hi: 'अर-रअद',    id: 'Ar-Ra’d'     },
+  65: { ru: 'Развод',     en: 'Divorce',     ar: 'الطلاق',  fa: 'طلاق',  tg: 'Талоқ',   uz: 'Taloq',   kk: 'Талаq',   ky: 'Талак',  ur: 'الطلاق',   ms: 'At-Talaq',   hi: 'अत-तलाक़',  id: 'At-Talaq'    },
+  39: { ru: 'Толпы',      en: 'The Throngs', ar: 'الزمر',   fa: 'زمر',   tg: 'Зумар',   uz: 'Zumar',   kk: 'Зумар',   ky: 'Зумар',  ur: 'الزمر',    ms: 'Az-Zumar',   hi: 'अज़-ज़ुमर', id: 'Az-Zumar'    },
 };
 
 // Per-locale translation source + cite label shown under the verse.
 const SOURCES = {
   ru: { file: 'lib/knowledge/translations/ru_elmirkuliev.json',  format: 'knowledge-quran', cite: 'ПЕРЕВОД Э. КУЛИЕВА' },
   en: { file: 'lib/knowledge/translations/en_sahih_international.json', format: 'knowledge-surahs', cite: 'SAHIH INTERNATIONAL' },
+  // For AR locale the "translation" IS the Uthmani text — same file we
+  // already use for the arabic field. Renders the verse twice (large
+  // arabic + small arabic in quotes) which reads fine for native speakers.
+  ar: { file: 'lib/knowledge/quran/uthmani.json',                format: 'knowledge-quran', cite: 'النص العثماني' },
   fa: { file: 'lib/knowledge/translations/fa_nasermakaremshi.json', format: 'knowledge-quran', cite: 'ترجمه مکارم شیرازی' },
   tg: { file: 'lib/quran/tanzil/ayati.json',                     format: 'tanzil-flat',     cite: 'ТАРҶУМАИ ОЯТӢ' },
   uz: { file: 'lib/knowledge/translations/uz_alauddinmansour.json', format: 'knowledge-quran', cite: 'ALOUDDIN MANSUR TARJIMASI' },

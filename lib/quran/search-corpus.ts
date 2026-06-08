@@ -108,6 +108,7 @@ function loadCorpus(): Corpus {
 const TRANSLATORS_BY_LOCALE: Record<Locale, string[]> = {
   ru: ["kuliev", "krachkovsky", "osmanov", "porokhova", "abuadel"],
   en: ["sahih-intl", "khattab"],
+  ar: ["sahih-intl"], // Arabic-native users read the Uthmani text directly; we still index EN for search-snippet fallback
   fa: ["fooladvand"],
   tg: ["ayati"],
   uz: ["sodik"],

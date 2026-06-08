@@ -38,6 +38,11 @@ export const FAMOUS_VERSES: FamousVerse[] = [
         surah: "The Thunder",
         cite: "SAHIH INTERNATIONAL",
       },
+      ar: {
+        translation: "ٱلَّذِينَ ءَامَنُواْ وَتَطۡمَئِنُّ قُلُوبُهُم بِذِكۡرِ ٱللَّهِۗ أَلَا بِذِكۡرِ ٱللَّهِ تَطۡمَئِنُّ ٱلۡقُلُوبُ",
+        surah: "الرعد",
+        cite: "النص العثماني",
+      },
       fa: {
         translation: "آنها کسانی هستند که ایمان آورده‌اند، و دلهایشان به یاد خدا مطمئن (و آرام) است؛ آگاه باشید، تنها با یاد خدا دلها آرامش می‌یابد",
         surah: "رعد",
@@ -100,6 +105,11 @@ export const FAMOUS_VERSES: FamousVerse[] = [
         translation: "For indeed, with hardship [will be] ease.",
         surah: "The Relief",
         cite: "SAHIH INTERNATIONAL",
+      },
+      ar: {
+        translation: "فَإِنَّ مَعَ ٱلۡعُسۡرِ يُسۡرًا",
+        surah: "الشرح",
+        cite: "النص العثماني",
       },
       fa: {
         translation: "به یقین با (هر) سختی آسانی است",
@@ -164,6 +174,11 @@ export const FAMOUS_VERSES: FamousVerse[] = [
         surah: "The Cow",
         cite: "SAHIH INTERNATIONAL",
       },
+      ar: {
+        translation: "فَٱذۡكُرُونِيٓ أَذۡكُرۡكُمۡ وَٱشۡكُرُواْ لِي وَلَا تَكۡفُرُونِ",
+        surah: "البقرة",
+        cite: "النص العثماني",
+      },
       fa: {
         translation: "پس به یاد من باشید، تا به یاد شما باشم! و شکر مرا گویید و (در برابر نعمتهایم) کفران نکنید",
         surah: "بقره",
@@ -226,6 +241,11 @@ export const FAMOUS_VERSES: FamousVerse[] = [
         translation: "And will provide for him from where he does not expect. And whoever relies upon Allah - then He is sufficient for him. Indeed, Allah will accomplish His purpose. Allah has already set for everything a [decreed] extent.",
         surah: "Divorce",
         cite: "SAHIH INTERNATIONAL",
+      },
+      ar: {
+        translation: "وَيَرۡزُقۡهُ مِنۡ حَيۡثُ لَا يَحۡتَسِبُۚ وَمَن يَتَوَكَّلۡ عَلَى ٱللَّهِ فَهُوَ حَسۡبُهُۥٓۚ إِنَّ ٱللَّهَ بَٰلِغُ أَمۡرِهِۦۚ قَدۡ جَعَلَ ٱللَّهُ لِكُلِّ شَيۡءࣲ قَدۡرࣰ ا",
+        surah: "الطلاق",
+        cite: "النص العثماني",
       },
       fa: {
         translation: "و او را از جایی که گمان ندارد روزی می‌دهد؛ و هر کس بر خدا توکّل کند، کفایت امرش را می‌کند؛ خداوند فرمان خود را به انجام می‌رساند؛ و خدا برای هر چیزی اندازه‌ای قرار داده است",
@@ -290,6 +310,11 @@ export const FAMOUS_VERSES: FamousVerse[] = [
         surah: "The Throngs",
         cite: "SAHIH INTERNATIONAL",
       },
+      ar: {
+        translation: "۞قُلۡ يَٰعِبَادِيَ ٱلَّذِينَ أَسۡرَفُواْ عَلَىٰٓ أَنفُسِهِمۡ لَا تَقۡنَطُواْ مِن رَّحۡمَةِ ٱللَّهِۚ إِنَّ ٱللَّهَ يَغۡفِرُ ٱلذُّنُوبَ جَمِيعًاۚ إِنَّهُۥ هُوَ ٱلۡغَفُورُ ٱلرَّحِيمُ",
+        surah: "الزمر",
+        cite: "النص العثماني",
+      },
       fa: {
         translation: "بگو: «ای بندگان من که بر خود اسراف و ستم کرده‌اید! از رحمت خداوند نومید نشوید که خدا همه گناهان را می‌آمرزد، زیرا او بسیار آمرزنده و مهربان است",
         surah: "زمر",
@@ -352,6 +377,11 @@ export const FAMOUS_VERSES: FamousVerse[] = [
         translation: "Allah does not charge a soul except [with that within] its capacity. It will have [the consequence of] what [good] it has gained, and it will bear [the consequence of] what [evil] it has earned. \"Our Lord, do not impose blame upon us if we have forgotten or erred. Our Lord, and lay not upon us a burden like that which You laid upon those before us. Our Lord, and burden us not with that which we have no ability to bear. And pardon us; and forgive us; and have mercy upon us. You are our protector, so give us victory over the disbelieving people.\"",
         surah: "The Cow",
         cite: "SAHIH INTERNATIONAL",
+      },
+      ar: {
+        translation: "لَا يُكَلِّفُ ٱللَّهُ نَفۡسًا إِلَّا وُسۡعَهَاۚ لَهَا مَا كَسَبَتۡ وَعَلَيۡهَا مَا ٱكۡتَسَبَتۡۗ رَبَّنَا لَا تُؤَاخِذۡنَآ إِن نَّسِينَآ أَوۡ أَخۡطَأۡنَاۚ رَبَّنَا وَلَا تَحۡمِلۡ عَلَيۡنَآ إِصۡرࣰ ا كَمَا حَمَلۡتَهُۥ عَلَى ٱلَّذِينَ مِن قَبۡلِنَاۚ رَبَّنَا وَلَا تُحَمِّلۡنَا مَا لَا طَاقَةَ لَنَا بِهِۦۖ وَٱعۡفُ عَنَّا وَٱغۡفِرۡ لَنَا وَٱرۡحَمۡنَآۚ أَنتَ مَوۡلَىٰنَا فَٱنصُرۡنَا عَلَى ٱلۡقَوۡمِ ٱلۡكَٰفِرِينَ",
+        surah: "البقرة",
+        cite: "النص العثماني",
       },
       fa: {
         translation: "خداوند هیچ کس را، جز به اندازه تواناییش، تکلیف نمی‌کند. (انسان،) هر کار (نیکی) را انجام دهد، برای خود انجام داده؛ و هر کار (بدی) کند، به زیان خود کرده است. (مؤمنان می‌گویند:) پروردگارا! اگر ما فراموش یا خطا کردیم، ما را مؤاخذه مکن! پروردگارا! تکلیف سنگینی بر ما قرار مده، آن چنان که (به خاطر گناه و طغیان،) بر کسانی که پیش از ما بودند، قرار دادی! پروردگارا! آنچه طاقت تحمل آن را نداریم، بر ما مقرّر مدار! و آثار گناه را از ما بشوی! ما را ببخش و در رحمت خود قرار ده! تو مولا و سرپرست مایی، پس ما را بر جمعیّت کافران، پیروز گردان",
