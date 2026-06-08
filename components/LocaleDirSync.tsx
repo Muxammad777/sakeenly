@@ -18,18 +18,31 @@ export function LocaleDirSync({ locale, dir }: { locale: string; dir: "ltr" | "r
     const html = document.documentElement;
     if (html.getAttribute("lang") !== locale) html.setAttribute("lang", locale);
     if (html.getAttribute("dir") !== dir) html.setAttribute("dir", dir);
-    // Defensive: if a previous page's Radix scroll-lock leaked through a
-    // hard navigation we'd land here with body.data-scroll-locked still
-    // set, which locks pointer-events on every interactive element on
-    // the new page. Clear it so the new page is reachable.
+
+    // Radix's react-remove-scroll occasionally leaves data-scroll-locked
+    // and pointer-events:none on <body> after the menu has already been
+    // removed from the DOM (known issue with hard nav / RTL). Detect it
+    // and clean up automatically. Runs on mount AND watches body for
+    // future stale-lock states.
     const body = document.body;
-    if (body.hasAttribute("data-scroll-locked")) {
-      body.removeAttribute("data-scroll-locked");
-      body.style.removeProperty("pointer-events");
-      body.style.removeProperty("overflow");
-      body.style.removeProperty("position");
+    const unlock = () => {
+      const hasOpenRadixPopper = !!document.querySelector(
+        "[data-radix-popper-content-wrapper], [data-state='open'][role='menu'], [data-state='open'][role='dialog']",
+      );
+      if (hasOpenRadixPopper) return;
+      if (body.hasAttribute("data-scroll-locked")) {
+        body.removeAttribute("data-scroll-locked");
+      }
+      if (body.style.pointerEvents === "none") body.style.removeProperty("pointer-events");
+      if (body.style.overflow === "hidden") body.style.removeProperty("overflow");
+      if (body.style.position === "relative") body.style.removeProperty("position");
       body.style.removeProperty("padding-right");
-    }
+    };
+    unlock();
+
+    const obs = new MutationObserver(unlock);
+    obs.observe(body, { attributes: true, attributeFilter: ["data-scroll-locked", "style"] });
+    return () => obs.disconnect();
   }, [locale, dir]);
   return null;
 }

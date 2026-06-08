@@ -7,14 +7,11 @@ import { usePathname } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
-// Build the URL for a target locale ourselves instead of relying on the
-// next-intl router. A plain <a> nav has none of the moving parts that
-// were breaking in RTL renders.
+// Build the target URL ourselves and ship it as a plain <a href>. Soft
+// nav via Next would be ideal but next-intl's router.replace threw in
+// some RTL renders; plain anchors always work.
 const DEFAULT_LOCALE = routing.defaultLocale;
 function buildLocaleHref(targetLocale: Locale, currentPath: string): string {
-  // usePathname() from @/i18n/navigation strips the locale prefix, so
-  // currentPath looks like "/" or "/reader/2/255". For the default
-  // locale we render the path bare (localePrefix: "as-needed").
   const clean = currentPath === "/" ? "" : currentPath;
   if (targetLocale === DEFAULT_LOCALE) return clean || "/";
   return `/${targetLocale}${clean}`;
@@ -39,29 +36,21 @@ export function LocaleSwitcher() {
   const locale = useLocale() as Locale;
   const pathname = usePathname();
 
-  // Pin the dropdown direction to LTR. When the html root is dir="rtl"
-  // (ar / fa / ur), Radix tries to mirror the menu and frequently lands
-  // off-screen to the left; locking it to LTR keeps anchoring stable.
-  // Belt-and-braces: every item is an <a href>, AND we wire an onClick
-  // that hard-navigates via location.assign so even if Radix swallows
-  // the default <a> click, navigation still happens.
-  const hardNav = (href: string) => (e: React.MouseEvent) => {
-    // Let cmd/ctrl-click open in a new tab as the user expects.
+  // Clean exit: before we hard-nav to the new locale, manually close
+  // out Radix's scroll-lock side-effects. Otherwise the lock attribute
+  // + pointer-events:none get inherited by the next page document and
+  // every interactive element looks dead.
+  const cleanUpAndNav = (href: string) => (e: React.MouseEvent) => {
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     e.preventDefault();
-    // Radix wraps DropdownMenu in react-remove-scroll. On hard nav the
-    // menu never gets a chance to close cleanly, and the next page
-    // inherits the lock: <body data-scroll-locked="1" style="overflow:
-    // hidden !important; pointer-events: none">. That made the header
-    // unreachable on /ar after switching languages. Snap it off before
-    // we navigate.
     const body = document.body;
     body.removeAttribute("data-scroll-locked");
     body.style.removeProperty("pointer-events");
     body.style.removeProperty("overflow");
     body.style.removeProperty("position");
     body.style.removeProperty("padding-right");
-    window.location.assign(href);
+    // Defer one tick so Radix's own teardown gets to run first; then nav.
+    requestAnimationFrame(() => { window.location.assign(href); });
   };
 
   return (
@@ -90,7 +79,7 @@ export function LocaleSwitcher() {
               <DropdownMenu.Item asChild key={lang}>
                 <a
                   href={href}
-                  onClick={hardNav(href)}
+                  onClick={cleanUpAndNav(href)}
                   className={cn(
                     "flex cursor-pointer select-none items-center justify-between gap-3 rounded-lg px-3 py-2 text-sm outline-none transition-colors no-underline",
                     "data-[highlighted]:bg-surface-2",
