@@ -123,7 +123,7 @@ function ListenScreenInner({ chapters }: ListenScreenProps) {
   return (
     <>
       {/* HERO */}
-      <section className="wrap listen-hero">
+      <section className="wrap listen-hero" data-hero-ar="استِماع">
         <div className="geo-stars-fade" aria-hidden />
         <span className="tag"><span className="tag-dot"></span><span>{t("badge")}</span></span>
         <h1>

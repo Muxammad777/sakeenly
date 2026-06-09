@@ -263,7 +263,7 @@ export default async function ProphetStoryPage({ params }: PageProps) {
   return (
     <>
       {/* HERO */}
-      <section className="wrap kst-hero">
+      <section className="wrap kst-hero" data-hero-ar="قِصَّة">
         <div className="geo-stars-fade" aria-hidden></div>
         <div className="kst-crumbs">
           <Link href="/">{L.crumbs.home}</Link>

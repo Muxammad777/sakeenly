@@ -28,7 +28,7 @@ export default async function ReaderIndex({ params }: PageProps) {
 
   return (
     <>
-      <section className="wrap reader-hero">
+      <section className="wrap reader-hero" data-hero-ar="القُرآن">
         <div className="reader-index-head">
           <span className="tag"><span className="tag-dot" /><span>{t("surahs_eyebrow")}</span></span>
           <h1>{t("surahs_h")}</h1>

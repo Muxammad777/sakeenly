@@ -88,7 +88,7 @@ function Content() {
   const minWord = MIN_WORD[locale] ?? MIN_WORD.ru;
   return (
     <>
-      <section className="wrap kid-hero">
+      <section className="wrap kid-hero" data-hero-ar="قِصَص">
         <div className="geo-stars-fade"></div>
         <span className="tag"><span className="tag-dot"></span><span>{t("badge")}</span></span>
         <h1>{t("h1")}</h1>

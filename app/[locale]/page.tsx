@@ -7,6 +7,8 @@ import { Reveal } from "@/components/Reveal";
 import { AnimatedNumber } from "@/components/AnimatedNumber";
 import { RevealStagger } from "@/components/RevealStagger";
 import { ActivityTicker } from "@/components/ActivityTicker";
+import { HeroBackdrop } from "@/components/HeroBackdrop";
+import { MagneticCard } from "@/components/MagneticCard";
 import { SearchClient } from "@/components/search/SearchClient";
 import type { Locale } from "@/i18n/routing";
 
@@ -17,6 +19,20 @@ export default async function HomePage({ params }: PageProps) {
   setRequestLocale(locale);
   const user = await getCurrentUser();
   return <HomeContent isAuthenticated={Boolean(user)} />;
+}
+
+/**
+ * Mihrab arch SVG — the prayer-niche silhouette used as a thin ornament
+ * above the closing CTA. Single 1.4 stroke gold line, public-domain shape.
+ */
+function MihrabArch() {
+  return (
+    <svg className="closing-arch" viewBox="0 0 96 64" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      <path d="M4 62 L4 36 C 4 18, 24 4, 48 4 C 72 4, 92 18, 92 36 L 92 62" />
+      <path d="M14 62 L14 38 C 14 24, 28 14, 48 14 C 68 14, 82 24, 82 38 L 82 62" opacity="0.55" />
+      <circle cx="48" cy="22" r="1.8" fill="currentColor" stroke="none" />
+    </svg>
+  );
 }
 
 function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
@@ -34,9 +50,9 @@ function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
 
   return (
     <>
-      {/* HERO */}
+      {/* ── HERO ─────────────────────────────────────────────────── */}
       <section className="hero">
-        <div className="hero-bg"></div>
+        <HeroBackdrop />
 
         <div className="wrap hero-inner">
           <span className="tag">
@@ -62,8 +78,7 @@ function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
             <span>{t("meta3")}</span>
           </div>
         </div>
-        {/* Marquee ticker pinned to the bottom of the hero — first-fold
-            activity proof, scrolls right-to-left in a continuous loop. */}
+
         <ActivityTicker labels={{
           readers: tAct.raw("readers"),
           hifz: tAct.raw("hifz"),
@@ -71,7 +86,7 @@ function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
         }} />
       </section>
 
-      {/* SEARCH — full-text over Quran, drops users straight into the reader */}
+      {/* ── SEARCH ──────────────────────────────────────────────── */}
       <Reveal as="section" className="wrap home-search">
         <div className="home-search-head">
           <span className="eyebrow">{tSr("eyebrow")}</span>
@@ -80,7 +95,7 @@ function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
         <SearchClient initialQuery="" />
       </Reveal>
 
-      {/* VOTD + Streak */}
+      {/* ── VOTD + STREAK ───────────────────────────────────────── */}
       <Reveal as="section" className="votd-section">
         <div className="wrap-tight">
           <HomeVotdCarousel />
@@ -90,8 +105,6 @@ function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
             labels={{
               streakLabel: tStreak("label"),
               streakEmpty: tStreak("title_empty"),
-              // Raw templates with literal {n}/{a}/{t} — interpolated client-side.
-              // (Server functions can't cross the RSC boundary.)
               streakTitleTpl: tStreak.raw("title_n"),
               contLabel: tCont("label"),
               contStart: tCont("start_empty"),
@@ -104,7 +117,7 @@ function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
         </div>
       </Reveal>
 
-      {/* WHY SAKEENLY — value props that separate us from Quran.com etc. */}
+      {/* ── WHY SAKEENLY ────────────────────────────────────────── */}
       <Reveal as="section" className="wrap why">
         <div className="why-head">
           <span className="eyebrow">{tWhy("eyebrow")}</span>
@@ -112,8 +125,8 @@ function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
           <p>{tWhy("lede")}</p>
         </div>
         <RevealStagger className="why-grid" delayStep={70}>
-          <article className="why-card">
-            <div className="why-card-icon" aria-hidden="true">
+          {[
+            { t: tWhy("p1_t"), b: tWhy("p1_b"), icon: (
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 11.5a8.5 8.5 0 1 1-3.32-6.74"/>
                 <path d="M21 4v4h-4"/>
@@ -121,61 +134,47 @@ function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
                 <circle cx="13" cy="11" r="1" fill="currentColor"/>
                 <path d="M8 14.5c1 1 2.5 1.5 4 1.5s3-.5 4-1.5"/>
               </svg>
-            </div>
-            <h3>{tWhy("p1_t")}</h3>
-            <p>{tWhy("p1_b")}</p>
-          </article>
-
-          <article className="why-card">
-            <div className="why-card-icon" aria-hidden="true">
+            ) },
+            { t: tWhy("p2_t"), b: tWhy("p2_b"), icon: (
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2V5z"/>
                 <path d="M4 17h14"/>
                 <path d="M9 8h6M9 11h6"/>
               </svg>
-            </div>
-            <h3>{tWhy("p2_t")}</h3>
-            <p>{tWhy("p2_b")}</p>
-          </article>
-
-          <article className="why-card">
-            <div className="why-card-icon" aria-hidden="true">
+            ) },
+            { t: tWhy("p3_t"), b: tWhy("p3_b"), icon: (
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 2 4 5v7c0 4.5 3.5 8.5 8 10 4.5-1.5 8-5.5 8-10V5l-8-3z"/>
                 <path d="M9 12l2 2 4-4"/>
               </svg>
-            </div>
-            <h3>{tWhy("p3_t")}</h3>
-            <p>{tWhy("p3_b")}</p>
-          </article>
-
-          <article className="why-card">
-            <div className="why-card-icon" aria-hidden="true">
+            ) },
+            { t: tWhy("p4_t"), b: tWhy("p4_b"), icon: (
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M3 12c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/>
                 <path d="M3 17c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/>
               </svg>
-            </div>
-            <h3>{tWhy("p4_t")}</h3>
-            <p>{tWhy("p4_b")}</p>
-          </article>
-
-          <article className="why-card">
-            <div className="why-card-icon" aria-hidden="true">
+            ) },
+            { t: tWhy("p5_t"), b: tWhy("p5_b"), icon: (
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M3 3l18 18"/>
                 <path d="M10.7 5.3A10 10 0 0 1 22 12s-1 1.8-3 3.7"/>
                 <path d="M6.5 6.5C3.5 8.5 2 12 2 12s3 6 10 6c1.7 0 3.2-.3 4.5-.9"/>
                 <path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/>
               </svg>
-            </div>
-            <h3>{tWhy("p5_t")}</h3>
-            <p>{tWhy("p5_b")}</p>
-          </article>
+            ) },
+          ].map((card, i) => (
+            <MagneticCard key={i}>
+              <article className="why-card">
+                <div className="why-card-icon" aria-hidden="true">{card.icon}</div>
+                <h3>{card.t}</h3>
+                <p>{card.b}</p>
+              </article>
+            </MagneticCard>
+          ))}
         </RevealStagger>
       </Reveal>
 
-      {/* FEATURES */}
+      {/* ── FEATURES ────────────────────────────────────────────── */}
       <Reveal as="section" className="wrap features">
         <div className="features-head">
           <span className="eyebrow">{tFeat("eyebrow")}</span>
@@ -184,52 +183,73 @@ function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
         </div>
 
         <RevealStagger className="feature-grid">
-          <Link className="feature" href="/reader/1/1">
-            <span className="feature-num">{tFeat("f1_l")}</span>
-            <h3>{tFeat("f1_t")}</h3>
-            <p>{tFeat("f1_b")}</p>
-            <span className="link">{tFeat("f1_l2")}</span>
-            <div className="pic">
-              <div className="pic-content">
-                <div className="arabic pic-arabic" lang="ar" dir="rtl">بِسْمِ ٱللَّٰهِ</div>
-              </div>
-            </div>
-          </Link>
-
-          <Link className="feature" href="/listen">
-            <span className="feature-num">{tFeat("f2_l")}</span>
-            <h3>{tFeat("f2_t")}</h3>
-            <p>{tFeat("f2_b")}</p>
-            <span className="link">{tFeat("f2_l2")}</span>
-            <div className="pic">
-              <div className="pic-content">
-                <div className="pic-wave">
-                  {[6, 14, 22, 30, 36, 28, 18, 10, 24, 14, 8].map((h, i) => (
-                    <span key={i} style={{ height: h + "px", opacity: i === 4 ? 1 : undefined }}></span>
-                  ))}
+          <MagneticCard>
+            <Link className="feature" href="/reader/1/1">
+              <span className="feature-num">{tFeat("f1_l")}</span>
+              <h3>{tFeat("f1_t")}</h3>
+              <p>{tFeat("f1_b")}</p>
+              <span className="link">
+                {tFeat("f1_l2")}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </span>
+              <div className="pic">
+                <div className="pic-content">
+                  <div className="arabic pic-arabic" lang="ar" dir="rtl">بِسْمِ ٱللَّٰهِ</div>
                 </div>
               </div>
-            </div>
-          </Link>
+            </Link>
+          </MagneticCard>
 
-          <Link className="feature" href="/ask">
-            <span className="feature-num">{tFeat("f3_l")}</span>
-            <h3>{tFeat("f3_t")}</h3>
-            <p>{tFeat("f3_b")}</p>
-            <span className="link">{tFeat("f3_l2")}</span>
-            <div className="pic">
-              <div className="pic-content" style={{ alignItems: "flex-start", justifyContent: "flex-end", padding: 14, display: "flex", flexDirection: "column", width: "100%", height: "100%", boxSizing: "border-box" }}>
-                <div className="pic-chat" style={{ width: "100%" }}>
-                  <div className="b">{tEmo("chat_q")}</div>
-                  <div className="b right">{tEmo("chat_a")}</div>
+          <MagneticCard>
+            <Link className="feature" href="/listen">
+              <span className="feature-num">{tFeat("f2_l")}</span>
+              <h3>{tFeat("f2_t")}</h3>
+              <p>{tFeat("f2_b")}</p>
+              <span className="link">
+                {tFeat("f2_l2")}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </span>
+              <div className="pic">
+                <div className="pic-content">
+                  <div className="pic-wave">
+                    {[6, 14, 22, 30, 36, 28, 18, 10, 24, 14, 8].map((h, i) => (
+                      <span key={i} style={{ height: h + "px", opacity: i === 4 ? 1 : undefined }}></span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          </Link>
+            </Link>
+          </MagneticCard>
+
+          <MagneticCard>
+            <Link className="feature" href="/ask">
+              <span className="feature-num">{tFeat("f3_l")}</span>
+              <h3>{tFeat("f3_t")}</h3>
+              <p>{tFeat("f3_b")}</p>
+              <span className="link">
+                {tFeat("f3_l2")}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </span>
+              <div className="pic">
+                <div className="pic-content" style={{ alignItems: "flex-start", justifyContent: "flex-end", padding: 14, display: "flex", flexDirection: "column", width: "100%", height: "100%", boxSizing: "border-box" }}>
+                  <div className="pic-chat" style={{ width: "100%" }}>
+                    <div className="b">{tEmo("chat_q")}</div>
+                    <div className="b right">{tEmo("chat_a")}</div>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </MagneticCard>
         </RevealStagger>
       </Reveal>
 
-      {/* EMOTIONS */}
+      {/* ── EMOTIONS ────────────────────────────────────────────── */}
       <Reveal as="section" className="wrap emotions">
         <div className="emotions-head">
           <h2 style={{ fontWeight: 300 }}>{tEmo("heading")}</h2>
@@ -261,7 +281,7 @@ function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
         </RevealStagger>
       </Reveal>
 
-      {/* TRUST */}
+      {/* ── TRUST ───────────────────────────────────────────────── */}
       <Reveal as="section" className="wrap">
         <RevealStagger className="trust" delayStep={90}>
           <div><div className="n"><AnimatedNumber to={114} /></div><div className="l">{tTrust("suras")}</div></div>
@@ -272,9 +292,10 @@ function HomeContent({ isAuthenticated }: { isAuthenticated: boolean }) {
         </RevealStagger>
       </Reveal>
 
-      {/* CLOSING */}
+      {/* ── CLOSING ─────────────────────────────────────────────── */}
       <Reveal as="section" className="wrap">
         <div className="closing">
+          <MihrabArch />
           <span className="eyebrow">{tClose("eyebrow")}</span>
           <h2>
             <span>{tClose("line1")}</span>

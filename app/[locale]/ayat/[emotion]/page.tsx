@@ -172,7 +172,7 @@ export default async function EmotionPage({ params }: PageProps) {
   return (
     <>
       {/* HERO */}
-      <section className="wrap seo-hero">
+      <section className="wrap seo-hero" data-hero-ar="آية">
         <div className="crumbs">
           <Link href="/">{t("crumbs_root")}</Link> &nbsp;/&nbsp;
           <Link href="/ayat">{t("crumbs_ayat")}</Link> &nbsp;/&nbsp;

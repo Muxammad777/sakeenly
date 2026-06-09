@@ -117,7 +117,7 @@ function Content() {
   return (
     <>
       {/* HERO */}
-      <section className="wrap kid-hero">
+      <section className="wrap kid-hero" data-hero-ar="أطفال">
         <div className="geo-stars-fade" aria-hidden />
         <div className="kid-bubbles" aria-hidden="true">
           <div className="kid-bubble" style={{ width: 56, height: 56, top: "14%", left: "10%" }}>ا</div>

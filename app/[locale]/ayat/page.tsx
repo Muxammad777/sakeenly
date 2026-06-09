@@ -29,7 +29,7 @@ function AyatContent() {
 
   return (
     <>
-      <section className="wrap ay-hero">
+      <section className="wrap ay-hero" data-hero-ar="آيات">
         <div className="geo-stars-fade"></div>
         <span className="tag"><span className="tag-dot"></span><span>{t("badge")}</span></span>
         <h1>{t("h1")}</h1>

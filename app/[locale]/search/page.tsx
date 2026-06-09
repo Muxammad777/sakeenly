@@ -26,7 +26,7 @@ export default async function SearchPage({ params, searchParams }: PageProps) {
 
   return (
     <section className="wrap search-page">
-      <div className="search-hero">
+      <div className="search-hero" data-hero-ar="بَحْث">
         <span className="tag"><span className="tag-dot" /><span>{t("eyebrow")}</span></span>
         <h1>{t("title")}</h1>
         <p>{t("lede")}</p>

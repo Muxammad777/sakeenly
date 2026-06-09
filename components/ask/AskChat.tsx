@@ -78,7 +78,7 @@ export function AskChat({ isAuthenticated }: AskChatProps) {
 
   return (
     <>
-      <section className="wrap ask-hero">
+      <section className="wrap ask-hero" data-hero-ar="سُؤال">
         <div className="geo-stars-fade" aria-hidden />
         <span className="tag">
           <span className="tag-dot" />

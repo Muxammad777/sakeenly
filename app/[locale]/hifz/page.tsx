@@ -199,7 +199,7 @@ export default async function HifzDashboard({ params }: PageProps) {
   return (
     <>
       {/* ╭───────────────────────── HERO ─────────────────────────╮ */}
-      <section className="wrap hifz-hero">
+      <section className="wrap hifz-hero" data-hero-ar="حِفظ">
         <span className="tag"><span className="tag-dot"></span><span>{t("nav")}</span></span>
         <h1>{t("hero_h1")}</h1>
         <p>{t("hero_sub")}</p>

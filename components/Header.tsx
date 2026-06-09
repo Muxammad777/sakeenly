@@ -21,19 +21,19 @@ export function Header() {
   return (
     <header
       className="sticky top-0 z-40 border-b border-border/70 backdrop-blur-md supports-[backdrop-filter]:bg-bg/78"
-      style={{ backdropFilter: "blur(16px) saturate(140%)" }}
+      style={{ backdropFilter: "blur(18px) saturate(150%)" }}
     >
-      <div className="mx-auto flex h-[58px] max-w-[1240px] items-center gap-4 px-4 sm:gap-7 sm:px-7">
+      <div className="mx-auto flex h-[62px] max-w-[1240px] items-center gap-4 px-4 sm:gap-7 sm:px-7">
         <Logo />
 
-        <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
+        <nav className="nav-primary hidden items-center gap-1 md:flex" aria-label="Primary">
           {NAV.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-full px-3 py-2 text-sm font-medium text-fg-muted transition-colors hover:bg-surface hover:text-fg"
+              className="nav-link rounded-full px-3 py-2 text-sm font-medium text-fg-muted transition-colors hover:text-fg"
             >
-              {t(item.key)}
+              <span>{t(item.key)}</span>
             </Link>
           ))}
         </nav>

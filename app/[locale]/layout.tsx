@@ -9,6 +9,7 @@ import { Footer } from "@/components/Footer";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { ViewTransitionsRoot } from "@/components/ViewTransitionsRoot";
 import { LocaleDirSync } from "@/components/LocaleDirSync";
+import { CursorSpotlight } from "@/components/CursorSpotlight";
 import { isRtlLocale } from "@/lib/quran/format";
 import "@/app/preview-styles/index.css";
 
@@ -52,6 +53,7 @@ export default async function LocaleLayout({
         {/* Push lang+dir onto <html> from the resolved locale. RootLayout
             ships ltr placeholders; this corrects them for fa/ar etc. */}
         <LocaleDirSync locale={locale} dir={dir} />
+        <CursorSpotlight />
         <ScrollProgress />
         <ViewTransitionsRoot />
         <div className="flex min-h-screen flex-col" data-locale={locale} data-dir={dir}>

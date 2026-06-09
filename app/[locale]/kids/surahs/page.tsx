@@ -45,7 +45,7 @@ function Content() {
   });
   return (
     <>
-      <section className="wrap kid-hero">
+      <section className="wrap kid-hero" data-hero-ar="السُّوَر">
         <div className="geo-stars-fade"></div>
         <span className="tag"><span className="tag-dot"></span><span>{t("badge")}</span></span>
         <h1>{t("h1")}</h1>

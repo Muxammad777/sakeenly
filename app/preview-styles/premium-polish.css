@@ -1,0 +1,273 @@
+/* ════════════════════════════════════════════════════════════════════════════
+   Sakeenly — global premium polish layer (v2).
+   Loaded after shared.css + hero.css; adds the cursor spotlight, page-hero
+   refinements, ambient calligraphy, extra card hover targets and link
+   underline brush effect. Touches no markup — all selectors are opt-in
+   via attributes or already-present class names.
+   ════════════════════════════════════════════════════════════════════════════ */
+
+/* GLOBAL CURSOR SPOTLIGHT (driven by CursorSpotlight.tsx) */
+body.has-cursor-spotlight::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 30;
+  background: radial-gradient(
+    320px 240px at var(--cur-x, 50%) var(--cur-y, 30%),
+    oklch(var(--accent) / 0.10),
+    oklch(var(--accent) / 0.03) 35%,
+    transparent 65%
+  );
+  mix-blend-mode: screen;
+  transition: opacity 240ms ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  body.has-cursor-spotlight::before { display: none; }
+}
+
+/* PAGE-HERO LAYOUT — generous padding + flex centering for every page hero. */
+[class*="-hero"]:not(.hero):not(.about-hero-inline) {
+  padding-top: 88px;
+  padding-bottom: 56px;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  isolation: isolate;
+}
+@media (max-width: 760px) {
+  [class*="-hero"]:not(.hero):not(.about-hero-inline) {
+    padding-top: 64px;
+    padding-bottom: 40px;
+    min-height: 280px;
+  }
+}
+
+/* PAGE-HERO TYPOGRAPHY REVEAL — soft rise on first paint. */
+[class*="-hero"]:not(.hero):not(.about-hero-inline) > * {
+  position: relative;
+  z-index: 2;
+}
+[class*="-hero"]:not(.hero):not(.about-hero-inline) > h1 {
+  animation: page-hero-rise 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+[class*="-hero"]:not(.hero):not(.about-hero-inline) > .eyebrow,
+[class*="-hero"]:not(.hero):not(.about-hero-inline) > p,
+[class*="-hero"]:not(.hero):not(.about-hero-inline) > .lede,
+[class*="-hero"]:not(.hero):not(.about-hero-inline) > .sub {
+  animation: page-hero-rise 900ms 120ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes page-hero-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [class*="-hero"]:not(.hero):not(.about-hero-inline) > h1,
+  [class*="-hero"]:not(.hero):not(.about-hero-inline) > .eyebrow,
+  [class*="-hero"]:not(.hero):not(.about-hero-inline) > p,
+  [class*="-hero"]:not(.hero):not(.about-hero-inline) > .lede,
+  [class*="-hero"]:not(.hero):not(.about-hero-inline) > .sub {
+    animation: none;
+  }
+}
+
+/* AMBIENT ARABIC WORD — opt-in via data-hero-ar="…" on the hero section.
+   Floats huge & faint behind the headline. */
+[data-hero-ar]::before {
+  content: attr(data-hero-ar);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "KFGQPC-Hafs", "Amiri", "Scheherazade New", serif;
+  font-size: clamp(7rem, 17vw, 16rem);
+  line-height: 0.9;
+  color: oklch(var(--text));
+  opacity: 0.045;
+  letter-spacing: 0;
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+  text-shadow: 0 6px 60px oklch(var(--accent) / 0.18);
+  direction: rtl;
+}
+@media (prefers-reduced-motion: no-preference) {
+  [data-hero-ar]::before {
+    animation: hero-ambient-drift 16s ease-in-out infinite alternate;
+  }
+}
+@keyframes hero-ambient-drift {
+  from { transform: translate3d(0, -3px, 0); opacity: 0.035; }
+  to   { transform: translate3d(0,  3px, 0); opacity: 0.065; }
+}
+
+/* PREMIUM HOVER — extend the existing list of cards to more selectors used
+   across the app (hifz, listen, ayat-emotion, ask history, profile etc.). */
+.history-row.history-row,
+.reciter-strip.reciter-strip,
+.book-card.book-card,
+.lesson-card.lesson-card,
+.surah-link.surah-link,
+.surah-grid-card.surah-grid-card,
+.ay-card.ay-card,
+.ay-emotion-card.ay-emotion-card,
+.profile-card.profile-card,
+.scholar-mini.scholar-mini,
+.ask-history-row.ask-history-row,
+.kids-card.kids-card,
+.muallim-card.muallim-card,
+.kid-card.kid-card {
+  position: relative;
+  isolation: isolate;
+  transition: border-color 240ms ease, transform 240ms ease, box-shadow 240ms ease;
+}
+.history-row.history-row::after,
+.reciter-strip.reciter-strip::after,
+.book-card.book-card::after,
+.lesson-card.lesson-card::after,
+.surah-link.surah-link::after,
+.surah-grid-card.surah-grid-card::after,
+.ay-card.ay-card::after,
+.ay-emotion-card.ay-emotion-card::after,
+.profile-card.profile-card::after,
+.scholar-mini.scholar-mini::after,
+.ask-history-row.ask-history-row::after,
+.kids-card.kids-card::after,
+.muallim-card.muallim-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 0%,
+    color-mix(in oklab, oklch(var(--accent)) 14%, transparent),
+    transparent 70%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 280ms ease;
+  z-index: -1;
+}
+.history-row.history-row:hover,
+.reciter-strip.reciter-strip:hover,
+.book-card.book-card:hover,
+.lesson-card.lesson-card:hover,
+.surah-link.surah-link:hover,
+.surah-grid-card.surah-grid-card:hover,
+.ay-card.ay-card:hover,
+.ay-emotion-card.ay-emotion-card:hover,
+.profile-card.profile-card:hover,
+.scholar-mini.scholar-mini:hover,
+.ask-history-row.ask-history-row:hover,
+.kids-card.kids-card:hover,
+.muallim-card.muallim-card:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 16px 44px -22px color-mix(in oklab, oklch(var(--accent)) 55%, transparent),
+    0 0 0 1px color-mix(in oklab, oklch(var(--accent)) 14%, transparent);
+}
+.history-row.history-row:hover::after,
+.reciter-strip.reciter-strip:hover::after,
+.book-card.book-card:hover::after,
+.lesson-card.lesson-card:hover::after,
+.surah-link.surah-link:hover::after,
+.surah-grid-card.surah-grid-card:hover::after,
+.ay-card.ay-card:hover::after,
+.ay-emotion-card.ay-emotion-card:hover::after,
+.profile-card.profile-card:hover::after,
+.scholar-mini.scholar-mini:hover::after,
+.ask-history-row.ask-history-row:hover::after,
+.kids-card.kids-card:hover::after,
+.muallim-card.muallim-card:hover::after { opacity: 1; }
+
+/* GENERIC HEADLINE BALANCE */
+[class*="-hero"] h1,
+section.wrap > h1,
+section.wrap-tight > h1,
+[class*="-hero"] .lede,
+[class*="-hero"] .sub,
+[class*="-hero"] > p {
+  text-wrap: balance;
+}
+
+/* ACCENT WORD IN PAGE-HERO HEADLINES — italic gold for <em>/<i>/.acc */
+[class*="-hero"] h1 em,
+[class*="-hero"] h1 i,
+[class*="-hero"] h1 .acc {
+  font-style: italic;
+  color: oklch(var(--accent));
+  font-weight: 400;
+}
+
+/* BRUSH-UNDERLINE FOR INLINE ACCENT LINKS — same vocabulary as the home page. */
+.prose a,
+.lede a,
+.sub a,
+.txt a,
+section a.text-accent {
+  position: relative;
+  padding-bottom: 1px;
+  background: linear-gradient(
+    90deg,
+    oklch(var(--accent) / 0.0),
+    oklch(var(--accent) / 0.0)
+  ) bottom left / 0% 1.5px no-repeat;
+  transition: background-size 260ms cubic-bezier(0.22, 1, 0.36, 1),
+              color 200ms ease;
+}
+.prose a:hover,
+.lede a:hover,
+.sub a:hover,
+.txt a:hover,
+section a.text-accent:hover {
+  background-image: linear-gradient(
+    90deg,
+    oklch(var(--accent) / 0.85),
+    oklch(var(--accent) / 0.85)
+  );
+  background-size: 100% 1.5px;
+}
+
+/* SECTION RHYTHM — every page-hero is followed by a card grid. Tighten the
+   space between hero and the first content section so it doesn't read as
+   detached. */
+[class*="-hero"]:not(.hero) + section,
+[class*="-hero"]:not(.hero) + .wrap {
+  margin-top: 8px;
+}
+
+/* CARD GRID DEFAULTS — keep cards on a soft surface gradient by default,
+   matching the home cards. Pages that override these classes are unaffected
+   (CSS cascade preserves their later rules). */
+.scholar-card,
+.kid-card,
+.reciter-card,
+.story-card,
+.alphabet-card,
+.surah-card,
+.surah-grid-card,
+.ay-card,
+.ay-emotion-card,
+.history-row,
+.profile-card,
+.lesson-card,
+.muallim-card {
+  background:
+    linear-gradient(180deg, oklch(var(--surface)) 0%, oklch(var(--surface-2)) 100%);
+}
+
+/* CTA BUTTON — uniform polish in page heroes (subtler than the home but
+   still feels premium). */
+[class*="-hero"] .btn-primary {
+  box-shadow:
+    0 1px 0 oklch(1 0 0 / 0.16) inset,
+    0 10px 28px -14px oklch(var(--accent) / 0.42);
+}
+[class*="-hero"] .btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 1px 0 oklch(1 0 0 / 0.2) inset,
+    0 18px 38px -16px oklch(var(--accent) / 0.55);
+}

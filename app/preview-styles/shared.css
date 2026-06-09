@@ -581,3 +581,78 @@ section + .wrap:not(.no-auto-divider)::before,
 .story-card.story-card:hover::after,
 .alphabet-card.alphabet-card:hover::after,
 .surah-card.surah-card:hover::after { opacity: 1; }
+
+/* ════════════════════════════════════════════════════════════════════════════
+   PRIMARY NAV — animated underline + soft hover
+   ════════════════════════════════════════════════════════════════════════════ */
+.nav-primary .nav-link {
+  position: relative;
+  letter-spacing: 0.005em;
+}
+.nav-primary .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 4px;
+  height: 1.5px;
+  background: linear-gradient(90deg, oklch(var(--accent) / 0.0), oklch(var(--accent)), oklch(var(--accent) / 0.0));
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1), opacity 240ms ease;
+  opacity: 0;
+  pointer-events: none;
+}
+.nav-primary .nav-link:hover::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+.nav-primary .nav-link[aria-current="page"]::after {
+  transform: scaleX(0.6);
+  opacity: 0.7;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   PREMIUM BUTTON POLISH — softer transitions + better hover state
+   ════════════════════════════════════════════════════════════════════════════ */
+.btn {
+  transition: transform 160ms cubic-bezier(0.22, 1, 0.36, 1),
+              background 220ms ease,
+              border-color 220ms ease,
+              color 220ms ease,
+              box-shadow 240ms ease;
+  letter-spacing: 0.005em;
+}
+.btn-primary {
+  box-shadow:
+    0 1px 0 oklch(1 0 0 / 0.16) inset,
+    0 10px 30px -14px oklch(var(--accent) / 0.45);
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 1px 0 oklch(1 0 0 / 0.2) inset,
+    0 18px 40px -16px oklch(var(--accent) / 0.6);
+}
+.btn-ghost:hover { border-color: oklch(var(--accent) / 0.45); }
+
+/* ════════════════════════════════════════════════════════════════════════════
+   EYEBROW WITH ACCENT GLYPH — subtle gold star prefix
+   ════════════════════════════════════════════════════════════════════════════ */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+.eyebrow::before {
+  content: "✦";
+  color: oklch(var(--accent));
+  font-size: 9px;
+  letter-spacing: 0;
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+/* Stop the auto-eyebrow glyph from showing inside the activity ticker
+   (the ticker uses no eyebrow class, but defensive). */
+.activity-text::before { content: none !important; }

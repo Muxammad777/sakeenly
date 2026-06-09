@@ -22,7 +22,7 @@ function Content() {
 
   return (
     <>
-      <section className="wrap priv-hero">
+      <section className="wrap priv-hero" data-hero-ar="خُصوصِيَّة">
         <span className="tag"><span className="tag-dot"></span>Отчёт о прозрачности · Q2 2026</span>
         <h1 style={{ marginTop: 18 }}>{t("h1")}</h1>
         <p className="lede">{t("lede")}</p>

@@ -29,7 +29,7 @@ function Content() {
 
   return (
     <>
-      <section className="wrap sb-hero">
+      <section className="wrap sb-hero" data-hero-ar="عُلَماء">
         <div className="geo-stars-fade"></div>
         <span className="tag"><span className="tag-dot"></span><span>{t("badge")}</span></span>
         <h1>{t("h1")}</h1>
