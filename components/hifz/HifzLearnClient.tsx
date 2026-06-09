@@ -340,14 +340,17 @@ export function HifzLearnClient({ ayat, surahName, surahNameArabic }: Props) {
           <select
             value={loopCount}
             onChange={(e) => setLoopCount(Number(e.target.value))}
-            style={{ border: 0, background: "transparent", color: "inherit", marginLeft: 4 }}
+            // colorScheme:"dark" makes Chrome/Firefox render the native
+            // <option> popup in dark mode so it matches the site instead
+            // of flashing white.
+            style={{ border: 0, background: "transparent", color: "inherit", marginLeft: 4, colorScheme: "dark" }}
           >
-            <option value={1}>1×</option>
-            <option value={3}>3×</option>
-            <option value={5}>5×</option>
-            <option value={7}>7×</option>
-            <option value={10}>10×</option>
-            <option value={0}>∞</option>
+            <option style={{ background: "oklch(var(--bg))", color: "oklch(var(--text))" }} value={1}>1×</option>
+            <option style={{ background: "oklch(var(--bg))", color: "oklch(var(--text))" }} value={3}>3×</option>
+            <option style={{ background: "oklch(var(--bg))", color: "oklch(var(--text))" }} value={5}>5×</option>
+            <option style={{ background: "oklch(var(--bg))", color: "oklch(var(--text))" }} value={7}>7×</option>
+            <option style={{ background: "oklch(var(--bg))", color: "oklch(var(--text))" }} value={10}>10×</option>
+            <option style={{ background: "oklch(var(--bg))", color: "oklch(var(--text))" }} value={0}>∞</option>
           </select>
         </label>
         <label className="hifz-control-btn">
@@ -355,12 +358,12 @@ export function HifzLearnClient({ ayat, surahName, surahNameArabic }: Props) {
           <select
             value={speed}
             onChange={(e) => setSpeed(Number(e.target.value))}
-            style={{ border: 0, background: "transparent", color: "inherit", marginLeft: 4 }}
+            style={{ border: 0, background: "transparent", color: "inherit", marginLeft: 4, colorScheme: "dark" }}
           >
-            <option value={0.5}>0.5×</option>
-            <option value={0.7}>0.7×</option>
-            <option value={0.85}>0.85×</option>
-            <option value={1}>1.0×</option>
+            <option style={{ background: "oklch(var(--bg))", color: "oklch(var(--text))" }} value={0.5}>0.5×</option>
+            <option style={{ background: "oklch(var(--bg))", color: "oklch(var(--text))" }} value={0.7}>0.7×</option>
+            <option style={{ background: "oklch(var(--bg))", color: "oklch(var(--text))" }} value={0.85}>0.85×</option>
+            <option style={{ background: "oklch(var(--bg))", color: "oklch(var(--text))" }} value={1}>1.0×</option>
           </select>
         </label>
         <button

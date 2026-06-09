@@ -1019,10 +1019,18 @@ function MushafReaderInner(props: MushafReaderProps) {
                 fontSize: 13,
                 outline: "none",
                 fontFamily: "inherit",
+                // colorScheme:"dark" tells Chrome/Firefox to render the
+                // native <option> dropdown in dark mode (otherwise it
+                // pops up white on the dark site).
+                colorScheme: "dark",
               }}
             >
               {RECITERS.map((r) => (
-                <option key={r.slug} value={r.slug}>
+                <option
+                  key={r.slug}
+                  value={r.slug}
+                  style={{ background: "oklch(var(--bg))", color: "oklch(var(--text))" }}
+                >
                   {r.name}
                   {r.style ? ` · ${r.style}` : ""}
                 </option>
