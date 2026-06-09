@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 // Preview of the first 16 letters on the /kids hub. Reflects real progress
 // (green check on learned, soft dot on in-progress). Tapping a letter
 // goes to /kids/alphabet#<slug> which the alphabet page scrolls to.
@@ -12,6 +14,7 @@ const PREVIEW_COUNT = 16;
 
 export function KidAlphabetPreview() {
   const { letters } = useKids();
+  const t = useTranslations("k");
   const learnedCount = ARABIC_LETTERS.filter((l) => letters.get(l.slug)?.status === "learned").length;
   const pct = Math.round((learnedCount / ARABIC_LETTERS.length) * 100);
 
@@ -34,7 +37,7 @@ export function KidAlphabetPreview() {
         })}
       </div>
       <div className="iqra-progress">
-        <span>Прогресс алфавита</span>
+        <span>{t("alpha_progress")}</span>
         <div className="bar"><div style={{ width: `${pct}%` }} /></div>
         <span>{pct}%</span>
       </div>

@@ -1189,5 +1189,43 @@
     "p4_b": "No banners, no infinite feed, no red push notifications.",
     "p5_t": "No trackers",
     "p5_b": "We don’t follow you and we don’t sell your data. Just text, voice, silence."
+  },
+  "k": {
+    "streak_alphabet_label": "Alphabet",
+    "streak_alphabet_title": "Learned {n} of {total}",
+    "streak_days_label": "Days in a row",
+    "streak_days_title": "{n} days in a row",
+    "streak_days_start": "Start your first day",
+    "streak_weekdays": [
+      "M",
+      "T",
+      "W",
+      "T",
+      "F",
+      "S",
+      "S"
+    ],
+    "daily_eyebrow": "Today’s task",
+    "daily_title": "5 steps to a new star",
+    "daily_sub": "{newCount} new · {reviewCount} to review",
+    "daily_loading_title": "Getting ready…",
+    "daily_done_title": "MashaAllah — all done!",
+    "daily_done_sub": "Come back tomorrow for a new task.",
+    "daily_new": "new",
+    "daily_review": "review",
+    "badges_title": "Achievements",
+    "badges_new": "New badge",
+    "surah_learned": "Learned",
+    "surah_best": "Best — {p}%",
+    "surah_short_best": "Best: {p}%",
+    "surah_start": "Ready to start",
+    "surah_listen": "Listen",
+    "surah_learn": "Learn",
+    "surah_progress": "Surah progress",
+    "surah_done_eyebrow": "MashaAllah!",
+    "alpha_progress": "Alphabet progress",
+    "alpha_stat_label": "Alphabet — your progress",
+    "trace_done_pass": "MashaAllah! {p}/100 — letter learned.",
+    "trace_done_retry": "Almost — {p}/100. Try again."
   }
 }

@@ -1189,5 +1189,43 @@
     "p4_b": "बिना बैनर, बिना अनंत फ़ीड, बिना लाल पुश नोटिफ़िकेशन।",
     "p5_t": "कोई ट्रैकर नहीं",
     "p5_b": "हम आपका पीछा नहीं करते और आपका डेटा नहीं बेचते। बस पाठ, आवाज़, मौन।"
+  },
+  "k": {
+    "streak_alphabet_label": "वर्णमाला",
+    "streak_alphabet_title": "{total} में से {n} सीख लिए",
+    "streak_days_label": "लगातार दिन",
+    "streak_days_title": "{n} दिन लगातार",
+    "streak_days_start": "अपना पहला दिन शुरू करें",
+    "streak_weekdays": [
+      "सो",
+      "मं",
+      "बु",
+      "गु",
+      "शु",
+      "श",
+      "र"
+    ],
+    "daily_eyebrow": "आज का काम",
+    "daily_title": "नए सितारे तक 5 कदम",
+    "daily_sub": "{newCount} नए · {reviewCount} दोहराव",
+    "daily_loading_title": "तैयार हो रहा है…",
+    "daily_done_title": "मा शा अल्लाह — सब हो गया!",
+    "daily_done_sub": "कल नए काम के लिए आना।",
+    "daily_new": "नया",
+    "daily_review": "दोहराओ",
+    "badges_title": "उपलब्धियाँ",
+    "badges_new": "नया तमगा",
+    "surah_learned": "याद हो गई",
+    "surah_best": "सर्वश्रेष्ठ — {p}%",
+    "surah_short_best": "सर्वश्रेष्ठ: {p}%",
+    "surah_start": "तैयार",
+    "surah_listen": "सुनो",
+    "surah_learn": "सीखो",
+    "surah_progress": "सूरह की प्रगति",
+    "surah_done_eyebrow": "मा शा अल्लाह!",
+    "alpha_progress": "वर्णमाला की प्रगति",
+    "alpha_stat_label": "वर्णमाला — आपकी प्रगति",
+    "trace_done_pass": "मा शा अल्लाह! {p}/100 — अक्षर याद हो गया।",
+    "trace_done_retry": "लगभग — {p}/100. फिर कोशिश करो।"
   }
 }

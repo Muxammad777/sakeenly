@@ -1189,5 +1189,43 @@
     "p4_b": "Бе баннерҳо, бе лентаи беохир, бе огоҳиҳои сурх.",
     "p5_t": "Бе пайгирӣ",
     "p5_b": "Туро пайгирӣ намекунем ва маълумотатро намефурӯшем. Танҳо матн, овоз, хомӯшӣ."
+  },
+  "k": {
+    "streak_alphabet_label": "Алифбо",
+    "streak_alphabet_title": "{n} аз {total}-ро омӯхтӣ",
+    "streak_days_label": "Рӯзҳои паиҳам",
+    "streak_days_title": "{n} рӯз паиҳам",
+    "streak_days_start": "Рӯзи аввалатро оғоз кун",
+    "streak_weekdays": [
+      "Д",
+      "С",
+      "Ч",
+      "П",
+      "Ҷ",
+      "Ш",
+      "Я"
+    ],
+    "daily_eyebrow": "Вазифаи имрӯз",
+    "daily_title": "5 қадам то ситораи нав",
+    "daily_sub": "{newCount} нав · {reviewCount} такрор",
+    "daily_loading_title": "Тайёр карда мешавад…",
+    "daily_done_title": "МошоАллоҳ — ҳама шуд!",
+    "daily_done_sub": "Пагоҳ боз ҳам биё.",
+    "daily_new": "нав",
+    "daily_review": "такрор",
+    "badges_title": "Дастовардҳо",
+    "badges_new": "Нишони нав",
+    "surah_learned": "Ҳифз шуд",
+    "surah_best": "Беҳтарин — {p}%",
+    "surah_short_best": "Беҳтарин: {p}%",
+    "surah_start": "Тайёр",
+    "surah_listen": "Шунавед",
+    "surah_learn": "Биомӯзед",
+    "surah_progress": "Пешрафти сура",
+    "surah_done_eyebrow": "МошоАллоҳ!",
+    "alpha_progress": "Пешрафти алифбо",
+    "alpha_stat_label": "Алифбо — пешрафти ту",
+    "trace_done_pass": "МошоАллоҳ! {p}/100 — ҳарф ҳифз шуд.",
+    "trace_done_retry": "Қариб — {p}/100. Боз як бор."
   }
 }

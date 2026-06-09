@@ -1189,5 +1189,43 @@
     "p4_b": "بدون بنر، بدون فید بی‌پایان، بدون نوتیفیکیشن قرمز.",
     "p5_t": "بدون ردیاب",
     "p5_b": "تو را دنبال نمی‌کنیم و داده‌هایت را نمی‌فروشیم. فقط متن، صدا، سکوت."
+  },
+  "k": {
+    "streak_alphabet_label": "الفبا",
+    "streak_alphabet_title": "{n} از {total} را یاد گرفتی",
+    "streak_days_label": "روزهای پیاپی",
+    "streak_days_title": "{n} روز پیاپی",
+    "streak_days_start": "اولین روزت را شروع کن",
+    "streak_weekdays": [
+      "د",
+      "س",
+      "چ",
+      "پ",
+      "ج",
+      "ش",
+      "ی"
+    ],
+    "daily_eyebrow": "مأموریت امروز",
+    "daily_title": "۵ گام تا ستاره‌ی جدید",
+    "daily_sub": "{newCount} جدید · {reviewCount} مرور",
+    "daily_loading_title": "در حال آماده‌سازی…",
+    "daily_done_title": "ماشاءالله — تمام شد!",
+    "daily_done_sub": "فردا برای مأموریت جدید برگرد.",
+    "daily_new": "جدید",
+    "daily_review": "مرور",
+    "badges_title": "دستاوردها",
+    "badges_new": "نشان جدید",
+    "surah_learned": "حفظ شد",
+    "surah_best": "بهترین — {p}٪",
+    "surah_short_best": "بهترین: {p}٪",
+    "surah_start": "آماده‌ای؟",
+    "surah_listen": "گوش بده",
+    "surah_learn": "یاد بگیر",
+    "surah_progress": "پیشرفت سوره",
+    "surah_done_eyebrow": "ماشاءالله!",
+    "alpha_progress": "پیشرفت الفبا",
+    "alpha_stat_label": "الفبا — پیشرفت تو",
+    "trace_done_pass": "ماشاءالله! {p}/100 — حرف حفظ شد.",
+    "trace_done_retry": "تقریباً — {p}/100. دوباره امتحان کن."
   }
 }

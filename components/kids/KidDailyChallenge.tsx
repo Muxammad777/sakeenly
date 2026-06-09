@@ -6,7 +6,12 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import { useKids } from "./KidsProvider";
+
+function applyTpl(tpl: string, vars: Record<string, string | number>): string {
+  return tpl.replace(/\{(\w+)\}/g, (_, k) => String(vars[k] ?? `{${k}}`));
+}
 
 interface DailyItem {
   type: "letter" | "surah";
@@ -18,6 +23,7 @@ interface DailyItem {
 
 export function KidDailyChallenge() {
   const { profile } = useKids();
+  const t = useTranslations("k");
   const [items, setItems] = useState<DailyItem[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -42,8 +48,8 @@ export function KidDailyChallenge() {
     return (
       <div className="kid-daily kid-daily-skeleton" aria-hidden="true">
         <div className="kid-daily-head">
-          <div className="kid-daily-eyebrow">Задание на сегодня</div>
-          <div className="kid-daily-title">Готовим…</div>
+          <div className="kid-daily-eyebrow">{t("daily_eyebrow")}</div>
+          <div className="kid-daily-title">{t("daily_loading_title")}</div>
         </div>
       </div>
     );
@@ -53,20 +59,23 @@ export function KidDailyChallenge() {
     return (
       <div className="kid-daily kid-daily-done">
         <div className="kid-daily-head">
-          <div className="kid-daily-eyebrow">Задание на сегодня</div>
-          <div className="kid-daily-title">МашаАллах — всё сделано!</div>
-          <p className="kid-daily-sub">Возвращайся завтра за новым заданием.</p>
+          <div className="kid-daily-eyebrow">{t("daily_eyebrow")}</div>
+          <div className="kid-daily-title">{t("daily_done_title")}</div>
+          <p className="kid-daily-sub">{t("daily_done_sub")}</p>
         </div>
       </div>
     );
   }
 
+  const newCount = items.filter(i => i.mode === "new").length;
+  const reviewCount = items.filter(i => i.mode === "review").length;
+
   return (
     <div className="kid-daily">
       <div className="kid-daily-head">
-        <div className="kid-daily-eyebrow">Задание на сегодня</div>
-        <h3 className="kid-daily-title">5 шагов до новой звёздочки</h3>
-        <p className="kid-daily-sub">{items.filter(i => i.mode === "new").length} новых · {items.filter(i => i.mode === "review").length} на повторение</p>
+        <div className="kid-daily-eyebrow">{t("daily_eyebrow")}</div>
+        <h3 className="kid-daily-title">{t("daily_title")}</h3>
+        <p className="kid-daily-sub">{applyTpl(t.raw("daily_sub"), { newCount, reviewCount })}</p>
       </div>
       <ul className="kid-daily-list">
         {items.map((it, idx) => {
@@ -79,7 +88,7 @@ export function KidDailyChallenge() {
                 <span className="kid-daily-ar" lang="ar">{it.ar}</span>
                 <span className="kid-daily-text">
                   <span className="kid-daily-label">{it.label}</span>
-                  <span className="kid-daily-mode">{it.mode === "new" ? "новое" : "повтори"}</span>
+                  <span className="kid-daily-mode">{it.mode === "new" ? t("daily_new") : t("daily_review")}</span>
                 </span>
                 <svg className="kid-daily-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </Link>

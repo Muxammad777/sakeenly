@@ -1189,5 +1189,43 @@
     "p4_b": "Tanpa sepanduk, tanpa suapan tak berkesudahan, tanpa pemberitahuan push merah.",
     "p5_t": "Tiada penjejak",
     "p5_b": "Kami tidak mengikuti anda dan tidak menjual data anda. Hanya teks, suara, kesunyian."
+  },
+  "k": {
+    "streak_alphabet_label": "Huruf",
+    "streak_alphabet_title": "Belajar {n} daripada {total}",
+    "streak_days_label": "Hari berturut",
+    "streak_days_title": "{n} hari berturut",
+    "streak_days_start": "Mulakan hari pertama",
+    "streak_weekdays": [
+      "I",
+      "S",
+      "R",
+      "K",
+      "J",
+      "S",
+      "A"
+    ],
+    "daily_eyebrow": "Tugas hari ini",
+    "daily_title": "5 langkah ke bintang baru",
+    "daily_sub": "{newCount} baru · {reviewCount} ulang",
+    "daily_loading_title": "Sedang disiapkan…",
+    "daily_done_title": "MashaAllah — semua selesai!",
+    "daily_done_sub": "Kembali esok untuk tugas baru.",
+    "daily_new": "baru",
+    "daily_review": "ulang",
+    "badges_title": "Pencapaian",
+    "badges_new": "Lencana baru",
+    "surah_learned": "Sudah dihafal",
+    "surah_best": "Terbaik — {p}%",
+    "surah_short_best": "Terbaik: {p}%",
+    "surah_start": "Sedia",
+    "surah_listen": "Dengar",
+    "surah_learn": "Belajar",
+    "surah_progress": "Kemajuan surah",
+    "surah_done_eyebrow": "MashaAllah!",
+    "alpha_progress": "Kemajuan huruf",
+    "alpha_stat_label": "Huruf — kemajuan anda",
+    "trace_done_pass": "MashaAllah! {p}/100 — huruf dihafal.",
+    "trace_done_retry": "Hampir — {p}/100. Cuba lagi."
   }
 }

@@ -5,7 +5,12 @@
 // Tapping a card goes to /kids/surahs/[num] learn page.
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { useKids } from "./KidsProvider";
+
+function applyTpl(tpl: string, vars: Record<string, string | number>): string {
+  return tpl.replace(/\{(\w+)\}/g, (_, k) => String(vars[k] ?? `{${k}}`));
+}
 
 interface SurahMeta {
   n: number;
@@ -21,6 +26,7 @@ interface Props { surahs: SurahMeta[]; }
 
 export function SurahsIndex({ surahs }: Props) {
   const { surahs: progress } = useKids();
+  const t = useTranslations("k");
   return (
     <div className="ks-grid">
       {surahs.map((s) => {
@@ -45,7 +51,7 @@ export function SurahsIndex({ surahs }: Props) {
               ))}
             </div>
             <div className="ks-foot">
-              <span className="label">{learned ? "Выучена" : recite > 0 ? `Лучший: ${recite}%` : s.label}</span>
+              <span className="label">{learned ? t("surah_learned") : recite > 0 ? applyTpl(t.raw("surah_short_best"), { p: recite }) : s.label}</span>
             </div>
           </Link>
         );

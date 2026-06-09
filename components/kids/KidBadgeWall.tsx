@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 // KidBadgeWall — small grid of earned + locked badges.
 // Newly-earned badges pop up via the toast at the top of the screen.
 
@@ -20,6 +22,7 @@ const ICONS: Record<string, JSX.Element> = {
 
 export function KidBadgeWall() {
   const { badges, freshBadges, consumeFreshBadges } = useKids();
+  const t = useTranslations("k");
 
   useEffect(() => {
     if (!freshBadges.length) return;
@@ -30,7 +33,7 @@ export function KidBadgeWall() {
   return (
     <>
       <div className="kid-badge-wall">
-        <h2 className="kid-section-title">Достижения</h2>
+        <h2 className="kid-section-title">{t("badges_title")}</h2>
         <div className="kid-badge-grid">
           {KID_BADGES.map((b) => {
             const earned = badges.has(b.slug);
@@ -54,7 +57,7 @@ export function KidBadgeWall() {
               <div key={slug} className="kid-badge-toast-card">
                 <div className="kid-badge-toast-icon">{ICONS[def.icon] ?? ICONS.stars}</div>
                 <div>
-                  <div className="kid-badge-toast-eyebrow">Новая награда</div>
+                  <div className="kid-badge-toast-eyebrow">{t("badges_new")}</div>
                   <div className="kid-badge-toast-title">{def.title}</div>
                 </div>
               </div>

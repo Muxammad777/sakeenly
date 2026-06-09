@@ -1189,5 +1189,43 @@
     "p4_b": "Без баннеров, бесконечной ленты и красных push-уведомлений.",
     "p5_t": "Никаких трекеров",
     "p5_b": "Не следим за тобой и не продаём данные. Только текст, голос, тишина."
+  },
+  "k": {
+    "streak_alphabet_label": "Алфавит",
+    "streak_alphabet_title": "Выучил {n} из {total}",
+    "streak_days_label": "Дни подряд",
+    "streak_days_title": "Занимаешься {n} дней подряд",
+    "streak_days_start": "Начни первый день",
+    "streak_weekdays": [
+      "П",
+      "В",
+      "С",
+      "Ч",
+      "П",
+      "С",
+      "В"
+    ],
+    "daily_eyebrow": "Задание на сегодня",
+    "daily_title": "5 шагов до новой звёздочки",
+    "daily_sub": "{newCount} новых · {reviewCount} на повторение",
+    "daily_loading_title": "Готовим…",
+    "daily_done_title": "МашаАллах — всё сделано!",
+    "daily_done_sub": "Возвращайся завтра за новым заданием.",
+    "daily_new": "новое",
+    "daily_review": "повтори",
+    "badges_title": "Достижения",
+    "badges_new": "Новая награда",
+    "surah_learned": "Выучена",
+    "surah_best": "Лучший результат — {p}%",
+    "surah_short_best": "Лучший: {p}%",
+    "surah_start": "Готов начать",
+    "surah_listen": "Слушать",
+    "surah_learn": "Учить",
+    "surah_progress": "Прогресс по суре",
+    "surah_done_eyebrow": "МашаАллах!",
+    "alpha_progress": "Прогресс алфавита",
+    "alpha_stat_label": "Алфавит — твой прогресс",
+    "trace_done_pass": "МашаАллах! {p}/100 — буква выучена.",
+    "trace_done_retry": "Почти получилось — {p}/100. Попробуй ещё раз."
   }
 }

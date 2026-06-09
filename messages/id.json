@@ -1189,5 +1189,43 @@
     "p4_b": "Tanpa banner, tanpa feed tanpa akhir, tanpa notifikasi push merah.",
     "p5_t": "Tanpa pelacak",
     "p5_b": "Kami tidak mengikutimu dan tidak menjual datamu. Hanya teks, suara, keheningan."
+  },
+  "k": {
+    "streak_alphabet_label": "Huruf",
+    "streak_alphabet_title": "Sudah belajar {n} dari {total}",
+    "streak_days_label": "Hari beruntun",
+    "streak_days_title": "{n} hari beruntun",
+    "streak_days_start": "Mulai hari pertamamu",
+    "streak_weekdays": [
+      "S",
+      "S",
+      "R",
+      "K",
+      "J",
+      "S",
+      "M"
+    ],
+    "daily_eyebrow": "Tugas hari ini",
+    "daily_title": "5 langkah menuju bintang baru",
+    "daily_sub": "{newCount} baru · {reviewCount} pengulangan",
+    "daily_loading_title": "Sedang disiapkan…",
+    "daily_done_title": "MasyaAllah — semua selesai!",
+    "daily_done_sub": "Kembali besok untuk tugas baru.",
+    "daily_new": "baru",
+    "daily_review": "ulang",
+    "badges_title": "Pencapaian",
+    "badges_new": "Lencana baru",
+    "surah_learned": "Sudah hafal",
+    "surah_best": "Terbaik — {p}%",
+    "surah_short_best": "Terbaik: {p}%",
+    "surah_start": "Siap",
+    "surah_listen": "Dengar",
+    "surah_learn": "Belajar",
+    "surah_progress": "Kemajuan surah",
+    "surah_done_eyebrow": "MasyaAllah!",
+    "alpha_progress": "Kemajuan huruf",
+    "alpha_stat_label": "Huruf — kemajuanmu",
+    "trace_done_pass": "MasyaAllah! {p}/100 — huruf dihafal.",
+    "trace_done_retry": "Hampir — {p}/100. Coba lagi."
   }
 }

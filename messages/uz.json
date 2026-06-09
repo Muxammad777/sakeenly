@@ -1189,5 +1189,43 @@
     "p4_b": "Bannerlarsiz, cheksiz tasmasiz, qizil push-bildirishnomalarsiz.",
     "p5_t": "Hech qanday kuzatuvchi yo‘q",
     "p5_b": "Sizni kuzatmaymiz va ma’lumotingizni sotmaymiz. Faqat matn, ovoz, sukunat."
+  },
+  "k": {
+    "streak_alphabet_label": "Alifbo",
+    "streak_alphabet_title": "{total} dan {n} tasini o‘rganding",
+    "streak_days_label": "Ketma-ket kunlar",
+    "streak_days_title": "{n} kun ketma-ket",
+    "streak_days_start": "Birinchi kuningni boshla",
+    "streak_weekdays": [
+      "D",
+      "S",
+      "Ch",
+      "P",
+      "J",
+      "Sh",
+      "Y"
+    ],
+    "daily_eyebrow": "Bugungi vazifa",
+    "daily_title": "Yangi yulduzgacha 5 qadam",
+    "daily_sub": "{newCount} yangi · {reviewCount} takrorlash",
+    "daily_loading_title": "Tayyorlanmoqda…",
+    "daily_done_title": "MashaAlloh — barchasi bajarildi!",
+    "daily_done_sub": "Ertaga yangi vazifa uchun qayt.",
+    "daily_new": "yangi",
+    "daily_review": "takror",
+    "badges_title": "Yutuqlar",
+    "badges_new": "Yangi mukofot",
+    "surah_learned": "Yodlandi",
+    "surah_best": "Eng yaxshi — {p}%",
+    "surah_short_best": "Eng yaxshi: {p}%",
+    "surah_start": "Boshlashga tayyor",
+    "surah_listen": "Tinglash",
+    "surah_learn": "O‘rganish",
+    "surah_progress": "Sura taraqqiyoti",
+    "surah_done_eyebrow": "MashaAlloh!",
+    "alpha_progress": "Alifbo taraqqiyoti",
+    "alpha_stat_label": "Alifbo — sening taraqqiyoting",
+    "trace_done_pass": "MashaAlloh! {p}/100 — harf yodlandi.",
+    "trace_done_retry": "Deyarli — {p}/100. Yana urin."
   }
 }

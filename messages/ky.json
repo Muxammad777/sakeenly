@@ -1189,5 +1189,43 @@
     "p4_b": "Баннерсиз, чексиз тасмасыз, кызыл push-эскертүүсүз.",
     "p5_t": "Эч кандай трекер жок",
     "p5_b": "Сизди көзөмөлдөбөйбүз жана маалыматыңызды сатпайбыз. Тексттен, үндөн, тынчтыктан башка эч нерсе жок."
+  },
+  "k": {
+    "streak_alphabet_label": "Алфавит",
+    "streak_alphabet_title": "{total} ден {n} үйрөндүң",
+    "streak_days_label": "Катары менен күн",
+    "streak_days_title": "{n} күн катары менен",
+    "streak_days_start": "Биринчи күнүңдү башта",
+    "streak_weekdays": [
+      "Д",
+      "Ш",
+      "Ш",
+      "Б",
+      "Ж",
+      "И",
+      "Ж"
+    ],
+    "daily_eyebrow": "Бүгүнкү тапшырма",
+    "daily_title": "Жаңы жылдызга чейин 5 кадам",
+    "daily_sub": "{newCount} жаңы · {reviewCount} кайталоо",
+    "daily_loading_title": "Даярдалууда…",
+    "daily_done_title": "МашаАллах — баары бүттү!",
+    "daily_done_sub": "Эртең жаңы тапшырмага кайт.",
+    "daily_new": "жаңы",
+    "daily_review": "кайта",
+    "badges_title": "Жетишкендиктер",
+    "badges_new": "Жаңы сыйлык",
+    "surah_learned": "Жатталды",
+    "surah_best": "Эң жакшы — {p}%",
+    "surah_short_best": "Эң жакшы: {p}%",
+    "surah_start": "Даяр",
+    "surah_listen": "Угуу",
+    "surah_learn": "Үйрөнүү",
+    "surah_progress": "Сүрөнүн прогресси",
+    "surah_done_eyebrow": "МашаАллах!",
+    "alpha_progress": "Алфавиттин прогресси",
+    "alpha_stat_label": "Алфавит — сенин прогрессиң",
+    "trace_done_pass": "МашаАллах! {p}/100 — тамга жатталды.",
+    "trace_done_retry": "Аздан калды — {p}/100. Дагы аракет кыл."
   }
 }

@@ -1189,5 +1189,43 @@
     "p4_b": "لا لافتات، لا تمرير لانهائي، لا إشعارات حمراء.",
     "p5_t": "بلا متتبعات",
     "p5_b": "لا نتعقّبك ولا نبيع بياناتك. فقط نص وصوت وسكون."
+  },
+  "k": {
+    "streak_alphabet_label": "الحروف",
+    "streak_alphabet_title": "حفظتَ {n} من {total}",
+    "streak_days_label": "أيام متتالية",
+    "streak_days_title": "{n} أيام متتالية",
+    "streak_days_start": "ابدأ يومك الأول",
+    "streak_weekdays": [
+      "ث",
+      "ث",
+      "ر",
+      "خ",
+      "ج",
+      "س",
+      "أ"
+    ],
+    "daily_eyebrow": "مهمة اليوم",
+    "daily_title": "٥ خطوات لنجمة جديدة",
+    "daily_sub": "{newCount} جديدة · {reviewCount} للمراجعة",
+    "daily_loading_title": "جاري التحضير…",
+    "daily_done_title": "ماشاء الله — اكتمل!",
+    "daily_done_sub": "عُد غدًا لمهمة جديدة.",
+    "daily_new": "جديد",
+    "daily_review": "مراجعة",
+    "badges_title": "الإنجازات",
+    "badges_new": "إنجاز جديد",
+    "surah_learned": "محفوظة",
+    "surah_best": "الأفضل — {p}٪",
+    "surah_short_best": "الأفضل: {p}٪",
+    "surah_start": "جاهز للبدء",
+    "surah_listen": "استماع",
+    "surah_learn": "تعلّم",
+    "surah_progress": "تقدم السورة",
+    "surah_done_eyebrow": "ماشاء الله!",
+    "alpha_progress": "تقدم الحروف",
+    "alpha_stat_label": "الحروف — تقدمك",
+    "trace_done_pass": "ماشاء الله! {p}/100 — تم حفظ الحرف.",
+    "trace_done_retry": "تقريبًا — {p}/100. حاول مرة أخرى."
   }
 }

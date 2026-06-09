@@ -1189,5 +1189,43 @@
     "p4_b": "بغیر بینرز، بغیر لامحدود فیڈ، بغیر سرخ پش نوٹیفکیشنز۔",
     "p5_t": "کوئی ٹریکرز نہیں",
     "p5_b": "ہم آپ کا پیچھا نہیں کرتے اور آپ کا ڈیٹا نہیں بیچتے۔ بس متن، آواز، خاموشی۔"
+  },
+  "k": {
+    "streak_alphabet_label": "حروف تہجی",
+    "streak_alphabet_title": "{total} میں سے {n} سیکھ لیے",
+    "streak_days_label": "مسلسل دن",
+    "streak_days_title": "{n} دن مسلسل",
+    "streak_days_start": "اپنا پہلا دن شروع کریں",
+    "streak_weekdays": [
+      "پ",
+      "م",
+      "ب",
+      "ج",
+      "ج",
+      "ہ",
+      "ا"
+    ],
+    "daily_eyebrow": "آج کا کام",
+    "daily_title": "نئے ستارے تک 5 قدم",
+    "daily_sub": "{newCount} نئے · {reviewCount} دہرانا",
+    "daily_loading_title": "تیار ہو رہا ہے…",
+    "daily_done_title": "ماشاءاللہ — مکمل!",
+    "daily_done_sub": "کل نئے کام کے لیے آئیں۔",
+    "daily_new": "نیا",
+    "daily_review": "دہرانا",
+    "badges_title": "حصولیابیاں",
+    "badges_new": "نیا اعزاز",
+    "surah_learned": "یاد ہو گئی",
+    "surah_best": "بہترین — {p}٪",
+    "surah_short_best": "بہترین: {p}٪",
+    "surah_start": "تیار",
+    "surah_listen": "سنیں",
+    "surah_learn": "سیکھیں",
+    "surah_progress": "سورت کی پیش رفت",
+    "surah_done_eyebrow": "ماشاءاللہ!",
+    "alpha_progress": "حروف کی پیش رفت",
+    "alpha_stat_label": "حروف تہجی — آپ کی پیش رفت",
+    "trace_done_pass": "ماشاءاللہ! {p}/100 — حرف یاد ہو گیا۔",
+    "trace_done_retry": "تقریباً — {p}/100. دوبارہ کوشش کریں۔"
   }
 }

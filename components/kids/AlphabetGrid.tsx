@@ -6,12 +6,14 @@
 // Progress bar at the top reflects the real DB count, not a hardcoded number.
 
 import { useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 import { ARABIC_LETTERS } from "@/lib/kids/letters";
 import { useKids } from "./KidsProvider";
 import { LetterTrace } from "./LetterTrace";
 
 export function AlphabetGrid() {
   const { letters, mark } = useKids();
+  const t = useTranslations("k");
   const [active, setActive] = useState<number | null>(null);
   const [playingIdx, setPlayingIdx] = useState<number | null>(null);
   const [traceFor, setTraceFor] = useState<number | null>(null);
@@ -45,7 +47,7 @@ export function AlphabetGrid() {
     <>
       <div className="kid-stat-bar">
         <div className="kid-stat-bar-head">
-          <span className="kid-stat-bar-label">Алфавит — твой прогресс</span>
+          <span className="kid-stat-bar-label">{t("alpha_stat_label")}</span>
           <span className="kid-stat-bar-val">{learnedCount} / {ARABIC_LETTERS.length}</span>
         </div>
         <div className="kid-stat-bar-track"><div className="kid-stat-bar-fill" style={{ width: `${pct}%` }} /></div>
