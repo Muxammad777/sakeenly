@@ -1,5 +1,5 @@
 // GET  /api/kids/progress?profileId=…
-//   → { letters: [{key, status, traceScore}], surahs: [...], stories: [...] }
+//   → { letters: [...], surahs: [...], stories: [...], muallim: [...] }
 //
 // POST /api/kids/progress
 //   { profileId, type, key, status, traceScore?, reciteScore? }
@@ -24,7 +24,7 @@ async function ensureOwnedProfile(userId: string, profileId: string) {
 
 export async function GET(req: Request) {
   const user = await getCurrentUser();
-  if (!user) return NextResponse.json({ letters: [], surahs: [], stories: [] });
+  if (!user) return NextResponse.json({ letters: [], surahs: [], stories: [], muallim: [] });
 
   const url = new URL(req.url);
   const profileId = url.searchParams.get("profileId");
@@ -37,10 +37,11 @@ export async function GET(req: Request) {
     where: { profileId },
     select: { type: true, key: true, status: true, traceScore: true, reciteScore: true, attempts: true, masteredAt: true },
   });
-  const split = { letters: [] as typeof rows, surahs: [] as typeof rows, stories: [] as typeof rows };
+  const split = { letters: [] as typeof rows, surahs: [] as typeof rows, stories: [] as typeof rows, muallim: [] as typeof rows };
   for (const r of rows) {
     if (r.type === "letter") split.letters.push(r);
     else if (r.type === "surah") split.surahs.push(r);
+    else if (r.type === "muallim") split.muallim.push(r);
     else split.stories.push(r);
   }
   return NextResponse.json(split);
@@ -48,7 +49,7 @@ export async function GET(req: Request) {
 
 const postSchema = z.object({
   profileId: z.string().min(1),
-  type: z.enum(["letter", "surah", "story"]),
+  type: z.enum(["letter", "surah", "story", "muallim"]),
   key: z.string().min(1).max(40),
   status: z.enum(["in_progress", "learned"]).default("in_progress"),
   traceScore: z.number().int().min(0).max(100).optional(),

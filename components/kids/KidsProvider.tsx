@@ -23,7 +23,7 @@ export interface KidProfile {
   badges: string[];
 }
 
-export type KidsProgressType = "letter" | "surah" | "story";
+export type KidsProgressType = "letter" | "surah" | "story" | "muallim";
 export type KidsProgressStatus = "in_progress" | "learned";
 
 export interface KidsProgressRow {
@@ -51,6 +51,7 @@ interface KidsCtx {
   letters: Map<string, KidsProgressRow>;
   surahs: Map<string, KidsProgressRow>;
   stories: Map<string, KidsProgressRow>;
+  muallim: Map<string, KidsProgressRow>;
   badges: Set<string>;
   freshBadges: string[];
   consumeFreshBadges: () => void;
@@ -79,6 +80,7 @@ export function KidsProvider({ children }: { children: ReactNode }) {
   const [letters, setLetters] = useState<Map<string, KidsProgressRow>>(new Map());
   const [surahs, setSurahs] = useState<Map<string, KidsProgressRow>>(new Map());
   const [stories, setStories] = useState<Map<string, KidsProgressRow>>(new Map());
+  const [muallim, setMuallim] = useState<Map<string, KidsProgressRow>>(new Map());
   const [badges, setBadges] = useState<Set<string>>(new Set());
   const [freshBadges, setFreshBadges] = useState<string[]>([]);
 
@@ -89,6 +91,7 @@ export function KidsProvider({ children }: { children: ReactNode }) {
     setLetters(rowsToMap(data.letters ?? []));
     setSurahs(rowsToMap(data.surahs ?? []));
     setStories(rowsToMap(data.stories ?? []));
+    setMuallim(rowsToMap(data.muallim ?? []));
   }, []);
 
   const bootstrap = useCallback(async () => {
@@ -136,6 +139,7 @@ export function KidsProvider({ children }: { children: ReactNode }) {
     };
     if (input.type === "letter") setLetters(apply);
     else if (input.type === "surah") setSurahs(apply);
+    else if (input.type === "muallim") setMuallim(apply);
     else setStories(apply);
 
     const res = await fetch("/api/kids/progress", {
@@ -164,11 +168,11 @@ export function KidsProvider({ children }: { children: ReactNode }) {
   const consumeFreshBadges = useCallback(() => setFreshBadges([]), []);
 
   const value = useMemo<KidsCtx>(() => ({
-    loading, authed, profile, letters, surahs, stories, badges, freshBadges,
+    loading, authed, profile, letters, surahs, stories, muallim, badges, freshBadges,
     consumeFreshBadges,
     mark,
     refresh: bootstrap,
-  }), [loading, authed, profile, letters, surahs, stories, badges, freshBadges, consumeFreshBadges, mark, bootstrap]);
+  }), [loading, authed, profile, letters, surahs, stories, muallim, badges, freshBadges, consumeFreshBadges, mark, bootstrap]);
 
   return <KidsContext.Provider value={value}>{children}</KidsContext.Provider>;
 }

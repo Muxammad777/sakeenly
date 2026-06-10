@@ -1,0 +1,431 @@
+/* Sakeenly — Muallim Sani lesson hub + lesson player styles. */
+
+/* ── HUB ─────────────────────────────────────────────────────────── */
+.muallim-hub {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.muallim-hub-meter {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 22px;
+  background: oklch(var(--surface));
+  border: 1px solid oklch(var(--border));
+  border-radius: 16px;
+}
+.muallim-hub-meter-bar {
+  flex: 1;
+  height: 6px;
+  background: oklch(var(--surface-2));
+  border-radius: 999px;
+  overflow: hidden;
+}
+.muallim-hub-meter-bar > div {
+  height: 100%;
+  background: linear-gradient(90deg, oklch(var(--accent) / 0.7), oklch(var(--accent)));
+  border-radius: 999px;
+  transition: width 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.muallim-hub-meter-text {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: oklch(var(--text-3));
+  white-space: nowrap;
+}
+
+.muallim-section-title {
+  font-family: var(--font-display), 'Spectral', serif;
+  font-size: clamp(1.4rem, 2.2vw, 1.7rem);
+  font-weight: 400;
+  margin: 14px 0 18px;
+  color: oklch(var(--text));
+  letter-spacing: -0.005em;
+}
+
+.muallim-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.muallim-card-wrap { list-style: none; }
+.muallim-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 22px 18px;
+  background:
+    linear-gradient(180deg, oklch(var(--surface)) 0%, oklch(var(--surface-2)) 100%);
+  border: 1px solid oklch(var(--border));
+  border-radius: 16px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 220ms ease, transform 220ms ease, box-shadow 240ms ease;
+  position: relative;
+  overflow: hidden;
+  min-height: 130px;
+}
+.muallim-card:hover {
+  border-color: oklch(var(--accent) / 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px -20px oklch(var(--accent) / 0.4);
+}
+.muallim-card.is-learned {
+  border-color: oklch(var(--accent) / 0.55);
+  background:
+    radial-gradient(80% 80% at 0% 100%, oklch(var(--accent) / 0.08), transparent 70%),
+    linear-gradient(180deg, oklch(var(--surface)) 0%, oklch(var(--surface-2)) 100%);
+}
+.muallim-card.is-progress { border-color: oklch(var(--accent) / 0.35); }
+
+.muallim-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.muallim-card-num {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: oklch(var(--text-3));
+}
+.muallim-card-check {
+  display: inline-grid;
+  place-items: center;
+  width: 24px; height: 24px;
+  border-radius: 999px;
+  background: oklch(var(--accent) / 0.18);
+  color: oklch(var(--accent));
+}
+.muallim-card-dot {
+  width: 7px; height: 7px;
+  border-radius: 999px;
+  background: oklch(var(--accent));
+  box-shadow: 0 0 0 4px oklch(var(--accent) / 0.18);
+}
+.muallim-card-title {
+  font-family: var(--font-display), 'Spectral', serif;
+  font-size: 1.05rem;
+  line-height: 1.3;
+  font-weight: 400;
+  color: oklch(var(--text));
+}
+.muallim-card-cta {
+  margin-top: auto;
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: oklch(var(--accent));
+}
+
+.muallim-source {
+  margin-top: 36px;
+  padding: 26px 28px;
+  background: oklch(var(--surface));
+  border: 1px solid oklch(var(--border));
+  border-radius: 18px;
+}
+.muallim-source h3 {
+  font-family: var(--font-display), 'Spectral', serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 0 0 10px;
+  color: oklch(var(--text));
+}
+.muallim-source p {
+  color: oklch(var(--text-2));
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 14px;
+}
+.muallim-source ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.9rem;
+  color: oklch(var(--text-3));
+  font-family: var(--font-mono), monospace;
+}
+.muallim-source ul em {
+  font-style: italic;
+  color: oklch(var(--text-2));
+}
+
+/* ── LESSON PAGE ─────────────────────────────────────────────────── */
+.muallim-lesson {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-top: 24px;
+}
+.muallim-lesson-back {
+  align-self: flex-start;
+  color: oklch(var(--text-3));
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+.muallim-lesson-back:hover { color: oklch(var(--accent)); }
+
+.muallim-rule {
+  padding: 28px 30px;
+  background:
+    radial-gradient(60% 90% at 50% 0%, oklch(var(--accent) / 0.06), transparent 70%),
+    oklch(var(--surface));
+  border: 1px solid oklch(var(--border));
+  border-radius: 20px;
+}
+.muallim-rule p {
+  color: oklch(var(--text));
+  font-family: var(--font-display), 'Spectral', serif;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 1.75;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.muallim-practice-lede {
+  color: oklch(var(--text-2));
+  font-size: 0.95rem;
+  margin: 0 0 18px;
+}
+
+.muallim-examples {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+/* ── RECITE WIDGET ───────────────────────────────────────────────── */
+.muallim-recite {
+  padding: 22px 24px;
+  background:
+    linear-gradient(180deg, oklch(var(--surface)) 0%, oklch(var(--surface-2)) 100%);
+  border: 1px solid oklch(var(--border));
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 220ms ease, box-shadow 240ms ease;
+}
+.muallim-recite:hover {
+  border-color: oklch(var(--accent) / 0.4);
+}
+.muallim-recite-phrase {
+  font-family: 'KFGQPC-Hafs', 'Amiri', serif;
+  font-size: clamp(1.8rem, 2.6vw, 2.2rem);
+  text-align: center;
+  line-height: 1.6;
+  color: oklch(var(--text));
+}
+.muallim-recite-tr {
+  text-align: center;
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: oklch(var(--text-3));
+}
+.muallim-recite-hint {
+  text-align: center;
+  font-size: 0.88rem;
+  color: oklch(var(--text-2));
+  font-style: italic;
+}
+.muallim-recite-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 6px;
+}
+.muallim-mic-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: oklch(var(--accent) / 0.12);
+  color: oklch(var(--accent));
+  border: 1px solid oklch(var(--accent) / 0.35);
+  font-family: var(--font-mono), monospace;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background 200ms ease, border-color 200ms ease, transform 160ms ease;
+}
+.muallim-mic-btn:hover {
+  background: oklch(var(--accent) / 0.22);
+  border-color: oklch(var(--accent) / 0.55);
+  transform: translateY(-1px);
+}
+.muallim-mic-btn.is-recording {
+  background: color-mix(in oklab, oklch(0.55 0.18 25) 70%, oklch(var(--accent)));
+  border-color: color-mix(in oklab, oklch(0.55 0.18 25) 70%, oklch(var(--accent)));
+  color: oklch(0.98 0.005 90);
+}
+.muallim-rec-dot {
+  width: 9px; height: 9px;
+  border-radius: 999px;
+  background: currentColor;
+  animation: muallim-rec-pulse 900ms ease-in-out infinite alternate;
+}
+@keyframes muallim-rec-pulse {
+  from { box-shadow: 0 0 0 0 currentColor; opacity: 0.5; }
+  to   { box-shadow: 0 0 0 6px transparent; opacity: 1; }
+}
+.muallim-recite-score {
+  font-family: var(--font-display), 'Spectral', serif;
+  font-size: 1.2rem;
+  color: oklch(var(--text-2));
+}
+.muallim-recite-score[data-good="true"] { color: oklch(var(--accent)); }
+.muallim-recite-error {
+  font-size: 0.88rem;
+  color: color-mix(in oklab, oklch(0.55 0.18 25) 70%, oklch(var(--accent)));
+  margin-top: 4px;
+}
+.muallim-recite-words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 8px;
+  font-family: 'KFGQPC-Hafs', 'Amiri', serif;
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+.muallim-tok.is-hit {
+  color: oklch(var(--accent));
+  background: oklch(var(--accent) / 0.10);
+  padding: 0 6px;
+  border-radius: 4px;
+}
+.muallim-tok.is-miss {
+  color: color-mix(in oklab, oklch(0.55 0.18 25) 70%, oklch(var(--text)));
+  text-decoration: underline wavy;
+}
+.muallim-recite-heard {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  color: oklch(var(--text-3));
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+.muallim-recite-unsupported {
+  font-size: 0.9rem;
+  color: oklch(var(--text-2));
+  font-style: italic;
+}
+
+/* ── PROGRESS + NAV ──────────────────────────────────────────────── */
+.muallim-progress-bar {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.muallim-mastered {
+  color: oklch(var(--accent));
+  font-family: var(--font-display), 'Spectral', serif;
+  font-size: 1.2rem;
+}
+.muallim-nav {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+/* ── PROMO CARD ON /KIDS HUB ─────────────────────────────────────── */
+.muallim-promo {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 24px;
+  align-items: center;
+  padding: 32px 36px;
+  background:
+    radial-gradient(80% 100% at 100% 0%, oklch(var(--accent) / 0.10), transparent 60%),
+    linear-gradient(180deg, oklch(var(--surface)) 0%, oklch(var(--surface-2)) 100%);
+  border: 1px solid oklch(var(--border));
+  border-radius: 22px;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 240ms ease, transform 240ms ease, box-shadow 260ms ease;
+}
+.muallim-promo:hover {
+  border-color: oklch(var(--accent) / 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 50px -24px oklch(var(--accent) / 0.45);
+}
+@media (max-width: 720px) {
+  .muallim-promo { grid-template-columns: 1fr; padding: 24px 26px; }
+}
+.muallim-promo-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.muallim-promo-eyebrow {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: oklch(var(--accent));
+}
+.muallim-promo-body h3 {
+  font-family: var(--font-display), 'Spectral', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 4px 0 0;
+  color: oklch(var(--text));
+}
+.muallim-promo-body p {
+  color: oklch(var(--text-2));
+  font-size: 0.96rem;
+  line-height: 1.6;
+  margin: 0;
+}
+.muallim-promo-cta {
+  margin-top: 12px;
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: oklch(var(--accent));
+}
+.muallim-promo-art {
+  font-family: 'KFGQPC-Hafs', 'Amiri', serif;
+  font-size: clamp(3rem, 7vw, 4.5rem);
+  color: oklch(var(--text));
+  opacity: 0.18;
+  text-align: center;
+  user-select: none;
+  pointer-events: none;
+  line-height: 1;
+  text-shadow: 0 0 32px oklch(var(--accent) / 0.4);
+}

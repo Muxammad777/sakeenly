@@ -183,6 +183,27 @@ function Content() {
         <KidSurahPreview />
       </section>
 
+      {/* MUALLIM SANI — tajwid course */}
+      <section className="wrap kid-section" id="muallim">
+        <div className="kid-section-head">
+          <div className="kid-num">04</div>
+          <div>
+            <h2>Муаллим Сани</h2>
+            <p>17 уроков таджвида по книге Р.Р. Аббясова — современной переработке «Мөгаллим Сани» Ахмадхади Максуди.</p>
+          </div>
+          <span className="kid-pill">Таджвид</span>
+        </div>
+        <Link href="/kids/muallim" className="muallim-promo">
+          <div className="muallim-promo-body">
+            <span className="muallim-promo-eyebrow">КУРС</span>
+            <h3>Учимся читать Коран по правилам</h3>
+            <p>От шадды и танвина — до калькаля. Микрофон + анализ произношения после каждого правила.</p>
+            <span className="muallim-promo-cta">Открыть курс →</span>
+          </div>
+          <div className="muallim-promo-art" lang="ar" dir="rtl">مُعَلِّم سَانٍ</div>
+        </Link>
+      </section>
+
       {/* PROPHET STORIES */}
       <section className="wrap kid-section" id="stories">
         <div className="kid-section-head">

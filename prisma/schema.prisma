@@ -275,6 +275,7 @@ enum KidProgressType {
   letter // Arabic alphabet letter, key = "alif" | "ba" | …
   surah // memorized short surah, key = surah number ("1","112",…)
   story // prophet story read, key = story slug
+  muallim // tajwid lesson, key = lesson number ("1","2",…12)
 }
 
 enum KidProgressStatus {
