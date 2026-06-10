@@ -450,7 +450,14 @@
     "prophet5_summary": "The enemy was closing in. The sea was ahead. The people cried: \"They will catch us!\" Musa ﷺ said: \"No. Allah is with us — He will guide us.\" And the sea parted.",
     "prophet6_name": "Maryam and the palm tree",
     "prophet6_ar": "مريم عليها السلام",
-    "prophet6_summary": "When it hurt and it was frightening, Allah told Maryam: \"Shake the palm towards yourself — fresh dates will fall.\" And everything became gentle."
+    "prophet6_summary": "When it hurt and it was frightening, Allah told Maryam: \"Shake the palm towards yourself — fresh dates will fall.\" And everything became gentle.",
+    "sec4_h": "Muallim Sani",
+    "sec4_p": "17 tajwid lessons based on R.R. Abbyasov’s textbook — a modern adaptation of Ahmadhadi Maksudi’s «Mö‘gallim Sani».",
+    "sec4_pill": "Tajwid",
+    "muallim_promo_eyebrow": "COURSE",
+    "muallim_promo_h": "Learn to recite the Qur’an by the rules",
+    "muallim_promo_p": "From shadda and tanwin — to qalqalah. Microphone + pronunciation analysis after every rule.",
+    "muallim_promo_cta": "Open the course →"
   },
   "ks": {
     "badge": "Memorisation · parent dashboard",
@@ -1285,6 +1292,17 @@
     "madd_t": "Madd",
     "madd_r": "Translation pending.",
     "qalqalah_t": "Qalqalah",
-    "qalqalah_r": "Translation pending."
+    "qalqalah_r": "Translation pending.",
+    "source_citation": "R.R. Abbyasov — «Учим арабский: учебное пособие по чтению Корана», Moscow, 2005. Editor: imam Arslan Sadriev. Approved by: Council of Muftis of Russia.",
+    "mic_idle": "Recite aloud",
+    "mic_recording": "Speaking · tap to stop",
+    "mic_done": "↻ Try again",
+    "err_unsupported": "This browser doesn’t support speech recognition. Try Chrome or Edge.",
+    "err_not_allowed": "🎙 Microphone disabled. Grant access, then try again.",
+    "err_no_speech": "I didn’t hear anything — try again, speak louder.",
+    "err_audio_capture": "🎙 Microphone not found.",
+    "err_network": "Network unavailable — speech recognition needs the internet.",
+    "err_lang_unsupported": "This browser can’t recognise Arabic. Try the latest Chrome.",
+    "err_other": "Couldn’t start speech recognition."
   }
 }

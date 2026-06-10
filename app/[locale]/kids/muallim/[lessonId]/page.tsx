@@ -46,16 +46,16 @@ function Content({ slug }: { slug: string }) {
           hint: t("lesson_hint"),
           lesson: t("hub_lesson"),
           // Mic + ASR labels
-          micIdle: t("lesson_recite_title"),
-          micRecording: t("lesson_recite_title"),
-          micDone: t("lesson_done_again"),
-          unsupported: "Этот браузер не поддерживает распознавание речи. Попробуй Chrome или Edge.",
-          errNotAllowed: "🎙 Микрофон выключен. Разреши доступ к микрофону, потом попробуй снова.",
-          errNoSpeech: "Я ничего не услышал — попробуй снова, говори громче.",
-          errAudioCapture: "🎙 Микрофон не найден.",
-          errNetwork: "Сеть недоступна — распознавание речи требует интернета.",
-          errLangUnsupported: "Этот браузер не умеет распознавать арабский. Попробуй Chrome последней версии.",
-          errOther: "Не удалось запустить распознавание.",
+          micIdle: t("mic_idle"),
+          micRecording: t("mic_recording"),
+          micDone: t("mic_done"),
+          unsupported: t("err_unsupported"),
+          errNotAllowed: t("err_not_allowed"),
+          errNoSpeech: t("err_no_speech"),
+          errAudioCapture: t("err_audio_capture"),
+          errNetwork: t("err_network"),
+          errLangUnsupported: t("err_lang_unsupported"),
+          errOther: t("err_other"),
         }}
       />
     </KidsProvider>

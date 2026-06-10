@@ -450,7 +450,14 @@
     "prophet5_summary": "Musuh mendekat. Musa ﷺ berkata: «Tidak. Allah bersama kita». Lautan terbelah.",
     "prophet6_name": "Maryam dan pohon kurma",
     "prophet6_ar": "مريم عليها السلام",
-    "prophet6_summary": "Allah berkata kepada Maryam: «Goyangkan pohon itu — kurma segar akan gugur»."
+    "prophet6_summary": "Allah berkata kepada Maryam: «Goyangkan pohon itu — kurma segar akan gugur».",
+    "sec4_h": "Muallim Sani",
+    "sec4_p": "17 pelajaran tajwid berdasarkan buku teks R.R. Abbyasov — adaptasi moden «Mö‘gallim Sani» oleh Ahmadhadi Maksudi.",
+    "sec4_pill": "Tajwid",
+    "muallim_promo_eyebrow": "KURSUS",
+    "muallim_promo_h": "Belajar membaca Al-Quran mengikut hukum",
+    "muallim_promo_p": "Dari syaddah dan tanwin — hingga qalqalah. Mikrofon + analisis sebutan selepas setiap kaedah.",
+    "muallim_promo_cta": "Buka kursus →"
   },
   "ks": {
     "badge": "Hafalan · papan pemuka ibu bapa",
@@ -1285,6 +1292,17 @@
     "madd_t": "Madd",
     "madd_r": "Translation pending.",
     "qalqalah_t": "Qalqalah",
-    "qalqalah_r": "Translation pending."
+    "qalqalah_r": "Translation pending.",
+    "source_citation": "R.R. Abbyasov — «Учим арабский: учебное пособие по чтению Корана», Moscow, 2005. Penyunting: imam Arslan Sadriev. Diluluskan oleh: Majlis Mufti Rusia.",
+    "mic_idle": "Bacakan sendiri",
+    "mic_recording": "Bercakap · tekan untuk berhenti",
+    "mic_done": "↻ Cuba lagi",
+    "err_unsupported": "Pelayar ini tidak menyokong pengecaman pertuturan. Cuba Chrome atau Edge.",
+    "err_not_allowed": "🎙 Mikrofon dimatikan. Beri akses, kemudian cuba lagi.",
+    "err_no_speech": "Saya tidak mendengar apa-apa — cuba lagi, bercakap lebih kuat.",
+    "err_audio_capture": "🎙 Mikrofon tidak dijumpai.",
+    "err_network": "Rangkaian tidak tersedia — pengecaman pertuturan memerlukan internet.",
+    "err_lang_unsupported": "Pelayar ini tidak boleh mengecam bahasa Arab. Cuba versi Chrome terkini.",
+    "err_other": "Tidak dapat memulakan pengecaman pertuturan."
   }
 }

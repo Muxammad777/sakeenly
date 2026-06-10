@@ -1,0 +1,298 @@
+// Extra muallim + kid namespace keys missed in the first batch:
+// - muallim.source_citation: full bibliographic citation in the local
+//   reading register (book title kept in the original Russian since
+//   that's the actual published title)
+// - muallim.mic_idle / mic_recording / mic_done / err_*: mic widget labels
+// - kid.sec4_h / sec4_p / sec4_pill / muallim_promo_*: /kids hub card
+
+import { readFileSync, writeFileSync } from 'node:fs';
+import { join } from 'node:path';
+
+const MUALLIM_EXTRAS = {
+  ru: {
+    source_citation: 'Аббясов Р.Р. — «Учим арабский: учебное пособие по чтению Корана», Москва, 2005. Редактор: имам Арслан Садриев. Одобрено: Совет муфтиев России.',
+    mic_idle: 'Произнеси сам',
+    mic_recording: 'Говори · нажми чтобы остановить',
+    mic_done: '↻ Ещё раз',
+    err_unsupported: 'Этот браузер не поддерживает распознавание речи. Попробуй Chrome или Edge.',
+    err_not_allowed: '🎙 Микрофон выключен. Разреши доступ, потом попробуй снова.',
+    err_no_speech: 'Я ничего не услышал — попробуй снова, говори громче.',
+    err_audio_capture: '🎙 Микрофон не найден.',
+    err_network: 'Сеть недоступна — распознавание речи требует интернета.',
+    err_lang_unsupported: 'Этот браузер не умеет распознавать арабский. Попробуй Chrome последней версии.',
+    err_other: 'Не удалось запустить распознавание.',
+  },
+  tg: {
+    source_citation: 'Аббясов Р.Р. — «Учим арабский: учебное пособие по чтению Корана», Маскав, 2005. Муҳаррир: имом Арслан Содриев. Тасдиқшуда: Шӯрои муфтиёни Россия.',
+    mic_idle: 'Худат талаффуз кун',
+    mic_recording: 'Гап зан · барои қатъ зер кун',
+    mic_done: '↻ Боз як бор',
+    err_unsupported: 'Ин браузер шинохти нутқро дастгирӣ намекунад. Chrome ё Edge-ро санҷ.',
+    err_not_allowed: '🎙 Микрофон хомӯш аст. Иҷозат деҳ, баъд боз кӯшиш кун.',
+    err_no_speech: 'Чизе нашунидам — боз кӯшиш кун, баландтар гап зан.',
+    err_audio_capture: '🎙 Микрофон ёфт нашуд.',
+    err_network: 'Шабака дастнорас аст — шинохти нутқ интернет мехоҳад.',
+    err_lang_unsupported: 'Ин браузер арабиро шинохта наметавонад. Версияи охирини Chrome-ро санҷ.',
+    err_other: 'Шинохти нутқро оғоз карда натавонистам.',
+  },
+  uz: {
+    source_citation: 'Abbyasov R.R. — «Учим арабский: учебное пособие по чтению Корана», Moskva, 2005. Muharrir: imom Arslan Sodriyev. Tasdiqlangan: Rossiya muftiylar Kengashi.',
+    mic_idle: 'O‘zing talaffuz qil',
+    mic_recording: 'Gapir · to‘xtatish uchun bos',
+    mic_done: '↻ Yana bir bor',
+    err_unsupported: 'Ushbu brauzer nutqni tanib olmaydi. Chrome yoki Edge sinab ko‘r.',
+    err_not_allowed: '🎙 Mikrofon o‘chirilgan. Ruxsat ber, keyin yana urinib ko‘r.',
+    err_no_speech: 'Men hech narsa eshitmadim — qaytadan, balandroq gapir.',
+    err_audio_capture: '🎙 Mikrofon topilmadi.',
+    err_network: 'Tarmoq mavjud emas — nutqni tanib olish internet talab qiladi.',
+    err_lang_unsupported: 'Ushbu brauzer arabchani tanib olmaydi. Chrome eng yangi versiyasini sinab ko‘r.',
+    err_other: 'Nutqni tanib olishni boshlay olmadim.',
+  },
+  kk: {
+    source_citation: 'Аббясов Р.Р. — «Учим арабский: учебное пособие по чтению Корана», Мәскеу, 2005. Редактор: имам Арслан Садриев. Мақұлдаған: Ресей муфтилер Кеңесі.',
+    mic_idle: 'Өзің оқып көр',
+    mic_recording: 'Сөйле · тоқтату үшін бас',
+    mic_done: '↻ Тағы бір рет',
+    err_unsupported: 'Бұл браузер сөйлеуді тани алмайды. Chrome немесе Edge байқап көр.',
+    err_not_allowed: '🎙 Микрофон өшірілген. Рұқсат бер, содан соң қайта көр.',
+    err_no_speech: 'Мен ештеңе естімедім — қайта көр, қатты сөйле.',
+    err_audio_capture: '🎙 Микрофон табылмады.',
+    err_network: 'Желі қолжетімсіз — сөйлеуді тану интернет талап етеді.',
+    err_lang_unsupported: 'Бұл браузер арабшаны тани алмайды. Chrome соңғы нұсқасын байқап көр.',
+    err_other: 'Сөйлеуді тануды бастай алмадым.',
+  },
+  ky: {
+    source_citation: 'Аббясов Р.Р. — «Учим арабский: учебное пособие по чтению Корана», Москва, 2005. Редактор: имам Арслан Садриев. Жактырган: Россия муфтийлер Кеңеши.',
+    mic_idle: 'Өзүң айтып көр',
+    mic_recording: 'Сүйлө · токтотуу үчүн бас',
+    mic_done: '↻ Дагы бир ирет',
+    err_unsupported: 'Бул браузер сүйлөөнү тааный албайт. Chrome же Edge байкап көр.',
+    err_not_allowed: '🎙 Микрофон өчүрүлгөн. Уруксат бер, анан кайра көр.',
+    err_no_speech: 'Эч нерсе уккан жокмун — кайра аракет кыл, катуу сүйлө.',
+    err_audio_capture: '🎙 Микрофон табылган жок.',
+    err_network: 'Тармак жеткиликсиз — сүйлөөнү таануу интернет талап кылат.',
+    err_lang_unsupported: 'Бул браузер арабчаны тааный албайт. Chrome акыркы версиясын байкап көр.',
+    err_other: 'Сүйлөөнү таанууну баштай албадым.',
+  },
+  en: {
+    source_citation: 'R.R. Abbyasov — «Учим арабский: учебное пособие по чтению Корана», Moscow, 2005. Editor: imam Arslan Sadriev. Approved by: Council of Muftis of Russia.',
+    mic_idle: 'Recite aloud',
+    mic_recording: 'Speaking · tap to stop',
+    mic_done: '↻ Try again',
+    err_unsupported: 'This browser doesn’t support speech recognition. Try Chrome or Edge.',
+    err_not_allowed: '🎙 Microphone disabled. Grant access, then try again.',
+    err_no_speech: 'I didn’t hear anything — try again, speak louder.',
+    err_audio_capture: '🎙 Microphone not found.',
+    err_network: 'Network unavailable — speech recognition needs the internet.',
+    err_lang_unsupported: 'This browser can’t recognise Arabic. Try the latest Chrome.',
+    err_other: 'Couldn’t start speech recognition.',
+  },
+  ar: {
+    source_citation: 'ر. ر. عبياسوف — «Учим арабский: учебное пособие по чтению Корана»، موسكو، 2005. المحرر: الإمام أرسلان صادريف. مُعتمَد من: مجلس المفتيين في روسيا.',
+    mic_idle: 'انطق بنفسك',
+    mic_recording: 'تحدث · اضغط للإيقاف',
+    mic_done: '↻ مرة أخرى',
+    err_unsupported: 'هذا المتصفح لا يدعم التعرف على الصوت. جرب Chrome أو Edge.',
+    err_not_allowed: '🎙 الميكروفون مغلق. اسمح بالوصول ثم حاول مرة أخرى.',
+    err_no_speech: 'لم أسمع شيئًا — حاول مرة أخرى وتكلم بصوت أعلى.',
+    err_audio_capture: '🎙 لم يتم العثور على ميكروفون.',
+    err_network: 'الشبكة غير متاحة — التعرف على الصوت يحتاج إلى الإنترنت.',
+    err_lang_unsupported: 'هذا المتصفح لا يستطيع التعرف على العربية. جرب أحدث إصدار من Chrome.',
+    err_other: 'تعذر بدء التعرف على الصوت.',
+  },
+  fa: {
+    source_citation: 'ر. ر. عبیاسوف — «Учим арабский: учебное пособие по чтению Корана»، مسکو، ۲۰۰۵. ویراستار: امام ارسلان صادریف. تأیید شده توسط: شورای مفتیان روسیه.',
+    mic_idle: 'خودت تلفظ کن',
+    mic_recording: 'صحبت کن · برای توقف فشار بده',
+    mic_done: '↻ دوباره',
+    err_unsupported: 'این مرورگر از تشخیص گفتار پشتیبانی نمی‌کند. Chrome یا Edge را امتحان کن.',
+    err_not_allowed: '🎙 میکروفون خاموش است. دسترسی بده، سپس دوباره امتحان کن.',
+    err_no_speech: 'چیزی نشنیدم — دوباره امتحان کن، بلندتر صحبت کن.',
+    err_audio_capture: '🎙 میکروفون پیدا نشد.',
+    err_network: 'شبکه در دسترس نیست — تشخیص گفتار نیاز به اینترنت دارد.',
+    err_lang_unsupported: 'این مرورگر نمی‌تواند عربی را تشخیص دهد. آخرین نسخه Chrome را امتحان کن.',
+    err_other: 'نتوانستم تشخیص گفتار را شروع کنم.',
+  },
+  ur: {
+    source_citation: 'ر۔ ر۔ عبیاسوف — «Учим арабский: учебное пособие по чтению Корана»، ماسکو، 2005۔ ایڈیٹر: امام ارسلان صادریف۔ منظور شدہ: روس کے مفتیوں کی کونسل۔',
+    mic_idle: 'خود پڑھ کر سناؤ',
+    mic_recording: 'بولیں · روکنے کے لیے دبائیں',
+    mic_done: '↻ دوبارہ',
+    err_unsupported: 'یہ براؤزر تقریر کی شناخت نہیں کر سکتا۔ Chrome یا Edge آزمائیں۔',
+    err_not_allowed: '🎙 مائیکروفون بند ہے۔ اجازت دیں، پھر دوبارہ کوشش کریں۔',
+    err_no_speech: 'مجھے کچھ سنائی نہیں دیا — دوبارہ کوشش کریں، اونچی آواز میں بولیں۔',
+    err_audio_capture: '🎙 مائیکروفون نہیں ملا۔',
+    err_network: 'نیٹ ورک دستیاب نہیں — تقریر کی شناخت کو انٹرنیٹ کی ضرورت ہے۔',
+    err_lang_unsupported: 'یہ براؤزر عربی نہیں پہچان سکتا۔ Chrome کا تازہ ترین ورژن آزمائیں۔',
+    err_other: 'تقریر کی شناخت شروع نہیں ہو سکی۔',
+  },
+  ms: {
+    source_citation: 'R.R. Abbyasov — «Учим арабский: учебное пособие по чтению Корана», Moscow, 2005. Penyunting: imam Arslan Sadriev. Diluluskan oleh: Majlis Mufti Rusia.',
+    mic_idle: 'Bacakan sendiri',
+    mic_recording: 'Bercakap · tekan untuk berhenti',
+    mic_done: '↻ Cuba lagi',
+    err_unsupported: 'Pelayar ini tidak menyokong pengecaman pertuturan. Cuba Chrome atau Edge.',
+    err_not_allowed: '🎙 Mikrofon dimatikan. Beri akses, kemudian cuba lagi.',
+    err_no_speech: 'Saya tidak mendengar apa-apa — cuba lagi, bercakap lebih kuat.',
+    err_audio_capture: '🎙 Mikrofon tidak dijumpai.',
+    err_network: 'Rangkaian tidak tersedia — pengecaman pertuturan memerlukan internet.',
+    err_lang_unsupported: 'Pelayar ini tidak boleh mengecam bahasa Arab. Cuba versi Chrome terkini.',
+    err_other: 'Tidak dapat memulakan pengecaman pertuturan.',
+  },
+  hi: {
+    source_citation: 'आर.आर. अब्बयासोव — «Учим арабский: учебное пособие по чтению Корана», मास्को, 2005। संपादक: इमाम अर्सलान सादरीव। अनुमोदित: रूस के मुफ्तियों की परिषद।',
+    mic_idle: 'खुद बोलकर पढ़ें',
+    mic_recording: 'बोलें · रोकने के लिए दबाएं',
+    mic_done: '↻ फिर से',
+    err_unsupported: 'यह ब्राउज़र भाषण पहचान का समर्थन नहीं करता। Chrome या Edge आज़माएं।',
+    err_not_allowed: '🎙 माइक्रोफ़ोन बंद है। अनुमति दें, फिर पुनः प्रयास करें।',
+    err_no_speech: 'मैंने कुछ नहीं सुना — फिर से कोशिश करें, ज़ोर से बोलें।',
+    err_audio_capture: '🎙 माइक्रोफ़ोन नहीं मिला।',
+    err_network: 'नेटवर्क उपलब्ध नहीं — भाषण पहचान के लिए इंटरनेट चाहिए।',
+    err_lang_unsupported: 'यह ब्राउज़र अरबी नहीं पहचान सकता। Chrome का नवीनतम संस्करण आज़माएं।',
+    err_other: 'भाषण पहचान शुरू नहीं हो सकी।',
+  },
+  id: {
+    source_citation: 'R.R. Abbyasov — «Учим арабский: учебное пособие по чтению Корана», Moscow, 2005. Editor: imam Arslan Sadriev. Disetujui oleh: Dewan Mufti Rusia.',
+    mic_idle: 'Lafalkan sendiri',
+    mic_recording: 'Bicara · tekan untuk berhenti',
+    mic_done: '↻ Coba lagi',
+    err_unsupported: 'Browser ini tidak mendukung pengenalan ucapan. Coba Chrome atau Edge.',
+    err_not_allowed: '🎙 Mikrofon dimatikan. Beri izin, lalu coba lagi.',
+    err_no_speech: 'Saya tidak mendengar apa pun — coba lagi, bicara lebih keras.',
+    err_audio_capture: '🎙 Mikrofon tidak ditemukan.',
+    err_network: 'Jaringan tidak tersedia — pengenalan ucapan butuh internet.',
+    err_lang_unsupported: 'Browser ini tidak bisa mengenali bahasa Arab. Coba Chrome versi terbaru.',
+    err_other: 'Tidak dapat memulai pengenalan ucapan.',
+  },
+};
+
+// /kids hub promo card — k namespace
+const KIDS_EXTRAS = {
+  ru: {
+    sec4_h: 'Муаллим Сани',
+    sec4_p: '17 уроков таджвида по книге Р.Р. Аббясова — современной переработке «Мөгаллим Сани» Ахмадхади Максуди.',
+    sec4_pill: 'Таджвид',
+    muallim_promo_eyebrow: 'КУРС',
+    muallim_promo_h: 'Учимся читать Коран по правилам',
+    muallim_promo_p: 'От шадды и танвина — до калькаля. Микрофон + анализ произношения после каждого правила.',
+    muallim_promo_cta: 'Открыть курс →',
+  },
+  tg: {
+    sec4_h: 'Муаллими Сонӣ',
+    sec4_p: '17 дарси тачвид мувофиқи китоби Р.Р. Аббясов — таҷдиди муосири «Мөгаллим Сани»-и Аҳмадҳодӣ Мақсудӣ.',
+    sec4_pill: 'Тачвид',
+    muallim_promo_eyebrow: 'КУРС',
+    muallim_promo_h: 'Қуръонро бо қоидаҳо мехонем',
+    muallim_promo_p: 'Аз шадда ва танвин — то қалқала. Микрофон + таҳлили талаффуз пас аз ҳар қоида.',
+    muallim_promo_cta: 'Кушодани курс →',
+  },
+  uz: {
+    sec4_h: 'Muallim Soniy',
+    sec4_p: 'R.R. Abbyasov kitobi asosida 17 tajvid darsi — Ahmadhodi Maqsudiyning «Mo‘g‘allim Saniy»sining zamonaviy qayta ishlanishi.',
+    sec4_pill: 'Tajvid',
+    muallim_promo_eyebrow: 'KURS',
+    muallim_promo_h: 'Qur’onni qoidalar bilan o‘qiymiz',
+    muallim_promo_p: 'Shadda va tanvindan — qalqalaga qadar. Mikrofon + har qoidadan keyin talaffuz tahlili.',
+    muallim_promo_cta: 'Kursni ochish →',
+  },
+  kk: {
+    sec4_h: 'Мұғаллим Сани',
+    sec4_p: 'Р.Р. Аббясов кітабы бойынша 17 тәджуид сабағы — Ахмадхади Максудидің «Мөгаллим Сани» кітабының заманауи қайта өңделуі.',
+    sec4_pill: 'Тәджуид',
+    muallim_promo_eyebrow: 'КУРС',
+    muallim_promo_h: 'Құранды ережелер бойынша оқимыз',
+    muallim_promo_p: 'Шаддадан, танвиннен — қалқалаға дейін. Микрофон + әр ереже соңында айтылым талдауы.',
+    muallim_promo_cta: 'Курсты ашу →',
+  },
+  ky: {
+    sec4_h: 'Муаллим Сани',
+    sec4_p: 'Р.Р. Аббясовдун китеби боюнча 17 тажвид сабагы — Ахмадхади Максудинин «Мөгаллим Сани»-нын заманбап редакциясы.',
+    sec4_pill: 'Тажвид',
+    muallim_promo_eyebrow: 'КУРС',
+    muallim_promo_h: 'Куранды эрежелер боюнча окуйбуз',
+    muallim_promo_p: 'Шадда жана танвинден — калкалага чейин. Микрофон + ар бир эрежеден кийин айтуу анализи.',
+    muallim_promo_cta: 'Курсту ачуу →',
+  },
+  en: {
+    sec4_h: 'Muallim Sani',
+    sec4_p: '17 tajwid lessons based on R.R. Abbyasov’s textbook — a modern adaptation of Ahmadhadi Maksudi’s «Mö‘gallim Sani».',
+    sec4_pill: 'Tajwid',
+    muallim_promo_eyebrow: 'COURSE',
+    muallim_promo_h: 'Learn to recite the Qur’an by the rules',
+    muallim_promo_p: 'From shadda and tanwin — to qalqalah. Microphone + pronunciation analysis after every rule.',
+    muallim_promo_cta: 'Open the course →',
+  },
+  ar: {
+    sec4_h: 'مُعَلِّم ثانٍ',
+    sec4_p: '17 درسًا في علم التجويد بناءً على كتاب ر. ر. عبياسوف — تجديد عصري لـ«مُعَلِّم ثانٍ» لأحمد هادي مقصودي.',
+    sec4_pill: 'تجويد',
+    muallim_promo_eyebrow: 'دورة',
+    muallim_promo_h: 'نتعلم قراءة القرآن بالقواعد',
+    muallim_promo_p: 'من الشدّة والتنوين — إلى القلقلة. ميكروفون + تحليل النطق بعد كل قاعدة.',
+    muallim_promo_cta: 'افتح الدورة →',
+  },
+  fa: {
+    sec4_h: 'معلّم ثانی',
+    sec4_p: '۱۷ درس تجوید بر اساس کتاب ر. ر. عبیاسوف — بازنویسی مدرن «مُعَلِّم ثانی» احمدهادی مقصودی.',
+    sec4_pill: 'تجوید',
+    muallim_promo_eyebrow: 'دوره',
+    muallim_promo_h: 'قرآن را با قواعد می‌خوانیم',
+    muallim_promo_p: 'از شدّه و تنوین — تا قلقله. میکروفون + تحلیل تلفظ پس از هر قاعده.',
+    muallim_promo_cta: 'باز کردن دوره →',
+  },
+  ur: {
+    sec4_h: 'معلم ثانی',
+    sec4_p: 'آر۔ آر۔ عبیاسوف کی کتاب پر مبنی 17 تجوید کے سبق — احمد ہادی مقصودی کے «معلم ثانی» کی جدید تجدید۔',
+    sec4_pill: 'تجوید',
+    muallim_promo_eyebrow: 'کورس',
+    muallim_promo_h: 'قواعد کے مطابق قرآن پڑھنا سیکھیں',
+    muallim_promo_p: 'شدہ اور تنوین سے — قلقلہ تک۔ مائیکروفون + ہر قاعدے کے بعد تلفظ کا تجزیہ۔',
+    muallim_promo_cta: 'کورس کھولیں →',
+  },
+  ms: {
+    sec4_h: 'Muallim Sani',
+    sec4_p: '17 pelajaran tajwid berdasarkan buku teks R.R. Abbyasov — adaptasi moden «Mö‘gallim Sani» oleh Ahmadhadi Maksudi.',
+    sec4_pill: 'Tajwid',
+    muallim_promo_eyebrow: 'KURSUS',
+    muallim_promo_h: 'Belajar membaca Al-Quran mengikut hukum',
+    muallim_promo_p: 'Dari syaddah dan tanwin — hingga qalqalah. Mikrofon + analisis sebutan selepas setiap kaedah.',
+    muallim_promo_cta: 'Buka kursus →',
+  },
+  hi: {
+    sec4_h: 'मुअल्लिम सानी',
+    sec4_p: 'आर.आर. अब्बयासोव की पुस्तक पर आधारित 17 तजवीद पाठ — अहमदहादि मक्सूदी के «मुअल्लिम सानी» का आधुनिक रूपांतर।',
+    sec4_pill: 'तजवीद',
+    muallim_promo_eyebrow: 'पाठ्यक्रम',
+    muallim_promo_h: 'क़ुरआन को नियमों के अनुसार पढ़ना सीखें',
+    muallim_promo_p: 'शद्दा और तनवीन से — क़लक़ला तक। माइक्रोफ़ोन + हर नियम के बाद उच्चारण विश्लेषण।',
+    muallim_promo_cta: 'पाठ्यक्रम खोलें →',
+  },
+  id: {
+    sec4_h: 'Muallim Sani',
+    sec4_p: '17 pelajaran tajwid berdasarkan buku R.R. Abbyasov — adaptasi modern «Mö‘gallim Sani» karya Ahmadhadi Maksudi.',
+    sec4_pill: 'Tajwid',
+    muallim_promo_eyebrow: 'KURSUS',
+    muallim_promo_h: 'Belajar membaca Al-Qur’an sesuai aturan',
+    muallim_promo_p: 'Dari syaddah dan tanwin — hingga qalqalah. Mikrofon + analisis pelafalan setelah setiap aturan.',
+    muallim_promo_cta: 'Buka kursus →',
+  },
+};
+
+const dir = 'messages';
+for (const loc of Object.keys(MUALLIM_EXTRAS)) {
+  const path = join(dir, `${loc}.json`);
+  const obj = JSON.parse(readFileSync(path, 'utf8'));
+  obj.muallim = { ...(obj.muallim ?? {}), ...MUALLIM_EXTRAS[loc] };
+  if (KIDS_EXTRAS[loc]) {
+    obj.kid = { ...(obj.kid ?? {}), ...KIDS_EXTRAS[loc] };
+    // Also drop the stray `k.sec4_*` keys we accidentally wrote first time.
+    if (obj.k) {
+      for (const k of ['sec4_h','sec4_p','sec4_pill','muallim_promo_eyebrow','muallim_promo_h','muallim_promo_p','muallim_promo_cta']) {
+        delete obj.k[k];
+      }
+    }
+  }
+  writeFileSync(path, JSON.stringify(obj, null, 2) + '\n', 'utf8');
+  console.log(`Updated ${loc}.json`);
+}

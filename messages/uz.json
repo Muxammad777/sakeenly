@@ -450,7 +450,14 @@
     "prophet5_summary": "Dushman quvar edi. Dengiz oldinda. Xalq: «Bizni tutib oladilar!» deb qichqirdi. Muso: «Yoʻq. Alloh biz bilan, U yoʻl koʻrsatadi» dedi. Va dengiz ochildi.",
     "prophet6_name": "Maryam va xurmo",
     "prophet6_ar": "مريم عليها السلام",
-    "prophet6_summary": "Ogʻriq va qoʻrquv boʻlganda Alloh Maryamga: «Xurmoni silkit — yangi xurmolar tushadi» dedi. Va hamma narsa yumshoq boʻldi."
+    "prophet6_summary": "Ogʻriq va qoʻrquv boʻlganda Alloh Maryamga: «Xurmoni silkit — yangi xurmolar tushadi» dedi. Va hamma narsa yumshoq boʻldi.",
+    "sec4_h": "Muallim Soniy",
+    "sec4_p": "R.R. Abbyasov kitobi asosida 17 tajvid darsi — Ahmadhodi Maqsudiyning «Mo‘g‘allim Saniy»sining zamonaviy qayta ishlanishi.",
+    "sec4_pill": "Tajvid",
+    "muallim_promo_eyebrow": "KURS",
+    "muallim_promo_h": "Qur’onni qoidalar bilan o‘qiymiz",
+    "muallim_promo_p": "Shadda va tanvindan — qalqalaga qadar. Mikrofon + har qoidadan keyin talaffuz tahlili.",
+    "muallim_promo_cta": "Kursni ochish →"
   },
   "ks": {
     "badge": "Yodlash · ota-ona dashboard",
@@ -1285,6 +1292,17 @@
     "madd_t": "Madd — unli cho‘zilishi",
     "madd_r": "Madd — unli tovushning cho‘zilishi. Uch madd harfi: ا «a»ni, ي «i»ni, و «u»ni cho‘zadi. **Madd tabii** — 2 sanoq (قَالَ). **Madd vojib muttasil** — maddan keyin hamza bir so‘zda, 4-5 sanoq (جَآءَ). **Madd lozim** — maddan keyin shaddali harf, 6 sanoq (ٱلضَّآلِّينَ).",
     "qalqalah_t": "Qalqala — 5 harf «aks»i",
-    "qalqalah_r": "Besh harf — ق ط ب ج د — sokin bo‘lganda yengil «aks» beradi. Bir so‘z bilan eslab qol: «qutbu jad» (قُطْبُ جَدٍّ). Sug‘ro — so‘z o‘rtasida (يَدْعُونَ). Kubro — so‘z oxirida to‘xtaganda (أَحَدٌ). Kubro kuchliroq."
+    "qalqalah_r": "Besh harf — ق ط ب ج د — sokin bo‘lganda yengil «aks» beradi. Bir so‘z bilan eslab qol: «qutbu jad» (قُطْبُ جَدٍّ). Sug‘ro — so‘z o‘rtasida (يَدْعُونَ). Kubro — so‘z oxirida to‘xtaganda (أَحَدٌ). Kubro kuchliroq.",
+    "source_citation": "Abbyasov R.R. — «Учим арабский: учебное пособие по чтению Корана», Moskva, 2005. Muharrir: imom Arslan Sodriyev. Tasdiqlangan: Rossiya muftiylar Kengashi.",
+    "mic_idle": "O‘zing talaffuz qil",
+    "mic_recording": "Gapir · to‘xtatish uchun bos",
+    "mic_done": "↻ Yana bir bor",
+    "err_unsupported": "Ushbu brauzer nutqni tanib olmaydi. Chrome yoki Edge sinab ko‘r.",
+    "err_not_allowed": "🎙 Mikrofon o‘chirilgan. Ruxsat ber, keyin yana urinib ko‘r.",
+    "err_no_speech": "Men hech narsa eshitmadim — qaytadan, balandroq gapir.",
+    "err_audio_capture": "🎙 Mikrofon topilmadi.",
+    "err_network": "Tarmoq mavjud emas — nutqni tanib olish internet talab qiladi.",
+    "err_lang_unsupported": "Ushbu brauzer arabchani tanib olmaydi. Chrome eng yangi versiyasini sinab ko‘r.",
+    "err_other": "Nutqni tanib olishni boshlay olmadim."
   }
 }

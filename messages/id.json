@@ -450,7 +450,14 @@
     "prophet5_summary": "Musuh mendekat. Musa ﷺ berkata: «Tidak. Allah bersama kita». Lautan terbelah.",
     "prophet6_name": "Maryam dan pohon kurma",
     "prophet6_ar": "مريم عليها السلام",
-    "prophet6_summary": "Allah berkata kepada Maryam: «Goyangkan pohon kurma itu — buah segar akan gugur»."
+    "prophet6_summary": "Allah berkata kepada Maryam: «Goyangkan pohon kurma itu — buah segar akan gugur».",
+    "sec4_h": "Muallim Sani",
+    "sec4_p": "17 pelajaran tajwid berdasarkan buku R.R. Abbyasov — adaptasi modern «Mö‘gallim Sani» karya Ahmadhadi Maksudi.",
+    "sec4_pill": "Tajwid",
+    "muallim_promo_eyebrow": "KURSUS",
+    "muallim_promo_h": "Belajar membaca Al-Qur’an sesuai aturan",
+    "muallim_promo_p": "Dari syaddah dan tanwin — hingga qalqalah. Mikrofon + analisis pelafalan setelah setiap aturan.",
+    "muallim_promo_cta": "Buka kursus →"
   },
   "ks": {
     "badge": "Hafalan · dasbor orang tua",
@@ -1285,6 +1292,17 @@
     "madd_t": "Madd",
     "madd_r": "Translation pending.",
     "qalqalah_t": "Qalqalah",
-    "qalqalah_r": "Translation pending."
+    "qalqalah_r": "Translation pending.",
+    "source_citation": "R.R. Abbyasov — «Учим арабский: учебное пособие по чтению Корана», Moscow, 2005. Editor: imam Arslan Sadriev. Disetujui oleh: Dewan Mufti Rusia.",
+    "mic_idle": "Lafalkan sendiri",
+    "mic_recording": "Bicara · tekan untuk berhenti",
+    "mic_done": "↻ Coba lagi",
+    "err_unsupported": "Browser ini tidak mendukung pengenalan ucapan. Coba Chrome atau Edge.",
+    "err_not_allowed": "🎙 Mikrofon dimatikan. Beri izin, lalu coba lagi.",
+    "err_no_speech": "Saya tidak mendengar apa pun — coba lagi, bicara lebih keras.",
+    "err_audio_capture": "🎙 Mikrofon tidak ditemukan.",
+    "err_network": "Jaringan tidak tersedia — pengenalan ucapan butuh internet.",
+    "err_lang_unsupported": "Browser ini tidak bisa mengenali bahasa Arab. Coba Chrome versi terbaru.",
+    "err_other": "Tidak dapat memulai pengenalan ucapan."
   }
 }

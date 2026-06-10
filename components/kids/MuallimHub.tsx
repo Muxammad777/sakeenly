@@ -6,7 +6,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { useKids } from "./KidsProvider";
-import { MUALLIM_LESSONS, MUALLIM_SOURCE, type MuallimLesson } from "@/lib/kids/muallim";
+import { MUALLIM_LESSONS, type MuallimLesson } from "@/lib/kids/muallim";
 
 export function MuallimHub() {
   const t = useTranslations("muallim");
@@ -42,11 +42,7 @@ export function MuallimHub() {
       <div className="muallim-source">
         <h3>{t("source_title")}</h3>
         <p>{t("source_body")}</p>
-        <ul>
-          <li>{MUALLIM_SOURCE.author} — <em>«{MUALLIM_SOURCE.title}»</em>, {MUALLIM_SOURCE.publisher}, {MUALLIM_SOURCE.year}</li>
-          <li>Редактор: {MUALLIM_SOURCE.editor}</li>
-          <li>Одобрено: {MUALLIM_SOURCE.approved}</li>
-        </ul>
+        <p className="muallim-source-cite">{t("source_citation")}</p>
       </div>
     </div>
   );

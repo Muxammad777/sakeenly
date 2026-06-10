@@ -188,17 +188,17 @@ function Content() {
         <div className="kid-section-head">
           <div className="kid-num">04</div>
           <div>
-            <h2>Муаллим Сани</h2>
-            <p>17 уроков таджвида по книге Р.Р. Аббясова — современной переработке «Мөгаллим Сани» Ахмадхади Максуди.</p>
+            <h2>{t("sec4_h")}</h2>
+            <p>{t("sec4_p")}</p>
           </div>
-          <span className="kid-pill">Таджвид</span>
+          <span className="kid-pill">{t("sec4_pill")}</span>
         </div>
         <Link href="/kids/muallim" className="muallim-promo">
           <div className="muallim-promo-body">
-            <span className="muallim-promo-eyebrow">КУРС</span>
-            <h3>Учимся читать Коран по правилам</h3>
-            <p>От шадды и танвина — до калькаля. Микрофон + анализ произношения после каждого правила.</p>
-            <span className="muallim-promo-cta">Открыть курс →</span>
+            <span className="muallim-promo-eyebrow">{t("muallim_promo_eyebrow")}</span>
+            <h3>{t("muallim_promo_h")}</h3>
+            <p>{t("muallim_promo_p")}</p>
+            <span className="muallim-promo-cta">{t("muallim_promo_cta")}</span>
           </div>
           <div className="muallim-promo-art" lang="ar" dir="rtl">مُعَلِّم سَانٍ</div>
         </Link>
